@@ -148,7 +148,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             hidden: true,
         },
         {
-            name: 'marius', // marius
+            name: 'marin', // marius
             joinChapter: 'xA',
             artists: [DoFArtist.Lumi, DoFArtist.Amelia],
             class: DoFClasses.Cavalier,
@@ -173,7 +173,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         // },
         {
             name: 'se-mori',
-            displayName: 'se\'mori',
+            displayName: 'se\'Mori',
             joinChapter: 'xB',
             artists: [DoFArtist.Amelia, DoFArtist.Astra],
             class: '',
@@ -205,7 +205,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             hidden: true,
         },
         {
-            name: 'lienn',
+            name: 'leda',
             joinChapter: 'xB',
             artists: [DoFArtist.Astra, DoFArtist.Amelia],
             class: DoFClasses.Dancer,
@@ -222,7 +222,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'vi-shen',
-            displayName: 'vi\'shen',
+            displayName: 'vi\'Shen',
             joinChapter: 'xB',
             artists: [DoFArtist.Lumi],
             class: DoFClasses.Mercenary,
@@ -237,13 +237,13 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             name: 'thyra',
             fullName: 'jianxia long',
             joinChapter: '17',
-            artists: [DoFArtist.Amelia, DoFArtist.Astra],
+            artists: [DoFArtist.Lumi],
             class: '',
             nationality: DoFNationality.Onduris,
             hidden: true,
         },
         {
-            name: 'celia',
+            name: 'sheila',
             joinChapter: 'x',
             artists: [DoFArtist.Amelia],
             class: '',

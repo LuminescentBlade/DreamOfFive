@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "NODE_ENV=development && next dev",
-    "build:base": "NODE_ENV=production && next build",
+    "dev": "NODE_ENV='development' next dev",
+    "dev:prod": "NODE_ENV='production' next build && next start",
+    "build:base": "NODE_ENV='production' next build",
     "build": "export BUILD_CONFIG=vercel && npm run build:base",
     "build:gh": "export BUILD_CONFIG=gh && npm run build:base",
     "start": "next start",
