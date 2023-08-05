@@ -1,15 +1,18 @@
 /** @type {import('next').NextConfig} */
-const repo = 'DreamOfFive';
-const assetPrefix = `/${repo}/`
-const basePath = `/${repo}`
+const repo = "DreamOfFive";
+
+let assetPrefix, basePath;
+
+if (process.env.BUILD_CONFIG === "gh") {
+  console.log("building for github-pages");
+  assetPrefix = `/${repo}/`;
+  basePath = `/${repo}`;
+}
 
 const nextConfig = {
-    output: 'export',
-}
+  output: "export",
+  assetPrefix,
+  basePath,
+};
 
-if(process.env.NODE_ENV==='gh'){
-    nextConfig.assetPrefix = assetPrefix;
-    nextConfig.basePath =  basePath;    
-}
-
-module.exports = nextConfig
+module.exports = nextConfig;
