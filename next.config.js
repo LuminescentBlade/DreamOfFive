@@ -10,6 +10,9 @@ if (process.env.BUILD_CONFIG === "gh") {
 }
 
 const nextConfig = {
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'styles')],
+  },
   output,
   assetPrefix,
   basePath,
