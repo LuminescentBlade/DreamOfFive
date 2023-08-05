@@ -1,0 +1,44 @@
+import { DoFArtist } from "../models/enums";
+
+export const DoFArtistConfig = {
+    [DoFArtist.Lumi]: {
+        name: 'Luminescent Blade',
+        color: '#28a7ff'
+    },
+    [DoFArtist.Astra]: {
+        name: 'AstraLunaSol',
+        color: '#ff3131'
+    },
+    [DoFArtist.Amelia]: {
+        name: 'Amelia',
+        color: '#ffde00'
+    },
+    [DoFArtist.Char]: {
+        name: 'ShinyCharmander',
+        color: '#48477e'
+    },
+    [DoFArtist.AK]: {
+        name: 'Aeorys Kirru',
+        color: '#a041f7'
+    },
+    [DoFArtist.Seph]: {
+        name: 'Seph1212',
+        color: '#e39c1e'
+    },
+    [DoFArtist.Nih]: {
+        name: 'Niharu',
+        color: '#e07098'
+    },
+    [DoFArtist.Pi]: {
+        name: 'SquareRootOfPi',
+        color: '#0e5632'
+    },
+    [DoFArtist.TBA]: {
+        name: 'TheBlindArcher',
+        color: '#ffffff'
+    },
+    [DoFArtist.Xiltas]: {
+        name: 'Xiltas',
+        color: '#918769'
+    }
+};
