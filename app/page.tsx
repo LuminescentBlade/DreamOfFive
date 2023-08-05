@@ -2,11 +2,12 @@ import Image from 'next/image'
 import styles from './page.module.css'
 
 export default function Home() {
+  const assets = process.env.BUILD_PATH;
   return (
     <main className={styles.main}>
       <div className={styles.description}>
         <p>
-          Test
+          {assets}
           <code className={styles.code}>app/page.tsx</code>
         </p>
         <div>
@@ -16,14 +17,15 @@ export default function Home() {
             rel="noopener noreferrer"
           >
             By{' '}
-            <Image
-              src="{`${assetPrefix}/vercel.svg`}"
+            {/* <Image
+              src="{`${assets}/vercel.svg`}"
               alt="Vercel Logo"
               className={styles.vercelLogo}
               width={100}
               height={24}
               priority
-            />
+            /> */}
+            <img src="{`${assets}/vercel.svg`}"></img>
           </a>
         </div>
       </div>
