@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "export BUILD_CONFIG=vercel && next build",
-    "build:gh": "export BUILD_CONFIG=gh && next build",
+    "dev": "NODE_ENV=development && next dev",
+    "build:base": "NODE_ENV=production && next build",
+    "build": "export BUILD_CONFIG=vercel && npm run build:base",
+    "build:gh": "export BUILD_CONFIG=gh && npm run build:base",
     "start": "next start",
     "lint": "next lint",
     "ghpages": "bash deploy.sh"

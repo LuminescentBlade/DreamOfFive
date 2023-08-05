@@ -117,7 +117,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             joinChapter: 'xA',
             artists: [DoFArtist.Astra],
             class: '',
-            nationality: DoFNationality.Vishara
+            nationality: DoFNationality.Vishara,
+            hidden: true,
         },
         // seren
         // adrian
@@ -127,14 +128,16 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             joinChapter: 'xA',
             artists: [DoFArtist.Amelia, DoFArtist.Astra, DoFArtist.Lumi],
             class: DoFClasses.PegRider,
-            nationality: DoFNationality.Svanhild
+            nationality: DoFNationality.Svanhild,
+            hidden: true,
         },
         {
             name: 'jolyon', // enjo
             joinChapter: 'xA',
             artists: [DoFArtist.Astra, DoFArtist.Amelia],
             class: '',
-            nationality: DoFNationality.Musain
+            nationality: DoFNationality.Musain,
+            hidden: true,
         },
         {
             name: 'florent', // feuilly
@@ -160,7 +163,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             joinChapter: '7B',
             artists: [DoFArtist.Astra],
             nationality: DoFNationality.Unknown,
-            class: DoFClasses.Thief
+            class: DoFClasses.Thief,
+            hidden: true,
         },
         // {
         //     name: 'conchur',
@@ -173,21 +177,24 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             joinChapter: 'xB',
             artists: [DoFArtist.Amelia, DoFArtist.Astra],
             class: '',
-            nationality: DoFNationality.Onduris
+            nationality: DoFNationality.Onduris,
+            hidden: true,
         },
         {
             name: 'wren',
             joinChapter: 'xB',
             artists: [DoFArtist.Lumi, DoFArtist.Amelia],
             class: DoFClasses.Cleric,
-            nationality: DoFNationality.Onduris
+            nationality: DoFNationality.Onduris,
+            hidden: true,
         },
         {
             name: 'nikita',
             joinChapter: 'xB',
             artists: [DoFArtist.Astra],
             class: '',
-            nationality: DoFNationality.Onduris
+            nationality: DoFNationality.Onduris,
+            hidden: true,
         },
         {
             name: 'balder',
@@ -210,7 +217,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             joinChapter: 'xB',
             artists: [DoFArtist.Lumi],
             class: DoFClasses.Mercenary,
-            nationality: DoFNationality.Onduris
+            nationality: DoFNationality.Onduris,
+            hidden: true,
         },
         {
             name: 'vi-shen',
@@ -231,14 +239,16 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             joinChapter: '17',
             artists: [DoFArtist.Amelia, DoFArtist.Astra],
             class: '',
-            nationality: DoFNationality.Onduris
+            nationality: DoFNationality.Onduris,
+            hidden: true,
         },
         {
             name: 'celia',
             joinChapter: 'x',
             artists: [DoFArtist.Amelia],
             class: '',
-            nationality: DoFNationality.Aukema
+            nationality: DoFNationality.Aukema,
+            hidden: true,
         }
     ],
     enemy: [
