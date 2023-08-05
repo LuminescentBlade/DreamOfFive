@@ -7,7 +7,7 @@ const nextConfig = {
     output: 'export',
 }
 
-if(process.env.BUILD_SOURCE==='gh'){
+if(process.env.NODE_ENV==='gh'){
     nextConfig.assetPrefix = assetPrefix;
     nextConfig.basePath =  basePath;
 }
