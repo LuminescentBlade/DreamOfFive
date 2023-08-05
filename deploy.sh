@@ -8,4 +8,4 @@ if [[ -d docs ]]; then
 fi
 mkdir docs
 
-cp -a out docs
+cp -a out/. docs
