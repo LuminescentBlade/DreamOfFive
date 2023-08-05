@@ -6,6 +6,15 @@ $artist-size: 7px;
     .name.player {
       background-color: #2398c9;
     }
+    .name.enemy {
+      background-color: #9b594f;
+    }
+    .name.npc {
+      background-color: #7ba866;
+    }
+    .name.generic {
+      background-color: #c0bd8d;
+    }
     .sprite {
       background-color: #84b583;
     }
@@ -19,12 +28,25 @@ $artist-size: 7px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-family: var(--dof-kq-font);
+  font-size: 2rem;
+  font-weight: 100;
+  letter-spacing: 0.07em;
   &.default {
     text-transform: capitalize;
   }
 
   &.player {
     background-color: #1e85b0;
+  }
+  &.enemy {
+    background-color: #6e4640;
+  }
+  &.npc {
+    background-color: #5f824f;
+  }
+  &.generic {
+    background-color: #959266;
   }
 }
 

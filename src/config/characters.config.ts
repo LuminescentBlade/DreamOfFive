@@ -5,7 +5,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
     player: [
         {
             name: 'renair',
-            joinChapter: '0',
+            chapter: '0',
             artists: [DoFArtist.AK],
             alt: [
                 { name: 'angry', artists: [DoFArtist.AK, DoFArtist.Amelia] },
@@ -16,105 +16,113 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'garath',
-            joinChapter: '0',
+            chapter: '0',
             artists: [DoFArtist.Astra],
             nationality: DoFNationality.Aukema,
             class: DoFClasses.Warrior
         },
         {
             name: 'kolbane',
-            joinChapter: '0',
+            chapter: '0',
             artists: [DoFArtist.Lumi],
             nationality: DoFNationality.Aukema,
             class: DoFClasses.Mercenary
         },
         {
             name: 'asher',
-            joinChapter: '0',
+            chapter: '0',
             artists: [DoFArtist.Amelia],
             nationality: DoFNationality.Aukema,
             class: DoFClasses.Priest
         },
         {
             name: 'eileen',
-            joinChapter: '1',
+            chapter: '1',
             artists: [DoFArtist.Astra, DoFArtist.Amelia, DoFArtist.Nih],
             nationality: DoFNationality.Aukema,
             class: DoFClasses.PegRider
         },
         {
             name: 'amelia',
-            joinChapter: '1',
+            chapter: '1',
             artists: [DoFArtist.Amelia],
             nationality: DoFNationality.Unknown,
             class: DoFClasses.Mage
         },
         {
             name: 'tricia',
-            joinChapter: '2',
+            chapter: '2',
             artists: [DoFArtist.Amelia],
             nationality: DoFNationality.Aukema,
             class: DoFClasses.Henchwoman
         },
         {
             name: 'chester',
-            joinChapter: '2',
+            chapter: '2',
             artists: [DoFArtist.Amelia],
             nationality: DoFNationality.Aukema,
             class: DoFClasses.Thief
         },
         {
             name: 'cathale',
-            joinChapter: '2',
+            chapter: '2',
             artists: [DoFArtist.Astra],
             class: DoFClasses.Armour
         },
         {
             name: 'crowe',
-            joinChapter: '3',
+            chapter: '3',
             artists: [DoFArtist.Amelia],
             nationality: DoFNationality.Aukema,
             class: DoFClasses.Archer
         },
         {
             name: 'lizaveta',
-            joinChapter: '4',
+            chapter: '4',
             artists: [DoFArtist.Astra, DoFArtist.Amelia],
             nationality: DoFNationality.Vishara,
             class: DoFClasses.Troubadour
         },
         {
             name: 'driscoll',
-            joinChapter: '4',
+            chapter: '4',
             artists: [DoFArtist.Lumi],
             nationality: DoFNationality.Aukema,
             class: DoFClasses.Fighter
         },
         {
             name: 'cothiva',
-            joinChapter: '5',
+            chapter: '5',
             artists: [DoFArtist.Astra],
             nationality: DoFNationality.Unknown,
             class: DoFClasses.Adept
         },
         {
             name: 'gabriel',
-            joinChapter: '5',
+            chapter: '5',
             artists: [DoFArtist.Amelia],
             nationality: DoFNationality.Aukema,
             class: DoFClasses.Warlock
         },
         {
             name: 'ioan',
-            joinChapter: '6',
+            chapter: '6',
             artists: [DoFArtist.Amelia, DoFArtist.Astra],
             nationality: DoFNationality.Vishara,
             class: DoFClasses.DrakeRider
         },
         // Musain route
         {
+            name: 'marie',
+            chapter: 'xA',
+            artists: [DoFArtist.Astra],
+            class: DoFClasses.Thief,
+            nationality: DoFNationality.Unknown,
+            hidden: true,
+        },
+        {
             name: 'arcus',
-            joinChapter: 'xA',
+            chapter: 'xA',
             artists: [DoFArtist.Astra],
             class: '',
             nationality: DoFNationality.Vishara,
@@ -125,7 +133,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'annelise',
             displayName: 'Annelise',
-            joinChapter: 'xA',
+            chapter: 'xA',
             artists: [DoFArtist.Amelia, DoFArtist.Astra, DoFArtist.Lumi],
             class: DoFClasses.PegRider,
             nationality: DoFNationality.Svanhild,
@@ -133,7 +141,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'jolyon', // enjo
-            joinChapter: 'xA',
+            chapter: 'xA',
             artists: [DoFArtist.Astra, DoFArtist.Amelia],
             class: '',
             nationality: DoFNationality.Musain,
@@ -141,7 +149,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'florent', // feuilly
-            joinChapter: 'xA',
+            chapter: 'xA',
             artists: [DoFArtist.Astra, DoFArtist.Amelia],
             class: DoFClasses.Cavalier,
             nationality: DoFNationality.Musain,
@@ -149,7 +157,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'marin', // marius
-            joinChapter: 'xA',
+            chapter: 'xA',
             artists: [DoFArtist.Lumi, DoFArtist.Amelia],
             class: DoFClasses.Cavalier,
             nationality: DoFNationality.Musain,
@@ -160,7 +168,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         // Onduris Route
         {
             name: 'alexis',
-            joinChapter: '7B',
+            chapter: '7B',
             artists: [DoFArtist.Astra],
             nationality: DoFNationality.Unknown,
             class: DoFClasses.Thief,
@@ -174,7 +182,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'se-mori',
             displayName: 'se\'Mori',
-            joinChapter: 'xB',
+            chapter: 'xB',
             artists: [DoFArtist.Amelia, DoFArtist.Astra],
             class: '',
             nationality: DoFNationality.Onduris,
@@ -182,15 +190,31 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'wren',
-            joinChapter: 'xB',
+            chapter: 'xB',
             artists: [DoFArtist.Lumi, DoFArtist.Amelia],
             class: DoFClasses.Cleric,
             nationality: DoFNationality.Onduris,
             hidden: true,
         },
         {
+            name: 'bellona',
+            chapter: 'xB',
+            artists: [DoFArtist.Astra, DoFArtist.Amelia],
+            class: DoFClasses.DrakeRider,
+            nationality: DoFNationality.Vishara,
+            hidden: true,
+        },
+        {
+            name: 'kanus',
+            chapter: 'xB',
+            artists: [DoFArtist.Astra, DoFArtist.Amelia],
+            class: '',
+            nationality: DoFNationality.Onduris,
+            hidden: true,
+        },
+        {
             name: 'nikita',
-            joinChapter: 'xB',
+            chapter: 'xB',
             artists: [DoFArtist.Astra],
             class: '',
             nationality: DoFNationality.Onduris,
@@ -198,7 +222,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'balder',
-            joinChapter: 'xB',
+            chapter: 'xB',
             artists: [DoFArtist.Lumi],
             class: DoFClasses.Pirate,
             nationality: DoFNationality.Onduris,
@@ -206,7 +230,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'leda',
-            joinChapter: 'xB',
+            chapter: 'xB',
             artists: [DoFArtist.Astra, DoFArtist.Amelia],
             class: DoFClasses.Dancer,
             nationality: DoFNationality.Onduris,
@@ -214,7 +238,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'nari',
-            joinChapter: 'xB',
+            chapter: 'xB',
             artists: [DoFArtist.Lumi],
             class: DoFClasses.Mercenary,
             nationality: DoFNationality.Onduris,
@@ -223,20 +247,41 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'vi-shen',
             displayName: 'vi\'Shen',
-            joinChapter: 'xB',
+            chapter: 'xB',
             artists: [DoFArtist.Lumi],
             class: DoFClasses.Mercenary,
             nationality: DoFNationality.Onduris,
             hidden: true,
         },
         // Postskip
-        // leofric
-        // jauger
-        // odette
+        {
+            name: 'leofric',
+            chapter: '17',
+            artists: [DoFArtist.Lumi],
+            class: '',
+            nationality: DoFNationality.Aukema,
+            hidden: true,
+        },
+        {
+            name: 'jauger',
+            chapter: '17',
+            artists: [DoFArtist.Astra, DoFArtist.Amelia],
+            class: DoFClasses.Armour,
+            nationality: DoFNationality.Aukema,
+            hidden: true,
+        },
+        {
+            name: 'odette', // odette
+            chapter: '17',
+            artists: [DoFArtist.Amelia],
+            class: DoFClasses.Sniper,
+            nationality: DoFNationality.Aukema,
+            hidden: true,
+        },
         {
             name: 'thyra',
             fullName: 'jianxia long',
-            joinChapter: '17',
+            chapter: '17',
             artists: [DoFArtist.Lumi],
             class: '',
             nationality: DoFNationality.Onduris,
@@ -244,7 +289,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'sheila',
-            joinChapter: 'x',
+            chapter: 'x',
             artists: [DoFArtist.Amelia],
             class: '',
             nationality: DoFNationality.Aukema,
@@ -252,62 +297,216 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         }
     ],
     enemy: [
-        // {
-        //     name: 'discan',
-        //     artists: [DoFArtist.Seph, DoFArtist.Astra],
-        //     class: '',
-        //     nationality: DoFNationality.Aukema
-        // },
-        // {
-        //     name: 'cobbet',
-        //     artists: [DoFArtist.Astra],
-        //     class: DoFClasses.Brigand,
-        //     nationality: DoFNationality.Aukema
-        // },
-        // {
-        //     name: 'darrick',
-        //     artists: [DoFArtist.Astra],
-        //     class: DoFClasses.Brigand,
-        //     nationality: DoFNationality.Aukema
-        // },
-        // {
-        //     name: 'rankin',
-        //     artists: [DoFArtist.Astra, DoFArtist.Lumi],
-        //     class: DoFClasses.Mercenary,
-        //     nationality: DoFNationality.Aukema
-        // },
-        // {
-        //     name: 'crispin',
-        //     artists: [DoFArtist.Astra, DoFArtist.Lumi],
-        //     class: DoFClasses.Archer,
-        //     nationality: DoFNationality.Aukema
-        // },
-        // {
-        //     name: 'ganter',
-        //     artists: [DoFArtist.Lumi],
-        //     class: DoFClasses.Cavalier,
-        //     nationality: DoFNationality.Aukema
-        // },
-        // {
-        //     name: 'fergal',
-        //     artists: [DoFArtist.Astra],
-        //     class: DoFClasses.Armour,
-        //     nationality: DoFNationality.Aukema
-        // },
-        // {
-        //     name: 'gadras',
-        //     artists: [DoFArtist.Astra],
-        //     class: DoFClasses.Armour,
-        //     nationality: DoFNationality.Aukema
-        // },
-        // // onduris
-        // {
-        //     name: 'truvane',
-        //     artists: [DoFArtist.Char],
-        //     class: DoFClasses.Hero,
-        //     nationality: DoFNationality.Aukema
-        // },
+        {
+            name: 'discan',
+            artists: [DoFArtist.Seph, DoFArtist.Astra],
+            class: '',
+            nationality: DoFNationality.Aukema,
+            chapter: '0',
+        },
+        {
+            name: 'cobbet',
+            artists: [DoFArtist.Astra],
+            class: DoFClasses.Brigand,
+            nationality: DoFNationality.Aukema,
+            chapter: '1',
+        },
+        {
+            name: 'darrick',
+            artists: [DoFArtist.Astra],
+            class: DoFClasses.Brigand,
+            nationality: DoFNationality.Aukema,
+            chapter: '2',
+        },
+        {
+            name: 'rankin',
+            artists: [DoFArtist.Astra, DoFArtist.Lumi],
+            class: DoFClasses.Mercenary,
+            nationality: DoFNationality.Aukema,
+            chapter: '3',
+        },
+        {
+            name: 'crispin',
+            artists: [DoFArtist.Astra, DoFArtist.Lumi],
+            class: DoFClasses.Archer,
+            nationality: DoFNationality.Aukema,
+            chapter: '3',
+        },
+        {
+            name: 'sorcha',
+            artists: [DoFArtist.Amelia],
+            class: '',
+            nationality: DoFNationality.Aukema,
+            chapter: '3',
+        },
+        {
+            name: 'ganter',
+            artists: [DoFArtist.Lumi],
+            class: DoFClasses.Cavalier,
+            nationality: DoFNationality.Aukema,
+            chapter: '4',
+        },
+        {
+            name: 'fergal',
+            artists: [DoFArtist.Astra],
+            class: DoFClasses.Armour,
+            nationality: DoFNationality.Aukema,
+            chapter: '5',
+        },
+        {
+            name: 'gadras',
+            artists: [DoFArtist.Astra],
+            class: DoFClasses.Armour,
+            nationality: DoFNationality.Aukema,
+            chapter: '6',
+        },
+        // onduris
+        {
+            name: 'truvane',
+            artists: [DoFArtist.Char],
+            class: DoFClasses.Hero,
+            nationality: DoFNationality.Aukema,
+            hidden: true,
+            chapter: '7B'
+        },
+        // other
+        {
+            name: 'farell',
+            artists: [DoFArtist.Amelia, DoFArtist.Astra, DoFArtist.TBA],
+            class: '',
+            nationality: DoFNationality.Aukema,
+            chapter: 'x'
+        },
     ],
-    npc: [],
-    generic: []
+    npc: [
+        {
+            name: 'armory',
+            displayName: 'Gaius',
+            artists: [DoFArtist.Amelia],
+            class: '',
+            nationality: DoFNationality.Unknown
+        },
+        {
+            name: 'vendor',
+            displayName: 'Shara',
+            artists: [DoFArtist.Amelia],
+            class: '',
+            nationality: DoFNationality.Unknown
+        },
+        {
+            name: 'secretshop',
+            displayName: 'Yue',
+            artists: [DoFArtist.Amelia],
+            class: '',
+            nationality: DoFNationality.Unknown
+        },
+        {
+            name: 'varkade',
+            artists: [DoFArtist.Astra, DoFArtist.Amelia],
+            class: '',
+            nationality: DoFNationality.Aukema,
+            chapter: '0'
+        },
+        {
+            name: 'dahlia',
+            artists: [DoFArtist.Pi],
+            class: '',
+            nationality: DoFNationality.Unknown,
+            chapter: '3'
+        },
+
+    ],
+    generic: [
+        {
+            name: 'mercenary',
+            artists: [DoFArtist.Lumi],
+            class: DoFClasses.Mercenary
+        },
+        {
+            name: 'mage',
+            artists: [DoFArtist.Astra],
+            class: DoFClasses.Mage
+        },
+        {
+            name: 'myrmidon',
+            artists: [DoFArtist.Amelia],
+            class: DoFClasses.Myrmidon
+        },
+        {
+            name: 'pirate',
+            artists: [DoFArtist.Lumi],
+            class: DoFClasses.Pirate
+        },
+        {
+            name: 'paladin',
+            artists: [DoFArtist.TBA, DoFArtist.Astra],
+            class: DoFClasses.Paladin
+        },
+        {
+            name: 'soldier',
+            artists: [DoFArtist.TBA, DoFArtist.Amelia],
+            class: DoFClasses.Soldier
+        },
+        {
+            name: 'bandit',
+            artists: [DoFArtist.Astra],
+            class: DoFClasses.Brigand
+        },
+        {
+            name: 'archer',
+            artists: [DoFArtist.Astra],
+            class: DoFClasses.Archer
+        },
+        {
+            name: 'pegasus',
+            displayName: 'Peg Rider',
+            artists: [DoFArtist.Astra],
+            class: DoFClasses.PegRider
+        },
+        {
+            name: 'boy',
+            artists: [DoFArtist.Astra],
+        },
+        {
+            name: 'girl',
+            artists: [DoFArtist.Amelia],
+        },
+        {
+            name: 'woman1',
+            artists: [DoFArtist.Amelia],
+        },
+        {
+            name: 'woman2',
+            artists: [DoFArtist.Amelia],
+        },
+        {
+            name: 'woman3',
+            artists: [DoFArtist.Amelia],
+        },
+        {
+            name: 'woman4',
+            artists: [DoFArtist.Amelia, DoFArtist.Lumi],
+        },
+        {
+            name: 'man1',
+            artists: [DoFArtist.TBA],
+        },
+        {
+            name: 'man2',
+            artists: [DoFArtist.Lumi, DoFArtist.Astra],
+        },
+        {
+            name: 'man3',
+            artists: [DoFArtist.Lumi, DoFArtist.Astra],
+        },
+        {
+            name: 'man4',
+            artists: [DoFArtist.Amelia],
+        },
+        {
+            name: 'oldman',
+            displayName: 'Old Man',
+            artists: [DoFArtist.Astra],
+        },
+    ]
 };

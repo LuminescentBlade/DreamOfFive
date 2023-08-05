@@ -44,6 +44,7 @@ export enum DoFClasses {
     Myrmidon = 'myrmidon',
     Pirate = 'pirate',
     Cavalier = 'cavalier',
+    Soldier = 'soldier',
     // promoted classes 
     Hero = 'hero',
     Bishop = 'bishop',
@@ -56,6 +57,9 @@ export enum DoFClasses {
     Warrior = 'warrior',
     Swordmaster = 'swordmaster',
     Berserker = 'berserker',
+    Paladin = 'paladin',
+    Halberdier = 'halberdier',
+    GreatKnight = 'great knight',
     //
     TBD = 'tbd'
     
