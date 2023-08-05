@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-npm run build
+NODE_ENV='gh' npm run build
 
 if [[ -d docs ]]; then
     rm -rf docs

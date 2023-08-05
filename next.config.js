@@ -5,8 +5,11 @@ const basePath = `/${repo}`
 
 const nextConfig = {
     output: 'export',
-    assetPrefix: assetPrefix,
-    basePath: basePath,
+}
+
+if(process.env.BUILD_SOURCE==='gh'){
+    nextConfig.assetPrefix = assetPrefix;
+    nextConfig.basePath =  basePath;
 }
 
 module.exports = nextConfig
