@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "export BUILD_CONFIG=vercel && next build",
+    "build:gh": "export BUILD_CONFIG=gh && next build",
     "start": "next start",
     "lint": "next lint",
-    "ghpages:build": "bash deploy.sh"
+    "ghpages": "bash deploy.sh"
   },
   "dependencies": {
     "@types/node": "20.4.7",

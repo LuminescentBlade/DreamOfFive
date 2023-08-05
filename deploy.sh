@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-export BUILD_CONFIG=gh && export BUILD_PATH="/DreamOfFive" && npm run build
+export BUILD_PATH="/DreamOfFive" && npm run build:gh
 
 if [[ -d docs ]]; then
     rm -rf docs
