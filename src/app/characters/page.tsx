@@ -2,7 +2,7 @@
 
 import UnitSheetSprite from '../../components/unit-sheet-sprite';
 import styles from './page.module.scss'
-import { DoFCharacters } from './../../config/characters.config'
+import { DoFCharacters } from '../../config/characters.config'
 import { IDoFUnit } from '@/src/models/interfaces';
 import { DoFArtist } from '@/src/models/enums';
 import { DoFArtistConfig } from '@/src/config/artists.config';
@@ -21,7 +21,7 @@ export default function UnitSheet() {
     const sections = Object.keys(DoFCharacters);
     const artists = Object.values(DoFArtist);
 
-    return (<div className={styles.base}>
+    return (<main className={styles.base}>
             {
                 // @ts-ignore
                 sections.filter(section => DoFCharacters[section].length).map((section) => (
@@ -49,5 +49,5 @@ export default function UnitSheet() {
                 }
             </ul>
         </section>
-    </div>);
+    </main>);
 }

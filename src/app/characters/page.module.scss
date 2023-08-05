@@ -4,8 +4,10 @@ $max-item-count: 12;
 $artist-size: 10px;
 $header-height: 60px;
 .base {
+  color: #fff;
   width: 100%;
   --dof-spritesheet-item-count: #{$max-item-count};
+  padding: var(--dof-content-padding);
   @for $i from $max-item-count through 1 {
     @media screen and (max-width: ($item-size * ($i + 1.5))) {
       --dof-spritesheet-item-count: #{$i};
@@ -15,6 +17,7 @@ $header-height: 60px;
     padding-left: 12px;
     line-height: $header-height;
     text-transform: capitalize;
+    letter-spacing: .1em;
   }
 }
 
@@ -38,9 +41,10 @@ $header-height: 60px;
   }
 }
 .credits{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    display: flex;
+    // grid-template-columns: auto;
     gap: 24px;
+    flex-wrap: wrap;
     list-style: none;
     padding: 24px;
     margin: 0;
