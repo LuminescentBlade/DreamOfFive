@@ -9,3 +9,7 @@ fi
 mkdir docs
 
 cp -a out/. docs
+cd docs
+grep -rli '_next' * | xargs -I@ sed -i '' 's/_next/next/g' @ 
+mv _next next
+
