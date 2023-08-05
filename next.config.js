@@ -8,7 +8,7 @@ const nextConfig = {
 }
 
 if(process.env.NODE_ENV==='gh'){
-    nextConfig.assetPrefix = assetPrefix;
+    // nextConfig.assetPrefix = assetPrefix;
     nextConfig.basePath =  basePath;
 }
 
