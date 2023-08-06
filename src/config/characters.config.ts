@@ -334,6 +334,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'sorcha',
+            fullName: 'sorcha farrell',
             artists: [DoFArtist.Amelia],
             class: '',
             nationality: DoFNationality.Aukema,
@@ -371,7 +372,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         // other
         {
-            name: 'farell',
+            name: 'farrell',
+            fullName: 'cuthbert farrell',
             artists: [DoFArtist.Amelia, DoFArtist.Astra, DoFArtist.TBA],
             class: '',
             nationality: DoFNationality.Aukema,
@@ -428,7 +430,13 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             nationality: DoFNationality.Aukema,
             chapter: '6'
         },
-
+        {
+            name: 'adalheid',
+            artists: [DoFArtist.Lumi, DoFArtist.AK],
+            class: '',
+            nationality: DoFNationality.Aukema,
+            chapter: '7B'
+        }
     ],
     generic: [
         {
