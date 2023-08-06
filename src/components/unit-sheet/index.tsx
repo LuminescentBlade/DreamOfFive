@@ -8,8 +8,8 @@ import { DoFArtist } from '@/src/models/enums';
 import { DoFArtistConfig } from '@/src/config/artists.config';
 
 export default function UnitSheet() {
-     const isProd = (process.env.NODE_ENV === 'production');
-     if (typeof window !== "undefined") {
+    const isProd = (process.env.NODE_ENV === 'production');
+    if (typeof window !== "undefined") {
         Object.values(DoFArtist).forEach(key => {
             // @ts-ignore
             setVariable(`--dof-artist-${key}`, DoFArtistConfig[key].color);
@@ -21,7 +21,7 @@ export default function UnitSheet() {
     const sections = Object.keys(DoFCharacters);
     const artists = Object.values(DoFArtist);
 
-    return (<div className={styles.base}>
+    return (<div id='unit-sheet' className={styles.base}>
             {
                 // @ts-ignore
                 sections.filter(section => DoFCharacters[section].length).map((section) => (

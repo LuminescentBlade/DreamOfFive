@@ -1,7 +1,4 @@
-'use client';
-
 import { IDoFUnit } from "@/src/models/interfaces";
-import Image from 'next/image'
 
 import styles from './index.module.scss';
 import { DoFArtistConfig } from "@/src/config/artists.config";

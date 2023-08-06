@@ -3,5 +3,11 @@
   padding: var(--dof-content-padding);
 }
 
-
-
+.export {
+  display: block;
+  margin: 12px auto;
+  height: 40px;
+  &:hover{
+    cursor: pointer;
+  }
+}
