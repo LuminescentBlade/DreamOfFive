@@ -187,7 +187,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             hidden: true,
         },
         {
-            name: 'river',
+            name: 'riva',
             chapter: 'xA',
             artists: [DoFArtist.Amelia, DoFArtist.Lumi],
             class: DoFClasses.Warlock,
@@ -247,9 +247,9 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             hidden: true
         },
         {
-            name: 'conchur',
+            name: 'conleth',
             chapter: '8B',
-            artists: [DoFArtist.Astra, DoFArtist.Amelia],
+            artists: [DoFArtist.Lumi],
             class: DoFClasses.Skirmisher,
             nationality: DoFNationality.Aukema,
             hidden: true
@@ -321,7 +321,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             hidden: true,
         },
         {
-            name: 'brielle',
+            name: 'brill',
             chapter: 'xB',
             artists: [DoFArtist.Amelia],
             class: DoFClasses.Sniper,
@@ -387,7 +387,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             hidden: true,
         },
         {
-            name: 'claire',
+            name: 'claudiya',
             chapter: 'x',
             artists: [DoFArtist.Amelia],
             class: '',
