@@ -94,7 +94,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             name: 'cothiva',
             chapter: '5',
             artists: [DoFArtist.Astra],
-            nationality: DoFNationality.Unknown,
+            nationality: DoFNationality.Aukema,
             class: DoFClasses.Adept
         },
         {
@@ -128,15 +128,21 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             nationality: DoFNationality.Vishara,
             hidden: true,
         },
-        // seren
+        {
+            name: 'seren',
+            chapter: 'xA',
+            artists: [DoFArtist.Amelia, DoFArtist.Astra],
+            class: DoFClasses.Soldier,
+            nationality: DoFNationality.Musain,
+            hidden: true,
+        },
         // adrian
         {
-            name: 'annelise',
-            displayName: 'Annelise',
+            name: 'adrian',
             chapter: 'xA',
             artists: [DoFArtist.Amelia, DoFArtist.Astra, DoFArtist.Lumi],
-            class: DoFClasses.PegRider,
-            nationality: DoFNationality.Svanhild,
+            class: DoFClasses.Bard,
+            nationality: DoFNationality.Musain,
             hidden: true,
         },
         {
@@ -163,7 +169,55 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             nationality: DoFNationality.Musain,
             hidden: true,
         },
-        // river
+        {
+            name: 'franceza',
+            chapter: 'xA',
+            artists: [DoFArtist.Amelia],
+            class: DoFClasses.Archer,
+            nationality: DoFNationality.Musain,
+            hidden: true,
+        },
+        {
+            name: 'annelise',
+            fullName: 'Annelise',
+            chapter: 'xA',
+            artists: [DoFArtist.Amelia, DoFArtist.Astra, DoFArtist.Lumi],
+            class: DoFClasses.PegRider,
+            nationality: DoFNationality.Svanhild,
+            hidden: true,
+        },
+        {
+            name: 'river',
+            chapter: 'xA',
+            artists: [DoFArtist.Amelia, DoFArtist.Lumi],
+            class: DoFClasses.Warlock,
+            nationality: DoFNationality.Musain,
+            hidden: true,
+        },
+        {
+            name: 'meliza',
+            chapter: 'xA',
+            artists: [DoFArtist.Astra],
+            class: DoFClasses.Mage,
+            nationality: DoFNationality.Musain,
+            hidden: true,
+        },
+        {
+            name: 'ceriza',
+            chapter: 'xA',
+            artists: [DoFArtist.AK],
+            class: DoFClasses.Sage,
+            nationality: DoFNationality.Musain,
+            hidden: true,
+        },
+        {
+            name: 'stolypin', 
+            chapter: 'xA',
+            artists: [DoFArtist.Astra, DoFArtist.Amelia, DoFArtist.Lumi],
+            class: DoFClasses.Harrier,
+            nationality: DoFNationality.Musain,
+            hidden: true,
+        },
         //
         // Onduris Route
         {
@@ -174,16 +228,36 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             class: DoFClasses.Thief,
             hidden: true,
         },
-        // {
-        //     name: 'conchur',
-        //     joinChapter: 'xB',
-
-        // },
+       
         {
             name: 'se-mori',
             displayName: 'se\'Mori',
-            chapter: 'xB',
+            chapter: '8B',
             artists: [DoFArtist.Amelia, DoFArtist.Astra],
+            class: '',
+            nationality: DoFNationality.Onduris,
+            hidden: true,
+        },
+        {
+            name: 'sileth',
+            chapter: '8B',
+            artists: [DoFArtist.Astra],
+            class: DoFClasses.Mage,
+            nationality: DoFNationality.Onduris,
+            hidden: true
+        },
+        {
+            name: 'conchur',
+            chapter: '8B',
+            artists: [DoFArtist.Astra, DoFArtist.Amelia],
+            class: DoFClasses.Skirmisher,
+            nationality: DoFNationality.Aukema,
+            hidden: true
+        },
+        {
+            name: 'kahn',
+            chapter: '9B',
+            artists: [DoFArtist.Astra, DoFArtist.Amelia, DoFArtist.Lumi],
             class: '',
             nationality: DoFNationality.Onduris,
             hidden: true,
@@ -204,14 +278,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             nationality: DoFNationality.Vishara,
             hidden: true,
         },
-        {
-            name: 'kanus',
-            chapter: 'xB',
-            artists: [DoFArtist.Astra, DoFArtist.Amelia],
-            class: '',
-            nationality: DoFNationality.Onduris,
-            hidden: true,
-        },
+       
         {
             name: 'nikita',
             chapter: 'xB',
@@ -221,8 +288,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             hidden: true,
         },
         {
-            name: 'balder',
-            chapter: 'xB',
+            name: 'baldur',
+            chapter: '10B',
             artists: [DoFArtist.Lumi],
             class: DoFClasses.Pirate,
             nationality: DoFNationality.Onduris,
@@ -230,7 +297,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'leda',
-            chapter: 'xB',
+            chapter: '10B',
             artists: [DoFArtist.Astra, DoFArtist.Amelia],
             class: DoFClasses.Dancer,
             nationality: DoFNationality.Onduris,
@@ -238,7 +305,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'nari',
-            chapter: 'xB',
+            chapter: '10B',
             artists: [DoFArtist.Lumi],
             class: DoFClasses.Mercenary,
             nationality: DoFNationality.Onduris,
@@ -253,7 +320,23 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             nationality: DoFNationality.Onduris,
             hidden: true,
         },
+        {
+            name: 'brielle',
+            chapter: 'xB',
+            artists: [DoFArtist.Amelia],
+            class: DoFClasses.Sniper,
+            nationality: DoFNationality.Unknown,
+            hidden: true,
+        },
         // Postskip
+        {
+            name: 'saskia',
+            chapter: '',
+            artists: [DoFArtist.Astra],
+            class: '',
+            nationality: DoFNationality.Unknown,
+            hidden: true,
+        },
         {
             name: 'leofric',
             chapter: '17',
@@ -293,6 +376,38 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             artists: [DoFArtist.Amelia],
             class: '',
             nationality: DoFNationality.Aukema,
+            hidden: true,
+        },
+        {
+            name: 'kaien',
+            chapter: 'x',
+            artists: [DoFArtist.Amelia],
+            class: '',
+            nationality: DoFNationality.Unknown,
+            hidden: true,
+        },
+        {
+            name: 'claire',
+            chapter: 'x',
+            artists: [DoFArtist.Amelia],
+            class: '',
+            nationality: DoFNationality.Unknown,
+            hidden: true,
+        },
+        {
+            name: 'vincent',
+            chapter: 'x',
+            artists: [DoFArtist.Amelia, DoFArtist.Astra],
+            class: '',
+            nationality: DoFNationality.Unknown,
+            hidden: true,
+        },
+        {
+            name: 'volund',
+            chapter: 'x',
+            artists: [DoFArtist.Lumi],
+            class: '',
+            nationality: DoFNationality.Svanhild,
             hidden: true,
         }
     ],
@@ -370,6 +485,87 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             hidden: true,
             chapter: '7B'
         },
+        {
+            name: 'droon',
+            artists: [DoFArtist.Astra],
+            class: DoFClasses.Swordmaster,
+            nationality: DoFNationality.Onduris,
+            hidden: true,
+            chapter: '8B'
+        },
+        {
+            name: 'am-roan',
+            displayName: 'am\'Roan',
+            artists: [DoFArtist.Astra],
+            class: DoFClasses.Ranger,
+            nationality: DoFNationality.Onduris,
+            hidden: true,
+            chapter: '9B'
+        },
+          {
+            name: 'bede',
+            artists: [DoFArtist.Astra,DoFArtist.Xiltas],
+            class: DoFClasses.Harrier,
+            nationality: DoFNationality.Aukema,
+            hidden: true,
+            chapter: '10B'
+        },
+        {
+            name: 'byor-dal',
+            displayName: 'byor\'Dal',
+            artists: [DoFArtist.Lumi, DoFArtist.Astra],
+            class: DoFClasses.Hero,
+            nationality: DoFNationality.Onduris,
+            hidden: true,
+            chapter: '11B'
+        },
+        {
+            name: 'sel-seir',
+            displayName: 'sel\'Seir',
+            artists: [DoFArtist.Lumi, DoFArtist.Amelia],
+            class: DoFClasses.Swordmaster,
+            nationality: DoFNationality.Onduris,
+            hidden: true,
+            chapter: ''
+        },
+        {
+            name: 'mei-doru',
+            displayName: 'mei\'Doru',
+            artists: [DoFArtist.Astra],
+            class: DoFClasses.Swordmaster,
+            nationality: DoFNationality.Onduris,
+            hidden: true,
+            chapter: ''
+        },
+        {
+            name: 'ka-danos',
+            displayName: 'ka\'Danos',
+            artists: [DoFArtist.Lumi],
+            class: DoFClasses.Hero,
+            nationality: DoFNationality.Onduris,
+            hidden: true,
+            chapter: ''
+        },
+        {
+            name: 'a-vosa',
+            displayName: 'a\'Vosa',
+            artists: [DoFArtist.Char],
+            class: DoFClasses.Hero,
+            nationality: DoFNationality.Onduris,
+            hidden: true,
+            chapter: ''
+        },
+        {
+            name: 'jin-sei',
+            displayName: 'jin\'Sei',
+            artists: [DoFArtist.Astra],
+            class: DoFClasses.Hero,
+            nationality: DoFNationality.Onduris,
+            hidden: true,
+            chapter: ''
+        },
+
+        
         // other
         {
             name: 'farrell',
@@ -436,6 +632,14 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             class: '',
             nationality: DoFNationality.Aukema,
             chapter: '7B'
+        },
+        {
+            name: 'mir-katal',
+            displayName: 'mir\'Katal',
+            artists: [DoFArtist.Lumi, DoFArtist.Astra],
+            class: DoFClasses.Swordmaster,
+            nationality: DoFNationality.Onduris,
+            chapter: '9B'
         }
     ],
     generic: [
