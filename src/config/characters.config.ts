@@ -414,6 +414,20 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             nationality: DoFNationality.Unknown,
             chapter: '3'
         },
+        {
+            name: 'sevira',
+            artists: [DoFArtist.Amelia],
+            class: '',
+            nationality: DoFNationality.Aukema,
+            chapter: '6'
+        },
+        {
+            name: 'wyclif',
+            artists: [DoFArtist.Lumi, DoFArtist.Astra, DoFArtist.TBA],
+            class: '',
+            nationality: DoFNationality.Aukema,
+            chapter: '6'
+        },
 
     ],
     generic: [
