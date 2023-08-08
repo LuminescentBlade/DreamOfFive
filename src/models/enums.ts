@@ -1,3 +1,16 @@
+export enum DoFRoute {
+    Musain = 'musain',
+    Onduris = 'onduris',
+    Both = 'both'
+};
+
+export enum DoFUnitState {
+    Player = 'player',
+    Enemy = 'enemy',
+    NPC = 'npc',
+    Generic = 'generic'
+};
+
 export enum DoFArtist {
     Lumi = 'lumi',
     Astra = 'astra',
@@ -9,7 +22,7 @@ export enum DoFArtist {
     Pi = 'pi',
     TBA = 'tba',
     Xiltas = 'xiltas'
-}
+};
 
 export enum DoFNationality {
     Aukema = 'aukema',
@@ -18,7 +31,7 @@ export enum DoFNationality {
     Vishara = 'vishara',
     Svanhild = 'svanhild',
     Unknown = 'unknown'
-}
+};
 
 export enum DoFClasses {
     // prf classes
@@ -64,5 +77,5 @@ export enum DoFClasses {
     Ranger = 'ranger',
     //
     TBD = 'tbd'
-    
-}
+
+};

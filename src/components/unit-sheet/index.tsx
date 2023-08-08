@@ -2,26 +2,23 @@
 
 import UnitSheetSprite from '../../components/unit-sheet-sprite';
 import styles from './index.module.scss'
-import { DoFCharacters } from '../../config/characters.config'
-import { IDoFUnit } from '@/src/models/interfaces';
+import { IDoFCharacterRenderer, IDoFRenderUnit, IDoFUnit } from '@/src/models/interfaces';
 import { DoFArtist } from '@/src/models/enums';
 import { DoFArtistConfig } from '@/src/config/artists.config';
 
-export default function UnitSheet({useProd}: {useProd: boolean}) {
-    const sections = Object.keys(DoFCharacters);
+export default function UnitSheet({data}: {data: IDoFCharacterRenderer}) {
+    const sections = Object.keys(data);
     const artists = Object.values(DoFArtist);
 
     return (<div id='unit-sheet' className={styles.base}>
         {
             // @ts-ignore
-            sections.filter(section => DoFCharacters[section].length).map((section) => (
+            sections.filter(section => data[section].length).map((section) => (
                 <section key={section} className={`${styles.container} ${styles.spritesheet}`}>
                     <h2>{section}</h2>
                     {
                         // @ts-ignore
-                        DoFCharacters[section]
-                            .filter((character: IDoFUnit) => !character.hidden || !useProd)
-                            .map((character: IDoFUnit) => <UnitSheetSprite key={character.name} type={section} characterDef={character} />)
+                        data[section].map((character: IDoFRenderUnit) => <UnitSheetSprite key={character.name} type={section} characterDef={character} />)
                     }
                 </section>
             ))}
