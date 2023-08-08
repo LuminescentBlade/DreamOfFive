@@ -1,4 +1,4 @@
-import { DoFArtist, DoFNationality } from "./enums";
+import { DoFArtist, DoFNationality, DoFUnitState } from "./enums";
 
 export interface IDoFUnit {
     name: string;
@@ -35,7 +35,13 @@ export interface IDoFRenderUnit extends IDoFUnit{
     path: string;
     altPaths?: {
         [key: string]: string;
-    }
+    },
+    conditionalName?: { // used over displayName
+        player?: string;
+        enemy?: string;
+        npc?: string;
+    },
+    renderOrder: number
 }
 export interface IDoFCharacterConfigs {
     characters: IDoFCharacter[];
@@ -44,10 +50,10 @@ export interface IDoFCharacterConfigs {
 };
 
 export interface IDoFCharacterRenderer {
-    player: IDoFRenderUnit[];
-    enemy: IDoFRenderUnit[];
-    npc: IDoFRenderUnit[];
-    generics: IDoFRenderUnit[]
+    [DoFUnitState.Player]: IDoFRenderUnit[];
+    [DoFUnitState.Enemy]: IDoFRenderUnit[];
+    [DoFUnitState.NPC]: IDoFRenderUnit[];
+    [DoFUnitState.Generic]: IDoFRenderUnit[]
 };
 
 

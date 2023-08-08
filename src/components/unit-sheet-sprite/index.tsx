@@ -1,9 +1,9 @@
-import { IDoFUnit } from "@/src/models/interfaces";
+import { IDoFRenderUnit, IDoFUnit } from "@/src/models/interfaces";
 
 import styles from './index.module.scss';
 import { DoFArtistConfig } from "@/src/config/artists.config";
-export default function UnitSheetSprite({ type, characterDef }: { type: string, characterDef: IDoFUnit }) {
-    const url = `/mugs/${type}/${characterDef.name}.png`;
+import { DoFUnitState } from "@/src/models/enums";
+export default function UnitSheetSprite({ type, characterDef }: { type: DoFUnitState, characterDef: IDoFRenderUnit }) {
     return (<div className={styles.wrapper}>
         <div className={`
             ${styles.name} 
@@ -14,19 +14,21 @@ export default function UnitSheetSprite({ type, characterDef }: { type: string, 
                 <div className={styles.data}>
                     <div className={styles.label}>Artists:</div>
                     <ul>
-                    {characterDef.artists.map(artist => (
-                        <li key={artist}>{DoFArtistConfig[artist].name}</li>
-                    ))}
+                        {characterDef.artists.map(artist => (
+                            <li key={artist}>{DoFArtistConfig[artist].name}</li>
+                        ))}
                     </ul>
                 </div>
                 {characterDef.artists.map(artist => (
                     <div key={artist} className={styles.artist} style={{ backgroundColor: `var(--dof-artist-${artist})` }}></div>
                 ))}
             </button>
-            {characterDef.displayName || characterDef.name}
+            { // @ts-ignore
+                (characterDef.conditionalName && characterDef.conditionalName[type]) ? characterDef.conditionalName[type] : (characterDef.displayName || characterDef.name)
+            }
         </div>
         <div className={styles.sprite}>
-            <img src={url} />
+            <img src={characterDef.path} />
         </div>
     </div>);
 }

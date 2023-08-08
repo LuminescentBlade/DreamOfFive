@@ -546,15 +546,6 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             }
         },
         {
-            name: 'discan', // change to new discan mug
-            artists: [DoFArtist.Seph, DoFArtist.Astra],
-            class: '',
-            nationality: DoFNationality.Aukema,
-            allRoute: {
-                player: 99
-            }
-        },
-        {
             name: 'volund',
             artists: [DoFArtist.Lumi],
             class: '',
@@ -569,6 +560,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             class: '',
             nationality: DoFNationality.Aukema,
             allRoute: {
+                player: 99,
                 enemy: 0
             }
         },
@@ -779,6 +771,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             class: '',
             nationality: DoFNationality.Aukema,
             allRoute: {
+                player: 99,
                 npc: 7 
             }
         },
