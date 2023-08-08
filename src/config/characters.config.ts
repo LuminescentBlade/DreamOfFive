@@ -672,7 +672,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             class: DoFClasses.Harrier,
             nationality: DoFNationality.Aukema,
             onduris: {
-                enemy: 10
+                enemy: 10,
+                npc: 9
             }
         },
 
@@ -683,7 +684,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             class: DoFClasses.Swordmaster,
             nationality: DoFNationality.Onduris,
             onduris: {
-                enemy: 12
+                enemy: 12,
+                npc: 9
             }
         },
         {
@@ -693,7 +695,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             class: DoFClasses.Swordmaster,
             nationality: DoFNationality.Onduris,
             onduris: {
-                enemy: 12
+                enemy: 12,
+                npc: 9
             }
         },
         {
@@ -703,7 +706,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             class: DoFClasses.Hero,
             nationality: DoFNationality.Onduris,
             onduris: {
-                enemy: 12
+                enemy: 12,
+                npc: 9
             }
         },
         {
@@ -713,7 +717,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             class: DoFClasses.Hero,
             nationality: DoFNationality.Onduris,
             onduris: {
-                enemy: 13
+                enemy: 13,
+                npc: 9
             }
         },
         {
@@ -723,7 +728,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             class: DoFClasses.Hero,
             nationality: DoFNationality.Onduris,
             onduris: {
-                enemy: 14
+                enemy: 14,
+                npc: 9
             }
         },
         // other

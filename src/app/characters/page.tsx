@@ -11,7 +11,7 @@ import { DoFChapters } from '@/src/config/chapters.config';
 import OptionSelector from '@/src/components/option-selector';
 
 const defaultRenderValues = {
-    prod: { chapter: 6, limit: 10 },
+    prod: { chapter: 6, limit: 10.5 },
     local: { chapter: 99 }
 };
 
