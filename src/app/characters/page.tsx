@@ -151,7 +151,6 @@ function isShowingLocal() {
 }
 
 export default function CharacterPage() {
-    console.log('rerendering');
     const [unitSheetData, updateData] = useState(cachedData || getData());
 
     if (typeof window !== "undefined") {
