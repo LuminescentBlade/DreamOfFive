@@ -9,7 +9,7 @@ import { IDoFCharacter, IDoFCharacterRenderer, IDoFRenderUnit, IDoFUnit } from '
 import { DoFCharacters } from '@/src/config/characters.config';
 
 const defaultRenderValues = {
-    prod: { chapter: 10, route: DoFRoute.Onduris },
+    prod: { chapter: 6, route: DoFRoute.Onduris },
     local: { chapter: 99, route: DoFRoute.Both }
 };
 // const imageRenderCache = new Map<string, HTMLImageElement>();
