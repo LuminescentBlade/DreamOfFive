@@ -178,7 +178,6 @@ export default function CharacterPage() {
         }
         chapterLimit = newChapterLimit;
         update();
-        console.log(chapterLimit);
     }
 
     function toggleProd() {
