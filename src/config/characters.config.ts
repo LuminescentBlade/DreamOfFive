@@ -239,7 +239,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'sileth',
             chapter: '8B',
-            artists: [DoFArtist.Astra],
+            artists: [DoFArtist.Astra, DoFArtist.Lumi],
             class: DoFClasses.Mage,
             nationality: DoFNationality.Onduris
         },
@@ -319,7 +319,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'saskia',
             chapter: '',
-            artists: [DoFArtist.Astra],
+            artists: [DoFArtist.Astra, DoFArtist.Lumi],
             class: '',
             nationality: DoFNationality.Unknown,
             hidden: true,
