@@ -8,9 +8,10 @@ import { useState } from 'react';
 import { IDoFCharacter, IDoFCharacterRenderer, IDoFRenderUnit, IDoFUnit } from '@/src/models/interfaces';
 import { DoFCharacters } from '@/src/config/characters.config';
 import { DoFChapters } from '@/src/config/chapters.config';
+import OptionSelector from '@/src/components/option-selector';
 
 const defaultRenderValues = {
-    prod: { chapter: 6, limit: 14 },
+    prod: { chapter: 6, limit: 10 },
     local: { chapter: 99 }
 };
 
@@ -168,7 +169,7 @@ export default function CharacterPage() {
     function changeRoute(route: DoFRoute) {
         displayRoute = route;
         let newChapterLimit = chapterLimit;
-        while (newChapterLimit > 0 && displayRoute !== DoFRoute.Both && 
+        while (newChapterLimit > 0 && displayRoute !== DoFRoute.Both &&
             (DoFChapters[newChapterLimit] == null ||
                 (DoFChapters[newChapterLimit].route != null && DoFChapters[chapterLimit].route !== displayRoute)
             )
@@ -187,7 +188,7 @@ export default function CharacterPage() {
         update();
     }
 
-    function chapterSelect(value:string){
+    function chapterSelect(value: string) {
         const chapter = parseInt(value);
         chapterLimit = chapter;
         update();
@@ -195,39 +196,36 @@ export default function CharacterPage() {
 
     return (
         <main className={styles.base}>
-            {
-                !isProd ? <div style={{ width: 'fit-content', margin: '12px auto' }}>
-                    Displaying {isShowingLocal()? 'Local': 'Prod'} Values
-                    <div>
+            <h2>Dream of Five Character Sheet</h2>
+            <div className={styles.controls}>
+                <div className={styles.control}>
+                    <label>Route Select</label>
+                    <OptionSelector options={Object.values(DoFRoute)} selection={displayRoute} onSelect={changeRoute} />
+                </div>
+                <div className={styles.control}>
+                    <label>Chapter Select</label>
+                    <select name="chapter" onChange={(event) => { chapterSelect(event.target.value) }} defaultValue={chapterLimit}>
                         {
-                            Object.values(DoFRoute).map(value => (
-                                <div key={value}>
-                                    <input type="radio" value={value} name="routeSelection" defaultChecked={displayRoute === value} onChange={() => { changeRoute(value) }} />
-                                    <label>{value}</label>
-                                </div>
-                            ))
+                            chapterSelection.map(chapter => {
+                                if (chapter.route && chapter.route !== displayRoute && displayRoute !== DoFRoute.Both) {
+                                    return ''
+                                } else {
+                                    return <option key={chapter.value} value={chapter.value}>
+                                        {chapter.title || chapter.value} {displayRoute === DoFRoute.Both && chapter.route ? `(${chapter.route})` : ''}
+                                    </option>
+                                }
+                            })
                         }
-                    </div>
-                    <div>
-                        <label>chapter select</label>
-                        <select name="chapter" onChange={(event)=>{chapterSelect(event.target.value)}}>
-                            {
-                                chapterSelection.map(chapter => {
-                                    if (chapter.route && chapter.route !== displayRoute && displayRoute !== DoFRoute.Both) {
-                                        return ''
-                                    } else {
-                                        return <option key={chapter.value} selected={chapter.value === chapterLimit} value={chapter.value}>
-                                            {chapter.title || chapter.value} {displayRoute === DoFRoute.Both && chapter.route? `(${chapter.route})`:''}
-                                        </option>
-                                    }
-                                })
-                            }
-                        </select>
-                    </div>
+                    </select>
+                </div>
+            </div>
+            <UnitSheet data={unitSheetData} />
+            {
+                !isProd ? <div style={{ width: 'fit-content', margin: '12px auto', textAlign: 'center' }}>
+                    <p>Displaying {isShowingLocal() ? 'Local' : 'Prod'} Values</p>
                     <button style={{ padding: '12px', height: '40px' }} onClick={toggleProd}>Toggle Production Sheet</button>
                 </div> : ""
             }
-            <UnitSheet data={unitSheetData} />
         </main>
     );
 }

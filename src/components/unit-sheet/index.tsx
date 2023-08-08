@@ -2,7 +2,6 @@
 
 import UnitSheetSprite from '../../components/unit-sheet-sprite';
 import styles from './index.module.scss'
-import { DoFCharacters } from '../../config/characters.config'
 import { IDoFCharacterRenderer, IDoFRenderUnit, IDoFUnit } from '@/src/models/interfaces';
 import { DoFArtist } from '@/src/models/enums';
 import { DoFArtistConfig } from '@/src/config/artists.config';

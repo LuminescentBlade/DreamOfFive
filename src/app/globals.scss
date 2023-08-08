@@ -8,12 +8,31 @@
 }
 
 :root {
+  --dof-color1: #11a5ca;
+  --dof-color2: #0d3754;
+  --dof-color3: #ffbd77;
+  --dof-color4: #c08811;
+  --dof-color5: #ffc64b;
   --dof-kq-font: "Knights Quest", serif;
   --dof-header-bg-color: #fff;
-  --dof-header-border: #ffc64b;
-  --dof-header-font-color: #c08811;
+  --dof-header-border: var(--dof-color5);
+  --dof-header-font-color: var(--dof-color4);
   --dof-standard-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.5);
   --dof-content-padding: 24px;
+  --dof-input-height: 40px;
+  --dof-input-width: 200px;
+  --dof-input-border: 1px solid var(--dof-color2);
+  --dof-input-border-radius: 5px;
+
+  --lb-option-selector-bg-color: var(--dof-color1);
+  --lb-option-selector-font-color: var(--dof-color2);
+  --lb-option-select-bg-color-s: var(--dof-color2);
+  --lb-option-selector-font-color-s: var(--dof-color3);
+  --lb-option-selector-separator: var(--dof-color2);
+  --lb-option-select-height: var(--dof-input-height);
+  --lb-option-select-width: var(--dof-input-width);
+  --lb-option-select-border: var(--dof-input-border);
+  --lb-option-select-border-radius: var(--dof-input-border-radius);
 }
 
 // @media (prefers-color-scheme: dark) {
@@ -72,7 +91,7 @@ header {
   padding: 12px 24px;
   color: var(--dof-header-font-color);
   box-shadow: var(--dof-standard-shadow);
-  a{
+  a {
     margin-right: 12px;
   }
 }
@@ -85,4 +104,13 @@ h1 {
 h2 {
   font-size: 2.8rem;
   font-family: var(--dof-kq-font);
+}
+
+input, select{
+  border: var(--dof-input-border);
+  color: var(--dof-color2);
+  height: var(--dof-input-height);
+  width: var(--dof-input-width);
+  padding: 0 12px;
+  border-radius: var(--dof-input-border-radius);
 }
