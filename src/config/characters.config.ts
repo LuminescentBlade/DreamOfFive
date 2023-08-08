@@ -400,7 +400,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             class: '',
             nationality: DoFNationality.Onduris,
             onduris: {
-                player: 11,
+                player: 10.5,
                 enemy: 10
             }
         },
