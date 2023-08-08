@@ -196,7 +196,7 @@ export default function CharacterPage() {
 
     return (
         <main className={styles.base}>
-            <h2>Dream of Five Character Sheet</h2>
+            <h1>Dream of Five Character Sheet</h1>
             <div className={styles.controls}>
                 <div className={styles.control}>
                     <label>Route Select</label>
