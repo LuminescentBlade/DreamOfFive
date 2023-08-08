@@ -7,16 +7,22 @@ import { DoFArtistConfig } from '@/src/config/artists.config';
 import { useState } from 'react';
 import { IDoFCharacter, IDoFCharacterRenderer, IDoFRenderUnit, IDoFUnit } from '@/src/models/interfaces';
 import { DoFCharacters } from '@/src/config/characters.config';
+import { DoFChapters } from '@/src/config/chapters.config';
 
 const defaultRenderValues = {
-    prod: { chapter: 6, route: DoFRoute.Onduris },
-    local: { chapter: 99, route: DoFRoute.Both }
+    prod: { chapter: 6, limit: 14 },
+    local: { chapter: 99 }
 };
+
+const chapterOptionsLocal = Object.values(DoFChapters).sort((a, b) => a.value - b.value);
+const chapterOptionsProd = chapterOptionsLocal.filter(chapter => chapter.value <= defaultRenderValues.prod.limit);
+
 // const imageRenderCache = new Map<string, HTMLImageElement>();
 const isProd = (process.env.NODE_ENV === 'production');
-let useProd = false;
+let useProdOnLocal = false;
 let cachedData: IDoFCharacterRenderer; // we will definitely switch to redux after this
-let { chapter: chapterLimit, route: displayRoute } = setDisplayValues();
+let displayRoute = isShowingLocal() ? DoFRoute.Both : DoFRoute.Onduris; // default value
+let { chapter: chapterLimit, chapterSelection } = setDisplayValues();
 const { shopkeepers, generics } = cacheStaticUnits();
 
 function cacheStaticUnits() {
@@ -26,7 +32,7 @@ function cacheStaticUnits() {
             // const img = new Image();
             // img.src = path;
             // imageRenderCache.set(item.name, img);
-            return ({ ...item, path, renderOrder: 999 })
+            return ({ ...item, path, renderOrder: 99 })
         });
     };
     const shopkeepers: IDoFRenderUnit[] = cacheItem(DoFCharacters.shopkeepers, 'shopkeepers');
@@ -37,7 +43,7 @@ function cacheStaticUnits() {
 
 function getData() {
     const config = parseCharacters(chapterLimit, displayRoute);
-    const sort = (items: IDoFRenderUnit[])=>items.sort((a,b)=>a.renderOrder - b.renderOrder);
+    const sort = (items: IDoFRenderUnit[]) => items.sort((a, b) => a.renderOrder - b.renderOrder);
     return {
         player: sort(config.player),
         enemy: sort(config.enemy),
@@ -130,18 +136,22 @@ function getPath(type: string, name: string) {
 }
 
 function setDisplayValues() {
-    if (!isProd && !useProd) {
-        return { chapter: defaultRenderValues.local.chapter, route: defaultRenderValues.local.route };
+    if (isShowingLocal()) {
+        return { chapter: defaultRenderValues.local.chapter, chapterSelection: chapterOptionsLocal };
     }
-    return { chapter: defaultRenderValues.prod.chapter, route: defaultRenderValues.prod.route };
+    return { chapter: defaultRenderValues.prod.chapter, chapterSelection: chapterOptionsProd };
 }
 
 function setVariable(variable: string, value: string) {
     document.documentElement.style.setProperty(variable, value);
 }
 
+function isShowingLocal() {
+    return !isProd && !useProdOnLocal;
+}
 
 export default function CharacterPage() {
+    console.log('rerendering');
     const [unitSheetData, updateData] = useState(cachedData || getData());
 
     if (typeof window !== "undefined") {
@@ -151,23 +161,74 @@ export default function CharacterPage() {
         });
     }
 
-    function toggleProd() {
-        useProd = !useProd;
-        const displayValues = setDisplayValues();
-        chapterLimit = displayValues.chapter;
-        displayRoute = displayValues.route;
+    function update() {
         cachedData = getData();
         updateData(cachedData);
     }
 
+    function changeRoute(route: DoFRoute) {
+        displayRoute = route;
+        let newChapterLimit = chapterLimit;
+        while (newChapterLimit > 0 && displayRoute !== DoFRoute.Both && 
+            (DoFChapters[newChapterLimit] == null ||
+                (DoFChapters[newChapterLimit].route != null && DoFChapters[chapterLimit].route !== displayRoute)
+            )
+        ) {
+            newChapterLimit -= .5;
+        }
+        chapterLimit = newChapterLimit;
+        update();
+    }
+
+    function toggleProd() {
+        useProdOnLocal = !useProdOnLocal;
+        const displayValues = setDisplayValues();
+        chapterLimit = Math.min(displayValues.chapter, chapterLimit);
+        chapterSelection = displayValues.chapterSelection;
+        update();
+    }
+
+    function chapterSelect(value:string){
+        const chapter = parseInt(value);
+        chapterLimit = chapter;
+        update();
+    }
+
     return (
         <main className={styles.base}>
-            <UnitSheet data={unitSheetData} />
             {
                 !isProd ? <div style={{ width: 'fit-content', margin: '12px auto' }}>
+                    Displaying {isShowingLocal()? 'Local': 'Prod'} Values
+                    <div>
+                        {
+                            Object.values(DoFRoute).map(value => (
+                                <div key={value}>
+                                    <input type="radio" value={value} name="routeSelection" defaultChecked={displayRoute === value} onChange={() => { changeRoute(value) }} />
+                                    <label>{value}</label>
+                                </div>
+                            ))
+                        }
+                    </div>
+                    <div>
+                        <label>chapter select</label>
+                        <select name="chapter" onChange={(event)=>{chapterSelect(event.target.value)}}>
+                            {
+                                chapterSelection.map(chapter => {
+                                    if (chapter.route && chapter.route !== displayRoute && displayRoute !== DoFRoute.Both) {
+                                        return ''
+                                    } else {
+                                        return <option key={chapter.value} selected={chapter.value === chapterLimit} value={chapter.value}>
+                                            {chapter.title || chapter.value} {displayRoute === DoFRoute.Both && chapter.route? `(${chapter.route})`:''}
+                                        </option>
+                                    }
+                                })
+                            }
+                        </select>
+                    </div>
                     <button style={{ padding: '12px', height: '40px' }} onClick={toggleProd}>Toggle Production Sheet</button>
                 </div> : ""
             }
+            <UnitSheet data={unitSheetData} />
         </main>
     );
 }
