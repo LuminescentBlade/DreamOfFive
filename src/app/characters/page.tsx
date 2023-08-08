@@ -178,6 +178,7 @@ export default function CharacterPage() {
         }
         chapterLimit = newChapterLimit;
         update();
+        console.log(chapterLimit);
     }
 
     function toggleProd() {
@@ -204,7 +205,7 @@ export default function CharacterPage() {
                 </div>
                 <div className={styles.control}>
                     <label>Chapter Select</label>
-                    <select name="chapter" onChange={(event) => { chapterSelect(event.target.value) }} defaultValue={chapterLimit}>
+                    <select name="chapter" onChange={(event) => { chapterSelect(event.target.value) }} value={chapterLimit}>
                         {
                             chapterSelection.map(chapter => {
                                 if (chapter.route && chapter.route !== displayRoute && displayRoute !== DoFRoute.Both) {
