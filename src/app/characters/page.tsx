@@ -189,7 +189,7 @@ export default function CharacterPage() {
     }
 
     function chapterSelect(value: string) {
-        const chapter = parseInt(value);
+        const chapter = parseFloat(value);
         chapterLimit = chapter;
         update();
     }
