@@ -17,7 +17,6 @@ export enum DoFArtist {
     Amelia = 'amelia',
     Char = 'char',
     AK = 'ak',
-    Seph = 'seph1212',
     Nih = 'niharu',
     Pi = 'pi',
     TBA = 'tba',
