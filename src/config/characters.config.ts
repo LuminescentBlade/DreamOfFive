@@ -475,15 +475,15 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                 enemy: 99
             }
         },
-        {
-            name: 'leofric',
-            artists: [DoFArtist.Lumi],
-            class: '',
-            nationality: DoFNationality.Aukema,
-            allRoute: {
-                player: 17
-            }
-        },
+        // {
+        //     name: 'leofric',
+        //     artists: [DoFArtist.Lumi],
+        //     class: '',
+        //     nationality: DoFNationality.Aukema,
+        //     allRoute: {
+        //         player: 17
+        //     }
+        // },
         {
             name: 'odette', // odette
             artists: [DoFArtist.Amelia],
