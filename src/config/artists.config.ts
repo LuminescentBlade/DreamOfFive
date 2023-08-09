@@ -21,10 +21,6 @@ export const DoFArtistConfig = {
         name: 'Aeorys Kirru',
         color: '#a041f7'
     },
-    [DoFArtist.Seph]: {
-        name: 'Seph1212',
-        color: '#e39c1e'
-    },
     [DoFArtist.Nih]: {
         name: 'Niharu',
         color: '#e07098'

@@ -564,11 +564,11 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'discan',
-            artists: [DoFArtist.Seph, DoFArtist.Astra],
+            artists: [DoFArtist.Astra],
             class: '',
             nationality: DoFNationality.Aukema,
             alt: [
-                { name: 'punished', artists: [DoFArtist.Seph, DoFArtist.Astra] },
+                { name: 'punished', artists: [DoFArtist.Astra] },
                 { name: 'final', artists: [] }
             ],
             allRoute: {
