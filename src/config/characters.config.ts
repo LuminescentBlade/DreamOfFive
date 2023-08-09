@@ -283,7 +283,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             class: DoFClasses.Sage,
             nationality: DoFNationality.Musain,
             musain: {
-                player: 14
+                player: 14,
+                enemy: 13
             }
         },
         {
@@ -292,7 +293,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             class: DoFClasses.Sage,
             nationality: DoFNationality.Musain,
             musain: {
-                player: 15
+                player: 15,
+                enemy: 12
             }
         },
         //
@@ -315,7 +317,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             onduris: {
                 player: 8
             },
-            musain:{
+            musain: {
                 player: 15
             }
         },
@@ -543,7 +545,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             artists: [DoFArtist.Pi],
             class: '',
             nationality: DoFNationality.Unknown,
-            allRoute:{
+            allRoute: {
                 player: 99,
                 npc: 3
             },
@@ -565,6 +567,10 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             artists: [DoFArtist.Seph, DoFArtist.Astra],
             class: '',
             nationality: DoFNationality.Aukema,
+            alt: [
+                { name: 'punished', artists: [DoFArtist.Seph, DoFArtist.Astra] },
+                { name: 'final', artists: [] }
+            ],
             allRoute: {
                 player: 99,
                 enemy: 0
@@ -642,6 +648,95 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             allRoute: {
                 enemy: 6
             },
+        },
+        // musain
+        {
+            name: 'tyrolf',
+            artists: [DoFArtist.Astra],
+            class: '',
+            nationality: DoFNationality.Aukema,
+            musain: {
+                enemy: 6.5
+            }
+        },
+        {
+            name: 'dorovahn',
+            artists: [DoFArtist.Xiltas, DoFArtist.Amelia],
+            class: '',
+            nationality: DoFNationality.Musain,
+            musain: {
+                enemy: 7
+            }
+
+        },
+        {
+            name: 'ducann',
+            artists: [DoFArtist.Xiltas, DoFArtist.Astra],
+            class: '',
+            nationality: DoFNationality.Musain,
+            musain: {
+                enemy: 8
+            }
+
+        },
+        {
+            name: 'jayson',
+            artists: [DoFArtist.Lumi],
+            class: '',
+            nationality: DoFNationality.Musain,
+            musain: {
+                enemy: 9
+            }
+
+        },
+        {
+            name: 'narvahn',
+            artists: [DoFArtist.Astra, DoFArtist.Xiltas],
+            class: '',
+            nationality: DoFNationality.Musain,
+            musain: {
+                enemy: 10
+            }
+
+        },
+        {
+            name: 'prevalh',
+            artists: [DoFArtist.Lumi],
+            class: '',
+            nationality: DoFNationality.Musain,
+            musain: {
+                enemy: 11
+            }
+
+        },
+        {
+            name: 'uther',
+            artists: [DoFArtist.Lumi, DoFArtist.Astra],
+            class: '',
+            nationality: DoFNationality.Musain,
+            musain: {
+                enemy: 12
+            }
+        },
+        {
+            name: 'talay',
+            artists: [DoFArtist.Astra],
+            class: '',
+            nationality: DoFNationality.Musain,
+            musain: {
+                enemy: 13
+            }
+        },
+        {
+            name: 'guillaume',
+            artists: [DoFArtist.Astra],
+            class: '',
+            nationality: DoFNationality.Musain,
+            alt: [{ name: 'burned', artists: [DoFArtist.Astra] }],
+            musain: {
+                enemy: 14
+            }
+
         },
         // onduris
         {
@@ -738,6 +833,16 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                 npc: 9
             }
         },
+        // postsplit
+        {
+            name: 'callad',
+            artists: [DoFArtist.Xiltas, DoFArtist.Astra],
+            class: '',
+            nationality: DoFNationality.Aukema,
+            allRoute: {
+                enemy: 16
+            }
+        },
         // other
         {
             name: 'farrell',
@@ -784,7 +889,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             nationality: DoFNationality.Aukema,
             allRoute: {
                 player: 99,
-                npc: 7 
+                enemy: 98,
+                npc: 7
             }
         },
         {
@@ -796,6 +902,18 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             onduris: {
                 enemy: 99,
                 npc: 9
+            },
+            musain: {
+                enemy: 99
+            }
+        },
+        {
+            name: 'fleur',
+            artists: [DoFArtist.Amelia],
+            class: DoFClasses.Sage,
+            nationality: DoFNationality.Musain,
+            onduris: {
+                enemy: 99   
             },
             musain: {
                 enemy: 99
