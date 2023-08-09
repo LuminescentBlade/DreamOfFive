@@ -314,6 +314,9 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             nationality: DoFNationality.Onduris,
             onduris: {
                 player: 8
+            },
+            musain:{
+                player: 15
             }
         },
         {
@@ -392,6 +395,9 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             nationality: DoFNationality.Onduris,
             onduris: {
                 player: 10
+            },
+            musain: {
+                player: 15
             }
         },
         {

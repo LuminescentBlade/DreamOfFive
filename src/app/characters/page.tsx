@@ -90,46 +90,53 @@ function getSinglePlacement(route: 'musain' | 'onduris', chapter: number, charac
     if (!routeConfig) {
         return;
     }
+    const validStates = [];
     if (routeConfig.player != null && routeConfig.player <= chapter) {
-        return { value: DoFUnitState.Player, chapter: routeConfig.player };
-    } else if (routeConfig.enemy != null && routeConfig.enemy <= chapter) {
-        return { value: DoFUnitState.Enemy, chapter: routeConfig.enemy };
-    } else if (routeConfig.npc != null && routeConfig.npc <= chapter) {
-        return { value: DoFUnitState.NPC, chapter: routeConfig.npc };
+        validStates.push({ value: DoFUnitState.Player, chapter: routeConfig.player });
     }
-    return;
+    if (routeConfig.enemy != null && routeConfig.enemy <= chapter) {
+        validStates.push({ value: DoFUnitState.Enemy, chapter: routeConfig.enemy });
+    }
+    if (routeConfig.npc != null && routeConfig.npc <= chapter) {
+        validStates.push({ value: DoFUnitState.NPC, chapter: routeConfig.npc });
+    }
+    if (validStates.length) {
+        validStates.sort((a, b) => {
+            const chapterDiff = b.chapter - a.chapter;
+            if (chapterDiff) {
+                return chapterDiff;
+            } else {
+                return b.value === DoFUnitState.Player ? 1 :
+                    b.value === DoFUnitState.Enemy && a.value === DoFUnitState.NPC ? 1 : -1;
+            }
+        });
+        return validStates[0];
+    } else {
+        return;
+    }
 }
 
 function getDoublePlacement(chapter: number, character: IDoFCharacter) {
-    const getValueByConfig = (state: ('player' | 'enemy' | 'npc')) => {
-        if (character.allRoute) {
-            return character.allRoute[state];
-        }
-        let musain = character.musain ? character.musain[state] : null;
-        let onduris = character.onduris ? character.onduris[state] : null;
-
-        if (musain != null && onduris != null) {
-            return musain < onduris ? musain : onduris;
-        } else if (musain != null) {
-            return musain;
+    // refactor to be more genericized to accept n routes
+    const placements = ['musain', 'onduris']
+        // @ts-ignore
+        .map(route => getSinglePlacement(route, chapter, character))
+        .filter(placement => placement != null);
+    if (!placements.length) {
+        return undefined;
+    }
+    placements.sort((a, b) => {
+        if (b!.value === a!.value) {
+            return b!.chapter - a!.chapter;
+        } else if (b!.value === DoFUnitState.Player) {
+            return 1;
+        } else if (b!.value === DoFUnitState.Enemy) {
+            return a!.value === DoFUnitState.Player ? -1 : 1;
         } else {
-            return onduris;
+            return -1;
         }
-    }
-
-    let player = getValueByConfig(DoFUnitState.Player);
-    if (player != null && player <= chapter) {
-        return { value: DoFUnitState.Player, chapter: player };
-    }
-    let enemy = getValueByConfig(DoFUnitState.Enemy);
-    if (enemy != null && enemy <= chapter) {
-        return { value: DoFUnitState.Enemy, chapter: enemy };
-    }
-    let npc = getValueByConfig(DoFUnitState.NPC);
-    if (npc != null && npc <= chapter) {
-        return { value: DoFUnitState.NPC, chapter: npc };
-    }
-    return;
+    })
+    return placements[0];
 }
 
 function getPath(type: string, name: string) {
