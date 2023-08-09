@@ -270,7 +270,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'corbeau',
-            artists: [],
+            artists: [DoFArtist.Astra, DoFArtist.Lumi],
             class: DoFClasses.Berserker,
             nationality: DoFNationality.Musain,
             musain: {
