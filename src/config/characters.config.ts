@@ -419,8 +419,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             class: DoFClasses.Hero,
             nationality: DoFNationality.Onduris,
             onduris: {
-                player: 12,
-                enemy: 11
+                player: 11,
+                enemy: 10.5
             }
         },
         {
@@ -430,7 +430,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             class: DoFClasses.Mercenary,
             nationality: DoFNationality.Onduris,
             onduris: {
-                player: 13
+                player: 12
             },
             musain: {
                 enemy: 99
@@ -778,7 +778,17 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                 npc: 9
             }
         },
-
+        {
+            name: 'a-vosa',
+            displayName: 'a\'Vosa',
+            artists: [DoFArtist.Char],
+            class: DoFClasses.Hero,
+            nationality: DoFNationality.Onduris,
+            onduris: {
+                enemy: 11,
+                npc: 9
+            }
+        },
         {
             name: 'sel-seir',
             displayName: 'sel\'Seir',
@@ -786,7 +796,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             class: DoFClasses.Swordmaster,
             nationality: DoFNationality.Onduris,
             onduris: {
-                enemy: 12,
+                enemy: 13,
                 npc: 9
             }
         },
@@ -797,7 +807,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             class: DoFClasses.Swordmaster,
             nationality: DoFNationality.Onduris,
             onduris: {
-                enemy: 12,
+                enemy: 13,
                 npc: 9
             }
         },
@@ -805,17 +815,6 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             name: 'ka-danos',
             displayName: 'ka\'Danos',
             artists: [DoFArtist.Lumi],
-            class: DoFClasses.Hero,
-            nationality: DoFNationality.Onduris,
-            onduris: {
-                enemy: 12,
-                npc: 9
-            }
-        },
-        {
-            name: 'a-vosa',
-            displayName: 'a\'Vosa',
-            artists: [DoFArtist.Char],
             class: DoFClasses.Hero,
             nationality: DoFNationality.Onduris,
             onduris: {
