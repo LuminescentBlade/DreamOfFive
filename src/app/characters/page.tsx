@@ -127,7 +127,7 @@ function getDoublePlacement(chapter: number, character: IDoFCharacter) {
     }
     placements.sort((a, b) => {
         if (b!.value === a!.value) {
-            return b!.chapter - a!.chapter;
+            return a!.chapter - b!.chapter; // take earlier chapter if both same value for multi placements
         } else if (b!.value === DoFUnitState.Player) {
             return 1;
         } else if (b!.value === DoFUnitState.Enemy) {
