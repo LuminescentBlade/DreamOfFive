@@ -187,7 +187,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'lyndra',
-            artists: [DoFArtist.Astra],
+            artists: [DoFArtist.Astra, DoFArtist.Lumi],
             class: DoFClasses.Hero,
             nationality: DoFNationality.Unknown,
             musain: {
@@ -563,6 +563,17 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             }
         },
         {
+            name: 'adalheid',
+            artists: [DoFArtist.Lumi, DoFArtist.AK],
+            class: '',
+            nationality: DoFNationality.Aukema,
+            allRoute: {
+                player: 99,
+                enemy: 98,
+                npc: 7
+            }
+        },
+        {
             name: 'discan',
             artists: [DoFArtist.Astra],
             class: '',
@@ -642,7 +653,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             },
         },
         {
-            name: 'gadras',
+            name: 'garvan',
             artists: [DoFArtist.Astra],
             class: DoFClasses.Armour,
             nationality: DoFNationality.Aukema,
@@ -691,7 +702,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
 
         },
         {
-            name: 'narvahn',
+            name: 'etrusque',
             artists: [DoFArtist.Astra, DoFArtist.Xiltas],
             class: '',
             nationality: DoFNationality.Musain,
@@ -843,7 +854,15 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                 enemy: 16
             }
         },
-        // other
+        {
+            name: 'morwen',
+            artists: [DoFArtist.Lumi, DoFArtist.Astra],
+            class: '',
+            nationality: DoFNationality.Aukema,
+            allRoute: {
+                enemy: 99
+            }
+        },
         {
             name: 'farrell',
             fullName: 'cuthbert farrell',
@@ -855,6 +874,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                 npc: 4
             }
         },
+        // other
         {
             name: 'varkade',
             artists: [DoFArtist.Astra, DoFArtist.Amelia],
@@ -880,17 +900,6 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             nationality: DoFNationality.Aukema,
             allRoute: {
                 npc: 6
-            }
-        },
-        {
-            name: 'adalheid',
-            artists: [DoFArtist.Lumi, DoFArtist.AK],
-            class: '',
-            nationality: DoFNationality.Aukema,
-            allRoute: {
-                player: 99,
-                enemy: 98,
-                npc: 7
             }
         },
         {
