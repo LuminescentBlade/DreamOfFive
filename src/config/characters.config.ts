@@ -790,6 +790,15 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             }
         },
         {
+            name: 'timon',
+            artists: [DoFArtist.Lumi],
+            class: DoFClasses.Warrior,
+            nationality: DoFNationality.Onduris,
+            onduris: {
+                enemy: 12,
+            }
+        },
+        {
             name: 'a-vosa',
             displayName: 'a\'Vosa',
             artists: [DoFArtist.Char],
