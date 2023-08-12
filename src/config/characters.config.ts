@@ -158,7 +158,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'arcus',
             artists: [DoFArtist.Astra],
-            class: '',
+            class: DoFClasses.Ironclad,
             nationality: DoFNationality.Vishara,
             musain: {
                 player: 6.5
@@ -207,7 +207,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'jolyon', // enjo
             artists: [DoFArtist.Astra, DoFArtist.Amelia],
-            class: '',
+            class: DoFClasses.Mage,
             nationality: DoFNationality.Musain,
             musain: {
                 player: 10
@@ -280,7 +280,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'ceriza',
             artists: [DoFArtist.AK],
-            class: DoFClasses.Sage,
+            class: DoFClasses.Hexe,
             nationality: DoFNationality.Musain,
             musain: {
                 player: 14,
@@ -290,7 +290,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'severin',
             artists: [DoFArtist.Lumi],
-            class: DoFClasses.Sage,
+            class: DoFClasses.Harrier,
             nationality: DoFNationality.Musain,
             musain: {
                 player: 15,
@@ -312,7 +312,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             name: 'se-mori',
             displayName: 'se\'Mori',
             artists: [DoFArtist.Amelia, DoFArtist.Astra],
-            class: '',
+            class: DoFClasses.Fencer,
             nationality: DoFNationality.Onduris,
             onduris: {
                 player: 8
@@ -348,7 +348,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'kahn',
             artists: [DoFArtist.Astra, DoFArtist.Amelia, DoFArtist.Lumi],
-            class: '',
+            class: DoFClasses.Soldier,
             nationality: DoFNationality.Onduris,
             onduris: {
                 player: 9
@@ -405,7 +405,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'nikita',
             artists: [DoFArtist.Astra],
-            class: '',
+            class: DoFClasses.Swordmaster,
             nationality: DoFNationality.Onduris,
             onduris: {
                 player: 10.5,
@@ -427,7 +427,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             name: 'vi-shen',
             displayName: 'vi\'Shen',
             artists: [DoFArtist.Lumi],
-            class: DoFClasses.Mercenary,
+            class: DoFClasses.Myrmidon,
             nationality: DoFNationality.Onduris,
             onduris: {
                 player: 12
@@ -468,7 +468,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'saskia',
             artists: [DoFArtist.Astra, DoFArtist.Lumi],
-            class: '',
+            class: DoFClasses.Rogue,
             nationality: DoFNationality.Unknown,
             allRoute: {
                 player: 99,
@@ -478,7 +478,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'hereward',
             artists: [DoFArtist.Lumi],
-            class: '',
+            class: DoFClasses.Cataphract,
             nationality: DoFNationality.Aukema,
             allRoute: {
                 player: 17
@@ -497,7 +497,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             name: 'thyra',
             fullName: 'jianxia long',
             artists: [DoFArtist.Lumi],
-            class: '',
+            class: DoFClasses.Einherjar,
             nationality: DoFNationality.Onduris,
             allRoute: {
                 player: 17
@@ -506,7 +506,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'sheila',
             artists: [DoFArtist.Amelia],
-            class: '',
+            class: DoFClasses.SeraphKnight,
             nationality: DoFNationality.Aukema,
             allRoute: {
                 player: 99,
@@ -516,7 +516,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'kaien',
             artists: [DoFArtist.Amelia],
-            class: '',
+            class: DoFClasses.DrakeKnight,
             nationality: DoFNationality.Unknown,
             allRoute: {
                 player: 99
@@ -525,7 +525,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'claudiya',
             artists: [DoFArtist.Amelia],
-            class: '',
+            class: DoFClasses.Valkyrie,
             nationality: DoFNationality.Unknown,
             allRoute: {
                 player: 99
@@ -543,7 +543,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'dahlia',
             artists: [DoFArtist.Pi],
-            class: '',
+            class: DoFClasses.Hexe,
             nationality: DoFNationality.Unknown,
             allRoute: {
                 player: 99,
@@ -556,7 +556,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'volund',
             artists: [DoFArtist.Lumi],
-            class: '',
+            class: DoFClasses.Gladiator,
             nationality: DoFNationality.Svanhild,
             allRoute: {
                 player: 99,
@@ -565,7 +565,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'adalheid',
             artists: [DoFArtist.Lumi, DoFArtist.AK],
-            class: '',
+            class: DoFClasses.Paladin,
             nationality: DoFNationality.Aukema,
             allRoute: {
                 player: 99,
@@ -576,7 +576,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'discan',
             artists: [DoFArtist.Astra],
-            class: '',
+            class: DoFClasses.Brigand,
             nationality: DoFNationality.Aukema,
             alt: [
                 { name: 'punished', artists: [DoFArtist.Astra] },
@@ -627,7 +627,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             name: 'sorcha',
             fullName: 'sorcha farrell',
             artists: [DoFArtist.Amelia],
-            class: '',
+            class: DoFClasses.Harrier,
             nationality: DoFNationality.Aukema,
             allRoute: {
                 enemy: 3
@@ -802,7 +802,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             name: 'a-vosa',
             displayName: 'a\'Vosa',
             artists: [DoFArtist.Char],
-            class: DoFClasses.Gladiator,
+            class: DoFClasses.Sentinel,
             nationality: DoFNationality.Onduris,
             onduris: {
                 enemy: 11,
@@ -866,7 +866,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'morwen',
             artists: [DoFArtist.Lumi, DoFArtist.Astra],
-            class: '',
+            class: DoFClasses.Gladiator,
             nationality: DoFNationality.Aukema,
             allRoute: {
                 enemy: 99
@@ -909,6 +909,15 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             nationality: DoFNationality.Aukema,
             allRoute: {
                 npc: 6
+            }
+        },
+        {
+            name: 'renair_young',
+            displayName: 'Young Renair',
+            artists: [DoFArtist.Amelia],
+            nationality: DoFNationality.Aukema,
+            onduris: {
+                npc: 10.5
             }
         },
         {
