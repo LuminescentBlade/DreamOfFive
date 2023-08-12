@@ -683,7 +683,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'ducann',
-            artists: [DoFArtist.Xiltas, DoFArtist.Astra],
+            artists: [DoFArtist.Xiltas, DoFArtist.Astra, DoFArtist.Lumi],
             class: '',
             nationality: DoFNationality.Musain,
             musain: {
