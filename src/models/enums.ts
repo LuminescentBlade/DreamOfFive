@@ -35,46 +35,77 @@ export enum DoFNationality {
 export enum DoFClasses {
     // prf classes
     Captain = 'captain',
+
     Henchwoman = 'henchwoman',
+    Shieldmaiden = 'shieldmaiden',
+
     Dancer = 'dancer',
     Bard = 'bard',
-    // unpromoted classes
-    Brigand = 'brigand',
+
+    Fencer = 'fencer',
+    Hussar = 'hussar',
+
+    Ironclad = 'ironclad',
+    Juggernaut = 'juggernaut',
+
+    Einherjar = 'einherjar',
+
+    // standard classes
     Mercenary = 'mercenary',
-    Priest = 'priest',
+    Gladiator = 'gladiator',
+
     Cleric = 'cleric',
-    Mage = 'mage',
-    PegRider = 'pegasus rider',
-    Armour = 'armour',
-    Archer = 'archer',
-    Troubadour = 'troubadour',
-    Adept = 'adept',
-    Warlock = 'warlock',
-    DrakeRider = 'drake rider',
-    Thief = 'thief',
-    Fighter = 'fighter',
-    Myrmidon = 'myrmidon',
-    Pirate = 'pirate',
-    Cavalier = 'cavalier',
-    Soldier = 'soldier',
-    Skirmisher = 'skirmisher',
-    // promoted classes 
-    Hero = 'hero',
+    Priest = 'priest',
     Bishop = 'bishop',
-    Sage = 'sage',
-    Falcoknight = 'falcoknight',
-    General = 'general',
-    Sniper = 'sniper',
-    Harrier = 'harrier',
-    Druid = 'druid',
+
+    PegRider = 'pegasus rider',
+    SeraphKnight = 'seraph knight',
+
+    Armour = 'armour',
+    Dreadnought = 'dreadnought',
+
+    Archer = 'archer',
+    Marksman = 'marksman',
+
+    Fighter = 'fighter',
     Warrior = 'warrior',
+
+    Troubadour = 'troubadour',
+    Valkyrie = 'valkyrie', 
+    Harrier = 'harrier',
+    
+    Adept = 'adept',
+    Hexe = 'hexe',
+
+    Mage = 'mage',
+    Sage = 'sage',
+    
+    Warlock = 'warlock',
+    Sorcerer = 'sorcerer',
+
+    DrakeRider = 'drake rider',
+    DrakeKnight = 'drake knight',
+
+    Thief = 'thief',
+    Rogue = 'rogue',
+    
+    Myrmidon = 'myrmidon',
     Swordmaster = 'swordmaster',
+    
+    Brigand = 'brigand',
+    Raider = 'raider',
     Berserker = 'berserker',
+
+    Cavalier = 'cavalier',
     Paladin = 'paladin',
-    Halberdier = 'halberdier',
-    GreatKnight = 'great knight',
+    Cataphract = 'cataphract',
+
+    Soldier = 'soldier',
+    Sentinel = 'sentinel',
+
+    Skirmisher = 'skirmisher',
     Ranger = 'ranger',
+    
     //
     TBD = 'tbd'
-
 };

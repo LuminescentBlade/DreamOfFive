@@ -188,7 +188,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'lyndra',
             artists: [DoFArtist.Astra, DoFArtist.Lumi],
-            class: DoFClasses.Hero,
+            class: DoFClasses.Gladiator,
             nationality: DoFNationality.Unknown,
             musain: {
                 player: 8.5,
@@ -393,7 +393,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'baldur',
             artists: [DoFArtist.Lumi],
-            class: DoFClasses.Pirate,
+            class: DoFClasses.Raider,
             nationality: DoFNationality.Onduris,
             onduris: {
                 player: 10
@@ -416,7 +416,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             name: 'byor-dal',
             displayName: 'byor\'Dal',
             artists: [DoFArtist.Lumi, DoFArtist.Astra],
-            class: DoFClasses.Hero,
+            class: DoFClasses.Gladiator,
             nationality: DoFNationality.Onduris,
             onduris: {
                 player: 11,
@@ -439,7 +439,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'brill',
             artists: [DoFArtist.Amelia],
-            class: DoFClasses.Sniper,
+            class: DoFClasses.Marksman,
             nationality: DoFNationality.Onduris,
             onduris: {
                 player: 13,
@@ -487,7 +487,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'odette', // odette
             artists: [DoFArtist.Amelia],
-            class: DoFClasses.Sniper,
+            class: DoFClasses.Marksman,
             nationality: DoFNationality.Aukema,
             allRoute: {
                 player: 17
@@ -754,7 +754,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'truvane',
             artists: [DoFArtist.Char],
-            class: DoFClasses.Hero,
+            class: DoFClasses.Gladiator,
             nationality: DoFNationality.Aukema,
             onduris: {
                 enemy: 7
@@ -802,7 +802,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             name: 'a-vosa',
             displayName: 'a\'Vosa',
             artists: [DoFArtist.Char],
-            class: DoFClasses.Hero,
+            class: DoFClasses.Gladiator,
             nationality: DoFNationality.Onduris,
             onduris: {
                 enemy: 11,
@@ -835,7 +835,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             name: 'ka-danos',
             displayName: 'ka\'Danos',
             artists: [DoFArtist.Lumi],
-            class: DoFClasses.Hero,
+            class: DoFClasses.Gladiator,
             nationality: DoFNationality.Onduris,
             onduris: {
                 enemy: 13,
@@ -846,7 +846,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             name: 'jin-sei',
             displayName: 'jin\'Sei',
             artists: [DoFArtist.Astra],
-            class: DoFClasses.Hero,
+            class: DoFClasses.Gladiator,
             nationality: DoFNationality.Onduris,
             onduris: {
                 enemy: 14,
@@ -974,7 +974,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'pirate',
             artists: [DoFArtist.Lumi],
-            class: DoFClasses.Pirate
+            class: DoFClasses.Raider
         },
         {
             name: 'paladin',
