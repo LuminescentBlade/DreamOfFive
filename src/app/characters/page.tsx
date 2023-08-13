@@ -1,6 +1,6 @@
 'use client';
 
-import { DoFArtist, DoFRoute, DoFUnitState } from '@/src/models/enums';
+import { DoFArtist, DoFNationality, DoFRoute, DoFUnitState } from '@/src/models/enums';
 import UnitSheet from '@/src/components/unit-sheet';
 import styles from './page.module.scss'
 import { DoFArtistConfig } from '@/src/config/artists.config';
@@ -9,6 +9,7 @@ import { IDoFCharacter, IDoFCharacterRenderer, IDoFRenderUnit, IDoFUnit } from '
 import { DoFCharacters } from '@/src/config/characters.config';
 import { DoFChapters } from '@/src/config/chapters.config';
 import OptionSelector from '@/src/components/option-selector';
+import { download, renderCharactersByCountry } from './sheet_export';
 
 const defaultRenderValues = {
     prod: { chapter: 6, limit: 10.5 },
@@ -158,6 +159,7 @@ function isShowingLocal() {
     return !isProd && !useProdOnLocal;
 }
 
+
 export default function CharacterPage() {
     const [unitSheetData, updateData] = useState(cachedData || getData());
 
@@ -201,6 +203,11 @@ export default function CharacterPage() {
         update();
     }
 
+    function renderByCountry() {
+        const result = renderCharactersByCountry(unitSheetData);
+        download(result);
+    }
+
     return (
         <main className={styles.base}>
             <h1>Dream of Five Character Sheet</h1>
@@ -231,6 +238,7 @@ export default function CharacterPage() {
                 !isProd ? <div style={{ width: 'fit-content', margin: '12px auto', textAlign: 'center' }}>
                     <p>Displaying {isShowingLocal() ? 'Local' : 'Prod'} Values</p>
                     <button style={{ padding: '12px', height: '40px' }} onClick={toggleProd}>Toggle Production Sheet</button>
+                    <button style={{ padding: '12px', height: '40px' }} onClick={renderByCountry}>Render Sheet By Country</button>
                 </div> : ""
             }
         </main>

@@ -189,7 +189,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             name: 'lyndra',
             artists: [DoFArtist.Astra, DoFArtist.Lumi],
             class: DoFClasses.Gladiator,
-            nationality: DoFNationality.Unknown,
+            nationality: DoFNationality.Aukema,
             musain: {
                 player: 8.5,
                 enemy: 8
@@ -450,7 +450,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             name: 'stolypin',
             artists: [DoFArtist.Astra, DoFArtist.Amelia, DoFArtist.Lumi],
             class: DoFClasses.Harrier,
-            nationality: DoFNationality.Musain,
+            nationality: DoFNationality.Vishara,
             onduris: {
                 player: 15
             }
@@ -469,7 +469,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             name: 'saskia',
             artists: [DoFArtist.Astra, DoFArtist.Lumi],
             class: DoFClasses.Rogue,
-            nationality: DoFNationality.Unknown,
+            nationality: DoFNationality.Aukema,
             allRoute: {
                 player: 99,
                 enemy: 99
@@ -498,7 +498,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             fullName: 'jianxia long',
             artists: [DoFArtist.Lumi],
             class: DoFClasses.Einherjar,
-            nationality: DoFNationality.Onduris,
+            nationality: DoFNationality.Svanhild,
             allRoute: {
                 player: 17
             }
@@ -517,7 +517,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             name: 'kaien',
             artists: [DoFArtist.Amelia],
             class: DoFClasses.DrakeKnight,
-            nationality: DoFNationality.Unknown,
+            nationality: DoFNationality.Vishara,
             allRoute: {
                 player: 99
             }
@@ -526,7 +526,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             name: 'claudiya',
             artists: [DoFArtist.Amelia],
             class: DoFClasses.Valkyrie,
-            nationality: DoFNationality.Unknown,
+            nationality: DoFNationality.Vishara,
             allRoute: {
                 player: 99
             }
@@ -535,7 +535,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             name: 'vincent',
             artists: [DoFArtist.Amelia, DoFArtist.Astra],
             class: '',
-            nationality: DoFNationality.Unknown,
+            // nationality: DoFNationality.Vishara,
             allRoute: {
                 player: 99
             }
@@ -912,6 +912,24 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             }
         },
         {
+            name: 'vallans',
+            artists: [DoFArtist.Lumi, DoFArtist.Astra],
+            class: '',
+            nationality: DoFNationality.Musain,
+            musain: {
+                npc: 99
+            }
+        },
+        {
+            name: 'merri',
+            artists: [DoFArtist.Amelia, DoFArtist.Astra],
+            class: '',
+            nationality: DoFNationality.Musain,
+            musain: {
+                npc: 99
+            }
+        },
+        {
             name: 'renair_young',
             displayName: 'Young Renair',
             artists: [DoFArtist.Amelia, DoFArtist.Lumi],
@@ -924,7 +942,24 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             name: 'ethelreda',
             artists: [DoFArtist.Amelia,DoFArtist.Lumi],
             nationality: DoFNationality.Aukema,
-            onduris: {
+            allRoute: {
+                npc: 99
+            }
+        },
+        {
+            name: 'angus',
+            artists: [DoFArtist.Astra,DoFArtist.TBA],
+            nationality: DoFNationality.Aukema,
+            allRoute: {
+                npc: 99
+            }
+        },
+        {
+            name: 'queenvish',
+            displayName: 'Queen Vishara',
+            artists: [DoFArtist.Amelia],
+            nationality: DoFNationality.Vishara,
+            allRoute: {
                 npc: 99
             }
         },

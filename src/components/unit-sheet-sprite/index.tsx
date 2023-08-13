@@ -28,7 +28,7 @@ export default function UnitSheetSprite({ type, characterDef }: { type: DoFUnitS
             }
         </div>
         <div className={styles.sprite}>
-            <img src={characterDef.path} />
+            <img id={`${characterDef.name}_${type}`} src={characterDef.path} />
         </div>
     </div>);
 }
