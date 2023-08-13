@@ -914,10 +914,18 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'renair_young',
             displayName: 'Young Renair',
-            artists: [DoFArtist.Amelia],
+            artists: [DoFArtist.Amelia, DoFArtist.Lumi],
             nationality: DoFNationality.Aukema,
             onduris: {
                 npc: 10.5
+            }
+        },
+        {
+            name: 'ethelreda',
+            artists: [DoFArtist.Amelia,DoFArtist.Lumi],
+            nationality: DoFNationality.Aukema,
+            onduris: {
+                npc: 99
             }
         },
         {
