@@ -73,13 +73,20 @@ function parseCharacters(chapter: number, route: DoFRoute) {
             let path;
             // if (!img) {
             path = getPath('characters', character.name);
+
+            const characterItem: IDoFRenderUnit = { ...character, path, renderOrder: placement.chapter };
+
+            if (character.alt) {
+                characterItem.altPaths = character.alt.reduce((paths, alt) => ({ ...paths, [alt.name]: getPath('characters', `${character.name}_${alt.name}`) }), {});
+            }
+
             //     img = new Image();
             //     img.src = path;
             //     imageRenderCache.set(character.name, img);
             // } else {
             // path = img.src;
             // }
-            config[placement.value].push({ ...character, path, renderOrder: placement.chapter });
+            config[placement.value].push(characterItem);
         }
     });
 
@@ -162,6 +169,8 @@ function isShowingLocal() {
 
 export default function CharacterPage() {
     const [unitSheetData, updateData] = useState(cachedData || getData());
+    const [expansionState, setExpansion] = useState({ data: new Map<string, boolean>() });
+    let currentChapterLimit = chapterLimit;
 
     if (typeof window !== "undefined") {
         Object.values(DoFArtist).forEach(key => {
@@ -186,6 +195,7 @@ export default function CharacterPage() {
             newChapterLimit -= .5;
         }
         chapterLimit = newChapterLimit;
+        currentChapterLimit = chapterLimit;
         update();
     }
 
@@ -193,6 +203,7 @@ export default function CharacterPage() {
         useProdOnLocal = !useProdOnLocal;
         const displayValues = setDisplayValues();
         chapterLimit = Math.min(displayValues.chapter, chapterLimit);
+        currentChapterLimit = chapterLimit;
         chapterSelection = displayValues.chapterSelection;
         update();
     }
@@ -200,12 +211,21 @@ export default function CharacterPage() {
     function chapterSelect(value: string) {
         const chapter = parseFloat(value);
         chapterLimit = chapter;
+        currentChapterLimit = chapterLimit;
         update();
     }
 
     function renderByCountry() {
         const result = renderCharactersByCountry(unitSheetData);
         download(result);
+    }
+
+    function toggleCharacter(name: string) {
+        return function () {
+            console.log(name);
+            expansionState.data.set(name, !expansionState.data.get(name));
+            setExpansion({ data: expansionState.data });
+        }
     }
 
     return (
@@ -233,7 +253,7 @@ export default function CharacterPage() {
                     </select>
                 </div>
             </div>
-            <UnitSheet data={unitSheetData} />
+            <UnitSheet data={unitSheetData} expansionState={expansionState.data} toggleCharacter={toggleCharacter} chapter={currentChapterLimit} />
             {
                 !isProd ? <div style={{ width: 'fit-content', margin: '12px auto', textAlign: 'center' }}>
                     <p>Displaying {isShowingLocal() ? 'Local' : 'Prod'} Values</p>

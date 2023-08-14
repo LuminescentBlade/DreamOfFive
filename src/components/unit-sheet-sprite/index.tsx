@@ -3,7 +3,7 @@ import { IDoFRenderUnit, IDoFUnit } from "@/src/models/interfaces";
 import styles from './index.module.scss';
 import { DoFArtistConfig } from "@/src/config/artists.config";
 import { DoFUnitState } from "@/src/models/enums";
-export default function UnitSheetSprite({ type, characterDef }: { type: DoFUnitState, characterDef: IDoFRenderUnit }) {
+export default function UnitSheetSprite({ type, characterDef, expanded, onExpand }: { type: DoFUnitState, characterDef: IDoFRenderUnit, expanded?: boolean, onExpand?: ()=>void }) {
     return (<div className={styles.wrapper}>
         <div className={`
             ${styles.name} 
@@ -25,6 +25,11 @@ export default function UnitSheetSprite({ type, characterDef }: { type: DoFUnitS
             </button>
             { // @ts-ignore
                 (characterDef.conditionalName && characterDef.conditionalName[type]) ? characterDef.conditionalName[type] : (characterDef.displayName || characterDef.name)
+            }
+            {
+                (onExpand ? <button className={styles.alts} onClick={onExpand}>{
+                    expanded? '-' : '+'
+                }</button> : '')
             }
         </div>
         <div className={styles.sprite}>

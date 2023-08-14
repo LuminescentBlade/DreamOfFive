@@ -9,7 +9,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             alt: [
                 { name: 'angry', artists: [DoFArtist.AK, DoFArtist.Amelia] },
                 { name: 'sad', artists: [DoFArtist.AK, DoFArtist.Amelia] },
-                { name: 'promo', artists: [DoFArtist.AK, DoFArtist.Lumi] },
+                { name: 'promo', artists: [DoFArtist.AK, DoFArtist.Lumi], chapter: 15 },
             ],
             nationality: DoFNationality.Aukema,
             class: DoFClasses.Captain,
@@ -590,8 +590,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             class: DoFClasses.Brigand,
             nationality: DoFNationality.Aukema,
             alt: [
-                { name: 'punished', artists: [DoFArtist.Astra] },
-                { name: 'final', artists: [] }
+                { name: 'punished', artists: [DoFArtist.Astra], chapter: 15 },
+                // { name: 'final', artists: [] }
             ],
             allRoute: {
                 player: 99,
@@ -643,7 +643,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             allRoute: {
                 enemy: 3
             },
-            alt: [{name: 'final', artists: [DoFArtist.Amelia]}]
+            alt: [{name: 'final', artists: [DoFArtist.Amelia], chapter: 99}]
         },
         {
             name: 'ganter',

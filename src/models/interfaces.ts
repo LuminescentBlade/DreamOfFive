@@ -5,7 +5,7 @@ export interface IDoFUnit {
     artists: DoFArtist[];
     displayName?: string;
     fullName?: string;
-    alt?: { name: string, artists: DoFArtist[] }[];
+    alt?: { name: string, artists: DoFArtist[], chapter?: number }[];
     nationality?: DoFNationality,
     class?: string,
 };
