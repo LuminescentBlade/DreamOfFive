@@ -8,7 +8,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             artists: [DoFArtist.AK],
             alt: [
                 { name: 'angry', artists: [DoFArtist.AK, DoFArtist.Amelia] },
-                { name: 'sad', artists: [DoFArtist.AK, DoFArtist.Amelia] }
+                { name: 'sad', artists: [DoFArtist.AK, DoFArtist.Amelia] },
+                { name: 'promo', artists: [DoFArtist.AK, DoFArtist.Lumi] },
             ],
             nationality: DoFNationality.Aukema,
             class: DoFClasses.Captain,
@@ -479,6 +480,16 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             name: 'hereward',
             artists: [DoFArtist.Lumi],
             class: DoFClasses.Cataphract,
+            nationality: DoFNationality.Aukema,
+            allRoute: {
+                player: 17,
+                npc: 6
+            }
+        },
+        {
+            name: 'artemisia',
+            artists: [DoFArtist.Lumi],
+            class: DoFClasses.Valkyrie,
             nationality: DoFNationality.Aukema,
             allRoute: {
                 player: 17
