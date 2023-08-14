@@ -489,7 +489,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'artemisia',
             artists: [DoFArtist.Lumi],
-            class: DoFClasses.Valkyrie,
+            class: DoFClasses.Sibyl,
             nationality: DoFNationality.Aukema,
             allRoute: {
                 player: 17
@@ -536,7 +536,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'claudiya',
             artists: [DoFArtist.Amelia],
-            class: DoFClasses.Valkyrie,
+            class: DoFClasses.Sibyl,
             nationality: DoFNationality.Vishara,
             allRoute: {
                 player: 99

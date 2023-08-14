@@ -35,9 +35,10 @@ export enum DoFNationality {
 export enum DoFClasses {
     // prf classes
     Captain = 'captain',
+    Questant = 'questant',
 
     Henchwoman = 'henchwoman',
-    Shieldmaiden = 'shieldmaiden',
+    Blademaiden = 'blademaiden',
 
     Dancer = 'dancer',
     Bard = 'bard',
@@ -71,7 +72,7 @@ export enum DoFClasses {
     Warrior = 'warrior',
 
     Troubadour = 'troubadour',
-    Valkyrie = 'valkyrie', 
+    Sibyl = 'sibyl', 
     Harrier = 'harrier',
     
     Adept = 'adept',
