@@ -33,7 +33,8 @@ export default function UnitSheet({ data, chapter, expansionState, toggleCharact
                                         return <>
                                             {baseItem}
                                             {validAlts.map(alt => {
-                                                const altData = { ...character, name: `${character.name} ${alt.name}`, artists: alt.artists, path: character!.altPaths![alt.name] };
+                                                const name = `${character.displayName || character.name} ${alt.displayName || alt.name}`
+                                                const altData = { ...character, name, artists: alt.artists, path: character!.altPaths![alt.name] };
                                                 return <UnitSheetSprite key={`${character.name}_${alt.name}`} type={section} characterDef={altData} />
                                             })}
                                         </>

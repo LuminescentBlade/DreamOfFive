@@ -9,7 +9,9 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             alt: [
                 { name: 'angry', artists: [DoFArtist.AK, DoFArtist.Amelia] },
                 { name: 'sad', artists: [DoFArtist.AK, DoFArtist.Amelia] },
-                { name: 'promo', artists: [DoFArtist.AK, DoFArtist.Lumi], chapter: 15 },
+                { name: 'promo', artists: [DoFArtist.AK, DoFArtist.Lumi], chapter: 15, displayName: 'Promoted' },
+                { name: 'promo_angry', artists: [DoFArtist.AK, DoFArtist.Lumi], chapter: 15, displayName: 'Pr. Angry' },
+                { name: 'promo_sad', artists: [DoFArtist.AK, DoFArtist.Lumi], chapter: 15 , displayName: 'Pr. Sad'},
             ],
             nationality: DoFNationality.Aukema,
             class: DoFClasses.Captain,
@@ -585,7 +587,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             }
         },
         {
-            name: 'discan',
+            name: 'dismas',
             artists: [DoFArtist.Astra],
             class: DoFClasses.Brigand,
             nationality: DoFNationality.Aukema,
