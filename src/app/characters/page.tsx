@@ -12,7 +12,7 @@ import OptionSelector from '@/src/components/option-selector';
 import { download, renderCharactersByCountry } from './sheet_export';
 
 const defaultRenderValues = {
-    prod: { chapter: 6, limit: 10.5 },
+    prod: { chapter: 6, limit: 12},
     local: { chapter: 99 }
 };
 
