@@ -59,7 +59,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'amelia',
             artists: [DoFArtist.Amelia],
-            nationality: DoFNationality.Unknown,
+            nationality: DoFNationality.Aukema,
             class: DoFClasses.Mage,
             allRoute: {
                 player: 1
