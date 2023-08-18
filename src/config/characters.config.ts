@@ -823,13 +823,24 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             }
         },
         {
+            name: 'jin-sei',
+            displayName: 'jin\'Sei',
+            artists: [DoFArtist.Astra],
+            class: DoFClasses.Gladiator,
+            nationality: DoFNationality.Onduris,
+            onduris: {
+                enemy: 13,
+                npc: 9
+            }
+        },
+        {
             name: 'sel-seir',
             displayName: 'sel\'Seir',
             artists: [DoFArtist.Lumi, DoFArtist.Amelia],
             class: DoFClasses.Swordmaster,
             nationality: DoFNationality.Onduris,
             onduris: {
-                enemy: 13,
+                enemy: 14,
                 npc: 9
             }
         },
@@ -840,7 +851,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             class: DoFClasses.Swordmaster,
             nationality: DoFNationality.Onduris,
             onduris: {
-                enemy: 13,
+                enemy: 14,
                 npc: 9
             }
         },
@@ -848,17 +859,6 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             name: 'ka-danos',
             displayName: 'ka\'Danos',
             artists: [DoFArtist.Lumi],
-            class: DoFClasses.Gladiator,
-            nationality: DoFNationality.Onduris,
-            onduris: {
-                enemy: 13,
-                npc: 9
-            }
-        },
-        {
-            name: 'jin-sei',
-            displayName: 'jin\'Sei',
-            artists: [DoFArtist.Astra],
             class: DoFClasses.Gladiator,
             nationality: DoFNationality.Onduris,
             onduris: {
