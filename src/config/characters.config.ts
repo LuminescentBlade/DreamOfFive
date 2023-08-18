@@ -122,7 +122,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'cothiva',
-            artists: [DoFArtist.Astra],
+            artists: [DoFArtist.Astra, DoFArtist.Lumi],
             nationality: DoFNationality.Aukema,
             class: DoFClasses.Adept,
             allRoute: {

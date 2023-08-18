@@ -46,7 +46,12 @@ function cacheStaticUnits() {
 function getData() {
     const config = parseCharacters(chapterLimit, displayRoute);
     const sort = (items: IDoFRenderUnit[]) => items.sort((a, b) => a.renderOrder - b.renderOrder);
+    // console.log(config.player.map(player=>player.displayName || player.name).sort((a,b)=>a.toLowerCase().localeCompare( b.toLowerCase(), 'us')));
     return {
+        // player: config.player.sort((a,b)=>{
+        //     // @ts-ignore
+        //     const name = player => player.displayName || player.name;
+        //     return name(a).toLowerCase().localeCompare( name(b).toLowerCase(), 'us')}),
         player: sort(config.player),
         enemy: sort(config.enemy),
         npc: [...sort(config.npc), ...shopkeepers],
