@@ -281,7 +281,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             }
         },
         {
-            name: 'ceriza',
+            name: 'eudira',
             artists: [DoFArtist.AK],
             class: DoFClasses.Hexe,
             nationality: DoFNationality.Musain,
@@ -744,7 +744,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             }
         },
         {
-            name: 'talay',
+            name: 'menida',
             artists: [DoFArtist.Astra],
             class: '',
             nationality: DoFNationality.Musain,
@@ -882,7 +882,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             class: DoFClasses.Gladiator,
             nationality: DoFNationality.Aukema,
             allRoute: {
-                enemy: 99
+                enemy:5,
             }
         },
         {
@@ -891,10 +891,14 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             artists: [DoFArtist.Amelia, DoFArtist.Astra, DoFArtist.TBA],
             class: '',
             nationality: DoFNationality.Aukema,
-            allRoute: {
+            onduris: {
+                enemy: 8,
+                npc: 4
+            },
+            musain: {
                 enemy: 99,
                 npc: 4
-            }
+            },
         },
         // other
         {
