@@ -596,7 +596,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                 // { name: 'final', artists: [] }
             ],
             allRoute: {
-                player: 99,
+                player: 16,
                 enemy: 0
             }
         },
