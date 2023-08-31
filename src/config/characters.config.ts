@@ -988,7 +988,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             nationality: DoFNationality.Onduris,
             onduris: {
                 enemy: 99,
-                npc: 9
+                npc: 12
             },
             musain: {
                 enemy: 99
