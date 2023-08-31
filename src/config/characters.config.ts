@@ -39,7 +39,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'asher',
-            artists: [DoFArtist.Amelia],
+            artists: [DoFArtist.Amelia, DoFArtist.Lumi],
             nationality: DoFNationality.Aukema,
             class: DoFClasses.Priest,
             allRoute: {
@@ -264,7 +264,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'meliza',
-            artists: [DoFArtist.Astra],
+            artists: [DoFArtist.Lumi],
             class: DoFClasses.Mage,
             nationality: DoFNationality.Musain,
             musain: {
