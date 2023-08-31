@@ -544,15 +544,15 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                 player: 99
             }
         },
-        {
-            name: 'vincent',
-            artists: [DoFArtist.Amelia, DoFArtist.Astra],
-            class: '',
-            // nationality: DoFNationality.Vishara,
-            allRoute: {
-                player: 99
-            }
-        },
+        // {
+        //     name: 'vincent',
+        //     artists: [DoFArtist.Amelia, DoFArtist.Astra],
+        //     class: '',
+        //     // nationality: DoFNationality.Vishara,
+        //     allRoute: {
+        //         player: 99
+        //     }
+        // },
         {
             name: 'dahlia',
             artists: [DoFArtist.Pi],
