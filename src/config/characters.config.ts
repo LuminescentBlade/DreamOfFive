@@ -499,7 +499,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'odette', // odette
-            artists: [DoFArtist.Amelia],
+            artists: [DoFArtist.Amelia, DoFArtist.Lumi],
             class: DoFClasses.Marksman,
             nationality: DoFNationality.Aukema,
             allRoute: {
