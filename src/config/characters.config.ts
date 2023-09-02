@@ -373,6 +373,9 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             nationality: DoFNationality.Vishara,
             onduris: {
                 player: 9
+            },
+            musain: {
+                player: 15
             }
         },
         {
@@ -400,9 +403,6 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             nationality: DoFNationality.Onduris,
             onduris: {
                 player: 10
-            },
-            musain: {
-                player: 15
             }
         },
         {
