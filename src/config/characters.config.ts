@@ -67,7 +67,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'tricia',
-            artists: [DoFArtist.Amelia],
+            artists: [DoFArtist.Amelia, DoFArtist.Lumi],
             nationality: DoFNationality.Aukema,
             class: DoFClasses.Henchwoman,
             allRoute: {
@@ -1010,19 +1010,20 @@ export const DoFCharacters: IDoFCharacterConfigs = {
     shopkeepers: [
         {
             name: 'armory',
-            displayName: 'Gaius',
-            artists: [DoFArtist.Amelia]
+            displayName: 'Armory Gara',
+            artists: [DoFArtist.Amelia, DoFArtist.Lumi]
         },
         {
             name: 'vendor',
-            displayName: 'Shara',
-            artists: [DoFArtist.Amelia],
-        },
-        {
-            name: 'secretshop',
-            displayName: 'Yue',
-            artists: [DoFArtist.Amelia],
+            displayName: 'Vendor Sorina',
+            artists: [DoFArtist.Amelia, DoFArtist.Lumi],
         }
+        // ,
+        // {
+        //     name: 'secretshop',
+        //     displayName: 'Yue',
+        //     artists: [DoFArtist.Amelia],
+        // }
     ],
     generics: [
         {
