@@ -82,7 +82,7 @@ function parseCharacters(chapter: number, route: DoFRoute) {
             const characterItem: IDoFRenderUnit = { ...character, path, renderOrder: placement.chapter };
 
             if (character.alt) {
-                characterItem.altPaths = character.alt.reduce((paths, alt) => ({ ...paths, [alt.name]: getPath('characters', `${character.name}_${alt.name}`) }), {});
+                characterItem.altPaths = Object.keys(character.alt).reduce((paths, altName) => ({ ...paths, [altName]: getPath('characters', `${character.name}_${altName}`) }), {});
             }
 
             //     img = new Image();

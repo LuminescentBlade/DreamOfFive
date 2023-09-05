@@ -1,20 +1,44 @@
 import { DoFArtist, DoFNationality, DoFUnitState } from "./enums";
 
-export interface IDoFUnit {
+export interface IUnit{
     name: string;
-    artists: DoFArtist[];
+    artists: string[];
     displayName?: string;
-    fullName?: string;
-    alt?: { name: string, artists: DoFArtist[], chapter?: number, displayName?: string, replaceMain?: boolean}[];
-    nationality?: DoFNationality,
+    alt?: { 
+        [name: string]: IAltConfig
+    };
     class?: string,
-};
-export interface IDoFCharacter extends IDoFUnit {
-    conditionalName?: { // used over displayName
-        player?: string;
-        enemy?: string;
-        npc?: string;
+    conditional?: {
+        player?: IConditional;
+        enemy?: IConditional;
+        npc?: IConditional;
     },
+};
+
+export interface IConditional{
+    displayName?: string,
+    swapPortrait?: string,
+    ogPortraitName?: string,
+}
+export interface IAltConfig{ 
+    artists: string[],
+    chapter?: number,
+    displayName?: string
+}
+
+export interface IDoFUnit extends IUnit {
+    artists: DoFArtist[];
+    fullName?: string;
+    alt?: { 
+        [name: string]: IDoFAlt
+    };
+    nationality?: DoFNationality,
+};
+
+export interface IDoFAlt extends IAltConfig{
+    artists: DoFArtist[]
+}
+export interface IDoFCharacter extends IDoFUnit {
     musain?: {
         player?: number; // x chapters will be counted as .5
         enemy?: number;

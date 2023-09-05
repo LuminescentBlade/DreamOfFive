@@ -24,7 +24,7 @@ export default function UnitSheetSprite({ type, characterDef, expanded, onExpand
                 ))}
             </button>
             { // @ts-ignore
-                (characterDef.conditionalName && characterDef.conditionalName[type]) ? characterDef.conditionalName[type] : (characterDef.displayName || characterDef.name)
+                (characterDef.conditional && characterDef.conditional[type]?.displayName) ? characterDef.conditional[type].displayName : (characterDef.displayName || characterDef.name)
             }
             {
                 (onExpand ? <button className={styles.alts} onClick={onExpand}>{

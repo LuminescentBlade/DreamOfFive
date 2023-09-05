@@ -6,13 +6,13 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'renair',
             artists: [DoFArtist.AK],
-            alt: [
-                { name: 'angry', artists: [DoFArtist.AK, DoFArtist.Amelia] },
-                { name: 'sad', artists: [DoFArtist.AK, DoFArtist.Amelia] },
-                { name: 'promo', artists: [DoFArtist.AK, DoFArtist.Lumi], chapter: 15, displayName: 'Promoted' },
-                { name: 'promo_angry', artists: [DoFArtist.AK, DoFArtist.Lumi], chapter: 15, displayName: 'Pr. Angry' },
-                { name: 'promo_sad', artists: [DoFArtist.AK, DoFArtist.Lumi], chapter: 15 , displayName: 'Pr. Sad'},
-            ],
+            alt: {
+                angry: { artists: [DoFArtist.AK, DoFArtist.Amelia] },
+                sad: { artists: [DoFArtist.AK, DoFArtist.Amelia] },
+                promo: { artists: [DoFArtist.AK, DoFArtist.Lumi], chapter: 15, displayName: 'Promoted' },
+                promo_angry: { artists: [DoFArtist.AK, DoFArtist.Lumi], chapter: 15, displayName: 'Pr. Angry' },
+                promo_sad: { artists: [DoFArtist.AK, DoFArtist.Lumi], chapter: 15, displayName: 'Pr. Sad' },
+            },
             nationality: DoFNationality.Aukema,
             class: DoFClasses.Captain,
             allRoute: {
@@ -562,8 +562,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                 player: 99,
                 npc: 3
             },
-            conditionalName: {
-                player: 'Amaryl'
+            conditional: {
+                player: {displayName: 'Amaryl'}
             }
         },
         {
@@ -591,10 +591,15 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             artists: [DoFArtist.Astra],
             class: DoFClasses.Brigand,
             nationality: DoFNationality.Aukema,
-            alt: [
-                { name: 'punished', artists: [DoFArtist.Astra], chapter: 15 },
-                // { name: 'final', artists: [] }
-            ],
+            alt: {
+                punished: { artists: [DoFArtist.Astra], chapter: 15, displayName: 'Returns' }
+            },
+            conditional: {
+                player: {
+                    swapPortrait: 'punished',
+                    ogPortraitName: 'Dismas Prologue'
+                }
+            },
             allRoute: {
                 player: 16,
                 enemy: 0
@@ -645,7 +650,9 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             allRoute: {
                 enemy: 3
             },
-            alt: [{name: 'final', artists: [DoFArtist.Amelia], chapter: 99}]
+            alt: {
+                final: { artists: [DoFArtist.Amelia], chapter: 99 }
+            }
         },
         {
             name: 'ganter',
@@ -757,7 +764,9 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             artists: [DoFArtist.Astra],
             class: '',
             nationality: DoFNationality.Musain,
-            alt: [{ name: 'burned', artists: [DoFArtist.Astra] }],
+            alt: {
+                burned: { artists: [DoFArtist.Astra] }
+            },
             musain: {
                 enemy: 14
             }
@@ -882,7 +891,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             class: DoFClasses.Gladiator,
             nationality: DoFNationality.Aukema,
             allRoute: {
-                enemy:5,
+                enemy: 5,
             }
         },
         {
@@ -957,7 +966,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'ethelreda',
-            artists: [DoFArtist.Amelia,DoFArtist.Lumi],
+            artists: [DoFArtist.Amelia, DoFArtist.Lumi],
             nationality: DoFNationality.Aukema,
             allRoute: {
                 npc: 99
@@ -965,7 +974,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'angus',
-            artists: [DoFArtist.Astra,DoFArtist.TBA],
+            artists: [DoFArtist.Astra, DoFArtist.TBA],
             nationality: DoFNationality.Aukema,
             allRoute: {
                 npc: 99
@@ -1000,7 +1009,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             class: DoFClasses.Sage,
             nationality: DoFNationality.Musain,
             onduris: {
-                enemy: 99   
+                enemy: 99
             },
             musain: {
                 enemy: 99

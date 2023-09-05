@@ -26,16 +26,38 @@ export default function UnitSheet({ data, chapter, expansionState, toggleCharact
                                 if (!character.alt) {
                                     return <UnitSheetSprite key={character.name} type={section} characterDef={character} />
                                 } else {
-                                    const validAlts = character.alt.filter(alt => !alt.chapter || alt.chapter <= chapter);
+                                    const alts = Object.entries(character.alt);
+                                    const validAlts = alts.filter(([, alt]) => !alt.chapter || alt.chapter <= chapter);
                                     const toggleFcn = validAlts.length ? toggleCharacter(character.name) : undefined;
-                                    const baseItem = <UnitSheetSprite key={character.name} type={section} characterDef={character} expanded={expansionState.get(character.name)} onExpand={toggleFcn} />;
+                                    let conditionalPortrait: string | undefined;
+                                    let conditionalOGName: string | undefined;
+                                    if ((character.conditional && section !== DoFUnitState.Generic && character.conditional[section])) {
+                                        conditionalPortrait =  character.conditional[section]?.swapPortrait;
+                                        conditionalOGName =  character.conditional[section]?.ogPortraitName;
+                                    }
+                                    let characterData;
+                                    if (conditionalPortrait) {
+                                        const alt = character.alt[conditionalPortrait];
+                                        characterData = { ...character, artists: alt.artists, path: character!.altPaths![conditionalPortrait] };
+                                    } else {
+                                        characterData = character;
+                                    }
+                                    const baseItem = <UnitSheetSprite key={character.name} type={section} characterDef={characterData} expanded={expansionState.get(character.name)} onExpand={toggleFcn} />;
                                     if (expansionState.get(character.name)) {
+                                        let conditionalItem;
+                                        if(conditionalPortrait){
+                                            conditionalItem = <UnitSheetSprite key={`${character.name}_original`} type={section} characterDef={{...character, displayName: conditionalOGName}} />
+                                        }
                                         return <>
                                             {baseItem}
-                                            {validAlts.map(alt => {
-                                                const name = `${character.displayName || character.name} ${alt.displayName || alt.name}`
-                                                const altData = { ...character, name, artists: alt.artists, path: character!.altPaths![alt.name] };
-                                                return <UnitSheetSprite key={`${character.name}_${alt.name}`} type={section} characterDef={altData} />
+                                            {conditionalItem}
+                                            {validAlts.map(([altName, alt]) => {
+                                                if(altName === conditionalPortrait){
+                                                    return '';
+                                                }
+                                                const name = `${character.displayName || character.name} ${alt.displayName || altName}`
+                                                const altData = { ...character, name, artists: alt.artists, path: character!.altPaths![altName] };
+                                                return <UnitSheetSprite key={`${character.name}_${altName}`} type={section} characterDef={altData} />
                                             })}
                                         </>
                                     } else {
