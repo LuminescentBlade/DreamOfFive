@@ -38,7 +38,13 @@ export default function UnitSheet({ data, chapter, expansionState, toggleCharact
                                     let characterData;
                                     if (conditionalPortrait) {
                                         const alt = character.alt[conditionalPortrait];
-                                        characterData = { ...character, artists: alt.artists, path: character!.altPaths![conditionalPortrait] };
+                                        characterData = {
+                                            ...character,
+                                            name: `${character.name}_${conditionalPortrait}`, 
+                                            displayName: character.displayName || character.name,
+                                            artists: alt.artists,
+                                            path: character!.altPaths![conditionalPortrait]
+                                        };
                                     } else {
                                         characterData = character;
                                     }
@@ -55,8 +61,9 @@ export default function UnitSheet({ data, chapter, expansionState, toggleCharact
                                                 if(altName === conditionalPortrait){
                                                     return '';
                                                 }
-                                                const name = `${character.displayName || character.name} ${alt.displayName || altName}`
-                                                const altData = { ...character, name, artists: alt.artists, path: character!.altPaths![altName] };
+                                                const displayName = `${character.displayName || character.name} ${alt.displayName || altName}`
+                                                const name = `${character.name}_${altName}`;
+                                                const altData = { ...character, name, displayName, artists: alt.artists, path: character!.altPaths![altName] };
                                                 return <UnitSheetSprite key={`${character.name}_${altName}`} type={section} characterDef={altData} />
                                             })}
                                         </>
