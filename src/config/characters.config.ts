@@ -317,6 +317,13 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             artists: [DoFArtist.Amelia, DoFArtist.Astra],
             class: DoFClasses.Fencer,
             nationality: DoFNationality.Onduris,
+            alt: {
+                promo: {
+                    artists: [DoFArtist.Amelia, DoFArtist.Astra, DoFArtist.Lumi],
+                    chapter: 15,
+                    displayName: 'Promoted'
+                }
+            },
             onduris: {
                 player: 8
             },
@@ -474,8 +481,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             class: DoFClasses.Rogue,
             nationality: DoFNationality.Aukema,
             allRoute: {
-                player: 99,
-                enemy: 99
+                player: 80,
+                enemy: 80
             }
         },
         {
@@ -522,7 +529,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             class: DoFClasses.SeraphKnight,
             nationality: DoFNationality.Aukema,
             allRoute: {
-                player: 99,
+                player: 91,
                 npc: 2
             }
         },
@@ -581,8 +588,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             class: DoFClasses.Paladin,
             nationality: DoFNationality.Aukema,
             allRoute: {
-                player: 99,
-                enemy: 98,
+                player: 90,
+                enemy: 80,
                 npc: 7
             }
         },

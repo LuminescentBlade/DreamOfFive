@@ -27,17 +27,17 @@ function sortCharactersByCountryForRender(data: IDoFCharacterRenderer) {
     return charactersByNationality;
 }
 
-function setRetinaRender(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D, setScale = true){
+function setRetinaRender(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D, setScale = true) {
     if (window.devicePixelRatio > 1) {
         var canvasWidth = canvas.width;
         var canvasHeight = canvas.height;
-    
+
         canvas.width = canvasWidth * window.devicePixelRatio;
         canvas.height = canvasHeight * window.devicePixelRatio;
         canvas.style.width = canvasWidth + "px";
         canvas.style.height = canvasHeight + "px";
 
-        if(setScale){
+        if (setScale) {
             ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
         }
     }
@@ -87,6 +87,7 @@ function renderItem(item: { type: string, character: IDoFRenderUnit }, even: boo
     ctx.fillText(item.character.displayName || (item.character.name), 5, 25);
 
     const image = document.getElementById(`${item.character.name}_${item.type}`) as HTMLImageElement;
+    if (!image) { return canvas; }
     const { width, height } = image;
 
     ctx?.drawImage(image, (120 - width) / 2, 140 - height);
@@ -104,10 +105,10 @@ export function renderCharactersByCountry(data: IDoFCharacterRenderer) {
     const canvases = Object.values(DoFNationality).map(nationality => {
         const subCanvas = document.createElement('canvas');
         subCanvas.width = sheetWidth;
-        
+
         const items = dataByCountry[nationality];
         const rows = Math.ceil(items.length / 10);
-        
+
         const sectionHeight = 40 + rows * 140;
         subCanvas.height = sectionHeight;
         const ctx = subCanvas.getContext('2d') as CanvasRenderingContext2D;
@@ -132,7 +133,7 @@ export function renderCharactersByCountry(data: IDoFCharacterRenderer) {
     setRetinaRender(masterCanvas, mctx, false);
 
     let lastOffset = 0;
-    canvases.forEach(canvas=>{
+    canvases.forEach(canvas => {
         mctx.drawImage(canvas, 0, lastOffset);
         lastOffset += canvas.height;
     });
