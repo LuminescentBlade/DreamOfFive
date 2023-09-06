@@ -202,7 +202,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             name: 'adrian',
             artists: [DoFArtist.Amelia, DoFArtist.Astra, DoFArtist.Lumi],
             class: DoFClasses.Bard,
-            nationality: DoFNationality.Musain,
+            nationality: DoFNationality.Onduris,
             musain: {
                 player: 9
             }
