@@ -151,7 +151,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         // Musain route
         {
             name: 'marie',
-            artists: [DoFArtist.Astra],
+            artists: [DoFArtist.Astra, DoFArtist.Lumi],
             class: DoFClasses.Thief,
             nationality: DoFNationality.Unknown,
             musain: {
