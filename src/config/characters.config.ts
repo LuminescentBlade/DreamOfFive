@@ -194,8 +194,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             class: DoFClasses.Gladiator,
             nationality: DoFNationality.Aukema,
             musain: {
-                player: 8.5,
-                enemy: 8
+                player: 9,
+                enemy: 8.5
             }
         },
         {
@@ -305,7 +305,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'alexis',
             artists: [DoFArtist.Astra],
-            nationality: DoFNationality.Unknown,
+            nationality: DoFNationality.Musain, // dresses like an ondurite because he's going there
             class: DoFClasses.Thief,
             onduris: {
                 player: 7
@@ -575,6 +575,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'volund',
+            fullName: 'murong yunxiao', //慕容雲嘯
             artists: [DoFArtist.Lumi],
             class: DoFClasses.Gladiator,
             nationality: DoFNationality.Svanhild,
@@ -723,7 +724,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             }
         },
         {
-            name: 'dorovahn',
+            name: 'vicentyr',
             artists: [DoFArtist.Xiltas, DoFArtist.Amelia],
             class: '',
             nationality: DoFNationality.Musain,
@@ -744,6 +745,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'jayson',
+            displayName: 'The Maul',
             artists: [DoFArtist.Lumi],
             class: '',
             nationality: DoFNationality.Musain,
@@ -763,7 +765,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
 
         },
         {
-            name: 'prevalh',
+            name: 'preuval',
             artists: [DoFArtist.Lumi],
             class: '',
             nationality: DoFNationality.Musain,
