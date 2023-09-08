@@ -505,7 +505,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             }
         },
         {
-            name: 'odette', // odette
+            name: 'odette',
             artists: [DoFArtist.Amelia, DoFArtist.Lumi],
             class: DoFClasses.Marksman,
             nationality: DoFNationality.Aukema,
@@ -515,7 +515,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'thyra',
-            fullName: 'jianxia long',
+            fullName: 'long tingyu', // 龍庭玉
             artists: [DoFArtist.Lumi],
             class: DoFClasses.Einherjar,
             nationality: DoFNationality.Svanhild,
@@ -671,6 +671,21 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             },
         },
         {
+            name: 'farrell',
+            fullName: 'cuthbert farrell',
+            artists: [DoFArtist.Amelia, DoFArtist.Astra, DoFArtist.TBA],
+            class: '',
+            nationality: DoFNationality.Aukema,
+            onduris: {
+                enemy: 8,
+                npc: 4
+            },
+            musain: {
+                enemy: 99,
+                npc: 4
+            },
+        },
+        {
             name: 'fergal',
             artists: [DoFArtist.Astra],
             class: DoFClasses.Armour,
@@ -678,6 +693,15 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             allRoute: {
                 enemy: 5
             },
+        },
+        {
+            name: 'morwen',
+            artists: [DoFArtist.Lumi, DoFArtist.Astra],
+            class: DoFClasses.Gladiator,
+            nationality: DoFNationality.Aukema,
+            allRoute: {
+                enemy: 5,
+            }
         },
         {
             name: 'garvan',
@@ -893,28 +917,13 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             }
         },
         {
-            name: 'morwen',
-            artists: [DoFArtist.Lumi, DoFArtist.Astra],
-            class: DoFClasses.Gladiator,
-            nationality: DoFNationality.Aukema,
-            allRoute: {
-                enemy: 5,
-            }
-        },
-        {
-            name: 'farrell',
-            fullName: 'cuthbert farrell',
-            artists: [DoFArtist.Amelia, DoFArtist.Astra, DoFArtist.TBA],
+            name: '17x',
+            artists: [DoFArtist.Lumi],
             class: '',
-            nationality: DoFNationality.Aukema,
-            onduris: {
-                enemy: 8,
-                npc: 4
-            },
-            musain: {
-                enemy: 99,
-                npc: 4
-            },
+            nationality: DoFNationality.Onduris,
+            allRoute: {
+                enemy: 17.5
+            }
         },
         // other
         {
@@ -950,7 +959,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             class: '',
             nationality: DoFNationality.Musain,
             musain: {
-                npc: 99
+                npc: 6.5
             }
         },
         {
@@ -959,7 +968,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             class: '',
             nationality: DoFNationality.Musain,
             musain: {
-                npc: 99
+                npc: 6.5
             }
         },
         {
@@ -975,7 +984,13 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             name: 'ethelreda',
             artists: [DoFArtist.Amelia, DoFArtist.Lumi],
             nationality: DoFNationality.Aukema,
-            allRoute: {
+            alt:{
+                blood: {artists: [DoFArtist.Amelia, DoFArtist.Lumi]}
+            },
+            onduris: {
+                npc: 14
+            },
+            musain: {
                 npc: 99
             }
         },
@@ -985,6 +1000,15 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             nationality: DoFNationality.Aukema,
             allRoute: {
                 npc: 99
+            }
+        },
+        {
+            name: 'agmund',
+            fullName: 'long taiming', //龍泰銘
+            artists: [DoFArtist.Lumi],
+            nationality: DoFNationality.Svanhild,
+            allRoute: {
+                npc: 17.5
             }
         },
         {
