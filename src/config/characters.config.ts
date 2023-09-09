@@ -199,7 +199,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             }
         },
         {
-            name: 'adrian',
+            name: 'blixa',
             artists: [DoFArtist.Amelia, DoFArtist.Astra, DoFArtist.Lumi],
             class: DoFClasses.Bard,
             nationality: DoFNationality.Onduris,
