@@ -273,8 +273,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'corbeau',
-            artists: [DoFArtist.Astra, DoFArtist.Lumi],
-            class: DoFClasses.Berserker,
+            artists: [DoFArtist.Lumi],
+            class: DoFClasses.Warrior,
             nationality: DoFNationality.Musain,
             musain: {
                 player: 13
@@ -925,6 +925,15 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             nationality: DoFNationality.Onduris,
             allRoute: {
                 enemy: 17.5
+            }
+        },
+        {
+            name: 'miodrag',
+            artists: [DoFArtist.Astra, DoFArtist.Lumi],
+            class: DoFClasses.Warrior,
+            nationality: DoFNationality.Vishara,
+            allRoute: {
+                enemy: 80
             }
         },
         // other
