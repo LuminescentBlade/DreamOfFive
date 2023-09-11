@@ -5,6 +5,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
     characters: [
         {
             name: 'renair',
+            displayName: 'Rena',
             artists: [DoFArtist.AK],
             alt: {
                 angry: { artists: [DoFArtist.AK, DoFArtist.Amelia] },
@@ -984,7 +985,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'renair_young',
-            displayName: 'Young Renair',
+            displayName: 'Young Rena',
             artists: [DoFArtist.Amelia, DoFArtist.Lumi],
             nationality: DoFNationality.Aukema,
             onduris: {
