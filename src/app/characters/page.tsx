@@ -183,16 +183,21 @@ export default function CharacterPage() {
         chapterLimit = 99;
         currentChapterLimit = chapterLimit;
         chapterSelection = displayValues.chapterSelection;
+        displayRoute = DoFRoute.Both;
+    }
+    if(!init){
+        setTimeout(()=>{
+            if (typeof window !== "undefined") {
+                Object.values(DoFArtist).forEach(key => {
+                    // @ts-ignore
+                    setVariable(`--dof-artist-${key}`, DoFArtistConfig[key].color);
+                });
+            }
+        },0);
     }
     const [unitSheetData, updateData] = useState(cachedData || getData(showUnsortedFull));
     const [expansionState, setExpansion] = useState({ data: new Map<string, boolean>() }); 
     init = true;
-    if (typeof window !== "undefined") {
-        Object.values(DoFArtist).forEach(key => {
-            // @ts-ignore
-            setVariable(`--dof-artist-${key}`, DoFArtistConfig[key].color);
-        });
-    }
 
     function update() {
         cachedData = getData(showUnsortedFull);
