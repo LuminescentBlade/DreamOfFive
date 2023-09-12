@@ -10,9 +10,10 @@ import { DoFCharacters } from '@/src/config/characters.config';
 import { DoFChapters } from '@/src/config/chapters.config';
 import OptionSelector from '@/src/components/option-selector';
 import { download, renderCharactersByCountry } from './sheet_export';
+import { useSearchParams } from 'next/navigation'
 
 const defaultRenderValues = {
-    prod: { chapter: 6, limit: 14},
+    prod: { chapter: 6, limit: 14 },
     local: { chapter: 99 }
 };
 
@@ -43,15 +44,13 @@ function cacheStaticUnits() {
     return { shopkeepers, generics };
 }
 
-function getData() {
-    const config = parseCharacters(chapterLimit, displayRoute);
+function getData(useFull: boolean): IDoFCharacterRenderer {
+    const config = parseCharacters(useFull ? 99: chapterLimit, useFull? DoFRoute.Both: displayRoute);
     const sort = (items: IDoFRenderUnit[]) => items.sort((a, b) => a.renderOrder - b.renderOrder);
     // console.log(config.player.map(player=>player.displayName || player.name).sort((a,b)=>a.toLowerCase().localeCompare( b.toLowerCase(), 'us')));
-    return {
-        // player: config.player.sort((a,b)=>{
-        //     // @ts-ignore
-        //     const name = player => player.displayName || player.name;
-        //     return name(a).toLowerCase().localeCompare( name(b).toLowerCase(), 'us')}),
+    return useFull ? {
+        characters: [...sort(config.player), ...sort([...config.enemy, ...config.npc]), ...shopkeepers, ...generics]
+    }:{
         player: sort(config.player),
         enemy: sort(config.enemy),
         npc: [...sort(config.npc), ...shopkeepers],
@@ -156,8 +155,8 @@ function getPath(type: string, name: string) {
     return `/mugs/${type}/${name}.png`;
 }
 
-function setDisplayValues() {
-    if (isShowingLocal()) {
+function setDisplayValues(prodOverride: boolean = false) {
+    if (isShowingLocal() || prodOverride) {
         return { chapter: defaultRenderValues.local.chapter, chapterSelection: chapterOptionsLocal };
     }
     return { chapter: defaultRenderValues.prod.chapter, chapterSelection: chapterOptionsProd };
@@ -171,12 +170,23 @@ function isShowingLocal() {
     return !isProd && !useProdOnLocal;
 }
 
+let init = false;
+
 
 export default function CharacterPage() {
-    const [unitSheetData, updateData] = useState(cachedData || getData());
-    const [expansionState, setExpansion] = useState({ data: new Map<string, boolean>() });
+    const searchParams = useSearchParams();
+    const showUnsortedFull = searchParams.get('full')?.toLowerCase() === 'true';
+    const showSortedFull = searchParams.get('devModeEnabledSpoilers')?.toLowerCase() === 'true';
     let currentChapterLimit = chapterLimit;
-
+    if(showSortedFull && !init){
+        const displayValues = setDisplayValues(true);
+        chapterLimit = 99;
+        currentChapterLimit = chapterLimit;
+        chapterSelection = displayValues.chapterSelection;
+    }
+    const [unitSheetData, updateData] = useState(cachedData || getData(showUnsortedFull));
+    const [expansionState, setExpansion] = useState({ data: new Map<string, boolean>() }); 
+    init = true;
     if (typeof window !== "undefined") {
         Object.values(DoFArtist).forEach(key => {
             // @ts-ignore
@@ -185,7 +195,7 @@ export default function CharacterPage() {
     }
 
     function update() {
-        cachedData = getData();
+        cachedData = getData(showUnsortedFull);
         updateData(cachedData);
     }
 
@@ -227,7 +237,6 @@ export default function CharacterPage() {
 
     function toggleCharacter(name: string) {
         return function () {
-            console.log(name);
             expansionState.data.set(name, !expansionState.data.get(name));
             setExpansion({ data: expansionState.data });
         }
@@ -236,7 +245,7 @@ export default function CharacterPage() {
     return (
         <main className={styles.base}>
             <h1>Dream of Five Character Sheet</h1>
-            <div className={styles.controls}>
+            {!showUnsortedFull ? <div className={styles.controls}>
                 <div className={styles.control}>
                     <label>Route Select</label>
                     <OptionSelector options={Object.values(DoFRoute)} selection={displayRoute} onSelect={changeRoute} />
@@ -257,7 +266,7 @@ export default function CharacterPage() {
                         }
                     </select>
                 </div>
-            </div>
+            </div> : ''}
             <UnitSheet data={unitSheetData} expansionState={expansionState.data} toggleCharacter={toggleCharacter} chapter={currentChapterLimit} />
             {
                 !isProd ? <div style={{ width: 'fit-content', margin: '12px auto', textAlign: 'center' }}>

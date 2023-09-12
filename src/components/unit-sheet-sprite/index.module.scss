@@ -3,6 +3,9 @@ $artist-size: 7px;
   // flex: 0 0 112px;
   width: 100%;
   &:nth-child(even) {
+    .name{
+      background-color: #7c53b9;
+    }
     .name.player {
       background-color: #2398c9;
     }
@@ -33,6 +36,7 @@ $artist-size: 7px;
   font-weight: 100;
   letter-spacing: 0.07em;
   text-align: right;
+  background-color: #643e9b;
   &.default {
     text-transform: capitalize;
   }

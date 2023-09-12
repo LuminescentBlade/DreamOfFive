@@ -74,10 +74,11 @@ export interface IDoFCharacterConfigs {
 };
 
 export interface IDoFCharacterRenderer {
-    [DoFUnitState.Player]: IDoFRenderUnit[];
-    [DoFUnitState.Enemy]: IDoFRenderUnit[];
-    [DoFUnitState.NPC]: IDoFRenderUnit[];
-    [DoFUnitState.Generic]: IDoFRenderUnit[]
+    // [DoFUnitState.Player]: IDoFRenderUnit[];
+    // [DoFUnitState.Enemy]: IDoFRenderUnit[];
+    // [DoFUnitState.NPC]: IDoFRenderUnit[];
+    // [DoFUnitState.Generic]: IDoFRenderUnit[]
+    [key: string]: IDoFRenderUnit[]
 };
 
 
