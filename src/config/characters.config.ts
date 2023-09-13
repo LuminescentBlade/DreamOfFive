@@ -535,7 +535,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             }
         },
         {
-            name: 'kaien',
+            name: 'kai',
             artists: [DoFArtist.Amelia],
             class: DoFClasses.DrakeKnight,
             nationality: DoFNationality.Vishara,
@@ -552,15 +552,18 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                 player: 99
             }
         },
-        // {
-        //     name: 'vincent',
-        //     artists: [DoFArtist.Amelia, DoFArtist.Astra],
-        //     class: '',
-        //     // nationality: DoFNationality.Vishara,
-        //     allRoute: {
-        //         player: 99
-        //     }
-        // },
+        {
+            name: 'vincent',
+            artists: [DoFArtist.Amelia, DoFArtist.Astra],
+            class: '',
+            nationality: DoFNationality.Vishara,
+            onduris: {
+                player: 98
+            },
+            musain: {
+                enemy: 99
+            }
+        },
         {
             name: 'dahlia',
             artists: [DoFArtist.Pi],
@@ -701,8 +704,12 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             artists: [DoFArtist.Lumi, DoFArtist.Astra],
             class: DoFClasses.Gladiator,
             nationality: DoFNationality.Aukema,
-            allRoute: {
+            onduris: {
                 enemy: 5,
+            },
+            musain: {
+                enemy: 5,
+                player: 98
             }
         },
         {
@@ -1028,6 +1035,14 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             displayName: 'Queen Vishara',
             artists: [DoFArtist.Amelia],
             nationality: DoFNationality.Vishara,
+            allRoute: {
+                npc: 99
+            }
+        },
+        {
+            name: 'ironside',
+            artists: [DoFArtist.Lumi, DoFArtist.Amelia],
+            nationality: DoFNationality.Onduris,
             allRoute: {
                 npc: 99
             }
