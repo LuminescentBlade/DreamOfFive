@@ -1062,7 +1062,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             }
         },
         {
-            name: 'fleur',
+            name: 'fleurre',
             artists: [DoFArtist.Amelia],
             class: DoFClasses.Sage,
             nationality: DoFNationality.Musain,
