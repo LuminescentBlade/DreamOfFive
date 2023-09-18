@@ -973,7 +973,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             }
         },
         {
-            name: 'vallans',
+            name: 'valin',
             artists: [DoFArtist.Lumi, DoFArtist.Astra],
             class: '',
             nationality: DoFNationality.Musain,
