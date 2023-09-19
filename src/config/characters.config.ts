@@ -156,7 +156,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             class: DoFClasses.Thief,
             nationality: DoFNationality.Unknown,
             musain: {
-                player: 7
+                player: 6.5
             }
         },
         {
