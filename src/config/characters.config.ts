@@ -154,7 +154,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             name: 'marie',
             artists: [DoFArtist.Astra, DoFArtist.Lumi],
             class: DoFClasses.Thief,
-            nationality: DoFNationality.Unknown,
+            nationality: DoFNationality.Aukema,
             musain: {
                 player: 6.5
             }
@@ -288,7 +288,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             nationality: DoFNationality.Musain,
             musain: {
                 player: 14,
-                enemy: 13
+                enemy: 13,
+                npc: 8
             }
         },
         {
@@ -298,7 +299,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             nationality: DoFNationality.Musain,
             musain: {
                 player: 15,
-                enemy: 12
+                enemy: 12,
+                npc: 7
             }
         },
         //
@@ -482,8 +484,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             class: DoFClasses.Rogue,
             nationality: DoFNationality.Aukema,
             allRoute: {
-                player: 80,
-                enemy: 80
+                player: 16
             }
         },
         {
@@ -492,7 +493,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             class: DoFClasses.Cataphract,
             nationality: DoFNationality.Aukema,
             allRoute: {
-                player: 17,
+                player: 16,
                 npc: 6
             }
         },
@@ -585,6 +586,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             nationality: DoFNationality.Svanhild,
             allRoute: {
                 player: 99,
+                npc: 17.5
             }
         },
         {
@@ -604,7 +606,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             class: DoFClasses.Brigand,
             nationality: DoFNationality.Aukema,
             alt: {
-                punished: { artists: [DoFArtist.Astra], chapter: 15, displayName: 'Returns' }
+                punished: { artists: [DoFArtist.Astra], chapter: 15, displayName: 'Returns', isSpoiler: true }
             },
             conditional: {
                 player: {
@@ -663,7 +665,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                 enemy: 3
             },
             alt: {
-                final: { artists: [DoFArtist.Amelia], chapter: 99 }
+                final: { artists: [DoFArtist.Amelia], chapter: 99, isSpoiler: true }
             }
         },
         {
@@ -788,6 +790,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             class: '',
             nationality: DoFNationality.Musain,
             musain: {
+                npc: 7,
                 enemy: 12
             }
         },
@@ -797,7 +800,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             class: '',
             nationality: DoFNationality.Musain,
             musain: {
-                enemy: 13
+                enemy: 13, 
+                npc: 8
             }
         },
         {
@@ -806,9 +810,10 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             class: '',
             nationality: DoFNationality.Musain,
             alt: {
-                burned: { artists: [DoFArtist.Astra] }
+                burned: { artists: [DoFArtist.Astra], isSpoiler: true }
             },
             musain: {
+                npc: 7,
                 enemy: 14
             }
 
@@ -922,6 +927,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             artists: [DoFArtist.Xiltas, DoFArtist.Astra],
             class: '',
             nationality: DoFNationality.Aukema,
+            isSpoiler: true, // not really, just need to update his design
             allRoute: {
                 enemy: 16
             }
@@ -931,6 +937,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             artists: [DoFArtist.Lumi],
             class: '',
             nationality: DoFNationality.Onduris,
+            isSpoiler: true,
             allRoute: {
                 enemy: 17.5
             }
@@ -1003,6 +1010,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             name: 'ethelrena',
             artists: [DoFArtist.Amelia, DoFArtist.Lumi],
             nationality: DoFNationality.Aukema,
+            isSpoiler: true,
             alt:{
                 blood: {artists: [DoFArtist.Amelia, DoFArtist.Lumi]}
             },
@@ -1018,7 +1026,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             artists: [DoFArtist.Astra, DoFArtist.TBA],
             nationality: DoFNationality.Aukema,
             allRoute: {
-                npc: 99
+                npc: 16
             }
         },
         {
@@ -1035,6 +1043,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             displayName: 'Queen Vishara',
             artists: [DoFArtist.Amelia],
             nationality: DoFNationality.Vishara,
+            isSpoiler: true,
             allRoute: {
                 npc: 99
             }
@@ -1043,6 +1052,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             name: 'ironside',
             artists: [DoFArtist.Lumi, DoFArtist.Amelia],
             nationality: DoFNationality.Onduris,
+            isSpoiler: true,
             allRoute: {
                 npc: 99
             }
@@ -1070,9 +1080,11 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                 enemy: 99
             },
             musain: {
+                npc: 7,
                 enemy: 99
             }
         }
+        
     ],
     shopkeepers: [
         {

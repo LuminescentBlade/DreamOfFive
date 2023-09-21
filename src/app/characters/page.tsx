@@ -5,7 +5,7 @@ import UnitSheet from '@/src/components/unit-sheet';
 import styles from './page.module.scss'
 import { DoFArtistConfig } from '@/src/config/artists.config';
 import { useState } from 'react';
-import { IDoFCharacter, IDoFCharacterRenderer, IDoFRenderUnit, IDoFUnit } from '@/src/models/interfaces';
+import { IDoFCharacter, IDoFCharacterRenderer, IDoFRenderUnit, IDoFUnit, IKeyMap } from '@/src/models/interfaces';
 import { DoFCharacters } from '@/src/config/characters.config';
 import { DoFChapters } from '@/src/config/chapters.config';
 import OptionSelector from '@/src/components/option-selector';
@@ -44,21 +44,26 @@ function cacheStaticUnits() {
     return { shopkeepers, generics };
 }
 
-function getData(useFull: boolean): IDoFCharacterRenderer {
-    const config = parseCharacters(useFull ? 99: chapterLimit, useFull? DoFRoute.Both: displayRoute);
-    const sort = (items: IDoFRenderUnit[]) => items.sort((a, b) => a.renderOrder - b.renderOrder);
-    // console.log(config.player.map(player=>player.displayName || player.name).sort((a,b)=>a.toLowerCase().localeCompare( b.toLowerCase(), 'us')));
-    return useFull ? {
-        characters: [...sort(config.player), ...sort([...config.enemy, ...config.npc]), ...shopkeepers, ...generics]
-    }:{
-        player: sort(config.player),
-        enemy: sort(config.enemy),
-        npc: [...sort(config.npc), ...shopkeepers],
-        generic: generics
-    };
+function getData(useFull: boolean, bypassSpoiler: boolean): IDoFCharacterRenderer {
+    const config = parseCharacters(useFull ? 99 : chapterLimit, useFull ? DoFRoute.Both : displayRoute, useFull, bypassSpoiler);
+    const getRenderOrder = (item: IDoFRenderUnit) => item.fullSheetRenderOrderOverride ?? item.renderOrder;
+    const sort = (items: IDoFRenderUnit[]) => items.sort((a, b) => getRenderOrder(a)- getRenderOrder(b));
+    if (useFull) {
+        return {
+            characters: [...sort([...config.player, ...config.enemy, ...config.npc]), ...generics, ...shopkeepers]
+        }
+    } else {
+
+        return {
+            player: sort(config.player),
+            enemy: sort(config.enemy),
+            npc: [...sort(config.npc), ...shopkeepers],
+            generic: generics
+        };
+    }
 }
 
-function parseCharacters(chapter: number, route: DoFRoute) {
+function parseCharacters(chapter: number, route: DoFRoute, useEarliest = false, bypassSpoiler = false) {
     const config: { [key: string]: IDoFRenderUnit[] } = {
         [DoFUnitState.Player]: [],
         [DoFUnitState.Enemy]: [],
@@ -66,11 +71,14 @@ function parseCharacters(chapter: number, route: DoFRoute) {
     };
 
     DoFCharacters.characters.forEach(character => {
+        if (character.isSpoiler && !bypassSpoiler) {
+            return;
+        }
         let placement: { value: DoFUnitState, chapter: number } | undefined;
         if (route === DoFRoute.Musain || route === DoFRoute.Onduris) {
-            placement = getSinglePlacement(route, chapter, character);
+            placement = getSinglePlacement(route, chapter, character, useEarliest);
         } else {
-            placement = getDoublePlacement(chapter, character);
+            placement = getDoublePlacement(chapter, character, useEarliest);
         }
         if (placement) {
             // let img = imageRenderCache.get(character.name);
@@ -81,7 +89,15 @@ function parseCharacters(chapter: number, route: DoFRoute) {
             const characterItem: IDoFRenderUnit = { ...character, path, renderOrder: placement.chapter };
 
             if (character.alt) {
-                characterItem.altPaths = Object.keys(character.alt).reduce((paths, altName) => ({ ...paths, [altName]: getPath('characters', `${character.name}_${altName}`) }), {});
+                let characterAlt = character.alt;
+                if (!bypassSpoiler) {
+                    characterAlt = Object.keys(character.alt).reduce((alts, altName) => (characterAlt[altName].isSpoiler ? alts : { ...alts, [altName]: { ...characterAlt[altName], chapter: undefined } }), {})
+                }
+                characterItem.alt = Object.keys(characterAlt)?.length ? characterAlt : undefined;
+            }
+
+            if (characterItem.alt) {
+                characterItem.altPaths = Object.keys(characterItem.alt).reduce((paths, altName) => ({ ...paths, [altName]: getPath('characters', `${character.name}_${altName}`) }), {});
             }
 
             //     img = new Image();
@@ -97,7 +113,7 @@ function parseCharacters(chapter: number, route: DoFRoute) {
     return config;
 }
 
-function getSinglePlacement(route: 'musain' | 'onduris', chapter: number, character: IDoFCharacter) {
+function getSinglePlacement(route: 'musain' | 'onduris', chapter: number, character: IDoFCharacter, useEarliest = false) {
     let routeConfig = character[route] || character.allRoute;
     if (!routeConfig) {
         return;
@@ -116,7 +132,7 @@ function getSinglePlacement(route: 'musain' | 'onduris', chapter: number, charac
         validStates.sort((a, b) => {
             const chapterDiff = b.chapter - a.chapter;
             if (chapterDiff) {
-                return chapterDiff;
+                return (useEarliest ? -1 : 1) * chapterDiff;
             } else {
                 return b.value === DoFUnitState.Player ? 1 :
                     b.value === DoFUnitState.Enemy && a.value === DoFUnitState.NPC ? 1 : -1;
@@ -128,17 +144,17 @@ function getSinglePlacement(route: 'musain' | 'onduris', chapter: number, charac
     }
 }
 
-function getDoublePlacement(chapter: number, character: IDoFCharacter) {
+function getDoublePlacement(chapter: number, character: IDoFCharacter, useEarliest = false) {
     // refactor to be more genericized to accept n routes
     const placements = ['musain', 'onduris']
         // @ts-ignore
-        .map(route => getSinglePlacement(route, chapter, character))
+        .map(route => getSinglePlacement(route, chapter, character, useEarliest))
         .filter(placement => placement != null);
     if (!placements.length) {
         return undefined;
     }
     placements.sort((a, b) => {
-        if (b!.value === a!.value) {
+        if (b!.value === a!.value || useEarliest) {
             return a!.chapter - b!.chapter; // take earlier chapter if both same value for multi placements
         } else if (b!.value === DoFUnitState.Player) {
             return 1;
@@ -177,30 +193,32 @@ export default function CharacterPage() {
     const searchParams = useSearchParams();
     const showUnsortedFull = searchParams.get('full')?.toLowerCase() === 'true';
     const showSortedFull = searchParams.get('devModeEnabledSpoilers')?.toLowerCase() === 'true';
+    const setProdFromUrl = searchParams.get('prod')?.toLowerCase() === 'true';
+    useProdOnLocal = useProdOnLocal || setProdFromUrl;
     let currentChapterLimit = chapterLimit;
-    if(showSortedFull && !init){
+    if (showSortedFull && !init) {
         const displayValues = setDisplayValues(true);
         chapterLimit = 99;
         currentChapterLimit = chapterLimit;
         chapterSelection = displayValues.chapterSelection;
         displayRoute = DoFRoute.Both;
     }
-    if(!init){
-        setTimeout(()=>{
+    if (!init) {
+        setTimeout(() => {
             if (typeof window !== "undefined") {
                 Object.values(DoFArtist).forEach(key => {
                     // @ts-ignore
                     setVariable(`--dof-artist-${key}`, DoFArtistConfig[key].color);
                 });
             }
-        },0);
+        }, 0);
     }
-    const [unitSheetData, updateData] = useState(cachedData || getData(showUnsortedFull));
-    const [expansionState, setExpansion] = useState({ data: new Map<string, boolean>() }); 
+    const [unitSheetData, updateData] = useState(cachedData || getData(showUnsortedFull, showSortedFull || (isShowingLocal())));
+    const [expansionState, setExpansion] = useState({ data: new Map<string, boolean>() });
     init = true;
 
     function update() {
-        cachedData = getData(showUnsortedFull);
+        cachedData = getData(showUnsortedFull, showSortedFull || (isShowingLocal()));
         updateData(cachedData);
     }
 
@@ -276,7 +294,7 @@ export default function CharacterPage() {
             {
                 !isProd ? <div style={{ width: 'fit-content', margin: '12px auto', textAlign: 'center' }}>
                     <p>Displaying {isShowingLocal() ? 'Local' : 'Prod'} Values</p>
-                    <button style={{ padding: '12px', height: '40px' }} onClick={toggleProd}>Toggle Production Sheet</button>
+                    {showSortedFull ? '' : <button style={{ padding: '12px', height: '40px' }} onClick={toggleProd}>Toggle Production Sheet</button>}
                     <button style={{ padding: '12px', height: '40px' }} onClick={renderByCountry}>Render Sheet By Country</button>
                 </div> : ""
             }

@@ -1,5 +1,6 @@
 import { DoFArtist, DoFNationality, DoFUnitState } from "./enums";
 
+export interface IKeyMap<T> {[key:string]: T};
 export interface IUnit{
     name: string;
     artists: string[];
@@ -13,6 +14,8 @@ export interface IUnit{
         enemy?: IConditional;
         npc?: IConditional;
     },
+    isSpoiler?: boolean;
+    fullSheetRenderOrderOverride?: number
 };
 
 export interface IConditional{
@@ -23,7 +26,8 @@ export interface IConditional{
 export interface IAltConfig{ 
     artists: string[],
     chapter?: number,
-    displayName?: string
+    displayName?: string,
+    isSpoiler?: boolean
 }
 
 export interface IDoFUnit extends IUnit {
