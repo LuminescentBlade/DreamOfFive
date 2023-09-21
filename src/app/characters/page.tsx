@@ -194,7 +194,7 @@ export default function CharacterPage() {
     const showUnsortedFull = searchParams.get('full')?.toLowerCase() === 'true';
     const showSortedFull = searchParams.get('devModeEnabledSpoilers')?.toLowerCase() === 'true';
     const setProdFromUrl = searchParams.get('prod')?.toLowerCase() === 'true';
-    useProdOnLocal = useProdOnLocal || setProdFromUrl;
+    // useProdOnLocal = useProdOnLocal || setProdFromUrl;
     let currentChapterLimit = chapterLimit;
     if (showSortedFull && !init) {
         const displayValues = setDisplayValues(true);
