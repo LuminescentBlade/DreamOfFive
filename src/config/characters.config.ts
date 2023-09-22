@@ -597,7 +597,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             allRoute: {
                 player: 90,
                 enemy: 80,
-                npc: 7
+                npc: 6
             }
         },
         {
