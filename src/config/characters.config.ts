@@ -957,6 +957,9 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             artists: [DoFArtist.Astra, DoFArtist.Amelia],
             class: '',
             nationality: DoFNationality.Aukema,
+            alt:{
+                younger: {artists: [DoFArtist.Astra, DoFArtist.Amelia, DoFArtist.Lumi]}
+            },
             allRoute: {
                 npc: 0
             }
