@@ -288,8 +288,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             nationality: DoFNationality.Musain,
             musain: {
                 player: 14,
-                enemy: 13,
-                npc: 8
+                enemy: 8,
             }
         },
         {
@@ -787,7 +786,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'uther',
             artists: [DoFArtist.Lumi, DoFArtist.Astra],
-            class: '',
+            class: DoFClasses.Sentinel,
             nationality: DoFNationality.Musain,
             musain: {
                 npc: 7,
@@ -797,11 +796,10 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'menida',
             artists: [DoFArtist.Astra],
-            class: '',
+            class: DoFClasses.Sibyl,
             nationality: DoFNationality.Musain,
             musain: {
-                enemy: 13, 
-                npc: 8
+                enemy: 8
             }
         },
         {
@@ -1053,6 +1051,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'ironside',
+            displayName: 'Rophon',
             artists: [DoFArtist.Lumi, DoFArtist.Amelia],
             nationality: DoFNationality.Onduris,
             isSpoiler: true,
