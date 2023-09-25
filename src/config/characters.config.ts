@@ -1050,8 +1050,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             }
         },
         {
-            name: 'ironside',
-            displayName: 'Rophon',
+            name: 'rophon',
+            fullName: 'Ironside',
             artists: [DoFArtist.Lumi, DoFArtist.Amelia],
             nationality: DoFNationality.Onduris,
             isSpoiler: true,
