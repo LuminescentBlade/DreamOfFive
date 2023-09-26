@@ -33,7 +33,7 @@ export default function UnitSheetSprite({ type, characterDef, expanded, onExpand
             }
         </div>
         <div className={styles.sprite}>
-            <img id={`${characterDef.name}_${type}`} src={characterDef.path} />
+            <img className="pixel-art" id={`${characterDef.name}_${type}`} src={characterDef.path} />
         </div>
     </div>);
 }

@@ -132,3 +132,16 @@ input, select{
 .center{
   text-align: center;
 }
+
+.pixel-art, .pixel-art img{
+  
+    //https://graphicdesign.stackexchange.com/questions/145700/displaying-older-images-on-web-for-retina-high-pixel-density-screens
+    image-rendering: optimizeSpeed; /* Legal fallback */
+    image-rendering: -moz-crisp-edges; /* Firefox        */
+    image-rendering: -o-crisp-edges; /* Opera          */
+    image-rendering: -webkit-optimize-contrast; /* Safari         */
+    image-rendering: optimize-contrast; /* CSS3 Proposed  */
+    image-rendering: crisp-edges; /* CSS4 Proposed  */
+    image-rendering: pixelated; /* CSS4 Proposed  */
+    -ms-interpolation-mode: nearest-neighbor; /* IE8+           */
+}
