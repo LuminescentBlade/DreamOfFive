@@ -278,6 +278,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             class: DoFClasses.Warrior,
             nationality: DoFNationality.Musain,
             musain: {
+                npc: 8,
                 player: 13
             }
         },
