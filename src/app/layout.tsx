@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <header role="navigation">
+        <header role="navigation" className="navigation">
           <Link href="/">Home</Link>
           <Link href="/characters">Characters</Link>
         </header>

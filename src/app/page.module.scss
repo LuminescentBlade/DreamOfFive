@@ -1,8 +1,60 @@
-.banner{
-    h1{
-        text-align: center;
-    }
+$max-width: 248px * 4;
+.banner {
+  position: sticky;
+  top: 64px;
+  padding: 24px;
+  background: linear-gradient(
+    180deg,
+    var(--dof-bg-color) 0%,
+    var(--dof-bg-color) 80%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  @media screen and (max-width: 768px) {
+    position: static;
+  }
+  @media screen and (max-height: 500px) {
+    position: static;
+  }
+  h1 {
+    text-align: center;
+    font-size: 7.2rem;
+  }
 }
-.content{
-    padding: var(--dof-content-padding);
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+  box-sizing: content-box;
+  padding: var(--dof-content-padding);
+  max-width: $max-width;
+  margin: 0 auto;
+}
+.flavorText {
+  padding: var(--dof-content-padding);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-style: italic;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.links {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.preview {
+  display: grid;
+  max-width: 100%;
+  grid-template-columns: repeat(auto-fit, 248px);
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.comingSoon{
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 600;
 }

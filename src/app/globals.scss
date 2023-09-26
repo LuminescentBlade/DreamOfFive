@@ -15,6 +15,7 @@
   --dof-color5: #ffc64b;
   --dof-kq-font: "Knights Quest", serif;
   --dof-header-bg-color: #fff;
+  --dof-bg-color: #fff;
   --dof-header-border: var(--dof-color5);
   --dof-header-font-color: var(--dof-color4);
   --dof-standard-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.5);
@@ -23,6 +24,8 @@
   --dof-input-width: 200px;
   --dof-input-border: 1px solid var(--dof-color2);
   --dof-input-border-radius: 5px;
+  --dof-a: var(--dof-color1);
+  --dof-a-hover: var(--dof-color2);
 
   --lb-option-selector-bg-color: var(--dof-color1);
   --lb-option-selector-font-color: var(--dof-color2);
@@ -55,6 +58,7 @@ body {
   position: relative;
   max-width: 100vw;
   font-family: sans-serif;
+  background-color: var(--dof-bg-color);
 }
 
 body {
@@ -69,8 +73,18 @@ body {
 }
 
 a {
+  color: var(--dof-a);
+  &:hover{
+    color: var(--dof-a-hover);
+  }
+}
+
+.navigation a {
   color: inherit;
   text-decoration: none;
+  &:hover{
+    color: inherit;
+  }
 }
 
 // @media (prefers-color-scheme: dark) {
@@ -113,4 +127,8 @@ input, select{
   width: var(--dof-input-width);
   padding: 0 12px;
   border-radius: var(--dof-input-border-radius);
+}
+
+.center{
+  text-align: center;
 }
