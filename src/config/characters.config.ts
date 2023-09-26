@@ -931,11 +931,10 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             }
         },
         {
-            name: '17x',
+            name: 'quivin',
             artists: [DoFArtist.Lumi],
             class: '',
             nationality: DoFNationality.Onduris,
-            isSpoiler: true,
             allRoute: {
                 enemy: 17.5
             }
