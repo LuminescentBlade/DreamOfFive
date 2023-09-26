@@ -1,4 +1,5 @@
-$max-width: 248px * 4;
+$img-width: 240px;
+$max-width: $img-width * 4;
 .banner {
   position: sticky;
   top: 64px;
@@ -48,9 +49,13 @@ $max-width: 248px * 4;
 .preview {
   display: grid;
   max-width: 100%;
-  grid-template-columns: repeat(auto-fit, 248px);
+  grid-template-columns: repeat(auto-fit, $img-width);
   justify-content: center;
   margin-top: 24px;
+  gap: 0;
+  img{
+    margin: 0;
+  }
 }
 
 .comingSoon{

@@ -36,7 +36,6 @@ export default function Home() {
         </p>
         <div className={styles.preview}>
           {
-            // Array.from(Array(12).keys()).map(i=><Image src={`/preview/preview${i+1}.png`} height={160} width={248} alt={`dream of five preview image ${i+1}`}/>)
             Array.from(Array(12).keys()).map(i=><img className="pixel-art" src={`/preview/preview${i+1}.png`}  alt={`dream of five preview image ${i+1}`}/>)
           }
         </div>
