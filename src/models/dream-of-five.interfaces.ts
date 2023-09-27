@@ -32,9 +32,9 @@ export interface IDoFStats {
 
 export interface IDoFPlayable extends IDoFCharacter{
     promotesTo?: string,
-    bases: IDoFStats,
-    growths: IDoFStats
-    level: number
+    bases?: IDoFStats,
+    growths?: IDoFStats
+    level?: number
 }
 export interface IDoFRenderUnit extends IDoFUnit {
     path: string;
