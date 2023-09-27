@@ -744,7 +744,16 @@ export const DoFCharacters: IDoFCharacterConfigs = {
 
         },
         {
-            name: 'ducann',
+            name: 'menida',
+            artists: [DoFArtist.Astra],
+            class: DoFClasses.Sibyl,
+            nationality: DoFNationality.Musain,
+            musain: {
+                enemy: 8
+            }
+        },
+        {
+            name: 'duquesne',
             artists: [DoFArtist.Xiltas, DoFArtist.Astra, DoFArtist.Lumi],
             class: '',
             nationality: DoFNationality.Musain,
@@ -792,15 +801,6 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             musain: {
                 npc: 7,
                 enemy: 12
-            }
-        },
-        {
-            name: 'menida',
-            artists: [DoFArtist.Astra],
-            class: DoFClasses.Sibyl,
-            nationality: DoFNationality.Musain,
-            musain: {
-                enemy: 8
             }
         },
         {
