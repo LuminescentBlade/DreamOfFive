@@ -289,7 +289,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             nationality: DoFNationality.Musain,
             musain: {
                 player: 14,
-                enemy: 8,
+                enemy: [8,13],
             }
         },
         {
@@ -609,14 +609,15 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                 punished: { artists: [DoFArtist.Astra], chapter: 15, displayName: 'Returns', isSpoiler: true }
             },
             conditional: {
-                player: {
+                chapter: {
+                    chapter: 15,
                     swapPortrait: 'punished',
                     ogPortraitName: 'Dismas Prologue'
                 }
             },
             allRoute: {
                 player: 16,
-                enemy: 0
+                enemy: [0,15]
             }
         },
         {
@@ -662,10 +663,17 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             class: DoFClasses.Harrier,
             nationality: DoFNationality.Aukema,
             allRoute: {
-                enemy: 3
+                enemy: [3,99]
             },
             alt: {
                 final: { artists: [DoFArtist.Amelia], chapter: 99, isSpoiler: true }
+            },
+            conditional: {
+                chapter: {
+                    chapter: 99,
+                    swapPortrait: 'final',
+                    ogPortraitName: 'Sorcha c3'
+                }
             }
         },
         {
@@ -749,7 +757,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             class: DoFClasses.Sibyl,
             nationality: DoFNationality.Musain,
             musain: {
-                enemy: 8
+                enemy: [8,13]
             }
         },
         {

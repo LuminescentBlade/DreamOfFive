@@ -31,16 +31,20 @@ export default function UnitSheet({ data, chapter, expansionState, toggleCharact
                                     const toggleFcn = validAlts.length ? toggleCharacter(character.name) : undefined;
                                     let conditionalPortrait: string | undefined;
                                     let conditionalOGName: string | undefined;
-                                    if ((character.conditional && section !== DoFUnitState.Generic && character.conditional[section])) {
-                                        conditionalPortrait =  character.conditional[section]?.swapPortrait;
-                                        conditionalOGName =  character.conditional[section]?.ogPortraitName;
+                                    if ((character.conditional && section !== DoFUnitState.Generic)) {
+                                        let conditionalConfig = character.conditional[section] ??
+                                            ((character.conditional?.chapter?.chapter ?? -1) <= chapter) ? character.conditional?.chapter : null;
+                                        if(conditionalConfig){
+                                            conditionalPortrait = conditionalConfig.swapPortrait;
+                                            conditionalOGName = conditionalConfig.ogPortraitName;
+                                        }
                                     }
                                     let characterData;
                                     if (conditionalPortrait) {
                                         const alt = character.alt[conditionalPortrait];
                                         characterData = {
                                             ...character,
-                                            name: `${character.name}_${conditionalPortrait}`, 
+                                            name: `${character.name}_${conditionalPortrait}`,
                                             displayName: character.displayName || character.name,
                                             artists: alt.artists,
                                             path: character!.altPaths![conditionalPortrait]
@@ -51,14 +55,14 @@ export default function UnitSheet({ data, chapter, expansionState, toggleCharact
                                     const baseItem = <UnitSheetSprite key={character.name} type={section} characterDef={characterData} expanded={expansionState.get(character.name)} onExpand={toggleFcn} />;
                                     if (expansionState.get(character.name)) {
                                         let conditionalItem;
-                                        if(conditionalPortrait){
-                                            conditionalItem = <UnitSheetSprite key={`${character.name}_original`} type={section} characterDef={{...character, displayName: conditionalOGName}} />
+                                        if (conditionalPortrait) {
+                                            conditionalItem = <UnitSheetSprite key={`${character.name}_original`} type={section} characterDef={{ ...character, displayName: conditionalOGName }} />
                                         }
                                         return <>
                                             {baseItem}
                                             {conditionalItem}
                                             {validAlts.map(([altName, alt]) => {
-                                                if(altName === conditionalPortrait){
+                                                if (altName === conditionalPortrait) {
                                                     return '';
                                                 }
                                                 const displayName = `${character.displayName || character.name} ${alt.displayName || altName}`

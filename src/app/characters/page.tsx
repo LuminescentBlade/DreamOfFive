@@ -122,8 +122,21 @@ function getSinglePlacement(route: 'musain' | 'onduris', chapter: number, charac
     if (routeConfig.player != null && routeConfig.player <= chapter) {
         validStates.push({ value: DoFUnitState.Player, chapter: routeConfig.player });
     }
-    if (routeConfig.enemy != null && routeConfig.enemy <= chapter) {
-        validStates.push({ value: DoFUnitState.Enemy, chapter: routeConfig.enemy });
+    if (routeConfig.enemy != null) {
+        if(typeof routeConfig.enemy === 'number'){
+            if(routeConfig.enemy <= chapter){
+                validStates.push({ value: DoFUnitState.Enemy, chapter: routeConfig.enemy });
+            }
+        } else {
+            let index = -1;
+            while(routeConfig.enemy[index+1] <= chapter){
+                index++;
+            }
+            if(index >= 0){
+                validStates.push({ value: DoFUnitState.Enemy, chapter: routeConfig.enemy[index] });
+            }
+        }
+        
     }
     if (routeConfig.npc != null && routeConfig.npc <= chapter) {
         validStates.push({ value: DoFUnitState.NPC, chapter: routeConfig.npc });
