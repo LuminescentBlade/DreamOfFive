@@ -6,9 +6,11 @@ export const Ironside: IDoFPlayable = {
     fullName: 'Ironside',
     artists: [DoFArtist.Lumi, DoFArtist.Amelia],
     nationality: DoFNationality.Onduris,
+    secret: true,
     routeConfig:{
         allRoute: {
-            npc: 99
+            npc: 99,
+            player: 99
         }
     }
 };

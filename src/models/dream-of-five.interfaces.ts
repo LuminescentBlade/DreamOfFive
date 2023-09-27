@@ -17,10 +17,11 @@ export interface IDoFAlt extends IAltConfig {
 
 export interface IDoFCharacter extends IDoFUnit {
     routeConfig: IRouteConfig
+    secret?: boolean,
 }
 
 export interface IDoFPlayable extends IDoFCharacter{
-    promotesTo?: string
+    promotesTo?: string,
 }
 export interface IDoFRenderUnit extends IDoFUnit {
     path: string;
