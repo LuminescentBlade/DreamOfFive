@@ -20,21 +20,17 @@ const defaultRenderValues = {
 const chapterOptionsLocal = Object.values(DoFChapters).sort((a, b) => a.value - b.value);
 const chapterOptionsProd = chapterOptionsLocal.filter(chapter => chapter.value <= defaultRenderValues.prod.limit);
 
-// const imageRenderCache = new Map<string, HTMLImageElement>();
 const isProd = (process.env.NODE_ENV === 'production');
 let useProdOnLocal = false;
 let cachedData: IDoFCharacterRenderer; // we will definitely switch to redux after this
 let displayRoute = isShowingLocal() ? DoFRoute.Both : DoFRoute.Onduris; // default value
-let { chapter: chapterLimit, chapterSelection } = setDisplayValues();
+let { chapter: chapterLimit,    chapterSelection } = setDisplayValues();
 const { shopkeepers, generics } = cacheStaticUnits();
 
 function cacheStaticUnits() {
     const cacheItem = (arr: IDoFUnit[], pathType: string) => {
         return arr.map(item => {
-            const path = getPath(pathType, item.name);
-            // const img = new Image();
-            // img.src = path;
-            // imageRenderCache.set(item.name, img);
+            const path = getPath(pathType, item.name);        
             return ({ ...item, path, renderOrder: 99 })
         });
     };
@@ -53,7 +49,6 @@ function getData(useFull: boolean, bypassSpoiler: boolean): IDoFCharacterRendere
             characters: [...sort([...config.player, ...config.enemy, ...config.npc]), ...generics, ...shopkeepers]
         }
     } else {
-
         return {
             player: sort(config.player),
             enemy: sort(config.enemy),
@@ -76,14 +71,12 @@ function parseCharacters(chapter: number, route: DoFRoute, useEarliest = false, 
         }
         let placement: { value: DoFUnitState, chapter: number } | undefined;
         if (route === DoFRoute.Musain || route === DoFRoute.Onduris) {
-            placement = getSinglePlacement(route, chapter, character, useEarliest);
+            placement = getSinglePlacement(route, chapter, character, useEarliest, bypassSpoiler);
         } else {
-            placement = getDoublePlacement(chapter, character, useEarliest);
+            placement = getDoublePlacement(chapter, character, useEarliest, bypassSpoiler);
         }
         if (placement) {
-            // let img = imageRenderCache.get(character.name);
             let path;
-            // if (!img) {
             path = getPath('characters', character.name);
 
             const characterItem: IDoFRenderUnit = { ...character, path, renderOrder: placement.chapter };
@@ -100,12 +93,6 @@ function parseCharacters(chapter: number, route: DoFRoute, useEarliest = false, 
                 characterItem.altPaths = Object.keys(characterItem.alt).reduce((paths, altName) => ({ ...paths, [altName]: getPath('characters', `${character.name}_${altName}`) }), {});
             }
 
-            //     img = new Image();
-            //     img.src = path;
-            //     imageRenderCache.set(character.name, img);
-            // } else {
-            // path = img.src;
-            // }
             config[placement.value].push(characterItem);
         }
     });
@@ -113,13 +100,13 @@ function parseCharacters(chapter: number, route: DoFRoute, useEarliest = false, 
     return config;
 }
 
-function getSinglePlacement(route: 'musain' | 'onduris', chapter: number, character: IDoFCharacter, useEarliest = false) {
+function getSinglePlacement(route: 'musain' | 'onduris', chapter: number, character: IDoFCharacter, useEarliest = false, showSecretPlayable = false) {
     let routeConfig = character.routeConfig[route] || character.routeConfig.allRoute;
     if (!routeConfig) {
         return;
     }
     const validStates = [];
-    if (routeConfig.player != null && routeConfig.player <= chapter) {
+    if (routeConfig.player != null && routeConfig.player <= chapter && (!character.secret || showSecretPlayable) ) {
         validStates.push({ value: DoFUnitState.Player, chapter: routeConfig.player });
     }
     if (routeConfig.enemy != null) {
@@ -157,11 +144,11 @@ function getSinglePlacement(route: 'musain' | 'onduris', chapter: number, charac
     }
 }
 
-function getDoublePlacement(chapter: number, character: IDoFCharacter, useEarliest = false) {
+function getDoublePlacement(chapter: number, character: IDoFCharacter, useEarliest = false, showSecretPlayable = false) {
     // refactor to be more genericized to accept n routes
     const placements = ['musain', 'onduris']
         // @ts-ignore
-        .map(route => getSinglePlacement(route, chapter, character, useEarliest))
+        .map(route => getSinglePlacement(route, chapter, character, useEarliest, showSecretPlayable))
         .filter(placement => placement != null);
     if (!placements.length) {
         return undefined;
