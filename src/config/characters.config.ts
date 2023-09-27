@@ -4,8 +4,9 @@ import { DoFPlayable } from "./playables";
 
 export const DoFCharacters: IDoFCharacterConfigs = {
     characters: [
-        // Pre-6
+        // playables
         ...Object.values(DoFPlayable),
+        // non-playables
         {
             name: 'cobbet',
             artists: [DoFArtist.Astra],
