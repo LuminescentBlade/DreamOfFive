@@ -1,6 +1,6 @@
 'use client';
 
-import { DoFArtist, DoFNationality, DoFRoute, DoFUnitState } from '@/src/models/enums';
+import { DoFArtist, DoFRoute, DoFUnitState } from '@/src/models/enums';
 import UnitSheet from '@/src/components/unit-sheet';
 import styles from './page.module.scss'
 import { DoFArtistConfig } from '@/src/config/artists.config';
