@@ -4,7 +4,7 @@ import { IDoFPlayable } from "@/src/models/interfaces";
 export const Eudira: IDoFPlayable = {
     name: 'eudira',
     artists: [DoFArtist.AK],
-    class: DoFClasses.Hexe,
+    class: DoFClasses.Sibyl,
     nationality: DoFNationality.Musain,
     routeConfig: {
         musain: {

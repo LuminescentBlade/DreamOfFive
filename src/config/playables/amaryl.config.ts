@@ -4,7 +4,7 @@ import { IDoFPlayable } from "@/src/models/interfaces";
 export const Dahlia: IDoFPlayable = {
     name: DoFCharKey.Dahlia,
     artists: [DoFArtist.Pi],
-    class: DoFClasses.Hexe,
+    class: DoFClasses.Sibyl,
     nationality: DoFNationality.Unknown,
     routeConfig:{
         allRoute: {
