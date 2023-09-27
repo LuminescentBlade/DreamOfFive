@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import styles from './page.module.scss'
+import { Rena } from '../config/playables/rena.config'
 
 export default function Home() {
   return (
@@ -12,7 +13,7 @@ export default function Home() {
           Like those who will come after you.
         </p>
         <p>
-          Farewell, Rena.
+          Farewell, {Rena.displayName}.
         </p>
       </div>
       <div className={styles.banner}>

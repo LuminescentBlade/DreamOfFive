@@ -114,7 +114,7 @@ function parseCharacters(chapter: number, route: DoFRoute, useEarliest = false, 
 }
 
 function getSinglePlacement(route: 'musain' | 'onduris', chapter: number, character: IDoFCharacter, useEarliest = false) {
-    let routeConfig = character[route] || character.allRoute;
+    let routeConfig = character.routeConfig[route] || character.routeConfig.allRoute;
     if (!routeConfig) {
         return;
     }

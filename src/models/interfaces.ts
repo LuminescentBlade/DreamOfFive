@@ -8,7 +8,6 @@ export interface IUnit {
     alt?: {
         [name: string]: IAltConfig
     };
-    class?: string,
     conditional?: {
         player?: IConditional;
         enemy?: IConditional;
@@ -38,6 +37,7 @@ export interface IDoFUnit extends IUnit {
     alt?: {
         [name: string]: IDoFAlt
     };
+    class?: string,
     nationality?: DoFNationality,
 };
 
@@ -50,10 +50,18 @@ export interface ICharacterStateChapter {
     enemy?: number | number[];
     npc?: number;
 }
-export interface IDoFCharacter extends IDoFUnit {
-    musain?: ICharacterStateChapter,
-    onduris?: ICharacterStateChapter,
+
+export type IRouteConfig = {
     allRoute?: ICharacterStateChapter
+} & {
+    [routeName: string]: ICharacterStateChapter,
+};
+export interface IDoFCharacter extends IDoFUnit {
+    routeConfig: IRouteConfig
+}
+
+export interface IDoFPlayable extends IDoFCharacter{
+    promotesTo?: string
 }
 export interface IDoFRenderUnit extends IDoFUnit {
     path: string;
