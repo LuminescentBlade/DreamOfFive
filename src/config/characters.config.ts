@@ -663,7 +663,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             class: DoFClasses.Harrier,
             nationality: DoFNationality.Aukema,
             allRoute: {
-                enemy: [3,99]
+                enemy: [2,3,99]
             },
             alt: {
                 final: { artists: [DoFArtist.Amelia], chapter: 99, isSpoiler: true }
