@@ -19,5 +19,25 @@ export const Rena: IDoFPlayable =  {
         allRoute: {
             player: 0
         }
-    }
+    },
+    level: 2,
+    bases:{
+        hp: 21,
+        pow: 6,
+        skl: 11,
+        spd: 12, 
+        luk: 8,
+        def: 5,
+        res: 3,
+        con: 7
+    },
+    growths:{
+        hp: 70,
+        pow: 40,
+        skl: 40,
+        spd: 60, 
+        luk: 50,
+        def: 30,
+        res: 20
+    },
 };

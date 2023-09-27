@@ -1,4 +1,4 @@
-import { DoFArtist, DoFNationality, DoFUnitState } from "./enums";
+import { DoFArtist, DoFNationality } from "./enums";
 import { IAltConfig, IRouteConfig, IUnit } from "./spritesheet.interfaces";
 
 export interface IDoFUnit extends IUnit {
@@ -19,9 +19,22 @@ export interface IDoFCharacter extends IDoFUnit {
     routeConfig: IRouteConfig
     secret?: boolean,
 }
+export interface IDoFStats {
+    hp: number,
+    pow: number, 
+    skl: number,
+    spd: number,
+    luk: number,
+    def: number,
+    res: number,
+    con?: number
+}
 
 export interface IDoFPlayable extends IDoFCharacter{
     promotesTo?: string,
+    bases: IDoFStats,
+    growths: IDoFStats
+    level: number
 }
 export interface IDoFRenderUnit extends IDoFUnit {
     path: string;

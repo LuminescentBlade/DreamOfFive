@@ -72,11 +72,11 @@ export enum DoFClasses {
     Warrior = 'warrior',
 
     Troubadour = 'troubadour',
-    Sibyl = 'sibyl', 
     Harrier = 'harrier',
+    Valkyrie = 'valkyrie',
     
     Adept = 'adept',
-    Hexe = 'hexe',
+    Sibyl = 'sibyl', 
 
     Mage = 'mage',
     Sage = 'sage',
