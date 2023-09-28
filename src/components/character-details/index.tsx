@@ -3,12 +3,21 @@ import { IDoFRenderPlayable, IDoFRenderUnit, IDoFStats } from "@/src/models/drea
 import { useState } from "react";
 import styles from './index.module.scss';
 
+let debounce;
+let init = false;
 export default function CharacterDetails({ characterDef, clear }: { characterDef: IDoFRenderPlayable, clear: () => void }) {
-    const [levelData, setLevelData] = useState({ unpromotedLevel: characterDef.promotesTo ? characterDef.level : null, promotedLevel: characterDef.promotesTo ? 0 : characterDef.level ?? 0 });
+    const defaultLevels = getDefaultLevelByCharacter(characterDef);
+    const [levelData, setLevelData] = useState(defaultLevels);
+    if (levelData.promotedLevel < defaultLevels.promotedLevel ||
+        (defaultLevels.unpromotedLevel && (levelData.unpromotedLevel ?? -1) < defaultLevels.unpromotedLevel)) {
+        setLevelData(defaultLevels);
+    }
+
+
 
     const unpromotedLevelFloor = (characterDef.level ?? 1);
-
-    let promotedLevelFloor: number, promoBonuses: IDoFStats, unpromotedCaps: IDoFStats, promotedCaps: IDoFStats;
+    let promoBonuses: IDoFStats | undefined = undefined;
+    let promotedLevelFloor: number, unpromotedCaps: IDoFStats, promotedCaps: IDoFStats;
     if (characterDef.promotesTo) {
         promotedLevelFloor = 0;
         // @ts-ignore
@@ -23,24 +32,48 @@ export default function CharacterDetails({ characterDef, clear }: { characterDef
         promotedCaps = DoFPromotedClasses[characterDef.class]?.caps; // remove ? later 
     }
 
+    init = true;
 
     function setUnpromotedLevel(event: any) {
         const value = parseInt(event.currentTarget.value);
-        const effectiveValue = isNaN(value) ? 0 : value;
-        const minLevel = Math.max(effectiveValue, unpromotedLevelFloor);
-        setLevelData({ ...levelData, unpromotedLevel: Math.min(minLevel, 20) });
+        if (isNaN(value) || value < unpromotedLevelFloor) {
+            setLevelData({ ...levelData, unpromotedDisplay: event.currentTarget.value });
+        } else {
+            const calculatedLevel = Math.min(value, 20);
+            const newData = { ...levelData, unpromotedLevel: calculatedLevel, unpromotedDisplay: calculatedLevel };
+            if (calculatedLevel < 10) {
+                newData.promotedLevel = 0;
+                newData.promotedDisplay = 0;
+            }
+            setLevelData(newData);
+        }
     };
 
 
     function setPromotedLevel(event: any) {
         const value = parseInt(event.currentTarget.value);
+        if (isNaN(value) || value < promotedLevelFloor) {
+            setLevelData({ ...levelData, promotedDisplay: event.currentTarget.value });
+        } else {
+            const calculatedLevel = Math.min(value, 20);
+            setLevelData({ ...levelData, promotedLevel: calculatedLevel, promotedDisplay: calculatedLevel });
+        }
         const effectiveValue = isNaN(value) ? 0 : value;
-        const minLevel = Math.max(effectiveValue, promotedLevelFloor);
-        setLevelData({ ...levelData, promotedLevel: Math.min(minLevel, 20) });
     }
 
-    function isPromoted(){
+    function isPromoted() {
         return (!promoBonuses || (levelData.unpromotedLevel && levelData.unpromotedLevel >= 10)) && levelData.promotedLevel;
+    }
+
+    function getDefaultLevelByCharacter(characterDef: IDoFRenderPlayable) {
+        const unpromotedLevel = characterDef.promotesTo ? characterDef.level : undefined;
+        const promotedLevel = characterDef.promotesTo ? 0 : characterDef.level ?? 0
+        return {
+            unpromotedLevel,
+            promotedLevel,
+            unpromotedDisplay: unpromotedLevel,
+            promotedDisplay: promotedLevel
+        };
     }
 
     return <div>
@@ -72,7 +105,7 @@ export default function CharacterDetails({ characterDef, clear }: { characterDef
                                     //@ts-ignore
                                     (promoBonuses != null) ? <tr>
                                         <td>promo bonuses</td>
-                                        {statKeys.map(s => <td>{promoBonuses[s]}</td>)}
+                                        {statKeys.map(s => <td>{promoBonuses![s]}</td>)}
                                     </tr> : ''}
                                 <tr>
 
@@ -112,8 +145,25 @@ export default function CharacterDetails({ characterDef, clear }: { characterDef
                                 </tr>
                             </tbody>
                         </table>
-                        {levelData.unpromotedLevel != null ? <input type="number" defaultValue={levelData.unpromotedLevel} onChange={setUnpromotedLevel} /> : ''}
-                        <input type="number" defaultValue={levelData.promotedLevel} onChange={setPromotedLevel} />
+                        <div>
+                            {
+                                promoBonuses && levelData.unpromotedLevel ?
+                                    <div>
+                                        <label>Unpromoted Level</label>
+                                        <input type="number" value={levelData.unpromotedDisplay} onChange={setUnpromotedLevel} />
+                                    </div>
+                                    
+                                    : ''
+                            }
+                            {
+                                !promoBonuses || (levelData.unpromotedLevel && levelData.unpromotedLevel >= 10) ?
+                                    <div>
+                                        <label>Promoted Level</label>
+                                        <input type="number" value={levelData.promotedDisplay} onChange={setPromotedLevel} />
+                                    </div>
+                                    : ''
+                            }
+                        </div>
                     </>
 
                     return result;

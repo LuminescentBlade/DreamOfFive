@@ -52,7 +52,7 @@ export const DoFUnpromotedClasses = {
     [DoFClasses.Warlock]: {
         caps: {hp: 60, pow: 20, skl: 20, spd: 20, luk: 30, def: 10, res: 20, con: 20 }
     },
-    [DoFClasses.DrakeKnight]: {
+    [DoFClasses.DrakeRider]: {
         caps: {hp: 60, pow: 20, skl: 20, spd: 20, luk: 30, def: 20, res: 5, con: 20 }
     },
     [DoFClasses.Brigand]: {
