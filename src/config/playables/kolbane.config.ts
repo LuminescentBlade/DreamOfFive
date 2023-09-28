@@ -3,6 +3,7 @@ import { IDoFPlayable } from "@/src/models/interfaces";
 
 export const Kolbane: IDoFPlayable = {
     name: 'kolbane',
+    profileName: 'Kolbane Farrier',
     artists: [DoFArtist.Lumi],
     nationality: DoFNationality.Aukema,
     class: DoFClasses.Mercenary,

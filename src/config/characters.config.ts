@@ -53,7 +53,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'sorcha',
-            fullName: 'sorcha farrell',
+            profileName: 'Sorcha Farrell',
             artists: [DoFArtist.Amelia],
             class: DoFClasses.Harrier,
             nationality: DoFNationality.Aukema,
@@ -86,7 +86,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'farrell',
-            fullName: 'cuthbert farrell',
+            profileName: 'Cuthbert Farrell',
             artists: [DoFArtist.Amelia, DoFArtist.Astra, DoFArtist.TBA],
             class: '',
             nationality: DoFNationality.Aukema,
@@ -492,7 +492,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'agmund',
-            fullName: 'long taiming', //龍泰銘
+            altNames: ['Long Taiming','龍泰銘'],
             artists: [DoFArtist.Lumi],
             nationality: DoFNationality.Svanhild,
             routeConfig:{

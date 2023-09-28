@@ -3,7 +3,7 @@ import { IDoFPlayable } from "@/src/models/interfaces";
 
 export const Annelise: IDoFPlayable = {
     name: 'annelise',
-    fullName: 'Annelise',
+    altNames: ['Long Tingbai', '龍庭白'],
     artists: [DoFArtist.Amelia, DoFArtist.Astra, DoFArtist.Lumi],
     class: DoFClasses.PegRider,
     nationality: DoFNationality.Svanhild,

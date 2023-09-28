@@ -36,7 +36,7 @@
 }
 
 .profile {
-  width: 160px;
+  width: 180px;
   padding: 12px;
   display: flex;
   flex-direction: column;
@@ -47,6 +47,36 @@
     margin-top: 12px;
     font-size: 2.4rem;
   }
+}
+
+.altNames{
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    align-items: center;
+    padding: 4px;
+    color: gray;
+    li{
+        display: flex;
+        align-items: center;
+        &:not(:first-child)::before{
+            content: '';
+            height: 1px;
+            width: 0px;
+            margin: 0 4px;
+            display: block;
+            border-left: 1px solid black;
+        }
+    }
+}
+.portraitWrapper{
+    width: fit-content;
+    height: fit-content;
+    border: 1px solid rgba(0,0,0,0); // fsr the portraits actually render properly with this? i dont get it but ok
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 .subtitle{

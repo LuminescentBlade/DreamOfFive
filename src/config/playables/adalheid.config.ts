@@ -3,6 +3,7 @@ import { IDoFPlayable } from "@/src/models/interfaces";
 
 export const Adalheid: IDoFPlayable = {
     name: DoFCharKey.Adalheid,
+    profileName: 'Adalheid Farrell',    
     artists: [DoFArtist.Lumi, DoFArtist.AK],
     class: DoFClasses.Paladin,
     nationality: DoFNationality.Aukema,

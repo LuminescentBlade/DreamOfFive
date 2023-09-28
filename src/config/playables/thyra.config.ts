@@ -3,7 +3,7 @@ import { IDoFPlayable } from "@/src/models/interfaces";
 
 export const Thyra: IDoFPlayable = {
     name: 'thyra',
-    fullName: 'long tingyu', // 龍庭玉
+    altNames: ['Long Tingyu','龍庭玉'],
     artists: [DoFArtist.Lumi],
     class: DoFClasses.Enforcer,
     nationality: DoFNationality.Svanhild,

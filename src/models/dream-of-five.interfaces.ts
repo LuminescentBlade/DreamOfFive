@@ -3,12 +3,10 @@ import { IAltConfig, IRenderContent, IRenderUnit, IRouteConfig, IUnit } from "./
 
 export interface IDoFUnit extends IUnit {
     artists: DoFArtist[];
-    fullName?: string;
     alt?: {
         [name: string]: IDoFAlt
     };
     class?: string,
-    nationality?: DoFNationality,
 };
 
 export interface IDoFAlt extends IAltConfig {
@@ -18,6 +16,11 @@ export interface IDoFAlt extends IAltConfig {
 export interface IDoFCharacter extends IDoFUnit {
     routeConfig: IRouteConfig
     secret?: boolean,
+    altNames?: string[], // subtitles to profile names, displayed as secondary
+    // overrides all other instances of name displays for the profile, otherwise if you want the same name on the sheet and profile use displayName
+    // this is mostly to write in last names to display
+    profileName?: string, 
+    nationality?: DoFNationality,
 }
 export interface IDoFStats {
     [stat: string]: number

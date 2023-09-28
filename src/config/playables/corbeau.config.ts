@@ -3,6 +3,7 @@ import { IDoFPlayable } from "@/src/models/interfaces";
 
 export const Corbeau: IDoFPlayable = {
     name: 'corbeau',
+    profileName: 'Daffodil Corbeau',
     artists: [DoFArtist.Lumi],
     class: DoFClasses.Warrior,
     nationality: DoFNationality.Musain,

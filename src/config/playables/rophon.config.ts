@@ -3,7 +3,7 @@ import { IDoFPlayable } from "@/src/models/interfaces";
 
 export const Ironside: IDoFPlayable = {
     name: DoFCharKey.Ironside,
-    fullName: 'Ironside',
+    altNames: ['Ironside'],
     artists: [DoFArtist.Lumi, DoFArtist.Amelia],
     nationality: DoFNationality.Onduris,
     secret: true,

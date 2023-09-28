@@ -191,11 +191,18 @@ export default function CharacterDetails({ characterDef, clear }: { characterDef
             </div>
             <div className={styles.content}>
                 <div className={styles.profile}>
-                    <img className="pixel-art" src={characterDef.path}></img>
-                    <h2>{characterDef.conditional?.player?.displayName ?? characterDef.displayName ?? <span className={'capitalize'}>{characterDef.name}</span>}</h2>
+                    <div className={styles.portraitWrapper}>
+                        <img className="pixel-art" src={characterDef.path}></img>
+                    </div>
+                    <h2>{characterDef.profileName ?? characterDef.conditional?.player?.displayName ?? characterDef.displayName ?? <span className={'capitalize'}>{characterDef.name}</span>}</h2>
+                    {characterDef.altNames || characterDef.conditional?.player?.displayName? <ul className={styles.altNames}>
+                        {characterDef.altNames?.map(c=><li>{c}</li>)}
+                        {characterDef.conditional?.player?.displayName?<li className="capitalize">{characterDef.name}</li>:''}
+                    </ul> : ''}
+                    
                     <div className={styles.subtitle}>{characterDef.level ? `Level ${characterDef.level}` : ''} <span className={'capitalize'}>{characterDef.class}</span></div>
                     <div>
-                        character blurb go here
+                        {/* {character blurb go here} */}
                     </div>
                 </div>
                 <div>

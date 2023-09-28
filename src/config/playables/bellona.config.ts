@@ -3,6 +3,7 @@ import { IDoFPlayable } from "@/src/models/interfaces";
 
 export const Bellona: IDoFPlayable = {
     name: 'bellona',
+    profileName: 'Bellona Quirinia',
     artists: [DoFArtist.Astra, DoFArtist.Amelia],
     class: DoFClasses.DrakeRider,
     nationality: DoFNationality.Vishara,

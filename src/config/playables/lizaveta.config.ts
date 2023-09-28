@@ -3,6 +3,7 @@ import { IDoFPlayable } from "@/src/models/interfaces";
 
 export const Lizaveta: IDoFPlayable = {
     name: 'lizaveta',
+    profileName: 'Lizaveta Samnia',
     artists: [DoFArtist.Astra, DoFArtist.Amelia],
     nationality: DoFNationality.Vishara,
     class: DoFClasses.Troubadour,
