@@ -58,7 +58,6 @@ export default function CharacterDetails({ characterDef, clear }: { characterDef
             const calculatedLevel = Math.min(value, 20);
             setLevelData({ ...levelData, promotedLevel: calculatedLevel, promotedDisplay: calculatedLevel });
         }
-        const effectiveValue = isNaN(value) ? 0 : value;
     }
 
     function isPromoted() {
@@ -82,8 +81,8 @@ export default function CharacterDetails({ characterDef, clear }: { characterDef
             <button onClick={clear}>clear {characterDef.conditional?.player?.displayName ?? characterDef.displayName ?? characterDef.name}</button>
             {
                 (() => {
-                    if (!characterDef.bases) return '';
-                    const statKeys = Object.keys(characterDef.bases);
+                    if (!characterDef.bases && !characterDef.growths) return '';
+                    const statKeys = Object.keys(characterDef.bases ?? characterDef.growths ?? {});
                     const result = <>
                         <table className={styles.statTable}>
                             <thead>
@@ -93,77 +92,94 @@ export default function CharacterDetails({ characterDef, clear }: { characterDef
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>bases</td>
-                                    {statKeys.map(s => <td>{characterDef.bases ? characterDef.bases[s] : ''}</td>)}
-                                </tr>
-                                <tr>
-                                    <td>growths</td>
-                                    {statKeys.map(s => <td>{characterDef.growths && characterDef.growths[s] ? `${characterDef.growths[s]}%` : ''}</td>)}
-                                </tr>
-                                {
-                                    //@ts-ignore
-                                    (promoBonuses != null) ? <tr>
+                                {characterDef.bases ?
+                                    <tr>
+                                        <td>bases</td>
+                                        {statKeys.map(s => <td>{characterDef.bases ? characterDef.bases[s] : ''}</td>)}
+                                    </tr>
+                                    : ''
+                                }
+                                {characterDef.growths ?
+                                    <tr>
+                                        <td>growths</td>
+                                        {statKeys.map(s => <td>{characterDef.growths && characterDef.growths[s] ? `${characterDef.growths[s]}%` : ''}</td>)}
+                                    </tr>
+                                    : ''
+                                }
+                                {promoBonuses != null ?
+                                    <tr>
                                         <td>promo bonuses</td>
                                         {statKeys.map(s => <td>{promoBonuses![s]}</td>)}
-                                    </tr> : ''}
-                                <tr>
+                                    </tr>
+                                    : ''
+                                }
+                                {characterDef.bases && characterDef.growths ?
+                                    <tr>
 
-                                    <td>Averages at level {
-                                        //@ts-ignore
-                                        `${promoBonuses ? levelData.unpromotedLevel : ''}${promoBonuses && isPromoted() ? '/' : ''}${isPromoted() ? levelData.promotedLevel : ''}`
-                                    }</td>
-                                    {
-                                        statKeys.map(s => {
-                                            if (!characterDef.bases) return <td></td>;
-                                            let capped = false;
-                                            const base = characterDef.bases[s];
-                                            let value = base;
-                                            let growth = characterDef.growths ? (characterDef.growths[s] ?? 0) / 100 : 0;
-                                            if (promoBonuses) { // unpromoted unit
-                                                const unpromotedRawStat = base + (growth * (levelData.unpromotedLevel ? levelData.unpromotedLevel - unpromotedLevelFloor : 0));
-                                                const unpromotedStat = Math.min(unpromotedCaps[s], unpromotedRawStat);
-                                                value = unpromotedStat;
-                                                capped = unpromotedCaps[s] === unpromotedStat;
+                                        <td>Averages at level {
+                                            //@ts-ignore
+                                            `${promoBonuses ? levelData.unpromotedLevel : ''}${promoBonuses && isPromoted() ? '/' : ''}${isPromoted() ? levelData.promotedLevel : ''}`
+                                        }</td>
+                                        {
+                                            statKeys.map(s => {
+                                                if (!characterDef.bases) return <td></td>;
+                                                let capped = false;
+                                                const base = characterDef.bases[s];
+                                                let value = base;
+                                                let growth = characterDef.growths ? (characterDef.growths[s] ?? 0) / 100 : 0;
+                                                if (promoBonuses) { // unpromoted unit
+                                                    const unpromotedRawStat = base + (growth * (levelData.unpromotedLevel ? levelData.unpromotedLevel - unpromotedLevelFloor : 0));
+                                                    const unpromotedStat = Math.min(unpromotedCaps[s], unpromotedRawStat);
+                                                    value = unpromotedStat;
+                                                    capped = unpromotedCaps[s] === unpromotedStat;
 
-                                                if (isPromoted()) {
-                                                    const promo1Stat = unpromotedStat + (promoBonuses[s] ?? 0);
-                                                    const promotedRawStat = promo1Stat + (growth * Math.max(levelData.promotedLevel - unpromotedLevelFloor, 0));
-                                                    const promotedStat = Math.min(promotedCaps[s], promotedRawStat);
-                                                    value = promotedStat;
-                                                    capped = promotedCaps[s] === promotedStat;
+                                                    if (isPromoted()) {
+                                                        const promo1Stat = unpromotedStat + (promoBonuses[s] ?? 0);
+                                                        const promotedRawStat = promo1Stat + (growth * Math.max(levelData.promotedLevel - unpromotedLevelFloor, 0));
+                                                        const promotedStat = Math.min(promotedCaps[s], promotedRawStat);
+                                                        value = promotedStat;
+                                                        capped = promotedCaps[s] === promotedStat;
+                                                    }
+                                                } else {
+                                                    value = base + growth * (levelData.promotedLevel ? levelData.promotedLevel - promotedLevelFloor : 0);
+                                                    capped = promotedCaps[s] === value;
                                                 }
-                                            } else {
-                                                value = base + growth * (levelData.promotedLevel ? levelData.promotedLevel - promotedLevelFloor : 0);
-                                                capped = promotedCaps[s] === value;
-                                            }
 
-                                            return <td className={capped ? styles.capped : ''}>{value.toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
+                                                return <td className={capped ? styles.capped : ''}>{value.toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
 
-                                        })
-                                    }
+                                            })
+                                        }
+                                    </tr>
+                                    : ''
+                                }
+                                <tr>
+                                    <td>caps</td>
+                                    {statKeys.map(s => <td>{promotedCaps[s]}</td>)}
                                 </tr>
                             </tbody>
                         </table>
-                        <div>
-                            {
-                                promoBonuses && levelData.unpromotedLevel ?
-                                    <div>
-                                        <label>Unpromoted Level</label>
-                                        <input type="number" value={levelData.unpromotedDisplay} onChange={setUnpromotedLevel} />
-                                    </div>
-                                    
-                                    : ''
-                            }
-                            {
-                                !promoBonuses || (levelData.unpromotedLevel && levelData.unpromotedLevel >= 10) ?
-                                    <div>
-                                        <label>Promoted Level</label>
-                                        <input type="number" value={levelData.promotedDisplay} onChange={setPromotedLevel} />
-                                    </div>
-                                    : ''
-                            }
-                        </div>
+                        {characterDef.bases && characterDef.growths ?
+                            <div>
+                                {
+                                    promoBonuses && levelData.unpromotedLevel ?
+                                        <div>
+                                            <label>Unpromoted Level</label>
+                                            <input type="number" value={levelData.unpromotedDisplay} onChange={setUnpromotedLevel} />
+                                        </div>
+
+                                        : ''
+                                }
+                                {
+                                    !promoBonuses || (levelData.unpromotedLevel && levelData.unpromotedLevel >= 10) ?
+                                        <div>
+                                            <label>Promoted Level</label>
+                                            <input type="number" value={levelData.promotedDisplay} onChange={setPromotedLevel} />
+                                        </div>
+                                        : ''
+                                }
+                            </div>
+                            : ''
+                        }
                     </>
 
                     return result;

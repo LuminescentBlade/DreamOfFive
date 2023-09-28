@@ -11,5 +11,8 @@ export const Lyndra: IDoFPlayable =  {
             player: 9,
             enemy: 8.5
         }
-    }
+    },
+    bases: {hp: 36, pow: 16, skl: 18, spd: 19, luk: 9, def: 18, res: 3},
+    level: 3,
+    growths: {hp: 75, pow: 35, skl: 50, spd: 45, luk: 30, def: 45, res: 10}
 };

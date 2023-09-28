@@ -7,9 +7,10 @@ export const Thyra: IDoFPlayable = {
     artists: [DoFArtist.Lumi],
     class: DoFClasses.Enforcer,
     nationality: DoFNationality.Svanhild,
-    routeConfig:{
+    routeConfig: {
         allRoute: {
             player: 17
         }
-    }
+    },
+    growths: { hp: 75, pow: 55, skl: 50, spd: 45, luk: 25, def: 35, res: 5 }
 };
