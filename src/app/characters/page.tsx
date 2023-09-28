@@ -5,7 +5,7 @@ import UnitSheet from '@/src/components/unit-sheet';
 import styles from './page.module.scss'
 import { DoFArtistConfig } from '@/src/config/artists.config';
 import { useState } from 'react';
-import { IDoFCharacter, IDoFCharacterRenderer, IDoFRenderUnit, IDoFUnit, IKeyMap } from '@/src/models/interfaces';
+import { IDoFCharacter, IDoFCharacterRenderer, IDoFRenderPlayable, IDoFRenderUnit, IDoFUnit, IKeyMap } from '@/src/models/interfaces';
 import { DoFCharacters } from '@/src/config/characters.config';
 import { DoFChapters } from '@/src/config/chapters.config';
 import OptionSelector from '@/src/components/option-selector';
@@ -43,7 +43,7 @@ function cacheStaticUnits() {
 function getData(useFull: boolean, bypassSpoiler: boolean): IDoFCharacterRenderer {
     const config = parseCharacters(useFull ? 99 : chapterLimit, useFull ? DoFRoute.Both : displayRoute, useFull, bypassSpoiler);
     const getRenderOrder = (item: IDoFRenderUnit) => item.fullSheetRenderOrderOverride ?? item.renderOrder;
-    const sort = (items: IDoFRenderUnit[]) => items.sort((a, b) => getRenderOrder(a)- getRenderOrder(b));
+    const sort = (items: any[]) => items.sort((a, b) => getRenderOrder(a)- getRenderOrder(b));
     if (useFull) {
         return {
             characters: [...sort([...config.player, ...config.enemy, ...config.npc]), ...generics, ...shopkeepers]
@@ -92,12 +92,18 @@ function parseCharacters(chapter: number, route: DoFRoute, useEarliest = false, 
             if (characterItem.alt) {
                 characterItem.altPaths = Object.keys(characterItem.alt).reduce((paths, altName) => ({ ...paths, [altName]: getPath('characters', `${character.name}_${altName}`) }), {});
             }
-
+            if(!useEarliest && placement.value === DoFUnitState.Player){
+                characterItem.onClick = launchPlayableDetails;
+            }
             config[placement.value].push(characterItem);
         }
     });
 
     return config;
+}
+
+function launchPlayableDetails(characterData: IDoFRenderPlayable){
+    // launch
 }
 
 function getSinglePlacement(route: 'musain' | 'onduris', chapter: number, character: IDoFCharacter, useEarliest = false, showSecretPlayable = false) {

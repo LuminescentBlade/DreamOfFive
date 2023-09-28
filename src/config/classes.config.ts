@@ -89,7 +89,7 @@ export const DoFPromotedClasses = {
         promo: { hp: 6, pow: 3, skl: 3, spd: 3, luk: 0, def: 3, res: 3, con: 1 },
         caps: { hp: 60, pow: 30, skl: 28, spd: 25, luk: 30, def: 30, res: 15, con: 20 }
     },
-    [DoFClasses.Einherjar]: {
+    [DoFClasses.Enforcer]: {
         promo: { hp: 0, pow: 0, skl: 0, spd: 0, luk: 0, def: 0, res: 0, con: 0 },
         caps: { hp: 60, pow: 30, skl: 28, spd: 27, luk: 30, def: 27, res: 15, con: 20 }
     },

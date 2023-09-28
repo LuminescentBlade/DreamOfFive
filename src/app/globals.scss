@@ -145,3 +145,14 @@ input, select{
     image-rendering: pixelated; /* CSS4 Proposed  */
     -ms-interpolation-mode: nearest-neighbor; /* IE8+           */
 }
+
+button.button-wrapper{
+  display: inline-flex;
+  padding: 0;
+  margin: 0;
+  width: fit-content;
+  height: fit-content;
+  cursor: pointer;
+  background: 0;
+  border: 0;
+}

@@ -15,6 +15,21 @@ export interface IUnit {
     fullSheetRenderOrderOverride?: number
 }
 
+export interface IRenderContent{
+    path: string;
+    altPaths?: {
+        [key: string]: string;
+    },
+    conditionalName?: { // used over displayName
+        player?: string;
+        enemy?: string;
+        npc?: string;
+    },
+    renderOrder: number,
+}
+
+export interface IRenderUnit extends IUnit, IRenderContent{}
+
 export interface IConditional {
     chapter?: number;
     displayName?: string,

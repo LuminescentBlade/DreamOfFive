@@ -17,14 +17,14 @@ export default function UnitSheet({ data, chapter, expansionState, toggleCharact
         {
             // @ts-ignore
             sections
-                .filter((section: DoFUnitState) => data[section].length)
+                .filter((section: DoFUnitState) => data[section]?.length)
                 .map((section: DoFUnitState) => (
                     <section key={section} className={`${styles.container} ${styles.spritesheet}`}>
                         <h2>{section}</h2>
                         {
-                            data[section].map((character: IDoFRenderUnit) => {
+                            data[section]?.map((character: IDoFRenderUnit) => {
                                 if (!character.alt) {
-                                    return <UnitSheetSprite key={character.name} type={section} characterDef={character} />
+                                    return <UnitSheetSprite key={character.name} type={section} characterDef={character} onCharacterClick={character.onClick}/>
                                 } else {
                                     const alts = Object.entries(character.alt);
                                     const validAlts = alts.filter(([, alt]) => !alt.chapter || alt.chapter <= chapter);
@@ -52,7 +52,7 @@ export default function UnitSheet({ data, chapter, expansionState, toggleCharact
                                     } else {
                                         characterData = character;
                                     }
-                                    const baseItem = <UnitSheetSprite key={character.name} type={section} characterDef={characterData} expanded={expansionState.get(character.name)} onExpand={toggleFcn} />;
+                                    const baseItem = <UnitSheetSprite key={character.name} type={section} characterDef={characterData} expanded={expansionState.get(character.name)} onExpand={toggleFcn} onCharacterClick={character.onClick}/>;
                                     if (expansionState.get(character.name)) {
                                         let conditionalItem;
                                         if (conditionalPortrait) {

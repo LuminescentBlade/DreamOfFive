@@ -49,7 +49,7 @@ export enum DoFClasses {
     Ironclad = 'ironclad',
     Juggernaut = 'juggernaut',
 
-    Einherjar = 'einherjar',
+    Enforcer = 'enforcer',
 
     // standard classes
     Mercenary = 'mercenary',

@@ -5,7 +5,7 @@ export const Thyra: IDoFPlayable = {
     name: 'thyra',
     fullName: 'long tingyu', // 龍庭玉
     artists: [DoFArtist.Lumi],
-    class: DoFClasses.Einherjar,
+    class: DoFClasses.Enforcer,
     nationality: DoFNationality.Svanhild,
     routeConfig:{
         allRoute: {

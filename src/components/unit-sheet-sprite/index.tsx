@@ -1,9 +1,12 @@
-import { IDoFRenderUnit, IDoFUnit } from "@/src/models/interfaces";
+import { IDoFRenderUnit, IDoFUnit, IRenderUnit } from "@/src/models/interfaces";
 
 import styles from './index.module.scss';
 import { DoFArtistConfig } from "@/src/config/artists.config";
 import { DoFUnitState } from "@/src/models/enums";
-export default function UnitSheetSprite({ type, characterDef, expanded, onExpand }: { type: DoFUnitState, characterDef: IDoFRenderUnit, expanded?: boolean, onExpand?: ()=>void }) {
+export default function UnitSheetSprite({ type, characterDef, expanded, onExpand, onCharacterClick }: {
+    type: DoFUnitState, characterDef: IDoFRenderUnit, expanded?: boolean, onExpand?: () => void,
+    onCharacterClick?: (characterRendered: IRenderUnit) => void
+}) {
     return (<div className={styles.wrapper}>
         <div className={`
             ${styles.name} 
@@ -28,12 +31,23 @@ export default function UnitSheetSprite({ type, characterDef, expanded, onExpand
             }
             {
                 (onExpand ? <button className={styles.alts} onClick={onExpand}>{
-                    expanded? '-' : '+'
+                    expanded ? '-' : '+'
                 }</button> : '')
             }
         </div>
         <div className={styles.sprite}>
-            <img className="pixel-art" id={`${characterDef.name}_${type}`} src={characterDef.path} />
+        {
+            (() => {
+                const sprite = <img className="pixel-art" id={`${characterDef.name}_${type}`} src={characterDef.path} />
+                    
+
+                if (onCharacterClick) {
+                    return <button className={'button-wrapper'} onClick={()=>onCharacterClick(characterDef)}>{sprite}</button>
+                } else {
+                    return sprite;
+                }
+            })()
+        }
         </div>
     </div>);
 }
