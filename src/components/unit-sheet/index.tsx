@@ -7,7 +7,9 @@ import { DoFArtist, DoFUnitState } from '@/src/models/enums';
 import { DoFArtistConfig } from '@/src/config/artists.config';
 import { useState } from 'react';
 
-export default function UnitSheet({ data, chapter, expansionState, toggleCharacter }: { data: IDoFCharacterRenderer, chapter: number, expansionState: Map<string, boolean>, toggleCharacter: (name: string) => () => void }) {
+export default function UnitSheet({ data, chapter, expansionState, toggleCharacter, getOnClick }: {
+    data: IDoFCharacterRenderer, chapter: number, expansionState: Map<string, boolean>, toggleCharacter: (name: string) => () => void, getOnClick?: (character: any, state: any) => ((data: any) => void) | undefined
+}) {
     const sections = Object.keys(data) as DoFUnitState[];
     const artists = Object.values(DoFArtist);
 
@@ -23,8 +25,9 @@ export default function UnitSheet({ data, chapter, expansionState, toggleCharact
                         <h2>{section}</h2>
                         {
                             data[section]?.map((character: IDoFRenderUnit) => {
+                                const onClickFcn = getOnClick? getOnClick(character, section): undefined;
                                 if (!character.alt) {
-                                    return <UnitSheetSprite key={character.name} type={section} characterDef={character} onCharacterClick={character.onClick}/>
+                                    return <UnitSheetSprite key={character.name} type={section} characterDef={character} onCharacterClick={onClickFcn} />
                                 } else {
                                     const alts = Object.entries(character.alt);
                                     const validAlts = alts.filter(([, alt]) => !alt.chapter || alt.chapter <= chapter);
@@ -34,7 +37,7 @@ export default function UnitSheet({ data, chapter, expansionState, toggleCharact
                                     if ((character.conditional && section !== DoFUnitState.Generic)) {
                                         let conditionalConfig = character.conditional[section] ??
                                             ((character.conditional?.chapter?.chapter ?? -1) <= chapter) ? character.conditional?.chapter : null;
-                                        if(conditionalConfig){
+                                        if (conditionalConfig) {
                                             conditionalPortrait = conditionalConfig.swapPortrait;
                                             conditionalOGName = conditionalConfig.ogPortraitName;
                                         }
@@ -52,7 +55,7 @@ export default function UnitSheet({ data, chapter, expansionState, toggleCharact
                                     } else {
                                         characterData = character;
                                     }
-                                    const baseItem = <UnitSheetSprite key={character.name} type={section} characterDef={characterData} expanded={expansionState.get(character.name)} onExpand={toggleFcn} onCharacterClick={character.onClick}/>;
+                                    const baseItem = <UnitSheetSprite key={character.name} type={section} characterDef={characterData} expanded={expansionState.get(character.name)} onExpand={toggleFcn} onCharacterClick={onClickFcn} />;
                                     if (expansionState.get(character.name)) {
                                         let conditionalItem;
                                         if (conditionalPortrait) {

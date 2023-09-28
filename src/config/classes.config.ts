@@ -74,7 +74,7 @@ export const DoFUnpromotedClasses = {
 
 export const DoFPromotedClasses = {
     [DoFClasses.Questant]: {
-        promo: { hp: 5, pow: 3, skl: 3, spd: 3, luk: 0, def: 3, res: 3, con: 1 },
+        promo: { hp: 5, pow: 3, skl: 3, spd: 3, luk: 0, def: 3, res: 3, con: 2 },
         caps: { hp: 60, pow: 28, skl: 30, spd: 30, luk: 30, def: 26, res: 20, con: 20 }
     },
     [DoFClasses.Blademaiden]: {

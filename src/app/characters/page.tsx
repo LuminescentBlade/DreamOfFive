@@ -11,6 +11,7 @@ import { DoFChapters } from '@/src/config/chapters.config';
 import OptionSelector from '@/src/components/option-selector';
 import { download, renderCharactersByCountry } from './sheet_export';
 import { useSearchParams } from 'next/navigation'
+import CharacterDetails from '@/src/components/character-details';
 
 const defaultRenderValues = {
     prod: { chapter: 6, limit: 14 },
@@ -23,14 +24,15 @@ const chapterOptionsProd = chapterOptionsLocal.filter(chapter => chapter.value <
 const isProd = (process.env.NODE_ENV === 'production');
 let useProdOnLocal = false;
 let cachedData: IDoFCharacterRenderer; // we will definitely switch to redux after this
+let currentCharacterCache: IDoFRenderPlayable | undefined;
 let displayRoute = isShowingLocal() ? DoFRoute.Both : DoFRoute.Onduris; // default value
-let { chapter: chapterLimit,    chapterSelection } = setDisplayValues();
+let { chapter: chapterLimit, chapterSelection } = setDisplayValues();
 const { shopkeepers, generics } = cacheStaticUnits();
 
 function cacheStaticUnits() {
     const cacheItem = (arr: IDoFUnit[], pathType: string) => {
         return arr.map(item => {
-            const path = getPath(pathType, item.name);        
+            const path = getPath(pathType, item.name);
             return ({ ...item, path, renderOrder: 99 })
         });
     };
@@ -43,7 +45,7 @@ function cacheStaticUnits() {
 function getData(useFull: boolean, bypassSpoiler: boolean): IDoFCharacterRenderer {
     const config = parseCharacters(useFull ? 99 : chapterLimit, useFull ? DoFRoute.Both : displayRoute, useFull, bypassSpoiler);
     const getRenderOrder = (item: IDoFRenderUnit) => item.fullSheetRenderOrderOverride ?? item.renderOrder;
-    const sort = (items: any[]) => items.sort((a, b) => getRenderOrder(a)- getRenderOrder(b));
+    const sort = (items: any[]) => items.sort((a, b) => getRenderOrder(a) - getRenderOrder(b));
     if (useFull) {
         return {
             characters: [...sort([...config.player, ...config.enemy, ...config.npc]), ...generics, ...shopkeepers]
@@ -92,18 +94,11 @@ function parseCharacters(chapter: number, route: DoFRoute, useEarliest = false, 
             if (characterItem.alt) {
                 characterItem.altPaths = Object.keys(characterItem.alt).reduce((paths, altName) => ({ ...paths, [altName]: getPath('characters', `${character.name}_${altName}`) }), {});
             }
-            if(!useEarliest && placement.value === DoFUnitState.Player){
-                characterItem.onClick = launchPlayableDetails;
-            }
             config[placement.value].push(characterItem);
         }
     });
 
     return config;
-}
-
-function launchPlayableDetails(characterData: IDoFRenderPlayable){
-    // launch
 }
 
 function getSinglePlacement(route: 'musain' | 'onduris', chapter: number, character: IDoFCharacter, useEarliest = false, showSecretPlayable = false) {
@@ -112,24 +107,24 @@ function getSinglePlacement(route: 'musain' | 'onduris', chapter: number, charac
         return;
     }
     const validStates = [];
-    if (routeConfig.player != null && routeConfig.player <= chapter && (!character.secret || showSecretPlayable) ) {
+    if (routeConfig.player != null && routeConfig.player <= chapter && (!character.secret || showSecretPlayable)) {
         validStates.push({ value: DoFUnitState.Player, chapter: routeConfig.player });
     }
     if (routeConfig.enemy != null) {
-        if(typeof routeConfig.enemy === 'number'){
-            if(routeConfig.enemy <= chapter){
+        if (typeof routeConfig.enemy === 'number') {
+            if (routeConfig.enemy <= chapter) {
                 validStates.push({ value: DoFUnitState.Enemy, chapter: routeConfig.enemy });
             }
         } else {
             let index = -1;
-            while(routeConfig.enemy[index+1] <= chapter){
+            while (routeConfig.enemy[index + 1] <= chapter) {
                 index++;
             }
-            if(index >= 0){
+            if (index >= 0) {
                 validStates.push({ value: DoFUnitState.Enemy, chapter: routeConfig.enemy[index] });
             }
         }
-        
+
     }
     if (routeConfig.npc != null && routeConfig.npc <= chapter) {
         validStates.push({ value: DoFUnitState.NPC, chapter: routeConfig.npc });
@@ -221,6 +216,8 @@ export default function CharacterPage() {
     }
     const [unitSheetData, updateData] = useState(cachedData || getData(showUnsortedFull, showSortedFull || (isShowingLocal())));
     const [expansionState, setExpansion] = useState({ data: new Map<string, boolean>() });
+    const [currentCharacter, updateCurrentCharacter] = useState(currentCharacterCache);
+
     init = true;
 
     function update() {
@@ -271,6 +268,20 @@ export default function CharacterPage() {
         }
     }
 
+    function getClickFunction(characterData: IDoFRenderUnit, characterState: DoFUnitState) {
+        if (characterState === DoFUnitState.Player && (showSortedFull || isShowingLocal())) {
+            return (data: IDoFRenderPlayable) => {
+                currentCharacterCache = data;
+                updateCurrentCharacter(currentCharacterCache);
+            }
+        }
+    }
+
+    function clearCharacter(){
+        currentCharacterCache = undefined;
+        updateCurrentCharacter(currentCharacterCache);
+    }
+
     return (
         <main className={styles.base}>
             <h1>Dream of Five Character Sheet</h1>
@@ -296,7 +307,8 @@ export default function CharacterPage() {
                     </select>
                 </div>
             </div> : ''}
-            <UnitSheet data={unitSheetData} expansionState={expansionState.data} toggleCharacter={toggleCharacter} chapter={currentChapterLimit} />
+            {currentCharacter ? <CharacterDetails characterDef={currentCharacter} clear={clearCharacter}/> : ''}
+            <UnitSheet data={unitSheetData} expansionState={expansionState.data} toggleCharacter={toggleCharacter} chapter={currentChapterLimit} getOnClick={getClickFunction} />
             {
                 !isProd ? <div style={{ width: 'fit-content', margin: '12px auto', textAlign: 'center' }}>
                     <p>Displaying {isShowingLocal() ? 'Local' : 'Prod'} Values</p>

@@ -1,4 +1,4 @@
-import { DoFArtist, DoFNationality } from "./enums";
+import { DoFArtist, DoFClasses, DoFNationality } from "./enums";
 import { IAltConfig, IRenderContent, IRenderUnit, IRouteConfig, IUnit } from "./spritesheet.interfaces";
 
 export interface IDoFUnit extends IUnit {
@@ -20,26 +20,16 @@ export interface IDoFCharacter extends IDoFUnit {
     secret?: boolean,
 }
 export interface IDoFStats {
-    hp: number,
-    pow: number,
-    skl: number,
-    spd: number,
-    luk: number,
-    def: number,
-    res: number,
-    con?: number
+    [stat: string]: number
 }
 
 export interface IDoFPlayable extends IDoFCharacter {
-    promotesTo?: string,
+    promotesTo?: DoFClasses,
     bases?: IDoFStats,
     growths?: IDoFStats
     level?: number
 }
-export interface IDoFRenderUnit extends IDoFUnit, IRenderContent {
-    onClick?: (key: any) => void
-}
-
+export interface IDoFRenderUnit extends IDoFUnit, IRenderContent {}
 export interface IDoFRenderCharacter extends IDoFRenderUnit, IDoFCharacter { };
 export interface IDoFRenderPlayable extends IDoFRenderUnit, IDoFPlayable { };
 export interface IDoFCharacterConfigs {
