@@ -82,7 +82,7 @@ export default function CharacterDetails({ characterDef, clear }: { characterDef
             {
                 (() => {
                     if (!characterDef.bases && !characterDef.growths) return '';
-                    const statKeys = Object.keys(characterDef.bases ?? characterDef.growths ?? {});
+                    const statKeys = Object.keys(promotedCaps ?? {});
                     const result = <>
                         <table className={styles.statTable}>
                             <thead>
@@ -102,7 +102,7 @@ export default function CharacterDetails({ characterDef, clear }: { characterDef
                                 {characterDef.growths ?
                                     <tr>
                                         <td>growths</td>
-                                        {statKeys.map(s => <td>{characterDef.growths && characterDef.growths[s] ? `${characterDef.growths[s]}%` : ''}</td>)}
+                                        {statKeys.map(s => <td>{characterDef.growths && characterDef.growths[s] != null ? `${characterDef.growths[s]}%` : ''}</td>)}
                                     </tr>
                                     : ''
                                 }
