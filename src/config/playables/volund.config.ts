@@ -5,7 +5,7 @@ export const Volund: IDoFPlayable = {
     name: 'volund',
     fullName: 'murong yunxiao', //慕容雲嘯
     artists: [DoFArtist.Lumi],
-    class: DoFClasses.Gladiator,
+    class: DoFClasses.Sentinel,
     nationality: DoFNationality.Svanhild,
     routeConfig:{
         allRoute: {
