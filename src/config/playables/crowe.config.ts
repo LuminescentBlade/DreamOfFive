@@ -11,5 +11,11 @@ export const Crowe: IDoFPlayable = {
             player: 3,
             enemy: 3
         }
-    }
+    },
+    bases: {
+        hp: 26, pow: 12, skl: 11, spd: 10, luk: 5, def: 8, res: 0, con: 10
+    },
+    level: 6,
+    promotesTo: DoFClasses.Marksman,
+    growths: {hp: 80, pow: 60, skl: 55, spd: 45, luk: 30, def: 25, res: 10}
 };

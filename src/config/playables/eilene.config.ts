@@ -10,5 +10,11 @@ export const Eilene: IDoFPlayable =  {
         allRoute: {
             player: 1
         }
-    }
+    },
+    bases: {
+        hp: 19, pow: 7, skl: 8, spd: 11, luk: 8, def: 6, res: 9, con: 7
+    },
+    level: 3,
+    promotesTo: DoFClasses.SeraphKnight,
+    growths: {hp: 60, pow: 30, skl: 45, spd: 60, luk: 45, def: 20, res: 50}
 };

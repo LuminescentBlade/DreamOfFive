@@ -13,5 +13,11 @@ export const Florent: IDoFPlayable = {
         onduris: {
             player: 15
         }
-    }
+    },
+    bases: {
+        hp: 32, pow: 15, skl: 14, spd: 12, luk: 8, def: 13, res: 0, con: 10
+    },
+    level: 12,
+    promotesTo: DoFClasses.Paladin,
+    growths: {hp: 90, pow: 55, skl: 50, spd: 40, luk: 30, def: 45, res: 10}
 };

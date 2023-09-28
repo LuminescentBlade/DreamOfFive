@@ -14,12 +14,18 @@ export const SeMori: IDoFPlayable = {
             displayName: 'Promoted'
         }
     },
-    routeConfig:{
+    routeConfig: {
         onduris: {
             player: 8
         },
         musain: {
             player: 15
         }
-    }
+    },
+    bases: {
+        hp: 27, pow: 11, skl: 14, spd: 13, luk: 8, def: 11, res: 3, con: 9
+    },
+    level: 10,
+    growths: { hp: 75, pow: 45, skl: 60, spd: 55, luk: 40, def: 40, res: 15 },
+    promotesTo: DoFClasses.Hussar
 };

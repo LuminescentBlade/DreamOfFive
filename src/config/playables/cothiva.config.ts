@@ -10,5 +10,11 @@ export const Cothiva: IDoFPlayable = {
         allRoute: {
             player: 5
         }
-    }
+    },
+    bases: {
+        hp: 23, pow: 11, skl: 12, spd: 10, luk: 9, def: 4, res: 9, con: 9
+    }, 
+    level: 7,
+    promotesTo: DoFClasses.Sibyl,
+    growths: {hp: 45, pow: 50, skl: 60, spd: 40, luk: 45, def: 30, res: 45}
 };

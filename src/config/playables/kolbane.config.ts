@@ -10,5 +10,11 @@ export const Kolbane: IDoFPlayable = {
         allRoute: {
             player: 0
         }
-    }
+    },
+    bases: {
+        hp: 23, pow: 8, skl: 10, spd: 9, luk: 5, def: 7, res: 0, con: 10
+    },
+    level: 2,
+    promotesTo: DoFClasses.Gladiator,
+    growths: {hp: 75, pow: 55, skl: 35, spd: 55, luk: 40, def: 35, res: 15}
 };

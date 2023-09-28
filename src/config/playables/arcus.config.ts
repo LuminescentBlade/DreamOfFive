@@ -6,12 +6,18 @@ export const Arcus: IDoFPlayable = {
     artists: [DoFArtist.Astra],
     class: DoFClasses.Ironclad,
     nationality: DoFNationality.Vishara,
-    routeConfig:{
+    routeConfig: {
         musain: {
             player: 6.5
         },
         onduris: {
             player: 15
         }
-    }
+    },
+    bases: {
+        hp: 32, pow: 14, skl: 10, spd: 9, luk: 7, def: 12, res: 3, con: 13
+    },
+    level: 10,
+    promotesTo: DoFClasses.Juggernaut,
+    growths: { hp: 80, pow: 65, skl: 45, spd: 35, luk: 35, def: 45, res: 25 }
 };

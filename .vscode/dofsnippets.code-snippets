@@ -40,7 +40,7 @@
 		"scope": "javascript, typescript",
 		"prefix": "stats",
 		"body":[
-			"{hp: $1, pow: $2, skl: $3, spd: $4, luk: $5, def: $6, res: $7, con: $8}"
+			"{hp: $1, pow: $2, skl: $3, spd: $4, luk: $5, def: $6, res: $7}"
 		],
 	}
 }

@@ -7,12 +7,6 @@ export const DoFUnpromotedClasses = {
     [DoFClasses.Henchwoman]: {
         caps: {hp: 60, pow: 20, skl: 20, spd: 20, luk: 30, def: 20, res: 10, con: 20 }
     },
-    [DoFClasses.Dancer]: {
-        caps: {hp: 60, pow: 10, skl: 10, spd: 30, luk: 30, def: 15, res: 30, con: 20}
-    },
-    [DoFClasses.Bard]: {
-        caps: {hp: 60, pow: 10, skl: 10, spd: 30, luk: 30, def: 20, res: 25, con: 20}
-    },
     [DoFClasses.Fencer]: {
         caps: {hp: 60, pow: 20, skl: 20, spd: 20, luk: 30, def: 20, res: 10, con: 20 }
     },
@@ -20,6 +14,12 @@ export const DoFUnpromotedClasses = {
         caps: {hp: 60, pow: 20, skl: 20, spd: 20, luk: 30, def: 20, res: 10, con: 20 }
     },
     [DoFClasses.Mercenary]: {
+        caps: {hp: 60, pow: 20, skl: 20, spd: 20, luk: 30, def: 20, res: 10, con: 20 }
+    },
+    [DoFClasses.Myrmidon]: {
+        caps: {hp: 60, pow: 20, skl: 20, spd: 20, luk: 30, def: 20, res: 10, con: 20 }
+    },
+    [DoFClasses.Thief]: {
         caps: {hp: 60, pow: 20, skl: 20, spd: 20, luk: 30, def: 20, res: 10, con: 20 }
     },
     [DoFClasses.Cleric]: {
@@ -169,4 +169,10 @@ export const DoFPromotedClasses = {
         promo: { hp: 0, pow: 0, skl: 0, spd: 0, luk: 0, def: 0, res: 0, con: 0 },
         caps: { hp: 60, pow: 28, skl: 25, spd: 26, luk: 30, def: 29, res: 15, con: 20 }
     },
+    [DoFClasses.Dancer]: {
+        caps: {hp: 60, pow: 10, skl: 10, spd: 30, luk: 30, def: 15, res: 30, con: 20}
+    },
+    [DoFClasses.Bard]: {
+        caps: {hp: 60, pow: 10, skl: 10, spd: 30, luk: 30, def: 20, res: 25, con: 20}
+    }
 }

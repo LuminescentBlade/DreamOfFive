@@ -20,7 +20,7 @@ export default function CharacterDetails({ characterDef, clear }: { characterDef
     } else {
         promotedLevelFloor = (characterDef.level ?? 1);
         // @ts-ignore
-        promotedCaps = DoFPromotedClasses[characterDef.class].caps;
+        promotedCaps = DoFPromotedClasses[characterDef.class]?.caps; // remove ? later 
     }
 
 

@@ -14,5 +14,8 @@ export const ViShen: IDoFPlayable = {
         musain: {
             enemy: 99
         }
-    }
+    },
+    bases: { hp: 30, pow: 13, skl: 20, spd: 18, luk: 11, def: 7, res: 7 },
+    level: 15, 
+    growths: {hp: 75, pow: 45, skl: 65, spd: 65, luk: 40, def: 20, res: 15}
 };

@@ -6,12 +6,18 @@ export const Jolyon: IDoFPlayable = {
     artists: [DoFArtist.Astra, DoFArtist.Amelia],
     class: DoFClasses.Mage,
     nationality: DoFNationality.Musain,
-    routeConfig:{
+    routeConfig: {
         musain: {
             player: 10
         },
         onduris: {
             player: 15
         }
-    }
+    },
+    bases: {
+        hp: 28, pow: 14, skl: 17, spd: 11, luk: 8, def: 4, res: 16, con: 8
+    },
+    level: 13,
+    growths: { hp: 60, pow: 50, skl: 65, spd: 35, luk: 35, def: 10, res: 50 },
+    promotesTo: DoFClasses.Sage
 };

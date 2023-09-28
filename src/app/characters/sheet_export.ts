@@ -11,7 +11,7 @@ export function download(result: string) {
 
 
 function sortCharactersByCountryForRender(data: IDoFCharacterRenderer) {
-    const groupCharacters = (characters: IDoFRenderUnit[], type: string, cache: { [key: string]: { type: string, character: IDoFRenderUnit }[] } = {}) => {
+    const groupCharacters = (characters: any[], type: string, cache: { [key: string]: { type: string, character: IDoFRenderUnit }[] } = {}) => {
         return characters.reduce((results, character: IDoFRenderUnit) => {
             if (character.nationality) {
                 results[character.nationality] = results[character.nationality] || [];
@@ -20,8 +20,8 @@ function sortCharactersByCountryForRender(data: IDoFCharacterRenderer) {
             return results;
         }, cache);
     }
-    let charactersByNationality = groupCharacters(data.player, 'player');
-    charactersByNationality = groupCharacters(data.enemy, 'enemy', charactersByNationality);
+    let charactersByNationality = groupCharacters(data.player!, 'player');
+    charactersByNationality = groupCharacters(data.enemy!, 'enemy', charactersByNationality);
     charactersByNationality = groupCharacters(data.npc, 'npc', charactersByNationality);
 
     return charactersByNationality;
@@ -119,7 +119,7 @@ export function renderCharactersByCountry(data: IDoFCharacterRenderer) {
         ctx.fillStyle = '#ffffff';
         ctx.font = `${24 * scale}px Knights Quest`;
         ctx.fillText(nationality.toUpperCase(), 5 * scale, 25 * scale);
-        items.forEach((item, index) => {
+        items.forEach((item: any, index: number) => {
             let l = (index % 10) * 120 * scale;
             let t = (40 + (Math.ceil((index + 1) / 10) - 1) * 140) * scale;
             const result = renderItem(item, index % 2 === 0);
