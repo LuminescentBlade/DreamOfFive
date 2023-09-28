@@ -9,13 +9,17 @@
     background-color: white;
     border-radius: 4px;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
-    padding: 18px;
+    padding: 18px 18px 28px;
     font-size: 1.4rem;
   }
 
 .statTable {
   width: 100%;
-  td {
+  text-align: center;
+  thead{
+    font-weight: 600;
+  }
+  th,td {
     padding: 4px;
   }
 }
@@ -35,8 +39,16 @@
   gap: 6px;
 }
 
+.data{
+  overflow: hidden;
+}
+
+.dataContent{
+  padding: 12px;
+}
+
 .profile {
-  width: 180px;
+  width: 160px;
   padding: 12px;
   display: flex;
   flex-direction: column;
@@ -54,20 +66,14 @@
     display: flex;
     flex-wrap: wrap;
     list-style: none;
+    justify-content: center;
     align-items: center;
     padding: 4px;
-    color: gray;
+    color: var(--dof-color1);
+    gap: 6px;
     li{
         display: flex;
         align-items: center;
-        &:not(:first-child)::before{
-            content: '';
-            height: 1px;
-            width: 0px;
-            margin: 0 4px;
-            display: block;
-            border-left: 1px solid black;
-        }
     }
 }
 .portraitWrapper{
@@ -84,7 +90,14 @@
 }
 
 .tabs{
-    border-bottom: 1px solid black;
+    border-bottom: 2px solid var(--dof-header-border);
     list-style: none;
     padding: 6px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    button{
+      color: var(--dof-color4);
+      &:hover{
+        color: var(--dof-color1);        
+      }
+    }
 }

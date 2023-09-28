@@ -6,6 +6,7 @@ export const Ironside: IDoFPlayable = {
     altNames: ['Ironside'],
     artists: [DoFArtist.Lumi, DoFArtist.Amelia],
     nationality: DoFNationality.Onduris,
+    class: DoFClasses.Swordmaster,
     secret: true,
     routeConfig:{
         allRoute: {

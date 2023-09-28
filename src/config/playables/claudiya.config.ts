@@ -4,7 +4,7 @@ import { IDoFPlayable } from "@/src/models/interfaces";
 export const Claudiya: IDoFPlayable = {
     name: 'claudiya',
     artists: [DoFArtist.Amelia],
-    class: DoFClasses.Sibyl,
+    class: DoFClasses.Valkyrie,
     nationality: DoFNationality.Vishara,
     routeConfig:{
         allRoute: {

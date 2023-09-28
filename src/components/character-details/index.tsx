@@ -87,27 +87,27 @@ export default function CharacterDetails({ characterDef, clear }: { characterDef
                 <thead>
                     <tr>
                         <td></td>
-                        {statKeys.map(s => <td>{s}</td>)}
+                        {statKeys.map(s => <td className='capitalize'>{s}</td>)}
                     </tr>
                 </thead>
                 <tbody>
                     {characterDef.bases ?
                         <tr>
-                            <td>bases</td>
+                            <th className='capitalize'>bases</th>
                             {statKeys.map(s => <td>{characterDef.bases ? characterDef.bases[s] : ''}</td>)}
                         </tr>
                         : ''
                     }
                     {characterDef.growths ?
                         <tr>
-                            <td>growths</td>
-                            {statKeys.map(s => <td>{characterDef.growths && characterDef.growths[s] != null ? `${characterDef.growths[s]}%` : ''}</td>)}
+                            <th className='capitalize'>growths</th>
+                            {statKeys.map(s => <td>{characterDef.growths && characterDef.growths[s] != null ? `${characterDef.growths[s]}%` : '--'}</td>)}
                         </tr>
                         : ''
                     }
                     {promoBonuses != null ?
                         <tr>
-                            <td>promo bonuses</td>
+                            <th className='capitalize'>Promo</th>
                             {statKeys.map(s => <td>{promoBonuses![s]}</td>)}
                         </tr>
                         : ''
@@ -115,10 +115,10 @@ export default function CharacterDetails({ characterDef, clear }: { characterDef
                     {characterDef.bases && characterDef.growths ?
                         <tr>
 
-                            <td>Averages at level {
+                            <th>Lv.{
                                 //@ts-ignore
                                 `${promoBonuses ? levelData.unpromotedLevel : ''}${promoBonuses && isPromoted() ? '/' : ''}${isPromoted() ? levelData.promotedLevel : ''}`
-                            }</td>
+                            }</th>
                             {
                                 statKeys.map(s => {
                                     if (!characterDef.bases) return <td></td>;
@@ -152,7 +152,7 @@ export default function CharacterDetails({ characterDef, clear }: { characterDef
                         : ''
                     }
                     <tr>
-                        <td>caps</td>
+                        <th className='capitalize'>caps</th>
                         {statKeys.map(s => <td>{promotedCaps[s]}</td>)}
                     </tr>
                 </tbody>
@@ -205,16 +205,16 @@ export default function CharacterDetails({ characterDef, clear }: { characterDef
                         {/* {character blurb go here} */}
                     </div>
                 </div>
-                <div>
+                <div className={styles.data}> 
                     {   // check for at least one tab
                         (showStats) ? <ul className={styles.tabs}>
                             {showStats ? <li>
-                                <button>Stats</button>
+                                <button className="button-wrapper">Stats</button>
                             </li> : ''}
                         </ul> : ''}
-                    <>
+                    <div className={styles.dataContent}>
                         {renderStatChecker()}
-                    </>
+                    </div>
                 </div>
             </div>
         </div>
