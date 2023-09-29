@@ -153,7 +153,7 @@ export enum DoFCharKey{
     Riva = 'riva',
     byorDal = 'byor-dal',
     Meliza = 'meliza',
-    viShen = 'viShen',
+    viShen = 'vi-shen',
     Corbeau = 'corbeau',
     Brill = 'brill',
     Eudira = 'eudira',
