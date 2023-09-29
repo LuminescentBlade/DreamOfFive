@@ -10,6 +10,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'cobbet',
             artists: [DoFArtist.Astra],
+            blurb: '"... dealt with the traitor in a single, vicious blow. I knew then he considered himself a man of honour..."',
             class: DoFClasses.Brigand,
             nationality: DoFNationality.Aukema,
             routeConfig: {
@@ -21,6 +22,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'darrick',
             artists: [DoFArtist.Astra],
+            blurb: '"Brigands are no fools, but a brute can certainly force his way near the top on the strength of his arm alone..."',
             class: DoFClasses.Brigand,
             nationality: DoFNationality.Aukema,
             routeConfig: {
@@ -32,6 +34,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'rankin',
             artists: [DoFArtist.Astra, DoFArtist.Lumi],
+            blurb: '"... each brigand would drag down whoever they needed to to reach the top, even as the pot boiled beneath..."',
             class: DoFClasses.Mercenary,
             nationality: DoFNationality.Aukema,
             routeConfig: {
@@ -43,6 +46,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'crispin',
             artists: [DoFArtist.Astra, DoFArtist.Lumi],
+            blurb: '"... tremor in his hand vanished as he nocked an arrow, the fear giving him focus..."',
             class: DoFClasses.Archer,
             nationality: DoFNationality.Aukema,
             routeConfig: {
@@ -55,6 +59,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             name: 'sorcha',
             profileName: 'Sorcha Farrell',
             artists: [DoFArtist.Amelia],
+            blurb: '"Fluid gestures wove fire in intricate, deadly patterns, but my eyes were on hers... cold, onyx-dark..."',
             class: DoFClasses.Harrier,
             nationality: DoFNationality.Aukema,
             routeConfig: {
@@ -76,6 +81,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'ganter',
             artists: [DoFArtist.Lumi],
+            blurb: '"... would be no time to talk him down. Whatever he thought he knew of me, he despised..."',
             class: DoFClasses.Cavalier,
             nationality: DoFNationality.Aukema,
             routeConfig: {
@@ -104,6 +110,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'fergal',
             artists: [DoFArtist.Astra],
+            blurb: '"... never knew his name. Yet his search had been meticulous and skilful. I mourned the waste, but..."',
             class: DoFClasses.Armour,
             nationality: DoFNationality.Aukema,
             routeConfig: {
@@ -115,6 +122,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'garvan',
             artists: [DoFArtist.Astra],
+            blurb: '"The border posts attracted stolid, dutiful men unconcerned with glamour, workmanlike, unimaginative..."',
             class: DoFClasses.Armour,
             nationality: DoFNationality.Aukema,
             routeConfig: {
@@ -127,7 +135,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'tyrolf',
             artists: [DoFArtist.Astra],
-            class: '',
+            blurb: '"... found it convenient to keep around such distasteful men as these, who took a craftsman\'s pride in maiming..."',
+            class: DoFClasses.Rogue,
             nationality: DoFNationality.Aukema,
             routeConfig: {
                 musain: {
@@ -138,7 +147,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'vicentyr',
             artists: [DoFArtist.Xiltas, DoFArtist.Amelia],
-            class: '',
+            blurb: '"... officer class of warrior-scholars, taught in tactics, leadership, arithmetic, rhetoric and even philosophy..."',
+            class: DoFClasses.Sage,
             nationality: DoFNationality.Musain,
             routeConfig: {
                 musain: {
@@ -150,6 +160,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'menida',
             artists: [DoFArtist.Astra],
+            blurb: '"Two souls, battling for dominance within a single husk. Little wonder her mind seemed ruined..."',
             class: DoFClasses.Sibyl,
             nationality: DoFNationality.Musain,
             routeConfig: {
@@ -161,7 +172,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'duquesne',
             artists: [DoFArtist.Xiltas, DoFArtist.Astra, DoFArtist.Lumi],
-            class: '',
+            blurb: '"... am told he was a small-minded man who used his post to inflict whatever depravity he could..."',
+            class: DoFClasses.Sentinel,
             nationality: DoFNationality.Musain,
             routeConfig: {
                 musain: {
@@ -174,7 +186,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             name: 'jayson',
             displayName: 'The Maul',
             artists: [DoFArtist.Lumi],
-            class: '',
+            blurb: '"It would never be personal for him. All such killers saw themselves as good men, with their own code..."',
+            class: DoFClasses.Gladiator,
             nationality: DoFNationality.Musain,
             routeConfig: {
                 musain: {
@@ -239,6 +252,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'truvane',
             artists: [DoFArtist.Char],
+            blurb: '"... clung grimly to duty. Perhaps he thought his task just, perhaps unjust, but he knew it mattered not."',
             class: DoFClasses.Gladiator,
             nationality: DoFNationality.Aukema,
             routeConfig: {
@@ -250,6 +264,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'droon',
             artists: [DoFArtist.Astra],
+            blurb: '"... yet still he fought. Though his house had fallen to ruin, he still had his own survival to think of..."',
             class: DoFClasses.Swordmaster,
             nationality: DoFNationality.Onduris,
             routeConfig: {
@@ -262,6 +277,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             name: 'am-roan',
             displayName: 'am\'Roan',
             artists: [DoFArtist.Astra],
+            blurb: '"... jostling to earn the favour of the new dictator by avenging the old, relentless in pursuit for glory\'s sake..."',
             class: DoFClasses.Ranger,
             nationality: DoFNationality.Onduris,
             routeConfig: {
@@ -273,6 +289,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'bede',
             artists: [DoFArtist.Astra, DoFArtist.Xiltas],
+            blurb: '"... felt disrespected by the noble class and came to flourish under the Baron. They fought zealously for new futures..."',
             class: DoFClasses.Harrier,
             nationality: DoFNationality.Aukema,
             routeConfig: {
@@ -285,6 +302,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'timon',
             artists: [DoFArtist.Lumi],
+            blurb: '"... ringed by all manner of hangers-on,desperate to cling to the proximity of power, gladly laying down their lives..."',
             class: DoFClasses.Warrior,
             nationality: DoFNationality.Onduris,
             routeConfig: {
@@ -297,6 +315,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             name: 'a-vosa',
             displayName: 'a\'Vosa',
             artists: [DoFArtist.Char],
+            blurb: '"... was to obey the King\'s will, be his instrument in all ways; personal honour was irrelevant before duty..."',
             class: DoFClasses.Sentinel,
             nationality: DoFNationality.Onduris,
             routeConfig: {
@@ -310,6 +329,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             name: 'jin-sei',
             displayName: 'jin\'Sei',
             artists: [DoFArtist.Astra],
+            blurb: '"... true warrior-king in every respect. He may not have won his throne fairly, but he would defend it to the death..."',
             class: DoFClasses.Gladiator,
             nationality: DoFNationality.Onduris,
             routeConfig: {
@@ -323,6 +343,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             name: 'sel-seir',
             displayName: 'sel\'Seir',
             artists: [DoFArtist.Lumi, DoFArtist.Amelia],
+            blurb: '"Seir was notoriously decadent and venal, but his sword-arm had not atrophied... he was still Ondurite."',
             class: DoFClasses.Swordmaster,
             nationality: DoFNationality.Onduris,
             routeConfig: {
@@ -336,6 +357,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             name: 'mei-doru',
             displayName: 'mei\'Doru',
             artists: [DoFArtist.Astra],
+            blurb: '"... ran his frontier region with an iron fist, always looking with envy towards the capital\'s riches..."',
             class: DoFClasses.Swordmaster,
             nationality: DoFNationality.Onduris,
             routeConfig: {
@@ -349,6 +371,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             name: 'ka-danos',
             displayName: 'ka\'Danos',
             artists: [DoFArtist.Lumi],
+            blurb: '"... felt that Onduris had fallen from greatness, lost sight of its culture. He alone could set it right again..."',
             class: DoFClasses.Gladiator,
             nationality: DoFNationality.Onduris,
             routeConfig: {
@@ -362,6 +385,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'callad',
             artists: [DoFArtist.Xiltas, DoFArtist.Astra],
+            blurb: '"... of the backwater provinces were determined to have their day, long marginalised by aloof corelanders..."',
             class: '',
             nationality: DoFNationality.Aukema,
             isSpoiler: true, // not really, just need to update his design
@@ -397,6 +421,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'varkade',
             artists: [DoFArtist.Astra, DoFArtist.Amelia],
+            blurb: '"He thought he made me. In a sense, he was right. But I had to unmake him."',
             class: '',
             nationality: DoFNationality.Aukema,
             alt: {
@@ -433,6 +458,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'valin',
             artists: [DoFArtist.Lumi, DoFArtist.Astra],
+            blurb: '"... while a staunch and upstanding man could find himself an outlaw with a cruel twist of fate."',
             class: '',
             nationality: DoFNationality.Musain,
             routeConfig:{
@@ -444,6 +470,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'merri',
             artists: [DoFArtist.Amelia, DoFArtist.Astra],
+            blurb: '"... could stick you up and ruin your life with an irrepressible smile. Little consolation, I imagined, but..."',
             class: '',
             nationality: DoFNationality.Musain,
             routeConfig:{
@@ -517,6 +544,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             name: 'mir-katal',
             displayName: 'mir\'Katal',
             artists: [DoFArtist.Lumi, DoFArtist.Astra],
+            blurb: '"... very pinnacle of the Ondurite martial ideal, a man of matchless valour. Fit to lead, but to rule?"',
             class: DoFClasses.Swordmaster,
             nationality: DoFNationality.Onduris,
             routeConfig:{
