@@ -16,6 +16,7 @@
   --dof-color6: #afe0f9;
   --dof-color7: #0774ab;
   --dof-kq-font: "Knights Quest", serif;
+
   --dof-header-bg-color: #fff;
   --dof-bg-color: #fff;
   --dof-header-border: var(--dof-color5);
@@ -25,11 +26,8 @@
   --dof-content-padding: 24px;
   --dof-input-height: 40px;
   --dof-input-width: 200px;
-  --dof-input-border: 1px solid var(--dof-color2);
   --dof-input-border-radius: 5px;
-  --dof-a: var(--dof-color1);
-  --dof-a-hover: var(--dof-color2);
-
+  
   --lb-option-selector-bg-color: var(--dof-color1);
   --lb-option-selector-font-color: var(--dof-color2);
   --lb-option-select-bg-color-s: var(--dof-color2);
@@ -39,6 +37,13 @@
   --lb-option-select-width: var(--dof-input-width);
   --lb-option-select-border: var(--dof-input-border);
   --lb-option-select-border-radius: var(--dof-input-border-radius);
+}
+
+:root{
+  // default mode colors
+  --dof-input-border: 1px solid var(--dof-color2);
+  --dof-a: var(--dof-color1);
+  --dof-a-hover: var(--dof-color2);
 }
 
 // @media (prefers-color-scheme: dark) {
@@ -162,4 +167,10 @@ button.button-wrapper{
 
 .capitalize{
   text-transform: capitalize;
+}
+
+.flex-line-container{
+  display: flex;
+  gap: 6px;
+  align-items: center;
 }

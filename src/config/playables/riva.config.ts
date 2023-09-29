@@ -13,7 +13,7 @@ export const Riva: IDoFPlayable = {
         }
     },
     bases: {
-        hp: 22, pow: 13, skl: 14, spd: 11, luk: 15, def: 2, res: 14, con: 10
+        hp: 22, pow: 13, skl: 14, spd: 11, luk: 15, def: 2, res: 14, con: 8
     },
     level: 11,
     growths: {hp: 40, pow: 50, skl: 55, spd: 45, luk: 65, def: 5, res: 65},

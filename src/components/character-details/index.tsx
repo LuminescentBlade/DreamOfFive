@@ -1,15 +1,23 @@
 import { DoFPromotedClasses, DoFUnpromotedClasses } from "@/src/config/classes.config";
-import { IDoFRenderPlayable, IDoFRenderUnit, IDoFStats } from "@/src/models/dream-of-five.interfaces";
-import { useState } from "react";
+import { IDoFRenderPlayable, IDoFStats } from "@/src/models/dream-of-five.interfaces";
+import { cache, useState } from "react";
 import styles from './index.module.scss';
 import Overlay from "../overlay";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmark } from '@fortawesome/free-solid-svg-icons'
+import { faXmark, faArrowsUpDownLeftRight } from '@fortawesome/free-solid-svg-icons'
+import Toggle from "../toggle";
 
 let init = false;
-export default function CharacterDetails({ characterDef, clear }: { characterDef: IDoFRenderPlayable, clear: () => void }) {
+let offset = { left: 0, top: 0 };
+let isDragging = false;
+let cachedState = {
+    enableCompareMode: false,
+    dragStateStyle: {}
+};
+export default function CharacterDetails({ characterDef, clear, experimentalFeatures }: { characterDef: IDoFRenderPlayable, clear: () => void, experimentalFeatures?: boolean }) {
     const defaultLevels = getDefaultLevelByCharacter(characterDef);
     const [levelData, setLevelData] = useState(defaultLevels);
+    const [widgetState, setWidgetState] = useState(cachedState);
 
     // show hide items
     const showStats = (characterDef.bases || characterDef.growths);
@@ -40,6 +48,17 @@ export default function CharacterDetails({ characterDef, clear }: { characterDef
 
     init = true;
 
+    function setWidgetStateCaching(widgetStateData: any) {
+        cachedState = widgetStateData;
+        setWidgetState(cachedState);
+
+    }
+
+    function setComparisonMode(value: boolean) {
+        offset = { left: 0, top: 0 };
+        setWidgetStateCaching({ ...widgetState, enableCompareMode: value, dragStateStyle: {} });
+    }
+
     function setUnpromotedLevel(event: any) {
         const value = parseInt(event.currentTarget.value);
         if (isNaN(value) || value < unpromotedLevelFloor) {
@@ -54,6 +73,12 @@ export default function CharacterDetails({ characterDef, clear }: { characterDef
             setLevelData(newData);
         }
     };
+
+    function clearItem(){
+        clear();
+        offset = { left: 0, top: 0 };
+        setWidgetStateCaching({...widgetState, enableCompareMode: false, dragStateStyle: {}});
+    }
 
 
     function setPromotedLevel(event: any) {
@@ -109,8 +134,10 @@ export default function CharacterDetails({ characterDef, clear }: { characterDef
             }
             <table className={styles.statTable}>
                 <thead>
-                    <td className={styles.rowHeader}></td>
-                    {statKeys.map(s => <td className={`${styles.colHeader} capitalize`}>{s}</td>)}
+                    <tr>
+                        <td className={styles.rowHeader}></td>
+                        {statKeys.map(s => <td className={`${styles.colHeader} capitalize`}>{s}</td>)}
+                    </tr>
                 </thead>
                 <tbody>
                     {characterDef.bases ?
@@ -151,8 +178,8 @@ export default function CharacterDetails({ characterDef, clear }: { characterDef
                                     let growth = characterDef.growths ? (characterDef.growths[s] ?? 0) / 100 : 0;
                                     if (promoBonuses) { // unpromoted unit
                                         value = base + (growth * (levelData.unpromotedLevel ? levelData.unpromotedLevel - unpromotedLevelFloor : 0));
-                                        capped =  value >= unpromotedCaps[s];
-                                        if(capped){
+                                        capped = value >= unpromotedCaps[s];
+                                        if (capped) {
                                             value = unpromotedCaps[s];
                                         }
                                         if (isPromoted()) {
@@ -160,14 +187,14 @@ export default function CharacterDetails({ characterDef, clear }: { characterDef
                                             const promo1Stat = value + (promoBonuses[s] ?? 0);
                                             value = promo1Stat + (growth * Math.max(levelData.promotedLevel - promotedLevelFloor, 0));
                                             capped = value >= promotedCaps[s];
-                                            if(capped){
+                                            if (capped) {
                                                 value = promotedCaps[s];
                                             }
                                         }
                                     } else {
                                         value = base + growth * (levelData.promotedLevel ? levelData.promotedLevel - promotedLevelFloor : 0);
-                                        capped =  value > promotedCaps[s];
-                                        if(capped){value = promotedCaps[s]}
+                                        capped = value >= promotedCaps[s];
+                                        if (capped) { value = promotedCaps[s] }
                                     }
 
                                     return <td className={capped ? styles.capped : ''}>{value.toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
@@ -212,12 +239,36 @@ export default function CharacterDetails({ characterDef, clear }: { characterDef
         </div>
     }
 
+    function mouseDown() {
+        isDragging = true;
+        window.addEventListener('mousemove', dragging);
+        window.addEventListener('mouseup', mouseUp);
+    }
+
+    function mouseUp() {
+        isDragging = false;
+        window.removeEventListener('mousemove', dragging);
+        window.removeEventListener('mouseup', mouseUp);
+    }
+
+    function dragging(event: MouseEvent) {
+        if (isDragging) {
+            offset.left += event.movementX;
+            offset.top += event.movementY;
+            setWidgetStateCaching({ ...widgetState, enableCompareMode: true, dragStateStyle: { transform: `translateX(calc(${offset.left}px - 50%)) translateY(calc(${offset.top}px - 50%))` } })
+        }
+    }
+
     return <>
-        <Overlay onClick={clear} />
-        <div className={styles.characterDetails}>
+        {widgetState.enableCompareMode ? '' : <Overlay onClick={clearItem} />}
+        <div className={styles.characterDetails} style={widgetState.dragStateStyle}>
             <div className={styles.controls}>
-                <button  className={`${styles.closeButton} button-wrapper`} onClick={clear}>
-                    <FontAwesomeIcon icon={faXmark} size="2x"/>
+                {widgetState.enableCompareMode ? <button className={`${styles.controlButton} button-wrapper`} onMouseDown={mouseDown}>
+                    <FontAwesomeIcon icon={faArrowsUpDownLeftRight} size="xl" />
+                </button> : ''}
+
+                <button className={`${styles.controlButton} button-wrapper`} onClick={clearItem}>
+                    <FontAwesomeIcon icon={faXmark} size="2x" />
                 </button>
             </div>
             <div className={styles.content}>
@@ -234,6 +285,13 @@ export default function CharacterDetails({ characterDef, clear }: { characterDef
                     </div>
                 </div>
             </div>
+            {experimentalFeatures ? <div className={styles.footer}>
+                {
+                    experimentalFeatures ?<div className={'flex-line-container'}>
+                        <label>Toggle Comparison Mode</label><Toggle active={widgetState.enableCompareMode} onStateChange={setComparisonMode}/>
+                    </div> : ''
+                }
+            </div> : ''}
         </div>
     </>
 }

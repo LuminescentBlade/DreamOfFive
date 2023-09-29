@@ -53,6 +53,8 @@
 .controls {
   display: flex;
   justify-content: flex-end;
+  gap: 12px;
+  align-items: center;
 }
 
 .content {
@@ -96,7 +98,7 @@
   text-transform: capitalize;
 }
 
-.closeButton {
+.controlButton {
   path {
     fill: var(--dof-color2);
   }
@@ -221,5 +223,15 @@
   }
   .subtitle {
     font-size: 1.3rem;
+  }
+}
+
+.footer{
+  border-top: 1px solid var(--dof-color3);
+  padding-top: 12px;
+  display: flex;
+  justify-content: flex-end;
+  label{
+    font-size: .8em;
   }
 }

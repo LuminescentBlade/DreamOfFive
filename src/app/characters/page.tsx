@@ -307,7 +307,7 @@ export default function CharacterPage() {
                     </select>
                 </div>
             </div> : ''}
-            {currentCharacter ? <CharacterDetails characterDef={currentCharacter} clear={clearCharacter}/> : ''}
+            {currentCharacter ? <CharacterDetails characterDef={currentCharacter} clear={clearCharacter} experimentalFeatures={showSortedFull || isShowingLocal()}/> : ''}
             <UnitSheet data={unitSheetData} expansionState={expansionState.data} toggleCharacter={toggleCharacter} chapter={currentChapterLimit} getOnClick={getClickFunction} />
             {
                 !isProd ? <div style={{ width: 'fit-content', margin: '12px auto', textAlign: 'center' }}>

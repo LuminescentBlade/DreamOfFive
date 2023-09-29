@@ -1,0 +1,35 @@
+.toggle {
+  --dof-toggle-width: 40px;
+  --dof-toggle-height: calc(var(--dof-toggle-width) / 2);
+  --dof-toggle-button-size: calc(var(--dof-toggle-height) - 2px);
+  display: flex;
+  width: calc(var(--dof-toggle-button-size) * 2);
+  border-radius: var(--dof-toggle-height);
+  height: var(--dof-toggle-height);
+  border: var(--dof-input-border);
+  background-color: lightgray;
+  transition: background-color .2s;
+  overflow: hidden;
+
+  &:before {
+    content: "";
+    flex: 0 0 var(--dof-toggle-button-size);
+    width: var(--dof-toggle-button-size);
+    height: var(--dof-toggle-button-size);
+    border-radius: var(--dof-toggle-button-size);
+    border: 0;
+    background-color: gray;
+    transition: transform .2s, background-color .2s;
+    box-shadow: 0 0 3px rgba(0,0,0,0.3);
+  }
+}
+
+.toggleActive {
+  background-color: var(--dof-color1);
+
+  &:before {
+    transform: translateX(calc(100% - 2px));
+    box-shadow: 0 0 3px rgba(255,255,255,0.3);
+    background-color: var(--dof-color6);
+  }
+}

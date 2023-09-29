@@ -6,6 +6,7 @@ export const Tricia: IDoFPlayable =   {
     artists: [DoFArtist.Amelia, DoFArtist.Lumi],
     nationality: DoFNationality.Aukema,
     class: DoFClasses.Henchwoman,
+    blurb: '"... had a way of showig up behind you, with whatever you might need at hand, and a chirpy \'This it, boss?"',
     routeConfig:{
         allRoute: {
             player: 2
