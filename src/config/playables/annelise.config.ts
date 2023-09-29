@@ -2,7 +2,7 @@ import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/
 import { IDoFPlayable } from "@/src/models/interfaces";
 
 export const Annelise: IDoFPlayable = {
-    name: 'annelise',
+    name: DoFCharKey.Annelise,
     altNames: ['Long Tingbai', '龍庭白'],
     artists: [DoFArtist.Amelia, DoFArtist.Astra, DoFArtist.Lumi],
     blurb: '"... carried herself with a dignity that suggested she was in some way above this all, yet she never shirked..."',

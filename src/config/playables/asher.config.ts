@@ -2,7 +2,7 @@ import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/
 import { IDoFPlayable } from "@/src/models/interfaces";
 
 export const Asher: IDoFPlayable = {
-    name: 'asher',
+    name: DoFCharKey.Asher,
     artists: [DoFArtist.Amelia, DoFArtist.Lumi],
     blurb: '"... did not quite know what to make of him, but whether or not his affect is sincere, he is no charlatan..."',
     nationality: DoFNationality.Aukema,

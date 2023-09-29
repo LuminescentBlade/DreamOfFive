@@ -2,7 +2,7 @@ import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/
 import { IDoFPlayable } from "@/src/models/interfaces";
 
 export const Crowe: IDoFPlayable = {
-    name: 'crowe',
+    name: DoFCharKey.Crowe,
     artists: [DoFArtist.Amelia],
     blurb: '"It was clear that, in better times, he would only be fit for the noose. But we needed him, and he knew it..."',
     nationality: DoFNationality.Aukema,

@@ -2,7 +2,7 @@ import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/
 import { IDoFPlayable } from "@/src/models/interfaces";
 
 export const Baldur: IDoFPlayable = {
-    name: 'baldur',
+    name: DoFCharKey.Baldur,
     artists: [DoFArtist.Lumi],
     blurb: '"... feared nothing on the open sea. \'No sailor can,\' he remarked, \'because a moment\'s hesitation can sink the ship...\'"',
     class: DoFClasses.Raider,

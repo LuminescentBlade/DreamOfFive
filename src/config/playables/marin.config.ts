@@ -2,7 +2,7 @@ import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/
 import { IDoFPlayable } from "@/src/models/interfaces";
 
 export const Marin: IDoFPlayable = {
-    name: 'marin',
+    name: DoFCharKey.Marin,
     artists: [DoFArtist.Lumi, DoFArtist.Amelia],
     blurb: '"... typical example of hot-blooded Musain nobility, eager to prove his worth and fit to burst with elan..."',
     class: DoFClasses.Cavalier,

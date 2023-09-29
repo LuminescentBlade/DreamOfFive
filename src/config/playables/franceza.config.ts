@@ -2,7 +2,7 @@ import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/
 import { IDoFPlayable } from "@/src/models/interfaces";
 
 export const Franceza: IDoFPlayable = {
-    name: 'franceza',
+    name: DoFCharKey.Franceza,
     artists: [DoFArtist.Amelia],
     blurb: '"... relaxed, with an easy laugh. But in unguarded moments, she looked to Seren with a fierce protectiveness..."',
     class: DoFClasses.Archer,

@@ -2,7 +2,7 @@ import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/
 import { IDoFPlayable } from "@/src/models/interfaces";
 
 export const Florent: IDoFPlayable = {
-    name: 'florent',
+    name: DoFCharKey.Florent,
     artists: [DoFArtist.Astra, DoFArtist.Amelia],
     blurb: '"His father had been elevated to knighthood through his deeds. Little wonder his son was more grounded..."',
     class: DoFClasses.Cavalier,

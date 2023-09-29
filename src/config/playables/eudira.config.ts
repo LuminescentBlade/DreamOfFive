@@ -2,7 +2,7 @@ import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/
 import { IDoFPlayable } from "@/src/models/interfaces";
 
 export const Eudira: IDoFPlayable = {
-    name: 'eudira',
+    name: DoFCharKey.Eudira,
     artists: [DoFArtist.AK],
     blurb: '"... though the smile never left her lips, nor did it ever reach her mournful eyes..."',
     class: DoFClasses.Sibyl,

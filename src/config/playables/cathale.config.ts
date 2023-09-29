@@ -2,10 +2,11 @@ import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/
 import { IDoFPlayable } from "@/src/models/interfaces";
 
 export const Cathale: IDoFPlayable = {
-    name: 'cathale',
+    name: DoFCharKey.Cathale,
     artists: [DoFArtist.Astra],
     blurb: '"Steady of eye and stout of heart, she was every inch the soldier, without a Strider\'s mercurial streak..."',
     class: DoFClasses.Armour,
+    nationality: DoFNationality.Aukema,
     routeConfig:{
         allRoute: {
             player: 2

@@ -2,7 +2,7 @@ import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/
 import { IDoFPlayable } from "@/src/models/interfaces";
 
 export const Bellona: IDoFPlayable = {
-    name: 'bellona',
+    name: DoFCharKey.Bellona,
     profileName: 'Bellona Quirinia',
     artists: [DoFArtist.Astra, DoFArtist.Amelia],
     blurb: '"... considered herself without parallel. So she sought adventure in Onduris, and found, in us, all she could want..."',

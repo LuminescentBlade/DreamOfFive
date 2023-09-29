@@ -2,7 +2,7 @@ import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/
 import { IDoFPlayable } from "@/src/models/interfaces";
 
 export const Nari: IDoFPlayable = {
-    name: 'nari',
+    name: DoFCharKey.Nari,
     artists: [DoFArtist.Lumi],
     blurb: '"... yet she took any setback in stride. There was nothing unnatural in battle to her, no glory, no fear..."',
     class: DoFClasses.Mercenary,

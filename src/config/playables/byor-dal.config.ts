@@ -2,7 +2,7 @@ import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/
 import { IDoFPlayable } from "@/src/models/interfaces";
 
 export const ByorDal: IDoFPlayable = {
-    name: 'byor-dal',
+    name: DoFCharKey.byorDal,
     displayName: 'byor\'Dal',
     artists: [DoFArtist.Lumi, DoFArtist.Astra],
     blurb: '"... saw no future for himself or his land, so resolved to go out in a blaze of glory. But how many would be dragged down..."',

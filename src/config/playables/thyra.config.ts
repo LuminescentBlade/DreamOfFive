@@ -2,7 +2,7 @@ import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/
 import { IDoFPlayable } from "@/src/models/interfaces";
 
 export const Thyra: IDoFPlayable = {
-    name: 'thyra',
+    name: DoFCharKey.Thyra,
     altNames: ['Long Tingyu','龍庭玉'],
     artists: [DoFArtist.Lumi],
     class: DoFClasses.Enforcer,

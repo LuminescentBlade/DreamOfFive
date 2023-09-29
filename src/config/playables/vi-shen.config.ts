@@ -2,7 +2,7 @@ import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/
 import { IDoFPlayable } from "@/src/models/interfaces";
 
 export const ViShen: IDoFPlayable = {
-    name: 'vi-shen',
+    name: DoFCharKey.viShen,
     displayName: 'vi\'Shen',
     blurb: '"...little place in the scrum of pitched battle. But in a duel, where individual skill came to the fore..."',
     artists: [DoFArtist.Lumi],

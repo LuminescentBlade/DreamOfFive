@@ -2,7 +2,7 @@ import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/
 import { IDoFPlayable } from "@/src/models/interfaces";
 
 export const Jolyon: IDoFPlayable = {
-    name: 'jolyon', // enjo
+    name: DoFCharKey.Jolyon, // enjo
     artists: [DoFArtist.Astra, DoFArtist.Amelia],
     blurb: '"... burning with rebel spirit, the sort of man who could change the world, due in part to his elevated place in it..."',
     class: DoFClasses.Mage,

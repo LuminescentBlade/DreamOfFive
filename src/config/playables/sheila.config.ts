@@ -2,7 +2,7 @@ import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/
 import { IDoFPlayable } from "@/src/models/interfaces";
 
 export const Sheila: IDoFPlayable = {
-    name: 'sheila',
+    name: DoFCharKey.Sheila,
     artists: [DoFArtist.Amelia],
     class: DoFClasses.SeraphKnight,
     nationality: DoFNationality.Aukema,

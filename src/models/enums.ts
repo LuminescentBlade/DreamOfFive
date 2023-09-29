@@ -120,6 +120,7 @@ export enum DoFCharKey{
     Eilene = 'eilene',
     Amelia = 'amelia',
     Tricia = 'tricia',
+    Cyrille = 'cyrille',
     Chester = 'chester',
     Cathale = 'cathale',
     Crowe = 'crowe',

@@ -2,7 +2,7 @@ import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/
 import { IDoFPlayable } from "@/src/models/interfaces";
 
 export const Ioan: IDoFPlayable = {
-    name: 'ioan',
+    name: DoFCharKey.Ioan,
     artists: [DoFArtist.Amelia, DoFArtist.Astra],
     blurb: '"... marvelled that a man of such strength could easily control his own fate, yet left it, invariably, to the cards."',
     nationality: DoFNationality.Vishara,

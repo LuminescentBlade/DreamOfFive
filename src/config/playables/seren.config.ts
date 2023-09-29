@@ -2,7 +2,7 @@ import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/
 import { IDoFPlayable } from "@/src/models/interfaces";
 
 export const Seren: IDoFPlayable = {
-    name: 'seren',
+    name: DoFCharKey.Seren,
     artists: [DoFArtist.Amelia, DoFArtist.Astra],
     blurb: '"... patriotic belief gradually eroded by the grinding reality of simply living in Musain, under the noble heel..."',
     class: DoFClasses.Soldier,

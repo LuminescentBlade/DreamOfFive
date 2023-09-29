@@ -2,7 +2,7 @@ import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/
 import { IDoFPlayable } from "@/src/models/interfaces";
 
 export const Volund: IDoFPlayable = {
-    name: 'volund',
+    name: DoFCharKey.Volund,
     altNames: ['Murong Yunxiao', '慕容雲嘯'],
     artists: [DoFArtist.Lumi],
     class: DoFClasses.Sentinel,

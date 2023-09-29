@@ -2,7 +2,7 @@ import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/
 import { IDoFPlayable } from "@/src/models/interfaces";
 
 export const Lyndra: IDoFPlayable =  {
-    name: 'lyndra',
+    name: DoFCharKey.Lyndra,
     artists: [DoFArtist.Astra, DoFArtist.Lumi],
     blurb: '"... known as the Black Cat, for the way she seemed to have wretched luck, but many lives..."',
     class: DoFClasses.Gladiator,

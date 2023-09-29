@@ -1,14 +1,17 @@
+
 import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
 import { IDoFPlayable } from "@/src/models/interfaces";
 
-export const Artemisia: IDoFPlayable = {
-    name: DoFCharKey.Artemisia,
+export const Cyrille: IDoFPlayable = {
+    name: DoFCharKey.Cyrille,
     artists: [DoFArtist.Lumi],
-    class: DoFClasses.Sibyl,
-    nationality: DoFNationality.Aukema,
+    // blurb: '',
+    nationality:DoFNationality.Musain,
+    class: DoFClasses.Cavalier,
     routeConfig:{
         allRoute: {
-            player: 17
+            player: 99
         }
-    }
+    },
+    promotesTo: DoFClasses.Paladin,
 };

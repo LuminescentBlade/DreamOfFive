@@ -2,7 +2,7 @@ import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/
 import { IDoFPlayable } from "@/src/models/interfaces";
 
 export const Marie: IDoFPlayable = {
-    name: 'marie',
+    name: DoFCharKey.Marie,
     artists: [DoFArtist.Astra, DoFArtist.Lumi],
     blurb: '"... oft left to wonder, after this journal is left to gather dust, who will pick it up? Who tells the tale?"',
     class: DoFClasses.Thief,

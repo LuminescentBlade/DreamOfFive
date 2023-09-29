@@ -2,7 +2,7 @@ import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/
 import { IDoFPlayable } from "@/src/models/interfaces";
 
 export const Lizaveta: IDoFPlayable = {
-    name: 'lizaveta',
+    name: DoFCharKey.Lizaveta,
     profileName: 'Lizaveta Samnia',
     artists: [DoFArtist.Astra, DoFArtist.Amelia],
     blurb: '"... and sometimes she would look as though she expected aid, but she soon learned self-sufficiency..."',

@@ -2,7 +2,7 @@ import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/
 import { IDoFPlayable } from "@/src/models/interfaces";
 
 export const Hereward: IDoFPlayable = {
-    name: 'hereward',
+    name: DoFCharKey.Hereward,
     artists: [DoFArtist.Lumi],
     class: DoFClasses.Cataphract,
     nationality: DoFNationality.Aukema,

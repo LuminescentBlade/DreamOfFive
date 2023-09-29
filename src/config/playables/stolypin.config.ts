@@ -2,7 +2,7 @@ import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/
 import { IDoFPlayable } from "@/src/models/interfaces";
 
 export const Stolypin: IDoFPlayable = {
-    name: 'stolypin',
+    name: DoFCharKey.Stolypin,
     artists: [DoFArtist.Astra, DoFArtist.Amelia, DoFArtist.Lumi],
     class: DoFClasses.Harrier,
     nationality: DoFNationality.Vishara,

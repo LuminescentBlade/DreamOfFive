@@ -2,7 +2,7 @@ import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/
 import { IDoFPlayable } from "@/src/models/interfaces";
 
 export const Corbeau: IDoFPlayable = {
-    name: 'corbeau',
+    name: DoFCharKey.Corbeau,
     profileName: 'Daffodil Corbeau',
     artists: [DoFArtist.Lumi],
     blurb: '"... could not content herself with railing against injustice. There came a time to draw a line in the sand..."',

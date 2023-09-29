@@ -2,7 +2,7 @@ import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/
 import { IDoFPlayable } from "@/src/models/interfaces";
 
 export const Meliza: IDoFPlayable = {
-    name: 'meliza',
+    name: DoFCharKey.Meliza,
     artists: [DoFArtist.Lumi],
     blurb: '"... and immediately my mind dredged up all manner of flower imagery; she seemed the model of a Musain lady..."',
     class: DoFClasses.Mage,

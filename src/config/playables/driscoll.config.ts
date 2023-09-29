@@ -2,7 +2,7 @@ import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/
 import { IDoFPlayable } from "@/src/models/interfaces";
 
 export const Driscoll: IDoFPlayable = {
-    name: 'driscoll',
+    name: DoFCharKey.Driscoll,
     artists: [DoFArtist.Lumi],
     blurb: '"... red-blooded Aukeman man, quick to anger, quick to forgive, never far from the fray..."',
     nationality: DoFNationality.Aukema,

@@ -2,7 +2,7 @@ import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/
 import { IDoFPlayable } from "@/src/models/interfaces";
 
 export const Cothiva: IDoFPlayable = {
-    name: 'cothiva',
+    name: DoFCharKey.Cothiva,
     artists: [DoFArtist.Astra, DoFArtist.Lumi],
     blurb: '"... proud and expansive woman, who suffered neither fools nor challenges to her authority. But she backed it up..."',
     nationality: DoFNationality.Aukema,

@@ -2,7 +2,7 @@ import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/
 import { IDoFPlayable } from "@/src/models/interfaces";
 
 export const Kolbane: IDoFPlayable = {
-    name: 'kolbane',
+    name: DoFCharKey.Kolbane,
     profileName: 'Kolbane Farrier',
     artists: [DoFArtist.Lumi],
     blurb: '"The third most senior of each Strider section was to bear the banner, and so, having only three men..."',

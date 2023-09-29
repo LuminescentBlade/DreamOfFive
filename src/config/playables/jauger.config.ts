@@ -2,7 +2,7 @@ import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/
 import { IDoFPlayable } from "@/src/models/interfaces";
 
 export const Jauger: IDoFPlayable = {
-    name: 'jauger',
+    name: DoFCharKey.Jauger,
     artists: [DoFArtist.Astra, DoFArtist.Amelia],
     class: DoFClasses.Armour,
     nationality: DoFNationality.Aukema,

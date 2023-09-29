@@ -2,7 +2,7 @@ import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/
 import { IDoFPlayable } from "@/src/models/interfaces";
 
 export const SeMori: IDoFPlayable = {
-    name: 'se-mori',
+    name: DoFCharKey.seMori,
     displayName: 'se\'Mori',
     artists: [DoFArtist.Amelia, DoFArtist.Astra],
     blurb: '"... seemed puffed up at first, but in time, I grew to respect his firm character, his direct manner, his sense of duty..."',
