@@ -109,10 +109,8 @@ export default function CharacterDetails({ characterDef, clear }: { characterDef
             }
             <table className={styles.statTable}>
                 <thead>
-                    <tr>
-                        <td></td>
-                        {statKeys.map(s => <td className='capitalize'>{s}</td>)}
-                    </tr>
+                    <td className={styles.rowHeader}></td>
+                    {statKeys.map(s => <td className={`${styles.colHeader} capitalize`}>{s}</td>)}
                 </thead>
                 <tbody>
                     {characterDef.bases ?

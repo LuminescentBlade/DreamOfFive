@@ -1,4 +1,6 @@
 .characterDetails {
+  --data-size: 45px;
+  --row-label-size: 64px;
   position: fixed;
   max-height: 80vh;
   max-width: 80vw;
@@ -15,10 +17,11 @@
 }
 
 .statTable {
-  width: 100%;
+  max-width: 100%;
   text-align: center;
   border-collapse: collapse;
   border: 1px solid var(--dof-color2);
+  table-layout: fixed;
   thead {
     font-weight: 600;
   }
@@ -27,10 +30,21 @@
     padding: 4px;
     border: 1px solid var(--dof-color2);
   }
-  th {
-    max-width: 64px;
+  th,
+  .rowHeader {
+    width: var(--row-label-size);
+    max-width: var(--row-label-size);
+    min-width: var(--row-label-size);
   }
-  thead{
+
+  td,
+  .colHeader {
+    width: var(--data-size);
+    max-width: var(--data-size);
+    min-width: var(--data-size);
+  }
+
+  thead {
     color: var(--dof-color4);
     border-bottom: 2px solid var(--dof-color2);
   }
@@ -76,18 +90,18 @@
   }
 }
 
-.classText{
+.classText {
   color: var(--dof-color7);
   font-weight: 600;
   text-transform: capitalize;
 }
 
-.closeButton{
-  path{
+.closeButton {
+  path {
     fill: var(--dof-color2);
   }
-  &:hover{
-    path{
+  &:hover {
+    path {
       fill: var(--dof-color1);
     }
   }
@@ -103,7 +117,7 @@
   padding: 4px;
   color: var(--dof-color1);
   gap: 6px;
-  font-size: .9em;
+  font-size: 0.9em;
   li {
     display: flex;
     align-items: center;
@@ -134,37 +148,36 @@
   }
 }
 
-.levelInputs{
+.levelInputs {
   display: flex;
   margin-bottom: 12px;
   gap: 6px;
 }
 
-.levelInputGroup{
+.levelInputGroup {
   width: 64px;
-  label{
+  label {
     display: block;
     font-size: 0.8em;
   }
 
-  input{
+  input {
     width: 100%;
     border: 0;
     border-radius: 0;
-    background-color: rgba(0,0,0,0.1);
+    background-color: rgba(0, 0, 0, 0.1);
     border-bottom: 2px solid var(--dof-color1);
     height: 30px;
-    &:focus{
-      background-color: rgba(0,0,0,0.15);
+    &:focus {
+      background-color: rgba(0, 0, 0, 0.15);
       outline: none;
       border-bottom: 2px solid var(--dof-color2);
     }
   }
-
 }
 .blurb {
   margin-top: 12px;
-  font-size: .9em;
+  font-size: 0.9em;
   font-style: italic;
   text-align: center;
 }
@@ -194,7 +207,11 @@
     gap: 12px;
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
+  .characterDetails{
+    --data-size: 35px;
+    --row-header-size: 45px;
+  }
   .statTable {
     font-size: 0.8em;
   }
