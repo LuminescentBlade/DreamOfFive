@@ -3,6 +3,8 @@ import { IDoFRenderPlayable, IDoFRenderUnit, IDoFStats } from "@/src/models/drea
 import { useState } from "react";
 import styles from './index.module.scss';
 import Overlay from "../overlay";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from '@fortawesome/free-solid-svg-icons'
 
 let init = false;
 export default function CharacterDetails({ characterDef, clear }: { characterDef: IDoFRenderPlayable, clear: () => void }) {
@@ -184,36 +186,41 @@ export default function CharacterDetails({ characterDef, clear }: { characterDef
         return result;
     }
 
+    function renderProfile() {
+        return <div className={styles.profile}>
+            <div className={styles.portraitWrapper}>
+                <img className="pixel-art" src={characterDef.path}></img>
+            </div>
+            <div className={styles.profileData}>
+
+                <h2>{characterDef.profileName ?? characterDef.conditional?.player?.displayName ?? characterDef.displayName ?? <span className={'capitalize'}>{characterDef.name}</span>}</h2>
+                {characterDef.altNames || characterDef.conditional?.player?.displayName ? <ul className={styles.altNames}>
+                    {characterDef.altNames?.map(c => <li>{c}</li>)}
+                    {characterDef.conditional?.player?.displayName ? <li className="capitalize">{characterDef.name}</li> : ''}
+                </ul> : ''}
+
+                <div className={styles.subtitle}>
+                    {characterDef.level ? `Level ${characterDef.level}` : ''} <span className={styles.classText}>{characterDef.class}</span>
+                    {characterDef.promotesTo ? <div className={styles.sub}>Promotes to <span className={styles.classText}>{characterDef.promotesTo}</span></div> : ''}
+                </div>
+                <div className={styles.blurb}>
+                    {characterDef.blurb}
+                </div>
+
+            </div>
+        </div>
+    }
+
     return <>
         <Overlay onClick={clear} />
         <div className={styles.characterDetails}>
             <div className={styles.controls}>
-                <button onClick={clear}>x</button>
+                <button  className={`${styles.closeButton} button-wrapper`} onClick={clear}>
+                    <FontAwesomeIcon icon={faXmark} size="2x"/>
+                </button>
             </div>
             <div className={styles.content}>
-                <div className={styles.profile}>
-                    <div className={styles.portraitWrapper}>
-                        <img className="pixel-art" src={characterDef.path}></img>
-                    </div>
-                    <div className={styles.profileData}>
-
-                        <h2>{characterDef.profileName ?? characterDef.conditional?.player?.displayName ?? characterDef.displayName ?? <span className={'capitalize'}>{characterDef.name}</span>}</h2>
-                        {characterDef.altNames || characterDef.conditional?.player?.displayName ? <ul className={styles.altNames}>
-                            {characterDef.altNames?.map(c => <li>{c}</li>)}
-                            {characterDef.conditional?.player?.displayName ? <li className="capitalize">{characterDef.name}</li> : ''}
-                        </ul> : ''}
-
-                        <div className={styles.subtitle}>
-                            {characterDef.level ? `Level ${characterDef.level}` : ''} <span className={'capitalize'}>{characterDef.class}</span>
-                            {characterDef.promotesTo ? <div className={styles.sub}>Promotes to <span className={'capitalize'}>{characterDef.promotesTo}</span></div> : ''}
-                        </div>
-                        <div className={styles.blurb}>
-                            {characterDef.blurb}
-                        </div>
-
-                    </div>
-
-                </div>
+                {renderProfile()}
                 <div className={styles.data}>
                     {   // check for at least one tab
                         (showStats) ? <ul className={styles.tabs}>
