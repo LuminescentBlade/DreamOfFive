@@ -3,6 +3,7 @@ import { IDoFPlayable } from "@/src/models/interfaces";
 
 export const Arcus: IDoFPlayable = {
     name: 'arcus',
+    profileName: 'Arcus Scipio',
     artists: [DoFArtist.Astra],
     blurb: '"... a stiff, unbending martial man, but he was intelligent enough to realise how the world truly worked..."',
     class: DoFClasses.Ironclad,

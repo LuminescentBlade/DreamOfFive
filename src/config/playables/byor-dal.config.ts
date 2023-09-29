@@ -14,7 +14,7 @@ export const ByorDal: IDoFPlayable = {
             enemy: 10.5
         }
     },
-    bases: {hp: 38, pow: 18, skl: 15, spd: 15, luk: 6, def: 17, res: 8},
+    bases: {hp: 38, pow: 18, skl: 15, spd: 15, luk: 6, def: 17, res: 8, con: 13},
     level: 3, 
     growths: {hp: 90, pow: 45, skl: 55, spd: 35, luk: 15, def: 30, res: 25}
 };

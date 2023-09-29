@@ -13,7 +13,7 @@ export const Kahn: IDoFPlayable = {
         }
     },
     bases: {
-        hp: 27, pow: 12, skl: 13, spd: 11, luk: 8, def: 10, res: 0
+        hp: 27, pow: 12, skl: 13, spd: 11, luk: 8, def: 10, res: 0, con: 9
     },
     level: 9,
     promotesTo: DoFClasses.Sentinel,

@@ -16,7 +16,7 @@ export const Conleth: IDoFPlayable = {
         }
     },
     bases: {
-        hp: 25, pow: 10, skl: 12, spd: 15, luk: 9, def: 6, res: 2
+        hp: 25, pow: 10, skl: 12, spd: 15, luk: 9, def: 6, res: 2, con: 8
     },
     level: 8,
     promotesTo: DoFClasses.Ranger,

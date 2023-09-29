@@ -13,7 +13,7 @@ export const Baldur: IDoFPlayable = {
         }
     },
     bases: {
-        hp: 38, pow: 17, skl: 11, spd: 13, luk: 9, def: 8, res: 5
+        hp: 38, pow: 17, skl: 11, spd: 13, luk: 9, def: 8, res: 5, con: 13
     },
     level: 13,
     growths: { hp: 110, pow: 70, skl: 40, spd: 40, luk: 30, def: 20, res: 20 },

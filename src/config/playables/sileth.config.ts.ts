@@ -16,7 +16,7 @@ export const Sileth: IDoFPlayable = {
         }
     },
     bases: {
-        hp: 25, pow: 10, skl: 10, spd: 12, luk: 9, def: 7, res: 12
+        hp: 25, pow: 10, skl: 10, spd: 12, luk: 9, def: 7, res: 12, con: 7
     },
     level: 10,
     growths: {hp: 75, pow: 35, skl: 50, spd: 50, luk: 30, def: 20, res: 60},

@@ -13,7 +13,7 @@ export const Nari: IDoFPlayable = {
         }
     },
     bases: {
-        hp: 34, pow: 16, skl: 14, spd: 11, luk: 13, def: 11, res: 0
+        hp: 34, pow: 16, skl: 14, spd: 11, luk: 13, def: 11, res: 0, con: 11
     },
     level: 13,
     promotesTo: DoFClasses.Gladiator,

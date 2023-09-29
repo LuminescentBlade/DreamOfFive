@@ -152,21 +152,24 @@ export default function CharacterDetails({ characterDef, clear }: { characterDef
                                     let value = base;
                                     let growth = characterDef.growths ? (characterDef.growths[s] ?? 0) / 100 : 0;
                                     if (promoBonuses) { // unpromoted unit
-                                        const unpromotedRawStat = base + (growth * (levelData.unpromotedLevel ? levelData.unpromotedLevel - unpromotedLevelFloor : 0));
-                                        const unpromotedStat = Math.min(unpromotedCaps[s], unpromotedRawStat);
-                                        value = unpromotedStat;
-                                        capped = unpromotedCaps[s] === unpromotedStat;
-
+                                        value = base + (growth * (levelData.unpromotedLevel ? levelData.unpromotedLevel - unpromotedLevelFloor : 0));
+                                        capped =  value >= unpromotedCaps[s];
+                                        if(capped){
+                                            value = unpromotedCaps[s];
+                                        }
                                         if (isPromoted()) {
-                                            const promo1Stat = unpromotedStat + (promoBonuses[s] ?? 0);
-                                            const promotedRawStat = promo1Stat + (growth * Math.max(levelData.promotedLevel - promotedLevelFloor, 0));
-                                            const promotedStat = Math.min(promotedCaps[s], promotedRawStat);
-                                            value = promotedStat;
-                                            capped = promotedCaps[s] === promotedStat;
+                                            // for capbreak edition set value to unpromoted caps if capped here or it'll mess with the calcs
+                                            const promo1Stat = value + (promoBonuses[s] ?? 0);
+                                            value = promo1Stat + (growth * Math.max(levelData.promotedLevel - promotedLevelFloor, 0));
+                                            capped = value >= promotedCaps[s];
+                                            if(capped){
+                                                value = promotedCaps[s];
+                                            }
                                         }
                                     } else {
                                         value = base + growth * (levelData.promotedLevel ? levelData.promotedLevel - promotedLevelFloor : 0);
-                                        capped = promotedCaps[s] === value;
+                                        capped =  value > promotedCaps[s];
+                                        if(capped){value = promotedCaps[s]}
                                     }
 
                                     return <td className={capped ? styles.capped : ''}>{value.toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
