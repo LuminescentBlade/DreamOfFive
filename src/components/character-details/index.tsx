@@ -83,6 +83,28 @@ export default function CharacterDetails({ characterDef, clear }: { characterDef
         if (!showStats) return '';
         const statKeys = Object.keys(promotedCaps ?? {});
         const result = <>
+            {characterDef.bases && characterDef.growths ?
+                <div className={styles.levelInputs}>
+                    {
+                        promoBonuses && levelData.unpromotedLevel ?
+                            <div className={styles.levelInputGroup}>
+                                <label>Unpromoted</label>
+                                <input type="number" value={levelData.unpromotedDisplay} onChange={setUnpromotedLevel} />
+                            </div>
+
+                            : ''
+                    }
+                    {
+                        !promoBonuses || (levelData.unpromotedLevel && levelData.unpromotedLevel >= 10) ?
+                            <div className={styles.levelInputGroup}>
+                                <label>Promoted</label>
+                                <input type="number" value={levelData.promotedDisplay} onChange={setPromotedLevel} />
+                            </div>
+                            : ''
+                    }
+                </div>
+                : ''
+            }
             <table className={styles.statTable}>
                 <thead>
                     <tr>
@@ -113,7 +135,7 @@ export default function CharacterDetails({ characterDef, clear }: { characterDef
                         : ''
                     }
                     {characterDef.bases && characterDef.growths ?
-                        <tr>
+                        <tr className={styles.avgs}>
 
                             <th>Lv.{
                                 //@ts-ignore
@@ -140,7 +162,7 @@ export default function CharacterDetails({ characterDef, clear }: { characterDef
                                             value = promotedStat;
                                             capped = promotedCaps[s] === promotedStat;
                                         }
-                                    } else {    
+                                    } else {
                                         value = base + growth * (levelData.promotedLevel ? levelData.promotedLevel - promotedLevelFloor : 0);
                                         capped = promotedCaps[s] === value;
                                     }
@@ -152,40 +174,18 @@ export default function CharacterDetails({ characterDef, clear }: { characterDef
                         </tr>
                         : ''
                     }
-                    <tr>
+                    <tr className={styles.caps}>
                         <th className='capitalize'>caps</th>
                         {statKeys.map(s => <td>{promotedCaps[s]}</td>)}
                     </tr>
                 </tbody>
             </table>
-            {characterDef.bases && characterDef.growths ?
-                <div>
-                    {
-                        promoBonuses && levelData.unpromotedLevel ?
-                            <div>
-                                <label>Unpromoted Level</label>
-                                <input type="number" value={levelData.unpromotedDisplay} onChange={setUnpromotedLevel} />
-                            </div>
-
-                            : ''
-                    }
-                    {
-                        !promoBonuses || (levelData.unpromotedLevel && levelData.unpromotedLevel >= 10) ?
-                            <div>
-                                <label>Promoted Level</label>
-                                <input type="number" value={levelData.promotedDisplay} onChange={setPromotedLevel} />
-                            </div>
-                            : ''
-                    }
-                </div>
-                : ''
-            }
         </>
         return result;
     }
 
     return <>
-        <Overlay />
+        <Overlay onClick={clear} />
         <div className={styles.characterDetails}>
             <div className={styles.controls}>
                 <button onClick={clear}>x</button>
@@ -195,18 +195,26 @@ export default function CharacterDetails({ characterDef, clear }: { characterDef
                     <div className={styles.portraitWrapper}>
                         <img className="pixel-art" src={characterDef.path}></img>
                     </div>
-                    <h2>{characterDef.profileName ?? characterDef.conditional?.player?.displayName ?? characterDef.displayName ?? <span className={'capitalize'}>{characterDef.name}</span>}</h2>
-                    {characterDef.altNames || characterDef.conditional?.player?.displayName? <ul className={styles.altNames}>
-                        {characterDef.altNames?.map(c=><li>{c}</li>)}
-                        {characterDef.conditional?.player?.displayName?<li className="capitalize">{characterDef.name}</li>:''}
-                    </ul> : ''}
-                    
-                    <div className={styles.subtitle}>{characterDef.level ? `Level ${characterDef.level}` : ''} <span className={'capitalize'}>{characterDef.class}</span></div>
-                    <div className={styles.blurb}>
-                        {characterDef.blurb}
+                    <div className={styles.profileData}>
+
+                        <h2>{characterDef.profileName ?? characterDef.conditional?.player?.displayName ?? characterDef.displayName ?? <span className={'capitalize'}>{characterDef.name}</span>}</h2>
+                        {characterDef.altNames || characterDef.conditional?.player?.displayName ? <ul className={styles.altNames}>
+                            {characterDef.altNames?.map(c => <li>{c}</li>)}
+                            {characterDef.conditional?.player?.displayName ? <li className="capitalize">{characterDef.name}</li> : ''}
+                        </ul> : ''}
+
+                        <div className={styles.subtitle}>
+                            {characterDef.level ? `Level ${characterDef.level}` : ''} <span className={'capitalize'}>{characterDef.class}</span>
+                            {characterDef.promotesTo ? <div className={styles.sub}>Promotes to <span className={'capitalize'}>{characterDef.promotesTo}</span></div> : ''}
+                        </div>
+                        <div className={styles.blurb}>
+                            {characterDef.blurb}
+                        </div>
+
                     </div>
+
                 </div>
-                <div className={styles.data}> 
+                <div className={styles.data}>
                     {   // check for at least one tab
                         (showStats) ? <ul className={styles.tabs}>
                             {showStats ? <li>
