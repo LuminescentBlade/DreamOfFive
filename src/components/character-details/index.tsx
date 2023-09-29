@@ -159,7 +159,7 @@ export default function CharacterDetails({ characterDef, clear }: { characterDef
 
                                         if (isPromoted()) {
                                             const promo1Stat = unpromotedStat + (promoBonuses[s] ?? 0);
-                                            const promotedRawStat = promo1Stat + (growth * Math.max(levelData.promotedLevel - unpromotedLevelFloor, 0));
+                                            const promotedRawStat = promo1Stat + (growth * Math.max(levelData.promotedLevel - promotedLevelFloor, 0));
                                             const promotedStat = Math.min(promotedCaps[s], promotedRawStat);
                                             value = promotedStat;
                                             capped = promotedCaps[s] === promotedStat;
