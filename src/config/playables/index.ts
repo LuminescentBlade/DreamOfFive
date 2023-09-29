@@ -60,12 +60,14 @@ import { Vincent } from "./vincent.config";
 import { Volund } from "./volund.config";
 import { Wren } from "./wren.config";
 import { Ironside } from "./rophon.config";
+import { Cyrille } from "./cyrille.config";
 
 export const DoFPlayable =  {
     [DoFCharKey.Rena]: Rena,
     [DoFCharKey.Garath]:Garath,
     [DoFCharKey.Kolbane]: Kolbane,
     [DoFCharKey.Asher]: Asher,
+    [DoFCharKey.Cyrille]: Cyrille,
     [DoFCharKey.Eilene]: Eilene,
     [DoFCharKey.Amelia]: Amelia,
     [DoFCharKey.Tricia]: Tricia,

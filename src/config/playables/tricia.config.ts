@@ -6,7 +6,7 @@ export const Tricia: IDoFPlayable =   {
     artists: [DoFArtist.Amelia, DoFArtist.Lumi],
     nationality: DoFNationality.Aukema,
     class: DoFClasses.Henchwoman,
-    blurb: '"... had a way of showig up behind you, with whatever you might need at hand, and a chirpy \'This it, boss?"',
+    blurb: '"... had a way of showing up behind you, with whatever you might need at hand, and a chirpy \'This it, boss?\'"',
     routeConfig:{
         allRoute: {
             player: 2
@@ -17,6 +17,6 @@ export const Tricia: IDoFPlayable =   {
     }, 
     level: 1,
     promotesTo: DoFClasses.Blademaiden,
-    growths: {hp: 50, pow: 45, skl: 35, spd: 60, luk: 75, def: 25, res: 30}
+    growths: {hp: 50, pow: 55, skl: 45, spd: 70, luk: 85, def: 35, res: 40}
 };
 
