@@ -4,7 +4,7 @@ import { IDoFPlayable } from "@/src/models/interfaces";
 export const Vincent: IDoFPlayable = {
     name: 'vincent',
     artists: [DoFArtist.Amelia, DoFArtist.Astra],
-    class: '',
+    class: DoFClasses.Sentinel,
     nationality: DoFNationality.Vishara,
     routeConfig:{
         onduris: {
