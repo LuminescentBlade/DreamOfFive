@@ -94,7 +94,7 @@ export const DoFPromotedClasses = {
         caps: { hp: 60, pow: 30, skl: 28, spd: 27, luk: 30, def: 27, res: 15, con: 20 }
     },
     [DoFClasses.Gladiator]: {
-        promo: { hp: 4, pow: 2, skl: 3, spd: 2, luk: 0, def: 3, res: 3, con: 2 },
+        promo: { hp: 4, pow: 2, skl: 3, spd: 2, luk: 0, def: 3, res: 3, con: 1 },
         caps: { hp: 60, pow: 28, skl: 27, spd: 27, luk: 30, def: 28, res: 15, con: 20 }
     },
     [DoFClasses.Bishop]: {

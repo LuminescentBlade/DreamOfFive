@@ -1,33 +1,36 @@
 .characterDetails {
-    position: fixed;
-    max-height: 80vh;
-    max-width: 80vw;
-    z-index: 999;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    background-color: white;
-    border-radius: 4px;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
-    padding: 18px 18px 28px;
-    font-size: 1.4rem;
-  }
+  position: fixed;
+  max-height: 80vh;
+  max-width: 80vw;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+  padding: 18px 18px 28px;
+  font-size: 1.4rem;
+}
 
 .statTable {
   width: 100%;
   text-align: center;
-  thead{
+  border-collapse: collapse;
+  border: 1px solid var(--dof-color1);
+  thead {
     font-weight: 600;
   }
-  th,td {
+  th,
+  td {
     padding: 4px;
+    border: 1px solid var(--dof-color1);
   }
 }
 
 .capped {
   font-weight: 600;
 }
-
 
 .controls {
   display: flex;
@@ -39,11 +42,11 @@
   gap: 6px;
 }
 
-.data{
+.data {
   overflow: hidden;
 }
 
-.dataContent{
+.dataContent {
   padding: 12px;
 }
 
@@ -61,43 +64,48 @@
   }
 }
 
-.altNames{
-    height: fit-content;
+.altNames {
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+  color: var(--dof-color1);
+  gap: 6px;
+  li {
     display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    justify-content: center;
     align-items: center;
-    padding: 4px;
-    color: var(--dof-color1);
-    gap: 6px;
-    li{
-        display: flex;
-        align-items: center;
-    }
+  }
 }
-.portraitWrapper{
-    width: fit-content;
-    height: fit-content;
-    border: 1px solid rgba(0,0,0,0); // fsr the portraits actually render properly with this? i dont get it but ok
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+.portraitWrapper {
+  width: fit-content;
+  height: fit-content;
+  border: 1px solid rgba(0, 0, 0, 0); // fsr the portraits actually render properly with this? i dont get it but ok
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 
-.subtitle{
-    font-size: 1.5rem;
+.subtitle {
+  font-size: 1.5rem;
 }
 
-.tabs{
-    border-bottom: 2px solid var(--dof-header-border);
-    list-style: none;
-    padding: 6px;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    button{
-      color: var(--dof-color4);
-      &:hover{
-        color: var(--dof-color1);        
-      }
+.tabs {
+  border-bottom: 2px solid var(--dof-header-border);
+  list-style: none;
+  padding: 6px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  button {
+    color: var(--dof-color4);
+    &:hover {
+      color: var(--dof-color1);
     }
+  }
+}
+
+.blurb{
+  margin-top:12px;
+  font-style: italic;
 }

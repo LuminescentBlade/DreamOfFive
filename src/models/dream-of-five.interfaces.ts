@@ -8,6 +8,7 @@ export interface IDoFUnit extends IUnit {
     };
     class?: string,
     blurb?: string,
+    nationality?: DoFNationality
 };
 
 export interface IDoFAlt extends IAltConfig {
@@ -20,8 +21,7 @@ export interface IDoFCharacter extends IDoFUnit {
     altNames?: string[], // subtitles to profile names, displayed as secondary
     // overrides all other instances of name displays for the profile, otherwise if you want the same name on the sheet and profile use displayName
     // this is mostly to write in last names to display
-    profileName?: string, 
-    nationality?: DoFNationality,
+    profileName?: string,  
 }
 export interface IDoFStats {
     [stat: string]: number
