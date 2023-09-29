@@ -4,6 +4,7 @@ import { IDoFPlayable } from "@/src/models/interfaces";
 export const Driscoll: IDoFPlayable = {
     name: 'driscoll',
     artists: [DoFArtist.Lumi],
+    blurb: '"... red-blooded Aukeman man, quick to anger, quick to forgive, never far from the fray..."',
     nationality: DoFNationality.Aukema,
     class: DoFClasses.Fighter,
     routeConfig: {

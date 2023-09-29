@@ -4,6 +4,7 @@ import { IDoFPlayable } from "@/src/models/interfaces";
 export const Brill: IDoFPlayable = {
     name: 'brill',
     artists: [DoFArtist.Amelia],
+    blurb: '"The Ondurites regarded helot women as chattel, archers as cowards, and yet she had battled her way to command..."',
     class: DoFClasses.Marksman,
     nationality: DoFNationality.Onduris,
     routeConfig: {

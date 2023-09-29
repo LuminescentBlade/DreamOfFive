@@ -4,6 +4,7 @@ import { IDoFPlayable } from "@/src/models/interfaces";
 export const Conleth: IDoFPlayable = {
     name: 'conleth',
     artists: [DoFArtist.Lumi],
+    blurb: '"... had thought all deserters to be vicious, desperate brutes. But he never once seemed to regret his decision..."',
     class: DoFClasses.Skirmisher,
     nationality: DoFNationality.Aukema,
     routeConfig:{

@@ -4,6 +4,7 @@ import { IDoFPlayable } from "@/src/models/interfaces";
 export const Leda: IDoFPlayable = {
     name: 'leda',
     artists: [DoFArtist.Astra, DoFArtist.Amelia],
+    blurb: '"She seemed almost ethereal, not quite at one with the world, but when she moved, I couldn\'t take my eyes off her..."',
     class: DoFClasses.Dancer,
     nationality: DoFNationality.Onduris,
     routeConfig: {

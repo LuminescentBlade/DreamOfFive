@@ -4,6 +4,7 @@ import { IDoFPlayable } from "@/src/models/interfaces";
 export const Nikita: IDoFPlayable = {
     name: 'nikita',
     artists: [DoFArtist.Astra],
+    blurb: '"... exemplar of the Ondurite woman. Too soft-skinned for manual labour, she had devoted herself entirely to battle..."',
     class: DoFClasses.Swordmaster,
     nationality: DoFNationality.Onduris,
     routeConfig:{

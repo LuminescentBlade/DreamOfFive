@@ -5,6 +5,7 @@ export const Kolbane: IDoFPlayable = {
     name: 'kolbane',
     profileName: 'Kolbane Farrier',
     artists: [DoFArtist.Lumi],
+    blurb: '"The third most senior of each Strider section was to bear the banner, and so, having only three men..."',
     nationality: DoFNationality.Aukema,
     class: DoFClasses.Mercenary,
     routeConfig: {

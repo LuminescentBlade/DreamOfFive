@@ -5,6 +5,7 @@ export const Corbeau: IDoFPlayable = {
     name: 'corbeau',
     profileName: 'Daffodil Corbeau',
     artists: [DoFArtist.Lumi],
+    blurb: '"... could not content herself with railing against injustice. There came a time to draw a line in the sand..."',
     class: DoFClasses.Warrior,
     nationality: DoFNationality.Musain,
     routeConfig:{

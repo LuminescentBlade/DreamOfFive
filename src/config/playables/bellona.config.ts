@@ -5,6 +5,7 @@ export const Bellona: IDoFPlayable = {
     name: 'bellona',
     profileName: 'Bellona Quirinia',
     artists: [DoFArtist.Astra, DoFArtist.Amelia],
+    blurb: '"... considered herself without parallel. So she sought adventure in Onduris, and found, in us, all she could want..."',
     class: DoFClasses.DrakeRider,
     nationality: DoFNationality.Vishara,
     routeConfig: {

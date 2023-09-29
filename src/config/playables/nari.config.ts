@@ -4,6 +4,7 @@ import { IDoFPlayable } from "@/src/models/interfaces";
 export const Nari: IDoFPlayable = {
     name: 'nari',
     artists: [DoFArtist.Lumi],
+    blurb: '"... yet she took any setback in stride. There was nothing unnatural in battle to her, no glory, no fear..."',
     class: DoFClasses.Mercenary,
     nationality: DoFNationality.Onduris,
     routeConfig:{

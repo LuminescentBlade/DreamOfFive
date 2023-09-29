@@ -5,6 +5,7 @@ export const ByorDal: IDoFPlayable = {
     name: 'byor-dal',
     displayName: 'byor\'Dal',
     artists: [DoFArtist.Lumi, DoFArtist.Astra],
+    blurb: '"... saw no future for himself or his land, so resolved to go out in a blaze of glory. But how many would be dragged down..."',
     class: DoFClasses.Gladiator,
     nationality: DoFNationality.Onduris,
     routeConfig:{

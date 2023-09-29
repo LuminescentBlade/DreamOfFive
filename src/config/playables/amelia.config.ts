@@ -4,6 +4,7 @@ import { IDoFPlayable } from "@/src/models/interfaces";
 export const Amelia: IDoFPlayable = {
     name: 'amelia',
     artists: [DoFArtist.Amelia],
+    blurb: '"... made the mistake of looking too deep into her eyes. Still pools, bottomless depths, full of sorrow..."',
     nationality: DoFNationality.Aukema,
     class: DoFClasses.Mage,
     routeConfig: {

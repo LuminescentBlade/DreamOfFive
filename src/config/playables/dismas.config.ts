@@ -4,6 +4,7 @@ import { IDoFPlayable } from "@/src/models/interfaces";
 export const Dismas: IDoFPlayable = {
     name: DoFCharKey.Dismas,
     artists: [DoFArtist.Astra],
+    blurb: '"... still bearing the scars that we carved into him. He was a man changed, no longer cocksure..."',
     class: DoFClasses.Brigand,
     nationality: DoFNationality.Aukema,
     alt: {

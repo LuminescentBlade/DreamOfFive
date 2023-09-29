@@ -4,6 +4,7 @@ import { IDoFPlayable } from "@/src/models/interfaces";
 export const Marie: IDoFPlayable = {
     name: 'marie',
     artists: [DoFArtist.Astra, DoFArtist.Lumi],
+    blurb: '"... oft left to wonder, after this journal is left to gather dust, who will pick it up? Who tells the tale?"',
     class: DoFClasses.Thief,
     nationality: DoFNationality.Aukema,
     routeConfig: {

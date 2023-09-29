@@ -4,6 +4,7 @@ import { IDoFPlayable } from "@/src/models/interfaces";
 export const Sileth: IDoFPlayable = {
     name: 'sileth',
     artists: [DoFArtist.Astra, DoFArtist.Lumi],
+    blurb: '"... served, I sense, to keep him grounded. She had found a way to rise through her wits alone..."',
     class: DoFClasses.Mage,
     nationality: DoFNationality.Onduris,
     routeConfig: {

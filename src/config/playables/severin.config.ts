@@ -4,6 +4,7 @@ import { IDoFPlayable } from "@/src/models/interfaces";
 export const Severin: IDoFPlayable = {
     name: 'severin',
     artists: [DoFArtist.Lumi],
+    blurb: '"... ever aspiring to improve his lot in life. He had come so far from nothing, yet never quite far enough..."',
     class: DoFClasses.Harrier,
     nationality: DoFNationality.Musain,
     routeConfig:{

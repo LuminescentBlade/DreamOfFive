@@ -7,6 +7,7 @@ export interface IDoFUnit extends IUnit {
         [name: string]: IDoFAlt
     };
     class?: string,
+    blurb?: string,
 };
 
 export interface IDoFAlt extends IAltConfig {

@@ -4,6 +4,7 @@ import { IDoFPlayable } from "@/src/models/interfaces";
 export const Gabriel: IDoFPlayable = {
     name: 'gabriel',
     artists: [DoFArtist.Amelia],
+    blurb: '"... knew he was stretching his luck. He would serve his own interests, but reliably and predictably..."',
     nationality: DoFNationality.Aukema,
     class: DoFClasses.Warlock,
     routeConfig: {

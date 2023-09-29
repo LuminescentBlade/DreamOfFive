@@ -5,6 +5,7 @@ import { stat } from "fs";
 export const Blixa: IDoFPlayable = {
     name: 'blixa',
     artists: [DoFArtist.Amelia, DoFArtist.Astra, DoFArtist.Lumi],
+    blurb: '"... gentle in all things. I felt as though, were he to come to harm, it would rank among the great tragedies of war..."',
     class: DoFClasses.Bard,
     nationality: DoFNationality.Onduris,
     routeConfig: {

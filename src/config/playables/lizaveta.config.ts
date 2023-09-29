@@ -5,6 +5,7 @@ export const Lizaveta: IDoFPlayable = {
     name: 'lizaveta',
     profileName: 'Lizaveta Samnia',
     artists: [DoFArtist.Astra, DoFArtist.Amelia],
+    blurb: '"... and sometimes she would look as though she expected aid, but she soon learned self-sufficiency..."',
     nationality: DoFNationality.Vishara,
     class: DoFClasses.Troubadour,
     routeConfig: {

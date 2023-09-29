@@ -5,6 +5,7 @@ export const Annelise: IDoFPlayable = {
     name: 'annelise',
     altNames: ['Long Tingbai', '龍庭白'],
     artists: [DoFArtist.Amelia, DoFArtist.Astra, DoFArtist.Lumi],
+    blurb: '"... carried herself with a dignity that suggested she was in some way above this all, yet she never shirked..."',
     class: DoFClasses.PegRider,
     nationality: DoFNationality.Svanhild,
     routeConfig: {

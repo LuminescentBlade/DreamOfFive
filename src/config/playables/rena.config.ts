@@ -12,6 +12,7 @@ export const Rena: IDoFPlayable =  {
         promo_angry: { artists: [DoFArtist.AK, DoFArtist.Lumi], chapter: 15, displayName: 'Pr. Angry' },
         promo_sad: { artists: [DoFArtist.AK, DoFArtist.Lumi], chapter: 15, displayName: 'Pr. Sad' },
     },
+    blurb: '"Many Frontier Strider captains were well-heeled second sons in soft posts; but I strived to do my part..."',
     nationality: DoFNationality.Aukema,
     class: DoFClasses.Captain,
     promotesTo: DoFClasses.Questant,

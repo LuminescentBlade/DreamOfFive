@@ -4,6 +4,7 @@ import { IDoFPlayable } from "@/src/models/interfaces";
 export const Eudira: IDoFPlayable = {
     name: 'eudira',
     artists: [DoFArtist.AK],
+    blurb: '"... though the smile never left her lips, nor did it ever reach her mournful eyes..."',
     class: DoFClasses.Sibyl,
     nationality: DoFNationality.Musain,
     routeConfig: {

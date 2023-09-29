@@ -4,6 +4,7 @@ import { IDoFPlayable } from "@/src/models/interfaces";
 export const Lyndra: IDoFPlayable =  {
     name: 'lyndra',
     artists: [DoFArtist.Astra, DoFArtist.Lumi],
+    blurb: '"... known as the Black Cat, for the way she seemed to have wretched luck, but many lives..."',
     class: DoFClasses.Gladiator,
     nationality: DoFNationality.Aukema,
     routeConfig:{

@@ -4,6 +4,7 @@ import { IDoFPlayable } from "@/src/models/interfaces";
 export const Meliza: IDoFPlayable = {
     name: 'meliza',
     artists: [DoFArtist.Lumi],
+    blurb: '"... and immediately my mind dredged up all manner of flower imagery; she seemed the model of a Musain lady..."',
     class: DoFClasses.Mage,
     nationality: DoFNationality.Musain,
     routeConfig: {

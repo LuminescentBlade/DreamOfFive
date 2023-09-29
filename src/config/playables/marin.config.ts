@@ -4,6 +4,7 @@ import { IDoFPlayable } from "@/src/models/interfaces";
 export const Marin: IDoFPlayable = {
     name: 'marin',
     artists: [DoFArtist.Lumi, DoFArtist.Amelia],
+    blurb: '"... typical example of hot-blooded Musain nobility, eager to prove his worth and fit to burst with elan..."',
     class: DoFClasses.Cavalier,
     nationality: DoFNationality.Musain,
     routeConfig: {

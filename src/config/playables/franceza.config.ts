@@ -4,6 +4,7 @@ import { IDoFPlayable } from "@/src/models/interfaces";
 export const Franceza: IDoFPlayable = {
     name: 'franceza',
     artists: [DoFArtist.Amelia],
+    blurb: '"... relaxed, with an easy laugh. But in unguarded moments, she looked to Seren with a fierce protectiveness..."',
     class: DoFClasses.Archer,
     nationality: DoFNationality.Musain,
     routeConfig: {

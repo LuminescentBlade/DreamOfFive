@@ -4,6 +4,7 @@ import { IDoFPlayable } from "@/src/models/interfaces";
 export const Ioan: IDoFPlayable = {
     name: 'ioan',
     artists: [DoFArtist.Amelia, DoFArtist.Astra],
+    blurb: '"... marvelled that a man of such strength could easily control his own fate, yet left it, invariably, to the cards."',
     nationality: DoFNationality.Vishara,
     class: DoFClasses.DrakeRider,
     routeConfig: {

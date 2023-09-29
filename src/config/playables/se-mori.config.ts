@@ -5,6 +5,7 @@ export const SeMori: IDoFPlayable = {
     name: 'se-mori',
     displayName: 'se\'Mori',
     artists: [DoFArtist.Amelia, DoFArtist.Astra],
+    blurb: '"... seemed puffed up at first, but in time, I grew to respect his firm character, his direct manner, his sense of duty..."',
     class: DoFClasses.Fencer,
     nationality: DoFNationality.Onduris,
     alt: {

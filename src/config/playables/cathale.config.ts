@@ -4,6 +4,7 @@ import { IDoFPlayable } from "@/src/models/interfaces";
 export const Cathale: IDoFPlayable = {
     name: 'cathale',
     artists: [DoFArtist.Astra],
+    blurb: '"Steady of eye and stout of heart, she was every inch the soldier, without a Strider\'s mercurial streak..."',
     class: DoFClasses.Armour,
     routeConfig:{
         allRoute: {

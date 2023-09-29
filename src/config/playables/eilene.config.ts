@@ -4,6 +4,7 @@ import { IDoFPlayable } from "@/src/models/interfaces";
 export const Eilene: IDoFPlayable =  {
     name: DoFCharKey.Eilene,
     artists: [DoFArtist.Astra, DoFArtist.Amelia, DoFArtist.Nih],
+    blurb: '"Only the most well-heeled could afford pegasi or the training to ride them, so one could only wonder..."',
     nationality: DoFNationality.Aukema,
     class: DoFClasses.PegRider,
     routeConfig:{

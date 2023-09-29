@@ -4,6 +4,7 @@ import { IDoFPlayable } from "@/src/models/interfaces";
 export const Riva: IDoFPlayable = {
     name: 'riva',
     artists: [DoFArtist.Amelia, DoFArtist.Lumi],
+    blurb: '"Could a woman so soft-spoken truly be a heretic? Appearances could be deceiving, but not always..."',
     class: DoFClasses.Warlock,
     nationality: DoFNationality.Musain,
     routeConfig:{

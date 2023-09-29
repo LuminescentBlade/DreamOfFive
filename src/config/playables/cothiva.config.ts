@@ -4,6 +4,7 @@ import { IDoFPlayable } from "@/src/models/interfaces";
 export const Cothiva: IDoFPlayable = {
     name: 'cothiva',
     artists: [DoFArtist.Astra, DoFArtist.Lumi],
+    blurb: '"... proud and expansive woman, who suffered neither fools nor challenges to her authority. But she backed it up..."',
     nationality: DoFNationality.Aukema,
     class: DoFClasses.Adept,
     routeConfig:{
