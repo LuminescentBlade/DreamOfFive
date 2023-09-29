@@ -4,7 +4,7 @@ import { IDoFPlayable } from "@/src/models/interfaces";
 export const Thyra: IDoFPlayable = {
     name: DoFCharKey.Thyra,
     altNames: ['Long Tingyu','龍庭玉'],
-    artists: [DoFArtist.Lumi],
+    artists: [DoFArtist.Lumi, DoFArtist.AK],
     class: DoFClasses.Enforcer,
     nationality: DoFNationality.Svanhild,
     routeConfig: {
