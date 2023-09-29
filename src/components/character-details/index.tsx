@@ -118,7 +118,8 @@ export default function CharacterDetails({ characterDef, clear }: { characterDef
                             <th>Lv.{
                                 //@ts-ignore
                                 `${promoBonuses ? levelData.unpromotedLevel : ''}${promoBonuses && isPromoted() ? '/' : ''}${isPromoted() ? levelData.promotedLevel : ''}`
-                            }</th>
+                            }
+                            </th>
                             {
                                 statKeys.map(s => {
                                     if (!characterDef.bases) return <td></td>;
@@ -139,7 +140,7 @@ export default function CharacterDetails({ characterDef, clear }: { characterDef
                                             value = promotedStat;
                                             capped = promotedCaps[s] === promotedStat;
                                         }
-                                    } else {
+                                    } else {    
                                         value = base + growth * (levelData.promotedLevel ? levelData.promotedLevel - promotedLevelFloor : 0);
                                         capped = promotedCaps[s] === value;
                                     }
@@ -201,8 +202,8 @@ export default function CharacterDetails({ characterDef, clear }: { characterDef
                     </ul> : ''}
                     
                     <div className={styles.subtitle}>{characterDef.level ? `Level ${characterDef.level}` : ''} <span className={'capitalize'}>{characterDef.class}</span></div>
-                    <div>
-                        {/* {character blurb go here} */}
+                    <div className={styles.blurb}>
+                        {characterDef.blurb}
                     </div>
                 </div>
                 <div className={styles.data}> 
