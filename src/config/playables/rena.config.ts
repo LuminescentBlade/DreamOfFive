@@ -25,7 +25,7 @@ export const Rena: IDoFPlayable =  {
     bases:{
         hp: 21,
         pow: 6,
-        skl: 11,
+        skl: 13,
         spd: 12, 
         luk: 8,
         def: 5,
@@ -34,8 +34,8 @@ export const Rena: IDoFPlayable =  {
     },
     growths:{
         hp: 70,
-        pow: 40,
-        skl: 40,
+        pow: 45,
+        skl: 55,
         spd: 60, 
         luk: 50,
         def: 30,
