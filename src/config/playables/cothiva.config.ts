@@ -1,7 +1,7 @@
 import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
-import { IDoFPlayable } from "@/src/models/interfaces";
+import { IDoFCharacter } from "@/src/models/interfaces";
 
-export const Cothiva: IDoFPlayable = {
+export const Cothiva: IDoFCharacter = {
     name: DoFCharKey.Cothiva,
     artists: [DoFArtist.Astra, DoFArtist.Lumi],
     blurb: '"... proud and expansive woman, who suffered neither fools nor challenges to her authority. But she backed it up..."',
@@ -12,6 +12,7 @@ export const Cothiva: IDoFPlayable = {
             player: 5
         }
     },
+    height: 172,
     bases: {
         hp: 23, pow: 11, skl: 12, spd: 10, luk: 9, def: 4, res: 9, con: 9
     }, 

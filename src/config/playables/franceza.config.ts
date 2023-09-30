@@ -1,7 +1,7 @@
 import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
-import { IDoFPlayable } from "@/src/models/interfaces";
+import { IDoFCharacter } from "@/src/models/interfaces";
 
-export const Franceza: IDoFPlayable = {
+export const Franceza: IDoFCharacter = {
     name: DoFCharKey.Franceza,
     artists: [DoFArtist.Amelia],
     blurb: '"... relaxed, with an easy laugh. But in unguarded moments, she looked to Seren with a fierce protectiveness..."',
@@ -12,6 +12,7 @@ export const Franceza: IDoFPlayable = {
             player: 8
         }
     },
+    height: 161,
     bases: {
         hp: 26, pow: 14, skl: 15, spd: 10, luk: 9, def: 12, res: 0, con: 10
     },

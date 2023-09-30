@@ -1,7 +1,7 @@
 import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
-import { IDoFPlayable } from "@/src/models/interfaces";
+import { IDoFCharacter } from "@/src/models/interfaces";
 
-export const Alexis: IDoFPlayable = {
+export const Alexis: IDoFCharacter = {
     name: DoFCharKey.Alexis,
     artists: [DoFArtist.Astra],
     blurb: '"... oft left to wonder, after this journal is left to gather dust, who will pick it up? Who tells the tale?"',
@@ -12,6 +12,7 @@ export const Alexis: IDoFPlayable = {
             player: 7
         }
     },
+    height: 173,
     bases: {
         hp: 26, pow: 9, skl: 13, spd: 16, luk: 13, def: 5, res: 7, con: 6
     },

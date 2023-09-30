@@ -1,7 +1,7 @@
 import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
-import { IDoFPlayable } from "@/src/models/interfaces";
+import { IDoFCharacter } from "@/src/models/interfaces";
 
-export const Dahlia: IDoFPlayable = {
+export const Dahlia: IDoFCharacter = {
     name: DoFCharKey.Dahlia,
     artists: [DoFArtist.Pi],
     blurb: '"... content for so long just to read fate. Evidently, at this stage, she felt that the dice of fate needed loading..."',
@@ -13,6 +13,7 @@ export const Dahlia: IDoFPlayable = {
             npc: 3
         }
     },
+    height: 163,
     conditional: {
         player: {displayName: 'Amaryl'}
     }

@@ -1,8 +1,8 @@
 import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
-import { IDoFPlayable } from "@/src/models/interfaces";
+import { IDoFCharacter } from "@/src/models/interfaces";
 
-export const Riva: IDoFPlayable = {
-    name: DoFCharKey.Riva,
+export const Rozelle: IDoFCharacter = {
+    name: DoFCharKey.Rozelle,
     artists: [DoFArtist.Amelia, DoFArtist.Lumi],
     blurb: '"Could a woman so soft-spoken truly be a heretic? Appearances could be deceiving, but not always..."',
     class: DoFClasses.Warlock,
@@ -12,6 +12,7 @@ export const Riva: IDoFPlayable = {
             player: 11
         }
     },
+    height: 156,
     bases: {
         hp: 22, pow: 13, skl: 14, spd: 11, luk: 15, def: 2, res: 14, con: 8
     },

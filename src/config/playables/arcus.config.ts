@@ -1,7 +1,7 @@
 import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
-import { IDoFPlayable } from "@/src/models/interfaces";
+import { IDoFCharacter } from "@/src/models/interfaces";
 
-export const Arcus: IDoFPlayable = {
+export const Arcus: IDoFCharacter = {
     name: DoFCharKey.Arcus,
     profileName: 'Arcus Scipio',
     artists: [DoFArtist.Astra],
@@ -16,6 +16,7 @@ export const Arcus: IDoFPlayable = {
             player: 15
         }
     },
+    height: 180,
     bases: {
         hp: 32, pow: 14, skl: 10, spd: 9, luk: 7, def: 12, res: 3, con: 13
     },

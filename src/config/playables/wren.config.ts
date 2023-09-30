@@ -1,7 +1,7 @@
 import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
-import { IDoFPlayable } from "@/src/models/interfaces";
+import { IDoFCharacter } from "@/src/models/interfaces";
 
-export const Wren: IDoFPlayable =  {
+export const Wren: IDoFCharacter =  {
     name: DoFCharKey.Wren,
     artists: [DoFArtist.Lumi, DoFArtist.Amelia],
     class: DoFClasses.Cleric,
@@ -12,6 +12,7 @@ export const Wren: IDoFPlayable =  {
             player: 9
         }
     }, 
+    height: 154,
     bases: {
         hp: 22, pow: 15, skl: 12, spd: 9, luk: 11, def: 3, res: 14, con: 6
     },

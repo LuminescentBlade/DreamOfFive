@@ -1,7 +1,7 @@
 import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
-import { IDoFPlayable } from "@/src/models/interfaces";
+import { IDoFCharacter } from "@/src/models/interfaces";
 
-export const Lyndra: IDoFPlayable =  {
+export const Lyndra: IDoFCharacter =  {
     name: DoFCharKey.Lyndra,
     artists: [DoFArtist.Astra, DoFArtist.Lumi],
     blurb: '"... known as the Black Cat, for the way she seemed to have wretched luck, but many lives..."',
@@ -13,6 +13,7 @@ export const Lyndra: IDoFPlayable =  {
             enemy: 8.5
         }
     },
+    height: 168,
     bases: {hp: 36, pow: 16, skl: 18, spd: 19, luk: 9, def: 18, res: 3, con: 10},
     level: 3,
     growths: {hp: 75, pow: 35, skl: 50, spd: 45, luk: 30, def: 45, res: 10}

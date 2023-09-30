@@ -1,10 +1,11 @@
 import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
-import { IDoFPlayable } from "@/src/models/interfaces";
+import { IDoFCharacter } from "@/src/models/interfaces";
 
-export const Hereward: IDoFPlayable = {
+export const Hereward: IDoFCharacter = {
     name: DoFCharKey.Hereward,
     artists: [DoFArtist.Lumi],
     class: DoFClasses.Cataphract,
+    height: 188,
     nationality: DoFNationality.Aukema,
     routeConfig: {
         allRoute: {

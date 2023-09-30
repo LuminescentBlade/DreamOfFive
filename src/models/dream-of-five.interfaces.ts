@@ -17,25 +17,27 @@ export interface IDoFAlt extends IAltConfig {
 
 export interface IDoFCharacter extends IDoFUnit {
     routeConfig: IRouteConfig
-    secret?: boolean,
+    secret?: boolean,    
     altNames?: string[], // subtitles to profile names, displayed as secondary
     // overrides all other instances of name displays for the profile, otherwise if you want the same name on the sheet and profile use displayName
     // this is mostly to write in last names to display
     profileName?: string,  
-}
-export interface IDoFStats {
-    [stat: string]: number
-}
-
-export interface IDoFPlayable extends IDoFCharacter {
+    //extendedProfile
+    height?: number,
+    age?: number,
+    //stats
     promotesTo?: DoFClasses,
     bases?: IDoFStats,
     growths?: IDoFStats
     level?: number
 }
+export interface IDoFStats {
+    [stat: string]: number
+}
+
 export interface IDoFRenderUnit extends IDoFUnit, IRenderContent {}
 export interface IDoFRenderCharacter extends IDoFRenderUnit, IDoFCharacter { };
-export interface IDoFRenderPlayable extends IDoFRenderUnit, IDoFPlayable { };
+
 export interface IDoFCharacterConfigs {
     characters: IDoFCharacter[];
     shopkeepers: IDoFUnit[];
@@ -45,7 +47,7 @@ export interface IDoFCharacterConfigs {
 export type IDoFCharacterRenderer = {
     [key: string]: IDoFRenderUnit[]
 } & {
-    player?: IDoFRenderPlayable[],
+    player?: IDoFRenderCharacter[],
     enemy?: IDoFRenderCharacter[],
 };
 

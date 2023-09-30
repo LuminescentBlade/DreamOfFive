@@ -1,7 +1,7 @@
 import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
-import { IDoFPlayable } from "@/src/models/interfaces";
+import { IDoFCharacter } from "@/src/models/interfaces";
 
-export const Chester: IDoFPlayable = {
+export const Chester: IDoFCharacter = {
     name: DoFCharKey.Chester,
     artists: [DoFArtist.Amelia],
     blurb: '"... nerve had already failed once, and while he would never forgive himself this, he could yet atone..."',
@@ -12,6 +12,8 @@ export const Chester: IDoFPlayable = {
             player: 2
         }
     },
+    height: 166,
+    age: 19,
     bases:{
         hp: 24, pow: 7, skl: 9, spd: 12, luk: 9, def: 5, res: 2, con: 6
     }, 

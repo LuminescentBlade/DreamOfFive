@@ -1,7 +1,7 @@
 import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
-import { IDoFPlayable } from "@/src/models/interfaces";
+import { IDoFCharacter } from "@/src/models/interfaces";
 
-export const Driscoll: IDoFPlayable = {
+export const Driscoll: IDoFCharacter = {
     name: DoFCharKey.Driscoll,
     artists: [DoFArtist.Lumi],
     blurb: '"... red-blooded Aukeman man, quick to anger, quick to forgive, never far from the fray..."',
@@ -13,6 +13,7 @@ export const Driscoll: IDoFPlayable = {
             enemy: 4
         }
     },
+    height: 181,
     bases: {
         hp: 30, pow: 13, skl: 10, spd: 8, luk: 9, def: 7, res: 0, con: 13
     },

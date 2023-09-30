@@ -1,7 +1,7 @@
 import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
-import { IDoFPlayable } from "@/src/models/interfaces";
+import { IDoFCharacter } from "@/src/models/interfaces";
 
-export const Gabriel: IDoFPlayable = {
+export const Gabriel: IDoFCharacter = {
     name: DoFCharKey.Gabriel,
     artists: [DoFArtist.Amelia],
     blurb: '"... knew he was stretching his luck. He would serve his own interests, but reliably and predictably..."',
@@ -12,6 +12,7 @@ export const Gabriel: IDoFPlayable = {
             player: 5
         }
     },
+    height: 172,
     bases: {
         hp: 27, pow: 13, skl: 8, spd: 8, luk: 6, def: 6, res: 11, con: 10
     },

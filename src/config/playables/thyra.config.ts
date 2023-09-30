@@ -1,12 +1,14 @@
 import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
-import { IDoFPlayable } from "@/src/models/interfaces";
+import { IDoFCharacter } from "@/src/models/interfaces";
 
-export const Thyra: IDoFPlayable = {
+export const Thyra: IDoFCharacter = {
     name: DoFCharKey.Thyra,
     altNames: ['Long Tingyu','龍庭玉'],
     artists: [DoFArtist.Lumi, DoFArtist.AK],
     class: DoFClasses.Enforcer,
     nationality: DoFNationality.Svanhild,
+    height: 190,
+    age: 23,
     routeConfig: {
         allRoute: {
             player: 17

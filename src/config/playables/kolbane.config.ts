@@ -1,7 +1,7 @@
 import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
-import { IDoFPlayable } from "@/src/models/interfaces";
+import { IDoFCharacter } from "@/src/models/interfaces";
 
-export const Kolbane: IDoFPlayable = {
+export const Kolbane: IDoFCharacter = {
     name: DoFCharKey.Kolbane,
     profileName: 'Kolbane Farrier',
     artists: [DoFArtist.Lumi],
@@ -13,6 +13,8 @@ export const Kolbane: IDoFPlayable = {
             player: 0
         }
     },
+    height: 183,
+    age: 20,
     bases: {
         hp: 23, pow: 8, skl: 10, spd: 9, luk: 5, def: 7, res: 0, con: 10
     },

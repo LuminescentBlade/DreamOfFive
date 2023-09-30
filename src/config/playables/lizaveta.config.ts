@@ -1,7 +1,7 @@
 import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
-import { IDoFPlayable } from "@/src/models/interfaces";
+import { IDoFCharacter } from "@/src/models/interfaces";
 
-export const Lizaveta: IDoFPlayable = {
+export const Lizaveta: IDoFCharacter = {
     name: DoFCharKey.Lizaveta,
     profileName: 'Lizaveta Samnia',
     artists: [DoFArtist.Astra, DoFArtist.Amelia],
@@ -13,6 +13,7 @@ export const Lizaveta: IDoFPlayable = {
             player: 4
         }
     },
+    height: 157,
     bases: {
         hp: 26, pow: 8, skl: 7, spd: 12, luk: 12, def: 3, res: 10, con: 6
     },

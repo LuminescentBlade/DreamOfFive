@@ -1,11 +1,12 @@
 import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
-import { IDoFPlayable } from "@/src/models/interfaces";
+import { IDoFCharacter } from "@/src/models/interfaces";
 
-export const Odette: IDoFPlayable = {
+export const Odette: IDoFCharacter = {
     name: DoFCharKey.Odette,
     artists: [DoFArtist.Amelia, DoFArtist.Lumi],
     class: DoFClasses.Marksman,
     nationality: DoFNationality.Aukema,
+    height: 164,
     routeConfig:{
         allRoute: {
             player: 17

@@ -1,11 +1,12 @@
 import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
-import { IDoFPlayable } from "@/src/models/interfaces";
+import { IDoFCharacter } from "@/src/models/interfaces";
 
-export const Jauger: IDoFPlayable = {
+export const Jauger: IDoFCharacter = {
     name: DoFCharKey.Jauger,
     artists: [DoFArtist.Astra, DoFArtist.Amelia],
     class: DoFClasses.Armour,
     nationality: DoFNationality.Aukema,
+    height: 176,
     routeConfig: {
         allRoute: {
             player: 16

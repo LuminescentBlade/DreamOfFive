@@ -1,7 +1,7 @@
 import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
-import { IDoFPlayable } from "@/src/models/interfaces";
+import { IDoFCharacter } from "@/src/models/interfaces";
 
-export const Cathale: IDoFPlayable = {
+export const Cathale: IDoFCharacter = {
     name: DoFCharKey.Cathale,
     artists: [DoFArtist.Astra],
     blurb: '"Steady of eye and stout of heart, she was every inch the soldier, without a Strider\'s mercurial streak..."',
@@ -12,6 +12,7 @@ export const Cathale: IDoFPlayable = {
             player: 2
         }
     },
+    height: 177,
     bases: {
         hp: 30, pow: 13, skl: 10, spd: 6, luk: 11, def: 14, res: 0, con: 14
     },

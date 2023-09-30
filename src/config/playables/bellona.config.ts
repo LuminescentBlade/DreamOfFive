@@ -1,7 +1,7 @@
 import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
-import { IDoFPlayable } from "@/src/models/interfaces";
+import { IDoFCharacter } from "@/src/models/interfaces";
 
-export const Bellona: IDoFPlayable = {
+export const Bellona: IDoFCharacter = {
     name: DoFCharKey.Bellona,
     profileName: 'Bellona Quirinia',
     artists: [DoFArtist.Astra, DoFArtist.Amelia],
@@ -16,6 +16,7 @@ export const Bellona: IDoFPlayable = {
             player: 15
         }
     },
+    height: 165,
     bases: {
         hp: 31, pow: 14, skl: 10, spd: 12, luk: 13, def: 11, res: 0, con: 10
     },

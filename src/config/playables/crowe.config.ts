@@ -1,7 +1,7 @@
 import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
-import { IDoFPlayable } from "@/src/models/interfaces";
+import { IDoFCharacter } from "@/src/models/interfaces";
 
-export const Crowe: IDoFPlayable = {
+export const Crowe: IDoFCharacter = {
     name: DoFCharKey.Crowe,
     artists: [DoFArtist.Amelia],
     blurb: '"It was clear that, in better times, he would only be fit for the noose. But we needed him, and he knew it..."',
@@ -13,6 +13,7 @@ export const Crowe: IDoFPlayable = {
             enemy: 3
         }
     },
+    height: 173,
     bases: {
         hp: 26, pow: 12, skl: 11, spd: 10, luk: 5, def: 8, res: 0, con: 10
     },

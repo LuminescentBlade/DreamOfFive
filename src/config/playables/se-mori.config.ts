@@ -1,13 +1,14 @@
 import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
-import { IDoFPlayable } from "@/src/models/interfaces";
+import { IDoFCharacter } from "@/src/models/interfaces";
 
-export const SeMori: IDoFPlayable = {
+export const SeMori: IDoFCharacter = {
     name: DoFCharKey.seMori,
     displayName: 'se\'Mori',
     artists: [DoFArtist.Amelia, DoFArtist.Astra],
     blurb: '"... seemed puffed up at first, but in time, I grew to respect his firm character, his direct manner, his sense of duty..."',
     class: DoFClasses.Fencer,
     nationality: DoFNationality.Onduris,
+    height: 176,
     alt: {
         promo: {
             artists: [DoFArtist.Amelia, DoFArtist.Astra, DoFArtist.Lumi],

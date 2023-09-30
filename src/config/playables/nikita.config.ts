@@ -1,12 +1,13 @@
 import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
-import { IDoFPlayable } from "@/src/models/interfaces";
+import { IDoFCharacter } from "@/src/models/interfaces";
 
-export const Nikita: IDoFPlayable = {
+export const Nikita: IDoFCharacter = {
     name: DoFCharKey.Nikita,
     artists: [DoFArtist.Astra],
     blurb: '"... exemplar of the Ondurite woman. Too soft-skinned for manual labour, she had devoted herself entirely to battle..."',
     class: DoFClasses.Swordmaster,
     nationality: DoFNationality.Onduris,
+    height: 171,
     routeConfig:{
         onduris: {
             player: 10.5,

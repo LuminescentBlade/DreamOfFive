@@ -1,7 +1,7 @@
 import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
-import { IDoFPlayable } from "@/src/models/interfaces";
+import { IDoFCharacter } from "@/src/models/interfaces";
 
-export const Brill: IDoFPlayable = {
+export const Brill: IDoFCharacter = {
     name: DoFCharKey.Brill,
     artists: [DoFArtist.Amelia],
     blurb: '"The Ondurites regarded helot women as chattel, archers as cowards, and yet she had battled her way to command..."',
@@ -13,6 +13,7 @@ export const Brill: IDoFPlayable = {
             enemy: 12
         }
     },
+    height: 167,
     growths: {hp: 65, pow: 50, skl: 60, spd: 30, luk: 40, def: 35, res: 10},
     level: 3,
     bases: {hp: 32, pow: 19, skl: 21, spd: 14, luk: 13, def: 16, res: 3, con: 8}

@@ -1,7 +1,7 @@
 import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
-import { IDoFPlayable } from "@/src/models/interfaces";
+import { IDoFCharacter } from "@/src/models/interfaces";
 
-export const Rena: IDoFPlayable =  {
+export const Rena: IDoFCharacter =  {
     name: DoFCharKey.Rena,
     displayName: 'Rena',
     artists: [DoFArtist.AK],
@@ -21,6 +21,7 @@ export const Rena: IDoFPlayable =  {
             player: 0
         }
     },
+    height: 165,
     level: 2,
     bases:{
         hp: 21,

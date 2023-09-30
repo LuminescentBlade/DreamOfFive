@@ -1,13 +1,14 @@
 
 import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
-import { IDoFPlayable } from "@/src/models/interfaces";
+import { IDoFCharacter } from "@/src/models/interfaces";
 
-export const Cyrille: IDoFPlayable = {
+export const Cyrille: IDoFCharacter = {
     name: DoFCharKey.Cyrille,
     artists: [DoFArtist.Lumi],
     blurb: '"... in no place to turn aside recruits. Only a few truly had the diligence and mettle for such thankless work..."',
     nationality: DoFNationality.Musain,
     class: DoFClasses.Cavalier,
+    height: 170,
     routeConfig: {
         allRoute: {
             player: 1

@@ -1,12 +1,13 @@
 import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
-import { IDoFPlayable } from "@/src/models/interfaces";
+import { IDoFCharacter } from "@/src/models/interfaces";
 
-export const Adalheid: IDoFPlayable = {
+export const Adalheid: IDoFCharacter = {
     name: DoFCharKey.Adalheid,
     profileName: 'Adalheid Farrell',    
     artists: [DoFArtist.Lumi, DoFArtist.AK],
     class: DoFClasses.Paladin,
     nationality: DoFNationality.Aukema,
+    height: 181,
     routeConfig: {
         allRoute: {
             player: 90,

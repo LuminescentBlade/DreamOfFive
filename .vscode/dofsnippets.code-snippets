@@ -20,7 +20,7 @@
 		"scope": "javascript, typescript",
 		"prefix": "player",
 		"body":[
-			"export const $1: IDoFPlayable = $2;",
+			"export const $1: IDoFCharacter = $2;",
 			""
 		],
 	},

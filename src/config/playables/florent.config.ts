@@ -1,7 +1,7 @@
 import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
-import { IDoFPlayable } from "@/src/models/interfaces";
+import { IDoFCharacter } from "@/src/models/interfaces";
 
-export const Florent: IDoFPlayable = {
+export const Florent: IDoFCharacter = {
     name: DoFCharKey.Florent,
     artists: [DoFArtist.Astra, DoFArtist.Amelia],
     blurb: '"His father had been elevated to knighthood through his deeds. Little wonder his son was more grounded..."',
@@ -15,6 +15,7 @@ export const Florent: IDoFPlayable = {
             player: 15
         }
     },
+    height: 179,
     bases: {
         hp: 32, pow: 15, skl: 14, spd: 12, luk: 8, def: 13, res: 0, con: 10
     },

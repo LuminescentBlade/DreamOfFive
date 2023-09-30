@@ -1,12 +1,13 @@
 import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
-import { IDoFPlayable } from "@/src/models/interfaces";
+import { IDoFCharacter } from "@/src/models/interfaces";
 
-export const Conleth: IDoFPlayable = {
+export const Conleth: IDoFCharacter = {
     name: DoFCharKey.Conleth,
     artists: [DoFArtist.Lumi],
     blurb: '"... had thought all deserters to be vicious, desperate brutes. But he never once seemed to regret his decision..."',
     class: DoFClasses.Skirmisher,
     nationality: DoFNationality.Aukema,
+    height: 166,
     routeConfig:{
         onduris: {
             player: 8

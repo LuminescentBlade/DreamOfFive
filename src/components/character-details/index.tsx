@@ -1,5 +1,5 @@
 import { DoFPromotedClasses, DoFUnpromotedClasses } from "@/src/config/classes.config";
-import { IDoFRenderPlayable, IDoFStats } from "@/src/models/dream-of-five.interfaces";
+import { IDoFRenderCharacter, IDoFStats } from "@/src/models/dream-of-five.interfaces";
 import { cache, useState } from "react";
 import styles from './index.module.scss';
 import Overlay from "../overlay";
@@ -7,20 +7,30 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faArrowsUpDownLeftRight } from '@fortawesome/free-solid-svg-icons'
 import Toggle from "../toggle";
 
+enum CharacterDetailState {
+    Stat = 'stat',
+    ExtendedProfile = 'profile',
+    Gallery = 'gallery'
+};
+
 let init = false;
 let offset = { left: 0, top: 0 };
 let isDragging = false;
 let cachedState = {
     enableCompareMode: false,
-    dragStateStyle: {}
+    dragStateStyle: {},
+    state: CharacterDetailState.Stat
 };
-export default function CharacterDetails({ characterDef, clear, experimentalFeatures }: { characterDef: IDoFRenderPlayable, clear: () => void, experimentalFeatures?: boolean }) {
+
+export default function CharacterDetails({ characterDef, clear, experimentalFeatures }: { characterDef: IDoFRenderCharacter, clear: () => void, experimentalFeatures?: boolean }) {
     const defaultLevels = getDefaultLevelByCharacter(characterDef);
     const [levelData, setLevelData] = useState(defaultLevels);
     const [widgetState, setWidgetState] = useState(cachedState);
 
     // show hide items
     const showStats = (characterDef.bases || characterDef.growths);
+    const showExtendedProfile = experimentalFeatures && characterDef.nationality;
+    const showGallery = false;
 
     if (levelData.promotedLevel < defaultLevels.promotedLevel ||
         (defaultLevels.unpromotedLevel && (levelData.unpromotedLevel ?? -1) < defaultLevels.unpromotedLevel)) {
@@ -51,7 +61,6 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
     function setWidgetStateCaching(widgetStateData: any) {
         cachedState = widgetStateData;
         setWidgetState(cachedState);
-
     }
 
     function setComparisonMode(value: boolean) {
@@ -74,10 +83,10 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
         }
     };
 
-    function clearItem(){
+    function clearItem() {
         clear();
         offset = { left: 0, top: 0 };
-        setWidgetStateCaching({...widgetState, enableCompareMode: false, dragStateStyle: {}});
+        setWidgetStateCaching({ ...widgetState, enableCompareMode: false, dragStateStyle: {} });
     }
 
 
@@ -95,7 +104,7 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
         return (!promoBonuses || (levelData.unpromotedLevel && levelData.unpromotedLevel >= 10)) && levelData.promotedLevel;
     }
 
-    function getDefaultLevelByCharacter(characterDef: IDoFRenderPlayable) {
+    function getDefaultLevelByCharacter(characterDef: IDoFRenderCharacter) {
         const unpromotedLevel = characterDef.promotesTo ? characterDef.level : undefined;
         const promotedLevel = characterDef.promotesTo ? 0 : characterDef.level ?? 0
         return {
@@ -259,6 +268,64 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
         }
     }
 
+    function cmToFtIn(cm: number){
+        const inches = cm / 2.54;
+        let ft = Math.floor(inches / 12);
+        let inchLeft = Math.round(inches - ft * 12);
+        if(inchLeft >= 12){ // ideally equal 12, but
+            ft += 1;
+            inchLeft -= 12;
+        }
+        return `${ft}'${inchLeft}''`;
+    }
+
+    function renderExtendedProfile(){
+        return <ul>
+            <li><strong>Country of Origin: </strong><span className="capitalize">{characterDef.nationality}</span></li>
+            {characterDef.height ? <li><strong>Height: </strong>{characterDef.height}cm / {cmToFtIn(characterDef.height)}</li> : ''}
+            
+        </ul>
+    }
+
+    function renderContent(state: CharacterDetailState) {
+        switch (state) {
+            case CharacterDetailState.Gallery:
+                return '';
+            case CharacterDetailState.ExtendedProfile:
+                return renderExtendedProfile();
+            case CharacterDetailState.Stat:
+            default:
+                return renderStatChecker();
+        }
+    }
+
+    
+
+    function renderTabs() {
+        if (!showStats && !showExtendedProfile && !showGallery) {
+            return '';
+        }
+
+        const getSectionTab = (state: CharacterDetailState, label: string) =>
+        (<li>
+            <button
+                className={`button-wrapper ${widgetState.state === state ? styles.selectedTab : ''}`}
+                onClick={() => { setWidgetStateCaching({ ...widgetState, state }) }}
+            >{label}
+            </button>
+        </li>);
+
+        let stats = showStats ? getSectionTab(CharacterDetailState.Stat, 'Stats') : '';
+        let profile = showExtendedProfile ? getSectionTab(CharacterDetailState.ExtendedProfile, 'Profile') : '';
+        let gallery = showGallery ? getSectionTab(CharacterDetailState.Gallery, 'Gallery') : '';
+
+        return <ul className={styles.tabs}>
+            {stats}
+            {profile}
+            {gallery}
+        </ul>;
+    }
+
     return <>
         {widgetState.enableCompareMode ? '' : <Overlay onClick={clearItem} />}
         <div className={styles.characterDetails} style={widgetState.dragStateStyle}>
@@ -274,24 +341,21 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
             <div className={styles.content}>
                 {renderProfile()}
                 <div className={styles.data}>
-                    {   // check for at least one tab
-                        (showStats) ? <ul className={styles.tabs}>
-                            {showStats ? <li>
-                                <button className="button-wrapper">Stats</button>
-                            </li> : ''}
-                        </ul> : ''}
+                    {renderTabs()}
                     <div className={styles.dataContent}>
-                        {renderStatChecker()}
+                        {
+                            renderContent(widgetState.state)
+                        }
                     </div>
                 </div>
             </div>
-            {experimentalFeatures ? <div className={styles.footer}>
+            {<div className={styles.footer}>
                 {
-                    experimentalFeatures ?<div className={'flex-line-container'}>
-                        <label>Toggle Comparison Mode</label><Toggle active={widgetState.enableCompareMode} onStateChange={setComparisonMode}/>
-                    </div> : ''
+                    <div className={'flex-line-container'}>
+                        <label>Toggle Comparison Mode</label><Toggle active={widgetState.enableCompareMode} onStateChange={setComparisonMode} />
+                    </div>
                 }
-            </div> : ''}
+            </div>}
         </div>
     </>
 }

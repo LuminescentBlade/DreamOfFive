@@ -150,7 +150,7 @@ export enum DoFCharKey{
     Baldur = 'baldur',
     Nikita = 'nikita',
     Annelise = 'annelise',
-    Riva = 'riva',
+    Rozelle = 'rozelle',
     byorDal = 'byor-dal',
     Meliza = 'meliza',
     viShen = 'vi-shen',

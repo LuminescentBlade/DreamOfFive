@@ -1,13 +1,14 @@
 import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
-import { IDoFPlayable } from "@/src/models/interfaces";
+import { IDoFCharacter } from "@/src/models/interfaces";
 
-export const Corbeau: IDoFPlayable = {
+export const Corbeau: IDoFCharacter = {
     name: DoFCharKey.Corbeau,
     profileName: 'Daffodil Corbeau',
     artists: [DoFArtist.Lumi],
     blurb: '"... could not content herself with railing against injustice. There came a time to draw a line in the sand..."',
     class: DoFClasses.Warrior,
     nationality: DoFNationality.Musain,
+    height: 176,
     routeConfig:{
         musain: {
             npc: 8,

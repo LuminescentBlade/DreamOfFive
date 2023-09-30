@@ -1,7 +1,7 @@
 import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
-import { IDoFPlayable } from "@/src/models/interfaces";
+import { IDoFCharacter } from "@/src/models/interfaces";
 
-export const Kai: IDoFPlayable = {
+export const Kai: IDoFCharacter = {
     name: DoFCharKey.Kai,
     artists: [DoFArtist.Amelia],
     class: DoFClasses.DrakeKnight,

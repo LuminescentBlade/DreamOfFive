@@ -1,7 +1,7 @@
 import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
-import { IDoFPlayable } from "@/src/models/interfaces";
+import { IDoFCharacter } from "@/src/models/interfaces";
 
-export const Eilene: IDoFPlayable =  {
+export const Eilene: IDoFCharacter =  {
     name: DoFCharKey.Eilene,
     artists: [DoFArtist.Astra, DoFArtist.Amelia, DoFArtist.Nih],
     blurb: '"Only the most well-heeled could afford pegasi or the training to ride them, so one could only wonder..."',
@@ -12,6 +12,7 @@ export const Eilene: IDoFPlayable =  {
             player: 1
         }
     },
+    height: 162,
     bases: {
         hp: 19, pow: 7, skl: 8, spd: 11, luk: 8, def: 6, res: 9, con: 7
     },

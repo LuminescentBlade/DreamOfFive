@@ -1,7 +1,7 @@
 import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
-import { IDoFPlayable } from "@/src/models/interfaces";
+import { IDoFCharacter } from "@/src/models/interfaces";
 
-export const Tricia: IDoFPlayable =   {
+export const Tricia: IDoFCharacter =   {
     name: DoFCharKey.Tricia,
     artists: [DoFArtist.Amelia, DoFArtist.Lumi],
     nationality: DoFNationality.Aukema,
@@ -12,6 +12,7 @@ export const Tricia: IDoFPlayable =   {
             player: 2
         }
     },
+    height: 152,
     bases: {
         hp: 20, pow: 7, skl: 6, spd: 5, luk: 7, def: 4, res: 2, con: 6
     }, 

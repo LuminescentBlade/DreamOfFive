@@ -1,7 +1,7 @@
 import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
-import { IDoFPlayable } from "@/src/models/interfaces";
+import { IDoFCharacter } from "@/src/models/interfaces";
 
-export const Amelia: IDoFPlayable = {
+export const Amelia: IDoFCharacter = {
     name: DoFCharKey.Amelia,
     artists: [DoFArtist.Amelia],
     blurb: '"... made the mistake of looking too deep into her eyes. Still pools, bottomless depths, full of sorrow..."',
@@ -12,6 +12,7 @@ export const Amelia: IDoFPlayable = {
             player: 1
         }
     },
+    height: 163,
     bases: {
         hp: 21, pow: 8, skl: 6, spd: 7, luk: 3, def: 3, res: 8, con: 7
     },

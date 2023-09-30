@@ -5,7 +5,7 @@ import UnitSheet from '@/src/components/unit-sheet';
 import styles from './page.module.scss'
 import { DoFArtistConfig } from '@/src/config/artists.config';
 import { useState } from 'react';
-import { IDoFCharacter, IDoFCharacterRenderer, IDoFRenderPlayable, IDoFRenderUnit, IDoFUnit, IKeyMap } from '@/src/models/interfaces';
+import { IDoFCharacter, IDoFCharacterRenderer, IDoFRenderCharacter, IDoFRenderUnit, IDoFUnit, IKeyMap } from '@/src/models/interfaces';
 import { DoFCharacters } from '@/src/config/characters.config';
 import { DoFChapters } from '@/src/config/chapters.config';
 import OptionSelector from '@/src/components/option-selector';
@@ -24,7 +24,7 @@ const chapterOptionsProd = chapterOptionsLocal.filter(chapter => chapter.value <
 const isProd = (process.env.NODE_ENV === 'production');
 let useProdOnLocal = false;
 let cachedData: IDoFCharacterRenderer; // we will definitely switch to redux after this
-let currentCharacterCache: IDoFRenderPlayable | undefined;
+let currentCharacterCache: IDoFRenderCharacter | undefined;
 let displayRoute = isShowingLocal() ? DoFRoute.Both : DoFRoute.Onduris; // default value
 let { chapter: chapterLimit, chapterSelection } = setDisplayValues();
 const { shopkeepers, generics } = cacheStaticUnits();
@@ -270,7 +270,7 @@ export default function CharacterPage() {
 
     function getClickFunction(characterData: IDoFRenderUnit, characterState: DoFUnitState) {
         if (characterState === DoFUnitState.Player && (showSortedFull || isShowingLocal() || Date.now() > 1697882400000)) {
-            return (data: IDoFRenderPlayable) => {
+            return (data: IDoFRenderCharacter) => {
                 currentCharacterCache = data;
                 updateCurrentCharacter(currentCharacterCache);
             }

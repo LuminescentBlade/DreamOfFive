@@ -1,12 +1,13 @@
 import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
-import { IDoFPlayable } from "@/src/models/interfaces";
+import { IDoFCharacter } from "@/src/models/interfaces";
 
-export const Nari: IDoFPlayable = {
+export const Nari: IDoFCharacter = {
     name: DoFCharKey.Nari,
     artists: [DoFArtist.Lumi],
     blurb: '"... yet she took any setback in stride. There was nothing unnatural in battle to her, no glory, no fear..."',
     class: DoFClasses.Mercenary,
     nationality: DoFNationality.Onduris,
+    height: 161,
     routeConfig:{
         onduris: {
             player: 10

@@ -45,7 +45,7 @@ import { Morwen } from "./morwen.config";
 import { Nari } from "./nari.config";
 import { Nikita } from "./nikita.config";
 import { Odette } from "./odette.config";
-import { Riva } from "./riva.config";
+import { Rozelle } from "./rozelle.config";
 import { Saskia } from "./saskia.config";
 import { SeMori } from "./se-mori.config";
 import { Seren } from "./seren.config";
@@ -100,7 +100,7 @@ export const DoFPlayable =  {
     [DoFCharKey.Baldur]: Baldur,
     [DoFCharKey.Nikita]: Nikita,
     [DoFCharKey.Annelise]: Annelise,
-    [DoFCharKey.Riva]: Riva,
+    [DoFCharKey.Rozelle]: Rozelle,
     [DoFCharKey.byorDal]: ByorDal,
     [DoFCharKey.Meliza]: Meliza,
     [DoFCharKey.viShen]: ViShen,

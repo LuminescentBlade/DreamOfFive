@@ -1,7 +1,7 @@
 import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
-import { IDoFPlayable } from "@/src/models/interfaces";
+import { IDoFCharacter } from "@/src/models/interfaces";
 
-export const Meliza: IDoFPlayable = {
+export const Meliza: IDoFCharacter = {
     name: DoFCharKey.Meliza,
     artists: [DoFArtist.Lumi],
     blurb: '"... and immediately my mind dredged up all manner of flower imagery; she seemed the model of a Musain lady..."',
@@ -17,5 +17,6 @@ export const Meliza: IDoFPlayable = {
     },
     growths: {hp: 55, pow: 40, skl: 65, spd: 55, luk: 55, def: 10, res: 45},
     level:  12,
+    height: 165,
     promotesTo: DoFClasses.Bishop
 };

@@ -1,7 +1,7 @@
 import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
-import { IDoFPlayable } from "@/src/models/interfaces";
+import { IDoFCharacter } from "@/src/models/interfaces";
 
-export const Annelise: IDoFPlayable = {
+export const Annelise: IDoFCharacter = {
     name: DoFCharKey.Annelise,
     altNames: ['Long Tingbai', '龍庭白'],
     artists: [DoFArtist.Amelia, DoFArtist.Astra, DoFArtist.Lumi],
@@ -16,6 +16,8 @@ export const Annelise: IDoFPlayable = {
             player: 15
         }
     },
+    height: 173,
+    age: 20,
     bases: {
         hp: 26, pow: 12, skl: 11, spd: 15, luk: 8, def: 9, res: 9, con: 8
     },

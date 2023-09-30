@@ -1,7 +1,7 @@
 import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
-import { IDoFPlayable } from "@/src/models/interfaces";
+import { IDoFCharacter } from "@/src/models/interfaces";
 
-export const Dismas: IDoFPlayable = {
+export const Dismas: IDoFCharacter = {
     name: DoFCharKey.Dismas,
     artists: [DoFArtist.Astra],
     blurb: '"... still bearing the scars that we carved into him. He was a man changed, no longer cocksure..."',
@@ -10,6 +10,7 @@ export const Dismas: IDoFPlayable = {
     alt: {
         punished: { artists: [DoFArtist.Astra], chapter: 15, displayName: 'Returns', isSpoiler: true }
     },
+    height: 176,
     conditional: {
         chapter: {
             chapter: 15,

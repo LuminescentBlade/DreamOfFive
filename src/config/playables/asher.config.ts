@@ -1,7 +1,7 @@
 import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
-import { IDoFPlayable } from "@/src/models/interfaces";
+import { IDoFCharacter } from "@/src/models/interfaces";
 
-export const Asher: IDoFPlayable = {
+export const Asher: IDoFCharacter = {
     name: DoFCharKey.Asher,
     artists: [DoFArtist.Amelia, DoFArtist.Lumi],
     blurb: '"... did not quite know what to make of him, but whether or not his affect is sincere, he is no charlatan..."',
@@ -12,6 +12,7 @@ export const Asher: IDoFPlayable = {
             player: 0
         }
     },
+    height: 177,
     bases: {
         hp: 21, pow: 6, skl: 4, spd: 4, luk: 7, def: 3, res: 8, con: 7
     },

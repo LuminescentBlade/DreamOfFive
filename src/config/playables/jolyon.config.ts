@@ -1,12 +1,13 @@
 import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
-import { IDoFPlayable } from "@/src/models/interfaces";
+import { IDoFCharacter } from "@/src/models/interfaces";
 
-export const Jolyon: IDoFPlayable = {
+export const Jolyon: IDoFCharacter = {
     name: DoFCharKey.Jolyon, // enjo
     artists: [DoFArtist.Astra, DoFArtist.Amelia],
     blurb: '"... burning with rebel spirit, the sort of man who could change the world, due in part to his elevated place in it..."',
     class: DoFClasses.Mage,
     nationality: DoFNationality.Musain,
+    height: 168,
     routeConfig: {
         musain: {
             player: 10

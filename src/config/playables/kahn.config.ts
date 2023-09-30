@@ -1,7 +1,7 @@
 import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
-import { IDoFPlayable } from "@/src/models/interfaces";
+import { IDoFCharacter } from "@/src/models/interfaces";
 
-export const Kahn: IDoFPlayable = {
+export const Kahn: IDoFCharacter = {
     name: DoFCharKey.Kahn,
     artists: [DoFArtist.Astra, DoFArtist.Amelia, DoFArtist.Lumi],
     blurb: '"... asked the secret of his courage, he answered, \'the ladies expect the best from me.\' I sighed..."',
@@ -12,6 +12,7 @@ export const Kahn: IDoFPlayable = {
             player: 9
         }
     },
+    height: 164,
     bases: {
         hp: 27, pow: 12, skl: 13, spd: 11, luk: 8, def: 10, res: 0, con: 9
     },
