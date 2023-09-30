@@ -5,7 +5,7 @@ import { IDoFPlayable } from "@/src/models/interfaces";
 export const Cyrille: IDoFPlayable = {
     name: DoFCharKey.Cyrille,
     artists: [DoFArtist.Lumi],
-    // blurb: '',
+    blurb: '"... in no place to turn aside recruits. Only a few truly had the diligence and mettle for such thankless work..."',
     nationality: DoFNationality.Musain,
     class: DoFClasses.Cavalier,
     routeConfig: {
