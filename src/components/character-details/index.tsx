@@ -283,6 +283,7 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
         return <ul>
             <li><strong>Country of Origin: </strong><span className="capitalize">{characterDef.nationality}</span></li>
             {characterDef.height ? <li><strong>Height: </strong>{characterDef.height}cm / {cmToFtIn(characterDef.height)}</li> : ''}
+            {characterDef.age ? <li><strong>Age: </strong>{characterDef.age}</li> : ''}
             
         </ul>
     }
