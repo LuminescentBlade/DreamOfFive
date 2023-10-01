@@ -21,6 +21,7 @@ export const Rena: IDoFCharacter =  {
             player: 0
         }
     },
+    age: 21,
     height: 165,
     level: 2,
     bases:{
