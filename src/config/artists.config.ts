@@ -36,5 +36,9 @@ export const DoFArtistConfig = {
     [DoFArtist.Xiltas]: {
         name: 'Xiltas',
         color: '#918769'
+    },
+    [DoFArtist.Levin]:{
+        name: 'Levin',
+        color: '#39d4c4'
     }
 };

@@ -20,7 +20,8 @@ export enum DoFArtist {
     Nih = 'niharu',
     Pi = 'pi',
     TBA = 'tba',
-    Xiltas = 'xiltas'
+    Xiltas = 'xiltas',
+    Levin = 'levin',
 };
 
 export enum DoFNationality {
