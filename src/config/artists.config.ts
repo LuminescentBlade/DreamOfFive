@@ -38,7 +38,7 @@ export const DoFArtistConfig = {
         color: '#918769'
     },
     [DoFArtist.Levin]:{
-        name: 'Levin',
+        name: 'Levin Claude',
         color: '#39d4c4'
     }
 };
