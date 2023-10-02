@@ -16,6 +16,7 @@ export const Bellona: IDoFCharacter = {
             player: 15
         }
     },
+    age: 21,
     height: 165,
     bases: {
         hp: 31, pow: 14, skl: 10, spd: 12, luk: 13, def: 11, res: 0, con: 10

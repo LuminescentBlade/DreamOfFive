@@ -13,6 +13,7 @@ export const Kahn: IDoFCharacter = {
         }
     },
     height: 164,
+    age: 20, 
     bases: {
         hp: 27, pow: 12, skl: 13, spd: 11, luk: 8, def: 10, res: 0, con: 9
     },
