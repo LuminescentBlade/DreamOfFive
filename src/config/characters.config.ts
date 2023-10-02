@@ -420,6 +420,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         // other
         {
             name: 'varkade',
+            profileName: 'Varkade Hengeist',
             artists: [DoFArtist.Astra, DoFArtist.Amelia],
             blurb: '"He thought he made me. In a sense, he was right. But I had to unmake him."',
             class: '',

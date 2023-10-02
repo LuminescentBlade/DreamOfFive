@@ -44,7 +44,7 @@ export const DoFUnpromotedClasses = {
         caps: {hp: 60, pow: 20, skl: 20, spd: 20, luk: 30, def: 10, res: 20, con: 20 }
     },
     [DoFClasses.Adept]: {
-        caps: {hp: 60, pow: 20, skl: 20, spd: 20, luk: 30, def: 10, res: 20, con: 20 }
+        caps: {hp: 60, pow: 20, skl: 20, spd: 20, luk: 30, def: 15, res: 15, con: 20 }
     },
     [DoFClasses.Mage]: {
         caps: {hp: 60, pow: 20, skl: 20, spd: 20, luk: 30, def: 10, res: 20, con: 20 }
