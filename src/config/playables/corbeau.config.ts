@@ -12,7 +12,7 @@ export const Corbeau: IDoFCharacter = {
     routeConfig:{
         musain: {
             npc: 8,
-            player: 13
+            player: 9
         }
     },
     growths: {hp: 110, pow: 50, skl: 30, spd: 35, luk: 45, def: 20, res: 20},
