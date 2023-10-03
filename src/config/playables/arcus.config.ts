@@ -3,7 +3,7 @@ import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Arcus: IDoFCharacter = {
     name: DoFCharKey.Arcus,
-    profileName: 'Arcus Scipio',
+    profileName: 'Arcus Scipion',
     artists: [DoFArtist.Astra],
     blurb: '"... a stiff, unbending martial man, but he was intelligent enough to realise how the world truly worked..."',
     class: DoFClasses.Ironclad,
