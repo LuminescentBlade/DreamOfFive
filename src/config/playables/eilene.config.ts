@@ -18,5 +18,5 @@ export const Eilene: IDoFCharacter =  {
     },
     level: 3,
     promotesTo: DoFClasses.SeraphKnight,
-    growths: {hp: 60, pow: 30, skl: 45, spd: 60, luk: 45, def: 20, res: 50}
+    growths: {hp: 60, pow: 40, skl: 50, spd: 70, luk: 50, def: 20, res: 60}
 };

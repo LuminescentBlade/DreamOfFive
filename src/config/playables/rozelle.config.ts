@@ -3,7 +3,7 @@ import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Rozelle: IDoFCharacter = {
     name: DoFCharKey.Rozelle,
-    artists: [DoFArtist.Amelia, DoFArtist.Lumi],
+    artists: [DoFArtist.Lumi],
     blurb: '"Could a woman so soft-spoken truly be a heretic? Appearances could be deceiving, but not always..."',
     class: DoFClasses.Warlock,
     nationality: DoFNationality.Musain,
@@ -12,7 +12,7 @@ export const Rozelle: IDoFCharacter = {
             player: 11
         }
     },
-    height: 156,
+    height: 178,
     bases: {
         hp: 22, pow: 13, skl: 14, spd: 11, luk: 15, def: 2, res: 14, con: 14
     },
