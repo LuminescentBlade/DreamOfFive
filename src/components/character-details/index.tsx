@@ -176,28 +176,28 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
                 <thead>
                     <tr>
                         <td className={styles.rowHeader}></td>
-                        {statKeys.map(s => <td className={`${styles.colHeader} capitalize`}>{s}</td>)}
+                        {statKeys.map(s => <td key={s} className={`${styles.colHeader} capitalize`}>{s}</td>)}
                     </tr>
                 </thead>
                 <tbody>
                     {characterDef.bases ?
                         <tr>
                             <th className='capitalize'>bases</th>
-                            {statKeys.map(s => <td>{characterDef.bases ? characterDef.bases[s] : ''}</td>)}
+                            {statKeys.map(s => <td  key={s}>{characterDef.bases ? characterDef.bases[s] : ''}</td>)}
                         </tr>
                         : ''
                     }
                     {characterDef.growths ?
                         <tr>
                             <th className='capitalize'>growths</th>
-                            {statKeys.map(s => <td>{characterDef.growths && characterDef.growths[s] != null ? `${characterDef.growths[s]}%` : '--'}</td>)}
+                            {statKeys.map(s => <td key={s} >{characterDef.growths && characterDef.growths[s] != null ? `${characterDef.growths[s]}%` : '--'}</td>)}
                         </tr>
                         : ''
                     }
                     {promoBonuses != null ?
                         <tr>
                             <th className='capitalize'>Promo</th>
-                            {statKeys.map(s => <td>{promoBonuses![s]}</td>)}
+                            {statKeys.map(s => <td key={s} >{promoBonuses![s]}</td>)}
                         </tr>
                         : ''
                     }
@@ -237,7 +237,7 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
                                         if (capped) { value = promotedCaps[s] }
                                     }
 
-                                    return <td className={capped ? styles.capped : ''}>{value.toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
+                                    return <td  key={s} className={capped ? styles.capped : ''}>{value.toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
 
                                 })
                             }
@@ -246,7 +246,7 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
                     }
                     <tr className={styles.caps}>
                         <th className='capitalize'>caps</th>
-                        {statKeys.map(s => <td>{promotedCaps[s]}</td>)}
+                        {statKeys.map(s => <td  key={s} >{promotedCaps[s]}</td>)}
                     </tr>
                 </tbody>
             </table>
@@ -263,7 +263,7 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
 
                 <h2>{characterDef.profileName ?? characterDef.conditional?.player?.displayName ?? characterDef.displayName ?? <span className={'capitalize'}>{characterDef.name}</span>}</h2>
                 {characterDef.altNames || characterDef.conditional?.player?.displayName ? <ul className={styles.altNames}>
-                    {characterDef.altNames?.map(c => <li>{c}</li>)}
+                    {characterDef.altNames?.map(c => <li key={c} >{c}</li>)}
                     {characterDef.conditional?.player?.displayName ? <li className="capitalize">{characterDef.name}</li> : ''}
                 </ul> : ''}
 
