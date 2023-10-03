@@ -62,12 +62,20 @@
   gap: 6px;
 }
 
+.extendedProfile{
+  list-style: none;
+  li{
+    margin-bottom: 6px;
+  }
+}
 // .data {
 // }
 
 .dataContent {
   padding: 12px;
   overflow: auto;
+  box-sizing: content-box;
+  min-width: calc(8 * var(--data-size)  + var(--row-label-size));
 }
 
 .profile,

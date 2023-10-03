@@ -1,6 +1,6 @@
 import { DoFPromotedClasses, DoFUnpromotedClasses } from "@/src/config/classes.config";
 import { IDoFRenderCharacter, IDoFStats } from "@/src/models/dream-of-five.interfaces";
-import { cache, useState } from "react";
+import { useState } from "react";
 import styles from './index.module.scss';
 import Overlay from "../overlay";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -16,21 +16,51 @@ enum CharacterDetailState {
 let init = false;
 let offset = { left: 0, top: 0 };
 let isDragging = false;
-let cachedState = {
+let cachedState: any = {
     enableCompareMode: false,
     dragStateStyle: {},
-    state: CharacterDetailState.Stat
+    state: CharacterDetailState.Stat,
+    resetState: false
 };
 
-export default function CharacterDetails({ characterDef, clear, experimentalFeatures }: { characterDef: IDoFRenderCharacter, clear: () => void, experimentalFeatures?: boolean }) {
-    const defaultLevels = getDefaultLevelByCharacter(characterDef);
-    const [levelData, setLevelData] = useState(defaultLevels);
-    const [widgetState, setWidgetState] = useState(cachedState);
+let currentCharacter: string | undefined;
 
+export default function CharacterDetails({ characterDef, clear, experimentalFeatures }: { characterDef: IDoFRenderCharacter, clear: () => void, experimentalFeatures?: boolean }) {
     // show hide items
     const showStats = (characterDef.bases || characterDef.growths);
     const showExtendedProfile = experimentalFeatures && characterDef.nationality;
     const showGallery = false;
+
+    let defaultView: CharacterDetailState | undefined;
+    const validViews = new Set();
+    if(showStats){
+        validViews.add(CharacterDetailState.Stat);
+        defaultView = CharacterDetailState.Stat;
+    } 
+
+    if(showExtendedProfile){
+        validViews.add(CharacterDetailState.ExtendedProfile);
+        defaultView = defaultView ?? CharacterDetailState.ExtendedProfile;
+    }
+
+    if(showGallery){
+        validViews.add(CharacterDetailState.Gallery);
+        defaultView = defaultView ?? CharacterDetailState.Gallery;
+    }
+
+    if (cachedState.resetState) {
+        cachedState.state = defaultView;
+        cachedState.resetState = false;
+    } else if (!validViews.has(cachedState.state)) {
+        cachedState.state = defaultView;   
+    }
+    
+
+    const defaultLevels = getDefaultLevelByCharacter(characterDef);
+    const [levelData, setLevelData] = useState(defaultLevels);
+    const [widgetState, setWidgetState] = useState(cachedState);
+
+    currentCharacter = characterDef.name;
 
     if (levelData.promotedLevel < defaultLevels.promotedLevel ||
         (defaultLevels.unpromotedLevel && (levelData.unpromotedLevel ?? -1) < defaultLevels.unpromotedLevel)) {
@@ -86,7 +116,8 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
     function clearItem() {
         clear();
         offset = { left: 0, top: 0 };
-        setWidgetStateCaching({ ...widgetState, enableCompareMode: false, dragStateStyle: {} });
+        currentCharacter = undefined;
+        setWidgetStateCaching({ ...widgetState, enableCompareMode: false, dragStateStyle: {}, resetState: true });
     }
 
 
@@ -268,23 +299,23 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
         }
     }
 
-    function cmToFtIn(cm: number){
+    function cmToFtIn(cm: number) {
         const inches = cm / 2.54;
         let ft = Math.floor(inches / 12);
         let inchLeft = Math.round(inches - ft * 12);
-        if(inchLeft >= 12){ // ideally equal 12, but
+        if (inchLeft >= 12) { // ideally equal 12, but
             ft += 1;
             inchLeft -= 12;
         }
         return `${ft}'${inchLeft}''`;
     }
 
-    function renderExtendedProfile(){
-        return <ul>
+    function renderExtendedProfile() {
+        return <ul className={styles.extendedProfile}>
             <li><strong>Country of Origin: </strong><span className="capitalize">{characterDef.nationality}</span></li>
             {characterDef.height ? <li><strong>Height: </strong>{characterDef.height}cm / {cmToFtIn(characterDef.height)}</li> : ''}
             {characterDef.age ? <li><strong>Age: </strong>{characterDef.age}</li> : ''}
-            
+
         </ul>
     }
 
@@ -300,7 +331,7 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
         }
     }
 
-    
+
 
     function renderTabs() {
         if (!showStats && !showExtendedProfile && !showGallery) {
