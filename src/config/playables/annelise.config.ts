@@ -19,9 +19,9 @@ export const Annelise: IDoFCharacter = {
     height: 173,
     age: 20,
     bases: {
-        hp: 26, pow: 12, skl: 11, spd: 15, luk: 8, def: 9, res: 9, con: 8
+        hp: 27, pow: 13, skl: 11, spd: 18, luk: 9, def: 11, res: 11, con: 8
     },
-    level: 11,
-    growths: { hp: 50, pow: 45, skl: 40, spd: 50, luk: 50, def: 30, res: 45 },
+    level: 14,
+    growths: { hp: 50, pow: 45, skl: 40, spd: 60, luk: 40, def: 30, res: 45 },
     promotesTo: DoFClasses.SeraphKnight
 };

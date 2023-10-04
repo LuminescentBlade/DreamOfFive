@@ -14,10 +14,10 @@ export const Rozelle: IDoFCharacter = {
     },
     height: 178,
     bases: {
-        hp: 22, pow: 13, skl: 14, spd: 11, luk: 15, def: 2, res: 14, con: 14
+        hp: 32, pow: 16, skl: 17, spd: 8, luk: 18, def: 2, res: 17, con: 14
     },
-    level: 11,
-    growths: {hp: 40, pow: 50, skl: 55, spd: 45, luk: 65, def: 5, res: 65},
+    level: 15,
+    growths: {hp: 85, pow: 55, skl: 60, spd: 25, luk: 55, def: 5, res: 65},
     promotesTo: DoFClasses.Sorcerer
 
 };
