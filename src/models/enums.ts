@@ -106,7 +106,7 @@ export enum DoFClasses {
     Sentinel = 'sentinel',
 
     Skirmisher = 'skirmisher',
-    Ranger = 'ranger',
+    Outrider = 'outrider',
     
     //
     TBD = 'tbd'

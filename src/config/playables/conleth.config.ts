@@ -20,6 +20,6 @@ export const Conleth: IDoFCharacter = {
         hp: 25, pow: 10, skl: 12, spd: 15, luk: 9, def: 6, res: 2, con: 8
     },
     level: 8,
-    promotesTo: DoFClasses.Ranger,
+    promotesTo: DoFClasses.Outrider,
     growths: {hp: 65, pow: 40, skl: 50, spd: 60, luk: 60, def: 25, res: 10}
 };

@@ -278,7 +278,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             displayName: 'am\'Roan',
             artists: [DoFArtist.Astra],
             blurb: '"... jostling to earn the favour of the new dictator by avenging the old, relentless in pursuit for glory\'s sake..."',
-            class: DoFClasses.Ranger,
+            class: DoFClasses.Outrider,
             nationality: DoFNationality.Onduris,
             routeConfig: {
                 onduris: {
