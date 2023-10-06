@@ -16,6 +16,13 @@ export const Arcus: IDoFCharacter = {
             player: 15
         }
     },
+    alt: {
+        promo: {
+            artists: [DoFArtist.Astra, DoFArtist.Lumi],
+            chapter: 15,
+            displayName: 'Promoted'
+        }
+    },
     height: 177,
     bases: {
         hp: 32, pow: 14, skl: 10, spd: 9, luk: 7, def: 12, res: 3, con: 13

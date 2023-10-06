@@ -29,7 +29,7 @@ export enum DoFNationality {
     Musain = 'musain',
     Onduris = 'onduris',
     Vishara = 'vishara',
-    Svanhild = 'svanhild',
+    Svanhild = 'svanhild 玄和',
     Unknown = 'unknown'
 };
 
