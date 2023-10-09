@@ -26,11 +26,11 @@ export const Rena: IDoFCharacter =  {
     level: 2,
     bases:{
         hp: 21,
-        pow: 6,
+        pow: 7,
         skl: 13,
         spd: 12, 
-        luk: 8,
-        def: 5,
+        luk: 9,
+        def: 6,
         res: 3,
         con: 7
     },
