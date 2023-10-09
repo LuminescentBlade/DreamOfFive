@@ -13,10 +13,10 @@ export const Marin: IDoFCharacter = {
         }
     },
     bases: {
-        hp: 33, pow: 12, skl: 11, spd: 15, luk: 13, def: 10, res: 0, con: 9
+        hp: 35, pow: 13, skl: 12, spd: 17, luk: 15, def: 11, res: 0, con: 9
     },
     height: 176,
-    level: 12,
+    level: 14,
     growths: { hp: 105, pow: 45, skl: 35, spd: 55, luk: 55, def: 30, res: 5 },
     promotesTo: DoFClasses.Paladin
 };

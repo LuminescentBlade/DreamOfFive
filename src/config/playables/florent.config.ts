@@ -17,9 +17,9 @@ export const Florent: IDoFCharacter = {
     },
     height: 179,
     bases: {
-        hp: 32, pow: 15, skl: 14, spd: 12, luk: 8, def: 13, res: 0, con: 10
+        hp: 33, pow: 16, skl: 16, spd: 13, luk: 9, def: 15, res: 1, con: 10
     },
-    level: 12,
+    level: 14,
     promotesTo: DoFClasses.Paladin,
     growths: {hp: 90, pow: 55, skl: 50, spd: 40, luk: 30, def: 45, res: 10}
 };
