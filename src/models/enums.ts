@@ -173,7 +173,7 @@ export enum DoFCharKey{
     Morwen = 'morwen',
     Kai = 'kai',
     Claudiya = 'claudiya',
-    Dahlia = 'dahlia',
+    Amaryl = 'amaryl',
     Volund = 'volund',
     Ironside = 'rophon'
     

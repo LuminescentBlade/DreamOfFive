@@ -20,5 +20,6 @@ export const Kolbane: IDoFCharacter = {
     },
     level: 2,
     promotesTo: DoFClasses.Gladiator,
-    growths: {hp: 75, pow: 55, skl: 35, spd: 55, luk: 40, def: 35, res: 15}
+    growths: {hp: 75, pow: 55, skl: 35, spd: 55, luk: 40, def: 35, res: 15},
+    epithet: 'Stalwart'
 };

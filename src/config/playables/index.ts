@@ -3,7 +3,7 @@ import { Rena } from "./rena.config";
 import { Garath } from "./garath.config";
 import { Adalheid } from "./adalheid.config";
 import { Alexis } from "./alexis.config";
-import { Dahlia } from "./amaryl.config";
+import { Amaryl } from "./amaryl.config";
 import { Amelia } from "./amelia.config";
 import { Annelise } from "./annelise.config";
 import { Arcus } from "./arcus.config";
@@ -122,7 +122,7 @@ export const DoFPlayable =  {
     [DoFCharKey.Morwen]: Morwen,
     [DoFCharKey.Kai]: Kai,
     [DoFCharKey.Claudiya]: Claudiya,
-    [DoFCharKey.Dahlia]: Dahlia,
+    [DoFCharKey.Amaryl]: Amaryl,
     [DoFCharKey.Volund]: Volund,
     [DoFCharKey.Ironside]: Ironside
 };

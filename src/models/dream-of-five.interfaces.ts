@@ -28,8 +28,9 @@ export interface IDoFCharacter extends IDoFUnit {
     //stats
     promotesTo?: DoFClasses,
     bases?: IDoFStats,
-    growths?: IDoFStats
-    level?: number
+    growths?: IDoFStats,
+    level?: number,
+    epithet?: string,
 }
 export interface IDoFStats {
     [stat: string]: number

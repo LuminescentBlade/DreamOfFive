@@ -16,5 +16,6 @@ export const Garath: IDoFCharacter = {
     level: 1,
     height: 195,
     growths:   {hp: 75, pow: 50, skl: 40, spd: 35, luk: 30, def: 20, res: 10},
-    age: 38
+    age: 38,
+    epithet: 'The Deadeye'
 };

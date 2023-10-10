@@ -22,6 +22,7 @@ export const Rena: IDoFCharacter =  {
         }
     },
     age: 21,
+    epithet: 'Leveller',
     height: 165,
     level: 2,
     bases:{
