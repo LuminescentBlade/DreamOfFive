@@ -12,7 +12,7 @@ export const Alexis: IDoFCharacter = {
             player: 7
         }
     },
-    height: 173,
+    height: 171,
     bases: {
         hp: 26, pow: 9, skl: 13, spd: 16, luk: 13, def: 5, res: 7, con: 6
     },
