@@ -16,5 +16,5 @@ export const Brill: IDoFCharacter = {
     height: 167,
     growths: {hp: 65, pow: 50, skl: 60, spd: 30, luk: 40, def: 35, res: 10},
     level: 3,
-    bases: {hp: 32, pow: 19, skl: 21, spd: 14, luk: 13, def: 16, res: 3, con: 8}
+    bases: {hp: 32, pow: 19, skl: 21, spd: 14, luk: 13, def: 16, res: 3, con: 12}
 };
