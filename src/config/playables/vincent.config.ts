@@ -3,8 +3,9 @@ import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Vincent: IDoFCharacter = {
     name: DoFCharKey.Vincent,
+    displayName: 'Rotariu',
     artists: [DoFArtist.Amelia, DoFArtist.Astra],
-    class: '', // tentatively DoFClasses.Outrider,
+    class: DoFClasses.Outrider,
     nationality: DoFNationality.Vishara,
     height: 177,
     routeConfig:{
