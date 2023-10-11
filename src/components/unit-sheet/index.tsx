@@ -15,7 +15,6 @@ export default function UnitSheet({ data, chapter, expansionState, toggleCharact
 
 
     return (<div id='unit-sheet' className={styles.base}>
-        {chapter}
         {
             // @ts-ignore
             sections
