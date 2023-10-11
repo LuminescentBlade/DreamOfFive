@@ -17,8 +17,15 @@
   --dof-color7: #0774ab;
   --dof-kq-font: "Knights Quest", serif;
 
+  --dof-dark-font: #101012;
+  --dof-light-font: #d9dfeb;
+  --dof-dark-bg: #14171e;
+
   --dof-header-bg-color: #fff;
   --dof-bg-color: #fff;
+  --dof-a: var(--dof-color1);
+  --dof-a-hover: var(--dof-color2);
+  --dof-font-color: var(--dof-dark-font);
   --dof-header-border: var(--dof-color5);
   --dof-header-font-color: var(--dof-color4);
   --dof-header-font-hover: var(--dof-color1);
@@ -27,7 +34,13 @@
   --dof-input-height: 40px;
   --dof-input-width: 200px;
   --dof-input-border-radius: 5px;
-  
+  --dof-input-border: 1px solid var(--dof-color2);
+  --dof-button-icon-color: var(--dof-color2);
+  --dof-avgs-bg: var(--dof-color6);
+  --dof-color-header: var(--dof-color2);
+  --dof-color-subheader: var(--dof-color7);
+  --dof-color-text: var(--dof-color2);
+
   --lb-option-selector-bg-color: var(--dof-color1);
   --lb-option-selector-font-color: var(--dof-color2);
   --lb-option-select-bg-color-s: var(--dof-color2);
@@ -38,18 +51,6 @@
   --lb-option-select-border: var(--dof-input-border);
   --lb-option-select-border-radius: var(--dof-input-border-radius);
 }
-
-:root{
-  // default mode colors
-  --dof-input-border: 1px solid var(--dof-color2);
-  --dof-a: var(--dof-color1);
-  --dof-a-hover: var(--dof-color2);
-}
-
-// @media (prefers-color-scheme: dark) {
-//   :root {
-//   }
-// }
 
 * {
   box-sizing: border-box;
@@ -67,30 +68,42 @@ body {
   max-width: 100vw;
   font-family: sans-serif;
   background-color: var(--dof-bg-color);
+  color: var(--dof-font-color);
 }
 
 body {
   font-size: 1.8rem;
-  // color: rgb(var(--foreground-rgb));
-  // background: linear-gradient(
-  //     to bottom,
-  //     transparent,
-  //     rgb(var(--background-end-rgb))
-  //   )
-  //   rgb(var(--background-start-rgb));
+
+  &.dark-mode {
+    --dof-header-bg-color: var(--dof-dark-bg);
+    --dof-bg-color: var(--dof-dark-bg);
+    --dof-font-color: var(--dof-light-font);
+    --dof-input-border: 1px solid var(--dof-light-font);
+    --dof-button-icon-color: var(--dof-color6); 
+    --dof-avgs-bg: var(--dof-color1);
+    --dof-color-header: var(--dof-color3);
+    --dof-color-subheader: var(--dof-color1);
+    --dof-color-text: var(--dof-color3);
+    --dof-a-hover: var(--dof-color7);
+  }
 }
 
 a {
   color: var(--dof-a);
-  &:hover{
+  &:hover {
     color: var(--dof-a-hover);
   }
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
 }
 
 .navigation a {
   color: inherit;
   text-decoration: none;
-  &:hover{
+  &:hover {
     color: var(--dof-header-font-hover);
   }
 }
@@ -128,7 +141,8 @@ h2 {
   font-family: var(--dof-kq-font);
 }
 
-input, select{
+input,
+select {
   border: var(--dof-input-border);
   color: var(--dof-color2);
   height: var(--dof-input-height);
@@ -137,24 +151,24 @@ input, select{
   border-radius: var(--dof-input-border-radius);
 }
 
-.center{
+.center {
   text-align: center;
 }
 
-.pixel-art, .pixel-art img{
-  
-    //https://graphicdesign.stackexchange.com/questions/145700/displaying-older-images-on-web-for-retina-high-pixel-density-screens
-    image-rendering: optimizeSpeed; /* Legal fallback */
-    image-rendering: -moz-crisp-edges; /* Firefox        */
-    image-rendering: -o-crisp-edges; /* Opera          */
-    image-rendering: -webkit-optimize-contrast; /* Safari         */
-    image-rendering: optimize-contrast; /* CSS3 Proposed  */
-    image-rendering: crisp-edges; /* CSS4 Proposed  */
-    image-rendering: pixelated; /* CSS4 Proposed  */
-    -ms-interpolation-mode: nearest-neighbor; /* IE8+           */
+.pixel-art,
+.pixel-art img {
+  //https://graphicdesign.stackexchange.com/questions/145700/displaying-older-images-on-web-for-retina-high-pixel-density-screens
+  image-rendering: optimizeSpeed; /* Legal fallback */
+  image-rendering: -moz-crisp-edges; /* Firefox        */
+  image-rendering: -o-crisp-edges; /* Opera          */
+  image-rendering: -webkit-optimize-contrast; /* Safari         */
+  image-rendering: optimize-contrast; /* CSS3 Proposed  */
+  image-rendering: crisp-edges; /* CSS4 Proposed  */
+  image-rendering: pixelated; /* CSS4 Proposed  */
+  -ms-interpolation-mode: nearest-neighbor; /* IE8+           */
 }
 
-button.button-wrapper{
+button.button-wrapper {
   display: inline-flex;
   padding: 0;
   margin: 0;
@@ -165,12 +179,16 @@ button.button-wrapper{
   border: 0;
 }
 
-.capitalize{
+.capitalize {
   text-transform: capitalize;
 }
 
-.flex-line-container{
+.flex-line-container {
   display: flex;
   gap: 6px;
   align-items: center;
+}
+
+.flex-end {
+  margin-left: auto;
 }
