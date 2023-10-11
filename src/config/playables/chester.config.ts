@@ -14,6 +14,7 @@ export const Chester: IDoFCharacter = {
     },
     height: 166,
     age: 19,
+    epithet: 'The Atoner',
     bases:{
         hp: 24, pow: 7, skl: 9, spd: 12, luk: 9, def: 5, res: 2, con: 6
     }, 
