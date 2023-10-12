@@ -1,9 +1,8 @@
 import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
-export const Vincent: IDoFCharacter = {
-    name: DoFCharKey.Vincent,
-    displayName: 'Rotariu',
+export const Rotariu: IDoFCharacter = {
+    name: DoFCharKey.Rotariu,
     artists: [DoFArtist.Amelia, DoFArtist.Astra],
     class: DoFClasses.Outrider,
     nationality: DoFNationality.Vishara,

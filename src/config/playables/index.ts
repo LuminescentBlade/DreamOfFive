@@ -56,7 +56,7 @@ import { Stolypin } from "./stolypin.config";
 import { Thyra } from "./thyra.config";
 import { Tricia } from "./tricia.config";
 import { ViShen } from "./vi-shen.config";
-import { Vincent } from "./vincent.config";
+import { Rotariu } from "./rotariu.config";
 import { Volund } from "./volund.config";
 import { Wren } from "./wren.config";
 import { Ironside } from "./rophon.config";
@@ -118,7 +118,7 @@ export const DoFPlayable =  {
     [DoFCharKey.Thyra]: Thyra,
     [DoFCharKey.Adalheid]: Adalheid,
     [DoFCharKey.Sheila]: Sheila,
-    [DoFCharKey.Vincent]: Vincent,
+    [DoFCharKey.Rotariu]: Rotariu,
     [DoFCharKey.Morwen]: Morwen,
     [DoFCharKey.Kai]: Kai,
     [DoFCharKey.Claudiya]: Claudiya,

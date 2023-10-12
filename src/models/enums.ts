@@ -169,7 +169,7 @@ export enum DoFCharKey{
     Thyra = 'thyra',
     Adalheid = 'adalheid',
     Sheila = 'sheila',
-    Vincent = 'vincent',
+    Rotariu = 'rotariu',
     Morwen = 'morwen',
     Kai = 'kai',
     Claudiya = 'claudiya',
