@@ -559,6 +559,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'fleurre',
             profileName: 'Fleurre Domremie',
+            blurb: '"...greeted me with a warm smile, but I could see behind her eyes she was appraising me, calculating..."',
             artists: [DoFArtist.Amelia],
             class: DoFClasses.Sage,
             nationality: DoFNationality.Musain,
