@@ -3,6 +3,7 @@ import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Meliza: IDoFCharacter = {
     name: DoFCharKey.Meliza,
+    profileName: 'Meliza Domremie',
     artists: [DoFArtist.Lumi],
     blurb: '"... and immediately my mind dredged up all manner of flower imagery; she seemed the model of a Musain lady..."',
     class: DoFClasses.Mage,

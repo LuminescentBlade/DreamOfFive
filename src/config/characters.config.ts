@@ -558,6 +558,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'fleurre',
+            profileName: 'Fleurre Domremie',
             artists: [DoFArtist.Amelia],
             class: DoFClasses.Sage,
             nationality: DoFNationality.Musain,
