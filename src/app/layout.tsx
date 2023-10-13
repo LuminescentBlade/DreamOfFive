@@ -5,7 +5,8 @@ import Header from '../components/header'
 
 export const metadata: Metadata = {
   title: 'Dream of Five',
-  description: 'A Fire Emblem Original Mod',
+  description: 'A FE8 Romhack.',
+  manifest: '/public/mugs/characters/renair.png'
 }
 
 export default function RootLayout({
@@ -17,7 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <header role="navigation" className="navigation">
-            <Header></Header>
+          <Header></Header>
         </header>
         {children}
       </body>
