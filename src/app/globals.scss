@@ -40,6 +40,7 @@
   --dof-color-header: var(--dof-color2);
   --dof-color-subheader: var(--dof-color7);
   --dof-color-text: var(--dof-color2);
+  --dof-overlay-color: 255, 255, 255;
 
   --lb-option-selector-bg-color: var(--dof-color1);
   --lb-option-selector-font-color: var(--dof-color2);
@@ -79,12 +80,13 @@ body {
     --dof-bg-color: var(--dof-dark-bg);
     --dof-font-color: var(--dof-light-font);
     --dof-input-border: 1px solid var(--dof-light-font);
-    --dof-button-icon-color: var(--dof-color6); 
+    --dof-button-icon-color: var(--dof-color6);
     --dof-avgs-bg: var(--dof-color1);
     --dof-color-header: var(--dof-color3);
     --dof-color-subheader: var(--dof-color1);
     --dof-color-text: var(--dof-color3);
     --dof-a-hover: var(--dof-color7);
+    --dof-overlay-color: 0, 0, 0;
   }
 }
 
