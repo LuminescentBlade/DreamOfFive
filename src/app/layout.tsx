@@ -1,6 +1,7 @@
 import './globals.scss'
 import type { Metadata } from 'next'
-import Link from 'next/link'
+import Header from '../components/header'
+
 
 export const metadata: Metadata = {
   title: 'Dream of Five',
@@ -16,8 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <header role="navigation" className="navigation">
-          <Link href="/">Home</Link>
-          <Link href="/characters">Characters</Link>
+            <Header></Header>
         </header>
         {children}
       </body>
