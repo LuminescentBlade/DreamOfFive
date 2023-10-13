@@ -222,6 +222,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'uther',
+            blurb: '"He had every chance to turn against the Provost, but in the end, he valued his honour most highly..."',
             artists: [DoFArtist.Lumi, DoFArtist.Astra],
             class: DoFClasses.Sentinel,
             nationality: DoFNationality.Musain,

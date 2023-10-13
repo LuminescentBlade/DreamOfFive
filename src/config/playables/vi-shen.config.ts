@@ -4,7 +4,7 @@ import { IDoFCharacter } from "@/src/models/interfaces";
 export const ViShen: IDoFCharacter = {
     name: DoFCharKey.viShen,
     displayName: 'vi\'Shen',
-    blurb: '"...little place in the scrum of pitched battle. But in a duel, where individual skill came to the fore..."',
+    blurb: '"...thinking of nothing more than fealty to his lord. And it went beyond duty; I think it was love, of a sort..."',
     artists: [DoFArtist.Lumi],
     class: DoFClasses.Myrmidon,
     nationality: DoFNationality.Onduris,
