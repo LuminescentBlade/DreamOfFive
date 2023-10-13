@@ -15,9 +15,9 @@ export const Ioan: IDoFCharacter = {
         }
     },
     bases: {
-        hp: 30, pow: 12, skl: 8, spd: 9, luk: 7, def: 12, res: 0, con: 12
+        hp: 32, pow: 14, skl: 11, spd: 10, luk: 7, def: 13, res: 0, con: 12
     },
-    level: 8, 
+    level: 10, 
     epithet: 'The Starbound',
     promotesTo: DoFClasses.DrakeKnight,
     growths: {hp: 85, pow: 50, skl: 50, spd: 40, luk: 25, def: 45, res: 10}
