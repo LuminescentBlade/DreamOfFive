@@ -6,7 +6,7 @@ import Header from '../components/header'
 export const metadata: Metadata = {
   title: 'Dream of Five',
   description: 'A FE8 Romhack.',
-  manifest: '/public/mugs/characters/renair.png'
+  manifest: '/mugs/characters/renair.png'
 }
 
 export default function RootLayout({
