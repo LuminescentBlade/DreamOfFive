@@ -17,9 +17,9 @@ export const Sileth: IDoFCharacter = {
     },
     height: 159,
     bases: {
-        hp: 25, pow: 10, skl: 10, spd: 12, luk: 9, def: 7, res: 12, con: 7
+        hp: 25, pow: 10, skl: 11, spd: 13, luk: 9, def: 8, res: 13, con: 7
     },
     level: 10,
-    growths: {hp: 75, pow: 35, skl: 50, spd: 50, luk: 30, def: 20, res: 60},
+    growths: {hp: 75, pow: 35, skl: 50, spd: 55, luk: 30, def: 25, res: 60},
     promotesTo: DoFClasses.Sage
 };
