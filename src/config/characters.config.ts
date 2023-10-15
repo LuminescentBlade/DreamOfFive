@@ -93,6 +93,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'farrell',
             profileName: 'Cuthbert Farrell',
+            epithet: 'The Pursuer',
             artists: [DoFArtist.Amelia, DoFArtist.Astra, DoFArtist.TBA],
             class: '',
             nationality: DoFNationality.Aukema,

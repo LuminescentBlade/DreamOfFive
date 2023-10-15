@@ -10,10 +10,10 @@ export const Morwen: IDoFCharacter = {
     height: 182,
     routeConfig:{
         onduris: {
-            enemy: [5,99],
+            enemy: [5,6,99],
         },
         musain: {
-            enemy: [5,97],
+            enemy: [5,6,97],
             player: 98
         }
     }

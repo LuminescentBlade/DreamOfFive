@@ -9,10 +9,15 @@ export const Adalheid: IDoFCharacter = {
     nationality: DoFNationality.Aukema,
     height: 181,
     routeConfig: {
-        allRoute: {
+        onduris: {
             player: 90,
             enemy: 80,
-            npc: 6
+            npc: 7
+        },
+        musain: {
+            player: 90,
+            enemy: 80
         }
+
     }
 };
