@@ -3,7 +3,7 @@ import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Sileth: IDoFCharacter = {
     name: DoFCharKey.Sileth,
-    artists: [DoFArtist.Astra, DoFArtist.Lumi],
+    artists: [DoFArtist.Lumi],
     blurb: '"... served, I sense, to keep him grounded. She had found a way to rise through her wits alone..."',
     class: DoFClasses.Mage,
     nationality: DoFNationality.Onduris,
