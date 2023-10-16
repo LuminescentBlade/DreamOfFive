@@ -16,9 +16,9 @@ export const Chester: IDoFCharacter = {
     age: 19,
     epithet: 'The Atoner',
     bases:{
-        hp: 24, pow: 7, skl: 9, spd: 12, luk: 9, def: 5, res: 2, con: 6
+        hp: 24, pow: 8, skl: 9, spd: 14, luk: 9, def: 6, res: 0, con: 6
     }, 
     level: 3,
     promotesTo: DoFClasses.Rogue,
-    growths: {hp: 75, pow: 35, skl: 55, spd: 65, luk: 40, def: 30, res: 10}
+    growths: {hp: 75, pow: 40, skl: 55, spd: 65, luk: 40, def: 35, res: 5}
 };

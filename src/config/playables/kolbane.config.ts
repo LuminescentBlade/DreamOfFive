@@ -7,7 +7,7 @@ export const Kolbane: IDoFCharacter = {
     artists: [DoFArtist.Lumi],
     blurb: '"The third most senior of each Strider section was to bear the banner, and so, having only three men..."',
     nationality: DoFNationality.Aukema,
-    class: DoFClasses.Mercenary,
+    class: DoFClasses.Soldier,
     routeConfig: {
         allRoute: {
             player: 0
@@ -19,7 +19,7 @@ export const Kolbane: IDoFCharacter = {
         hp: 24, pow: 9, skl: 11, spd: 9, luk: 5, def: 8, res: 0, con: 10
     },
     level: 2,
-    promotesTo: DoFClasses.Gladiator,
+    promotesTo: DoFClasses.Sentinel,
     growths: {hp: 75, pow: 55, skl: 35, spd: 55, luk: 40, def: 35, res: 15},
     epithet: 'Stalwart'
 };
