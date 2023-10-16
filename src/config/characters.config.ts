@@ -232,7 +232,12 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                     npc: 7,
                     enemy: 12
                 }
-            }
+            },
+            alt: {
+                injured: {
+                    artists: [DoFArtist.Lumi, DoFArtist.Astra],
+                },
+            },
         },
         {
             name: 'guillaume',

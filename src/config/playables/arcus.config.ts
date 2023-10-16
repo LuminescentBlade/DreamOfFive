@@ -17,6 +17,9 @@ export const Arcus: IDoFCharacter = {
         }
     },
     alt: {
+        injured: {
+            artists: [DoFArtist.Astra],
+        },
         promo: {
             artists: [DoFArtist.Astra, DoFArtist.Lumi],
             chapter: 15,
