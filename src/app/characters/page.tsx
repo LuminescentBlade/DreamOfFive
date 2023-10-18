@@ -12,6 +12,7 @@ import OptionSelector from '@/src/components/option-selector';
 import { download, renderCharactersByCountry } from './sheet_export';
 import { useSearchParams } from 'next/navigation'
 import CharacterDetails from '@/src/components/character-details';
+import { DoFRenderCharacter } from '@/src/models/dof-render-character.class';
 
 const defaultRenderValues = {
     prod: { chapter: 6, limit: 14.5 },
@@ -67,10 +68,24 @@ function parseCharacters(chapter: number, route: DoFRoute, useEarliest = false, 
         [DoFUnitState.NPC]: [],
     };
 
+    const config2: { [key: string]: any[] } = {
+        [DoFUnitState.Player]: [],
+        [DoFUnitState.Enemy]: [],
+        [DoFUnitState.NPC]: [],
+    };
     DoFCharacters.characters.forEach(character => {
         if (character.isSpoiler && !bypassSpoiler) {
             return;
         }
+
+        const characterData = new DoFRenderCharacter(character, { bypassSpoiler, useEarliest });
+        characterData.currentChapter = { chapter, route: route === DoFRoute.Musain || route === DoFRoute.Onduris ? route : undefined };
+
+        const results = characterData.data;
+        if(results){
+            config2[results.type].push(results);
+        }
+
         let placement: { value: DoFUnitState, chapter: number } | undefined;
         if (route === DoFRoute.Musain || route === DoFRoute.Onduris) {
             placement = getSinglePlacement(route, chapter, character, useEarliest, bypassSpoiler);
@@ -87,7 +102,7 @@ function parseCharacters(chapter: number, route: DoFRoute, useEarliest = false, 
                 let characterAlt = character.alt;
                 if (!bypassSpoiler) {
                     characterAlt = Object.keys(characterAlt).reduce((alts, altName) =>
-                     ((characterAlt[altName].isSpoiler || ((characterAlt[altName].chapter ?? 0) > chapter) )? alts : { ...alts, [altName]: { ...characterAlt[altName], chapter: undefined } }), {})
+                        ((characterAlt[altName].isSpoiler || ((characterAlt[altName].chapter ?? 0) > chapter)) ? alts : { ...alts, [altName]: { ...characterAlt[altName], chapter: undefined } }), {})
                 }
                 characterItem.alt = Object.keys(characterAlt)?.length ? characterAlt : undefined;
             }
@@ -99,13 +114,15 @@ function parseCharacters(chapter: number, route: DoFRoute, useEarliest = false, 
         }
     });
 
+    console.log(config2);
+
     return config;
 }
 
 function getSinglePlacement(route: 'musain' | 'onduris', chapter: number, character: IDoFCharacter, useEarliest = false, showSecretPlayable = false) {
     let routeConfig = character.routeConfig[route] || character.routeConfig.allRoute;
     const validStates = [];
-    let checkByLatest = (config: number | number[], type: DoFUnitState)=>{
+    let checkByLatest = (config: number | number[], type: DoFUnitState) => {
         if (typeof config === 'number') {
             if (config <= chapter) {
                 validStates.push({ value: type, chapter: config });
@@ -124,7 +141,7 @@ function getSinglePlacement(route: 'musain' | 'onduris', chapter: number, charac
     if (!routeConfig) {
         return;
     }
-    
+
     if (routeConfig.player != null && routeConfig.player <= chapter && (!character.secret || showSecretPlayable)) {
         validStates.push({ value: DoFUnitState.Player, chapter: routeConfig.player });
     }
@@ -201,7 +218,7 @@ export default function CharacterPage() {
         chapterLimit = 99;
         currentChapterLimit = chapterLimit;
         chapterSelection = displayValues.chapterSelection;
-    } 
+    }
     if (!init) {
         setTimeout(() => {
             if (typeof window !== "undefined") {
@@ -275,7 +292,7 @@ export default function CharacterPage() {
         }
     }
 
-    function clearCharacter(){
+    function clearCharacter() {
         currentCharacterCache = undefined;
         updateCurrentCharacter(currentCharacterCache);
     }
@@ -305,7 +322,7 @@ export default function CharacterPage() {
                     </select>
                 </div>
             </div> : ''}
-            {currentCharacter ? <CharacterDetails characterDef={currentCharacter} clear={clearCharacter} experimentalFeatures={showFullData}/> : ''}
+            {currentCharacter ? <CharacterDetails characterDef={currentCharacter} clear={clearCharacter} experimentalFeatures={showFullData} /> : ''}
             <UnitSheet data={unitSheetData} expansionState={expansionState.data} toggleCharacter={toggleCharacter} chapter={currentChapterLimit} getOnClick={getClickFunction} />
             {
                 !isProd ? <div style={{ width: 'fit-content', margin: '12px auto', textAlign: 'center' }}>

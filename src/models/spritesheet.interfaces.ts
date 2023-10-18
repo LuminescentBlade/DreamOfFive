@@ -11,7 +11,9 @@ export interface IUnit {
         npc?: IConditional;
         chapter?: IConditional;
     },
+    routeConfig?: any,
     isSpoiler?: boolean;
+    secret?: boolean;
     fullSheetRenderOrderOverride?: number
 }
 
@@ -19,11 +21,6 @@ export interface IRenderContent {
     path: string;
     altPaths?: {
         [key: string]: string;
-    },
-    conditionalName?: { // used over displayName
-        player?: string;
-        enemy?: string;
-        npc?: string;
     },
     renderOrder: number,
 }

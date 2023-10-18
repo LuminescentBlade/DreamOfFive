@@ -5,7 +5,6 @@ import styles from './index.module.scss'
 import { IDoFCharacterRenderer, IDoFRenderUnit, IDoFUnit } from '@/src/models/interfaces';
 import { DoFArtist, DoFUnitState } from '@/src/models/enums';
 import { DoFArtistConfig } from '@/src/config/artists.config';
-import { useState } from 'react';
 
 export default function UnitSheet({ data, chapter, expansionState, toggleCharacter, getOnClick }: {
     data: IDoFCharacterRenderer, chapter: number, expansionState: Map<string, boolean>, toggleCharacter: (name: string) => () => void, getOnClick?: (character: any, state: any) => ((data: any) => void) | undefined
