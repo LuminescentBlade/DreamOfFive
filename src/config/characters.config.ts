@@ -561,7 +561,17 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                     enemy: [12, 99],
                     npc: 13
                 }
-            }
+            },
+            alt: {
+                dictator: { artists: [DoFArtist.Lumi, DoFArtist.Astra], chapter: 14, isSpoiler: true }
+            },
+            conditional: {
+                chapter: {
+                    chapter: 99,
+                    swapPortrait: 'dictator',
+                    ogPortraitName: 'mir\'Katal OG'
+                }
+            },
         },
         {
             name: 'fleurre',
