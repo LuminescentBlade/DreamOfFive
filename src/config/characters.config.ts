@@ -564,7 +564,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                 }
             },
             alt: {
-                dictator: { artists: [DoFArtist.Lumi, DoFArtist.Astra], chapter: 14 }
+                dictator: { artists: [DoFArtist.Lumi, DoFArtist.Astra], chapter: 14, isSpoiler: true }
             },
             conditional: {
                 chapter: {
@@ -588,7 +588,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                 }
             },
             alt: {
-                provost: { artists: [DoFArtist.Amelia, DoFArtist.Lumi], chapter: 14 }
+                provost: { artists: [DoFArtist.Amelia, DoFArtist.Lumi], chapter: 14, isSpoiler: true}
             },
             conditional: {
                 chapter: {
