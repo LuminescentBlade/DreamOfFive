@@ -236,6 +236,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             alt: {
                 injured: {
                     artists: [DoFArtist.Lumi, DoFArtist.Astra],
+                    isSpoiler: true,
+                    chapter: 12
                 },
             },
         },
