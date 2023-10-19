@@ -86,7 +86,7 @@ export const DoFPromotedClasses = {
         caps: { hp: 60, pow: 26, skl: 29, spd: 28, luk: 30, def: 26, res: 20, con: 20 }
     },
     [DoFClasses.Juggernaut]: {
-        promo: { hp: 6, pow: 3, skl: 3, spd: 3, luk: 0, def: 3, res: 3, con: 1 },
+        promo: { hp: 6, pow: 3, skl: 3, spd: 3, luk: 0, def: 3, res: 3, con: 2 },
         caps: { hp: 60, pow: 30, skl: 28, spd: 25, luk: 30, def: 30, res: 15, con: 20 }
     },
     [DoFClasses.Enforcer]: {
