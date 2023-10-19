@@ -273,7 +273,7 @@ export default function CharacterPage() {
     }
 
     function getClickFunction(characterData: IDoFRenderUnit, characterState: DoFUnitState) {
-        if (characterState === DoFUnitState.Player && (showSortedFull || isShowingLocal() || Date.now() > 1697882400000)) {
+        if (characterState === DoFUnitState.Player) {
             return (data: IDoFRenderCharacter) => {
                 currentCharacterCache = data;
                 updateCurrentCharacter(currentCharacterCache);
