@@ -196,7 +196,7 @@ let init = false;
 
 export default function CharacterPage() {
     const searchParams = useSearchParams();
-    const showUnsortedFull = searchParams.get('full')?.toLowerCase() === 'true';
+    const showUnsortedFull = false;//searchParams.get('full')?.toLowerCase() === 'true';
     const showSortedFull = searchParams.get('devModeEnabledSpoilers')?.toLowerCase() === 'true';
     const setProdFromUrl = searchParams.get('prod')?.toLowerCase() === 'true';
     // useProdOnLocal = useProdOnLocal || setProdFromUrl;

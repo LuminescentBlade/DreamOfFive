@@ -15,7 +15,7 @@ export interface IUnit {
     fullSheetRenderOrderOverride?: number
 }
 
-export interface IRenderContent{
+export interface IRenderContent {
     path: string;
     altPaths?: {
         [key: string]: string;
@@ -28,7 +28,7 @@ export interface IRenderContent{
     renderOrder: number,
 }
 
-export interface IRenderUnit extends IUnit, IRenderContent{}
+export interface IRenderUnit extends IUnit, IRenderContent { }
 
 export interface IConditional {
     chapter?: number;
@@ -47,7 +47,7 @@ export interface IAltConfig {
 export interface ICharacterStateChapter {
     player?: number; // x chapters will be counted as .5
     enemy?: number | number[];
-    npc?: number| number[];
+    npc?: number | number[];
 }
 
 export type IRouteConfig = {

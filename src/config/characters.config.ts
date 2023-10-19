@@ -236,7 +236,6 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             alt: {
                 injured: {
                     artists: [DoFArtist.Lumi, DoFArtist.Astra],
-                    isSpoiler: true,
                     chapter: 12
                 },
             },
@@ -247,7 +246,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             class: '',
             nationality: DoFNationality.Musain,
             alt: {
-                burned: { artists: [DoFArtist.Astra], isSpoiler: true, chapter: 14}
+                burned: { artists: [DoFArtist.Astra], chapter: 14 }
             },
             routeConfig: {
                 musain: {
@@ -449,7 +448,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             artists: [DoFArtist.Amelia],
             class: '',
             nationality: DoFNationality.Aukema,
-            routeConfig:{
+            routeConfig: {
                 allRoute: {
                     npc: 6
                 }
@@ -460,7 +459,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             artists: [DoFArtist.Lumi, DoFArtist.Astra, DoFArtist.TBA],
             class: '',
             nationality: DoFNationality.Aukema,
-            routeConfig:{
+            routeConfig: {
                 allRoute: {
                     npc: 6
                 }
@@ -472,7 +471,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             blurb: '"... while a staunch and upstanding man could find himself an outlaw with a cruel twist of fate."',
             class: '',
             nationality: DoFNationality.Musain,
-            routeConfig:{
+            routeConfig: {
                 musain: {
                     npc: 6.5
                 }
@@ -484,7 +483,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             blurb: '"... could stick you up and ruin your life with an irrepressible smile. Little consolation, I imagined, but..."',
             class: '',
             nationality: DoFNationality.Musain,
-            routeConfig:{
+            routeConfig: {
                 musain: {
                     npc: 6.5
                 }
@@ -495,7 +494,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             displayName: 'Young Rena',
             artists: [DoFArtist.Amelia, DoFArtist.Lumi],
             nationality: DoFNationality.Aukema,
-            routeConfig:{
+            routeConfig: {
                 onduris: {
                     npc: 10.5
                 }
@@ -509,7 +508,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             alt: {
                 blood: { artists: [DoFArtist.Amelia, DoFArtist.Lumi] }
             },
-            routeConfig:{
+            routeConfig: {
                 onduris: {
                     npc: 14
                 },
@@ -522,7 +521,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             name: 'angus',
             artists: [DoFArtist.Astra, DoFArtist.TBA],
             nationality: DoFNationality.Aukema,
-            routeConfig:{
+            routeConfig: {
                 allRoute: {
                     npc: 16
                 }
@@ -530,10 +529,10 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'agmund',
-            altNames: ['Long Taiming','龍泰銘'],
+            altNames: ['Long Taiming', '龍泰銘'],
             artists: [DoFArtist.Lumi],
             nationality: DoFNationality.Svanhild,
-            routeConfig:{
+            routeConfig: {
                 allRoute: {
                     npc: 17.5
                 }
@@ -545,7 +544,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             artists: [DoFArtist.Amelia],
             nationality: DoFNationality.Vishara,
             isSpoiler: true,
-            routeConfig:{
+            routeConfig: {
                 allRoute: {
                     npc: 99
                 }
@@ -558,14 +557,14 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             blurb: '"... very pinnacle of the Ondurite martial ideal, a man of matchless valour. Fit to lead, but to rule?"',
             class: DoFClasses.Swordmaster,
             nationality: DoFNationality.Onduris,
-            routeConfig:{
+            routeConfig: {
                 onduris: {
                     enemy: [12, 99],
                     npc: [13, 14]
                 }
             },
             alt: {
-                dictator: { artists: [DoFArtist.Lumi, DoFArtist.Astra], chapter: 14, isSpoiler: true }
+                dictator: { artists: [DoFArtist.Lumi, DoFArtist.Astra], chapter: 14 }
             },
             conditional: {
                 chapter: {
@@ -582,14 +581,14 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             artists: [DoFArtist.Amelia],
             class: DoFClasses.Sage,
             nationality: DoFNationality.Musain,
-            routeConfig:{
+            routeConfig: {
                 musain: {
                     npc: [7, 14],
                     enemy: [12, 99]
                 }
             },
             alt: {
-                provost: { artists: [DoFArtist.Amelia, DoFArtist.Lumi], chapter: 14, isSpoiler: true }
+                provost: { artists: [DoFArtist.Amelia, DoFArtist.Lumi], chapter: 14 }
             },
             conditional: {
                 chapter: {
