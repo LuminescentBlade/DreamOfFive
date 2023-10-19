@@ -592,7 +592,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             conditional: {
                 chapter: {
                     chapter: 99,
-                    swapPortrait: 'fleurre',
+                    swapPortrait: 'provost',
                     ogPortraitName: 'Fleurre Chancellor'
                 }
             },
