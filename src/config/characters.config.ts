@@ -569,7 +569,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                 chapter: {
                     chapter: 99,
                     swapPortrait: 'dictator',
-                    ogPortraitName: 'mir\'Katal OG'
+                    ogPortraitName: 'mir\'Katal Noble'
                 }
             },
         },
@@ -585,7 +585,17 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                     npc: 7,
                     enemy: [12, 99]
                 }
-            }
+            },
+            alt: {
+                provost: { artists: [DoFArtist.Amelia, DoFArtist.Lumi], chapter: 14, isSpoiler: true }
+            },
+            conditional: {
+                chapter: {
+                    chapter: 99,
+                    swapPortrait: 'fleurre',
+                    ogPortraitName: 'Fleurre Chancellor'
+                }
+            },
         }
 
     ],
