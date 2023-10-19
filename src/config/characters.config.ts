@@ -559,7 +559,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             routeConfig:{
                 onduris: {
                     enemy: [12, 99],
-                    npc: 13
+                    npc: [13, 14]
                 }
             },
             alt: {
@@ -582,7 +582,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             nationality: DoFNationality.Musain,
             routeConfig:{
                 musain: {
-                    npc: 7,
+                    npc: [7, 14],
                     enemy: [12, 99]
                 }
             },

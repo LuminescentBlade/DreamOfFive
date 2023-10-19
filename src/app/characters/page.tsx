@@ -103,31 +103,35 @@ function parseCharacters(chapter: number, route: DoFRoute, useEarliest = false, 
 
 function getSinglePlacement(route: 'musain' | 'onduris', chapter: number, character: IDoFCharacter, useEarliest = false, showSecretPlayable = false) {
     let routeConfig = character.routeConfig[route] || character.routeConfig.allRoute;
+    const validStates = [];
+    let checkByLatest = (config: number | number[], type: DoFUnitState)=>{
+        if (typeof config === 'number') {
+            if (config <= chapter) {
+                validStates.push({ value: type, chapter: config });
+            }
+        } else {
+            let index = -1;
+            while (config[index + 1] <= chapter) {
+                index++;
+            }
+            if (index >= 0) {
+                validStates.push({ value: type, chapter: config[index] });
+            }
+        }
+    }
+
     if (!routeConfig) {
         return;
     }
-    const validStates = [];
+    
     if (routeConfig.player != null && routeConfig.player <= chapter && (!character.secret || showSecretPlayable)) {
         validStates.push({ value: DoFUnitState.Player, chapter: routeConfig.player });
     }
     if (routeConfig.enemy != null) {
-        if (typeof routeConfig.enemy === 'number') {
-            if (routeConfig.enemy <= chapter) {
-                validStates.push({ value: DoFUnitState.Enemy, chapter: routeConfig.enemy });
-            }
-        } else {
-            let index = -1;
-            while (routeConfig.enemy[index + 1] <= chapter) {
-                index++;
-            }
-            if (index >= 0) {
-                validStates.push({ value: DoFUnitState.Enemy, chapter: routeConfig.enemy[index] });
-            }
-        }
-
+        checkByLatest(routeConfig.enemy, DoFUnitState.Enemy);
     }
-    if (routeConfig.npc != null && routeConfig.npc <= chapter) {
-        validStates.push({ value: DoFUnitState.NPC, chapter: routeConfig.npc });
+    if (routeConfig.npc != null) {
+        checkByLatest(routeConfig.npc, DoFUnitState.NPC);
     }
     if (validStates.length) {
         validStates.sort((a, b) => {

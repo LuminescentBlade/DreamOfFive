@@ -47,7 +47,7 @@ export interface IAltConfig {
 export interface ICharacterStateChapter {
     player?: number; // x chapters will be counted as .5
     enemy?: number | number[];
-    npc?: number;
+    npc?: number| number[];
 }
 
 export type IRouteConfig = {
