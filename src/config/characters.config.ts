@@ -245,7 +245,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             class: '',
             nationality: DoFNationality.Musain,
             alt: {
-                burned: { artists: [DoFArtist.Astra], isSpoiler: true }
+                burned: { artists: [DoFArtist.Astra], isSpoiler: true, chapter: 14}
             },
             routeConfig: {
                 musain: {
