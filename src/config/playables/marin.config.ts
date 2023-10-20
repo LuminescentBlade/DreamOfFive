@@ -9,7 +9,7 @@ export const Marin: IDoFCharacter = {
     nationality: DoFNationality.Musain,
     routeConfig: {
         musain: {
-            player: 10
+            player: 6.5
         }
     },
     bases: {

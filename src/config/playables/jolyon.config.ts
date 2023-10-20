@@ -11,7 +11,7 @@ export const Jolyon: IDoFCharacter = {
     height: 168,
     routeConfig: {
         musain: {
-            player: 10
+            player: 6.5
         },
         onduris: {
             player: 15
