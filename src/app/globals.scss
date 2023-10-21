@@ -41,6 +41,7 @@
   --dof-color-subheader: var(--dof-color7);
   --dof-color-text: var(--dof-color2);
   --dof-overlay-color: 255, 255, 255;
+  --dof-mode-sensitive-font-col-2: var(--dof-color2);
 
   --lb-option-selector-bg-color: var(--dof-color1);
   --lb-option-selector-font-color: var(--dof-color2);
@@ -87,6 +88,7 @@ body {
     --dof-color-text: var(--dof-color3);
     --dof-a-hover: var(--dof-color7);
     --dof-overlay-color: 0, 0, 0;
+    --dof-mode-sensitive-font-col-2: var(--dof-color6);
   }
 }
 

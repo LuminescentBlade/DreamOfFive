@@ -83,7 +83,7 @@ export default function UnitSheet({ data, chapter, expansionState, toggleCharact
                 ))}
         <section className={styles.container}>
             <h2>Artist Credits</h2>
-            <ul className={styles.credits}>
+            <ul className={styles.credits} id={'credits'}>
                 {
                     artists.map(artist => (
                         <li key={artist}>

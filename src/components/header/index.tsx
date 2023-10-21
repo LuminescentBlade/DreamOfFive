@@ -44,6 +44,7 @@ export default function Header() {
     return <>
         <Link href="/">Home</Link>
         <Link href="/characters">Characters</Link>
+        <Link href="/credits">Credits</Link>
         <span className="flex-line-container flex-end">
             <span>Dark Mode</span>
             <Toggle active={isDarkMode} onStateChange={toggleDarkMode} ariaLabel="dark mode"></Toggle>
