@@ -86,7 +86,8 @@ function parseCharacters(chapter: number, route: DoFRoute, useEarliest = false, 
             if (character.alt) {
                 let characterAlt = character.alt;
                 if (!bypassSpoiler) {
-                    characterAlt = Object.keys(character.alt).reduce((alts, altName) => (characterAlt[altName].isSpoiler ? alts : { ...alts, [altName]: { ...characterAlt[altName], chapter: undefined } }), {})
+                    characterAlt = Object.keys(characterAlt).reduce((alts, altName) =>
+                     ((characterAlt[altName].isSpoiler || (characterAlt[altName].chapter ?? 0 > chapter) )? alts : { ...alts, [altName]: { ...characterAlt[altName], chapter: undefined } }), {})
                 }
                 characterItem.alt = Object.keys(characterAlt)?.length ? characterAlt : undefined;
             }
