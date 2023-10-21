@@ -25,7 +25,7 @@ const isProd = (process.env.NODE_ENV === 'production');
 let useProdOnLocal = false;
 let cachedData: IDoFCharacterRenderer; // we will definitely switch to redux after this
 let currentCharacterCache: IDoFRenderCharacter | undefined;
-let displayRoute = isShowingLocal() ? DoFRoute.Both : DoFRoute.Onduris; // default value
+let displayRoute = DoFRoute.Both;
 let { chapter: chapterLimit, chapterSelection } = setDisplayValues();
 const { shopkeepers, generics } = cacheStaticUnits();
 
@@ -87,7 +87,7 @@ function parseCharacters(chapter: number, route: DoFRoute, useEarliest = false, 
                 let characterAlt = character.alt;
                 if (!bypassSpoiler) {
                     characterAlt = Object.keys(characterAlt).reduce((alts, altName) =>
-                     ((characterAlt[altName].isSpoiler || (characterAlt[altName].chapter ?? 0 > chapter) )? alts : { ...alts, [altName]: { ...characterAlt[altName], chapter: undefined } }), {})
+                     ((characterAlt[altName].isSpoiler || ((characterAlt[altName].chapter ?? 0) > chapter) )? alts : { ...alts, [altName]: { ...characterAlt[altName], chapter: undefined } }), {})
                 }
                 characterItem.alt = Object.keys(characterAlt)?.length ? characterAlt : undefined;
             }
@@ -177,8 +177,8 @@ function getPath(type: string, name: string) {
     return `/mugs/${type}/${name}.png`;
 }
 
-function setDisplayValues(prodOverride: boolean = false) {
-    if (isShowingLocal() || prodOverride) {
+function setDisplayValues(showAllItems: boolean = false) {
+    if (showAllItems) {
         return { chapter: defaultRenderValues.local.chapter, chapterSelection: chapterOptionsLocal };
     }
     return { chapter: defaultRenderValues.prod.chapter, chapterSelection: chapterOptionsProd };
@@ -188,27 +188,20 @@ function setVariable(variable: string, value: string) {
     document.documentElement.style.setProperty(variable, value);
 }
 
-function isShowingLocal() {
-    return !isProd && !useProdOnLocal;
-}
-
 let init = false;
 
 
 export default function CharacterPage() {
     const searchParams = useSearchParams();
     const showUnsortedFull = false;//searchParams.get('full')?.toLowerCase() === 'true';
-    const showSortedFull = searchParams.get('devModeEnabledSpoilers')?.toLowerCase() === 'true';
-    const setProdFromUrl = searchParams.get('prod')?.toLowerCase() === 'true';
-    // useProdOnLocal = useProdOnLocal || setProdFromUrl;
+    const showFullData = searchParams.get('devModeEnabledSpoilers')?.toLowerCase() === 'true';
     let currentChapterLimit = chapterLimit;
-    if (showSortedFull && !init) {
+    if (showFullData && !init) {
         const displayValues = setDisplayValues(true);
         chapterLimit = 99;
         currentChapterLimit = chapterLimit;
         chapterSelection = displayValues.chapterSelection;
-        displayRoute = DoFRoute.Both;
-    }
+    } 
     if (!init) {
         setTimeout(() => {
             if (typeof window !== "undefined") {
@@ -219,14 +212,14 @@ export default function CharacterPage() {
             }
         }, 0);
     }
-    const [unitSheetData, updateData] = useState(cachedData || getData(showUnsortedFull, showSortedFull || (isShowingLocal())));
+    const [unitSheetData, updateData] = useState(cachedData || getData(showUnsortedFull, showFullData));
     const [expansionState, setExpansion] = useState({ data: new Map<string, boolean>() });
     const [currentCharacter, updateCurrentCharacter] = useState(currentCharacterCache);
 
     init = true;
 
     function update() {
-        cachedData = getData(showUnsortedFull, showSortedFull || (isShowingLocal()));
+        cachedData = getData(showUnsortedFull, showFullData);
         updateData(cachedData);
     }
 
@@ -312,12 +305,11 @@ export default function CharacterPage() {
                     </select>
                 </div>
             </div> : ''}
-            {currentCharacter ? <CharacterDetails characterDef={currentCharacter} clear={clearCharacter} experimentalFeatures={showSortedFull || isShowingLocal()}/> : ''}
+            {currentCharacter ? <CharacterDetails characterDef={currentCharacter} clear={clearCharacter} experimentalFeatures={showFullData}/> : ''}
             <UnitSheet data={unitSheetData} expansionState={expansionState.data} toggleCharacter={toggleCharacter} chapter={currentChapterLimit} getOnClick={getClickFunction} />
             {
                 !isProd ? <div style={{ width: 'fit-content', margin: '12px auto', textAlign: 'center' }}>
-                    <p>Displaying {isShowingLocal() ? 'Local' : 'Prod'} Values</p>
-                    {showSortedFull ? '' : <button style={{ padding: '12px', height: '40px' }} onClick={toggleProd}>Toggle Production Sheet</button>}
+                    {showFullData ? '' : <button style={{ padding: '12px', height: '40px' }} onClick={toggleProd}>Toggle Production Sheet</button>}
                     <button style={{ padding: '12px', height: '40px' }} onClick={renderByCountry}>Render Sheet By Country</button>
                 </div> : ""
             }
