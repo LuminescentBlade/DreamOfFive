@@ -522,8 +522,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             artists: [DoFArtist.Astra, DoFArtist.TBA],
             nationality: DoFNationality.Aukema,
             routeConfig: {
-                allRoute: {
-                    npc: 16
+                onduris: {
+                    npc: 10.5
                 }
             }
         },
