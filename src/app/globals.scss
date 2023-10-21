@@ -173,7 +173,6 @@ select {
 }
 
 button.button-wrapper {
-  display: inline-flex;
   padding: 0;
   margin: 0;
   width: fit-content;
@@ -181,6 +180,14 @@ button.button-wrapper {
   cursor: pointer;
   background: 0;
   border: 0;
+  path {
+    fill: var(--dof-button-icon-color);
+  }
+  &:hover {
+    path {
+      fill: var(--dof-color1);
+    }
+  }
 }
 
 .capitalize {
@@ -196,3 +203,4 @@ button.button-wrapper {
 .flex-end {
   margin-left: auto;
 }
+

@@ -1,0 +1,28 @@
+.mobile {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .mobile {
+    display: unset;
+  }
+  .menu {
+    display: none;
+  }
+  .menu.mobileOpen {
+    display: flex;
+    position: fixed;
+    width: 80%;
+    height: 100%;
+    z-index: 10;
+    background-color: var(--dof-bg-color);
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    box-shadow: var(--dof-standard-shadow);
+    padding: 18px 24px;
+    a{
+        padding: 12px 24px;
+    }
+  }
+}
