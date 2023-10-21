@@ -212,7 +212,7 @@ export default function Credits() {
                 <h2>
                     Original Playtesters
                 </h2>
-                Aethereal, AuraWolf, Blazing_Soul, Cam, Ephraim, Hithere21, Luminescent Blade, Paperblade
+                Aethereal, AuraWolf, Blazing_Soul, Cam, Ephraim, Hithere21, Luminescent Blade, Paperblade, Sakusa
             </li>
             <li>
                 <h2>Original Hacking Tools</h2>
