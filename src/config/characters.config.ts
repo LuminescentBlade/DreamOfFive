@@ -539,6 +539,16 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             }
         },
         {
+            name: 'bunny',
+            artists: [DoFArtist.Lumi],
+            nationality: DoFNationality.Unknown,
+            routeConfig: {
+                allRoute: {
+                    npc: 17.5
+                }
+            }
+        },
+        {
             name: 'queenvish',
             displayName: 'Queen Vishara',
             artists: [DoFArtist.Amelia],
@@ -564,7 +574,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                 }
             },
             alt: {
-                dictator: { artists: [DoFArtist.Lumi, DoFArtist.Astra], chapter: 14, isSpoiler: true }
+                dictator: { artists: [DoFArtist.Lumi, DoFArtist.Astra], chapter: 14 }
             },
             conditional: {
                 chapter: {
@@ -588,7 +598,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                 }
             },
             alt: {
-                provost: { artists: [DoFArtist.Amelia, DoFArtist.Lumi], chapter: 14, isSpoiler: true}
+                provost: { artists: [DoFArtist.Amelia, DoFArtist.Lumi], chapter: 14 }
             },
             conditional: {
                 chapter: {
