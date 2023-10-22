@@ -71,10 +71,11 @@ body {
   font-family: sans-serif;
   background-color: var(--dof-bg-color);
   color: var(--dof-font-color);
+  min-height: 100vh;
 }
 
 body {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 
   &.dark-mode {
     --dof-header-bg-color: var(--dof-dark-bg);
@@ -112,6 +113,13 @@ a {
   }
 }
 
+.main-content{
+  padding: 24px;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 900px;
+}
+
 // @media (prefers-color-scheme: dark) {
 //   html {
 //     color-scheme: dark;
@@ -136,13 +144,14 @@ header {
 }
 
 h1 {
-  font-size: 3.2rem;
+  font-size: 6.2rem;
   font-family: var(--dof-kq-font);
 }
 
 h2 {
-  font-size: 2.8rem;
+  font-size: 3.6rem;
   font-family: var(--dof-kq-font);
+  color: var(--dof-color4);
 }
 
 input,

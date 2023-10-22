@@ -61,6 +61,7 @@ export default function Header() {
             <Link href="/">Home</Link>
             <Link href="/characters">Characters</Link>
             <Link href="/credits">Credits</Link>
+            <Link href="/resources">Resources</Link>
         </div>
         {headerState.mobileOpen ? <Overlay /> : ''}
         <span className="flex-line-container flex-end">
