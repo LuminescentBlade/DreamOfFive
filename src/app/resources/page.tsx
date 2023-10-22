@@ -10,7 +10,7 @@ export default function Resources() {
             <div>by <strong>AstraLunaSol</strong></div>
             <div className={styles.license}>Free to Edit</div>
             <div>
-                <img className="pixel-art" src="/resources/preview/soldier-m.png" /><img className="pixel-art" src="/resources/preview/soldier-f.png" />
+                <img className="pixel-art" src="/resources/preview/soldier-m.png" /><img className="pixel-art" src="/resources/preview/do5_soldier.gif" /><img className="pixel-art" src="/resources/preview/soldier-f.png" />
             </div>
             <a href="/resources/Soldier_FE12_Style_by_Astra.zip">Download</a>
         </section>
