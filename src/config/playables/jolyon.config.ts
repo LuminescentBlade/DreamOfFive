@@ -4,6 +4,7 @@ import { IDoFCharacter } from "@/src/models/interfaces";
 export const Jolyon: IDoFCharacter = {
     name: DoFCharKey.Jolyon, // enjo
     artists: [DoFArtist.Lumi, DoFArtist.Levin],
+    profileName: 'Jolyon Audelerre',
     // artists: [DoFArtist.Astra, DoFArtist.Amelia],
     blurb: '"... burning with rebel spirit, the sort of man who could change the world, due in part to his elevated place in it..."',
     class: DoFClasses.Mage,
