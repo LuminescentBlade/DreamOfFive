@@ -8,6 +8,7 @@ export const Arcus: IDoFCharacter = {
     blurb: '"... a stiff, unbending martial man, but he was intelligent enough to realise how the world truly worked..."',
     class: DoFClasses.Ironclad,
     nationality: DoFNationality.Vishara,
+    epithet: 'Resolute Heart',
     routeConfig: {
         musain: {
             player: 6.5
