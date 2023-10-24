@@ -32,6 +32,7 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
     const showExtendedProfile = experimentalFeatures && characterDef.nationality;
     const showGallery = false;
     const BLOSSOM_LIMIT = 2;
+    const LEVEL_CAP = 20;
 
     let defaultView: CharacterDetailState | undefined;
     const validViews = new Set();
@@ -108,7 +109,7 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
         if (isNaN(value) || value < unpromotedLevelFloor) {
             setLevelData({ ...levelData, unpromotedDisplay: event.currentTarget.value });
         } else {
-            const calculatedLevel = Math.min(value, 20);
+            const calculatedLevel = Math.min(value, LEVEL_CAP);
             const newData = { ...levelData, unpromotedLevel: calculatedLevel, unpromotedDisplay: calculatedLevel };
             if (calculatedLevel < 10) {
                 newData.promotedLevel = 0;
@@ -131,7 +132,7 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
         if (isNaN(value) || value < promotedLevelFloor) {
             setLevelData({ ...levelData, promotedDisplay: event.currentTarget.value });
         } else {
-            const calculatedLevel = Math.min(value, 20);
+            const calculatedLevel = Math.min(value, LEVEL_CAP);
             setLevelData({ ...levelData, promotedLevel: calculatedLevel, promotedDisplay: calculatedLevel });
         }
     }
@@ -154,20 +155,41 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
     function addBlossom() {
         if (widgetState.blossom.length >= BLOSSOM_LIMIT) {
             return;
+        } else if (!widgetState.blossom.length) {
+            const isCharacterPromoted = promoBonuses == null;
+            const isLevelPromoted = defaultLevels.promotedLevel >= 1;
+
+            const blossomItem = { level: defaultLevels.promotedLevel || defaultLevels.unpromotedLevel, isLevelPromoted, isCharacterPromoted };
+
+            setWidgetStateCaching({ ...widgetState, blossom: [...widgetState.blossom, blossomItem] });
+        } else {
+            setWidgetStateCaching({ ...widgetState, blossom: [...widgetState.blossom, { ...widgetState.blossom[widgetState.blossom.length - 1] }] });
         }
-        const isCharacterPromoted = promoBonuses != null;
-        const isLevelPromoted = defaultLevels.promotedLevel >= 1;
 
-        const blossomItem = { level: defaultLevels.promotedLevel || defaultLevels.unpromotedLevel, isLevelPromoted, isCharacterPromoted };
-
-        setWidgetStateCaching({ ...widgetState, blossom: [...widgetState.blossom, blossomItem] });
     }
 
     function removeBlossom(index: number) {
         const newBlossom = [...widgetState.blossom];
+        console.log(JSON.stringify(newBlossom));
         newBlossom.splice(index, 1);
 
         setWidgetStateCaching({ ...widgetState, blossom: newBlossom })
+    }
+
+    function getBlossomLevelFloor(isPromoted: boolean) {
+        return isPromoted ? Math.max(defaultLevels.promotedLevel, 1) : defaultLevels.unpromotedLevel;
+    }
+
+    function setBlossomLevel(index: number, event: any) {
+        const newBlossom = [...widgetState.blossom];
+        const item = { ...newBlossom[index] };
+        const minLevel = getBlossomLevelFloor(item.isLevelPromoted);
+        const value = parseInt(event.currentTarget.value);
+        const calculatedLevel = Math.min(LEVEL_CAP, Math.max(value, minLevel!));
+        item.level = calculatedLevel;
+        newBlossom[index] = item;
+
+        setWidgetStateCaching({ ...widgetState, blossom: newBlossom });
     }
 
     function getStatInputBar(characterDef: IDoFRenderCharacter) {
@@ -201,7 +223,7 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
                 widgetState.blossom.length < BLOSSOM_LIMIT ? <button onClick={addBlossom}>Add Blossom Dew</button> : ''
             }
             {
-                widgetState.blossom.map((item: any, index: number) => <div key={index}>Level <input type="number" value={widgetState.blossom[index].level} /> {index} <button onClick={() => removeBlossom(index)}>-</button></div>)
+                widgetState.blossom.map((item: any, index: number) => <div key={index}>Level <input type="number" value={widgetState.blossom[index].level} onChange={(value) => setBlossomLevel(index, value)} /> {index} <button onClick={() => removeBlossom(index)}>-</button></div>)
             }
         </div>
     }
