@@ -20,6 +20,7 @@ let cachedState: any = {
     enableCompareMode: false,
     dragStateStyle: {},
     state: CharacterDetailState.Stat,
+    blossom: [],
     resetState: false
 };
 
@@ -30,20 +31,21 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
     const showStats = (characterDef.bases || characterDef.growths);
     const showExtendedProfile = experimentalFeatures && characterDef.nationality;
     const showGallery = false;
+    const BLOSSOM_LIMIT = 2;
 
     let defaultView: CharacterDetailState | undefined;
     const validViews = new Set();
-    if(showStats){
+    if (showStats) {
         validViews.add(CharacterDetailState.Stat);
         defaultView = CharacterDetailState.Stat;
-    } 
+    }
 
-    if(showExtendedProfile){
+    if (showExtendedProfile) {
         validViews.add(CharacterDetailState.ExtendedProfile);
         defaultView = defaultView ?? CharacterDetailState.ExtendedProfile;
     }
 
-    if(showGallery){
+    if (showGallery) {
         validViews.add(CharacterDetailState.Gallery);
         defaultView = defaultView ?? CharacterDetailState.Gallery;
     }
@@ -52,9 +54,12 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
         cachedState.state = defaultView;
         cachedState.resetState = false;
     } else if (!validViews.has(cachedState.state)) {
-        cachedState.state = defaultView;   
+        cachedState.state = defaultView;
     }
-    
+    if (currentCharacter != characterDef.name) {
+        cachedState.blossom = [];
+    }
+
 
     const defaultLevels = getDefaultLevelByCharacter(characterDef);
     const [levelData, setLevelData] = useState(defaultLevels);
@@ -146,10 +151,30 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
         };
     }
 
-    function renderStatChecker() {
-        if (!showStats) return '';
-        const statKeys = Object.keys(promotedCaps ?? {});
-        const result = <>
+    function addBlossom() {
+        if (widgetState.blossom.length >= BLOSSOM_LIMIT) {
+            return;
+        }
+        const isCharacterPromoted = promoBonuses != null;
+        const isLevelPromoted = defaultLevels.promotedLevel >= 1;
+
+        const blossomItem = { level: defaultLevels.promotedLevel || defaultLevels.unpromotedLevel, isLevelPromoted, isCharacterPromoted };
+
+        setWidgetStateCaching({ ...widgetState, blossom: [...widgetState.blossom, blossomItem] });
+    }
+
+    function removeBlossom(index: number) {
+        const newBlossom = [...widgetState.blossom];
+        newBlossom.splice(index, 1);
+
+        setWidgetStateCaching({ ...widgetState, blossom: newBlossom })
+    }
+
+    function getStatInputBar(characterDef: IDoFRenderCharacter) {
+        if (!characterDef.bases || !characterDef.growths) {
+            return;
+        }
+        return <div>
             {characterDef.bases && characterDef.growths ?
                 <div className={styles.levelInputs}>
                     {
@@ -172,6 +197,20 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
                 </div>
                 : ''
             }
+            {
+                widgetState.blossom.length < BLOSSOM_LIMIT ? <button onClick={addBlossom}>Add Blossom Dew</button> : ''
+            }
+            {
+                widgetState.blossom.map((item: any, index: number) => <div key={index}>Level <input type="number" value={widgetState.blossom[index].level} /> {index} <button onClick={() => removeBlossom(index)}>-</button></div>)
+            }
+        </div>
+    }
+
+    function renderStatChecker() {
+        if (!showStats) return '';
+        const statKeys = Object.keys(promotedCaps ?? {});
+        const result = <>
+            {getStatInputBar(characterDef)}
             <table className={styles.statTable}>
                 <thead>
                     <tr>
@@ -183,14 +222,14 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
                     {characterDef.bases ?
                         <tr>
                             <th className='capitalize'>bases</th>
-                            {statKeys.map(s => <td  key={s}>{characterDef.bases ? characterDef.bases[s] : ''}</td>)}
+                            {statKeys.map(s => <td key={s}>{characterDef.bases ? characterDef.bases[s] : ''}</td>)}
                         </tr>
                         : ''
                     }
                     {characterDef.growths ?
                         <tr>
                             <th className='capitalize'>growths</th>
-                            {statKeys.map(s => <td key={s} >{characterDef.growths && characterDef.growths[s] != null ? `${characterDef.growths[s]}%` : '--'}</td>)}
+                            {statKeys.map(s => <td key={s} >{characterDef.growths && characterDef.growths[s] != null ? `${characterDef.growths[s] + 5 * widgetState.blossom?.length}%` : '--'}</td>)}
                         </tr>
                         : ''
                     }
@@ -237,7 +276,7 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
                                         if (capped) { value = promotedCaps[s] }
                                     }
 
-                                    return <td  key={s} className={capped ? styles.capped : ''}>{value.toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
+                                    return <td key={s} className={capped ? styles.capped : ''}>{value.toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
 
                                 })
                             }
@@ -246,7 +285,7 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
                     }
                     <tr className={styles.caps}>
                         <th className='capitalize'>caps</th>
-                        {statKeys.map(s => <td  key={s} >{promotedCaps[s]}</td>)}
+                        {statKeys.map(s => <td key={s} >{promotedCaps[s]}</td>)}
                     </tr>
                 </tbody>
             </table>
@@ -256,9 +295,9 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
 
     function renderProfile() {
         return <div className={styles.profile}>
-            <div className={styles.portraitWrapper}>
-                <img className="pixel-art" src={characterDef.path}></img>
-            </div>
+            {/* <div className={styles.portraitWrapper}> */}
+            <img className="pixel-art" src={characterDef.path}></img>
+            {/* </div> */}
             <div className={styles.profileData}>
 
                 <h2>{characterDef.profileName ?? characterDef.conditional?.player?.displayName ?? characterDef.displayName ?? <span className={'capitalize'}>{characterDef.name}</span>}</h2>
