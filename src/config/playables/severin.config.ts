@@ -13,7 +13,7 @@ export const Severin: IDoFCharacter = {
         musain: {
             player: 15,
             enemy: 12,
-            npc: 7
+            npc: [7,13]
         }
     }
 };
