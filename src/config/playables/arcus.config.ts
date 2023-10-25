@@ -27,7 +27,7 @@ export const Arcus: IDoFCharacter = {
             displayName: 'Promoted'
         }
     },
-    height: 177,
+    height: 185,
     bases: {
         hp: 32, pow: 14, skl: 10, spd: 9, luk: 7, def: 12, res: 3, con: 13
     },
