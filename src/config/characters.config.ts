@@ -561,6 +561,19 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             }
         },
         {
+            name: 'anna',
+            artists: [DoFArtist.Astra],
+            nationality: DoFNationality.Unknown,
+            routeConfig: {
+                musain: {
+                    npc: 7
+                },
+                onduris: {
+                    npc: 15
+                }
+            }
+        },
+        {
             name: 'mir-katal',
             displayName: 'mir\'Katal',
             artists: [DoFArtist.Lumi, DoFArtist.Astra],
