@@ -561,6 +561,18 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             }
         },
         {
+            name: 'dragon',
+            displayName: 'Vishara boss',
+            artists: [DoFArtist.Astra],
+            nationality: DoFNationality.Vishara,
+            routeConfig: {
+                allRoute: {
+                    enemy: 99
+                }
+            },
+            isSpoiler: true,
+        },
+        {
             name: 'anna',
             artists: [DoFArtist.Astra],
             nationality: DoFNationality.Unknown,
