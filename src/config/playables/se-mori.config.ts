@@ -13,7 +13,7 @@ export const SeMori: IDoFCharacter = {
     alt: {
         promo: {
             artists: [DoFArtist.Amelia, DoFArtist.Astra, DoFArtist.Lumi],
-            chapter: 15,
+            chapter: 14.5,
             displayName: 'Promoted'
         }
     },

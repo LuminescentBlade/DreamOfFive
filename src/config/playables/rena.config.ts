@@ -8,9 +8,9 @@ export const Rena: IDoFCharacter =  {
     alt: {
         angry: { artists: [DoFArtist.AK, DoFArtist.Amelia] },
         sad: { artists: [DoFArtist.AK, DoFArtist.Amelia] },
-        promo: { artists: [DoFArtist.AK, DoFArtist.Lumi], chapter: 15, displayName: 'Promoted' },
-        promo_angry: { artists: [DoFArtist.AK, DoFArtist.Lumi], chapter: 15, displayName: 'Pr. Angry' },
-        promo_sad: { artists: [DoFArtist.AK, DoFArtist.Lumi], chapter: 15, displayName: 'Pr. Sad' },
+        promo: { artists: [DoFArtist.AK, DoFArtist.Lumi], chapter: 14.5, displayName: 'Promoted' },
+        promo_angry: { artists: [DoFArtist.AK, DoFArtist.Lumi], chapter: 14.5, displayName: 'Pr. Angry' },
+        promo_sad: { artists: [DoFArtist.AK, DoFArtist.Lumi], chapter: 14.5, displayName: 'Pr. Sad' },
     },
     blurb: '"Many Frontier Strider captains were well-heeled second sons in soft posts; but I strived to do my part..."',
     nationality: DoFNationality.Aukema,

@@ -14,7 +14,7 @@ import { useSearchParams } from 'next/navigation'
 import CharacterDetails from '@/src/components/character-details';
 
 const defaultRenderValues = {
-    prod: { chapter: 6, limit: 14 },
+    prod: { chapter: 6, limit: 14.5 },
     local: { chapter: 99 }
 };
 

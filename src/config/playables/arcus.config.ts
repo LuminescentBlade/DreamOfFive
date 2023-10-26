@@ -23,7 +23,7 @@ export const Arcus: IDoFCharacter = {
         },
         promo: {
             artists: [DoFArtist.Astra, DoFArtist.Lumi],
-            chapter: 15,
+            chapter: 14.5,
             displayName: 'Promoted'
         }
     },
