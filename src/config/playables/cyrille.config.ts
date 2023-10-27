@@ -5,7 +5,7 @@ import { IDoFCharacter } from "@/src/models/interfaces";
 export const Cyrille: IDoFCharacter = {
     name: DoFCharKey.Cyrille,
     artists: [DoFArtist.Lumi],
-    blurb: '"... in no place to turn aside recruits. Only a few truly had the diligence and mettle for such thankless work..."',
+    blurb: '"... only a few truly had the diligence and mettle for such thankless work, but their competence was beyond reproach..."',
     nationality: DoFNationality.Musain,
     class: DoFClasses.Cavalier,
     height: 170,
