@@ -12,7 +12,7 @@ export const Severin: IDoFCharacter = {
     routeConfig:{
         musain: {
             player: 15,
-            enemy: 12,
+            enemy: [11,12],
             npc: [7,13]
         }
     }
