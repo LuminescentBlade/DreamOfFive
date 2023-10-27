@@ -4,6 +4,7 @@
   position: fixed;
   max-height: 80vh;
   max-width: 80vw;
+  width: 700px;
   z-index: 999;
   top: 50%;
   left: 50%;
@@ -134,14 +135,7 @@
     align-items: center;
   }
 }
-.portraitWrapper {
-  width: fit-content;
-  height: fit-content;
-  border: 1px solid rgba(0, 0, 0, 0); // fsr the portraits actually render properly with this? i dont get it but ok
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-}
+
 
 .sub {
   font-size: 0.8em;

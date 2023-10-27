@@ -168,8 +168,8 @@ select {
   text-align: center;
 }
 
-.pixel-art,
-.pixel-art img {
+.retina .pixel-art,
+.retina .pixel-art img {
   //https://graphicdesign.stackexchange.com/questions/145700/displaying-older-images-on-web-for-retina-high-pixel-density-screens
   image-rendering: optimizeSpeed; /* Legal fallback */
   image-rendering: -moz-crisp-edges; /* Firefox        */

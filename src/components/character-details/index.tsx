@@ -256,9 +256,9 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
 
     function renderProfile() {
         return <div className={styles.profile}>
-            {/* <div className={styles.portraitWrapper}> */}
+            <div className={styles.portraitWrapper}>
                 <img className="pixel-art" src={characterDef.path}></img>
-            {/* </div> */}
+            </div>
             <div className={styles.profileData}>
 
                 <h2>{characterDef.profileName ?? characterDef.conditional?.player?.displayName ?? characterDef.displayName ?? <span className={'capitalize'}>{characterDef.name}</span>}</h2>
