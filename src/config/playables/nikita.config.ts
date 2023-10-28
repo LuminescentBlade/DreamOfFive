@@ -7,6 +7,7 @@ export const Nikita: IDoFCharacter = {
     blurb: '"... exemplar of the Ondurite woman. Too soft-skinned for manual labour, she had devoted herself entirely to battle..."',
     class: DoFClasses.Swordmaster,
     nationality: DoFNationality.Onduris,
+    epithet: 'The Thorn',
     height: 171,
     routeConfig:{
         onduris: {

@@ -168,7 +168,9 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                 musain: {
                     enemy: [8, 13]
                 }
-            }
+            },
+            epithet: "Twice Born"
+
         },
         {
             name: 'duquesne',

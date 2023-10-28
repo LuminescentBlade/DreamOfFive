@@ -470,7 +470,7 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
             <li><strong>Country of Origin: </strong><span className="capitalize">{characterDef.nationality}</span></li>
             {characterDef.height ? <li><strong>Height: </strong>{characterDef.height}cm / {cmToFtIn(characterDef.height)}</li> : ''}
             {characterDef.age ? <li><strong>Age: </strong>{characterDef.age}</li> : ''}
-            {characterDef.epithet ? <li><strong>Epithet: </strong>{characterDef.epithet}</li> : ''}
+            {characterDef.epithet ? <li><strong>Name in the Stars: </strong><span className={styles.redText}>{characterDef.epithet}</span></li> : ''}
 
         </ul>
     }
