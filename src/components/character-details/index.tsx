@@ -91,7 +91,6 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
     }
 
     const blossomData = getBlossomLevels();
-
     init = true;
 
     function setWidgetStateCaching(widgetStateData: any) {
@@ -207,9 +206,9 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
     function getBlossomWidget() {
         return <div className={styles.blossomWidget}>
             {
-                <button className={`${styles.blossomButton} icon-button button-wrapper`} onClick={addBlossom} disabled={widgetState.blossom.length >= BLOSSOM_LIMIT }>
-                    <span className="icon-blossom-dew"></span> {widgetState.blossom.length < BLOSSOM_LIMIT ? 
-                            <span className={`${styles.plus} full-center`}><FontAwesomeIcon icon={faPlus} size="sm" /></span>:''}
+                <button className={`${styles.blossomButton} icon-button button-wrapper`} onClick={addBlossom} disabled={widgetState.blossom.length >= BLOSSOM_LIMIT}>
+                    <span className="icon-blossom-dew"></span> {widgetState.blossom.length < BLOSSOM_LIMIT ?
+                        <span className={`${styles.plus} full-center`}><FontAwesomeIcon icon={faPlus} size="sm" /></span> : ''}
                 </button>
             }
             {
@@ -280,6 +279,7 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
         });
         let lastUnpromotedLevel = unpromotedLevelFloor;
         let lastPromotedLevel = promotedLevelFloor || 1;
+        let currentLevelBlossomCount = 0;
         for (let i = 0; i < sortedBlossom.length; i++) {
             const item = sortedBlossom[i];
             if (item.isLevelPromoted) {
@@ -290,21 +290,28 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
                 promoted.push(minLevels); // (1) index 1:  8 - 2 = 6, (2) index 2: 6 - 3 = 3
                 promoted[i] = levelDiff; // (1) [1, 6], (2) [1, 3, 3]
                 lastPromotedLevel = item.level; // (0->1) 1, (1->2) 2 , (2->e) 4
+
+                if (levelData.promotedLevel >= item.level) {
+                    currentLevelBlossomCount++;
+                }
             } else {
                 promoted[i] = 0;
                 promoted.push(totalPromotedLevels);
-                const levelDiff = Math.min(item.level - lastUnpromotedLevel, levelData.unpromotedLevel! - lastUnpromotedLevel);
+                const levelDiff = Math.min(item.level - lastUnpromotedLevel, Math.max(levelData.unpromotedLevel! - lastUnpromotedLevel, 0));
                 const minLevels = Math.max(unpromoted[i] - levelDiff, 0);
                 unpromoted.push(minLevels);
                 unpromoted[i] = levelDiff;
                 lastUnpromotedLevel = item.level;
+                if (levelData.unpromotedLevel! >= item.level) {
+                    currentLevelBlossomCount++;
+                }
             }
 
             // hybrid case: base lv 2, blossom 1 at 4, promotion at 19, blossom 2 at lv 2 promoted, lv 5 promoted currently
             // blossom config: {level: 4, promoted: false}, {level: 2, promoted: true}
             // expected behavior: unpromoted [2, 15] promoted: [0, 1, 3]
         }
-        return { unpromoted, promoted };
+        return { unpromoted, promoted, currentLevelBlossomCount };
     }
 
     function calcStat(base: number, growth: number, isPromoted?: boolean) {
@@ -348,55 +355,55 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
         const result = <>
             {getStatInputBar(characterDef)}
             <div className={styles.tableWrapper}>
-            <table className={styles.statTable}>
-                <thead>
-                    <tr>
-                        <td className={styles.rowHeader}></td>
-                        {statKeys.map(s => <td key={s} className={`${styles.colHeader} capitalize`}>{s}</td>)}
-                    </tr>
-                </thead>
-                <tbody>
-                    {characterDef.bases ?
+                <table className={styles.statTable}>
+                    <thead>
                         <tr>
-                            <th className='capitalize'>bases</th>
-                            {statKeys.map(s => <td key={s}>{characterDef.bases ? characterDef.bases[s] : ''}</td>)}
+                            <td className={styles.rowHeader}></td>
+                            {statKeys.map(s => <td key={s} className={`${styles.colHeader} capitalize`}>{s}</td>)}
                         </tr>
-                        : ''
-                    }
-                    {characterDef.growths ?
-                        <tr>
-                            <th className='capitalize'>growths</th>
-                            {statKeys.map(s => <td key={s} >{characterDef.growths && characterDef.growths[s] != null ? `${characterDef.growths[s] + 5 * widgetState.blossom?.length}%` : '--'}</td>)}
-                        </tr>
-                        : ''
-                    }
-                    {promoBonuses != null ?
-                        <tr>
-                            <th className='capitalize'>Promo</th>
-                            {statKeys.map(s => <td key={s} >{promoBonuses![s]}</td>)}
-                        </tr>
-                        : ''
-                    }
-                    {characterDef.bases && characterDef.growths ?
-                        <tr className={styles.avgs}>
+                    </thead>
+                    <tbody>
+                        {characterDef.bases ?
+                            <tr>
+                                <th className='capitalize'>bases</th>
+                                {statKeys.map(s => <td key={s}>{characterDef.bases ? characterDef.bases[s] : ''}</td>)}
+                            </tr>
+                            : ''
+                        }
+                        {characterDef.growths ?
+                            <tr>
+                                <th className={`capitalize ${styles[`growthsHeader${blossomData.currentLevelBlossomCount}`]}`}>growths</th>
+                                {statKeys.map(s => <td key={s} >{characterDef.growths && characterDef.growths[s] != null ? `${characterDef.growths[s] + 5 * blossomData.currentLevelBlossomCount}%` : '--'}</td>)}
+                            </tr>
+                            : ''
+                        }
+                        {promoBonuses != null ?
+                            <tr>
+                                <th className='capitalize'>Promo</th>
+                                {statKeys.map(s => <td key={s} >{promoBonuses![s]}</td>)}
+                            </tr>
+                            : ''
+                        }
+                        {characterDef.bases && characterDef.growths ?
+                            <tr className={styles.avgs}>
 
-                            <th>Lv.{
-                                //@ts-ignore
-                                `${promoBonuses ? levelData.unpromotedLevel : ''}${promoBonuses && isPromoted() ? '/' : ''}${isPromoted() ? levelData.promotedLevel : ''}`
-                            }
-                            </th>
-                            {
-                                statKeys.map(s => getStat(s))
-                            }
+                                <th>Lv.{
+                                    //@ts-ignore
+                                    `${promoBonuses ? levelData.unpromotedLevel : ''}${promoBonuses && isPromoted() ? '/' : ''}${isPromoted() ? levelData.promotedLevel : ''}`
+                                }
+                                </th>
+                                {
+                                    statKeys.map(s => getStat(s))
+                                }
+                            </tr>
+                            : ''
+                        }
+                        <tr className={styles.caps}>
+                            <th className='capitalize'>caps</th>
+                            {statKeys.map(s => <td key={s} >{promotedCaps[s]}</td>)}
                         </tr>
-                        : ''
-                    }
-                    <tr className={styles.caps}>
-                        <th className='capitalize'>caps</th>
-                        {statKeys.map(s => <td key={s} >{promotedCaps[s]}</td>)}
-                    </tr>
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
             </div>
         </>
         return result;

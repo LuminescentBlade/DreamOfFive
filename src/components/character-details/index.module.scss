@@ -87,6 +87,12 @@
   
 }
 
+.growthsHeader1{
+  text-shadow: 0 0 5px var(--dof-color1);
+}
+.growthsHeader2{
+  text-shadow: 0 0 5px var(--dof-color3);
+}
 .profile,
 .profileData {
   display: flex;
