@@ -45,7 +45,7 @@ export default function Header() {
     });
 
     function toggleDarkMode() {
-        const nextDarkModeState = !headerState;
+        const nextDarkModeState = !headerState.dark;
         window.localStorage.setItem(darkModeKey, `${nextDarkModeState}`);
         setBodyDark(nextDarkModeState);
         setHeaderState({ ...headerState, dark: nextDarkModeState });
