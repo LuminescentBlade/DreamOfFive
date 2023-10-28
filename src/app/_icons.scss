@@ -1,0 +1,15 @@
+@mixin icon-image($url, $size: 24px) {
+    display: inline-block;
+    height: $size;
+    width: $size;
+    background: url($url) no-repeat center;
+    background-size: $size;
+}
+
+.icon-blossom-dew{
+    @include icon-image('/icons/blossom_dew.png');
+}
+
+.icon-master-seal{
+    @include icon-image('/icons/master_seal.png');
+}

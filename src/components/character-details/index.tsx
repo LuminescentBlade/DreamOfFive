@@ -4,7 +4,7 @@ import { useState } from "react";
 import styles from './index.module.scss';
 import Overlay from "../overlay";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmark, faArrowsUpDownLeftRight } from '@fortawesome/free-solid-svg-icons'
+import { faXmark, faArrowsUpDownLeftRight, faPlus, faMinus } from '@fortawesome/free-solid-svg-icons'
 import Toggle from "../toggle";
 
 enum CharacterDetailState {
@@ -73,8 +73,6 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
         setLevelData(defaultLevels);
     }
 
-
-
     const unpromotedLevelFloor = (characterDef.level ?? 1);
     let promoBonuses: IDoFStats | undefined = undefined;
     let promotedLevelFloor: number, unpromotedCaps: IDoFStats, promotedCaps: IDoFStats;
@@ -91,6 +89,8 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
         // @ts-ignore
         promotedCaps = DoFPromotedClasses[characterDef.class]?.caps; // remove ? later 
     }
+
+    const blossomData = getBlossomLevels();
 
     init = true;
 
@@ -158,8 +158,9 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
         } else if (!widgetState.blossom.length) {
             const isCharacterPromoted = promoBonuses == null;
             const isLevelPromoted = defaultLevels.promotedLevel >= 1;
+            const defaultLevel = defaultLevels.promotedLevel || defaultLevels.unpromotedLevel;
 
-            const blossomItem = { level: defaultLevels.promotedLevel || defaultLevels.unpromotedLevel, isLevelPromoted, isCharacterPromoted };
+            const blossomItem = { level: defaultLevel, displayLevel: defaultLevel, isLevelPromoted, isCharacterPromoted };
 
             setWidgetStateCaching({ ...widgetState, blossom: [...widgetState.blossom, blossomItem] });
         } else {
@@ -170,7 +171,6 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
 
     function removeBlossom(index: number) {
         const newBlossom = [...widgetState.blossom];
-        console.log(JSON.stringify(newBlossom));
         newBlossom.splice(index, 1);
 
         setWidgetStateCaching({ ...widgetState, blossom: newBlossom })
@@ -181,22 +181,63 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
     }
 
     function setBlossomLevel(index: number, event: any) {
+        const value = parseInt(event.currentTarget.value);
+        const isNaNValue = isNaN(value);
+        const calcValue = isNaNValue ? -1 : value;
         const newBlossom = [...widgetState.blossom];
         const item = { ...newBlossom[index] };
         const minLevel = getBlossomLevelFloor(item.isLevelPromoted);
-        const value = parseInt(event.currentTarget.value);
-        const calculatedLevel = Math.min(LEVEL_CAP, Math.max(value, minLevel!));
+        const calculatedLevel = Math.min(LEVEL_CAP, Math.max(calcValue, minLevel!));
         item.level = calculatedLevel;
+        item.displayLevel = isNaNValue ? '' : value;
+        newBlossom[index] = item;
+        setWidgetStateCaching({ ...widgetState, blossom: newBlossom });
+    }
+
+    function toggleBlossomPromotion(index: number) {
+        const newBlossom = [...widgetState.blossom];
+        const item = { ...newBlossom[index] };
+        item.isLevelPromoted = !item.isLevelPromoted;
         newBlossom[index] = item;
 
         setWidgetStateCaching({ ...widgetState, blossom: newBlossom });
     }
 
+
+    function getBlossomWidget() {
+        return <div className={styles.blossomWidget}>
+            {
+                <button className={`${styles.blossomButton} icon-button button-wrapper`} onClick={addBlossom} disabled={widgetState.blossom.length >= BLOSSOM_LIMIT }>
+                    <span className="icon-blossom-dew"></span> {widgetState.blossom.length < BLOSSOM_LIMIT ? 
+                            <span className={`${styles.plus} full-center`}><FontAwesomeIcon icon={faPlus} size="sm" /></span>:''}
+                </button>
+            }
+            {
+                widgetState.blossom.map(
+                    (item: any, index: number) => <div key={index} className={styles.blossomItem}>
+                        Lv. <input type="number" value={widgetState.blossom[index].displayLevel} onChange={(value) => setBlossomLevel(index, value)} />
+                        {
+                            !item.isCharacterPromoted ? <button
+                                className={
+                                    `icon-button ${!item.isCharacterPromoted ? `icon-button--${item.isLevelPromoted ? 'actived' : 'inactive'} ` : ''} icon-master-seal`
+                                }
+                                onClick={() => toggleBlossomPromotion(index)}
+                            >
+                            </button> : ''
+                        }
+                        <button className={`${styles.removeBlossom} button-wrapper`} onClick={() => removeBlossom(index)}>
+                            <FontAwesomeIcon icon={faMinus} size="lg" />
+                        </button>
+                    </div>
+                )
+            }
+        </div>
+    }
     function getStatInputBar(characterDef: IDoFRenderCharacter) {
         if (!characterDef.bases || !characterDef.growths) {
             return;
         }
-        return <div>
+        return <div className={styles.levelControls}>
             {characterDef.bases && characterDef.growths ?
                 <div className={styles.levelInputs}>
                     {
@@ -220,12 +261,85 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
                 : ''
             }
             {
-                widgetState.blossom.length < BLOSSOM_LIMIT ? <button onClick={addBlossom}>Add Blossom Dew</button> : ''
-            }
-            {
-                widgetState.blossom.map((item: any, index: number) => <div key={index}>Level <input type="number" value={widgetState.blossom[index].level} onChange={(value) => setBlossomLevel(index, value)} /> {index} <button onClick={() => removeBlossom(index)}>-</button></div>)
+                getBlossomWidget()
             }
         </div>
+    }
+
+    function getBlossomLevels() {
+        const totalUnpromotedLevels = (levelData.unpromotedLevel ? levelData.unpromotedLevel - unpromotedLevelFloor : 0);
+        const totalPromotedLevels = promotedLevelFloor ? Math.max(levelData.promotedLevel - promotedLevelFloor, 0) : Math.max(levelData.promotedLevel - 1 - promotedLevelFloor, 0);
+        const unpromoted: number[] = [totalUnpromotedLevels];
+        const promoted: number[] = [totalPromotedLevels];
+        const sortedBlossom = [...widgetState.blossom].sort((a, b) => {
+            if (a.isLevelPromoted !== b.isLevelPromoted) {
+                return a.isLevelPromoted ? 1 : -1;
+            } else {
+                return a.level - b.level;
+            }
+        });
+        let lastUnpromotedLevel = unpromotedLevelFloor;
+        let lastPromotedLevel = promotedLevelFloor || 1;
+        for (let i = 0; i < sortedBlossom.length; i++) {
+            const item = sortedBlossom[i];
+            if (item.isLevelPromoted) {
+                // if u take blossom at lv 2 promo and then level 5 and you're currently at lv 8
+                // expected behavior is  [7] => [1, 6] => [1, 3 ,3]
+                const levelDiff = Math.min(item.level - lastPromotedLevel, levelData.promotedLevel - lastPromotedLevel);; // (1) 2 - 1 = 1, (2) 5 - 2 = 3
+                const minLevels = Math.max(promoted[i] - levelDiff, 0); // negatives
+                promoted.push(minLevels); // (1) index 1:  8 - 2 = 6, (2) index 2: 6 - 3 = 3
+                promoted[i] = levelDiff; // (1) [1, 6], (2) [1, 3, 3]
+                lastPromotedLevel = item.level; // (0->1) 1, (1->2) 2 , (2->e) 4
+            } else {
+                promoted[i] = 0;
+                promoted.push(totalPromotedLevels);
+                const levelDiff = Math.min(item.level - lastUnpromotedLevel, levelData.unpromotedLevel! - lastUnpromotedLevel);
+                const minLevels = Math.max(unpromoted[i] - levelDiff, 0);
+                unpromoted.push(minLevels);
+                unpromoted[i] = levelDiff;
+                lastUnpromotedLevel = item.level;
+            }
+
+            // hybrid case: base lv 2, blossom 1 at 4, promotion at 19, blossom 2 at lv 2 promoted, lv 5 promoted currently
+            // blossom config: {level: 4, promoted: false}, {level: 2, promoted: true}
+            // expected behavior: unpromoted [2, 15] promoted: [0, 1, 3]
+        }
+        return { unpromoted, promoted };
+    }
+
+    function calcStat(base: number, growth: number, isPromoted?: boolean) {
+        const levels = isPromoted ? blossomData.promoted : blossomData.unpromoted;
+        return levels.reduce((total, numLvs, index) => total + (0.05 * index + growth) * numLvs, base);
+    }
+
+    function getStat(statKey: string) {
+        if (!characterDef.bases) return <td></td>;
+        let capped = false;
+        const base = characterDef.bases[statKey];
+        let value = base;
+        let growth = characterDef.growths ? (characterDef.growths[statKey] ?? 0) / 100 : 0;
+        if (promoBonuses) { // unpromoted unit
+            value = calcStat(base, growth, false);
+            capped = value >= unpromotedCaps[statKey];
+            if (capped) {
+                value = unpromotedCaps[statKey];
+            }
+            if (isPromoted()) {
+                // for capbreak edition set value to unpromoted caps if capped here or it'll mess with the calcs
+                const promo1Stat = value + (promoBonuses[statKey] ?? 0);
+                value = value = calcStat(promo1Stat, growth, true);
+                capped = value >= promotedCaps[statKey];
+                if (capped) {
+                    value = promotedCaps[statKey];
+                }
+            }
+        } else {
+            value = calcStat(base, growth, true);
+            capped = value >= promotedCaps[statKey];
+            if (capped) { value = promotedCaps[statKey] }
+        }
+
+        return <td key={statKey} className={capped ? styles.capped : ''}>{value.toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
     }
 
     function renderStatChecker() {
@@ -233,6 +347,7 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
         const statKeys = Object.keys(promotedCaps ?? {});
         const result = <>
             {getStatInputBar(characterDef)}
+            <div className={styles.tableWrapper}>
             <table className={styles.statTable}>
                 <thead>
                     <tr>
@@ -271,36 +386,7 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
                             }
                             </th>
                             {
-                                statKeys.map(s => {
-                                    if (!characterDef.bases) return <td></td>;
-                                    let capped = false;
-                                    const base = characterDef.bases[s];
-                                    let value = base;
-                                    let growth = characterDef.growths ? (characterDef.growths[s] ?? 0) / 100 : 0;
-                                    if (promoBonuses) { // unpromoted unit
-                                        value = base + (growth * (levelData.unpromotedLevel ? levelData.unpromotedLevel - unpromotedLevelFloor : 0));
-                                        capped = value >= unpromotedCaps[s];
-                                        if (capped) {
-                                            value = unpromotedCaps[s];
-                                        }
-                                        if (isPromoted()) {
-                                            // for capbreak edition set value to unpromoted caps if capped here or it'll mess with the calcs
-                                            const promo1Stat = value + (promoBonuses[s] ?? 0);
-                                            value = promo1Stat + (growth * Math.max(levelData.promotedLevel - promotedLevelFloor, 0));
-                                            capped = value >= promotedCaps[s];
-                                            if (capped) {
-                                                value = promotedCaps[s];
-                                            }
-                                        }
-                                    } else {
-                                        value = base + growth * (levelData.promotedLevel ? levelData.promotedLevel - promotedLevelFloor : 0);
-                                        capped = value >= promotedCaps[s];
-                                        if (capped) { value = promotedCaps[s] }
-                                    }
-
-                                    return <td key={s} className={capped ? styles.capped : ''}>{value.toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
-
-                                })
+                                statKeys.map(s => getStat(s))
                             }
                         </tr>
                         : ''
@@ -311,6 +397,7 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
                     </tr>
                 </tbody>
             </table>
+            </div>
         </>
         return result;
     }

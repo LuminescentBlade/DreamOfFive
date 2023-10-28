@@ -14,15 +14,21 @@
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
   padding: 18px 18px 28px;
   font-size: 1.4rem;
-  overflow: auto;
+  overflow: hidden;
 }
 
+.tableWrapper{
+  width: 100%;
+  max-width: 100%;
+  overflow: auto;
+}
 .statTable {
   max-width: 100%;
   text-align: center;
   border-collapse: collapse;
   border: var(--dof-input-border);
   table-layout: fixed;
+  margin: 0 auto;
   thead {
     font-weight: 600;
   }
@@ -78,6 +84,7 @@
   overflow: auto;
   box-sizing: content-box;
   min-width: calc(8 * var(--data-size)  + var(--row-label-size));
+  
 }
 
 .profile,
@@ -187,6 +194,72 @@
     }
   }
 }
+.levelControls{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.blossomWidget{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.blossomButton{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  order: 2;
+  .plus{
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    background-color: var(--dof-bg-color);
+    border-radius: 100%;
+    width: 14px;
+    height: 14px;
+  }
+}
+.blossomItem{
+  height: 32px;
+  display: inline-flex;
+  background-color: var(--dof-color1);
+  padding: 3px 6px;
+  border-radius: 3px;
+  align-items: center;
+  gap: 3px; 
+  order: 1;
+  input{
+    height: 100%;
+    width: 30px;
+    border: 0;
+    background: 0;
+    padding: 2px 0 0;
+  }
+}
+button.removeBlossom{
+  position: relative;
+  display: flex;
+  width: 20px;
+  height: 20px;
+  align-items: center;
+  justify-content: center;
+  svg{
+    position: relative;
+    z-index: 2;
+  }
+  &::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--dof-bg-color);
+    opacity: 0.75;
+    border-radius: 50%;
+  }
+}
 .blurb {
   margin-top: 12px;
   font-size: 0.9em;
@@ -218,8 +291,14 @@
     flex-direction: row;
     gap: 12px;
   }
+  .dataContent{
+    min-width: unset;
+  }
 }
 @media screen and (max-width: 600px) {
+  .levelControls{
+    margin-bottom: 12px;
+  }
   .characterDetails{
     --data-size: 35px;
     --row-header-size: 45px;
@@ -233,6 +312,19 @@
   }
   .subtitle {
     font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .levelControls{
+    flex-direction: column;
+    align-items: center;
+  }
+  .blossomWidget{
+    flex-direction: column;
+    *{
+      order: unset;
+    }
   }
 }
 
