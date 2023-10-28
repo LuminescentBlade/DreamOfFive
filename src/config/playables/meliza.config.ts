@@ -14,10 +14,10 @@ export const Meliza: IDoFCharacter = {
         }
     },
     bases: {
-        hp: 25, pow: 11, skl: 15, spd: 14, luk: 13, def: 5, res: 11, con: 6
+        hp: 28, pow: 12, skl: 18, spd: 17, luk: 15, def: 6, res: 12, con: 6
     },
-    growths: {hp: 55, pow: 40, skl: 65, spd: 55, luk: 55, def: 10, res: 45},
-    level:  12,
+    growths: { hp: 55, pow: 40, skl: 65, spd: 55, luk: 55, def: 10, res: 45 },
+    level: 15,
     height: 165,
     promotesTo: DoFClasses.Bishop
 };
