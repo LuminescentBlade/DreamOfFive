@@ -31,7 +31,7 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
     const showStats = (characterDef.bases || characterDef.growths);
     const showExtendedProfile = experimentalFeatures && characterDef.nationality;
     const showGallery = false;
-    const BLOSSOM_LIMIT = 2;
+    const BLOSSOM_LIMIT = 1;
     const LEVEL_CAP = 20;
 
     let defaultView: CharacterDetailState | undefined;
