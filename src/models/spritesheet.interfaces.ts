@@ -1,3 +1,19 @@
+export interface IRenderItem {
+    name: string,
+    artists: string[],
+    displayName?: string,
+    path: string
+};
+export interface IRenderItemConfig {
+    default: IRenderItem;
+    alts?: IRenderItem[];
+    renderOrder: number;
+    type: string;
+};
+
+export interface IRenderCharacterConfig extends IRenderItemConfig{
+    unit: any
+};
 export interface IUnit {
     name: string;
     artists: string[];

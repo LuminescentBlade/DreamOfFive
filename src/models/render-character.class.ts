@@ -1,29 +1,18 @@
+import { RenderUnit } from "./render-unit.class";
 import { IUnit } from "./spritesheet.interfaces";
 
 // TODO: have a DoFCharacter class that extends this
 
-export class RenderCharacter {
+export class RenderCharacter extends RenderUnit {
     constructor(
         private character: IUnit,
         private getPath: (name: string) => string,
         private renderRules: { bypassSpoiler?: boolean, useEarliest?: boolean } = {}
     ) {
-        this.urls = {
-            default: getPath(character.name),
-            alts: character.alt ? Object.keys(character.alt).reduce((c, k) => ({ ...c, [k]: getPath(`${character.name}_${k}`) }), {}) : {}
-        };
+        super(character, getPath);
     }
 
-    // private chapterData: { chapter: number, route: string } | undefined;
-    // private placement: { value: string, chapter: number } | undefined;
-    // private parsedCharacter?: IRenderUnit;
     private renderData?: any;
-
-    private urls: {
-        default: string,
-        alts: { [key: string]: string }
-    };
-
     set currentChapter(data: { chapter: number, route?: string } | undefined) {
 
         // this.chapterData = data;
@@ -65,7 +54,7 @@ export class RenderCharacter {
 
         } else {
             const config = Object.values(character.routeConfig);
-            if(config.length){
+            if (config.length) {
                 routeConfig = config[0];
             }
         }

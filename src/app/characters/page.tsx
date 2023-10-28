@@ -43,6 +43,8 @@ function cacheStaticUnits() {
     return { shopkeepers, generics };
 }
 
+
+
 function getData(useFull: boolean, bypassSpoiler: boolean): IDoFCharacterRenderer {
     const config = parseCharacters(useFull ? 99 : chapterLimit, useFull ? DoFRoute.Both : displayRoute, useFull, bypassSpoiler);
     const getRenderOrder = (item: IDoFRenderUnit) => item.fullSheetRenderOrderOverride ?? item.renderOrder;
@@ -62,13 +64,7 @@ function getData(useFull: boolean, bypassSpoiler: boolean): IDoFCharacterRendere
 }
 
 function parseCharacters(chapter: number, route: DoFRoute, useEarliest = false, bypassSpoiler = false) {
-    const config: { [key: string]: IDoFRenderUnit[] } = {
-        [DoFUnitState.Player]: [],
-        [DoFUnitState.Enemy]: [],
-        [DoFUnitState.NPC]: [],
-    };
-
-    const config2: { [key: string]: any[] } = {
+    const config: { [key: string]: any[] } = {
         [DoFUnitState.Player]: [],
         [DoFUnitState.Enemy]: [],
         [DoFUnitState.NPC]: [],
@@ -83,7 +79,7 @@ function parseCharacters(chapter: number, route: DoFRoute, useEarliest = false, 
 
         const results = characterData.data;
         if(results){
-            config2[results.type].push(results);
+            config[results.type].push(results);
         }
 
         let placement: { value: DoFUnitState, chapter: number } | undefined;
@@ -113,9 +109,6 @@ function parseCharacters(chapter: number, route: DoFRoute, useEarliest = false, 
             config[placement.value].push(characterItem);
         }
     });
-
-    console.log(config2);
-
     return config;
 }
 
