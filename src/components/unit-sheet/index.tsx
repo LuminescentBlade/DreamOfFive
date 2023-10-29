@@ -2,12 +2,12 @@
 
 import UnitSheetSprite from '../../components/unit-sheet-sprite';
 import styles from './index.module.scss'
-import { IDoFCharacterRenderer, IDoFRenderUnit, IDoFUnit } from '@/src/models/interfaces';
+import { IDoFCharacterRenderer, IDoFRenderUnit, IDoFUnit, IRenderCharacterConfig, IRenderItemConfig } from '@/src/models/interfaces';
 import { DoFArtist, DoFUnitState } from '@/src/models/enums';
 import { DoFArtistConfig } from '@/src/config/artists.config';
 
 export default function UnitSheet({ data, chapter, expansionState, toggleCharacter, getOnClick }: {
-    data: IDoFCharacterRenderer, chapter: number, expansionState: Map<string, boolean>, toggleCharacter: (name: string) => () => void, getOnClick?: (character: any, state: any) => ((data: any) => void) | undefined
+    data: IDoFCharacterRenderer, chapter: number, expansionState: Map<string, boolean>, toggleCharacter: (name: string) => () => void, getOnClick?: (character: any, state: any) => (() => void) | undefined
 }) {
     const sections = Object.keys(data) as DoFUnitState[];
     const artists = Object.values(DoFArtist);
@@ -22,54 +22,19 @@ export default function UnitSheet({ data, chapter, expansionState, toggleCharact
                     <section key={section} className={`${styles.container} ${styles.spritesheet}`}>
                         <h2>{section}</h2>
                         {
-                            data[section]?.map((character: IDoFRenderUnit) => {
+                            data[section]?.map((character: IRenderItemConfig) => {
                                 const onClickFcn = getOnClick? getOnClick(character, section): undefined;
-                                if (!character.alt) {
-                                    return <UnitSheetSprite key={character.name} type={section} characterDef={character} onCharacterClick={onClickFcn} />
+                                if (!character.alts?.length) {
+                                    return <UnitSheetSprite key={character.default.name} type={section} characterDef={character.default} onCharacterClick={onClickFcn} />
                                 } else {
-                                    const alts = Object.entries(character.alt);
-                                    const validAlts = alts.filter(([, alt]) => !alt.chapter || alt.chapter <= chapter);
-                                    const toggleFcn = validAlts.length ? toggleCharacter(character.name) : undefined;
-                                    let conditionalPortrait: string | undefined;
-                                    let conditionalOGName: string | undefined;
-                                    if ((character.conditional && section !== DoFUnitState.Generic)) {
-                                        let conditionalConfig = character.conditional[section] ??
-                                            ((character.conditional?.chapter?.chapter ?? -1) <= chapter) ? character.conditional?.chapter : null;
-                                        if (conditionalConfig) {
-                                            conditionalPortrait = conditionalConfig.swapPortrait;
-                                            conditionalOGName = conditionalConfig.ogPortraitName;
-                                        }
-                                    }
-                                    let characterData;
-                                    if (conditionalPortrait) {
-                                        const alt = character.alt[conditionalPortrait];
-                                        characterData = {
-                                            ...character,
-                                            name: `${character.name}_${conditionalPortrait}`,
-                                            displayName: character.displayName || character.name,
-                                            artists: alt.artists,
-                                            path: character!.altPaths![conditionalPortrait]
-                                        };
-                                    } else {
-                                        characterData = character;
-                                    }
-                                    const baseItem = <UnitSheetSprite key={character.name} type={section} characterDef={characterData} expanded={expansionState.get(character.name)} onExpand={toggleFcn} onCharacterClick={onClickFcn} />;
+                                    const toggleFcn = toggleCharacter(character.name);
+                                    const baseItem = <UnitSheetSprite key={character.default.name} type={section} characterDef={character.default} expanded={expansionState.get(character.name)} onExpand={toggleFcn} onCharacterClick={onClickFcn} />;
                                     if (expansionState.get(character.name)) {
-                                        let conditionalItem;
-                                        if (conditionalPortrait) {
-                                            conditionalItem = <UnitSheetSprite key={`${character.name}_original`} type={section} characterDef={{ ...character, displayName: conditionalOGName }} />
-                                        }
                                         return <>
                                             {baseItem}
-                                            {conditionalItem}
-                                            {validAlts.map(([altName, alt]) => {
-                                                if (altName === conditionalPortrait) {
-                                                    return '';
-                                                }
-                                                const displayName = `${character.displayName || character.name} ${alt.displayName || altName}`
-                                                const name = `${character.name}_${altName}`;
-                                                const altData = { ...character, name, displayName, artists: alt.artists, path: character!.altPaths![altName] };
-                                                return <UnitSheetSprite key={`${character.name}_${altName}`} type={section} characterDef={altData} />
+                                            {character.alts.map((alt) => {
+                                                const name = `${character.name}_${alt.name}`;
+                                                return <UnitSheetSprite key={`${character.name}_${alt.name}`} type={section} characterDef={alt} />
                                             })}
                                         </>
                                     } else {

@@ -1,5 +1,5 @@
 import { DoFArtist, DoFClasses, DoFNationality } from "./enums";
-import { IAltConfig, IRenderContent, IRenderUnit, IRouteConfig, IUnit } from "./spritesheet.interfaces";
+import { IAltConfig, IRenderCharacterConfig, IRenderContent, IRenderItemConfig, IRenderUnit, IRouteConfig, IUnit } from "./spritesheet.interfaces";
 
 export interface IDoFUnit extends IUnit {
     artists: DoFArtist[];
@@ -46,9 +46,9 @@ export interface IDoFCharacterConfigs {
 };
 
 export type IDoFCharacterRenderer = {
-    [key: string]: IDoFRenderUnit[]
+    [key: string]: IRenderItemConfig[]
 } & {
-    player?: IDoFRenderCharacter[],
-    enemy?: IDoFRenderCharacter[],
+    player?: IRenderCharacterConfig[],
+    enemy?: IRenderCharacterConfig[],
 };
 

@@ -1,11 +1,11 @@
-import { IDoFRenderUnit, IDoFUnit, IRenderUnit } from "@/src/models/interfaces";
+import { IDoFRenderUnit, IDoFUnit, IRenderItem, IRenderUnit } from "@/src/models/interfaces";
 
 import styles from './index.module.scss';
 import { DoFArtistConfig } from "@/src/config/artists.config";
 import { DoFUnitState } from "@/src/models/enums";
 export default function UnitSheetSprite({ type, characterDef, expanded, onExpand, onCharacterClick }: {
-    type: DoFUnitState, characterDef: IDoFRenderUnit, expanded?: boolean, onExpand?: () => void,
-    onCharacterClick?: (characterRendered: IRenderUnit) => void
+    type: DoFUnitState, characterDef: IRenderItem, expanded?: boolean, onExpand?: () => void,
+    onCharacterClick?: () => void
 }) {
     return (<div className={styles.wrapper}>
         <div className={`
@@ -18,6 +18,7 @@ export default function UnitSheetSprite({ type, characterDef, expanded, onExpand
                     <div className={styles.label}>Artists:</div>
                     <ul>
                         {characterDef.artists.map(artist => (
+                            // @ts-ignore
                             <li key={artist}>{DoFArtistConfig[artist].name}</li>
                         ))}
                     </ul>
@@ -42,7 +43,7 @@ export default function UnitSheetSprite({ type, characterDef, expanded, onExpand
                     
 
                 if (onCharacterClick) {
-                    return <button className={'button-wrapper'} onClick={()=>onCharacterClick(characterDef)}>{sprite}</button>
+                    return <button className={'button-wrapper'} onClick={onCharacterClick}>{sprite}</button>
                 } else {
                     return sprite;
                 }

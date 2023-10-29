@@ -5,6 +5,7 @@ export interface IRenderItem {
     path: string
 };
 export interface IRenderItemConfig {
+    name: string,
     default: IRenderItem;
     alts?: IRenderItem[];
     renderOrder: number;
@@ -12,7 +13,7 @@ export interface IRenderItemConfig {
 };
 
 export interface IRenderCharacterConfig extends IRenderItemConfig{
-    unit: any
+    unitData: any
 };
 export interface IUnit {
     name: string;

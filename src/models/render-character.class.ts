@@ -5,21 +5,21 @@ import { IUnit } from "./spritesheet.interfaces";
 
 export class RenderCharacter extends RenderUnit {
     constructor(
-        private character: IUnit,
+        private characterInput: IUnit,
         private getPath: (name: string) => string,
         private renderRules: { bypassSpoiler?: boolean, useEarliest?: boolean } = {}
     ) {
-        super(character, getPath);
+        super(characterInput, getPath);
     }
 
     private renderData?: any;
     set currentChapter(data: { chapter: number, route?: string } | undefined) {
-
-        // this.chapterData = data;
         const placement = data ? this.getCharacterPlacement(data) : undefined;
         const parsedCharacter = placement ? this.parseCharacter(placement) : undefined;
         if (parsedCharacter && data && placement) {
             this.renderData = this.getRenderItems(parsedCharacter, data.chapter, placement)
+        } else {
+            this.renderData = undefined;
         }
     }
 
@@ -34,7 +34,10 @@ export class RenderCharacter extends RenderUnit {
             return;
         }
         let placement: { value: string, chapter: number } | undefined;
-        if (chapterData.route == null && this.character.routeConfig && Object.keys(this.character.routeConfig).length > 1) {
+        if (!this.character.routeConfig) {
+            return;
+        }
+        if (chapterData.route == null) {
             placement = this.getAllPlacement(chapter, this.character, useEarliest, bypassSpoiler);
         } else {
             placement = this.getSinglePlacement(route, chapter, this.character, useEarliest, bypassSpoiler);
@@ -43,20 +46,11 @@ export class RenderCharacter extends RenderUnit {
     }
 
     private getSinglePlacement(route: string | undefined | null, chapter: number, character: IUnit, useEarliest = false, showSecretPlayable = false) {
-        if (!character.routeConfig) {
-            return;
-        }
         let routeConfig;
-        if (route) {
+        if (route && character.routeConfig[route]) {
             routeConfig = character.routeConfig[route];
         } else if (character.routeConfig.allRoute) {
             routeConfig = character.routeConfig.allRoute;
-
-        } else {
-            const config = Object.values(character.routeConfig);
-            if (config.length) {
-                routeConfig = config[0];
-            }
         }
         if (!routeConfig) {
             return;
@@ -178,6 +172,7 @@ export class RenderCharacter extends RenderUnit {
             defaultSwap = defaultDisplay;
             defaultDisplay = { name: swapPortrait, path: this.urls.alts[swapPortrait], artists: swapItem.artists, displayName: swapItem.displayName }
             defaultSwap.displayName = ogPortraitName ?? defaultSwap.displayName;
+            newDisplayName  = newDisplayName ?? unit.displayName ?? unit.name;
         }
         if (newDisplayName) {
             defaultDisplay.displayName = newDisplayName;
@@ -185,16 +180,17 @@ export class RenderCharacter extends RenderUnit {
         if (unit.alt) {
             alts = Object.entries(unit.alt)
                 .filter(([key, value]) => key != swapPortrait && (!value.chapter || value.chapter <= chapter))
-                .map(([key, value]) => ({ ...value, name: key, path: this.urls.alts[key] }));
+                .map(([key, value]) => ({ ...value, name: key, path: this.urls.alts[key], displayName:`${unit.displayName} ${value.displayName}` }));
         }
         if (defaultSwap) {
             alts = alts ? [defaultSwap, ...alts] : [defaultSwap];
         }
         return {
+            name: this.character.name,
             renderOrder: placement.chapter,
             type: placement.value,
             unitData: { ...unit, path: defaultDisplay.path },
-            defaultDisplay,
+            default: defaultDisplay,
             alts
         };
     }
