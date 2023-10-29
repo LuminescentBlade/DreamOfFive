@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
+import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const ByorDal: IDoFCharacter = {
@@ -17,5 +17,9 @@ export const ByorDal: IDoFCharacter = {
     height: 182,
     bases: {hp: 38, pow: 18, skl: 15, spd: 15, luk: 6, def: 17, res: 8, con: 13},
     level: 3, 
-    growths: {hp: 90, pow: 45, skl: 55, spd: 35, luk: 15, def: 30, res: 25}
+    growths: {hp: 90, pow: 45, skl: 55, spd: 35, luk: 15, def: 30, res: 25},
+    weapons: {
+        [DoFWeapons.Axe]: 181,
+        [DoFWeapons.Sword]: 31
+    }
 };

@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
+import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const ViShen: IDoFCharacter = {
@@ -18,5 +18,8 @@ export const ViShen: IDoFCharacter = {
     level: 15,
     growths: { hp: 75, pow: 45, skl: 65, spd: 65, luk: 40, def: 20, res: 15 },
     promotesTo: DoFClasses.Swordmaster,
-    epithet: 'The Seneschal'
+    epithet: 'The Seneschal',
+    weapons: {
+        [DoFWeapons.Sword]: 121 
+    }
 };

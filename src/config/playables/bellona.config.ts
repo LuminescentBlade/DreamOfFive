@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
+import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Bellona: IDoFCharacter = {
@@ -23,5 +23,8 @@ export const Bellona: IDoFCharacter = {
     },
     level: 11,
     growths: { hp: 80, pow: 65, skl: 40, spd: 45, luk: 50, def: 35, res: 5 },
-    promotesTo: DoFClasses.DrakeKnight
+    promotesTo: DoFClasses.DrakeKnight,
+    weapons: {
+        [DoFWeapons.Lance]: 71,
+    }
 };

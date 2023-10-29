@@ -22,6 +22,6 @@ export const Kahn: IDoFCharacter = {
     promotesTo: DoFClasses.Sentinel,
     growths: {hp: 85, pow: 45, skl: 55, spd: 45, luk: 40, def: 40, res: 10},
     weapons: {
-        [DoFWeapons.Lance]: 71,
+        [DoFWeapons.Lance]: 121,
     }
 };

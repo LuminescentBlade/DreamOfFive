@@ -18,6 +18,6 @@ export const Severin: IDoFCharacter = {
     },
     weapons: {
         [DoFWeapons.Anima]: 181,
-        [DoFWeapons.Staff]: 31
+        [DoFWeapons.Staff]: 71
     }
 };
