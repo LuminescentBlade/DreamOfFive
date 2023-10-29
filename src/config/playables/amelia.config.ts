@@ -13,6 +13,7 @@ export const Amelia: IDoFCharacter = {
         }
     },
     height: 163,
+    age: 17,
     bases: {
         hp: 21, pow: 8, skl: 7, spd: 7, luk: 5, def: 3, res: 8, con: 7
     },
