@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
+import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Cothiva: IDoFCharacter = {
@@ -18,5 +18,8 @@ export const Cothiva: IDoFCharacter = {
     }, 
     level: 7,
     promotesTo: DoFClasses.Sibyl,
-    growths: {hp: 45, pow: 50, skl: 60, spd: 40, luk: 45, def: 30, res: 45}
+    growths: {hp: 45, pow: 50, skl: 60, spd: 40, luk: 45, def: 30, res: 45},
+    weapons: {
+        [DoFWeapons.Light]: 71,
+    }
 };

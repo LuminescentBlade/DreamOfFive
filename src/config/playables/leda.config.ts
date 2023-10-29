@@ -15,5 +15,6 @@ export const Leda: IDoFCharacter = {
     height: 171,
     growths: {hp: 85, pow: 0, skl: 0, spd: 70, luk: 80, def: 10, res: 70},
     level: 1,
-    bases: {hp: 27, pow: 1, skl: 7, spd: 12, luk: 12, def: 2, res: 6, con: 6}
+    bases: {hp: 27, pow: 1, skl: 7, spd: 12, luk: 12, def: 2, res: 6, con: 6},
+    weapons: {}
 };

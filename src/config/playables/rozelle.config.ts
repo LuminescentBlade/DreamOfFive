@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
+import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Rozelle: IDoFCharacter = {
@@ -19,6 +19,9 @@ export const Rozelle: IDoFCharacter = {
     },
     level: 15,
     growths: {hp: 85, pow: 55, skl: 60, spd: 25, luk: 55, def: 5, res: 65},
-    promotesTo: DoFClasses.Sorcerer
+    promotesTo: DoFClasses.Sorcerer,
+    weapons: {
+        [DoFWeapons.Dark]: 121
+    }
 
 };

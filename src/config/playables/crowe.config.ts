@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
+import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Crowe: IDoFCharacter = {
@@ -19,5 +19,8 @@ export const Crowe: IDoFCharacter = {
     },
     level: 6,
     promotesTo: DoFClasses.Marksman,
-    growths: {hp: 80, pow: 60, skl: 55, spd: 45, luk: 30, def: 25, res: 10}
+    growths: {hp: 80, pow: 60, skl: 55, spd: 45, luk: 30, def: 25, res: 10},
+    weapons: {
+        [DoFWeapons.Bow]: 31    
+    }
 };

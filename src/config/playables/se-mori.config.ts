@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
+import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const SeMori: IDoFCharacter = {
@@ -30,5 +30,9 @@ export const SeMori: IDoFCharacter = {
     },
     level: 10,
     growths: { hp: 75, pow: 45, skl: 60, spd: 55, luk: 40, def: 40, res: 15 },
-    promotesTo: DoFClasses.Hussar
+    promotesTo: DoFClasses.Hussar,
+    weapons: {
+        [DoFWeapons.Sword]: 71,
+        [DoFWeapons.Lance]: 31
+    }
 };

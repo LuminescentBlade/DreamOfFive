@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
+import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Severin: IDoFCharacter = {
@@ -15,5 +15,9 @@ export const Severin: IDoFCharacter = {
             enemy: [11,12],
             npc: [7,13]
         }
+    },
+    weapons: {
+        [DoFWeapons.Anima]: 181,
+        [DoFWeapons.Staff]: 31
     }
 };

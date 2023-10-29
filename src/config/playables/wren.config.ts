@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
+import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Wren: IDoFCharacter =  {
@@ -18,5 +18,8 @@ export const Wren: IDoFCharacter =  {
     },
     level: 10,
     growths: {hp: 40, pow: 60, skl: 50, spd: 50, luk: 60, def: 5, res: 55},
-    promotesTo: DoFClasses.Bishop
+    promotesTo: DoFClasses.Bishop,
+    weapons: {
+        [DoFWeapons.Staff]: 121 
+    }
 };

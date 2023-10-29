@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
+import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Lizaveta: IDoFCharacter = {
@@ -20,5 +20,8 @@ export const Lizaveta: IDoFCharacter = {
     },
     level: 6,
     promotesTo: DoFClasses.Valkyrie,
-    growths: {hp: 85, pow: 35, skl: 60, spd: 55, luk: 45, def: 10, res: 35}
+    growths: {hp: 85, pow: 35, skl: 60, spd: 55, luk: 45, def: 10, res: 35},
+    weapons: {
+        [DoFWeapons.Staff]: 31,
+    }
 };

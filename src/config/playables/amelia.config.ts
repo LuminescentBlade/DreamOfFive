@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
+import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Amelia: IDoFCharacter = {
@@ -18,5 +18,8 @@ export const Amelia: IDoFCharacter = {
     },
     level: 1,
     growths: { hp: 55, pow: 55, skl: 45, spd: 50, luk: 45, def: 20, res: 40 },
-    promotesTo: DoFClasses.Sage
+    promotesTo: DoFClasses.Sage,
+    weapons: {
+        [DoFWeapons.Anima]: 71,
+    }
 };

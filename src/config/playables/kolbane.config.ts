@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
+import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Kolbane: IDoFCharacter = {
@@ -21,5 +21,8 @@ export const Kolbane: IDoFCharacter = {
     level: 2,
     promotesTo: DoFClasses.Sentinel,
     growths: {hp: 75, pow: 55, skl: 35, spd: 55, luk: 40, def: 35, res: 15},
-    epithet: 'Stalwart'
+    epithet: 'Stalwart',
+    weapons: {
+        [DoFWeapons.Lance]: 31,
+    }
 };

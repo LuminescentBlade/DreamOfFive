@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
+import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Eilene: IDoFCharacter =  {
@@ -18,5 +18,8 @@ export const Eilene: IDoFCharacter =  {
     },
     level: 3,
     promotesTo: DoFClasses.SeraphKnight,
-    growths: {hp: 60, pow: 40, skl: 50, spd: 70, luk: 50, def: 20, res: 60}
+    growths: {hp: 60, pow: 40, skl: 50, spd: 70, luk: 50, def: 20, res: 60},
+    weapons: {
+        [DoFWeapons.Sword]: 31
+    }
 };

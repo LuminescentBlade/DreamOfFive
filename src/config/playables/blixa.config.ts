@@ -16,5 +16,6 @@ export const Blixa: IDoFCharacter = {
     height: 166,
     bases: { hp: 26, pow: 3, skl: 5, spd: 13, luk: 10, def: 3, res: 4, con: 6},
     level:  1,
-    growths: {hp: 70, pow: 0, skl: 0, spd: 80, luk: 70, def: 25, res: 55}
+    growths: {hp: 70, pow: 0, skl: 0, spd: 80, luk: 70, def: 25, res: 55},
+    weapons: {}
 };

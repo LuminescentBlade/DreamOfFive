@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
+import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Rena: IDoFCharacter =  {
@@ -44,4 +44,7 @@ export const Rena: IDoFCharacter =  {
         def: 30,
         res: 20
     },
+    weapons: {
+        [DoFWeapons.Sword]: 31,
+    }
 };

@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
+import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Jolyon: IDoFCharacter = {
@@ -23,5 +23,8 @@ export const Jolyon: IDoFCharacter = {
     },
     level: 13,
     growths: { hp: 60, pow: 65, skl: 65, spd: 35, luk: 45, def: 10, res: 50 },
-    promotesTo: DoFClasses.Sage
+    promotesTo: DoFClasses.Sage,
+    weapons: {
+        [DoFWeapons.Anima]: 71,
+    }
 };

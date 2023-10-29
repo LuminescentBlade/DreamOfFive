@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
+import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Baldur: IDoFCharacter = {
@@ -18,5 +18,8 @@ export const Baldur: IDoFCharacter = {
     },
     level: 13,
     growths: { hp: 110, pow: 70, skl: 40, spd: 40, luk: 30, def: 20, res: 20 },
-    promotesTo: DoFClasses.Berserker
+    promotesTo: DoFClasses.Berserker,
+    weapons: {
+        [DoFWeapons.Axe]: 71,
+    }
 };

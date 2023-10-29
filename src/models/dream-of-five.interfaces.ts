@@ -1,4 +1,4 @@
-import { DoFArtist, DoFClasses, DoFNationality } from "./enums";
+import { DoFArtist, DoFClasses, DoFNationality, DoFWeapons } from "./enums";
 import { IAltConfig, IRenderCharacterConfig, IRenderContent, IRenderItemConfig, IRenderUnit, IRouteConfig, IUnit } from "./spritesheet.interfaces";
 
 export interface IDoFUnit extends IUnit {
@@ -31,6 +31,9 @@ export interface IDoFCharacter extends IDoFUnit {
     growths?: IDoFStats,
     level?: number,
     epithet?: string,
+    weapons?: {
+        [key: string]: number
+    }
 }
 export interface IDoFStats {
     [stat: string]: number

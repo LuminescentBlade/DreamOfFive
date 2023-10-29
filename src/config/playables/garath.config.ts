@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
+import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Garath: IDoFCharacter = {
@@ -17,5 +17,9 @@ export const Garath: IDoFCharacter = {
     height: 200,
     growths: { hp: 90, pow: 75, skl: 60, spd: 40, luk: 30, def: 45, res: 10 },
     age: 38,
-    epithet: 'The Deadeye'
+    epithet: 'The Deadeye',
+    weapons: {
+        [DoFWeapons.Axe]: 71,
+        [DoFWeapons.Bow]: 181
+    }
 };

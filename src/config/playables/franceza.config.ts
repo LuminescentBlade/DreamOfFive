@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
+import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Franceza: IDoFCharacter = {
@@ -18,5 +18,8 @@ export const Franceza: IDoFCharacter = {
     },
     level: 9,
     growths: {hp: 75, pow: 55, skl: 70, spd: 35, luk: 40, def: 40, res: 10},
-    promotesTo: DoFClasses.Marksman
+    promotesTo: DoFClasses.Marksman,
+    weapons: {
+        [DoFWeapons.Bow]: 31
+    }
 };

@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
+import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Nari: IDoFCharacter = {
@@ -18,5 +18,8 @@ export const Nari: IDoFCharacter = {
     },
     level: 13,
     promotesTo: DoFClasses.Gladiator,
-    growths: {hp: 105, pow: 60, skl: 45, spd: 35, luk: 45, def: 30, res: 5}
+    growths: {hp: 105, pow: 60, skl: 45, spd: 35, luk: 45, def: 30, res: 5},
+    weapons: {
+        [DoFWeapons.Sword]: 71,
+    }
 };

@@ -75,13 +75,13 @@ export enum DoFClasses {
     Troubadour = 'troubadour',
     Harrier = 'harrier',
     Valkyrie = 'valkyrie',
-    
+
     Adept = 'adept',
-    Sibyl = 'sibyl', 
+    Sibyl = 'sibyl',
 
     Mage = 'mage',
     Sage = 'sage',
-    
+
     Warlock = 'warlock',
     Sorcerer = 'sorcerer',
 
@@ -90,10 +90,10 @@ export enum DoFClasses {
 
     Thief = 'thief',
     Rogue = 'rogue',
-    
+
     Myrmidon = 'myrmidon',
     Swordmaster = 'swordmaster',
-    
+
     Brigand = 'brigand',
     Raider = 'raider',
     Berserker = 'berserker',
@@ -107,12 +107,12 @@ export enum DoFClasses {
 
     Skirmisher = 'skirmisher',
     Outrider = 'outrider',
-    
+
     //
     TBD = 'tbd'
 };
 
-export enum DoFCharKey{
+export enum DoFCharKey {
     // Playable
     Rena = 'renair',
     Garath = 'garath',
@@ -176,5 +176,31 @@ export enum DoFCharKey{
     Amaryl = 'amaryl',
     Volund = 'volund',
     Ironside = 'rophon'
-    
+};
+
+export enum DoFWeapons {
+    Sword = 'sword',
+    Lance = 'lance',
+    Axe = 'axe',
+    Bow = 'bow',
+    Anima = 'anima',
+    Light = 'light',
+    Dark = 'dark',
+    Staff = 'staff'
+};
+
+export enum DoFMountType{
+    Horse = 'horse',
+    Peg = 'peg',
+    Wyvern = 'wyern'
+};
+
+export enum DoFAffinities {
+    Fire = 'fire',
+    Ice = 'ice',
+    Light = 'light',
+    Thunder = 'thunder',
+    Wind = 'wind',
+    Anima = 'anima',
+    Dark = 'dark'
 };

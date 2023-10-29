@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
+import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Marin: IDoFCharacter = {
@@ -18,5 +18,9 @@ export const Marin: IDoFCharacter = {
     height: 176,
     level: 14,
     growths: { hp: 105, pow: 45, skl: 35, spd: 55, luk: 55, def: 30, res: 5 },
-    promotesTo: DoFClasses.Paladin
+    promotesTo: DoFClasses.Paladin,
+    weapons: {
+        [DoFWeapons.Sword]: 71,
+        [DoFWeapons.Lance]: 31
+    }
 };

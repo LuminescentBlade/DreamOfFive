@@ -326,24 +326,36 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
         let value = base;
         let growth = characterDef.growths ? (characterDef.growths[statKey] ?? 0) / 100 : 0;
         if (promoBonuses) { // unpromoted unit
-            value = calcStat(base, growth, false);
-            capped = value >= unpromotedCaps[statKey];
+            if (statKey === 'con') {
+                value = base;
+            } else {
+                value = calcStat(base, growth, false);
+                capped = value >= unpromotedCaps[statKey];
+            }
             if (capped) {
                 value = unpromotedCaps[statKey];
             }
             if (isPromoted()) {
                 // for capbreak edition set value to unpromoted caps if capped here or it'll mess with the calcs
-                const promo1Stat = value + (promoBonuses[statKey] ?? 0);
-                value = value = calcStat(promo1Stat, growth, true);
-                capped = value >= promotedCaps[statKey];
+                if (statKey === 'con') {
+                    value = value + (promoBonuses[statKey] ?? 0);
+                } else {
+                    const promo1Stat = value + (promoBonuses[statKey] ?? 0);
+                    value = value = calcStat(promo1Stat, growth, true);
+                    capped = value >= promotedCaps[statKey];
+                }
                 if (capped) {
                     value = promotedCaps[statKey];
                 }
             }
         } else {
-            value = calcStat(base, growth, true);
-            capped = value >= promotedCaps[statKey];
-            if (capped) { value = promotedCaps[statKey] }
+            if (statKey === 'con') {
+                value = base;
+            } else {
+                value = calcStat(base, growth, true);
+                capped = value >= promotedCaps[statKey];
+                if (capped) { value = promotedCaps[statKey] }
+            }
         }
 
         return <td key={statKey} className={capped ? styles.capped : ''}>{value.toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>

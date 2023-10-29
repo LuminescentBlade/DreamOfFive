@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
+import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Tricia: IDoFCharacter =   {
@@ -18,6 +18,9 @@ export const Tricia: IDoFCharacter =   {
     }, 
     level: 1,
     promotesTo: DoFClasses.Blademaiden,
-    growths: {hp: 50, pow: 55, skl: 45, spd: 70, luk: 85, def: 35, res: 40}
+    growths: {hp: 50, pow: 55, skl: 45, spd: 70, luk: 85, def: 35, res: 40},
+    weapons: {
+        [DoFWeapons.Sword]: 1,
+    }
 };
 

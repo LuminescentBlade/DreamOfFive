@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
+import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Chester: IDoFCharacter = {
@@ -20,5 +20,8 @@ export const Chester: IDoFCharacter = {
     }, 
     level: 3,
     promotesTo: DoFClasses.Rogue,
-    growths: {hp: 75, pow: 40, skl: 55, spd: 65, luk: 40, def: 35, res: 5}
+    growths: {hp: 75, pow: 40, skl: 55, spd: 65, luk: 40, def: 35, res: 5},
+    weapons: {
+        [DoFWeapons.Sword]: 31,
+    }
 };

@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
+import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Kahn: IDoFCharacter = {
@@ -20,5 +20,8 @@ export const Kahn: IDoFCharacter = {
     },
     level: 9,
     promotesTo: DoFClasses.Sentinel,
-    growths: {hp: 85, pow: 45, skl: 55, spd: 45, luk: 40, def: 40, res: 10}
+    growths: {hp: 85, pow: 45, skl: 55, spd: 45, luk: 40, def: 40, res: 10},
+    weapons: {
+        [DoFWeapons.Lance]: 71,
+    }
 };

@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
+import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Nikita: IDoFCharacter = {
@@ -17,5 +17,8 @@ export const Nikita: IDoFCharacter = {
     },
     growths: {hp: 50, pow: 30, skl: 70, spd: 65, luk: 45, def: 20, res: 10},
     level: 2,
-    bases:  {hp: 29, pow: 15, skl: 18, spd: 22, luk: 17, def: 12, res: 7, con: 8}
+    bases:  {hp: 29, pow: 15, skl: 18, spd: 22, luk: 17, def: 12, res: 7, con: 8},
+    weapons: {
+        [DoFWeapons.Sword]: 181
+    }
 };
