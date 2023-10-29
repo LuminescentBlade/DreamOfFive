@@ -17,47 +17,6 @@
   overflow: hidden;
 }
 
-.tableWrapper {
-  width: 100%;
-  max-width: 100%;
-  overflow: auto;
-}
-.statTable {
-  max-width: 100%;
-  text-align: center;
-  border-collapse: collapse;
-  border: var(--dof-input-border);
-  table-layout: fixed;
-  margin: 0 auto;
-  thead {
-    font-weight: 700;
-  }
-  th,
-  td {
-    padding: 4px;
-    border: var(--dof-input-border);
-  }
-  th,
-  .rowHeader {
-    width: var(--row-label-size);
-    max-width: var(--row-label-size);
-    min-width: var(--row-label-size);
-  }
-
-  td,
-  .colHeader {
-    width: var(--data-size);
-    max-width: var(--data-size);
-    min-width: var(--data-size);
-  }
-
-  thead {
-    color: var(--dof-color4);
-    border-bottom: var(--dof-input-border);
-    border-bottom-width: 2px;
-  }
-}
-
 .controls {
   display: flex;
   justify-content: flex-end;
@@ -77,12 +36,6 @@
   min-width: calc(8 * var(--data-size) + var(--row-label-size));
 }
 
-.growthsHeader1 {
-  text-shadow: 0 0 5px var(--dof-color1);
-}
-.growthsHeader2 {
-  text-shadow: 0 0 5px var(--dof-color3);
-}
 .profile,
 .profileData {
   display: flex;
@@ -139,10 +92,6 @@
   }
 }
 
-.sub {
-  font-size: 0.8em;
-}
-
 .tabs {
   display: flex;
   border-bottom: 2px solid var(--dof-header-border);
@@ -161,127 +110,11 @@
   font-weight: 700;
 }
 
-.levelInputs {
-  display: flex;
-  margin-bottom: 12px;
-  gap: 6px;
-}
-
-.levelInputGroup {
-  width: 64px;
-  label {
-    display: block;
-    font-size: 0.8em;
-  }
-
-  input {
-    width: 100%;
-    border: 0;
-    border-radius: 0;
-    background-color: rgba(0, 0, 0, 0.1);
-    border-bottom: 2px solid var(--dof-color1);
-    height: 30px;
-    color: var(--dof-color-text);
-    &:focus {
-      background-color: rgba(0, 0, 0, 0.15);
-      outline: none;
-      border-bottom: 2px solid var(--dof-color2);
-    }
-  }
-}
-.levelControls {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-.blossomWidget {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.blossomButton {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
-  order: 2;
-  .plus {
-    position: absolute;
-    top: -2px;
-    right: -2px;
-    background-color: var(--dof-bg-color);
-    border-radius: 100%;
-    width: 14px;
-    height: 14px;
-    opacity: 0;
-    transition: opacity 0.2s;
-  }
-  &:hover {
-    .plus {
-      opacity: 1;
-    }
-  }
-}
-.blossomItem {
-  height: 32px;
-  display: inline-flex;
-  background-color: var(--dof-color1);
-  padding: 3px 6px;
-  border-radius: 3px;
-  align-items: center;
-  gap: 3px;
-  order: 1;
-  input {
-    height: 100%;
-    width: 30px;
-    border: 0;
-    background: 0;
-    padding: 2px 0 0;
-  }
-}
-button.removeBlossom {
-  position: relative;
-  display: flex;
-  width: 20px;
-  height: 20px;
-  align-items: center;
-  justify-content: center;
-  svg {
-    position: relative;
-    z-index: 2;
-  }
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--dof-bg-color);
-    opacity: 0.75;
-    border-radius: 50%;
-  }
-}
 .blurb {
   margin-top: 12px;
   font-size: 0.9em;
   font-style: italic;
   text-align: center;
-}
-
-.avgs {
-  background-color: var(--dof-avgs-bg);
-  color: var(--dof-color2);
-}
-
-.caps {
-  background-color: var(--dof-color2);
-  color: var(--dof-color3);
-}
-
-.capped {
-  font-weight: 700;
-  background-color: var(--dof-color1);
 }
 
 @media screen and (max-width: 768px) {
@@ -298,15 +131,9 @@ button.removeBlossom {
   }
 }
 @media screen and (max-width: 600px) {
-  .levelControls {
-    margin-bottom: 12px;
-  }
   .characterDetails {
     --data-size: 35px;
     --row-header-size: 45px;
-  }
-  .statTable {
-    font-size: 0.8em;
   }
   .characterDetails {
     max-width: 95vw;
@@ -314,19 +141,6 @@ button.removeBlossom {
   }
   .subtitle {
     font-size: 1.3rem;
-  }
-}
-
-@media screen and (max-width: 361px) { // change this when we have 2+ blossom again
-  .levelControls {
-    flex-direction: column;
-    align-items: center;
-  }
-  .blossomWidget {
-    // flex-direction: column;
-    * {
-      order: unset;
-    }
   }
 }
 
