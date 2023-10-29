@@ -1,3 +1,24 @@
+$weapons: (
+    "sword",
+    "lance",
+    "axe",
+    "bow",
+    "anima",
+    "light",
+    "dark",
+    "staff"
+);
+
+$affinities: (
+    "fire",
+    "ice",
+    "light",
+    "thunder",
+    "wind",
+    "anima",
+    "dark"
+);
+
 @mixin icon-image($url, $size: 24px) {
     display: inline-block;
     height: $size;
@@ -12,4 +33,16 @@
 
 .icon-master-seal{
     @include icon-image('/icons/master_seal.png');
+}
+
+@each $weapon in $weapons{
+    .icon-wpn-#{$weapon}{
+        @include icon-image('/icons/wpn_#{$weapon}.png');
+    }
+}
+
+@each $affinity in $affinities{
+    .icon-affinity-#{$affinity}{
+        @include icon-image('/icons/affinity_#{$affinity}.png');
+    }
 }
