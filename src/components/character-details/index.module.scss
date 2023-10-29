@@ -70,15 +70,6 @@
   gap: 6px;
 }
 
-.extendedProfile {
-  list-style: none;
-  li {
-    margin-bottom: 6px;
-  }
-}
-// .data {
-// }
-
 .dataContent {
   padding: 12px;
   overflow: auto;
@@ -114,9 +105,6 @@
   }
 }
 
-.redText {
-  color: #e92323;
-}
 .classText {
   color: var(--dof-color-subheader);
   font-weight: 700;

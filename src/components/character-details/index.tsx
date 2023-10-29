@@ -6,6 +6,7 @@ import Overlay from "../overlay";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faArrowsUpDownLeftRight, faPlus, faMinus } from '@fortawesome/free-solid-svg-icons'
 import Toggle from "../toggle";
+import CharacterProfile from "../unit-profile";
 
 enum CharacterDetailState {
     Stat = 'stat',
@@ -13,7 +14,6 @@ enum CharacterDetailState {
     Gallery = 'gallery'
 };
 
-let init = false;
 let offset = { left: 0, top: 0 };
 let isDragging = false;
 let cachedState: any = {
@@ -91,7 +91,6 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
     }
 
     const blossomData = getBlossomLevels();
-    init = true;
 
     function setWidgetStateCaching(widgetStateData: any) {
         cachedState = widgetStateData;
@@ -101,6 +100,13 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
     function setComparisonMode(value: boolean) {
         offset = { left: 0, top: 0 };
         setWidgetStateCaching({ ...widgetState, enableCompareMode: value, dragStateStyle: {} });
+    }
+
+    function clearItem() {
+        clear();
+        offset = { left: 0, top: 0 };
+        currentCharacter = undefined;
+        setWidgetStateCaching({ ...widgetState, enableCompareMode: false, dragStateStyle: {}, resetState: true });
     }
 
     function setUnpromotedLevel(event: any) {
@@ -117,13 +123,6 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
             setLevelData(newData);
         }
     };
-
-    function clearItem() {
-        clear();
-        offset = { left: 0, top: 0 };
-        currentCharacter = undefined;
-        setWidgetStateCaching({ ...widgetState, enableCompareMode: false, dragStateStyle: {}, resetState: true });
-    }
 
 
     function setPromotedLevel(event: any) {
@@ -466,25 +465,8 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
         }
     }
 
-    function cmToFtIn(cm: number) {
-        const inches = cm / 2.54;
-        let ft = Math.floor(inches / 12);
-        let inchLeft = Math.round(inches - ft * 12);
-        if (inchLeft >= 12) { // ideally equal 12, but
-            ft += 1;
-            inchLeft -= 12;
-        }
-        return `${ft}'${inchLeft}''`;
-    }
-
     function renderExtendedProfile() {
-        return <ul className={styles.extendedProfile}>
-            <li><strong>Country of Origin: </strong><span className="capitalize">{characterDef.nationality}</span></li>
-            {characterDef.height ? <li><strong>Height: </strong>{characterDef.height}cm / {cmToFtIn(characterDef.height)}</li> : ''}
-            {characterDef.age ? <li><strong>Age: </strong>{characterDef.age}</li> : ''}
-            {characterDef.epithet ? <li><strong>Name in the Stars: </strong><span className={styles.redText}>{characterDef.epithet}</span></li> : ''}
-
-        </ul>
+        return <CharacterProfile characterDef={characterDef}/>
     }
 
     function renderContent(state: CharacterDetailState) {
