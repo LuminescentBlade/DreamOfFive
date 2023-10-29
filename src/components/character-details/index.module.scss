@@ -17,7 +17,7 @@
   overflow: hidden;
 }
 
-.tableWrapper{
+.tableWrapper {
   width: 100%;
   max-width: 100%;
   overflow: auto;
@@ -70,9 +70,9 @@
   gap: 6px;
 }
 
-.extendedProfile{
+.extendedProfile {
   list-style: none;
-  li{
+  li {
     margin-bottom: 6px;
   }
 }
@@ -83,14 +83,13 @@
   padding: 12px;
   overflow: auto;
   box-sizing: content-box;
-  min-width: calc(8 * var(--data-size)  + var(--row-label-size));
-  
+  min-width: calc(8 * var(--data-size) + var(--row-label-size));
 }
 
-.growthsHeader1{
+.growthsHeader1 {
   text-shadow: 0 0 5px var(--dof-color1);
 }
-.growthsHeader2{
+.growthsHeader2 {
   text-shadow: 0 0 5px var(--dof-color3);
 }
 .profile,
@@ -115,7 +114,7 @@
   }
 }
 
-.redText{
+.redText {
   color: #e92323;
 }
 .classText {
@@ -152,7 +151,6 @@
   }
 }
 
-
 .sub {
   font-size: 0.8em;
 }
@@ -171,7 +169,7 @@
   }
 }
 
-.selectedTab{
+.selectedTab {
   font-weight: 600;
 }
 
@@ -203,23 +201,23 @@
     }
   }
 }
-.levelControls{
+.levelControls {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-.blossomWidget{
+.blossomWidget {
   display: flex;
   align-items: center;
   gap: 12px;
 }
-.blossomButton{
+.blossomButton {
   position: relative;
   display: inline-flex;
   align-items: center;
   gap: 3px;
   order: 2;
-  .plus{
+  .plus {
     position: absolute;
     top: -2px;
     right: -2px;
@@ -227,18 +225,25 @@
     border-radius: 100%;
     width: 14px;
     height: 14px;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  &:hover {
+    .plus {
+      opacity: 1;
+    }
   }
 }
-.blossomItem{
+.blossomItem {
   height: 32px;
   display: inline-flex;
   background-color: var(--dof-color1);
   padding: 3px 6px;
   border-radius: 3px;
   align-items: center;
-  gap: 3px; 
+  gap: 3px;
   order: 1;
-  input{
+  input {
     height: 100%;
     width: 30px;
     border: 0;
@@ -246,19 +251,19 @@
     padding: 2px 0 0;
   }
 }
-button.removeBlossom{
+button.removeBlossom {
   position: relative;
   display: flex;
   width: 20px;
   height: 20px;
   align-items: center;
   justify-content: center;
-  svg{
+  svg {
     position: relative;
     z-index: 2;
   }
-  &::after{
-    content: '';
+  &::after {
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -300,15 +305,15 @@ button.removeBlossom{
     flex-direction: row;
     gap: 12px;
   }
-  .dataContent{
+  .dataContent {
     min-width: unset;
   }
 }
 @media screen and (max-width: 600px) {
-  .levelControls{
+  .levelControls {
     margin-bottom: 12px;
   }
-  .characterDetails{
+  .characterDetails {
     --data-size: 35px;
     --row-header-size: 45px;
   }
@@ -325,24 +330,24 @@ button.removeBlossom{
 }
 
 @media screen and (max-width: 400px) {
-  .levelControls{
+  .levelControls {
     flex-direction: column;
     align-items: center;
   }
-  .blossomWidget{
+  .blossomWidget {
     flex-direction: column;
-    *{
+    * {
       order: unset;
     }
   }
 }
 
-.footer{
+.footer {
   border-top: 1px solid var(--dof-color3);
   padding-top: 12px;
   display: flex;
   justify-content: flex-end;
-  label{
-    font-size: .8em;
+  label {
+    font-size: 0.8em;
   }
 }
