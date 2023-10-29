@@ -3,7 +3,7 @@ import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Claudiya: IDoFCharacter = {
     name: DoFCharKey.Claudiya,
-    artists: [DoFArtist.Amelia],
+    artists: [DoFArtist.Sev],
     class: DoFClasses.Valkyrie,
     nationality: DoFNationality.Vishara,
     height: 167,

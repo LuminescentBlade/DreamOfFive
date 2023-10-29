@@ -3,7 +3,7 @@ import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Wren: IDoFCharacter =  {
     name: DoFCharKey.Wren,
-    artists: [DoFArtist.Lumi, DoFArtist.Amelia],
+    artists: [DoFArtist.Lumi, DoFArtist.Sev],
     class: DoFClasses.Cleric,
     nationality: DoFNationality.Onduris,
     blurb: '"... came a point where she tired of making small differences, and craved true change at our side..."',

@@ -3,7 +3,7 @@ import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Brill: IDoFCharacter = {
     name: DoFCharKey.Brill,
-    artists: [DoFArtist.Amelia],
+    artists: [DoFArtist.Sev],
     blurb: '"The Ondurites regarded helot women as chattel, archers as cowards, and yet she had battled her way to command..."',
     class: DoFClasses.Marksman,
     nationality: DoFNationality.Onduris,

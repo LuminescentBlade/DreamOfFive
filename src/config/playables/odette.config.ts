@@ -3,7 +3,7 @@ import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Odette: IDoFCharacter = {
     name: DoFCharKey.Odette,
-    artists: [DoFArtist.Amelia, DoFArtist.Lumi],
+    artists: [DoFArtist.Sev, DoFArtist.Lumi],
     class: DoFClasses.Marksman,
     nationality: DoFNationality.Aukema,
     height: 164,

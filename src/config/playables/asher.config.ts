@@ -3,7 +3,7 @@ import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Asher: IDoFCharacter = {
     name: DoFCharKey.Asher,
-    artists: [DoFArtist.Amelia, DoFArtist.Lumi],
+    artists: [DoFArtist.Sev, DoFArtist.Lumi],
     blurb: '"... did not quite know what to make of him, but whether or not his affect is sincere, he is no charlatan..."',
     nationality: DoFNationality.Aukema,
     class: DoFClasses.Priest,

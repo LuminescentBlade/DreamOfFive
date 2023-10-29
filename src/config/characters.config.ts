@@ -58,7 +58,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'sorcha',
             profileName: 'Sorcha Farrell',
-            artists: [DoFArtist.Amelia],
+            artists: [DoFArtist.Sev],
             blurb: '"Fluid gestures wove fire in intricate, deadly patterns, but my eyes were on hers... cold, onyx-dark..."',
             class: DoFClasses.Harrier,
             nationality: DoFNationality.Aukema,
@@ -68,7 +68,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                 }
             },
             alt: {
-                final: { artists: [DoFArtist.Amelia], chapter: 99, isSpoiler: true }
+                final: { artists: [DoFArtist.Sev], chapter: 99, isSpoiler: true }
             },
             conditional: {
                 chapter: {
@@ -94,7 +94,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             name: 'farrell',
             profileName: 'Cuthbert Farrell',
             epithet: 'The Pursuer',
-            artists: [DoFArtist.Amelia, DoFArtist.Astra, DoFArtist.TBA],
+            artists: [DoFArtist.Sev, DoFArtist.Astra, DoFArtist.TBA],
             class: '',
             nationality: DoFNationality.Aukema,
             routeConfig: {
@@ -147,7 +147,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'vicentyr',
-            artists: [DoFArtist.Xiltas, DoFArtist.Amelia],
+            artists: [DoFArtist.Xiltas, DoFArtist.Sev],
             blurb: '"... officer class of warrior-scholars, taught in tactics, leadership, arithmetic, rhetoric and even philosophy..."',
             class: DoFClasses.Sage,
             nationality: DoFNationality.Musain,
@@ -352,7 +352,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'sel-seir',
             displayName: 'sel\'Seir',
-            artists: [DoFArtist.Lumi, DoFArtist.Amelia],
+            artists: [DoFArtist.Lumi, DoFArtist.Sev],
             blurb: '"Seir was notoriously decadent and venal, but his sword-arm had not atrophied... he was still Ondurite."',
             class: DoFClasses.Swordmaster,
             nationality: DoFNationality.Onduris,
@@ -431,12 +431,12 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'varkade',
             profileName: 'Varkade Hengeist',
-            artists: [DoFArtist.Astra, DoFArtist.Amelia],
+            artists: [DoFArtist.Astra, DoFArtist.Sev],
             blurb: '"He thought he made me. In a sense, he was right. But I had to unmake him."',
             class: '',
             nationality: DoFNationality.Aukema,
             alt: {
-                younger: { artists: [DoFArtist.Astra, DoFArtist.Amelia, DoFArtist.Lumi] }
+                younger: { artists: [DoFArtist.Astra, DoFArtist.Sev, DoFArtist.Lumi] }
             },
             routeConfig: {
                 allRoute: {
@@ -447,7 +447,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'sevira',
-            artists: [DoFArtist.Amelia],
+            artists: [DoFArtist.Sev],
             class: '',
             nationality: DoFNationality.Aukema,
             routeConfig: {
@@ -481,7 +481,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'merri',
-            artists: [DoFArtist.Amelia, DoFArtist.Astra],
+            artists: [DoFArtist.Sev, DoFArtist.Astra],
             blurb: '"... could stick you up and ruin your life with an irrepressible smile. Little consolation, I imagined, but..."',
             class: '',
             nationality: DoFNationality.Musain,
@@ -494,7 +494,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'renair_young',
             displayName: 'Young Rena',
-            artists: [DoFArtist.Amelia, DoFArtist.Lumi],
+            artists: [DoFArtist.Sev, DoFArtist.Lumi],
             nationality: DoFNationality.Aukema,
             routeConfig: {
                 onduris: {
@@ -504,11 +504,11 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'ethelrena',
-            artists: [DoFArtist.Amelia, DoFArtist.Lumi],
+            artists: [DoFArtist.Sev, DoFArtist.Lumi],
             nationality: DoFNationality.Aukema,
             isSpoiler: true,
             alt: {
-                blood: { artists: [DoFArtist.Amelia, DoFArtist.Lumi] }
+                blood: { artists: [DoFArtist.Sev, DoFArtist.Lumi] }
             },
             routeConfig: {
                 onduris: {
@@ -553,7 +553,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'queenvish',
             displayName: 'Queen Vishara',
-            artists: [DoFArtist.Amelia],
+            artists: [DoFArtist.Sev],
             nationality: DoFNationality.Vishara,
             isSpoiler: true,
             routeConfig: {
@@ -615,7 +615,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             name: 'fleurre',
             profileName: 'Fleurre Domremie',
             blurb: '"...greeted me with a warm smile, but I could see behind her eyes she was appraising me, calculating..."',
-            artists: [DoFArtist.Amelia],
+            artists: [DoFArtist.Sev],
             class: DoFClasses.Sage,
             nationality: DoFNationality.Musain,
             routeConfig: {
@@ -625,7 +625,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                 }
             },
             alt: {
-                provost: { artists: [DoFArtist.Amelia, DoFArtist.Lumi], chapter: 14 }
+                provost: { artists: [DoFArtist.Sev, DoFArtist.Lumi], chapter: 14 }
             },
             conditional: {
                 chapter: {
@@ -641,12 +641,12 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'armory',
             displayName: 'Armory Gara',
-            artists: [DoFArtist.Amelia, DoFArtist.Lumi]
+            artists: [DoFArtist.Sev, DoFArtist.Lumi]
         },
         {
             name: 'vendor',
             displayName: 'Vendor Sorina',
-            artists: [DoFArtist.Amelia, DoFArtist.Lumi],
+            artists: [DoFArtist.Sev, DoFArtist.Lumi],
         }
         // ,
         // {
@@ -668,7 +668,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'myrmidon',
-            artists: [DoFArtist.Amelia],
+            artists: [DoFArtist.Sev],
             class: DoFClasses.Myrmidon
         },
         {
@@ -683,7 +683,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'soldier',
-            artists: [DoFArtist.TBA, DoFArtist.Amelia],
+            artists: [DoFArtist.TBA, DoFArtist.Sev],
             class: DoFClasses.Soldier
         },
         {
@@ -708,23 +708,23 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'girl',
-            artists: [DoFArtist.Amelia],
+            artists: [DoFArtist.Sev],
         },
         {
             name: 'woman1',
-            artists: [DoFArtist.Amelia],
+            artists: [DoFArtist.Sev],
         },
         {
             name: 'woman2',
-            artists: [DoFArtist.Amelia],
+            artists: [DoFArtist.Sev],
         },
         {
             name: 'woman3',
-            artists: [DoFArtist.Amelia],
+            artists: [DoFArtist.Sev],
         },
         {
             name: 'woman4',
-            artists: [DoFArtist.Amelia, DoFArtist.Lumi],
+            artists: [DoFArtist.Sev, DoFArtist.Lumi],
         },
         {
             name: 'man1',
@@ -740,7 +740,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'man4',
-            artists: [DoFArtist.Amelia],
+            artists: [DoFArtist.Sev],
         },
         {
             name: 'oldman',

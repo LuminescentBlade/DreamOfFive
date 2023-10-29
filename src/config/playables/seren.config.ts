@@ -3,7 +3,7 @@ import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Seren: IDoFCharacter = {
     name: DoFCharKey.Seren,
-    artists: [DoFArtist.Amelia, DoFArtist.Astra],
+    artists: [DoFArtist.Sev, DoFArtist.Astra],
     blurb: '"... patriotic belief gradually eroded by the grinding reality of simply living in Musain, under the noble heel..."',
     class: DoFClasses.Soldier,
     nationality: DoFNationality.Musain,

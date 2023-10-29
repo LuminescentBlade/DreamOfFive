@@ -3,7 +3,7 @@ import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Florent: IDoFCharacter = {
     name: DoFCharKey.Florent,
-    artists: [DoFArtist.Astra, DoFArtist.Amelia],
+    artists: [DoFArtist.Astra, DoFArtist.Sev],
     blurb: '"His father had been elevated to knighthood through his deeds. Little wonder his son was more grounded..."',
     class: DoFClasses.Cavalier,
     nationality: DoFNationality.Musain,

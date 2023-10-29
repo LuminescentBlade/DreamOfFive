@@ -3,7 +3,7 @@ import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Stolypin: IDoFCharacter = {
     name: DoFCharKey.Stolypin,
-    artists: [DoFArtist.Astra, DoFArtist.Amelia, DoFArtist.Lumi],
+    artists: [DoFArtist.Astra, DoFArtist.Sev, DoFArtist.Lumi],
     class: DoFClasses.Harrier,
     nationality: DoFNationality.Vishara,
     height: 173,

@@ -3,7 +3,7 @@ import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Crowe: IDoFCharacter = {
     name: DoFCharKey.Crowe,
-    artists: [DoFArtist.Amelia],
+    artists: [DoFArtist.Sev],
     blurb: '"It was clear that, in better times, he would only be fit for the noose. But we needed him, and he knew it..."',
     nationality: DoFNationality.Aukema,
     class: DoFClasses.Archer,

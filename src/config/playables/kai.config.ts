@@ -3,7 +3,7 @@ import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Kai: IDoFCharacter = {
     name: DoFCharKey.Kai,
-    artists: [DoFArtist.Amelia],
+    artists: [DoFArtist.Sev],
     class: DoFClasses.DrakeKnight,
     nationality: DoFNationality.Vishara,
     routeConfig:{

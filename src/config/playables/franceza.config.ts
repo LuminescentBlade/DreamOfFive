@@ -3,7 +3,7 @@ import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Franceza: IDoFCharacter = {
     name: DoFCharKey.Franceza,
-    artists: [DoFArtist.Amelia],
+    artists: [DoFArtist.Sev],
     blurb: '"... relaxed, with an easy laugh. But in unguarded moments, she looked to Seren with a fierce protectiveness..."',
     class: DoFClasses.Archer,
     nationality: DoFNationality.Musain,

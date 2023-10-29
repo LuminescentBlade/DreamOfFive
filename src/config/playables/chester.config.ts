@@ -3,7 +3,7 @@ import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Chester: IDoFCharacter = {
     name: DoFCharKey.Chester,
-    artists: [DoFArtist.Amelia],
+    artists: [DoFArtist.Sev],
     blurb: '"... nerve had already failed once, and while he would never forgive himself this, he could yet atone..."',
     nationality: DoFNationality.Aukema,
     class: DoFClasses.Thief,

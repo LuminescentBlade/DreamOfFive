@@ -6,8 +6,8 @@ export const Rena: IDoFCharacter =  {
     displayName: 'Rena',
     artists: [DoFArtist.AK],
     alt: {
-        angry: { artists: [DoFArtist.AK, DoFArtist.Amelia] },
-        sad: { artists: [DoFArtist.AK, DoFArtist.Amelia] },
+        angry: { artists: [DoFArtist.AK, DoFArtist.Sev] },
+        sad: { artists: [DoFArtist.AK, DoFArtist.Sev] },
         promo: { artists: [DoFArtist.AK, DoFArtist.Lumi], chapter: 14.5, displayName: 'Promoted' },
         promo_angry: { artists: [DoFArtist.AK, DoFArtist.Lumi], chapter: 14.5, displayName: 'Pr. Angry' },
         promo_sad: { artists: [DoFArtist.AK, DoFArtist.Lumi], chapter: 14.5, displayName: 'Pr. Sad' },

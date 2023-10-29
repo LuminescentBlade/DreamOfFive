@@ -4,7 +4,7 @@ import { IDoFCharacter } from "@/src/models/interfaces";
 export const Ironside: IDoFCharacter = {
     name: DoFCharKey.Ironside,
     altNames: ['Ironside', 'jin\'Estal'],
-    artists: [DoFArtist.Lumi, DoFArtist.Amelia],
+    artists: [DoFArtist.Lumi, DoFArtist.Sev],
     nationality: DoFNationality.Onduris,
     class: DoFClasses.Swordmaster,
     secret: true,

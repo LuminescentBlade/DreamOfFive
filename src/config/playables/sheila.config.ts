@@ -3,7 +3,7 @@ import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Sheila: IDoFCharacter = {
     name: DoFCharKey.Sheila,
-    artists: [DoFArtist.Amelia],
+    artists: [DoFArtist.Sev],
     class: DoFClasses.SeraphKnight,
     nationality: DoFNationality.Aukema,
     height: 169,

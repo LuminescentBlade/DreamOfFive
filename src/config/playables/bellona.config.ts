@@ -4,7 +4,7 @@ import { IDoFCharacter } from "@/src/models/interfaces";
 export const Bellona: IDoFCharacter = {
     name: DoFCharKey.Bellona,
     profileName: 'Bellona Quirinia',
-    artists: [DoFArtist.Astra, DoFArtist.Amelia],
+    artists: [DoFArtist.Astra, DoFArtist.Sev],
     blurb: '"... considered herself without parallel. So she sought adventure in Onduris, and found, in us, all she could want..."',
     class: DoFClasses.DrakeRider,
     nationality: DoFNationality.Vishara,

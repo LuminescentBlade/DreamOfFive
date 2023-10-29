@@ -4,7 +4,7 @@ import { stat } from "fs";
 
 export const Blixa: IDoFCharacter = {
     name: DoFCharKey.Blixa,
-    artists: [DoFArtist.Amelia, DoFArtist.Astra, DoFArtist.Lumi],
+    artists: [DoFArtist.Sev, DoFArtist.Astra, DoFArtist.Lumi],
     blurb: '"... gentle in all things. I felt as though, were he to come to harm, it would rank among the great tragedies of war..."',
     class: DoFClasses.Bard,
     nationality: DoFNationality.Onduris,

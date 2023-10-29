@@ -9,8 +9,8 @@ export const DoFArtistConfig = {
         name: 'AstraLunaSol',
         color: '#ff3131'
     },
-    [DoFArtist.Amelia]: {
-        name: 'Amelia',
+    [DoFArtist.Sev]: {
+        name: 'Sev',
         color: '#ffde00'
     },
     [DoFArtist.Char]: {

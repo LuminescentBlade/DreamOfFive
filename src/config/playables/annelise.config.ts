@@ -4,7 +4,7 @@ import { IDoFCharacter } from "@/src/models/interfaces";
 export const Annelise: IDoFCharacter = {
     name: DoFCharKey.Annelise,
     altNames: ['Long Tingbai', '龍庭白'],
-    artists: [DoFArtist.Amelia, DoFArtist.Astra, DoFArtist.Lumi],
+    artists: [DoFArtist.Sev, DoFArtist.Astra, DoFArtist.Lumi],
     blurb: '"... carried herself with a dignity that suggested she was in some way above this all, yet she never shirked..."',
     class: DoFClasses.PegRider,
     nationality: DoFNationality.Svanhild,

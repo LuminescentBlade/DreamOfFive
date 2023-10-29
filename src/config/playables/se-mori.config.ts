@@ -4,7 +4,7 @@ import { IDoFCharacter } from "@/src/models/interfaces";
 export const SeMori: IDoFCharacter = {
     name: DoFCharKey.seMori,
     displayName: 'se\'Mori',
-    artists: [DoFArtist.Amelia, DoFArtist.Astra],
+    artists: [DoFArtist.Sev, DoFArtist.Astra],
     blurb: '"... seemed puffed up at first, but in time, I grew to respect his firm character, his direct manner, his sense of duty..."',
     class: DoFClasses.Fencer,
     nationality: DoFNationality.Onduris,
@@ -12,7 +12,7 @@ export const SeMori: IDoFCharacter = {
     epithet: 'The Rake',
     alt: {
         promo: {
-            artists: [DoFArtist.Amelia, DoFArtist.Astra, DoFArtist.Lumi],
+            artists: [DoFArtist.Sev, DoFArtist.Astra, DoFArtist.Lumi],
             chapter: 14.5,
             displayName: 'Promoted'
         }

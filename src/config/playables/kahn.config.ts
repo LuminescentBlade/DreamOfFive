@@ -3,7 +3,7 @@ import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Kahn: IDoFCharacter = {
     name: DoFCharKey.Kahn,
-    artists: [DoFArtist.Astra, DoFArtist.Amelia, DoFArtist.Lumi],
+    artists: [DoFArtist.Astra, DoFArtist.Sev, DoFArtist.Lumi],
     blurb: '"... asked the secret of his courage, he answered, \'the ladies expect the best from me.\' I sighed..."',
     class: DoFClasses.Soldier,
     nationality: DoFNationality.Onduris,

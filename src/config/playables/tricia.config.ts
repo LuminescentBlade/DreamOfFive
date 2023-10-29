@@ -3,7 +3,7 @@ import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Tricia: IDoFCharacter =   {
     name: DoFCharKey.Tricia,
-    artists: [DoFArtist.Amelia, DoFArtist.Lumi],
+    artists: [DoFArtist.Sev, DoFArtist.Lumi],
     nationality: DoFNationality.Aukema,
     class: DoFClasses.Henchwoman,
     blurb: '"... had a way of showing up behind you, with whatever you might need at hand, and a chirpy \'This it, boss?\'"',

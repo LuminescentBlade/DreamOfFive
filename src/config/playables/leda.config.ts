@@ -3,7 +3,7 @@ import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Leda: IDoFCharacter = {
     name: DoFCharKey.Leda,
-    artists: [DoFArtist.Astra, DoFArtist.Amelia],
+    artists: [DoFArtist.Astra, DoFArtist.Sev],
     blurb: '"She seemed almost ethereal, not quite at one with the world, but when she moved, I couldn\'t take my eyes off her..."',
     class: DoFClasses.Dancer,
     nationality: DoFNationality.Onduris,

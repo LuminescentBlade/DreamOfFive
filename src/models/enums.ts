@@ -14,7 +14,7 @@ export enum DoFUnitState {
 export enum DoFArtist {
     Lumi = 'lumi',
     Astra = 'astra',
-    Amelia = 'amelia',
+    Sev = 'amelia',
     Char = 'char',
     AK = 'ak',
     Nih = 'niharu',
