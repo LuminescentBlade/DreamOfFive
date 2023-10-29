@@ -1,3 +1,20 @@
+export interface IRenderItem {
+    name: string,
+    artists: string[],
+    displayName?: string,
+    path: string
+};
+export interface IRenderItemConfig {
+    name: string,
+    default: IRenderItem;
+    alts?: IRenderItem[];
+    renderOrder: number;
+    type: string;
+};
+
+export interface IRenderCharacterConfig extends IRenderItemConfig{
+    unitData: any
+};
 export interface IUnit {
     name: string;
     artists: string[];
@@ -11,7 +28,9 @@ export interface IUnit {
         npc?: IConditional;
         chapter?: IConditional;
     },
+    routeConfig?: any,
     isSpoiler?: boolean;
+    secret?: boolean;
     fullSheetRenderOrderOverride?: number
 }
 
@@ -19,11 +38,6 @@ export interface IRenderContent {
     path: string;
     altPaths?: {
         [key: string]: string;
-    },
-    conditionalName?: { // used over displayName
-        player?: string;
-        enemy?: string;
-        npc?: string;
     },
     renderOrder: number,
 }

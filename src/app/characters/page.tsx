@@ -5,13 +5,15 @@ import UnitSheet from '@/src/components/unit-sheet';
 import styles from './page.module.scss'
 import { DoFArtistConfig } from '@/src/config/artists.config';
 import { useState } from 'react';
-import { IDoFCharacter, IDoFCharacterRenderer, IDoFRenderCharacter, IDoFRenderUnit, IDoFUnit, IKeyMap } from '@/src/models/interfaces';
+import { IDoFCharacter, IDoFCharacterRenderer, IDoFRenderCharacter, IDoFRenderUnit, IDoFUnit, IKeyMap, IRenderCharacterConfig, IRenderItemConfig } from '@/src/models/interfaces';
 import { DoFCharacters } from '@/src/config/characters.config';
 import { DoFChapters } from '@/src/config/chapters.config';
 import OptionSelector from '@/src/components/option-selector';
 import { download, renderCharactersByCountry } from './sheet_export';
 import { useSearchParams } from 'next/navigation'
 import CharacterDetails from '@/src/components/character-details';
+import { DoFRenderCharacter } from '@/src/models/dof-render-character.class';
+import { DoFGeneric } from '@/src/models/dof-render-generic.class';
 
 const defaultRenderValues = {
     prod: { chapter: 6, limit: 14.5 },
@@ -22,160 +24,21 @@ const chapterOptionsLocal = Object.values(DoFChapters).sort((a, b) => a.value - 
 const chapterOptionsProd = chapterOptionsLocal.filter(chapter => chapter.value <= defaultRenderValues.prod.limit);
 
 const isProd = (process.env.NODE_ENV === 'production');
-let useProdOnLocal = false;
-let cachedData: IDoFCharacterRenderer; // we will definitely switch to redux after this
-let currentCharacterCache: IDoFRenderCharacter | undefined;
-let displayRoute = DoFRoute.Both;
 let { chapter: chapterLimit, chapterSelection } = setDisplayValues();
-const { shopkeepers, generics } = cacheStaticUnits();
+let cachedUnits: { characters: DoFRenderCharacter[], shopkeepers: IRenderItemConfig[], generics: IRenderItemConfig[] }; // TODO: move to global state management systems before we make tiermaker 
 
-function cacheStaticUnits() {
-    const cacheItem = (arr: IDoFUnit[], pathType: string) => {
-        return arr.map(item => {
-            const path = getPath(pathType, item.name);
-            return ({ ...item, path, renderOrder: 99 })
-        });
+
+function getCharacters(renderRules: any) {
+    // @ts-ignore
+    const preParseGenerics = (key: string) => DoFCharacters[key].map(unit => (new DoFGeneric(unit, key)).data);
+
+    return {
+        characters: DoFCharacters.characters.map(character => new DoFRenderCharacter(character, renderRules)),
+        shopkeepers: preParseGenerics('shopkeepers'),
+        generics: preParseGenerics('generics'),
     };
-    const shopkeepers: IDoFRenderUnit[] = cacheItem(DoFCharacters.shopkeepers, 'shopkeepers');
-    const generics: IDoFRenderUnit[] = cacheItem(DoFCharacters.generics, 'generics');
-
-    return { shopkeepers, generics };
 }
 
-function getData(useFull: boolean, bypassSpoiler: boolean): IDoFCharacterRenderer {
-    const config = parseCharacters(useFull ? 99 : chapterLimit, useFull ? DoFRoute.Both : displayRoute, useFull, bypassSpoiler);
-    const getRenderOrder = (item: IDoFRenderUnit) => item.fullSheetRenderOrderOverride ?? item.renderOrder;
-    const sort = (items: any[]) => items.sort((a, b) => getRenderOrder(a) - getRenderOrder(b));
-    if (useFull) {
-        return {
-            characters: [...sort([...config.player, ...config.enemy, ...config.npc]), ...generics, ...shopkeepers]
-        }
-    } else {
-        return {
-            player: sort(config.player),
-            enemy: sort(config.enemy),
-            npc: [...sort(config.npc), ...shopkeepers],
-            generic: generics
-        };
-    }
-}
-
-function parseCharacters(chapter: number, route: DoFRoute, useEarliest = false, bypassSpoiler = false) {
-    const config: { [key: string]: IDoFRenderUnit[] } = {
-        [DoFUnitState.Player]: [],
-        [DoFUnitState.Enemy]: [],
-        [DoFUnitState.NPC]: [],
-    };
-
-    DoFCharacters.characters.forEach(character => {
-        if (character.isSpoiler && !bypassSpoiler) {
-            return;
-        }
-        let placement: { value: DoFUnitState, chapter: number } | undefined;
-        if (route === DoFRoute.Musain || route === DoFRoute.Onduris) {
-            placement = getSinglePlacement(route, chapter, character, useEarliest, bypassSpoiler);
-        } else {
-            placement = getDoublePlacement(chapter, character, useEarliest, bypassSpoiler);
-        }
-        if (placement) {
-            let path;
-            path = getPath('characters', character.name);
-
-            const characterItem: IDoFRenderUnit = { ...character, path, renderOrder: placement.chapter };
-
-            if (character.alt) {
-                let characterAlt = character.alt;
-                if (!bypassSpoiler) {
-                    characterAlt = Object.keys(characterAlt).reduce((alts, altName) =>
-                     ((characterAlt[altName].isSpoiler || ((characterAlt[altName].chapter ?? 0) > chapter) )? alts : { ...alts, [altName]: { ...characterAlt[altName], chapter: undefined } }), {})
-                }
-                characterItem.alt = Object.keys(characterAlt)?.length ? characterAlt : undefined;
-            }
-
-            if (characterItem.alt) {
-                characterItem.altPaths = Object.keys(characterItem.alt).reduce((paths, altName) => ({ ...paths, [altName]: getPath('characters', `${character.name}_${altName}`) }), {});
-            }
-            config[placement.value].push(characterItem);
-        }
-    });
-
-    return config;
-}
-
-function getSinglePlacement(route: 'musain' | 'onduris', chapter: number, character: IDoFCharacter, useEarliest = false, showSecretPlayable = false) {
-    let routeConfig = character.routeConfig[route] || character.routeConfig.allRoute;
-    const validStates = [];
-    let checkByLatest = (config: number | number[], type: DoFUnitState)=>{
-        if (typeof config === 'number') {
-            if (config <= chapter) {
-                validStates.push({ value: type, chapter: config });
-            }
-        } else {
-            let index = -1;
-            while (config[index + 1] <= chapter) {
-                index++;
-            }
-            if (index >= 0) {
-                validStates.push({ value: type, chapter: config[index] });
-            }
-        }
-    }
-
-    if (!routeConfig) {
-        return;
-    }
-    
-    if (routeConfig.player != null && routeConfig.player <= chapter && (!character.secret || showSecretPlayable)) {
-        validStates.push({ value: DoFUnitState.Player, chapter: routeConfig.player });
-    }
-    if (routeConfig.enemy != null) {
-        checkByLatest(routeConfig.enemy, DoFUnitState.Enemy);
-    }
-    if (routeConfig.npc != null) {
-        checkByLatest(routeConfig.npc, DoFUnitState.NPC);
-    }
-    if (validStates.length) {
-        validStates.sort((a, b) => {
-            const chapterDiff = b.chapter - a.chapter;
-            if (chapterDiff) {
-                return (useEarliest ? -1 : 1) * chapterDiff;
-            } else {
-                return b.value === DoFUnitState.Player ? 1 :
-                    b.value === DoFUnitState.Enemy && a.value === DoFUnitState.NPC ? 1 : -1;
-            }
-        });
-        return validStates[0];
-    } else {
-        return;
-    }
-}
-
-function getDoublePlacement(chapter: number, character: IDoFCharacter, useEarliest = false, showSecretPlayable = false) {
-    // refactor to be more genericized to accept n routes
-    const placements = ['musain', 'onduris']
-        // @ts-ignore
-        .map(route => getSinglePlacement(route, chapter, character, useEarliest, showSecretPlayable))
-        .filter(placement => placement != null);
-    if (!placements.length) {
-        return undefined;
-    }
-    placements.sort((a, b) => {
-        if (b!.value === a!.value || useEarliest) {
-            return a!.chapter - b!.chapter; // take earlier chapter if both same value for multi placements
-        } else if (b!.value === DoFUnitState.Player) {
-            return 1;
-        } else if (b!.value === DoFUnitState.Enemy) {
-            return a!.value === DoFUnitState.Player ? -1 : 1;
-        } else {
-            return -1;
-        }
-    })
-    return placements[0];
-}
-
-function getPath(type: string, name: string) {
-    return `/mugs/${type}/${name}.png`;
-}
 
 function setDisplayValues(showAllItems: boolean = false) {
     if (showAllItems) {
@@ -184,10 +47,7 @@ function setDisplayValues(showAllItems: boolean = false) {
     return { chapter: defaultRenderValues.prod.chapter, chapterSelection: chapterOptionsProd };
 }
 
-function setVariable(variable: string, value: string) {
-    document.documentElement.style.setProperty(variable, value);
-}
-
+let unitSheetData: IDoFCharacterRenderer;
 let init = false;
 
 
@@ -201,7 +61,11 @@ export default function CharacterPage() {
         chapterLimit = 99;
         currentChapterLimit = chapterLimit;
         chapterSelection = displayValues.chapterSelection;
-    } 
+    }
+    // @ts-ignore
+    if (!cachedUnits) {
+        cachedUnits = getCharacters({ bypassSpoiler: showFullData, useEarliest: false });
+    }
     if (!init) {
         setTimeout(() => {
             if (typeof window !== "undefined") {
@@ -211,73 +75,101 @@ export default function CharacterPage() {
                 });
             }
         }, 0);
+        unitSheetData = getData(chapterLimit, DoFRoute.Both);
     }
-    const [unitSheetData, updateData] = useState(cachedData || getData(showUnsortedFull, showFullData));
-    const [expansionState, setExpansion] = useState({ data: new Map<string, boolean>() });
-    const [currentCharacter, updateCurrentCharacter] = useState(currentCharacterCache);
+
+    let activeCharacter: any;
+
+    const [characterPageState, updateCharacterPage] = useState({
+        chapterLimit,
+        displayRoute: DoFRoute.Both,
+        unitSheetData,
+        expandedPortraits: new Map<string, boolean>(),
+        activeCharacter
+    });
 
     init = true;
 
-    function update() {
-        cachedData = getData(showUnsortedFull, showFullData);
-        updateData(cachedData);
-    }
-
     function changeRoute(route: DoFRoute) {
-        displayRoute = route;
-        let newChapterLimit = chapterLimit;
-        while (newChapterLimit > 0 && displayRoute !== DoFRoute.Both &&
+        let newChapterLimit = characterPageState.chapterLimit;
+        while (newChapterLimit > 0 && route !== DoFRoute.Both &&
             (DoFChapters[newChapterLimit] == null ||
-                (DoFChapters[newChapterLimit].route != null && DoFChapters[chapterLimit].route !== displayRoute)
+                (DoFChapters[newChapterLimit].route != null && DoFChapters[chapterLimit].route !== route)
             )
         ) {
             newChapterLimit -= .5;
         }
-        chapterLimit = newChapterLimit;
-        currentChapterLimit = chapterLimit;
-        update();
-    }
-
-    function toggleProd() {
-        useProdOnLocal = !useProdOnLocal;
-        const displayValues = setDisplayValues();
-        chapterLimit = Math.min(displayValues.chapter, chapterLimit);
-        currentChapterLimit = chapterLimit;
-        chapterSelection = displayValues.chapterSelection;
-        update();
+        unitSheetData = getData(newChapterLimit, route);
+        updateCharacterPage({ ...characterPageState, chapterLimit: newChapterLimit, displayRoute: route, unitSheetData });
     }
 
     function chapterSelect(value: string) {
         const chapter = parseFloat(value);
-        chapterLimit = chapter;
-        currentChapterLimit = chapterLimit;
-        update();
+        const newChapterLimit = chapter;
+        unitSheetData = getData(newChapterLimit, characterPageState.displayRoute);
+        updateCharacterPage({ ...characterPageState, chapterLimit: newChapterLimit, unitSheetData })
     }
 
-    function renderByCountry() {
-        const result = renderCharactersByCountry(unitSheetData);
-        download(result);
+
+    function getData(chapter: number, route: string): any {
+        const useFull = false; // do later
+        const config = parseCharacters(useFull ? 99 : chapter, useFull ? DoFRoute.Both : route);
+        const getRenderOrder = (item: IDoFRenderUnit) => item.renderOrder;
+        const sort = (items: any[]) => items.sort((a, b) => getRenderOrder(a) - getRenderOrder(b));
+        const { shopkeepers, generics } = cachedUnits;
+        if (useFull) {
+            return {
+                characters: [...sort([...config.player, ...config.enemy, ...config.npc]), ...generics, ...shopkeepers]
+            }
+        } else {
+            return {
+                player: sort(config.player),
+                enemy: sort(config.enemy),
+                npc: [...sort(config.npc), ...shopkeepers],
+                generic: generics
+            };
+        }
+    }
+
+    function parseCharacters(chapter: number, route: string) {
+        const baseConfig: { [key: string]: any[] } = {
+            [DoFUnitState.Player]: [],
+            [DoFUnitState.Enemy]: [],
+            [DoFUnitState.NPC]: [],
+        };
+        return cachedUnits.characters.reduce((config, character) => {
+            character.currentChapter = { chapter, route: route === DoFRoute.Musain || route === DoFRoute.Onduris ? route : undefined };
+            const results = character.data;
+            if (results) {
+                config[results.type].push(results);
+            }
+            return config;
+        },
+            baseConfig
+        );
     }
 
     function toggleCharacter(name: string) {
         return function () {
-            expansionState.data.set(name, !expansionState.data.get(name));
-            setExpansion({ data: expansionState.data });
+            characterPageState.expandedPortraits.set(name, !characterPageState.expandedPortraits.get(name));
+            updateCharacterPage({ ...characterPageState, expandedPortraits: characterPageState.expandedPortraits });
         }
     }
 
-    function getClickFunction(characterData: IDoFRenderUnit, characterState: DoFUnitState) {
-        if (characterState === DoFUnitState.Player) {
-            return (data: IDoFRenderCharacter) => {
-                currentCharacterCache = data;
-                updateCurrentCharacter(currentCharacterCache);
+    function getClickFunction(characterData: IRenderCharacterConfig) {
+        if (characterData.type === DoFUnitState.Player) {
+            return () => {
+                updateCharacterPage({ ...characterPageState, activeCharacter: characterData.unitData });
             }
         }
     }
 
-    function clearCharacter(){
-        currentCharacterCache = undefined;
-        updateCurrentCharacter(currentCharacterCache);
+    function clearCharacter() {
+        updateCharacterPage({ ...characterPageState, activeCharacter: undefined });
+    }
+
+    function setVariable(variable: string, value: string) {
+        document.documentElement.style.setProperty(variable, value);
     }
 
     return (
@@ -286,18 +178,18 @@ export default function CharacterPage() {
             {!showUnsortedFull ? <div className={styles.controls}>
                 <div className={styles.control}>
                     <label>Route Select</label>
-                    <OptionSelector options={Object.values(DoFRoute)} selection={displayRoute} onSelect={changeRoute} />
+                    <OptionSelector options={Object.values(DoFRoute)} selection={characterPageState.displayRoute} onSelect={changeRoute} />
                 </div>
                 <div className={styles.control}>
                     <label>Chapter Select</label>
-                    <select name="chapter" onChange={(event) => { chapterSelect(event.target.value) }} value={chapterLimit}>
+                    <select name="chapter" onChange={(event) => { chapterSelect(event.target.value) }} value={characterPageState.chapterLimit}>
                         {
                             chapterSelection.map(chapter => {
-                                if (chapter.route && chapter.route !== displayRoute && displayRoute !== DoFRoute.Both) {
+                                if (chapter.route && chapter.route !== characterPageState.displayRoute && characterPageState.displayRoute !== DoFRoute.Both) {
                                     return ''
                                 } else {
                                     return <option key={chapter.value} value={chapter.value}>
-                                        {chapter.title || chapter.value} {displayRoute === DoFRoute.Both && chapter.route ? `(${chapter.route})` : ''}
+                                        {chapter.title || chapter.value} {characterPageState.displayRoute === DoFRoute.Both && chapter.route ? `(${chapter.route})` : ''}
                                     </option>
                                 }
                             })
@@ -305,14 +197,14 @@ export default function CharacterPage() {
                     </select>
                 </div>
             </div> : ''}
-            {currentCharacter ? <CharacterDetails characterDef={currentCharacter} clear={clearCharacter} experimentalFeatures={showFullData}/> : ''}
-            <UnitSheet data={unitSheetData} expansionState={expansionState.data} toggleCharacter={toggleCharacter} chapter={currentChapterLimit} getOnClick={getClickFunction} />
-            {
+            {characterPageState.activeCharacter ? <CharacterDetails characterDef={characterPageState.activeCharacter} clear={clearCharacter} experimentalFeatures={showFullData} /> : ''}
+            <UnitSheet data={characterPageState.unitSheetData} expansionState={characterPageState.expandedPortraits} toggleCharacter={toggleCharacter} chapter={currentChapterLimit} getOnClick={getClickFunction} />
+            {/* {
                 !isProd ? <div style={{ width: 'fit-content', margin: '12px auto', textAlign: 'center' }}>
                     {showFullData ? '' : <button style={{ padding: '12px', height: '40px' }} onClick={toggleProd}>Toggle Production Sheet</button>}
                     <button style={{ padding: '12px', height: '40px' }} onClick={renderByCountry}>Render Sheet By Country</button>
                 </div> : ""
-            }
+            } */}
         </main>
     );
 }
