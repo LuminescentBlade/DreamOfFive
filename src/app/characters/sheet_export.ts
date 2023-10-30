@@ -1,5 +1,5 @@
 import { DoFNationality } from "@/src/models/enums";
-import { IDoFCharacterRenderer, IDoFRenderUnit } from "@/src/models/interfaces";
+import { IDoFCharacterRenderer } from "@/src/models/interfaces";
 
 export function download(result: string) {
     const tempLink = document.createElement('a');
@@ -11,8 +11,8 @@ export function download(result: string) {
 
 
 function sortCharactersByCountryForRender(data: IDoFCharacterRenderer) {
-    const groupCharacters = (characters: any[], type: string, cache: { [key: string]: { type: string, character: IDoFRenderUnit }[] } = {}) => {
-        return characters.reduce((results, character: IDoFRenderUnit) => {
+    const groupCharacters = (characters: any[], type: string, cache: { [key: string]: { type: string, character: any }[] } = {}) => {
+        return characters.reduce((results, character) => {
             if (character.nationality) {
                 results[character.nationality] = results[character.nationality] || [];
                 results[character.nationality].push({ type, character });
@@ -45,7 +45,7 @@ function setRetinaRender(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2
     return window.devicePixelRatio;
 }
 
-function renderItem(item: { type: string, character: IDoFRenderUnit }, even: boolean) {
+function renderItem(item: { type: string, character: any }, even: boolean) {
     const canvas = document.createElement('canvas');
     canvas.height = 140;
     canvas.width = 120;
