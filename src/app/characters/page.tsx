@@ -199,8 +199,7 @@ export default function CharacterPage() {
                 </div>
             </div> : ''}
             {characterPageState.activeCharacter ? <CharacterDetails 
-                characterDef={characterPageState.activeCharacter.unitData} 
-                unitType={characterPageState.activeCharacter.type} 
+                characterConfig={characterPageState.activeCharacter} 
                 clear={clearCharacter} 
                 experimentalFeatures={showFullData} /> : ''}
             <UnitSheet data={characterPageState.unitSheetData} expansionState={characterPageState.expandedPortraits} toggleCharacter={toggleCharacter} chapter={currentChapterLimit} getOnClick={getClickFunction} />
