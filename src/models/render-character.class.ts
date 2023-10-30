@@ -107,16 +107,17 @@ export class RenderCharacter extends RenderUnit {
             return undefined;
         }
         placements.sort((a, b) => {
-            if (b!.value === a!.value || useEarliest) {
-                return a!.chapter - b!.chapter; // take earlier chapter if both same value for multi placements
-            } else if (b!.value === 'player') {
+            if (useEarliest) {
+                return a!.chapter - b!.chapter;
+            } else if(b!.value === a!.value || (b!.value !== 'player' && a!.value !== 'player')){
+                return b!.chapter - a!.chapter;
+            } 
+            else if (b!.value === 'player') {
                 return 1;
-            } else if (b!.value === 'enemy') {
-                return a!.value === 'npc' ? -1 : 1;
             } else {
                 return -1;
             }
-        })
+        });
         return placements[0];
     }
 
