@@ -12,8 +12,9 @@ export interface IRenderItemConfig {
     type: string;
 };
 
-export interface IRenderCharacterConfig extends IRenderItemConfig{
-    unitData: any
+export interface IRenderCharacterConfig extends IRenderItemConfig {
+    unitData: any,
+    chapter: number
 };
 export interface IUnit {
     name: string;

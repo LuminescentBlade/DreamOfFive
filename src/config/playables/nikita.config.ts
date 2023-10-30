@@ -1,4 +1,4 @@
-import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeaponType } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFRoute, DoFWeaponType } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 import { DoFWeapon } from "../weapons.config";
 
@@ -24,6 +24,6 @@ export const Nikita: IDoFCharacter = {
     },
     affinity: DoFAffinities.Fire,
     bossStats: [
-        { chapter: 10, optional: true, weapons: [DoFWeapon.SilverSword] }
+        { chapter: 10, optional: true, weapons: [DoFWeapon.SilverSword], route: DoFRoute.Onduris }
     ]
 };
