@@ -31,7 +31,8 @@ export const Dismas: IDoFCharacter = {
     bossStats: [
         {
             chapter: 1,
-            stats: { lv: 6, hp: 30, pow: 9, skl: 6, spd: 10, luk: 5, def: 6, res: 0, con: 13 },
+            level: 6,
+            stats: { hp: 30, pow: 9, skl: 6, spd: 10, luk: 5, def: 6, res: 0, con: 13 },
             class: DoFClasses.Raider,
             ranks: {
                 [DoFWeaponType.Axe]: 71
@@ -43,7 +44,8 @@ export const Dismas: IDoFCharacter = {
         },
         {
             chapter: 15,
-            stats: { lv: 6, hp: 30, pow: 9, skl: 6, spd: 10, luk: 5, def: 6, res: 0, con: 13 },
+            level: 5,
+            stats: { hp: 30, pow: 9, skl: 6, spd: 10, luk: 5, def: 6, res: 0, con: 13 },
             class: DoFClasses.Berserker,
             ranks: {
                 [DoFWeaponType.Axe]: 71
