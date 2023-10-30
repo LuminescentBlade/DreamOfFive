@@ -11,5 +11,6 @@ export const Kai: IDoFCharacter = {
             player: 99
         }
     },
+    height: 184,
     affinity: DoFAffinities.Ice
 };

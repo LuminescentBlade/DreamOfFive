@@ -1,18 +1,21 @@
-import { DoFPromotedClasses, DoFUnpromotedClasses } from "@/src/config/classes.config";
-import { IDoFRenderCharacter, IDoFStats } from "@/src/models/dream-of-five.interfaces";
+import { IDoFRenderCharacter } from "@/src/models/dream-of-five.interfaces";
 import { useState } from "react";
 import styles from './index.module.scss';
 import Overlay from "../overlay";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmark, faArrowsUpDownLeftRight, faPlus, faMinus } from '@fortawesome/free-solid-svg-icons'
+import { faXmark, faArrowsUpDownLeftRight } from '@fortawesome/free-solid-svg-icons'
 import Toggle from "../toggle";
 import CharacterProfile from "../unit-profile";
 import PlayerAverages from "../player-averages";
+import { DoFUnitState } from "@/src/models/enums";
+import { IRenderCharacterConfig } from "@/src/models/spritesheet.interfaces";
+import BossLayout from "../boss-layout";
 
 enum CharacterDetailState {
     Stat = 'stat',
     ExtendedProfile = 'profile',
-    Gallery = 'gallery'
+    Gallery = 'gallery',
+    BossStats = 'boss_stats'
 };
 
 let offset = { left: 0, top: 0 };
@@ -26,10 +29,18 @@ let cachedState: any = {
 
 let currentCharacter: string | undefined;
 
-export default function CharacterDetails({ characterDef, clear, experimentalFeatures }: { characterDef: IDoFRenderCharacter, clear: () => void, experimentalFeatures?: boolean }) {
+export default function CharacterDetails({ characterConfig, clear, experimentalFeatures }: {
+    characterConfig: IRenderCharacterConfig,
+    clear: () => void,
+    experimentalFeatures?: boolean
+}) {
+    const characterDef: IDoFRenderCharacter = characterConfig.unitData;
+    const unitType: string = characterConfig.type;
+    const isPlayer = unitType === DoFUnitState.Player;
     // show hide items
-    const showStats = (characterDef.bases || characterDef.growths);
-    const showExtendedProfile = experimentalFeatures && characterDef.nationality;
+    const showStats = (isPlayer) && (characterDef.bases || characterDef.growths);
+    const showExtendedProfile = characterDef.height != null;
+    const showBossStats = experimentalFeatures && characterDef.bossStats != null;
     const showGallery = false;
 
     let defaultView: CharacterDetailState | undefined;
@@ -38,6 +49,12 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
         validViews.add(CharacterDetailState.Stat);
         defaultView = CharacterDetailState.Stat;
     }
+
+    if (showBossStats) {
+        validViews.add(CharacterDetailState.BossStats);
+        defaultView = defaultView ?? CharacterDetailState.BossStats;
+    }
+
 
     if (showExtendedProfile) {
         validViews.add(CharacterDetailState.ExtendedProfile);
@@ -48,7 +65,6 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
         validViews.add(CharacterDetailState.Gallery);
         defaultView = defaultView ?? CharacterDetailState.Gallery;
     }
-
     if (cachedState.resetState) {
         cachedState.state = defaultView;
         cachedState.resetState = false;
@@ -100,8 +116,8 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
     function renderSideProfile() {
         return <div className={styles.profile}>
             <div className={styles.portraitWrapper}>
-            {characterDef.affinity ? <div className={`icon-affinity-${characterDef.affinity} ${styles.affinity}`}></div>:''}
-            <img className="pixel-art" src={characterDef.path}></img>
+                {characterDef.affinity ? <div className={`icon-affinity-${characterDef.affinity} ${styles.affinity}`}></div> : ''}
+                <img className="pixel-art" src={characterDef.path}></img>
             </div>
             <div className={styles.profileData}>
                 <h2>
@@ -122,16 +138,19 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
             </div>
         </div>
     }
-    
+
     function renderContent(state: CharacterDetailState) {
         switch (state) {
             case CharacterDetailState.Gallery:
                 return '';
             case CharacterDetailState.ExtendedProfile:
-                return <CharacterProfile characterDef={characterDef}/>;
+                return <CharacterProfile characterDef={characterDef} />;
             case CharacterDetailState.Stat:
+                return <PlayerAverages characterDef={characterDef} />;
+            case CharacterDetailState.BossStats:
+                return <BossLayout characterDef={characterDef} />
             default:
-                return <PlayerAverages characterDef={characterDef}></PlayerAverages>;
+                return ''
         }
     }
 
@@ -139,7 +158,7 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
 
 
     function renderTabs() {
-        if (!showStats && !showExtendedProfile && !showGallery) {
+        if (!showStats && !showExtendedProfile && !showGallery && !showBossStats) {
             return '';
         }
 
@@ -155,11 +174,28 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
         let stats = showStats ? getSectionTab(CharacterDetailState.Stat, 'Stats') : '';
         let profile = showExtendedProfile ? getSectionTab(CharacterDetailState.ExtendedProfile, 'Profile') : '';
         let gallery = showGallery ? getSectionTab(CharacterDetailState.Gallery, 'Gallery') : '';
+        let bossStats = showBossStats ? (
+            isPlayer ? 
+            getSectionTab(CharacterDetailState.BossStats, 'Enemy') :
+            getSectionTab(CharacterDetailState.BossStats, 'Stats') 
+        ): '';
 
         return <ul className={styles.tabs}>
-            {stats}
-            {profile}
-            {gallery}
+            {
+                isPlayer ?
+                    <>
+                        {stats}
+                        {profile}
+                        {gallery}
+                        {bossStats}
+                    </> :
+                    <>
+                        {bossStats}
+                        {profile}
+                        {gallery}
+                    
+                    </>
+            }
         </ul>;
     }
 
