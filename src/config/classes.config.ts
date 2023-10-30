@@ -1,6 +1,6 @@
 import { DoFClasses, DoFMountType, DoFWeapons } from "../models/enums";
 
-export const DoFUnpromotedClasses = {
+export const DoFUnpromotedClasses: { [key: string]: any } = {
     [DoFClasses.Captain]: {
         caps: { hp: 60, pow: 20, skl: 20, spd: 20, luk: 30, def: 20, res: 10, con: 20 },
         mov: 6,
@@ -150,7 +150,7 @@ export const DoFUnpromotedClasses = {
     }
 };
 
-export const DoFPromotedClasses = {
+export const DoFPromotedClasses :  { [key: string]: any }  = {
     [DoFClasses.Questant]: {
         promo: { hp: 5, pow: 3, skl: 3, spd: 3, luk: 0, def: 3, res: 3, con: 2 },
         caps: { hp: 60, pow: 28, skl: 30, spd: 30, luk: 30, def: 26, res: 20, con: 20 },
@@ -170,7 +170,7 @@ export const DoFPromotedClasses = {
     [DoFClasses.Hussar]: {
         promo: { hp: 5, pow: 2, skl: 3, spd: 3, luk: 0, def: 3, res: 0, con: 0 },
         caps: { hp: 60, pow: 26, skl: 29, spd: 28, luk: 30, def: 26, res: 20, con: 20 },
-        weapons:{
+        weapons: {
             [DoFWeapons.Sword]: 71,
             [DoFWeapons.Lance]: 71
         },

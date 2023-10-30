@@ -1,0 +1,33 @@
+.weaponList{
+    list-style: none;
+    padding: 8px 0px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.weaponItem{
+    position: relative;
+    padding-bottom: 6px;
+}
+
+.weaponIcon{
+    opacity: 0.1
+}
+
+.baseWeaponActive, .promotedWeaponActive{
+    .weaponIcon{
+        opacity: 0.7;
+    }
+}
+
+.weaponRank{
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font-weight: bold;
+    text-shadow: 0 0 5px var(--dof-bg-color);
+}

@@ -4,6 +4,7 @@ import { useState } from "react";
 import styles from './index.module.scss';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons'
+import WeaponRanksDisplay from "../weapon-ranks";
 
 enum CharacterDetailState {
     Stat = 'stat',
@@ -87,8 +88,10 @@ export default function PlayerAverages({ characterDef }: { characterDef: IDoFRen
         }
     }
 
-    function isPromoted() {
-        return (!promoBonuses || (levelData.unpromotedLevel && levelData.unpromotedLevel >= 10)) && levelData.promotedLevel;
+    function isPromoted() : boolean {
+        // this will evaluate to a boolean no matter what trust me ts lint
+        // @ts-ignore
+        return (!promoBonuses || (levelData.unpromotedLevel && levelData.unpromotedLevel >= 10)) && levelData.promotedLevel > 0;
     }
 
     function getDefaultLevelByCharacter(characterDef: IDoFRenderCharacter) {
@@ -367,6 +370,7 @@ export default function PlayerAverages({ characterDef }: { characterDef: IDoFRen
                     </tbody>
                 </table>
             </div>
+            <WeaponRanksDisplay characterDef={characterDef} isMasterSealed={isPromoted() && characterDef.promotesTo != null}/>
         </>
         return result;
     }
