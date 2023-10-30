@@ -1,4 +1,4 @@
-import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeaponType } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Seren: IDoFCharacter = {
@@ -20,7 +20,7 @@ export const Seren: IDoFCharacter = {
     promotesTo: DoFClasses.Sentinel,
     growths: { hp: 60, pow: 35, skl: 65, spd: 60, luk: 60, def: 25, res: 20 },
     weapons: {
-        [DoFWeapons.Lance]: 31,
+        [DoFWeaponType.Lance]: 31,
     },
     affinity: DoFAffinities.Wind
 };

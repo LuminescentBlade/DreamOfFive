@@ -1,4 +1,4 @@
-import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeaponType } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Driscoll: IDoFCharacter = {
@@ -21,7 +21,7 @@ export const Driscoll: IDoFCharacter = {
     promotesTo: DoFClasses.Warrior,
     growths: {hp: 95, pow: 45, skl: 45, spd: 55, luk: 40, def: 25, res: 10},
     weapons: {
-        [DoFWeapons.Axe]: 31
+        [DoFWeaponType.Axe]: 31
     },
     affinity: DoFAffinities.Wind
 };

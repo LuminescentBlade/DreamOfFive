@@ -1,4 +1,4 @@
-import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeaponType } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Kahn: IDoFCharacter = {
@@ -22,7 +22,7 @@ export const Kahn: IDoFCharacter = {
     promotesTo: DoFClasses.Sentinel,
     growths: {hp: 85, pow: 45, skl: 55, spd: 45, luk: 40, def: 40, res: 10},
     weapons: {
-        [DoFWeapons.Lance]: 121,
+        [DoFWeaponType.Lance]: 121,
     },
     affinity: DoFAffinities.Thunder
 };

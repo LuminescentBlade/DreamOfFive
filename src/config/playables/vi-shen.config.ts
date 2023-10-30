@@ -1,4 +1,4 @@
-import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeaponType } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const ViShen: IDoFCharacter = {
@@ -20,7 +20,7 @@ export const ViShen: IDoFCharacter = {
     promotesTo: DoFClasses.Swordmaster,
     epithet: 'The Seneschal',
     weapons: {
-        [DoFWeapons.Sword]: 121 
+        [DoFWeaponType.Sword]: 121 
     },
     affinity: DoFAffinities.Dark
 };

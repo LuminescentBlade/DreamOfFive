@@ -1,4 +1,4 @@
-import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeaponType } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Marin: IDoFCharacter = {
@@ -20,8 +20,8 @@ export const Marin: IDoFCharacter = {
     growths: { hp: 105, pow: 45, skl: 35, spd: 55, luk: 55, def: 30, res: 5 },
     promotesTo: DoFClasses.Paladin,
     weapons: {
-        [DoFWeapons.Sword]: 71,
-        [DoFWeapons.Lance]: 31
+        [DoFWeaponType.Sword]: 71,
+        [DoFWeaponType.Lance]: 31
     },
     affinity: DoFAffinities.Fire
 };

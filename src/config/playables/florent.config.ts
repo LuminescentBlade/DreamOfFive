@@ -1,4 +1,4 @@
-import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeaponType } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Florent: IDoFCharacter = {
@@ -23,8 +23,8 @@ export const Florent: IDoFCharacter = {
     promotesTo: DoFClasses.Paladin,
     growths: {hp: 90, pow: 55, skl: 50, spd: 40, luk: 30, def: 45, res: 10},
     weapons: {
-        [DoFWeapons.Sword]: 31,
-        [DoFWeapons.Lance]: 71
+        [DoFWeaponType.Sword]: 31,
+        [DoFWeaponType.Lance]: 71
     },
     affinity: DoFAffinities.Ice
 };

@@ -1,4 +1,4 @@
-import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeaponType } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Eilene: IDoFCharacter =  {
@@ -20,7 +20,7 @@ export const Eilene: IDoFCharacter =  {
     promotesTo: DoFClasses.SeraphKnight,
     growths: {hp: 60, pow: 40, skl: 50, spd: 70, luk: 50, def: 20, res: 60},
     weapons: {
-        [DoFWeapons.Sword]: 31
+        [DoFWeaponType.Sword]: 31
     },
     affinity: DoFAffinities.Light
 };

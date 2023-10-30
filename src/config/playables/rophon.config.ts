@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
+import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeaponType } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Ironside: IDoFCharacter = {
@@ -19,6 +19,6 @@ export const Ironside: IDoFCharacter = {
     growths: { hp: 255, pow: 140, skl: 235, spd: 210, luk: 225, def: 140, res: 130 },
     level: 19,
     weapons: {
-        [DoFWeapons.Sword]: 251,
+        [DoFWeaponType.Sword]: 251,
     }
 };

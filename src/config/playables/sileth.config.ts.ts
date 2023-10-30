@@ -1,4 +1,4 @@
-import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeaponType } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Sileth: IDoFCharacter = {
@@ -23,7 +23,7 @@ export const Sileth: IDoFCharacter = {
     growths: {hp: 75, pow: 35, skl: 50, spd: 55, luk: 30, def: 25, res: 60},
     promotesTo: DoFClasses.Sage,
     weapons: {
-        [DoFWeapons.Anima]: 71
+        [DoFWeaponType.Anima]: 71
     },
     affinity: DoFAffinities.Wind
 };

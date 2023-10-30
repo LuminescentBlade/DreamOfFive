@@ -1,4 +1,4 @@
-import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeaponType } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Franseza: IDoFCharacter = {
@@ -20,7 +20,7 @@ export const Franseza: IDoFCharacter = {
     growths: {hp: 75, pow: 55, skl: 70, spd: 35, luk: 40, def: 40, res: 10},
     promotesTo: DoFClasses.Marksman,
     weapons: {
-        [DoFWeapons.Bow]: 31
+        [DoFWeaponType.Bow]: 31
     },
     affinity: DoFAffinities.Dark
 };

@@ -1,4 +1,4 @@
-import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeaponType } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Cathale: IDoFCharacter = {
@@ -20,7 +20,7 @@ export const Cathale: IDoFCharacter = {
     promotesTo: DoFClasses.Dreadnought,
     growths: {hp: 90, pow: 50, skl: 40, spd: 30, luk: 45, def: 55, res: 20},
     weapons: {
-        [DoFWeapons.Lance]: 121,
+        [DoFWeaponType.Lance]: 121,
     },
     affinity: DoFAffinities.Thunder
 };

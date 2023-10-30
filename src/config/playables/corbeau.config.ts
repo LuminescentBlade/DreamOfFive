@@ -1,4 +1,4 @@
-import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeaponType } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Corbeau: IDoFCharacter = {
@@ -19,8 +19,8 @@ export const Corbeau: IDoFCharacter = {
     level: 4,
     bases: {hp: 44, pow: 20, skl: 13, spd: 14, luk: 16, def: 11, res: 6, con: 14},
     weapons: {
-        [DoFWeapons.Axe]: 181,
-        [DoFWeapons.Bow]: 121
+        [DoFWeaponType.Axe]: 181,
+        [DoFWeaponType.Bow]: 121
     },
     affinity: DoFAffinities.Light
 };

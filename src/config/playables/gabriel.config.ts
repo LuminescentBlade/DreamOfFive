@@ -1,4 +1,4 @@
-import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeaponType } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Gabriel: IDoFCharacter = {
@@ -21,7 +21,7 @@ export const Gabriel: IDoFCharacter = {
     promotesTo: DoFClasses.Sorcerer,
     growths: {hp: 60, pow: 65, skl: 45, spd: 35, luk: 35, def: 25, res: 55},
     weapons: {
-        [DoFWeapons.Dark]: 71,
+        [DoFWeaponType.Dark]: 71,
     },
     affinity: DoFAffinities.Ice
 };

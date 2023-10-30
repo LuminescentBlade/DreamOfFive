@@ -1,4 +1,4 @@
-import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeaponType } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Jolyon: IDoFCharacter = {
@@ -25,7 +25,7 @@ export const Jolyon: IDoFCharacter = {
     growths: { hp: 60, pow: 65, skl: 65, spd: 35, luk: 45, def: 10, res: 50 },
     promotesTo: DoFClasses.Sage,
     weapons: {
-        [DoFWeapons.Anima]: 71,
+        [DoFWeaponType.Anima]: 71,
     },
     affinity: DoFAffinities.Fire
 };

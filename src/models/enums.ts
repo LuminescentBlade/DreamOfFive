@@ -178,7 +178,7 @@ export enum DoFCharKey {
     Ironside = 'rophon'
 };
 
-export enum DoFWeapons {
+export enum DoFWeaponType {
     Sword = 'sword',
     Lance = 'lance',
     Axe = 'axe',

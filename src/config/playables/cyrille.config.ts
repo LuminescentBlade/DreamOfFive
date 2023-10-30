@@ -1,5 +1,5 @@
 
-import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeaponType } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Cyrille: IDoFCharacter = {
@@ -20,8 +20,8 @@ export const Cyrille: IDoFCharacter = {
     growths: { hp: 110, pow: 35, skl: 35, spd: 60, luk: 30, def: 45, res: 20 },
     promotesTo: DoFClasses.Paladin,
     weapons: {
-        [DoFWeapons.Sword]: 31,
-        [DoFWeapons.Lance]: 31
+        [DoFWeaponType.Sword]: 31,
+        [DoFWeaponType.Lance]: 31
     },
     affinity: DoFAffinities.Fire
 };

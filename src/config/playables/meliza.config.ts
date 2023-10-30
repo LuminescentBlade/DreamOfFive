@@ -1,4 +1,4 @@
-import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeaponType } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Meliza: IDoFCharacter = {
@@ -21,7 +21,7 @@ export const Meliza: IDoFCharacter = {
     height: 165,
     promotesTo: DoFClasses.Bishop,
     weapons: {
-        [DoFWeapons.Staff]: 121,
+        [DoFWeaponType.Staff]: 121,
     },
     affinity: DoFAffinities.Light
 };

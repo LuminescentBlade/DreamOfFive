@@ -1,4 +1,4 @@
-import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeaponType } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Wren: IDoFCharacter =  {
@@ -20,7 +20,7 @@ export const Wren: IDoFCharacter =  {
     growths: {hp: 40, pow: 60, skl: 50, spd: 50, luk: 60, def: 5, res: 55},
     promotesTo: DoFClasses.Bishop,
     weapons: {
-        [DoFWeapons.Staff]: 121 
+        [DoFWeaponType.Staff]: 121 
     },
     affinity: DoFAffinities.Dark
 };

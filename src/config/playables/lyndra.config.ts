@@ -1,4 +1,4 @@
-import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeaponType } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Lyndra: IDoFCharacter =  {
@@ -18,8 +18,8 @@ export const Lyndra: IDoFCharacter =  {
     level: 3,
     growths: {hp: 75, pow: 35, skl: 50, spd: 45, luk: 30, def: 45, res: 10},
     weapons: {
-        [DoFWeapons.Sword]: 181,
-        [DoFWeapons.Axe]: 121
+        [DoFWeaponType.Sword]: 181,
+        [DoFWeaponType.Axe]: 121
     },
     affinity: DoFAffinities.Wind
 };

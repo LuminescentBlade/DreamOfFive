@@ -1,4 +1,4 @@
-import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeaponType } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Amelia: IDoFCharacter = {
@@ -21,7 +21,7 @@ export const Amelia: IDoFCharacter = {
     growths: { hp: 55, pow: 55, skl: 45, spd: 50, luk: 45, def: 20, res: 40 },
     promotesTo: DoFClasses.Sage,
     weapons: {
-        [DoFWeapons.Anima]: 71,
+        [DoFWeaponType.Anima]: 71,
     },
     affinity: DoFAffinities.Ice
 };

@@ -1,4 +1,4 @@
-import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeaponType } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Brill: IDoFCharacter = {
@@ -19,7 +19,7 @@ export const Brill: IDoFCharacter = {
     level: 3,
     bases: {hp: 32, pow: 19, skl: 21, spd: 14, luk: 13, def: 16, res: 3, con: 12},
     weapons: {
-        [DoFWeapons.Bow]: 181,
+        [DoFWeaponType.Bow]: 181,
     },
     affinity: DoFAffinities.Dark
 };

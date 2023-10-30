@@ -1,4 +1,4 @@
-import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeaponType } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Arcus: IDoFCharacter = {
@@ -35,7 +35,7 @@ export const Arcus: IDoFCharacter = {
     promotesTo: DoFClasses.Juggernaut,
     growths: { hp: 80, pow: 65, skl: 45, spd: 35, luk: 35, def: 45, res: 25 },
     weapons: {
-        [DoFWeapons.Axe]: 71,
+        [DoFWeaponType.Axe]: 71,
     },
     affinity: DoFAffinities.Dark
 };

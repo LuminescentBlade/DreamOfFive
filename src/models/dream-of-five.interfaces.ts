@@ -1,4 +1,4 @@
-import { DoFArtist, DoFClasses, DoFNationality, DoFWeapons } from "./enums";
+import { DoFArtist, DoFClasses, DoFNationality, DoFWeaponType } from "./enums";
 import { IAltConfig, IRenderCharacterConfig, IRenderContent, IRenderItemConfig, IRenderUnit, IRouteConfig, IUnit } from "./spritesheet.interfaces";
 
 export interface IDoFUnit extends IUnit {
@@ -15,6 +15,16 @@ export interface IDoFAlt extends IAltConfig {
     artists: DoFArtist[]
 }
 
+export interface IDoFBossCofig { 
+    chapter: number,
+    route?: string,
+    class?: string,
+    stats: IDoFStats,
+    ranks: IDoFStats,
+    weapons: string[],
+    optional?: boolean,
+    gameOver?: boolean // basically Farrell
+};
 export interface IDoFCharacter extends IDoFUnit {
     routeConfig: IRouteConfig
     secret?: boolean,
@@ -31,10 +41,9 @@ export interface IDoFCharacter extends IDoFUnit {
     growths?: IDoFStats,
     level?: number,
     epithet?: string,
-    weapons?: {
-        [key:string]: number
-    },
-    affinity?: string
+    weapons?: IDoFStats,
+    affinity?: string,
+    bossStats?: IDoFBossCofig[]
 }
 export interface IDoFStats {
     [stat: string]: number

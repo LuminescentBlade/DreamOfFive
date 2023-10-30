@@ -1,13 +1,13 @@
 import { IDoFRenderCharacter } from '@/src/models/dream-of-five.interfaces';
 import styles from './index.module.scss';
-import { DoFClasses, DoFWeapons } from '@/src/models/enums';
+import { DoFClasses, DoFWeaponType } from '@/src/models/enums';
 import { DoFUnpromotedClasses, DoFPromotedClasses } from '@/src/config/classes.config';
 
 
 let lastCharacter: string;
 let lastMSStatus: boolean;
 let cachedRanks: { [key: string]: { base: any, promotion: any } } = {};
-const weapons = Object.values(DoFWeapons);
+const weapons = Object.values(DoFWeaponType);
 export default function WeaponRanksDisplay({ characterDef, isMasterSealed, hideUnusable }: { characterDef: IDoFRenderCharacter, isMasterSealed: boolean , hideUnusable?: boolean}) {
 
     if (lastCharacter !== characterDef.name || lastMSStatus !== isMasterSealed) {
