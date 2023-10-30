@@ -148,7 +148,7 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
             case CharacterDetailState.Stat:
                 return <PlayerAverages characterDef={characterDef} />;
             case CharacterDetailState.BossStats:
-                return <BossLayout characterDef={characterDef} />
+                return <BossLayout characterDef={characterDef} chapterLimit={characterConfig.chapter} />
             default:
                 return ''
         }
@@ -193,7 +193,6 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
                         {bossStats}
                         {profile}
                         {gallery}
-                    
                     </>
             }
         </ul>;

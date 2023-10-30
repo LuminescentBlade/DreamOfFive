@@ -8,15 +8,15 @@ let lastCharacter: string;
 let lastMSStatus: boolean;
 let cachedRanks: { [key: string]: { base: any, promotion: any } } = {};
 const weapons = Object.values(DoFWeaponType);
-export default function WeaponRanksDisplay({ characterDef, isMasterSealed, hideUnusable }: { characterDef: IDoFRenderCharacter, isMasterSealed: boolean , hideUnusable?: boolean}) {
-
+export default function WeaponRanksDisplay({ characterDef, isMasterSealed, hideUnusable }: { characterDef: IDoFRenderCharacter, isMasterSealed: boolean, hideUnusable?: boolean }) {
+    console.log(characterDef);
     if (lastCharacter !== characterDef.name || lastMSStatus !== isMasterSealed) {
         lastCharacter = characterDef.name;
         lastMSStatus = isMasterSealed;
 
         const baseClassKey: string = characterDef.class!;
         const personalRanks = characterDef.weapons ?? {};
-        const baseClass = characterDef.promotesTo ? DoFUnpromotedClasses[baseClassKey].weapons : DoFPromotedClasses[baseClassKey].weapons;
+        const baseClass = characterDef.promotesTo ? DoFUnpromotedClasses[baseClassKey].weapons : (DoFPromotedClasses[baseClassKey]?.weapons ?? DoFUnpromotedClasses[baseClassKey].weapons);
         const promotedClass = characterDef.promotesTo ? DoFPromotedClasses[characterDef.promotesTo].weapons : null;
         cachedRanks = weapons.reduce((ranks, weapon) => {
             if (!personalRanks[weapon] && !baseClass[weapon] && (promotedClass && !promotedClass[weapon])) {
@@ -54,20 +54,20 @@ export default function WeaponRanksDisplay({ characterDef, isMasterSealed, hideU
 
     return <ul className={styles.weaponList}>
         {weapons
-            .filter(wpn=>!hideUnusable || cachedRanks[wpn]?.base || (isMasterSealed && cachedRanks[wpn]?.promotion) )
+            .filter(wpn => !hideUnusable || cachedRanks[wpn]?.base || (isMasterSealed && cachedRanks[wpn]?.promotion))
             .map(wpn => <li key={wpn}
-            className={`${styles.weaponItem} ${cachedRanks[wpn]?.base ? styles.baseWeaponActive : ''} ${isMasterSealed && cachedRanks[wpn]?.promotion ? styles.promotedWeaponActive : ''}`}>
-            <span className={`icon-wpn-${wpn} ${styles.weaponIcon}`}></span>
-            {cachedRanks[wpn]?.base || (isMasterSealed && cachedRanks[wpn]?.promotion) ? <span className={styles.weaponRank}>
-                {cachedRanks[wpn]?.base ? <span>{cachedRanks[wpn].base.letter}</span> : ''}
-                {isMasterSealed && !cachedRanks[wpn].base && cachedRanks[wpn]?.promotion ? <span>{cachedRanks[wpn].promotion.letter}</span> : ''}
-                {
-                    isMasterSealed &&
-                        cachedRanks[wpn]?.base &&
-                        cachedRanks[wpn]?.promotion &&
-                        cachedRanks[wpn]?.base.letter !== cachedRanks[wpn]?.promotion.letter ? <span>&rarr;{cachedRanks[wpn].promotion.letter}</span> : ''}
+                className={`${styles.weaponItem} ${cachedRanks[wpn]?.base ? styles.baseWeaponActive : ''} ${isMasterSealed && cachedRanks[wpn]?.promotion ? styles.promotedWeaponActive : ''}`}>
+                <span className={`icon-wpn-${wpn} ${styles.weaponIcon}`}></span>
+                {cachedRanks[wpn]?.base || (isMasterSealed && cachedRanks[wpn]?.promotion) ? <span className={styles.weaponRank}>
+                    {cachedRanks[wpn]?.base ? <span>{cachedRanks[wpn].base.letter}</span> : ''}
+                    {isMasterSealed && !cachedRanks[wpn].base && cachedRanks[wpn]?.promotion ? <span>{cachedRanks[wpn].promotion.letter}</span> : ''}
+                    {
+                        isMasterSealed &&
+                            cachedRanks[wpn]?.base &&
+                            cachedRanks[wpn]?.promotion &&
+                            cachedRanks[wpn]?.base.letter !== cachedRanks[wpn]?.promotion.letter ? <span>&rarr;{cachedRanks[wpn].promotion.letter}</span> : ''}
 
-            </span> : ''}
-        </li>)}
+                </span> : ''}
+            </li>)}
     </ul>
 }

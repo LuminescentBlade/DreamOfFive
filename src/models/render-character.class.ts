@@ -1,5 +1,5 @@
 import { RenderUnit } from "./render-unit.class";
-import { IUnit } from "./spritesheet.interfaces";
+import { IRenderCharacterConfig, IUnit } from "./spritesheet.interfaces";
 
 // TODO: have a DoFCharacter class that extends this
 
@@ -135,7 +135,7 @@ export class RenderCharacter extends RenderUnit {
         }
     }
 
-    private getRenderItems(unit: IUnit, chapter: number, placement: { value: string, chapter: number }) {
+    private getRenderItems(unit: IUnit, chapter: number, placement: { value: string, chapter: number }): IRenderCharacterConfig {
         let defaultDisplay = { name: unit.name, displayName: unit.displayName, path: this.urls.default, artists: unit.artists };
         let alts;
         let defaultSwap;
@@ -191,7 +191,8 @@ export class RenderCharacter extends RenderUnit {
             type: placement.value,
             unitData: { ...unit, path: defaultDisplay.path },
             default: defaultDisplay,
-            alts
+            alts,
+            chapter
         };
     }
 };

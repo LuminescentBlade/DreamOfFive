@@ -1,0 +1,14 @@
+.bossBox{
+    border: 1px solid var(--dof-color1);
+    padding: 6px;
+}
+.headerRow{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h3{
+        padding: 0;
+        margin: 0;
+        font-size: 1.6rem;
+    }
+}
