@@ -19,7 +19,7 @@ export const Jolyon: IDoFCharacter = {
         }
     },
     bases: {
-        hp: 28, pow: 14, skl: 17, spd: 11, luk: 8, def: 4, res: 16, con: 8
+        hp: 28, pow: 15, skl: 17, spd: 11, luk: 8, def: 4, res: 16, con: 8
     },
     level: 13,
     growths: { hp: 60, pow: 65, skl: 65, spd: 35, luk: 45, def: 10, res: 50 },
