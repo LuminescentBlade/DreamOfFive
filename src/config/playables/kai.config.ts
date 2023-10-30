@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Kai: IDoFCharacter = {
@@ -10,5 +10,6 @@ export const Kai: IDoFCharacter = {
         allRoute: {
             player: 99
         }
-    }
+    },
+    affinity: DoFAffinities.Ice
 };

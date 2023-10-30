@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Nari: IDoFCharacter = {
@@ -21,5 +21,6 @@ export const Nari: IDoFCharacter = {
     growths: {hp: 105, pow: 60, skl: 45, spd: 35, luk: 45, def: 30, res: 5},
     weapons: {
         [DoFWeapons.Sword]: 71,
-    }
+    },
+    affinity: DoFAffinities.Anima
 };

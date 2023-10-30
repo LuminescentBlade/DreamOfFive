@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Annelise: IDoFCharacter = {
@@ -27,5 +27,6 @@ export const Annelise: IDoFCharacter = {
     promotesTo: DoFClasses.SeraphKnight,
     weapons: {
         [DoFWeapons.Sword]: 71,
-    }
+    },
+    affinity: DoFAffinities.Anima
 };

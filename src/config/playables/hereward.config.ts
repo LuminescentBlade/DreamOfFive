@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Hereward: IDoFCharacter = {
@@ -12,5 +12,6 @@ export const Hereward: IDoFCharacter = {
             player: 16,
             npc: 6
         }
-    }
+    },
+    affinity: DoFAffinities.Anima
 };

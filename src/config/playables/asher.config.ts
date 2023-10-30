@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Asher: IDoFCharacter = {
@@ -21,5 +21,6 @@ export const Asher: IDoFCharacter = {
     growths: {hp: 90, pow: 70, skl: 55, spd: 35, luk: 40, def: 35, res: 50 },
     weapons: {
         [DoFWeapons.Staff]: 121,
-    }
+    },
+    affinity: DoFAffinities.Thunder
 };

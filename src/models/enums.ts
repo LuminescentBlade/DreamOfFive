@@ -134,7 +134,7 @@ export enum DoFCharKey {
     Arcus = 'arcus',
     Alexis = 'alexis',
     Seren = 'seren',
-    Franceza = 'franceza',
+    Franseza = 'franseza',
     seMori = 'se-mori',
     Sileth = 'sileth',
     Conleth = 'conleth',

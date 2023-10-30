@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Lizaveta: IDoFCharacter = {
@@ -23,5 +23,6 @@ export const Lizaveta: IDoFCharacter = {
     growths: {hp: 85, pow: 35, skl: 60, spd: 55, luk: 45, def: 10, res: 35},
     weapons: {
         [DoFWeapons.Staff]: 31,
-    }
+    },
+    affinity: DoFAffinities.Light
 };

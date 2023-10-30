@@ -68,9 +68,6 @@ export default function WeaponRanksDisplay({ characterDef, isMasterSealed, hideU
                         cachedRanks[wpn]?.base.letter !== cachedRanks[wpn]?.promotion.letter ? <span>&rarr;{cachedRanks[wpn].promotion.letter}</span> : ''}
 
             </span> : ''}
-
-
-
         </li>)}
     </ul>
 }

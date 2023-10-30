@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Eudira: IDoFCharacter = {
@@ -20,5 +20,6 @@ export const Eudira: IDoFCharacter = {
     weapons: {
         [DoFWeapons.Light]: 181,
         [DoFWeapons.Dark]: 181
-    }
+    },
+    affinity: DoFAffinities.Wind
 };

@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Sheila: IDoFCharacter = {
@@ -12,5 +12,6 @@ export const Sheila: IDoFCharacter = {
             player: 91,
             npc: 2
         }
-    }
+    },
+    affinity: DoFAffinities.Fire
 };

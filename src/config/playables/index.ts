@@ -26,7 +26,7 @@ import { Driscoll } from "./driscoll.config";
 import { Eilene } from "./eilene.config";
 import { Eudira } from "./eudira.config";
 import { Florent } from "./florent.config";
-import { Franceza } from "./franceza.config";
+import { Franseza } from "./franseza.config";
 import { Gabriel } from "./gabriel.config";
 import { Hereward } from "./hereward.config";
 import { Ioan } from "./ioan.config";
@@ -83,7 +83,7 @@ export const DoFPlayable =  {
     [DoFCharKey.Arcus]: Arcus,
     [DoFCharKey.Alexis]: Alexis,
     [DoFCharKey.Seren]: Seren,
-    [DoFCharKey.Franceza]: Franceza,
+    [DoFCharKey.Franseza]: Franseza,
     [DoFCharKey.seMori]: SeMori,
     [DoFCharKey.Sileth]: Sileth,
     [DoFCharKey.Conleth]: Conleth,

@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Thyra: IDoFCharacter = {
@@ -14,5 +14,6 @@ export const Thyra: IDoFCharacter = {
             player: 17
         }
     },
-    growths: { hp: 75, pow: 55, skl: 50, spd: 45, luk: 25, def: 35, res: 5 }
+    growths: { hp: 75, pow: 55, skl: 50, spd: 45, luk: 25, def: 35, res: 5 },
+    affinity: DoFAffinities.Thunder
 };

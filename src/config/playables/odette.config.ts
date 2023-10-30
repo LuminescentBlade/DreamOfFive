@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Odette: IDoFCharacter = {
@@ -11,5 +11,6 @@ export const Odette: IDoFCharacter = {
         allRoute: {
             player: 17
         }
-    }
+    },
+    affinity: DoFAffinities.Ice
 };

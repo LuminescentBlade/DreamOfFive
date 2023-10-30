@@ -1,8 +1,8 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
-export const Franceza: IDoFCharacter = {
-    name: DoFCharKey.Franceza,
+export const Franseza: IDoFCharacter = {
+    name: DoFCharKey.Franseza,
     artists: [DoFArtist.Sev],
     blurb: '"... relaxed, with an easy laugh. But in unguarded moments, she looked to Seren with a fierce protectiveness..."',
     class: DoFClasses.Archer,
@@ -21,5 +21,6 @@ export const Franceza: IDoFCharacter = {
     promotesTo: DoFClasses.Marksman,
     weapons: {
         [DoFWeapons.Bow]: 31
-    }
+    },
+    affinity: DoFAffinities.Dark
 };

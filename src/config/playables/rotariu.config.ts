@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Rotariu: IDoFCharacter = {
@@ -14,5 +14,6 @@ export const Rotariu: IDoFCharacter = {
         musain: {
             enemy: 99
         }
-    }
+    },
+    affinity: DoFAffinities.Anima
 };

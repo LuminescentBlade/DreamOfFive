@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Chester: IDoFCharacter = {
@@ -23,5 +23,6 @@ export const Chester: IDoFCharacter = {
     growths: {hp: 75, pow: 40, skl: 55, spd: 65, luk: 40, def: 35, res: 5},
     weapons: {
         [DoFWeapons.Sword]: 31,
-    }
+    },
+    affinity: DoFAffinities.Fire
 };

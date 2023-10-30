@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Rozelle: IDoFCharacter = {
@@ -22,6 +22,7 @@ export const Rozelle: IDoFCharacter = {
     promotesTo: DoFClasses.Sorcerer,
     weapons: {
         [DoFWeapons.Dark]: 121
-    }
+    },
+    affinity: DoFAffinities.Light
 
 };

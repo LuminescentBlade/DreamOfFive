@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Marin: IDoFCharacter = {
@@ -22,5 +22,6 @@ export const Marin: IDoFCharacter = {
     weapons: {
         [DoFWeapons.Sword]: 71,
         [DoFWeapons.Lance]: 31
-    }
+    },
+    affinity: DoFAffinities.Fire
 };

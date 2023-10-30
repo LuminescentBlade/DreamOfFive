@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Adalheid: IDoFCharacter = {
@@ -19,5 +19,6 @@ export const Adalheid: IDoFCharacter = {
             enemy: 80
         }
 
-    }
+    },
+    affinity: DoFAffinities.Fire
 };

@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Morwen: IDoFCharacter = {
@@ -16,5 +16,6 @@ export const Morwen: IDoFCharacter = {
             enemy: [5,6,97],
             player: 98
         }
-    }
+    },
+    affinity: DoFAffinities.Thunder
 };

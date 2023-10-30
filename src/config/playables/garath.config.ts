@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Garath: IDoFCharacter = {
@@ -21,5 +21,6 @@ export const Garath: IDoFCharacter = {
     weapons: {
         [DoFWeapons.Axe]: 71,
         [DoFWeapons.Bow]: 181
-    }
+    },
+    affinity: DoFAffinities.Dark
 };

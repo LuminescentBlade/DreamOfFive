@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Florent: IDoFCharacter = {
@@ -25,5 +25,6 @@ export const Florent: IDoFCharacter = {
     weapons: {
         [DoFWeapons.Sword]: 31,
         [DoFWeapons.Lance]: 71
-    }
+    },
+    affinity: DoFAffinities.Ice
 };

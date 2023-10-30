@@ -1,5 +1,5 @@
 
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Cyrille: IDoFCharacter = {
@@ -22,5 +22,6 @@ export const Cyrille: IDoFCharacter = {
     weapons: {
         [DoFWeapons.Sword]: 31,
         [DoFWeapons.Lance]: 31
-    }
+    },
+    affinity: DoFAffinities.Fire
 };

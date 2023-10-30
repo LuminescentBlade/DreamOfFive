@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeapons } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Alexis: IDoFCharacter = {
@@ -21,5 +21,6 @@ export const Alexis: IDoFCharacter = {
     growths: {hp: 60, pow: 35, skl: 45, spd: 70, luk: 70, def: 10, res: 25},
     weapons: {
         [DoFWeapons.Sword]: 71,
-    }
+    },
+    affinity: DoFAffinities.Anima
 };

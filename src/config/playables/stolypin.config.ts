@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Stolypin: IDoFCharacter = {
@@ -11,5 +11,6 @@ export const Stolypin: IDoFCharacter = {
         onduris: {
             player: 15
         }
-    }
+    },
+    affinity: DoFAffinities.Light
 };

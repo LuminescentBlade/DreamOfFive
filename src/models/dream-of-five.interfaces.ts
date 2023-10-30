@@ -33,7 +33,8 @@ export interface IDoFCharacter extends IDoFUnit {
     epithet?: string,
     weapons?: {
         [key:string]: number
-    }
+    },
+    affinity?: string
 }
 export interface IDoFStats {
     [stat: string]: number

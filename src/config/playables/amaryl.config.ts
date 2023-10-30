@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Amaryl: IDoFCharacter = {
@@ -14,5 +14,6 @@ export const Amaryl: IDoFCharacter = {
         }
     },
     height: 163,
-    epithet: 'The Oracle'
+    epithet: 'The Oracle',
+    affinity: DoFAffinities.Dark
 };

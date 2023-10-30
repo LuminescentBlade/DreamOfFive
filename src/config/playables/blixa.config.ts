@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 import { stat } from "fs";
 
@@ -17,5 +17,6 @@ export const Blixa: IDoFCharacter = {
     bases: { hp: 26, pow: 3, skl: 5, spd: 13, luk: 10, def: 3, res: 4, con: 6},
     level:  1,
     growths: {hp: 70, pow: 0, skl: 0, spd: 80, luk: 70, def: 25, res: 55},
-    weapons: {}
+    weapons: {},
+    affinity: DoFAffinities.Ice
 };

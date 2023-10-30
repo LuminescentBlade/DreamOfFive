@@ -1,4 +1,4 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 
 export const Dismas: IDoFCharacter = {
@@ -23,5 +23,6 @@ export const Dismas: IDoFCharacter = {
             player: 16,
             enemy: [0,15]
         }
-    }
+    },
+    affinity: DoFAffinities.Thunder
 };
