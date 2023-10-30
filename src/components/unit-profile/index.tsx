@@ -1,7 +1,7 @@
-import { IDoFRenderCharacter } from '@/src/models/dream-of-five.interfaces';
+import { IDoFCharacter } from '@/src/models/dream-of-five.interfaces';
 import styles from './index.module.scss';
 
-export default function CharacterProfile({ characterDef }: { characterDef: IDoFRenderCharacter }) {
+export default function CharacterProfile({ characterDef }: { characterDef: IDoFCharacter }) {
     function cmToFtIn(cm: number) {
         const inches = cm / 2.54;
         let ft = Math.floor(inches / 12);

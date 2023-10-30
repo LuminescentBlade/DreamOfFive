@@ -1,5 +1,5 @@
 import { DoFPromotedClasses, DoFUnpromotedClasses } from "@/src/config/classes.config";
-import { IDoFRenderCharacter, IDoFStats } from "@/src/models/dream-of-five.interfaces";
+import { IDoFCharacter, IDoFStats } from "@/src/models/dream-of-five.interfaces";
 import { useState } from "react";
 import styles from './index.module.scss';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -19,7 +19,7 @@ let cachedState: any = {
 
 let currentCharacter: string | undefined;
 
-export default function PlayerAverages({ characterDef }: { characterDef: IDoFRenderCharacter }) {
+export default function PlayerAverages({ characterDef }: { characterDef: IDoFCharacter }) {
     const BLOSSOM_LIMIT = 1;
     const LEVEL_CAP = 20;
 
@@ -94,7 +94,7 @@ export default function PlayerAverages({ characterDef }: { characterDef: IDoFRen
         return (!promoBonuses || (levelData.unpromotedLevel && levelData.unpromotedLevel >= 10)) && levelData.promotedLevel > 0;
     }
 
-    function getDefaultLevelByCharacter(characterDef: IDoFRenderCharacter) {
+    function getDefaultLevelByCharacter(characterDef: IDoFCharacter) {
         const unpromotedLevel = characterDef.promotesTo ? characterDef.level : undefined;
         const promotedLevel = characterDef.promotesTo ? 0 : characterDef.level ?? 0
         return {
@@ -186,7 +186,7 @@ export default function PlayerAverages({ characterDef }: { characterDef: IDoFRen
             }
         </div>
     }
-    function getStatInputBar(characterDef: IDoFRenderCharacter) {
+    function getStatInputBar(characterDef: IDoFCharacter) {
         if (!characterDef.bases || !characterDef.growths) {
             return;
         }

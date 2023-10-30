@@ -1,4 +1,4 @@
-import { IDoFRenderCharacter } from "@/src/models/dream-of-five.interfaces";
+import { IDoFCharacter } from "@/src/models/dream-of-five.interfaces";
 import { useState } from "react";
 import styles from './index.module.scss';
 import Overlay from "../overlay";
@@ -27,14 +27,13 @@ let cachedState: any = {
     resetState: false
 };
 
-let currentCharacter: string | undefined;
 
 export default function CharacterDetails({ characterConfig, clear, experimentalFeatures }: {
     characterConfig: IRenderCharacterConfig,
     clear: () => void,
     experimentalFeatures?: boolean
 }) {
-    const characterDef: IDoFRenderCharacter = characterConfig.unitData;
+    const characterDef: IDoFCharacter = characterConfig.unitData;
     const unitType: string = characterConfig.type;
     const isPlayer = unitType === DoFUnitState.Player;
     // show hide items
@@ -59,6 +58,9 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
     if (showExtendedProfile) {
         validViews.add(CharacterDetailState.ExtendedProfile);
         defaultView = defaultView ?? CharacterDetailState.ExtendedProfile;
+        if(isPlayer && defaultView !== CharacterDetailState.Stat){
+            defaultView = CharacterDetailState.ExtendedProfile;
+        }
     }
 
     if (showGallery) {
@@ -74,8 +76,6 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
 
     const [widgetState, setWidgetState] = useState(cachedState);
 
-    currentCharacter = characterDef.name;
-
     function setWidgetStateCaching(widgetStateData: any) {
         cachedState = widgetStateData;
         setWidgetState(cachedState);
@@ -89,7 +89,6 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
     function clearItem() {
         clear();
         offset = { left: 0, top: 0 };
-        currentCharacter = undefined;
         setWidgetStateCaching({ ...widgetState, enableCompareMode: false, dragStateStyle: {}, resetState: true });
     }
 

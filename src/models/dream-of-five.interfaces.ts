@@ -1,5 +1,5 @@
 import { DoFArtist, DoFClasses, DoFNationality, DoFWeaponType } from "./enums";
-import { IAltConfig, IRenderCharacterConfig, IRenderContent, IRenderItemConfig, IRenderUnit, IRouteConfig, IUnit } from "./spritesheet.interfaces";
+import { IAltConfig, IRenderCharacterConfig, IRenderItemConfig, IRouteConfig, IUnit } from "./spritesheet.interfaces";
 
 export interface IDoFUnit extends IUnit {
     artists: DoFArtist[];
@@ -8,7 +8,8 @@ export interface IDoFUnit extends IUnit {
     };
     class?: string,
     blurb?: string,
-    nationality?: DoFNationality
+    nationality?: DoFNationality,
+    path?: string,
 };
 
 export interface IDoFAlt extends IAltConfig {
@@ -17,7 +18,8 @@ export interface IDoFAlt extends IAltConfig {
 
 export interface IDoFBossCofig { 
     chapter: number,
-    route?: string,
+    level?: number, // null means copy from base
+    route?: string, // null means all routes
     class?: string, // null means copy from base
     stats?: IDoFStats, // null means copy from base
     ranks?: IDoFStats, // null means copy from base
@@ -49,9 +51,10 @@ export interface IDoFStats {
     [stat: string]: number
 }
 
-export interface IDoFRenderUnit extends IDoFUnit, IRenderContent { }
-export interface IDoFRenderCharacter extends IDoFCharacter, IRenderContent { };
+export interface IRenderDoFConfig extends IRenderCharacterConfig{
+    displayProfile: boolean
 
+}
 export interface IDoFCharacterConfigs {
     characters: IDoFCharacter[];
     shopkeepers: IDoFUnit[];

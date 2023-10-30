@@ -1,4 +1,4 @@
-import { IDoFRenderCharacter } from '@/src/models/dream-of-five.interfaces';
+import { IDoFCharacter, IDoFStats } from '@/src/models/dream-of-five.interfaces';
 import styles from './index.module.scss';
 import { DoFClasses, DoFWeaponType } from '@/src/models/enums';
 import { DoFUnpromotedClasses, DoFPromotedClasses } from '@/src/config/classes.config';
@@ -6,11 +6,11 @@ import { DoFUnpromotedClasses, DoFPromotedClasses } from '@/src/config/classes.c
 
 let lastCharacter: string;
 let lastMSStatus: boolean;
+let lastRanks: IDoFStats;
 let cachedRanks: { [key: string]: { base: any, promotion: any } } = {};
 const weapons = Object.values(DoFWeaponType);
-export default function WeaponRanksDisplay({ characterDef, isMasterSealed, hideUnusable }: { characterDef: IDoFRenderCharacter, isMasterSealed: boolean, hideUnusable?: boolean }) {
-    console.log(characterDef);
-    if (lastCharacter !== characterDef.name || lastMSStatus !== isMasterSealed) {
+export default function WeaponRanksDisplay({ characterDef, ranks, isMasterSealed, hideUnusable }: { characterDef?: IDoFCharacter, ranks?: IDoFStats, isMasterSealed: boolean, hideUnusable?: boolean }) {
+    if (characterDef && (lastCharacter !== characterDef.name || lastMSStatus !== isMasterSealed)) {
         lastCharacter = characterDef.name;
         lastMSStatus = isMasterSealed;
 
@@ -31,6 +31,12 @@ export default function WeaponRanksDisplay({ characterDef, isMasterSealed, hideU
             }
             ranks[weapon] = { base: getRankConfig(baseRank), promotion: promotion ? getRankConfig(promotion) : null };
             return ranks;
+        }, {} as any);
+    }
+    else if (ranks && lastRanks != ranks){
+        cachedRanks = weapons.reduce((parseRanks, weapon) => {
+            parseRanks[weapon] = { base: getRankConfig(ranks[weapon]), promotion: null };
+            return parseRanks;
         }, {} as any);
     }
 

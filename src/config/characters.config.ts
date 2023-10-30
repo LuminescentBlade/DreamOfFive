@@ -1,4 +1,4 @@
-import { DoFAffinities, DoFArtist, DoFClasses, DoFNationality, DoFWeaponType } from "../models/enums";
+import { DoFAffinities, DoFArtist, DoFClasses, DoFNationality, DoFRoute, DoFWeaponType } from "../models/enums";
 import { IDoFCharacterConfigs } from "../models/interfaces";
 import { DoFPlayable } from "./playables";
 import { DoFWeapon } from "./weapons.config";
@@ -23,7 +23,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             bossStats: [
                 {
                     chapter: 1, 
-                    stats:  {lv: 6, hp: 33, pow: 11, skl: 6, spd: 9, luk: 4, def: 7, res: 1, con: 13 },
+                    level: 6,
+                    stats:  { hp: 33, pow: 11, skl: 6, spd: 9, luk: 4, def: 7, res: 1, con: 13 },
                     ranks: {
                         [DoFWeaponType.Axe]:71
                     },
@@ -49,7 +50,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             bossStats: [
                 {
                     chapter: 2, 
-                    stats:  {lv: 7, hp: 29, pow: 10, skl: 11, spd: 9, luk: 6, def: 8, res: 0, con: 7 },
+                    level: 7,
+                    stats:  { hp: 29, pow: 10, skl: 11, spd: 9, luk: 6, def: 8, res: 0, con: 7 },
                     ranks: {
                         [DoFWeaponType.Axe]:71
                     },
@@ -75,7 +77,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             bossStats: [
                 {
                     chapter: 3, 
-                    stats:  {lv: 8, hp: 29, pow: 10, skl: 12, spd: 11, luk: 3, def: 8, res: 7, con: 11 },
+                    level: 8,
+                    stats:  { hp: 29, pow: 10, skl: 12, spd: 11, luk: 3, def: 8, res: 7, con: 11 },
                     ranks: {
                         [DoFWeaponType.Sword]:121
                     },
@@ -100,7 +103,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             bossStats: [
                 {
                     chapter: 3, 
-                    stats:  {lv: 6, hp: 25, pow: 13, skl: 11, spd: 8, luk: 6, def: 11, res: 0, con: 11 },
+                    level: 6,
+                    stats:  { hp: 25, pow: 13, skl: 11, spd: 8, luk: 6, def: 11, res: 0, con: 11 },
                     ranks: {
                         [DoFWeaponType.Bow]:71
                     },
@@ -148,8 +152,9 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             affinity: DoFAffinities.Fire,
             bossStats: [
                 {
-                    chapter: 4  , 
-                    stats:  {lv: 12, hp: 33, pow: 12, skl: 10, spd: 11, luk: 4, def: 10, res: 2, con: 9 },
+                    chapter: 4,
+                    level: 12, 
+                    stats:  { hp: 33, pow: 12, skl: 10, spd: 11, luk: 4, def: 10, res: 2, con: 9 },
                     ranks: {
                         [DoFWeaponType.Lance]:121,
                         [DoFWeaponType.Sword]:31
@@ -177,7 +182,13 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                     enemy: 99,
                     npc: 4
                 }
-            }
+            },
+            bossStats: [
+                {chapter: 7, gameOver: true, route: DoFRoute.Onduris},
+                {chapter: 8, gameOver: true, route: DoFRoute.Onduris},
+                {chapter: 9, gameOver: true, route: DoFRoute.Onduris},
+                {chapter: 10, gameOver: true, route: DoFRoute.Onduris}
+            ]
         },
         {
             name: 'fergal',
@@ -194,7 +205,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             bossStats: [
                 {
                     chapter: 5, 
-                    stats:  {lv: 14, hp: 36, pow: 14, skl: 12, spd: 8, luk: 8, def: 16, res: 3, con: 14 },
+                    level: 14,
+                    stats:  { hp: 36, pow: 14, skl: 12, spd: 8, luk: 8, def: 16, res: 3, con: 14 },
                     ranks: {
                         [DoFWeaponType.Lance]:181
                     },
@@ -219,7 +231,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             bossStats: [
                 {
                     chapter: 6, 
-                    stats:  {lv: 20, hp: 40, pow: 15, skl: 13, spd: 8, luk: 7, def: 14, res: 8, con: 14 },
+                    level: 20,
+                    stats:  { hp: 40, pow: 15, skl: 13, spd: 8, luk: 7, def: 14, res: 8, con: 14 },
                     ranks: {
                         [DoFWeaponType.Lance]:181
                     },
@@ -286,7 +299,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             name: 'jayson',
             displayName: 'The Maul',
             artists: [DoFArtist.Lumi],
-            blurb: '"It would never be personal for him. All such killers saw themselves as good men, with their own code..."',
+            blurb: '"It would never be personal for him. All such killers saw themseleveles as good men, with their own code..."',
             class: DoFClasses.Gladiator,
             nationality: DoFNationality.Musain,
             routeConfig: {

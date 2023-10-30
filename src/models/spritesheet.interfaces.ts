@@ -14,12 +14,14 @@ export interface IRenderItemConfig {
 
 export interface IRenderCharacterConfig extends IRenderItemConfig {
     unitData: any,
-    chapter: number
+    chapter: number,
+    route?: string,
 };
 export interface IUnit {
     name: string;
     artists: string[];
     displayName?: string;
+    class?:string;
     alt?: {
         [name: string]: IAltConfig
     };
@@ -35,21 +37,13 @@ export interface IUnit {
     fullSheetRenderOrderOverride?: number
 }
 
-export interface IRenderContent {
-    path: string;
-    altPaths?: {
-        [key: string]: string;
-    },
-    renderOrder: number,
-}
-
-export interface IRenderUnit extends IUnit, IRenderContent { }
 
 export interface IConditional {
     chapter?: number;
     displayName?: string,
     swapPortrait?: string,
     ogPortraitName?: string,
+    class?: string
 }
 
 export interface IAltConfig {

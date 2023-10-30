@@ -12,18 +12,18 @@ export class RenderCharacter extends RenderUnit {
         super(characterInput, getPath);
     }
 
-    private renderData?: any;
+    protected renderData?: any;
     set currentChapter(data: { chapter: number, route?: string } | undefined) {
         const placement = data ? this.getCharacterPlacement(data) : undefined;
         const parsedCharacter = placement ? this.parseCharacter(placement) : undefined;
         if (parsedCharacter && data && placement) {
-            this.renderData = this.getRenderItems(parsedCharacter, data.chapter, placement)
+            this.renderData = this.getRenderItems(parsedCharacter, data, placement)
         } else {
             this.renderData = undefined;
         }
     }
 
-    get data() {
+    public get data() {
         return this.renderData;
     }
 
@@ -135,14 +135,15 @@ export class RenderCharacter extends RenderUnit {
         }
     }
 
-    private getRenderItems(unit: IUnit, chapter: number, placement: { value: string, chapter: number }): IRenderCharacterConfig {
+    private getRenderItems(unit: IUnit, chapterConfig: { chapter: number, route?: string }, placement: { value: string, chapter: number }): IRenderCharacterConfig {
         let defaultDisplay = { name: unit.name, displayName: unit.displayName, path: this.urls.default, artists: unit.artists };
         let alts;
         let defaultSwap;
+        const { chapter, route } = chapterConfig;
         // check conditionals
         // consolidate unit type vs chapter based conditionals and then apply them all
         // chapter based override unit type based if chapter > placement.chapter, if equal or less then unit type
-        let newDisplayName, swapPortrait: string, ogPortraitName;
+        let newDisplayName, swapPortrait: string, ogPortraitName, className;
         if (unit.conditional) {
             let chapterConditionals = unit.conditional.chapter && unit.conditional.chapter.chapter! <= chapter ? unit.conditional.chapter : null;
             // @ts-ignore
@@ -159,11 +160,13 @@ export class RenderCharacter extends RenderUnit {
                 newDisplayName = primary.displayName ?? secondary.displayName;
                 swapPortrait = primary.swapPortrait ?? secondary.swapPortrait;
                 ogPortraitName = primary.ogPortraitName ?? secondary.ogPortraitName;
+                className = primary.class ?? secondary.class;
             } else if (chapterConditionals || typeConditionals) {
                 let conditionals = chapterConditionals ?? typeConditionals;
                 newDisplayName = conditionals.displayName;
                 swapPortrait = conditionals.swapPortrait;
                 ogPortraitName = conditionals.ogPortraitName;
+                className = conditionals.class;
             }
         }
         // @ts-ignore
@@ -172,7 +175,7 @@ export class RenderCharacter extends RenderUnit {
             defaultSwap = defaultDisplay;
             defaultDisplay = { name: swapPortrait, path: this.urls.alts[swapPortrait], artists: swapItem.artists, displayName: swapItem.displayName }
             defaultSwap.displayName = ogPortraitName ?? defaultSwap.displayName;
-            newDisplayName  = newDisplayName ?? unit.displayName ?? unit.name;
+            newDisplayName = newDisplayName ?? unit.displayName ?? unit.name;
         }
         if (newDisplayName) {
             defaultDisplay.displayName = newDisplayName;
@@ -180,19 +183,21 @@ export class RenderCharacter extends RenderUnit {
         if (unit.alt) {
             alts = Object.entries(unit.alt)
                 .filter(([key, value]) => key != swapPortrait && (!value.chapter || value.chapter <= chapter))
-                .map(([key, value]) => ({ ...value, name: key, path: this.urls.alts[key], displayName:`${unit.displayName} ${value.displayName}` }));
+                .map(([key, value]) => ({ ...value, name: key, path: this.urls.alts[key], displayName: `${unit.displayName} ${value.displayName}` }));
         }
         if (defaultSwap) {
             alts = alts ? [defaultSwap, ...alts] : [defaultSwap];
         }
+
         return {
             name: this.character.name,
             renderOrder: placement.chapter,
             type: placement.value,
-            unitData: { ...unit, path: defaultDisplay.path },
+            unitData: { ...unit, path: defaultDisplay.path, class: className ?? unit?.class },
             default: defaultDisplay,
             alts,
-            chapter
+            chapter,
+            route
         };
     }
 };

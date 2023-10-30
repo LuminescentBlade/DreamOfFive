@@ -5,7 +5,7 @@ import UnitSheet from '@/src/components/unit-sheet';
 import styles from './page.module.scss'
 import { DoFArtistConfig } from '@/src/config/artists.config';
 import { useState } from 'react';
-import { IDoFCharacter, IDoFCharacterRenderer, IDoFRenderCharacter, IDoFRenderUnit, IDoFUnit, IKeyMap, IRenderCharacterConfig, IRenderItemConfig } from '@/src/models/interfaces';
+import { IDoFCharacterRenderer, IRenderCharacterConfig, IRenderDoFConfig, IRenderItemConfig } from '@/src/models/interfaces';
 import { DoFCharacters } from '@/src/config/characters.config';
 import { DoFChapters } from '@/src/config/chapters.config';
 import OptionSelector from '@/src/components/option-selector';
@@ -114,7 +114,7 @@ export default function CharacterPage() {
     function getData(chapter: number, route: string): any {
         const useFull = false; // do later
         const config = parseCharacters(useFull ? 99 : chapter, useFull ? DoFRoute.Both : route);
-        const getRenderOrder = (item: IDoFRenderUnit) => item.renderOrder;
+        const getRenderOrder = (item: IRenderCharacterConfig) => item.renderOrder;
         const sort = (items: any[]) => items.sort((a, b) => getRenderOrder(a) - getRenderOrder(b));
         const { shopkeepers, generics } = cachedUnits;
         if (useFull) {
@@ -156,9 +156,8 @@ export default function CharacterPage() {
         }
     }
 
-    function getClickFunction(characterData: IRenderCharacterConfig) {        
-        if (characterData.type === DoFUnitState.Player || (
-            characterData.type === DoFUnitState.Enemy && characterData.unitData.bossStats)) {
+    function getClickFunction(characterData: IRenderDoFConfig) {        
+        if (characterData.displayProfile) {
             return () => {
                 updateCharacterPage({ ...characterPageState, activeCharacter: characterData });
             }

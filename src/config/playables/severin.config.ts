@@ -1,9 +1,12 @@
-import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeaponType } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFRoute, DoFWeaponType } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
 import { DoFWeapon } from "../weapons.config";
 
 const bossStat = {
-    stats: { lv: 4, hp: 31, pow: 15, skl: 22, spd: 18, luk: 11, def: 6, res: 14, con: 8 },
+    route: DoFRoute.Musain,
+    level: 4,
+    stats: { hp: 31, pow: 15, skl: 22, spd: 18, luk: 11, def: 6, res: 14, con: 8 },
+    optional: true,
     ranks: {
         [DoFWeaponType.Anima]: 181,
         [DoFWeaponType.Staff]: 71
@@ -35,7 +38,7 @@ export const Severin: IDoFCharacter = {
     },
     affinity: DoFAffinities.Ice,
     bossStats: [
-        {...bossStat, chapter: 11},
-        {...bossStat, chapter: 12}
+        { ...bossStat, chapter: 11 },
+        { ...bossStat, chapter: 12 }
     ]
 };
