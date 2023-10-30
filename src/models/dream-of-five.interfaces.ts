@@ -18,10 +18,10 @@ export interface IDoFAlt extends IAltConfig {
 export interface IDoFBossCofig { 
     chapter: number,
     route?: string,
-    class?: string,
-    stats: IDoFStats,
-    ranks: IDoFStats,
-    weapons: string[],
+    class?: string, // null means copy from base
+    stats?: IDoFStats, // null means copy from base
+    ranks?: IDoFStats, // null means copy from base
+    weapons?: string[], // null means copy from base
     optional?: boolean,
     gameOver?: boolean // basically Farrell
 };
