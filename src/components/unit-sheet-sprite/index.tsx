@@ -1,4 +1,4 @@
-import { IDoFRenderUnit, IDoFUnit, IRenderItem, IRenderUnit } from "@/src/models/interfaces";
+import { IRenderItem } from "@/src/models/interfaces";
 
 import styles from './index.module.scss';
 import { DoFArtistConfig } from "@/src/config/artists.config";
