@@ -555,7 +555,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                     npc: 0,
                     enemy: 99
                 }
-            }
+            },
+            height: 172
         },
         {
             name: 'sevira',
