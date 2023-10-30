@@ -8,12 +8,12 @@ let lastCharacter: string;
 let lastMSStatus: boolean;
 let cachedRanks: { [key: string]: { base: any, promotion: any } } = {};
 const weapons = Object.values(DoFWeapons);
-export default function WeaponRanksDisplay({ characterDef, isMasterSealed }: { characterDef: IDoFRenderCharacter, isMasterSealed: boolean }) {
+export default function WeaponRanksDisplay({ characterDef, isMasterSealed, hideUnusable }: { characterDef: IDoFRenderCharacter, isMasterSealed: boolean , hideUnusable?: boolean}) {
 
     if (lastCharacter !== characterDef.name || lastMSStatus !== isMasterSealed) {
         lastCharacter = characterDef.name;
         lastMSStatus = isMasterSealed;
-        
+
         const baseClassKey: string = characterDef.class!;
         const personalRanks = characterDef.weapons ?? {};
         const baseClass = characterDef.promotesTo ? DoFUnpromotedClasses[baseClassKey].weapons : DoFPromotedClasses[baseClassKey].weapons;
@@ -53,14 +53,16 @@ export default function WeaponRanksDisplay({ characterDef, isMasterSealed }: { c
     }
 
     return <ul className={styles.weaponList}>
-        {weapons.map(wpn => <li key={wpn}
+        {weapons
+            .filter(wpn=>!hideUnusable || cachedRanks[wpn]?.base || (isMasterSealed && cachedRanks[wpn]?.promotion) )
+            .map(wpn => <li key={wpn}
             className={`${styles.weaponItem} ${cachedRanks[wpn]?.base ? styles.baseWeaponActive : ''} ${isMasterSealed && cachedRanks[wpn]?.promotion ? styles.promotedWeaponActive : ''}`}>
             <span className={`icon-wpn-${wpn} ${styles.weaponIcon}`}></span>
             {cachedRanks[wpn]?.base || (isMasterSealed && cachedRanks[wpn]?.promotion) ? <span className={styles.weaponRank}>
                 {cachedRanks[wpn]?.base ? <span>{cachedRanks[wpn].base.letter}</span> : ''}
                 {isMasterSealed && !cachedRanks[wpn].base && cachedRanks[wpn]?.promotion ? <span>{cachedRanks[wpn].promotion.letter}</span> : ''}
                 {
-                        isMasterSealed &&
+                    isMasterSealed &&
                         cachedRanks[wpn]?.base &&
                         cachedRanks[wpn]?.promotion &&
                         cachedRanks[wpn]?.base.letter !== cachedRanks[wpn]?.promotion.letter ? <span>&rarr;{cachedRanks[wpn].promotion.letter}</span> : ''}
