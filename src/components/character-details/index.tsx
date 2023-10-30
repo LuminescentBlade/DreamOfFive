@@ -99,14 +99,16 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
 
     function renderSideProfile() {
         return <div className={styles.profile}>
-            {/* <div className={styles.portraitWrapper}> */}
+            <div className={styles.portraitWrapper}>
+            {characterDef.affinity ? <div className={`icon-affinity-${characterDef.affinity} ${styles.affinity}`}></div>:''}
             <img className="pixel-art" src={characterDef.path}></img>
-            {/* </div> */}
+            </div>
             <div className={styles.profileData}>
-                <h2>{characterDef.profileName ?? characterDef.conditional?.player?.displayName ?? characterDef.displayName ?? <span className={'capitalize'}>{characterDef.name}</span>}</h2>
+                <h2>
+                    {characterDef.profileName ?? characterDef.displayName ?? <span className={'capitalize'}>{characterDef.name}</span>}
+                </h2>
                 {characterDef.altNames || characterDef.conditional?.player?.displayName ? <ul className={styles.altNames}>
                     {characterDef.altNames?.map(c => <li key={c} >{c}</li>)}
-                    {characterDef.conditional?.player?.displayName ? <li className="capitalize">{characterDef.name}</li> : ''}
                 </ul> : ''}
 
                 <div className={styles.subtitle}>

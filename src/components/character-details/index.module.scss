@@ -75,6 +75,22 @@
   }
 }
 
+.portraitWrapper{
+  position: relative;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  .affinity{
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    background-size: 16px;
+    top: 0;
+    right: 0;
+  }
+}
+
 .altNames {
   height: fit-content;
   display: flex;
