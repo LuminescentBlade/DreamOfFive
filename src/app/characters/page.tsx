@@ -156,10 +156,11 @@ export default function CharacterPage() {
         }
     }
 
-    function getClickFunction(characterData: IRenderCharacterConfig) {
-        if (characterData.type === DoFUnitState.Player) {
+    function getClickFunction(characterData: IRenderCharacterConfig) {        
+        if (characterData.type === DoFUnitState.Player || (
+            characterData.type === DoFUnitState.Enemy && characterData.unitData.bossStats)) {
             return () => {
-                updateCharacterPage({ ...characterPageState, activeCharacter: characterData.unitData });
+                updateCharacterPage({ ...characterPageState, activeCharacter: characterData });
             }
         }
     }
@@ -197,7 +198,11 @@ export default function CharacterPage() {
                     </select>
                 </div>
             </div> : ''}
-            {characterPageState.activeCharacter ? <CharacterDetails characterDef={characterPageState.activeCharacter} clear={clearCharacter} experimentalFeatures={showFullData} /> : ''}
+            {characterPageState.activeCharacter ? <CharacterDetails 
+                characterDef={characterPageState.activeCharacter.unitData} 
+                unitType={characterPageState.activeCharacter.type} 
+                clear={clearCharacter} 
+                experimentalFeatures={showFullData} /> : ''}
             <UnitSheet data={characterPageState.unitSheetData} expansionState={characterPageState.expandedPortraits} toggleCharacter={toggleCharacter} chapter={currentChapterLimit} getOnClick={getClickFunction} />
             {/* {
                 !isProd ? <div style={{ width: 'fit-content', margin: '12px auto', textAlign: 'center' }}>

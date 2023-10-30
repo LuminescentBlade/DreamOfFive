@@ -8,6 +8,7 @@ import { faXmark, faArrowsUpDownLeftRight, faPlus, faMinus } from '@fortawesome/
 import Toggle from "../toggle";
 import CharacterProfile from "../unit-profile";
 import PlayerAverages from "../player-averages";
+import { DoFUnitState } from "@/src/models/enums";
 
 enum CharacterDetailState {
     Stat = 'stat',
@@ -26,10 +27,15 @@ let cachedState: any = {
 
 let currentCharacter: string | undefined;
 
-export default function CharacterDetails({ characterDef, clear, experimentalFeatures }: { characterDef: IDoFRenderCharacter, clear: () => void, experimentalFeatures?: boolean }) {
+export default function CharacterDetails({ characterDef, unitType, clear, experimentalFeatures }: {
+    characterDef: IDoFRenderCharacter,
+    unitType: string,
+    clear: () => void,
+    experimentalFeatures?: boolean
+}) {
     // show hide items
-    const showStats = (characterDef.bases || characterDef.growths);
-    const showExtendedProfile = experimentalFeatures && characterDef.nationality;
+    const showStats = (unitType === DoFUnitState.Player) && (characterDef.bases || characterDef.growths);
+    const showExtendedProfile = experimentalFeatures && characterDef.height;
     const showGallery = false;
 
     let defaultView: CharacterDetailState | undefined;
@@ -100,8 +106,8 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
     function renderSideProfile() {
         return <div className={styles.profile}>
             <div className={styles.portraitWrapper}>
-            {characterDef.affinity ? <div className={`icon-affinity-${characterDef.affinity} ${styles.affinity}`}></div>:''}
-            <img className="pixel-art" src={characterDef.path}></img>
+                {characterDef.affinity ? <div className={`icon-affinity-${characterDef.affinity} ${styles.affinity}`}></div> : ''}
+                <img className="pixel-art" src={characterDef.path}></img>
             </div>
             <div className={styles.profileData}>
                 <h2>
@@ -122,16 +128,17 @@ export default function CharacterDetails({ characterDef, clear, experimentalFeat
             </div>
         </div>
     }
-    
+
     function renderContent(state: CharacterDetailState) {
         switch (state) {
             case CharacterDetailState.Gallery:
                 return '';
             case CharacterDetailState.ExtendedProfile:
-                return <CharacterProfile characterDef={characterDef}/>;
+                return <CharacterProfile characterDef={characterDef} />;
             case CharacterDetailState.Stat:
-            default:
                 return <PlayerAverages characterDef={characterDef}></PlayerAverages>;
+            default:
+                return ''
         }
     }
 
