@@ -18,9 +18,10 @@ export class DoFRenderCharacter extends RenderCharacter {
     }
 
     private chapterFilterCharacterData(renderData: IRenderCharacterConfig): IRenderDoFConfig {
+        if(!renderData){return renderData};
         const newRenderData = { ...renderData, displayProfile: false };
         const unitData = renderData.unitData;
-        if (unitData.bossStats) {
+        if (unitData?.bossStats) {
             const newBossStats = unitData.bossStats
                 .filter(
                     (item: IDoFBossCofig) => item.chapter <= renderData.chapter &&
