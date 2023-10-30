@@ -13,9 +13,7 @@ export default function WeaponRanksDisplay({ characterDef, isMasterSealed }: { c
     if (lastCharacter !== characterDef.name || lastMSStatus !== isMasterSealed) {
         lastCharacter = characterDef.name;
         lastMSStatus = isMasterSealed;
-
-        console.log(lastCharacter, lastMSStatus);
-
+        
         const baseClassKey: string = characterDef.class!;
         const personalRanks = characterDef.weapons ?? {};
         const baseClass = characterDef.promotesTo ? DoFUnpromotedClasses[baseClassKey].weapons : DoFPromotedClasses[baseClassKey].weapons;
