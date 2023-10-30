@@ -18,7 +18,7 @@ export class DoFRenderCharacter extends RenderCharacter {
     }
 
     private chapterFilterCharacterData(renderData: IRenderCharacterConfig): IRenderDoFConfig {
-        if(!renderData){return renderData};
+        if (!renderData) { return renderData };
         const newRenderData = { ...renderData, displayProfile: false };
         const unitData = renderData.unitData;
         if (unitData?.bossStats) {
@@ -39,7 +39,7 @@ export class DoFRenderCharacter extends RenderCharacter {
             newRenderData.unitData.bossStats = newBossStats?.length ? newBossStats : null;
 
         }
-        if(newRenderData.type === DoFUnitState.Player || newRenderData.unitData.bossStats || newRenderData.unitData.height ){
+        if (newRenderData.type === DoFUnitState.Player || (newRenderData.unitData.bossStats && this.rules.bypassSpoiler) || newRenderData.unitData.height) {
             newRenderData.displayProfile = true;
         }
         return newRenderData;

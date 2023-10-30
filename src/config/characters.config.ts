@@ -136,7 +136,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                     swapPortrait: 'final',
                     ogPortraitName: 'Sorcha c3'
                 }
-            }
+            },
+            height: 171
         },
         {
             name: 'ganter',
@@ -175,7 +176,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             nationality: DoFNationality.Aukema,
             routeConfig: {
                 onduris: {
-                    enemy: [8, 9, 10],
+                    enemy: [8, 9, 10, 99],
                     npc: 4
                 },
                 musain: {
@@ -188,7 +189,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                 {chapter: 8, gameOver: true, route: DoFRoute.Onduris},
                 {chapter: 9, gameOver: true, route: DoFRoute.Onduris},
                 {chapter: 10, gameOver: true, route: DoFRoute.Onduris}
-            ]
+            ],
+            height: 185
         },
         {
             name: 'fergal',
@@ -564,7 +566,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                 allRoute: {
                     npc: 6
                 }
-            }
+            },
+            height: 160,
         },
         {
             name: 'wyclif',
@@ -575,7 +578,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                 allRoute: {
                     npc: 6
                 }
-            }
+            },
+            height: 176
         },
         {
             name: 'valin',
