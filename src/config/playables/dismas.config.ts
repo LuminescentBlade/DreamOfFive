@@ -11,6 +11,7 @@ export const Dismas: IDoFCharacter = {
     alt: {
         punished: { artists: [DoFArtist.Astra], chapter: 15, displayName: 'Returns', isSpoiler: true }
     },
+    level: 6,
     height: 176,
     conditional: {
         chapter: {
