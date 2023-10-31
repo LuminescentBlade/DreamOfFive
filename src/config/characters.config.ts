@@ -466,7 +466,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                         [DoFWeaponType.Anima]: 181,
                         [DoFWeaponType.Staff]: 71
                     },
-                    drops: 'Master Seal'
+                    drops: 'Master Seal',
+                    optional: true,
                 }
             ]
         },
