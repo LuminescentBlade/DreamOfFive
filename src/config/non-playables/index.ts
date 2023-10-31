@@ -10,10 +10,12 @@ import { MeiDoru } from "./mei-doru.config";
 import { Menida } from "./menida.config";
 import { MirKatal } from "./mir-katal.config";
 import { SelSeir } from "./sel-seir.config";
+import { Sevira } from "./sevira.config";
 import { Sorcha } from "./sorcha.config";
 import { Trajan } from "./trajan.config";
 import { Uther } from "./uther.config";
 import { Varkade } from "./varkade.config";
+import { Wyclif } from "./wyclif.config";
 
 export const DoFNonPlayable  = [
     // onduris
@@ -27,6 +29,8 @@ export const DoFNonPlayable  = [
     Uther,
     Guillaume,
     // aukema
+    Wyclif,
+    Sevira,
     Farrell,
     // vishara
     // the five
