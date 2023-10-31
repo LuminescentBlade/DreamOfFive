@@ -1,5 +1,6 @@
-import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeaponType } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFRoute, DoFWeaponType } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
+import { DoFWeapon } from "../weapons.config";
 
 export const Lyndra: IDoFCharacter =  {
     name: DoFCharKey.Lyndra,
@@ -21,5 +22,18 @@ export const Lyndra: IDoFCharacter =  {
         [DoFWeaponType.Sword]: 181,
         [DoFWeaponType.Axe]: 121
     },
-    affinity: DoFAffinities.Wind
+    affinity: DoFAffinities.Wind,
+    bossStats: [
+        {
+            chapter: 8.5,
+            route: DoFRoute.Musain,
+            weapons: [DoFWeapon.SilverBlade],
+            ranks: {
+                [DoFWeaponType.Sword]: 181,
+                [DoFWeaponType.Axe]: 121
+            },
+            drops: 'Master Seal',
+            optional: true,
+        }
+    ]
 };

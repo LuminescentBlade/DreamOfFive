@@ -1,5 +1,6 @@
-import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeaponType } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFRoute, DoFWeaponType } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
+import { DoFWeapon } from "../weapons.config";
 
 export const ByorDal: IDoFCharacter = {
     name: DoFCharKey.byorDal,
@@ -22,5 +23,8 @@ export const ByorDal: IDoFCharacter = {
         [DoFWeaponType.Axe]: 181,
         [DoFWeaponType.Sword]: 31
     },
-    affinity: DoFAffinities.Ice
+    affinity: DoFAffinities.Ice,
+    bossStats: [
+        {chapter: 10.5, route: DoFRoute.Onduris, weapons: [DoFWeapon.Francisca], drops: 'Master Seal', optional: true}
+    ]
 };

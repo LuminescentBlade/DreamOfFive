@@ -40,7 +40,7 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
     // show hide items
     const showStats = (isPlayer) && (characterDef.bases || characterDef.growths);
     const showExtendedProfile = characterDef.height != null;
-    const showBossStats = experimentalFeatures && characterDef.bossStats != null;
+    const showBossStats =  characterDef.bossStats != null;
     const showGallery = false;
 
     let defaultView: CharacterDetailState | undefined;

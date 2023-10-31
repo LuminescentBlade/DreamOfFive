@@ -1,5 +1,6 @@
-import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeaponType } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFRoute, DoFWeaponType } from "@/src/models/enums";
 import { IDoFCharacter } from "@/src/models/interfaces";
+import { DoFWeapon } from "../weapons.config";
 
 export const Eudira: IDoFCharacter = {
     name: DoFCharKey.Eudira,
@@ -13,6 +14,7 @@ export const Eudira: IDoFCharacter = {
             enemy: [8, 13],
         }
     },
+    epithet: 'Smiling Poppet',
     height: 168,
     bases: { hp: 37, pow: 16, skl: 19, spd: 17, luk: 0, def: 14, res: 10, con: 9 },
     level: 4,
@@ -21,5 +23,9 @@ export const Eudira: IDoFCharacter = {
         [DoFWeaponType.Light]: 181,
         [DoFWeaponType.Dark]: 181
     },
-    affinity: DoFAffinities.Wind
+    affinity: DoFAffinities.Wind,
+    bossStats: [
+        {chapter: 8, route: DoFRoute.Musain, weapons: [DoFWeapon.Ennervation], optional: true },
+        {chapter: 13, route: DoFRoute.Musain, weapons: [DoFWeapon.Frodafridh, DoFWeapon.Fenrir], drops: 'Serendipity Ring' }
+    ]
 };

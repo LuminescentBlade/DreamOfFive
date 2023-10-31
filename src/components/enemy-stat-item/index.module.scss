@@ -1,24 +1,87 @@
-.bossBox{
-    border: 1px solid var(--dof-color1);
-    padding: 6px;
+.bossBox {
+  border: 1px solid var(--dof-color1);
+  padding: 6px;
 }
-.headerRow{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid var(--dof-color3);
-    h3{
-        padding: 0;
-        margin: 0;
-        font-size: 1.6rem;
-    }
-    
+.headerRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--dof-color3);
+  h3 {
+    padding: 0;
+    margin: 0;
+    font-size: 1.6rem;
+  }
 }
-.subTitle{
-    font-size: 1.2rem;
+.class {
+  display: inline-block;
+  text-transform: capitalize;
+  color: var(--dof-color1);
+}
+.subTitle {
+  font-size: 1.3rem;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-.route{
+.route {
+  font-weight: bold;
+}
+
+.tag {
+  display: inline-block;
+  text-transform: capitalize;
+  padding: 2px;
+  font-size: 0.8em;
+}
+
+.talk {
+  border: 1px solid var(--dof-color3);
+  color: var(--dof-color3);
+}
+
+.optional {
+  border: 1px solid var(--dof-color4);
+  color: var(--dof-color4);
+}
+
+.gameOver {
+  border: 1px solid var(--dof-red);
+  color: var(--dof-red);
+}
+
+.stats {
+  width: 100%;
+  text-align: center;
+  text-transform: capitalize;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  padding-bottom: 3px;
+  border-bottom: 1px solid var(--dof-color3);
+  li {
+    flex: 1;
+  }
+  .statLabel {
     font-weight: bold;
-    margin-right: 12px;
+    color: var(--dof-color4);
+  }
+}
+
+.weapons {
+  margin-top: 3px;
+  display: flex;
+  list-style: none;
+  gap: 12px;
+  font-size: 0.9em;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 400px) {
+  .stats {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }

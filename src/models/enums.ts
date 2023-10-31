@@ -94,7 +94,7 @@ export enum DoFClasses {
     Myrmidon = 'myrmidon',
     Swordmaster = 'swordmaster',
 
-    Brigand = 'brigand',
+    Brigand = 'thug',
     Raider = 'raider',
     Berserker = 'berserker',
 
@@ -108,6 +108,7 @@ export enum DoFClasses {
     Skirmisher = 'skirmisher',
     Outrider = 'outrider',
 
+    FirstLance = 'first lance',
     //
     TBD = 'tbd'
 };

@@ -9,7 +9,7 @@ export class DoFRenderCharacter extends RenderCharacter {
         const getPath = (name: string) => {
             return `/mugs/characters/${name}.png`;
         }
-        super(dofCharacter, getPath, rules);
+        super(dofCharacter, getPath, rules, ['blurb', 'level']);
     }
 
     public get data() {
@@ -39,11 +39,12 @@ export class DoFRenderCharacter extends RenderCharacter {
             newRenderData.unitData.bossStats = newBossStats?.length ? newBossStats : null;
 
         }
-        if (newRenderData.type === DoFUnitState.Player || (newRenderData.unitData.bossStats && this.rules.bypassSpoiler) || newRenderData.unitData.height) {
+        if (newRenderData.type === DoFUnitState.Player || newRenderData.unitData.bossStats|| newRenderData.unitData.height) {
             newRenderData.displayProfile = true;
         }
 
         if (newRenderData.type === DoFUnitState.NPC){
+            // TODO: show affinity for NPCs if they have been bosses first
             newRenderData.unitData.affinity = null;
         }
             return newRenderData;

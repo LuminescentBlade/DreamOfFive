@@ -19,14 +19,14 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                     enemy: 1
                 }
             },
+            level: 6,
             affinity: DoFAffinities.Light,
             bossStats: [
                 {
-                    chapter: 1, 
-                    level: 6,
-                    stats:  { hp: 33, pow: 11, skl: 6, spd: 9, luk: 4, def: 7, res: 1, con: 13 },
+                    chapter: 1,
+                    stats: { hp: 33, pow: 11, skl: 6, spd: 9, luk: 4, def: 7, res: 1, con: 13 },
                     ranks: {
-                        [DoFWeaponType.Axe]:71
+                        [DoFWeaponType.Axe]: 71
                     },
                     weapons: [
                         DoFWeapon.HandAxe,
@@ -46,14 +46,14 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                     enemy: 2
                 }
             },
+            level: 7,
             affinity: DoFAffinities.Fire,
             bossStats: [
                 {
-                    chapter: 2, 
-                    level: 7,
-                    stats:  { hp: 29, pow: 10, skl: 11, spd: 9, luk: 6, def: 8, res: 0, con: 7 },
+                    chapter: 2,
+                    stats: { hp: 29, pow: 10, skl: 11, spd: 9, luk: 6, def: 8, res: 0, con: 10 },
                     ranks: {
-                        [DoFWeaponType.Axe]:71
+                        [DoFWeaponType.Axe]: 71
                     },
                     weapons: [
                         DoFWeapon.HandAxe,
@@ -73,14 +73,14 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                     enemy: 3
                 }
             },
+            level: 8,
             affinity: DoFAffinities.Fire,
             bossStats: [
                 {
-                    chapter: 3, 
-                    level: 8,
-                    stats:  { hp: 29, pow: 10, skl: 12, spd: 11, luk: 3, def: 8, res: 7, con: 11 },
+                    chapter: 3,
+                    stats: { hp: 29, pow: 10, skl: 12, spd: 11, luk: 3, def: 8, res: 1, con: 11 },
                     ranks: {
-                        [DoFWeaponType.Sword]:121
+                        [DoFWeaponType.Sword]: 181
                     },
                     weapons: [
                         DoFWeapon.Flametongue
@@ -99,14 +99,14 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                     enemy: 3
                 }
             },
+            level: 6,
             affinity: DoFAffinities.Thunder,
             bossStats: [
                 {
-                    chapter: 3, 
-                    level: 6,
-                    stats:  { hp: 25, pow: 13, skl: 11, spd: 8, luk: 6, def: 11, res: 0, con: 11 },
+                    chapter: 3,
+                    stats: { hp: 25, pow: 13, skl: 11, spd: 8, luk: 6, def: 11, res: 0, con: 11 },
                     ranks: {
-                        [DoFWeaponType.Bow]:71
+                        [DoFWeaponType.Bow]: 71
                     },
                     weapons: [
                         DoFWeapon.SteelBow,
@@ -127,6 +127,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                     enemy: [2, 3, 99]
                 }
             },
+            level: 12,
+            affinity: DoFAffinities.Fire,
             alt: {
                 final: { artists: [DoFArtist.Sev], chapter: 99, isSpoiler: true }
             },
@@ -137,7 +139,19 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                     ogPortraitName: 'Sorcha c3'
                 }
             },
-            height: 171
+            height: 171,
+            bossStats: [
+                {
+                    chapter: 2,
+                    weapons: [DoFWeapon.Fimbulvetr],
+                    stats: { hp: 46, pow: 18, skl: 22, spd: 24, luk: 16, def: 8, res: 20, con: 6 },
+                    ranks: {
+                        [DoFWeaponType.Anima]: 251,
+                        [DoFWeaponType.Staff]: 181
+                    },
+                    optional: true
+                }
+            ]
         },
         {
             name: 'ganter',
@@ -150,15 +164,15 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                     enemy: 4
                 }
             },
+            level: 12,
             affinity: DoFAffinities.Fire,
             bossStats: [
                 {
-                    chapter: 4,
-                    level: 12, 
-                    stats:  { hp: 33, pow: 12, skl: 10, spd: 11, luk: 4, def: 10, res: 2, con: 9 },
+                    chapter: 4, 
+                    stats: { hp: 33, pow: 12, skl: 10, spd: 11, luk: 4, def: 10, res: 2, con: 9 },
                     ranks: {
-                        [DoFWeaponType.Lance]:121,
-                        [DoFWeaponType.Sword]:31
+                        [DoFWeaponType.Lance]: 121,
+                        [DoFWeaponType.Sword]: 31
                     },
                     weapons: [
                         DoFWeapon.SteelLance,
@@ -172,7 +186,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             profileName: 'Cuthbert Farrell',
             epithet: 'The Pursuer',
             artists: [DoFArtist.Sev, DoFArtist.Astra, DoFArtist.TBA],
-            class: '',
+            class: DoFClasses.FirstLance,
             nationality: DoFNationality.Aukema,
             routeConfig: {
                 onduris: {
@@ -184,11 +198,12 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                     npc: 4
                 }
             },
+            affinity: DoFAffinities.Ice,
             bossStats: [
-                {chapter: 7, gameOver: true, route: DoFRoute.Onduris},
-                {chapter: 8, gameOver: true, route: DoFRoute.Onduris},
-                {chapter: 9, gameOver: true, route: DoFRoute.Onduris},
-                {chapter: 10, gameOver: true, route: DoFRoute.Onduris}
+                { chapter: 10, gameOver: true, route: DoFRoute.Onduris, optional: true },
+                { chapter: 9, gameOver: true, route: DoFRoute.Onduris, optional: true },
+                { chapter: 8, gameOver: true, route: DoFRoute.Onduris, optional: true },
+
             ],
             height: 185
         },
@@ -203,14 +218,14 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                     enemy: 5
                 }
             },
+            level: 14,
             affinity: DoFAffinities.Ice,
             bossStats: [
                 {
-                    chapter: 5, 
-                    level: 14,
-                    stats:  { hp: 36, pow: 14, skl: 12, spd: 8, luk: 8, def: 16, res: 3, con: 14 },
+                    chapter: 5,
+                    stats: { hp: 36, pow: 14, skl: 12, spd: 6, luk: 8, def: 16, res: 3, con: 14 },
                     ranks: {
-                        [DoFWeaponType.Lance]:181
+                        [DoFWeaponType.Lance]: 181
                     },
                     weapons: [
                         DoFWeapon.ShortSpear
@@ -229,14 +244,14 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                     enemy: 6
                 }
             },
+            level: 20,
             affinity: DoFAffinities.Anima,
             bossStats: [
                 {
-                    chapter: 6, 
-                    level: 20,
-                    stats:  { hp: 40, pow: 15, skl: 13, spd: 8, luk: 7, def: 14, res: 8, con: 14 },
+                    chapter: 6,
+                    stats: { hp: 40, pow: 15, skl: 13, spd: 6, luk: 7, def: 14, res: 8, con: 14 },
                     ranks: {
-                        [DoFWeaponType.Lance]:181
+                        [DoFWeaponType.Lance]: 181
                     },
                     weapons: [
                         DoFWeapon.ShortSpear
@@ -255,7 +270,20 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                 musain: {
                     enemy: 6.5
                 }
-            }
+            },
+            level: 2,
+            affinity: DoFAffinities.Anima,
+            bossStats: [
+                {
+                    chapter: 6.5,
+                    route: DoFRoute.Musain,
+                    stats: { hp: 31, pow: 12, skl: 19, spd: 16, luk: 2, def: 11, res: 3, con: 8 },
+                    weapons: [DoFWeapon.SilverSword],
+                    ranks: {
+                        [DoFWeaponType.Sword]: 181
+                    }
+                }
+            ]
         },
         {
             name: 'vicentyr',
@@ -267,7 +295,21 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                 musain: {
                     enemy: 7
                 }
-            }
+            },
+            affinity: DoFAffinities.Fire,
+            level: 3,
+            bossStats: [
+                {
+                    chapter: 7,
+                    route: DoFRoute.Musain,
+                    stats: { hp: 33, pow: 13, skl: 18, spd: 12, luk: 6, def: 8, res: 14, con: 10 },
+                    weapons: [DoFWeapon.Thunder, DoFWeapon.Sleep],
+                    ranks: {
+                        [DoFWeaponType.Anima]: 181,
+                        [DoFWeaponType.Staff]: 121
+                    }
+                }
+            ]
 
         },
         {
@@ -281,7 +323,15 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                     enemy: [8, 13]
                 }
             },
-            epithet: "Twice Born"
+            height: 168,    
+            level: 4,
+            affinity: DoFAffinities.Fire,
+            bases: { hp: 35, pow: 18, skl: 16, spd: 16, luk: 30, def: 11, res: 8, con: 9 },
+            epithet: "Twice Born",
+            bossStats: [
+                { chapter: 13, route: DoFRoute.Musain, weapons: [DoFWeapon.Frodafridh, DoFWeapon.Fenrir], drops: 'Horseshoe' },
+                { chapter: 8, route: DoFRoute.Musain, weapons: [DoFWeapon.Ennervation], optional: true }
+            ]
 
         },
         {
@@ -294,53 +344,116 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                 musain: {
                     enemy: 8
                 }
-            }
+            },
+            affinity: DoFAffinities.Ice,
+            level: 4,
+            bossStats: [
+                {
+                    chapter: 8,
+                    route: DoFRoute.Musain,
+                    stats: { hp: 35, pow: 14, skl: 18, spd: 15, luk: 7, def: 12, res: 7, con: 11 },
+                    weapons: [DoFWeapon.Spear],
+                    ranks: {
+                        [DoFWeaponType.Lance]: 181,
+                    },
+                    drops: 'Master Seal',
+                    optional: true,
+                }
+            ]
 
         },
         {
             name: 'jayson',
             displayName: 'The Maul',
             artists: [DoFArtist.Lumi],
-            blurb: '"It would never be personal for him. All such killers saw themseleveles as good men, with their own code..."',
+            blurb: '"...yet the rebellion under such a man would grind to nothing He was little more than a common thug..."',
             class: DoFClasses.Gladiator,
             nationality: DoFNationality.Musain,
             routeConfig: {
                 musain: {
                     enemy: 9
                 }
-            }
+            },
+            affinity: DoFAffinities.Thunder,
+            level: 4,
+            bossStats: [
+                {
+                    chapter: 9,
+                    route: DoFRoute.Musain,
+                    stats: { hp: 43, pow: 21, skl: 14, spd: 17, luk: 8, def: 7, res: 4, con: 15 },
+                    weapons: [DoFWeapon.BattleAxe],
+                    ranks: {
+                        [DoFWeaponType.Axe]: 181,
+                    }
+                }
+            ]
 
         },
         {
             name: 'etrusque',
+            blurb: '"...flexing what little power he had, relishing in twisting a knife into the weak. I am no saint. But he..."',
             artists: [DoFArtist.Astra, DoFArtist.Xiltas],
-            class: '',
+            class: DoFClasses.Dreadnought,
             nationality: DoFNationality.Musain,
+            epithet: 'The Hooked Knife',
             routeConfig: {
                 musain: {
                     enemy: 10
                 }
-            }
+            },
+            level: 4,
+            affinity: DoFAffinities.Anima,
+            bossStats: [
+                {
+                    chapter: 10,
+                    route: DoFRoute.Musain,
+                    stats: { hp: 41, pow: 19, skl: 17, spd: 8, luk: 8, def: 22, res: 3, con: 17 },
+                    weapons: [DoFWeapon.SilverLance],
+                    ranks: {
+                        [DoFWeaponType.Sword]: 71,
+                        [DoFWeaponType.Axe]: 121,
+                        [DoFWeaponType.Lance]: 181
+                    },
+                    drops: DoFWeapon.SilverLance
+                }
+            ]
 
         },
         {
             name: 'preuval',
+            blurb: '"...relentless in pursuit, He threw forward man after man, but when the time came, he did not flinch..."',
             artists: [DoFArtist.Lumi],
-            class: '',
+            class: DoFClasses.Gladiator,
             nationality: DoFNationality.Musain,
             routeConfig: {
                 musain: {
                     enemy: 11
                 }
-            }
+            },
+            level: 6,
+            affinity: DoFAffinities.Dark,
+            bossStats: [
+                {
+                    chapter: 11,
+                    route: DoFRoute.Musain,
+                    stats: { hp: 42, pow: 18, skl: 20, spd: 15, luk: 6, def: 16, res: 7, con: 12 },
+                    weapons: [DoFWeapon.LightBrand, DoFWeapon.SilverBlade],
+                    ranks: {
+                        [DoFWeaponType.Sword]: 181,
+                        [DoFWeaponType.Axe]: 121
+                    }
+                }
+            ]
 
         },
         {
             name: 'uther',
+            profileName: 'Uther Dalencyn',
             blurb: '"He had every chance to turn against the Provost, but in the end, he valued his honour most highly..."',
             artists: [DoFArtist.Lumi, DoFArtist.Astra],
-            class: DoFClasses.Sentinel,
+            class: DoFClasses.FirstLance,
             nationality: DoFNationality.Musain,
+            height: 182,
             routeConfig: {
                 musain: {
                     npc: 7,
@@ -353,11 +466,25 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                     chapter: 12
                 },
             },
+            affinity: DoFAffinities.Ice,
+            level: 7,
+            bossStats: [
+                {
+                    chapter: 12,
+                    route: DoFRoute.Musain,
+                    stats: { hp: 36, pow: 17, skl: 20, spd: 19, luk: 7, def: 12, res: 10, con: 11 },
+                    weapons: [DoFWeapon.Spear],
+                    ranks: {
+                        [DoFWeaponType.Lance]: 251
+                    },
+                    drops: DoFWeapon.Spear
+                }
+            ]
         },
         {
             name: 'guillaume',
             artists: [DoFArtist.Astra],
-            class: '',
+            class: DoFClasses.Sage,
             nationality: DoFNationality.Musain,
             alt: {
                 burned: { artists: [DoFArtist.Astra], chapter: 14 }
@@ -367,7 +494,22 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                     npc: 7,
                     enemy: 14
                 }
-            }
+            },
+            affinity: DoFAffinities.Anima,
+            level: 8,
+            height: 172,
+            bossStats: [
+                {
+                    chapter: 14,
+                    route: DoFRoute.Musain,
+                    stats: { hp: 40, pow: 19, skl: 20, spd: 14, luk: 6, def: 12, res: 15, con: 9 },
+                    weapons: [DoFWeapon.Fimbulvetr, DoFWeapon.Thunder, DoFWeapon.Silence],
+                    ranks: {
+                        [DoFWeaponType.Anima]: 181,
+                        [DoFWeaponType.Staff]: 181
+                    }
+                }
+            ]
 
         },
         // onduris
@@ -381,7 +523,22 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                 onduris: {
                     enemy: 7
                 }
-            }
+            },
+            affinity: DoFAffinities.Ice,
+            level: 3,
+            bossStats: [
+                {
+                    chapter: 7,
+                    route: DoFRoute.Onduris,
+                    stats: { hp: 36, pow: 15, skl: 14, spd: 11, luk: 7, def: 13, res: 4, con: 12 },
+                    weapons: [DoFWeapon.SilverAxe, DoFWeapon.LightBrand],
+                    ranks: {
+                        [DoFWeaponType.Sword]: 121,
+                        [DoFWeaponType.Axe]: 121
+                    },
+                    drops: 'Unequipped Weapon'
+                }
+            ]
         },
         {
             name: 'droon',
@@ -393,7 +550,20 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                 onduris: {
                     enemy: 8
                 }
-            }
+            },
+            affinity: DoFAffinities.Dark,
+            level: 3,
+            bossStats: [
+                {
+                    chapter: 8,
+                    route: DoFRoute.Onduris,
+                    stats: { hp: 35, pow: 12, skl: 18, spd: 17, luk: 4, def: 8, res: 5, con: 8 },
+                    weapons: [DoFWeapon.SteelSword],
+                    ranks: {
+                        [DoFWeaponType.Sword]: 121
+                    }
+                }
+            ]
         },
         {
             name: 'am-roan',
@@ -406,7 +576,21 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                 onduris: {
                     enemy: 9
                 }
-            }
+            },
+            affinity: DoFAffinities.Wind,
+            level: 6,
+            bossStats: [
+                {
+                    chapter: 9,
+                    route: DoFRoute.Onduris,
+                    stats: { hp: 37, pow: 14, skl: 14, spd: 17, luk: 11, def: 9, res: 7, con: 9 },
+                    weapons: [DoFWeapon.SilverBow, DoFWeapon.KillingEdge],
+                    ranks: {
+                        [DoFWeaponType.Sword]: 121,
+                        [DoFWeaponType.Bow]: 121
+                    }
+                }
+            ]
         },
         {
             name: 'bede',
@@ -419,7 +603,22 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                     enemy: 10,
                     npc: 9
                 }
-            }
+            },
+            affinity: DoFAffinities.Light,
+            level: 3,
+            bossStats: [
+                {
+                    chapter: 10,
+                    route: DoFRoute.Onduris,
+                    stats: { hp: 35, pow: 11, skl: 16, spd: 15, luk: 13, def: 5, res: 14, con: 8 },
+                    weapons: [DoFWeapon.Bolting, DoFWeapon.Thunder],
+                    ranks: {
+                        [DoFWeaponType.Anima]: 181,
+                        [DoFWeaponType.Staff]: 71
+                    },
+                    drops: 'Master Seal'
+                }
+            ]
         },
         {
             name: 'timon',
@@ -429,9 +628,24 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             nationality: DoFNationality.Onduris,
             routeConfig: {
                 onduris: {
-                    enemy: 12,
+                    enemy: 12
                 }
-            }
+            },
+            level: 4,
+            affinity: DoFAffinities.Fire,
+            bossStats: [
+                {
+                    chapter: 12, route: DoFRoute.Onduris,
+                    stats: { hp: 45, pow: 19, skl: 17, spd: 12, luk: 7, def: 15, res: 4, con: 14 },
+                    weapons: [DoFWeapon.SilverAxe, DoFWeapon.SilverLongbow],
+                    ranks: {
+                        [DoFWeaponType.Axe]: 181,
+                        [DoFWeaponType.Bow]: 181
+                    },
+                    optional: true
+
+                }
+            ]
         },
         {
             name: 'a-vosa',
@@ -440,26 +654,56 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             blurb: '"... was to obey the King\'s will, be his instrument in all ways; personal honour was irrelevant before duty..."',
             class: DoFClasses.Sentinel,
             nationality: DoFNationality.Onduris,
+            height: 185,
             routeConfig: {
                 onduris: {
                     enemy: 11,
                     npc: 9
                 }
-            }
+            },
+            affinity: DoFAffinities.Light,
+            level: 5,
+            bossStats: [
+                {
+                    chapter: 13,
+                    route: DoFRoute.Onduris,
+                    stats: { hp: 41, pow: 15, skl: 19, spd: 16, luk: 7, def: 13, res: 9, con: 13 },
+                    weapons: [DoFWeapon.Spear],
+                    ranks: {
+                        [DoFWeaponType.Lance]: 181
+                    }
+                }
+            ]
+
         },
         {
             name: 'jin-sei',
             displayName: 'jin\'Sei',
             artists: [DoFArtist.Astra],
             blurb: '"... true warrior-king in every respect. He may not have won his throne fairly, but he would defend it to the death..."',
-            class: DoFClasses.Gladiator,
+            class: DoFClasses.Swordmaster,
             nationality: DoFNationality.Onduris,
+            affinity: DoFAffinities.Wind,
+            height: 175,
+            epithet: 'The Tyrant',
             routeConfig: {
                 onduris: {
                     enemy: 13,
                     npc: 9
                 }
-            }
+            },
+            level: 8,
+            bossStats: [
+                {
+                    chapter: 13,
+                    route: DoFRoute.Onduris,
+                    stats: { hp: 35, pow: 16, skl: 19, spd: 19, luk: 6, def: 10, res: 6, con: 9 },
+                    weapons: [DoFWeapon.Sophrosyne], // do stat bonuses later
+                    ranks: {
+                        [DoFWeaponType.Sword]: 251
+                    }
+                }
+            ]
         },
         {
             name: 'sel-seir',
@@ -467,27 +711,57 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             artists: [DoFArtist.Lumi, DoFArtist.Sev],
             blurb: '"Seir was notoriously decadent and venal, but his sword-arm had not atrophied... he was still Ondurite."',
             class: DoFClasses.Swordmaster,
+            height: 172,
             nationality: DoFNationality.Onduris,
             routeConfig: {
                 onduris: {
                     enemy: 14,
                     npc: 9
                 }
-            }
+            },
+            affinity: DoFAffinities.Wind,
+            level: 3,
+            bossStats: [
+                {
+                    chapter: 14,
+                    route: DoFRoute.Onduris,
+                    stats: { hp: 32, pow: 13, skl: 18, spd: 23, luk: 8, def: 8, res: 12, con: 8 },
+                    weapons: [DoFWeapon.SilverSword], // do stat bonuses later
+                    ranks: {
+                        [DoFWeaponType.Sword]: 181
+                    },
+                    drops: 'Diamond Gem'
+                }
+            ]
         },
         {
             name: 'mei-doru',
             displayName: 'mei\'Doru',
             artists: [DoFArtist.Astra],
             blurb: '"... ran his frontier region with an iron fist, always looking with envy towards the capital\'s riches..."',
-            class: DoFClasses.Swordmaster,
+            class: DoFClasses.Outrider,
+            height:168,
             nationality: DoFNationality.Onduris,
             routeConfig: {
                 onduris: {
                     enemy: 14,
                     npc: 9
                 }
-            }
+            },
+            affinity: DoFAffinities.Ice,
+            level: 4,
+            bossStats: [
+                {
+                    chapter: 14,
+                    route: DoFRoute.Onduris,
+                    stats: { hp: 35, pow: 16, skl: 15, spd: 19, luk: 7, def: 13, res: 7, con: 9 },
+                    weapons: [DoFWeapon.SilverBow, DoFWeapon.Rapier], // do stat bonuses later
+                    ranks: {
+                        [DoFWeaponType.Sword]: 121,
+                        [DoFWeaponType.Bow]: 181
+                    }
+                }
+            ]
         },
         {
             name: 'ka-danos',
@@ -496,12 +770,28 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             blurb: '"... felt that Onduris had fallen from greatness, lost sight of its culture. He alone could set it right again..."',
             class: DoFClasses.Gladiator,
             nationality: DoFNationality.Onduris,
+            height: 180,
             routeConfig: {
                 onduris: {
                     enemy: 14,
                     npc: 9
                 }
-            }
+            },
+            affinity: DoFAffinities.Thunder,
+            level: 6,
+            bossStats: [
+                {
+                    chapter: 14,
+                    route: DoFRoute.Onduris,
+                    stats: { hp: 43, pow: 22, skl: 19, spd: 14, luk: 4, def: 17, res: 4, con: 12 },
+                    weapons: [DoFWeapon.Francisca, DoFWeapon.BraveSword], // do stat bonuses later
+                    ranks: {
+                        [DoFWeaponType.Sword]: 181,
+                        [DoFWeaponType.Axe]: 251
+                    },
+                    drops: 'Master Seal'
+                }
+            ]
         },
         // postsplit
         {
@@ -679,9 +969,10 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'dragon',
-            displayName: 'Vishara boss',
+            displayName: 'Demetra',
             artists: [DoFArtist.Astra],
             nationality: DoFNationality.Vishara,
+            affinity: DoFAffinities.Dark,
             routeConfig: {
                 allRoute: {
                     enemy: 99
@@ -703,28 +994,60 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             }
         },
         {
+            name: 'trajan',
+            artists: [DoFArtist.Astra],
+            nationality: DoFNationality.Vishara,
+            class: DoFClasses.Dreadnought,
+            routeConfig: {
+                allRoute: {
+                    enemy: 99
+                }
+            },
+            affinity: DoFAffinities.Anima
+        },
+        {
             name: 'mir-katal',
             displayName: 'mir\'Katal',
             artists: [DoFArtist.Lumi, DoFArtist.Astra],
             blurb: '"... very pinnacle of the Ondurite martial ideal, a man of matchless valour. Fit to lead, but to rule?"',
             class: DoFClasses.Swordmaster,
             nationality: DoFNationality.Onduris,
+            epithet: 'The Oathkeeper',
             routeConfig: {
                 onduris: {
                     enemy: [12, 99],
                     npc: [13, 14]
                 }
             },
+            height: 177,
+            affinity: DoFAffinities.Light,
             alt: {
                 dictator: { artists: [DoFArtist.Lumi, DoFArtist.Astra], chapter: 14 }
             },
+            level: 16,
             conditional: {
                 chapter: {
                     chapter: 99,
                     swapPortrait: 'dictator',
-                    ogPortraitName: 'mir\'Katal Noble'
+                    ogPortraitName: 'mir\'Katal Noble',
+                    level: 20
                 }
             },
+            bossStats: [
+                {
+                    chapter: 12,
+                    route: DoFRoute.Onduris,
+                    stats: { hp: 52, pow: 24, skl: 29, spd: 27, luk: 16, def: 18, res: 13, con: 8 },
+                    weapons: [DoFWeapon.VorpalSword, 'Serendipity Ring'],
+                    ranks: {
+                        [DoFWeaponType.Sword]: 251
+                    },
+                    talk: true,
+                    gameOver: true,
+                    level: 16,
+                    //serendipity ring
+                }
+            ]
         },
         {
             name: 'fleurre',
@@ -733,22 +1056,42 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             artists: [DoFArtist.Sev],
             class: DoFClasses.Sage,
             nationality: DoFNationality.Musain,
+            height: 163,
             routeConfig: {
                 musain: {
-                    npc: [7, 14],
+                    npc: [7, 13],
                     enemy: [12, 99]
                 }
             },
+            epithet: 'Mask In Shadows',
+            affinity: DoFAffinities.Wind,
             alt: {
                 provost: { artists: [DoFArtist.Sev, DoFArtist.Lumi], chapter: 14 }
             },
+            level: 6,
             conditional: {
                 chapter: {
                     chapter: 99,
                     swapPortrait: 'provost',
-                    ogPortraitName: 'Fleurre Chancellor'
+                    ogPortraitName: 'Fleurre Chancellor',
+                    level: 20
                 }
             },
+            bossStats: [
+                {
+                    chapter: 12,
+                    route: DoFRoute.Musain,
+                    stats: { hp: 34, pow: 18, skl: 24, spd: 16, luk: 9, def: 7, res: 18, con: 9 },
+                    weapons: [DoFWeapon.Thunder],
+                    level: 6,
+                    ranks: {
+                        [DoFWeaponType.Anima]: 181,
+                        [DoFWeaponType.Staff]: 121
+                    },
+                    talk: true,
+                    gameOver: true
+                }
+            ]
         }
 
     ],

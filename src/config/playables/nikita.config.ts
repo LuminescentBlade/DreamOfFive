@@ -24,6 +24,6 @@ export const Nikita: IDoFCharacter = {
     },
     affinity: DoFAffinities.Fire,
     bossStats: [
-        { chapter: 10, optional: true, weapons: [DoFWeapon.SilverSword], route: DoFRoute.Onduris }
+        { chapter: 10, optional: true, level: 6, weapons: [DoFWeapon.SilverSword], route: DoFRoute.Onduris, drops: 'Lost Technique' }
     ]
 };

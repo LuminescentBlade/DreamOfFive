@@ -38,13 +38,15 @@ export interface IUnit {
 }
 
 
-export interface IConditional {
+export type IConditional =  {
     chapter?: number;
     displayName?: string,
     swapPortrait?: string,
     ogPortraitName?: string,
     class?: string
-}
+} & {
+    [key: string]: any
+};
 
 export interface IAltConfig {
     artists: string[],

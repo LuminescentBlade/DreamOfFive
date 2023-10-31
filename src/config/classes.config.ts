@@ -347,6 +347,14 @@ export const DoFPromotedClasses :  { [key: string]: any }  = {
         },
         mount: DoFMountType.Horse
     },
+    [DoFClasses.FirstLance]: {
+        promo: { hp: 0, pow: 0, skl: 0, spd: 0, luk: 0, def: 0, res: 0, con: 0 },
+        caps: { hp: 60, pow: 27, skl: 29, spd: 29, luk: 30, def: 26, res: 20, con: 20 },
+        weapons: {
+            [DoFWeaponType.Lance]: 71
+        },
+        mount: DoFMountType.Horse
+    },
     [DoFClasses.Dancer]: {
         caps: { hp: 60, pow: 10, skl: 10, spd: 30, luk: 30, def: 15, res: 30, con: 20 },
         weapons: {}

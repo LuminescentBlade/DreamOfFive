@@ -8,7 +8,7 @@ export default function BossLayout({ characterDef, chapterLimit }: { characterDe
             characterDef.bossStats!
                 .filter(item => item.chapter <= chapterLimit)
                 .map(item => <li key={item.chapter}>
-                    <EnemyStatItem enemyStat={item} characterDef={characterDef} />
+                    <EnemyStatItem enemyStat={item}/>
                 </li>)
         }
     </ul>

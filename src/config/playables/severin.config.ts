@@ -11,10 +11,7 @@ const bossStat = {
         [DoFWeaponType.Anima]: 181,
         [DoFWeaponType.Staff]: 71
     },
-    weapons: [
-        DoFWeapon.Thunder,
-        DoFWeapon.Fimbulvetr
-    ]
+
 };
 
 export const Severin: IDoFCharacter = {
@@ -25,6 +22,7 @@ export const Severin: IDoFCharacter = {
     class: DoFClasses.Harrier,
     nationality: DoFNationality.Musain,
     height: 172,
+    epithet: 'Skyward Reach',
     routeConfig: {
         musain: {
             player: 15,
@@ -38,7 +36,13 @@ export const Severin: IDoFCharacter = {
     },
     affinity: DoFAffinities.Ice,
     bossStats: [
-        { ...bossStat, chapter: 11 },
-        { ...bossStat, chapter: 12 }
+        {
+            ...bossStat, chapter: 12, weapons: [
+                DoFWeapon.Thunder,
+                DoFWeapon.Fimbulvetr
+            ]
+        },
+        { ...bossStat, chapter: 11, weapons: [DoFWeapon.Fimbulvetr] }
+        
     ]
 };

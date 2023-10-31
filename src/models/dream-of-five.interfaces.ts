@@ -25,6 +25,9 @@ export interface IDoFBossCofig {
     ranks?: IDoFStats, // null means copy from base
     weapons?: string[], // null means copy from base
     optional?: boolean,
+    drops?: string,
+    stealable?: string,
+    talk?: boolean,
     gameOver?: boolean // basically Farrell
 };
 export interface IDoFCharacter extends IDoFUnit {

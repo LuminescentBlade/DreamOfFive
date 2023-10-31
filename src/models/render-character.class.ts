@@ -7,7 +7,8 @@ export class RenderCharacter extends RenderUnit {
     constructor(
         private characterInput: IUnit,
         private getPath: (name: string) => string,
-        private renderRules: { bypassSpoiler?: boolean, useEarliest?: boolean } = {}
+        private renderRules: { bypassSpoiler?: boolean, useEarliest?: boolean } = {},
+        private conditionalFields: string[] = []
     ) {
         super(characterInput, getPath);
     }
@@ -109,9 +110,11 @@ export class RenderCharacter extends RenderUnit {
         placements.sort((a, b) => {
             if (useEarliest) {
                 return a!.chapter - b!.chapter;
-            } else if(b!.value === a!.value || (b!.value !== 'player' && a!.value !== 'player')){
+            } else if (b!.value === a!.value ) {
+                return a!.chapter - b!.chapter;
+            } else if(b!.value !== 'player' && a!.value !== 'player'){
                 return b!.chapter - a!.chapter;
-            } 
+            }
             else if (b!.value === 'player') {
                 return 1;
             } else {
@@ -145,12 +148,13 @@ export class RenderCharacter extends RenderUnit {
         // consolidate unit type vs chapter based conditionals and then apply them all
         // chapter based override unit type based if chapter > placement.chapter, if equal or less then unit type
         let newDisplayName, swapPortrait: string, ogPortraitName, className;
+        let customConditionalCache: any = {};
         if (unit.conditional) {
             let chapterConditionals = unit.conditional.chapter && unit.conditional.chapter.chapter! <= chapter ? unit.conditional.chapter : null;
             // @ts-ignore
             let typeConditionals = unit.conditional[placement.value];
             if (chapterConditionals && typeConditionals) {
-                let primary, secondary;
+                let primary: any, secondary: any;
                 if (chapterConditionals.chapter! > placement.chapter) {
                     primary = chapterConditionals;
                     secondary = typeConditionals;
@@ -162,12 +166,19 @@ export class RenderCharacter extends RenderUnit {
                 swapPortrait = primary.swapPortrait ?? secondary.swapPortrait;
                 ogPortraitName = primary.ogPortraitName ?? secondary.ogPortraitName;
                 className = primary.class ?? secondary.class;
+                this.conditionalFields.forEach(field => {
+                    customConditionalCache[field] = primary[field] ?? secondary[field];
+                });
+
             } else if (chapterConditionals || typeConditionals) {
                 let conditionals = chapterConditionals ?? typeConditionals;
                 newDisplayName = conditionals.displayName;
                 swapPortrait = conditionals.swapPortrait;
                 ogPortraitName = conditionals.ogPortraitName;
                 className = conditionals.class;
+                this.conditionalFields.forEach(field => {
+                    customConditionalCache[field] = conditionals[field];
+                });
             }
         }
         // @ts-ignore
@@ -190,11 +201,17 @@ export class RenderCharacter extends RenderUnit {
             alts = alts ? [defaultSwap, ...alts] : [defaultSwap];
         }
 
+        const newUnitData =  { ...unit, path: defaultDisplay.path, class: className ?? unit?.class };
+        this.conditionalFields.forEach(field => {
+            // @ts-ignore
+            newUnitData[field] = customConditionalCache[field] ?? newUnitData[field];
+        });
+
         return {
             name: this.character.name,
             renderOrder: placement.chapter,
             type: placement.value,
-            unitData: { ...unit, path: defaultDisplay.path, class: className ?? unit?.class },
+            unitData: newUnitData,
             default: defaultDisplay,
             alts,
             chapter,
