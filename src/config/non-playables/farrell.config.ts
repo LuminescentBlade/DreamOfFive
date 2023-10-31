@@ -26,5 +26,5 @@ export const Farrell: IDoFCharacter = {
 
     ],
     height: 185,
-    gateProfileDetailsChapter: 8
+    gateProfileDetailsChapter: 6.5
 };

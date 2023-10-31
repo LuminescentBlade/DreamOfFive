@@ -39,7 +39,7 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
     const isEnemy = unitType === DoFUnitState.Enemy;
     // show hide items
     const showStats = (isPlayer) && (characterDef.bases || characterDef.growths);
-    const showExtendedProfile = characterDef.height != null && (!characterDef.gateProfileChapter || characterDef.gateProfileChapter <= characterConfig.chapter);
+    const showExtendedProfile = characterDef.height != null && (!characterDef.gateProfileTabChapter || characterDef.gateProfileTabChapter <= characterConfig.chapter);
     const showBossStats = characterDef.bossStats != null;
     const showGallery = false;
     const showSideProfileDetails = (characterDef.gateProfileDetailsChapter ?? 0) <= characterConfig.chapter;
@@ -117,7 +117,7 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
     function renderSideProfile() {
         return <div className={styles.profile}>
             <div className={styles.portraitWrapper}>
-                {characterDef.affinity ? <div className={`icon-affinity-${characterDef.affinity} ${styles.affinity}`}></div> : ''}
+                {characterDef.affinity && showSideProfileDetails ? <div className={`icon-affinity-${characterDef.affinity} ${styles.affinity}`}></div> : ''}
                 <img className="pixel-art" src={characterDef.path}></img>
             </div>
             <div className={styles.profileData}>

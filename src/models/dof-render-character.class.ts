@@ -42,11 +42,6 @@ export class DoFRenderCharacter extends RenderCharacter {
         if (newRenderData.type === DoFUnitState.Player || newRenderData.unitData.bossStats|| newRenderData.unitData.height) {
             newRenderData.displayProfile = true;
         }
-
-        if (newRenderData.type === DoFUnitState.NPC){
-            // TODO: show affinity for NPCs if they have been bosses first
-            newRenderData.unitData.affinity = null;
-        }
             return newRenderData;
     }
 } 

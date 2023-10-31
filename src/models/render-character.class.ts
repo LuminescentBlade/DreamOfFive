@@ -14,8 +14,11 @@ export class RenderCharacter extends RenderUnit {
     }
 
     protected renderData?: any;
+    protected placements?: { value: string, chapter: number }[];
+    
     set currentChapter(data: { chapter: number, route?: string } | undefined) {
-        const placement = data ? this.getCharacterPlacement(data) : undefined;
+        this.placements = data ? this.getCharacterPlacements(data) : undefined;
+        const placement = this.placements ? this.placements[0]: undefined;
         const parsedCharacter = placement ? this.parseCharacter(placement) : undefined;
         if (parsedCharacter && data && placement) {
             this.renderData = this.getRenderItems(parsedCharacter, data, placement)
@@ -28,13 +31,13 @@ export class RenderCharacter extends RenderUnit {
         return this.renderData;
     }
 
-    private getCharacterPlacement(chapterData: { chapter: number, route?: string }) {
+    private getCharacterPlacements(chapterData: { chapter: number, route?: string }) {
         const { bypassSpoiler, useEarliest } = this.renderRules;
         const { chapter, route } = chapterData;
         if (this.character.isSpoiler && !bypassSpoiler) {
             return;
         }
-        let placement: { value: string, chapter: number } | undefined;
+        let placement: { value: string, chapter: number }[] | undefined;
         if (!this.character.routeConfig) {
             return;
         }
@@ -92,7 +95,7 @@ export class RenderCharacter extends RenderUnit {
                         b.value === 'enemy' && a.value === 'npc' ? 1 : -1;
                 }
             });
-            return validStates[0];
+            return validStates;
         } else {
             return;
         }
@@ -100,19 +103,18 @@ export class RenderCharacter extends RenderUnit {
 
     private getAllPlacement(chapter: number, character: IUnit, useEarliest = false, showSecretPlayable = false) {
         // refactor to be more genericized to accept n routes
-        const placements = Object.keys(character.routeConfig!)
+        const placements: { value: string, chapter: number }[]  = Object.keys(character.routeConfig!)
             // @ts-ignore
-            .map(route => this.getSinglePlacement(route, chapter, character, useEarliest, showSecretPlayable))
-            .filter(placement => placement != null);
+            .reduce((total, route) => total.concat(this.getSinglePlacement(route, chapter, character, useEarliest, showSecretPlayable)), []);
         if (!placements.length) {
             return undefined;
         }
         placements.sort((a, b) => {
             if (useEarliest) {
                 return a!.chapter - b!.chapter;
-            } else if (b!.value === a!.value ) {
+            } else if (b!.value === a!.value) {
                 return a!.chapter - b!.chapter;
-            } else if(b!.value !== 'player' && a!.value !== 'player'){
+            } else if (b!.value !== 'player' && a!.value !== 'player') {
                 return b!.chapter - a!.chapter;
             }
             else if (b!.value === 'player') {
@@ -121,7 +123,7 @@ export class RenderCharacter extends RenderUnit {
                 return -1;
             }
         });
-        return placements[0];
+        return placements;
     }
 
     private parseCharacter(placement: { value: string, chapter: number }) {
@@ -201,7 +203,7 @@ export class RenderCharacter extends RenderUnit {
             alts = alts ? [defaultSwap, ...alts] : [defaultSwap];
         }
 
-        const newUnitData =  { ...unit, path: defaultDisplay.path, class: className ?? unit?.class };
+        const newUnitData = { ...unit, path: defaultDisplay.path, class: className ?? unit?.class };
         this.conditionalFields.forEach(field => {
             // @ts-ignore
             newUnitData[field] = customConditionalCache[field] ?? newUnitData[field];

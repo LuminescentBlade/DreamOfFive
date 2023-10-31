@@ -49,7 +49,8 @@ export interface IDoFCharacter extends IDoFUnit {
     weapons?: IDoFStats,
     affinity?: string,
     bossStats?: IDoFBossCofig[],
-    gateProfileChapter?: number
+    // can make a more robust gating system but for now simiplicity works and is good
+    gateProfileTabChapter?: number
     gateProfileDetailsChapter?: number
 }
 export interface IDoFStats {
