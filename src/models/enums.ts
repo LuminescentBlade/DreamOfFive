@@ -176,7 +176,8 @@ export enum DoFCharKey {
     Claudiya = 'claudiya',
     Amaryl = 'amaryl',
     Volund = 'volund',
-    Ironside = 'rophon'
+    Ironside = 'rophon',
+    //non-playable
 };
 
 export enum DoFWeaponType {

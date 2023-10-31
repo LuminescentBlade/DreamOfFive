@@ -26,6 +26,6 @@ export const Eudira: IDoFCharacter = {
     affinity: DoFAffinities.Wind,
     bossStats: [
         {chapter: 8, route: DoFRoute.Musain, weapons: [DoFWeapon.Ennervation], optional: true },
-        {chapter: 13, route: DoFRoute.Musain, weapons: [DoFWeapon.Frodafridh, DoFWeapon.Fenrir], drops: 'Serendipity Ring' }
+        {chapter: 13, route: DoFRoute.Musain, weapons: [DoFWeapon.Frodafridh, DoFWeapon.Fenrir, 'Serendipity Ring'], drops: 'Serendipity Ring' }
     ]
 };

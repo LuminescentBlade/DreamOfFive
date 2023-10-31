@@ -1,0 +1,48 @@
+import { DoFArtist, DoFClasses, DoFNationality, DoFAffinities, DoFRoute, DoFWeaponType } from "@/src/models/enums";
+import { IDoFCharacter } from "@/src/models/interfaces";
+import { DoFWeapon } from "../weapons.config";
+
+export const MirKatal: IDoFCharacter =  {
+    name: 'mir-katal',
+    displayName: 'mir\'Katal',
+    artists: [DoFArtist.Lumi, DoFArtist.Astra],
+    blurb: '"... very pinnacle of the Ondurite martial ideal, a man of matchless valour. Fit to lead, but to rule?"',
+    class: DoFClasses.Swordmaster,
+    nationality: DoFNationality.Onduris,
+    epithet: 'The Oathkeeper',
+    routeConfig: {
+        onduris: {
+            enemy: [12, 99],
+            npc: [13, 14]
+        }
+    },
+    height: 177,
+    affinity: DoFAffinities.Light,
+    alt: {
+        dictator: { artists: [DoFArtist.Lumi, DoFArtist.Astra], chapter: 14 }
+    },
+    level: 16,
+    conditional: {
+        chapter: {
+            chapter: 99,
+            swapPortrait: 'dictator',
+            ogPortraitName: 'mir\'Katal Noble',
+            level: 20
+        }
+    },
+    bossStats: [
+        {
+            chapter: 12,
+            route: DoFRoute.Onduris,
+            stats: { hp: 52, pow: 24, skl: 29, spd: 27, luk: 16, def: 18, res: 13, con: 8 },
+            weapons: [DoFWeapon.VorpalSword, 'Serendipity Ring'],
+            ranks: {
+                [DoFWeaponType.Sword]: 251
+            },
+            talk: true,
+            gameOver: true,
+            level: 16,
+            //serendipity ring
+        }
+    ]
+}

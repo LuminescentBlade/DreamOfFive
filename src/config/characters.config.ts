@@ -1,13 +1,15 @@
 import { DoFAffinities, DoFArtist, DoFClasses, DoFNationality, DoFRoute, DoFWeaponType } from "../models/enums";
 import { IDoFCharacterConfigs } from "../models/interfaces";
+import { DoFNonPlayable } from "./non-playables";
 import { DoFPlayable } from "./playables";
 import { DoFWeapon } from "./weapons.config";
 
 export const DoFCharacters: IDoFCharacterConfigs = {
     characters: [
         // playables
-        ...Object.values(DoFPlayable),
-        // non-playables
+        ...DoFPlayable,
+        ...DoFNonPlayable,
+        // minor bosses
         {
             name: 'cobbet',
             artists: [DoFArtist.Astra],
@@ -116,44 +118,6 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             ]
         },
         {
-            name: 'sorcha',
-            profileName: 'Sorcha Farrell',
-            artists: [DoFArtist.Sev],
-            blurb: '"Fluid gestures wove fire in intricate, deadly patterns, but my eyes were on hers... cold, onyx-dark..."',
-            class: DoFClasses.Harrier,
-            nationality: DoFNationality.Aukema,
-            routeConfig: {
-                allRoute: {
-                    enemy: [2, 3, 99]
-                }
-            },
-            level: 12,
-            affinity: DoFAffinities.Fire,
-            alt: {
-                final: { artists: [DoFArtist.Sev], chapter: 99, isSpoiler: true }
-            },
-            conditional: {
-                chapter: {
-                    chapter: 99,
-                    swapPortrait: 'final',
-                    ogPortraitName: 'Sorcha c3'
-                }
-            },
-            height: 171,
-            bossStats: [
-                {
-                    chapter: 2,
-                    weapons: [DoFWeapon.Fimbulvetr],
-                    stats: { hp: 46, pow: 18, skl: 22, spd: 24, luk: 16, def: 8, res: 20, con: 6 },
-                    ranks: {
-                        [DoFWeaponType.Anima]: 251,
-                        [DoFWeaponType.Staff]: 181
-                    },
-                    optional: true
-                }
-            ]
-        },
-        {
             name: 'ganter',
             artists: [DoFArtist.Lumi],
             blurb: '"... would be no time to talk him down. Whatever he thought he knew of me, he despised..."',
@@ -180,33 +144,6 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                     ]
                 }
             ]
-        },
-        {
-            name: 'farrell',
-            profileName: 'Cuthbert Farrell',
-            epithet: 'The Pursuer',
-            artists: [DoFArtist.Sev, DoFArtist.Astra, DoFArtist.TBA],
-            class: DoFClasses.FirstLance,
-            nationality: DoFNationality.Aukema,
-            routeConfig: {
-                onduris: {
-                    enemy: [8, 9, 10, 99],
-                    npc: 4
-                },
-                musain: {
-                    enemy: 99,
-                    npc: 4
-                }
-            },
-            affinity: DoFAffinities.Ice,
-            bossStats: [
-                { chapter: 10, gameOver: true, route: DoFRoute.Onduris, optional: true },
-                { chapter: 9, gameOver: true, route: DoFRoute.Onduris, optional: true },
-                { chapter: 8, gameOver: true, route: DoFRoute.Onduris, optional: true },
-
-            ],
-            height: 185,
-            gateProfileDetailsChapter: 8
         },
         {
             name: 'fergal',
@@ -310,28 +247,6 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                         [DoFWeaponType.Staff]: 121
                     }
                 }
-            ]
-
-        },
-        {
-            name: 'menida',
-            artists: [DoFArtist.Astra],
-            blurb: '"Two souls, battling for dominance within a single husk. Little wonder her mind seemed ruined..."',
-            class: DoFClasses.Sibyl,
-            nationality: DoFNationality.Musain,
-            routeConfig: {
-                musain: {
-                    enemy: [8, 13]
-                }
-            },
-            height: 168,    
-            level: 4,
-            affinity: DoFAffinities.Fire,
-            bases: { hp: 35, pow: 18, skl: 16, spd: 16, luk: 30, def: 11, res: 8, con: 9 },
-            epithet: "Twice Born",
-            bossStats: [
-                { chapter: 13, route: DoFRoute.Musain, weapons: [DoFWeapon.Frodafridh, DoFWeapon.Fenrir], drops: 'Horseshoe' },
-                { chapter: 8, route: DoFRoute.Musain, weapons: [DoFWeapon.Ennervation], optional: true }
             ]
 
         },
@@ -445,74 +360,6 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                     }
                 }
             ]
-
-        },
-        {
-            name: 'uther',
-            profileName: 'Uther Dalencyn',
-            blurb: '"He had every chance to turn against the Provost, but in the end, he valued his honour most highly..."',
-            artists: [DoFArtist.Lumi, DoFArtist.Astra],
-            class: DoFClasses.FirstLance,
-            nationality: DoFNationality.Musain,
-            height: 182,
-            routeConfig: {
-                musain: {
-                    npc: 7,
-                    enemy: 12
-                }
-            },
-            alt: {
-                injured: {
-                    artists: [DoFArtist.Lumi, DoFArtist.Astra],
-                    chapter: 12
-                },
-            },
-            affinity: DoFAffinities.Ice,
-            level: 7,
-            bossStats: [
-                {
-                    chapter: 12,
-                    route: DoFRoute.Musain,
-                    stats: { hp: 36, pow: 17, skl: 20, spd: 19, luk: 7, def: 12, res: 10, con: 11 },
-                    weapons: [DoFWeapon.Spear],
-                    ranks: {
-                        [DoFWeaponType.Lance]: 251
-                    },
-                    drops: DoFWeapon.Spear
-                }
-            ],
-            gateProfileDetailsChapter: 12
-        },
-        {
-            name: 'guillaume',
-            artists: [DoFArtist.Astra],
-            class: DoFClasses.Sage,
-            nationality: DoFNationality.Musain,
-            alt: {
-                burned: { artists: [DoFArtist.Astra], chapter: 14 }
-            },
-            routeConfig: {
-                musain: {
-                    npc: 7,
-                    enemy: 14
-                }
-            },
-            affinity: DoFAffinities.Anima,
-            level: 8,
-            height: 172,
-            bossStats: [
-                {
-                    chapter: 14,
-                    route: DoFRoute.Musain,
-                    stats: { hp: 40, pow: 19, skl: 20, spd: 14, luk: 6, def: 12, res: 15, con: 9 },
-                    weapons: [DoFWeapon.Fimbulvetr, DoFWeapon.Thunder, DoFWeapon.Silence],
-                    ranks: {
-                        [DoFWeaponType.Anima]: 181,
-                        [DoFWeaponType.Staff]: 181
-                    }
-                }
-            ],
-            gateProfileDetailsChapter: 14
 
         },
         // onduris
@@ -649,158 +496,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
 
                 }
             ]
-        },
-        {
-            name: 'a-vosa',
-            displayName: 'a\'Vosa',
-            artists: [DoFArtist.Char],
-            blurb: '"... was to obey the King\'s will, be his instrument in all ways; personal honour was irrelevant before duty..."',
-            class: DoFClasses.Sentinel,
-            nationality: DoFNationality.Onduris,
-            height: 185,
-            routeConfig: {
-                onduris: {
-                    enemy: 11,
-                    npc: 9
-                }
-            },
-            affinity: DoFAffinities.Light,
-            level: 5,
-            bossStats: [
-                {
-                    chapter: 13,
-                    route: DoFRoute.Onduris,
-                    stats: { hp: 41, pow: 15, skl: 19, spd: 16, luk: 7, def: 13, res: 9, con: 13 },
-                    weapons: [DoFWeapon.Spear],
-                    ranks: {
-                        [DoFWeaponType.Lance]: 181
-                    }
-                }
-            ],
-            gateProfileDetailsChapter: 11
-
-        },
-        {
-            name: 'jin-sei',
-            displayName: 'jin\'Sei',
-            artists: [DoFArtist.Astra],
-            blurb: '"... true warrior-king in every respect. He may not have won his throne fairly, but he would defend it to the death..."',
-            class: DoFClasses.Swordmaster,
-            nationality: DoFNationality.Onduris,
-            affinity: DoFAffinities.Wind,
-            height: 175,
-            epithet: 'The Tyrant',
-            routeConfig: {
-                onduris: {
-                    enemy: 13,
-                    npc: 9
-                }
-            },
-            level: 8,
-            bossStats: [
-                {
-                    chapter: 13,
-                    route: DoFRoute.Onduris,
-                    stats: { hp: 35, pow: 16, skl: 19, spd: 19, luk: 6, def: 10, res: 6, con: 9 },
-                    weapons: [DoFWeapon.Sophrosyne], // do stat bonuses later
-                    ranks: {
-                        [DoFWeaponType.Sword]: 251
-                    }
-                }
-            ],
-            gateProfileDetailsChapter: 13
-        },
-        {
-            name: 'sel-seir',
-            displayName: 'sel\'Seir',
-            artists: [DoFArtist.Lumi, DoFArtist.Sev],
-            blurb: '"Seir was notoriously decadent and venal, but his sword-arm had not atrophied... he was still Ondurite."',
-            class: DoFClasses.Swordmaster,
-            height: 172,
-            nationality: DoFNationality.Onduris,
-            routeConfig: {
-                onduris: {
-                    enemy: 14,
-                    npc: 9
-                }
-            },
-            affinity: DoFAffinities.Wind,
-            level: 3,
-            bossStats: [
-                {
-                    chapter: 14,
-                    route: DoFRoute.Onduris,
-                    stats: { hp: 32, pow: 13, skl: 18, spd: 23, luk: 8, def: 8, res: 12, con: 8 },
-                    weapons: [DoFWeapon.SilverSword], // do stat bonuses later
-                    ranks: {
-                        [DoFWeaponType.Sword]: 181
-                    },
-                    drops: 'Diamond Gem'
-                }
-            ],
-            gateProfileDetailsChapter: 14
-        },
-        {
-            name: 'mei-doru',
-            displayName: 'mei\'Doru',
-            artists: [DoFArtist.Astra],
-            blurb: '"... ran his frontier region with an iron fist, always looking with envy towards the capital\'s riches..."',
-            class: DoFClasses.Outrider,
-            height:168,
-            nationality: DoFNationality.Onduris,
-            routeConfig: {
-                onduris: {
-                    enemy: 14,
-                    npc: 9
-                }
-            },
-            affinity: DoFAffinities.Ice,
-            level: 4,
-            bossStats: [
-                {
-                    chapter: 14,
-                    route: DoFRoute.Onduris,
-                    stats: { hp: 35, pow: 16, skl: 15, spd: 19, luk: 7, def: 13, res: 7, con: 9 },
-                    weapons: [DoFWeapon.SilverBow, DoFWeapon.Rapier], // do stat bonuses later
-                    ranks: {
-                        [DoFWeaponType.Sword]: 121,
-                        [DoFWeaponType.Bow]: 181
-                    }
-                }
-            ],
-            gateProfileDetailsChapter: 14
-        },
-        {
-            name: 'ka-danos',
-            displayName: 'ka\'Danos',
-            artists: [DoFArtist.Lumi],
-            blurb: '"... felt that Onduris had fallen from greatness, lost sight of its culture. He alone could set it right again..."',
-            class: DoFClasses.Gladiator,
-            nationality: DoFNationality.Onduris,
-            height: 180,
-            routeConfig: {
-                onduris: {
-                    enemy: 14,
-                    npc: 9
-                }
-            },
-            affinity: DoFAffinities.Thunder,
-            level: 6,
-            bossStats: [
-                {
-                    chapter: 14,
-                    route: DoFRoute.Onduris,
-                    stats: { hp: 43, pow: 22, skl: 19, spd: 14, luk: 4, def: 17, res: 4, con: 12 },
-                    weapons: [DoFWeapon.Francisca, DoFWeapon.BraveSword], // do stat bonuses later
-                    ranks: {
-                        [DoFWeaponType.Sword]: 181,
-                        [DoFWeaponType.Axe]: 251
-                    },
-                    drops: 'Master Seal'
-                }
-            ],
-            gateProfileDetailsChapter: 14
-        },
+        },      
         // postsplit
         {
             name: 'callad',
@@ -838,50 +534,6 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             }
         },
         // other
-        {
-            name: 'varkade',
-            profileName: 'Varkade Hengeist',
-            artists: [DoFArtist.Astra, DoFArtist.Sev],
-            blurb: '"He thought he made me. In a sense, he was right. But I had to unmake him."',
-            class: '',
-            nationality: DoFNationality.Aukema,
-            alt: {
-                younger: { artists: [DoFArtist.Astra, DoFArtist.Sev, DoFArtist.Lumi] }
-            },
-            routeConfig: {
-                allRoute: {
-                    npc: 0,
-                    enemy: 99
-                }
-            },
-            height: 172,
-            gateProfileDetailsChapter: 99,
-        },
-        {
-            name: 'sevira',
-            artists: [DoFArtist.Sev],
-            class: '',
-            nationality: DoFNationality.Aukema,
-            routeConfig: {
-                allRoute: {
-                    npc: 6
-                }
-            },
-            height: 160,
-        },
-        {
-            name: 'wyclif',
-            artists: [DoFArtist.Lumi, DoFArtist.Astra, DoFArtist.TBA],
-            class: '',
-            nationality: DoFNationality.Aukema,
-            routeConfig: {
-                allRoute: {
-                    npc: 6
-                }
-            },
-            height: 176,
-            gateProfileDetailsChapter: 99
-        },
         {
             name: 'valin',
             artists: [DoFArtist.Lumi, DoFArtist.Astra],
@@ -945,27 +597,6 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             }
         },
         {
-            name: 'agmund',
-            altNames: ['Long Taiming', '龍泰銘'],
-            artists: [DoFArtist.Lumi],
-            nationality: DoFNationality.Svanhild,
-            routeConfig: {
-                allRoute: {
-                    npc: 17.5
-                }
-            }
-        },
-        {
-            name: 'bunny',
-            artists: [DoFArtist.Lumi],
-            nationality: DoFNationality.Unknown,
-            routeConfig: {
-                allRoute: {
-                    npc: 17.5
-                }
-            }
-        },
-        {
             name: 'queenvish',
             displayName: 'Queen Vishara',
             artists: [DoFArtist.Sev],
@@ -985,7 +616,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             affinity: DoFAffinities.Dark,
             routeConfig: {
                 allRoute: {
-                    enemy: 99
+                    enemy: 98
                 }
             },
             isSpoiler: true,
@@ -1003,107 +634,6 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                 }
             }
         },
-        {
-            name: 'trajan',
-            artists: [DoFArtist.Astra],
-            nationality: DoFNationality.Vishara,
-            class: DoFClasses.Dreadnought,
-            routeConfig: {
-                allRoute: {
-                    enemy: 99
-                }
-            },
-            affinity: DoFAffinities.Anima
-        },
-        {
-            name: 'mir-katal',
-            displayName: 'mir\'Katal',
-            artists: [DoFArtist.Lumi, DoFArtist.Astra],
-            blurb: '"... very pinnacle of the Ondurite martial ideal, a man of matchless valour. Fit to lead, but to rule?"',
-            class: DoFClasses.Swordmaster,
-            nationality: DoFNationality.Onduris,
-            epithet: 'The Oathkeeper',
-            routeConfig: {
-                onduris: {
-                    enemy: [12, 99],
-                    npc: [13, 14]
-                }
-            },
-            height: 177,
-            affinity: DoFAffinities.Light,
-            alt: {
-                dictator: { artists: [DoFArtist.Lumi, DoFArtist.Astra], chapter: 14 }
-            },
-            level: 16,
-            conditional: {
-                chapter: {
-                    chapter: 99,
-                    swapPortrait: 'dictator',
-                    ogPortraitName: 'mir\'Katal Noble',
-                    level: 20
-                }
-            },
-            bossStats: [
-                {
-                    chapter: 12,
-                    route: DoFRoute.Onduris,
-                    stats: { hp: 52, pow: 24, skl: 29, spd: 27, luk: 16, def: 18, res: 13, con: 8 },
-                    weapons: [DoFWeapon.VorpalSword, 'Serendipity Ring'],
-                    ranks: {
-                        [DoFWeaponType.Sword]: 251
-                    },
-                    talk: true,
-                    gameOver: true,
-                    level: 16,
-                    //serendipity ring
-                }
-            ]
-        },
-        {
-            name: 'fleurre',
-            profileName: 'Fleurre Domremie',
-            blurb: '"...greeted me with a warm smile, but I could see behind her eyes she was appraising me, calculating..."',
-            artists: [DoFArtist.Sev],
-            class: DoFClasses.Sage,
-            nationality: DoFNationality.Musain,
-            height: 163,
-            routeConfig: {
-                musain: {
-                    npc: [7, 13],
-                    enemy: [12, 99]
-                }
-            },
-            epithet: 'Mask In Shadows',
-            affinity: DoFAffinities.Wind,
-            alt: {
-                provost: { artists: [DoFArtist.Sev, DoFArtist.Lumi], chapter: 14 }
-            },
-            level: 6,
-            conditional: {
-                chapter: {
-                    chapter: 99,
-                    swapPortrait: 'provost',
-                    ogPortraitName: 'Fleurre Chancellor',
-                    level: 20
-                }
-            },
-            bossStats: [
-                {
-                    chapter: 12,
-                    route: DoFRoute.Musain,
-                    stats: { hp: 34, pow: 18, skl: 24, spd: 16, luk: 9, def: 7, res: 18, con: 9 },
-                    weapons: [DoFWeapon.Thunder],
-                    level: 6,
-                    ranks: {
-                        [DoFWeaponType.Anima]: 181,
-                        [DoFWeaponType.Staff]: 121
-                    },
-                    talk: true,
-                    gameOver: true
-                }
-            ],
-            gateProfileDetailsChapter: 12
-        }
 
     ],
     shopkeepers: [
