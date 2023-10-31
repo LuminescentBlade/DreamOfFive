@@ -206,6 +206,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
 
             ],
             height: 185,
+            gateProfileDetailsChapter: 8
         },
         {
             name: 'fergal',
