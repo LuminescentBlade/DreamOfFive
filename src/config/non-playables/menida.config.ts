@@ -1,5 +1,5 @@
 import { IDoFCharacter } from "@/src/models/dream-of-five.interfaces";
-import { DoFAffinities, DoFArtist, DoFClasses, DoFNationality, DoFRoute } from "@/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFClasses, DoFNationality, DoFRoute, DoFWeaponType } from "@/src/models/enums";
 import { DoFWeapon } from "../weapons.config";
 
 export const Menida: IDoFCharacter = {
@@ -18,6 +18,10 @@ export const Menida: IDoFCharacter = {
     affinity: DoFAffinities.Fire,
     bases: { hp: 35, pow: 18, skl: 16, spd: 16, luk: 30, def: 11, res: 8, con: 9 },
     epithet: "Twice Born",
+    weapons: {
+        [DoFWeaponType.Light]: 181,
+        [DoFWeaponType.Dark]: 181,
+    },
     bossStats: [
         { chapter: 13, route: DoFRoute.Musain, weapons: [DoFWeapon.Frodafridh, DoFWeapon.Fenrir], drops: 'Horseshoe' },
         { chapter: 8, route: DoFRoute.Musain, weapons: [DoFWeapon.Ennervation], optional: true }
