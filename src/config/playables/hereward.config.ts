@@ -13,5 +13,6 @@ export const Hereward: IDoFCharacter = {
             npc: 6
         }
     },
+    gateProfileDetailsChapter: 16,
     affinity: DoFAffinities.Anima
 };

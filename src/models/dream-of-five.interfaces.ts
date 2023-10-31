@@ -48,7 +48,9 @@ export interface IDoFCharacter extends IDoFUnit {
     epithet?: string,
     weapons?: IDoFStats,
     affinity?: string,
-    bossStats?: IDoFBossCofig[]
+    bossStats?: IDoFBossCofig[],
+    gateProfileChapter?: number
+    gateProfileDetailsChapter?: number
 }
 export interface IDoFStats {
     [stat: string]: number

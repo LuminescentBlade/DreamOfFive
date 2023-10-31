@@ -20,5 +20,6 @@ export const Adalheid: IDoFCharacter = {
         }
 
     },
+    gateProfileDetailsChapter: 90,
     affinity: DoFAffinities.Fire
 };

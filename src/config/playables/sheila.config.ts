@@ -7,11 +7,12 @@ export const Sheila: IDoFCharacter = {
     class: DoFClasses.SeraphKnight,
     nationality: DoFNationality.Aukema,
     height: 169,
-    routeConfig:{
+    routeConfig: {
         allRoute: {
             player: 91,
             npc: 2
         }
     },
+    gateProfileDetailsChapter: 91,
     affinity: DoFAffinities.Fire
 };

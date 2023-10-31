@@ -205,7 +205,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                 { chapter: 8, gameOver: true, route: DoFRoute.Onduris, optional: true },
 
             ],
-            height: 185
+            height: 185,
         },
         {
             name: 'fergal',
@@ -479,7 +479,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                     },
                     drops: DoFWeapon.Spear
                 }
-            ]
+            ],
+            gateProfileDetailsChapter: 12
         },
         {
             name: 'guillaume',
@@ -509,7 +510,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                         [DoFWeaponType.Staff]: 181
                     }
                 }
-            ]
+            ],
+            gateProfileDetailsChapter: 14
 
         },
         // onduris
@@ -673,7 +675,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                         [DoFWeaponType.Lance]: 181
                     }
                 }
-            ]
+            ],
+            gateProfileDetailsChapter: 11
 
         },
         {
@@ -703,7 +706,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                         [DoFWeaponType.Sword]: 251
                     }
                 }
-            ]
+            ],
+            gateProfileDetailsChapter: 13
         },
         {
             name: 'sel-seir',
@@ -732,7 +736,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                     },
                     drops: 'Diamond Gem'
                 }
-            ]
+            ],
+            gateProfileDetailsChapter: 14
         },
         {
             name: 'mei-doru',
@@ -761,7 +766,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                         [DoFWeaponType.Bow]: 181
                     }
                 }
-            ]
+            ],
+            gateProfileDetailsChapter: 14
         },
         {
             name: 'ka-danos',
@@ -791,7 +797,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                     },
                     drops: 'Master Seal'
                 }
-            ]
+            ],
+            gateProfileDetailsChapter: 14
         },
         // postsplit
         {
@@ -846,7 +853,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                     enemy: 99
                 }
             },
-            height: 172
+            height: 172,
+            gateProfileDetailsChapter: 99,
         },
         {
             name: 'sevira',
@@ -870,13 +878,14 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                     npc: 6
                 }
             },
-            height: 176
+            height: 176,
+            gateProfileDetailsChapter: 99
         },
         {
             name: 'valin',
             artists: [DoFArtist.Lumi, DoFArtist.Astra],
             blurb: '"... while a staunch and upstanding man could find himself an outlaw with a cruel twist of fate."',
-            class: '',
+            class: DoFClasses.Brigand,
             nationality: DoFNationality.Musain,
             routeConfig: {
                 musain: {
@@ -888,7 +897,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             name: 'merri',
             artists: [DoFArtist.Sev, DoFArtist.Astra],
             blurb: '"... could stick you up and ruin your life with an irrepressible smile. Little consolation, I imagined, but..."',
-            class: '',
+            class: DoFClasses.Myrmidon,
             nationality: DoFNationality.Musain,
             routeConfig: {
                 musain: {
@@ -968,7 +977,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             }
         },
         {
-            name: 'dragon',
+            name: 'demetra',
             displayName: 'Demetra',
             artists: [DoFArtist.Astra],
             nationality: DoFNationality.Vishara,
@@ -1091,7 +1100,8 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                     talk: true,
                     gameOver: true
                 }
-            ]
+            ],
+            gateProfileDetailsChapter: 12
         }
 
     ],

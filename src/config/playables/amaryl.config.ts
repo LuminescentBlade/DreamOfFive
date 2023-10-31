@@ -13,6 +13,7 @@ export const Amaryl: IDoFCharacter = {
             npc: 3
         }
     },
+    gateProfileDetailsChapter: 99,
     height: 163,
     epithet: 'The Oracle',
     affinity: DoFAffinities.Dark

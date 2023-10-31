@@ -30,6 +30,7 @@ export const Severin: IDoFCharacter = {
             npc: [7, 13]
         }
     },
+    level: 4,
     weapons: {
         [DoFWeaponType.Anima]: 181,
         [DoFWeaponType.Staff]: 71
@@ -44,5 +45,6 @@ export const Severin: IDoFCharacter = {
         },
         { ...bossStat, chapter: 11, weapons: [DoFWeapon.Fimbulvetr] }
         
-    ]
+    ],
+    gateProfileDetailsChapter: 11
 };

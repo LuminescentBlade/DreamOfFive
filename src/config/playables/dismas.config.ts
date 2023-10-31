@@ -28,7 +28,7 @@ export const Dismas: IDoFCharacter = {
             enemy: [0, 15]
         }
     },
-
+    gateProfileChapter: 15,
     affinity: DoFAffinities.Dark, // thunder?
     bossStats: [
         {

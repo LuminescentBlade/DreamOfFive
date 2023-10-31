@@ -39,9 +39,10 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
     const isEnemy = unitType === DoFUnitState.Enemy;
     // show hide items
     const showStats = (isPlayer) && (characterDef.bases || characterDef.growths);
-    const showExtendedProfile = characterDef.height != null;
-    const showBossStats =  characterDef.bossStats != null;
+    const showExtendedProfile = characterDef.height != null && (!characterDef.gateProfileChapter || characterDef.gateProfileChapter <= characterConfig.chapter);
+    const showBossStats = characterDef.bossStats != null;
     const showGallery = false;
+    const showSideProfileDetails = (characterDef.gateProfileDetailsChapter ?? 0) <= characterConfig.chapter;
 
     let defaultView: CharacterDetailState | undefined;
     const validViews = new Set();
@@ -59,7 +60,7 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
     if (showExtendedProfile) {
         validViews.add(CharacterDetailState.ExtendedProfile);
         defaultView = defaultView ?? CharacterDetailState.ExtendedProfile;
-        if(!isEnemy && defaultView !== CharacterDetailState.Stat){
+        if (!isEnemy && defaultView !== CharacterDetailState.Stat) {
             defaultView = CharacterDetailState.ExtendedProfile;
         }
     }
@@ -123,18 +124,21 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
                 <h2>
                     {characterDef.profileName ?? characterDef.displayName ?? <span className={'capitalize'}>{characterDef.name}</span>}
                 </h2>
-                {characterDef.altNames || characterDef.conditional?.player?.displayName ? <ul className={styles.altNames}>
-                    {characterDef.altNames?.map(c => <li key={c} >{c}</li>)}
-                </ul> : ''}
+                {showSideProfileDetails ? <>
 
-                <div className={styles.subtitle}>
-                    {characterDef.level ? `Level ${characterDef.level}` : ''} <span className={styles.classText}>{characterDef.class}</span>
-                    {characterDef.promotesTo ? <div className="sub">Promotes to <span className={styles.classText}>{characterDef.promotesTo}</span></div> : ''}
-                </div>
-                <div className={styles.blurb}>
-                    {characterDef.blurb}
-                </div>
+                    {characterDef.altNames || characterDef.conditional?.player?.displayName ? <ul className={styles.altNames}>
+                        {characterDef.altNames?.map(c => <li key={c} >{c}</li>)}
+                    </ul> : ''}
 
+                    <div className={styles.subtitle}>
+                        {characterDef.level ? `Level ${characterDef.level}` : ''} <span className={styles.classText}>{characterDef.class}</span>
+                        {characterDef.promotesTo ? <div className="sub">Promotes to <span className={styles.classText}>{characterDef.promotesTo}</span></div> : ''}
+                    </div>
+                    <div className={styles.blurb}>
+                        {characterDef.blurb}
+                    </div>
+
+                </> : ''}
             </div>
         </div>
     }
@@ -175,31 +179,31 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
         let profile = showExtendedProfile ? getSectionTab(CharacterDetailState.ExtendedProfile, 'Profile') : '';
         let gallery = showGallery ? getSectionTab(CharacterDetailState.Gallery, 'Gallery') : '';
         let bossStats = showBossStats ? (
-            isEnemy ? 
-             getSectionTab(CharacterDetailState.BossStats, 'Stats') :
-             getSectionTab(CharacterDetailState.BossStats, 'Enemy')
-        ): '';
+            isEnemy ?
+                getSectionTab(CharacterDetailState.BossStats, 'Stats') :
+                getSectionTab(CharacterDetailState.BossStats, 'Enemy')
+        ) : '';
 
         return <ul className={styles.tabs}>
             {
                 isPlayer ?
-                <>
-                    {stats}
-                    {profile}
-                    {gallery}
-                    {bossStats}
-                </> :
-                isEnemy ?
-                <>
-                    {bossStats}
-                    {profile}
-                    {gallery}
-                </>:
-                <>
-                    {profile}
-                    {gallery}
-                    {bossStats}
-                </>
+                    <>
+                        {stats}
+                        {profile}
+                        {gallery}
+                        {bossStats}
+                    </> :
+                    isEnemy ?
+                        <>
+                            {bossStats}
+                            {profile}
+                            {gallery}
+                        </> :
+                        <>
+                            {profile}
+                            {gallery}
+                            {bossStats}
+                        </>
             }
         </ul>;
     }
