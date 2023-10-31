@@ -17,10 +17,15 @@ export const Nikita: IDoFCharacter = {
         }
     },
     growths: { hp: 50, pow: 30, skl: 70, spd: 65, luk: 45, def: 20, res: 10 },
-    level: 2,
+    level: 6,
     bases: { hp: 29, pow: 15, skl: 18, spd: 22, luk: 17, def: 12, res: 7, con: 8 },
     weapons: {
         [DoFWeaponType.Sword]: 181
+    },
+    conditional:{
+        player: {
+            level: 2
+        }
     },
     affinity: DoFAffinities.Fire,
     bossStats: [
