@@ -43,7 +43,7 @@ export default function EnemyStatItem({ enemyStat }: { enemyStat: IDoFBossCofig}
             : ''}
         {
             !stats && gameOver ?
-                <div>Game Over</div> : ''
+                <div className='red-text'>Game Over</div> : ''
         }
     </div>
 }
