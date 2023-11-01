@@ -24,10 +24,10 @@ export const Fleurre: IDoFCharacter = {
     level: 6,
     conditional: {
         chapter: {
-            chapter: 99,
+            chapter: 14.5,
             swapPortrait: 'provost',
             ogPortraitName: 'Fleurre Chancellor',
-            level: 20
+            //level: 20
         }
     },
     bossStats: [

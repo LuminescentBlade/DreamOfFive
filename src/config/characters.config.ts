@@ -132,7 +132,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             affinity: DoFAffinities.Fire,
             bossStats: [
                 {
-                    chapter: 4, 
+                    chapter: 4,
                     stats: { hp: 33, pow: 12, skl: 10, spd: 11, luk: 4, def: 10, res: 2, con: 9 },
                     ranks: {
                         [DoFWeaponType.Lance]: 121,
@@ -497,7 +497,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
 
                 }
             ]
-        },      
+        },
         // postsplit
         {
             name: 'callad',
@@ -545,7 +545,15 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                 musain: {
                     npc: 6.5
                 }
-            }
+            },
+            level: 8,
+            bases: { hp: 40, pow: 13, skl: 10, spd: 8, luk: 7, def: 5, res: 0, con: 13 },
+            weapons: { [DoFWeaponType.Axe]: 71 },
+
+            npcStats: [
+                { chapter: 10, route: DoFRoute.Musain },
+                { chapter: 6.5, route: DoFRoute.Musain, weapons: [DoFWeapon.Hatchet, DoFWeapon.Lucene, 'Potion'] }
+            ]
         },
         {
             name: 'merri',
@@ -557,7 +565,14 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                 musain: {
                     npc: 6.5
                 }
-            }
+            },
+            level: 8,
+            bases: { hp: 22, pow: 9, skl: 18, spd: 18, luk: 14, def: 4, res: 7, con: 8 },
+            weapons: { [DoFWeaponType.Sword]: 71 },
+            npcStats: [
+                { chapter: 10, route: DoFRoute.Musain, talk: true },
+                { chapter: 6.5, route: DoFRoute.Musain, weapons: [DoFWeapon.KillingEdge, DoFWeapon.SlimSword, 'Potion'] }
+            ]
         },
         {
             name: 'renair_young',

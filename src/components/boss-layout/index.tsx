@@ -1,14 +1,14 @@
-import { IDoFCharacter } from '@/src/models/dream-of-five.interfaces';
+import { IDoFCharacter, IDoFNonPlayableConfig } from '@/src/models/dream-of-five.interfaces';
 import styles from './index.module.scss';
-import EnemyStatItem from '../enemy-stat-item';
+import NonPlayerStatItem from '../enemy-stat-item';
 
-export default function BossLayout({ characterDef, chapterLimit }: { characterDef: IDoFCharacter, chapterLimit: number }) {
+export default function NonPlayableStats({ stats, chapterLimit }: { stats: IDoFNonPlayableConfig[], chapterLimit: number }) {
     return <ul className={styles.bossList}>
         {
-            characterDef.bossStats!
+            stats
                 .filter(item => item.chapter <= chapterLimit)
                 .map(item => <li key={item.chapter}>
-                    <EnemyStatItem enemyStat={item}/>
+                    <NonPlayerStatItem statConfig={item} />
                 </li>)
         }
     </ul>

@@ -5,6 +5,7 @@ export enum DoFWeapon {
     SilverSword = 'silver_sword',
     SilverBlade = 'silver_blade',
     
+    SlimSword = 'slim_sword',
     KillingEdge = 'killing_edge',
     Rapier = 'rapier',
     LightBrand = 'light_brand',
@@ -28,6 +29,7 @@ export enum DoFWeapon {
     HandAxe = 'hand_axe',
     Francisca = 'francisca',
     BattleAxe = 'battle_axe',
+    Lucene = 'lucene',
 
 
     // bow
@@ -53,4 +55,6 @@ export enum DoFWeapon {
     // staff
     Sleep = 'sleep',
     Silence = 'silence',
+
+
 };

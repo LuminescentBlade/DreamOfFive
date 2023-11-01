@@ -2,7 +2,16 @@ import { DoFArtist, DoFClasses, DoFNationality, DoFAffinities, DoFRoute, DoFWeap
 import { IDoFCharacter } from "@/src/models/interfaces";
 import { DoFWeapon } from "../weapons.config";
 
-export const MirKatal: IDoFCharacter =  {
+const katalOndRouteConfig = {
+    route: DoFRoute.Onduris,
+    stats: { hp: 52, pow: 24, skl: 29, spd: 27, luk: 16, def: 18, res: 13, con: 8 },
+    ranks: {
+        [DoFWeaponType.Sword]: 251
+    },
+    talk: true,
+    level: 16,
+};
+export const MirKatal: IDoFCharacter = {
     name: 'mir-katal',
     displayName: 'mir\'Katal',
     artists: [DoFArtist.Lumi, DoFArtist.Astra],
@@ -24,25 +33,27 @@ export const MirKatal: IDoFCharacter =  {
     level: 16,
     conditional: {
         chapter: {
-            chapter: 99,
+            chapter: 14.5,
             swapPortrait: 'dictator',
             ogPortraitName: 'mir\'Katal Noble',
-            level: 20
+            // level: 20
+            // do the level swap when i do multichapter conditionals
         }
     },
     bossStats: [
         {
+            ...katalOndRouteConfig,
             chapter: 12,
-            route: DoFRoute.Onduris,
-            stats: { hp: 52, pow: 24, skl: 29, spd: 27, luk: 16, def: 18, res: 13, con: 8 },
             weapons: [DoFWeapon.VorpalSword, 'Serendipity Ring'],
-            ranks: {
-                [DoFWeaponType.Sword]: 251
-            },
-            talk: true,
             gameOver: true,
-            level: 16,
             //serendipity ring
+        }
+    ],
+    npcStats: [
+        {
+            ...katalOndRouteConfig,
+            chapter: 13,
+            weapons: [DoFWeapon.VorpalSword],
         }
     ]
 }

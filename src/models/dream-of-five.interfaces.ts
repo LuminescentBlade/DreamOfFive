@@ -16,7 +16,7 @@ export interface IDoFAlt extends IAltConfig {
     artists: DoFArtist[]
 }
 
-export interface IDoFBossCofig { 
+export interface IDoFNonPlayableConfig { 
     chapter: number,
     level?: number, // null means copy from base
     route?: string, // null means all routes
@@ -48,7 +48,8 @@ export interface IDoFCharacter extends IDoFUnit {
     epithet?: string,
     weapons?: IDoFStats,
     affinity?: string,
-    bossStats?: IDoFBossCofig[],
+    bossStats?: IDoFNonPlayableConfig[],
+    npcStats?: IDoFNonPlayableConfig[],
     // can make a more robust gating system but for now simiplicity works and is good
     gateProfileTabChapter?: number
     gateProfileDetailsChapter?: number

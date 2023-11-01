@@ -9,13 +9,14 @@ import CharacterProfile from "../unit-profile";
 import PlayerAverages from "../player-averages";
 import { DoFUnitState } from "@/src/models/enums";
 import { IRenderCharacterConfig } from "@/src/models/spritesheet.interfaces";
-import BossLayout from "../boss-layout";
+import NonPlayableStats from "../boss-layout";
 
 enum CharacterDetailState {
     Stat = 'stat',
     ExtendedProfile = 'profile',
     Gallery = 'gallery',
-    BossStats = 'boss_stats'
+    BossStats = 'boss_stats',
+    NPCStats = 'npc_stats',
 };
 
 let offset = { left: 0, top: 0 };
@@ -37,10 +38,12 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
     const unitType: string = characterConfig.type;
     const isPlayer = unitType === DoFUnitState.Player;
     const isEnemy = unitType === DoFUnitState.Enemy;
+    const isNPC = unitType === DoFUnitState.NPC;
     // show hide items
     const showStats = (isPlayer) && (characterDef.bases || characterDef.growths);
     const showExtendedProfile = characterDef.height != null && (!characterDef.gateProfileTabChapter || characterDef.gateProfileTabChapter <= characterConfig.chapter);
     const showBossStats = characterDef.bossStats != null;
+    const showNPCStats = characterDef.npcStats != null;
     const showGallery = false;
     const showSideProfileDetails = (characterDef.gateProfileDetailsChapter ?? 0) <= characterConfig.chapter;
 
@@ -53,16 +56,21 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
 
     if (showBossStats) {
         validViews.add(CharacterDetailState.BossStats);
-        defaultView = defaultView ?? CharacterDetailState.BossStats;
+        if (isEnemy) {
+            defaultView = defaultView ?? CharacterDetailState.BossStats;
+        }
     }
 
+    if (showNPCStats) {
+        validViews.add(CharacterDetailState.NPCStats);
+        if (isNPC) {
+            defaultView = defaultView ?? CharacterDetailState.NPCStats;
+        }
+    }
 
     if (showExtendedProfile) {
         validViews.add(CharacterDetailState.ExtendedProfile);
         defaultView = defaultView ?? CharacterDetailState.ExtendedProfile;
-        if (!isEnemy && defaultView !== CharacterDetailState.Stat) {
-            defaultView = CharacterDetailState.ExtendedProfile;
-        }
     }
 
     if (showGallery) {
@@ -151,8 +159,10 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
                 return <CharacterProfile characterDef={characterDef} />;
             case CharacterDetailState.Stat:
                 return <PlayerAverages characterDef={characterDef} />;
+            case CharacterDetailState.NPCStats:
+                return <NonPlayableStats stats={characterDef.npcStats!} chapterLimit={characterConfig.chapter} />
             case CharacterDetailState.BossStats:
-                return <BossLayout characterDef={characterDef} chapterLimit={characterConfig.chapter} />
+                return <NonPlayableStats stats={characterDef.bossStats!} chapterLimit={characterConfig.chapter} />
             default:
                 return ''
         }
@@ -162,7 +172,7 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
 
 
     function renderTabs() {
-        if (!showStats && !showExtendedProfile && !showGallery && !showBossStats) {
+        if (!showStats && !showExtendedProfile && !showGallery && !showBossStats && !showNPCStats) {
             return '';
         }
 
@@ -183,6 +193,10 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
                 getSectionTab(CharacterDetailState.BossStats, 'Stats') :
                 getSectionTab(CharacterDetailState.BossStats, 'Enemy')
         ) : '';
+        let npcStats = showNPCStats ? (
+            isNPC ? getSectionTab(CharacterDetailState.NPCStats, 'Stats') :
+                getSectionTab(CharacterDetailState.NPCStats, 'NPC')
+        ) : ''
 
         return <ul className={styles.tabs}>
             {
@@ -192,14 +206,17 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
                         {profile}
                         {gallery}
                         {bossStats}
+                        {npcStats}
                     </> :
                     isEnemy ?
                         <>
                             {bossStats}
                             {profile}
                             {gallery}
+                            {npcStats}
                         </> :
                         <>
+                            {npcStats}
                             {profile}
                             {gallery}
                             {bossStats}

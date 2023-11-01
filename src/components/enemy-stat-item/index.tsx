@@ -1,14 +1,14 @@
-import { IDoFBossCofig, IDoFCharacter } from '@/src/models/dream-of-five.interfaces';
+import { IDoFNonPlayableConfig, IDoFCharacter } from '@/src/models/dream-of-five.interfaces';
 import styles from './index.module.scss';
 import WeaponRanksDisplay from '../weapon-ranks';
 import { DoFChapters } from '@/src/config/chapters.config';
 import { DoFRoute } from '@/src/models/enums';
 
-export default function EnemyStatItem({ enemyStat }: { enemyStat: IDoFBossCofig}) {
-    const { level, class: className, stats, route, optional, gameOver, talk, ranks: weaponRanks, weapons } = enemyStat;
+export default function NonPlayerStatItem({ statConfig }: { statConfig: IDoFNonPlayableConfig}) {
+    const { level, class: className, stats, route, optional, gameOver, talk, ranks: weaponRanks, weapons } = statConfig;
     const statKeys = Object.keys(stats ?? {}).filter(stat => stat != 'lv');
-    const chapter = DoFChapters[enemyStat.chapter];
-    const routeLabel = enemyStat.chapter >= 7 && enemyStat.chapter <= 14 ? (enemyStat.route === DoFRoute.Musain ? 'A' : enemyStat.route === DoFRoute.Onduris ? 'B' : '') : ''
+    const chapter = DoFChapters[statConfig.chapter];
+    const routeLabel = statConfig.chapter >= 7 && statConfig.chapter <= 14 ? (statConfig.route === DoFRoute.Musain ? 'A' : statConfig.route === DoFRoute.Onduris ? 'B' : '') : ''
     const chapterLabel = !chapter.title ?
         `Chapter ${chapter.value}${routeLabel}` :
         chapter.title.match(/\d/g) ? `Chapter ${chapter.title}` : chapter.title
