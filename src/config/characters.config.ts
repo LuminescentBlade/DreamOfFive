@@ -546,6 +546,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                     npc: 6.5
                 }
             },
+            affinity: DoFAffinities.Fire,
             level: 8,
             bases: { hp: 40, pow: 13, skl: 10, spd: 8, luk: 7, def: 5, res: 0, con: 13 },
             weapons: { [DoFWeaponType.Axe]: 71 },
@@ -566,6 +567,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                     npc: 6.5
                 }
             },
+            affinity: DoFAffinities.Wind,
             level: 8,
             bases: { hp: 22, pow: 9, skl: 18, spd: 18, luk: 14, def: 4, res: 7, con: 8 },
             weapons: { [DoFWeaponType.Sword]: 71 },
