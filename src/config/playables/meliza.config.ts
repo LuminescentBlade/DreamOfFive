@@ -6,7 +6,7 @@ export const Meliza: IDoFCharacter = {
     profileName: 'Meliza Domremie',
     artists: [DoFArtist.Lumi],
     blurb: '"... and immediately my mind dredged up all manner of flower imagery; she seemed the model of a Musain lady..."',
-    class: DoFClasses.Mage,
+    class: DoFClasses.Cleric,
     nationality: DoFNationality.Musain,
     routeConfig: {
         musain: {
