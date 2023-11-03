@@ -15,12 +15,12 @@ export const Lyndra: IDoFCharacter =  {
         }
     },
     height: 168,
-    bases: {hp: 36, pow: 16, skl: 18, spd: 19, luk: 9, def: 18, res: 3, con: 10},
+    bases: {hp: 36, pow: 15, skl: 18, spd: 19, luk: 9, def: 18, res: 3, con: 10},
     level: 3,
     growths: {hp: 75, pow: 35, skl: 50, spd: 45, luk: 30, def: 45, res: 10},
     weapons: {
         [DoFWeaponType.Sword]: 181,
-        [DoFWeaponType.Axe]: 121
+        [DoFWeaponType.Axe]: 71
     },
     affinity: DoFAffinities.Wind,
     bossStats: [
@@ -28,10 +28,6 @@ export const Lyndra: IDoFCharacter =  {
             chapter: 8.5,
             route: DoFRoute.Musain,
             weapons: [DoFWeapon.SilverBlade],
-            ranks: {
-                [DoFWeaponType.Sword]: 181,
-                [DoFWeaponType.Axe]: 121
-            },
             drops: 'Master Seal',
             optional: true,
         }

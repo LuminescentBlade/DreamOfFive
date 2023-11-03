@@ -14,7 +14,7 @@ export const Seren: IDoFCharacter = {
         }
     },
     bases: {
-        hp: 28, pow: 10, skl: 13, spd: 14, luk: 8, def: 11, res: 5, con: 9
+        hp: 28, pow: 11, skl: 13, spd: 14, luk: 8, def: 11, res: 5, con: 9
     },
     level: 9,
     promotesTo: DoFClasses.Sentinel,
