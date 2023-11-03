@@ -31,6 +31,7 @@ export const Severin: IDoFCharacter = {
         }
     },
     level: 4,
+    age: 26,
     weapons: {
         [DoFWeaponType.Anima]: 181,
         [DoFWeaponType.Staff]: 71
