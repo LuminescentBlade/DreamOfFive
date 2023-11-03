@@ -20,10 +20,10 @@ export const Annelise: IDoFCharacter = {
     age: 20,
     epithet: 'The Seeker',
     bases: {
-        hp: 27, pow: 14, skl: 12, spd: 19, luk: 9, def: 11, res: 11, con: 8
+        hp: 27, pow: 14, skl: 12, spd: 19, luk: 9, def: 9, res: 11, con: 8
     },
     level: 14,
-    growths: { hp: 50, pow: 45, skl: 40, spd: 60, luk: 40, def: 30, res: 45 },
+    growths: { hp: 50, pow: 45, skl: 40, spd: 60, luk: 40, def: 35, res: 45 },
     promotesTo: DoFClasses.SeraphKnight,
     weapons: {
         [DoFWeaponType.Sword]: 71,
