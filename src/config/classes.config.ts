@@ -233,7 +233,7 @@ export const DoFPromotedClasses :  { [key: string]: any }  = {
         }
     },
     [DoFClasses.Warrior]: {
-        promo: { hp: 5, pow: 2, skl: 2, spd: 2, luk: 0, def: 3, res: 3, con: 1 },
+        promo: { hp: 5, pow: 2, skl: 2, spd: 2, luk: 0, def: 3, res: 3, con: 3 },
         caps: { hp: 60, pow: 28, skl: 28, spd: 26, luk: 30, def: 28, res: 15, con: 20 },
         weapons: {
             [DoFWeaponType.Bow]: 31,
