@@ -312,7 +312,7 @@ export default function PlayerAverages({ characterDef }: { characterDef: IDoFCha
             }
         }
 
-        return <td key={statKey} className={capped ? styles.capped : ''}>{value.toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
+        return <td key={statKey} className={capped ? styles.capped : ''}>{value?.toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
     }
 
     function renderStatChecker() {
