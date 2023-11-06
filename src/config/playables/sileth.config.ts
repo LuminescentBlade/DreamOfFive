@@ -25,5 +25,5 @@ export const Sileth: IDoFCharacter = {
     weapons: {
         [DoFWeaponType.Anima]: 71
     },
-    affinity: DoFAffinities.Wind
+    affinity: DoFAffinities.Ice
 };
