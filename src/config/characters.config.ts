@@ -174,7 +174,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'garvan',
             artists: [DoFArtist.Astra],
-            blurb: '"The border posts attracted stoic, dutiful men unconcerned with glamour, workmanlike, unimaginative..."',
+            blurb: '"The border posts attracted stolid, dutiful men unconcerned with glamour, workmanlike, unimaginative..."',
             class: DoFClasses.Armour,
             nationality: DoFNationality.Aukema,
             routeConfig: {
