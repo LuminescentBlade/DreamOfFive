@@ -128,7 +128,7 @@ export default function Credits() {
                         <h3>
                             Questant
                         </h3>
-                        Luminescent Blade
+                        Luminescent Blade, BwdYeti, Nuramon, ErrantShephard, L95
                     </li>
                     <li>
                         <h3>
@@ -222,7 +222,7 @@ export default function Credits() {
                 <h2>
                     Patches and ASM
                 </h2>
-                7743, Aera, Agro, Alusq, Aurawolf, Blazer, Brendor, Circleseverywhere, Contro, Gryz, Hextator, Huichelaar, Kaito, Nintenlord, Tequila, Tiki, Shinan, Stan, Venno, Vesly, Zane, Zeta
+                7743, Aera, Agro, Alusq, Aurawolf, Blazer, Brendor, Circleseverywhere, Contro, DragZ, Gryz, Hextator, Huichelaar, Kaito, Nintenlord, Tequila, Tiki, Shinan, Stan, Venno, Vesly, Zane, Zeta
             </li>
             <li>
                 <h2>
@@ -232,7 +232,13 @@ export default function Credits() {
             </li>
             <li>
                 <h2>
-                    Map Palettes, Inserting / Improving Entire UI
+                    Map Palettes
+                </h2>
+                Epicer, Feier
+            </li>
+            <li>
+                <h2>
+                    Inserting / Improving Entire UI
                 </h2>
                 Epicer
             </li>
