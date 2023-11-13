@@ -176,7 +176,7 @@ export default function Credits() {
                         <h3>
                             Enforcer
                         </h3>
-                        Luminescent Blade (battlesprite), LordGlenn (mapsprite)
+                        Luminescent Blade (battlesprite), Agro (mapsprite)
                     </li>
                 </ul>
             </li>
