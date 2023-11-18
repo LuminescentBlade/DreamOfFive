@@ -222,7 +222,7 @@ export default function Credits() {
                 <h2>
                     Patches and ASM
                 </h2>
-                7743, Aera, Agro, Alusq, Aurawolf, Blazer, Brendor, Circleseverywhere, Contro, DragZ, Gryz, Hextator, Huichelaar, Kaito, Nintenlord, Tequila, Tiki, Shinan, Stan, Venno, Vesly, Zane, Zeta
+                7743, Aera, Agro, Alusq, Aurawolf, Blazer, Brendor, Circleseverywhere, Contro, Dragz, Gryz, Hextator, Huichelaar, Kaito, Nintenlord, Tequila, Tiki, Shinan, Stan, Venno, Vesly, Zane, Zeta
             </li>
             <li>
                 <h2>
