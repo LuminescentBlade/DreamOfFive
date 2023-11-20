@@ -7,6 +7,11 @@ export const Hereward: IDoFCharacter = {
     class: DoFClasses.Cataphract,
     height: 188,
     nationality: DoFNationality.Aukema,
+    alt: {
+        injured: {
+            artists: [DoFArtist.Lumi], chapter: 16
+        }
+    },
     routeConfig: {
         allRoute: {
             player: 16,
