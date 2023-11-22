@@ -10,6 +10,13 @@ export const Guillaume : IDoFCharacter =  {
     alt: {
         burned: { artists: [DoFArtist.Astra], chapter: 14 }
     },
+    conditional: {
+        chapter: {
+            chapter: 14,
+            swapPortrait: 'burned',
+            ogPortraitName: 'Guillaume Normal'
+        }
+    },
     routeConfig: {
         musain: {
             npc: 7,
@@ -31,6 +38,7 @@ export const Guillaume : IDoFCharacter =  {
             }
         }
     ],
-    gateProfileDetailsChapter: 14
+    gateProfileDetailsChapter: 14,
+    blurb: '"... seemed not to notice his scars. He was mad, that was clear enough, but only more dangerous for it..."'
 
 };
