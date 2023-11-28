@@ -1,5 +1,5 @@
 import { DoFArtist, DoFClasses, DoFNationality } from "./enums";
-import { IAltConfig, IRenderCharacterConfig, IRenderItemConfig, IRouteConfig, IUnit } from "../lib/models";
+import { IAltConfig, INonPlayableUnitStats, IRenderCharacterConfig, IRenderItemConfig, IRouteConfig, IUnit } from "../lib/models";
 
 export interface IDoFUnit extends IUnit {
     artists: DoFArtist[];
@@ -14,6 +14,10 @@ export interface IDoFUnit extends IUnit {
 
 export interface IDoFAlt extends IAltConfig {
     artists: DoFArtist[]
+}
+
+export interface IDoFNonPlayableConfig extends INonPlayableUnitStats{
+    customTags?: string[]
 }
 
 export interface IDoFCharacter extends IDoFUnit {
@@ -33,6 +37,7 @@ export interface IDoFCharacter extends IDoFUnit {
     // can make a more robust gating system but for now simiplicity works and is good
     gateProfileTabChapter?: number
     gateProfileDetailsChapter?: number
+    bossStats?: IDoFNonPlayableConfig[]
 }
 export interface IDoFStats {
     [stat: string]: number

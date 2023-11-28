@@ -13,15 +13,15 @@ export const Marin: IDoFCharacter = {
         }
     },
     stats: {
-        hp: 35, pow: 13, skl: 12, spd: 17, luk: 15, def: 11, res: 0, con: 9
+        hp: 35, pow: 13, skl: 11, spd: 16, luk: 15, def: 10, res: 0, con: 9
     },
     height: 176,
-    level: 14,
+    level: 13,
     growths: { hp: 105, pow: 45, skl: 35, spd: 55, luk: 55, def: 30, res: 5 },
     promotesTo: DoFClasses.Paladin,
     ranks: {
-        [DoFWeaponType.Sword]: 71,
-        [DoFWeaponType.Lance]: 31
+        [DoFWeaponType.Sword]: 121,
+        [DoFWeaponType.Lance]: 71
     },
     affinity: DoFAffinities.Fire
 };

@@ -126,3 +126,11 @@ $blossom-plus-button: var(--lb-averages-blossom-plus-button, var(--dof-bg-color,
   }
 }
 
+.customTags {
+  display: inline-block;
+  text-transform: capitalize;
+  padding: 2px;
+  font-size: 0.8em;
+  border: 1px solid var(--dof-color6);
+  color: var(--dof-color6);
+}

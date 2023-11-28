@@ -14,7 +14,7 @@ export enum DoFUnitState {
 export enum DoFArtist {
     Lumi = 'lumi',
     Astra = 'astra',
-    Sev = 'amelia',
+    Sev = 'sev',
     Char = 'char',
     AK = 'ak',
     Nih = 'niharu',
@@ -22,6 +22,7 @@ export enum DoFArtist {
     TBA = 'tba',
     Xiltas = 'xiltas',
     Levin = 'levin',
+    SeraphKnight = 'seraphknight'
 };
 
 export enum DoFNationality {

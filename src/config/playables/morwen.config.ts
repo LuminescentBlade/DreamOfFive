@@ -1,4 +1,4 @@
-import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeaponType } from "@dof/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFRoute, DoFWeaponType } from "@dof/src/models/enums";
 import { IDoFCharacter } from "@dof/src/models/interfaces";
 import { DoFWeapon } from "../weapons.config";
 
@@ -21,22 +21,37 @@ export const Morwen: IDoFCharacter = {
     height: 182,
     routeConfig: {
         onduris: {
-            enemy: [5, 6, 99],
+            enemy: [5, 6, 18],
         },
         musain: {
-            enemy: [5, 6, 97],
-            player: 98
+            enemy: [5, 6, 18],
+            player: 18
         }
     },
+    level: 8,
+    stats: { hp: 48, pow: 22, skl: 17, spd: 16, luk: 21, def: 23, res: 8, con: 15 },
+    growths: {hp: 85, pow: 50, skl: 30, spd: 30, luk: 55, def: 40, res: 20 },
+    ranks: { sword: 181, axe: 181 },
     affinity: DoFAffinities.Thunder,
-    bossStats: [    
+    bossStats: [
         {
-            ...earlyBossMorwen,
-            chapter: 6,   
+            chapter: 18,
+            route: DoFRoute.Musain,
+            talk: true,
+            weapons: ['Brave Axe', 'Wyrmslayer']
+        },
+        {
+            chapter: 18,
+            route: DoFRoute.Onduris,
+            weapons: ['Brave Axe', 'Wyrmslayer']
         },
         {
             ...earlyBossMorwen,
-            chapter: 5,   
+            chapter: 6,
+        },
+        {
+            ...earlyBossMorwen,
+            chapter: 5,
         }
     ]
 };

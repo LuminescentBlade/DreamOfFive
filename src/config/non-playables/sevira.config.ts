@@ -5,6 +5,12 @@ export const Sevira: IDoFCharacter = {
     name: 'sevira',
     artists: [DoFArtist.Sev],
     class: '',
+    conditional:{
+        chapter: {
+            chapter: 19,
+            epithet: 'Mourning Dove'
+        }
+    },
     nationality: DoFNationality.Aukema,
     routeConfig: {
         allRoute: {

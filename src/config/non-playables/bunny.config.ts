@@ -5,7 +5,8 @@ export const Bunny: IDoFCharacter = {
     name: 'bunny',
     artists: [DoFArtist.Lumi],
     nationality: DoFNationality.Unknown,
-    class: 'A Rabbit',
+    class: 'Rabbit',
+    level: 100,
     height: 20,
     routeConfig: {
         allRoute: {

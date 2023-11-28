@@ -25,6 +25,11 @@ export const Arcus: IDoFCharacter = {
             artists: [DoFArtist.Astra, DoFArtist.Lumi],
             chapter: 14.5,
             displayName: 'Promoted'
+        },
+        noarmor:{
+            artists: [DoFArtist.Astra, DoFArtist.Lumi],
+            chapter: 14.5,
+            displayName: 'Unarmored'
         }
     },
     height: 185,

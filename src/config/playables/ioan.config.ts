@@ -3,7 +3,6 @@ import { IDoFCharacter } from "@dof/src/models/interfaces";
 
 export const Ioan: IDoFCharacter = {
     name: DoFCharKey.Ioan,
-    // artists: [DoFArtist.Sev, DoFArtist.Astra], // save this for ioan replacement npc
     artists: [DoFArtist.Lumi],
     blurb: '"... marvelled that a man of such strength could easily control his own fate, yet left it, invariably, to the cards."',
     nationality: DoFNationality.Vishara,

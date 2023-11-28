@@ -503,15 +503,158 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             name: 'callad',
             artists: [DoFArtist.Xiltas, DoFArtist.Astra],
             blurb: '"... of the backwater provinces were determined to have their day, long marginalised by aloof corelanders..."',
-            class: '',
+            class: DoFClasses.Warrior,
             nationality: DoFNationality.Aukema,
-            isSpoiler: true, // not really, just need to update his design
+            affinity: DoFAffinities.Ice,
             routeConfig: {
                 allRoute: {
                     enemy: 16
                 }
-            }
+            },
+            bossStats: [
+                {
+                    chapter: 16,
+                    level: 4,
+                    stats: { hp: 48, pow: 23, skl: 19, spd: 15, luk: 10, def: 15, res: 4, con: 15 },
+                    ranks: { axe: 181, bow: 181 }
+                }
+            ]
         },
+        {
+            name: 'brennan',
+            artists: [DoFArtist.Lumi],
+            blurb: '"... no shortage of men who felt their time had come. That this was the hour to stand and be counted..."',
+            class: DoFClasses.Dreadnought,
+            nationality: DoFNationality.Aukema,
+            affinity: DoFAffinities.Light,
+            routeConfig: {
+                allRoute: {
+                    enemy: 16
+                }
+            },
+            bossStats: [{
+                chapter: 16,
+                level: 5,
+                stats: { hp: 45, pow: 22, skl: 20, spd: 9, luk: 14, def: 24, res: 5, con: 16 },
+                ranks: { sword: 181, axe: 71, lance: 251 }
+            }]
+        },
+        {
+            name: 'curoi',
+            artists: [DoFArtist.Xiltas, DoFArtist.Astra, DoFArtist.Lumi],
+            class: DoFClasses.Sorcerer,
+            nationality: DoFNationality.Aukema,
+            routeConfig: {
+                allRoute: {
+                    enemy: 17
+                }
+            },
+            affinity: DoFAffinities.Anima,
+            bossStats: [{
+                optional: true,
+                chapter: 17,
+                level: 4,
+                stats: { hp: 40, pow: 20, skl: 18, spd: 13, luk: 9, def: 13, res: 19, con: 12 },
+                ranks: { dark: 181, staff: 121 },
+                weapons: ['Ennervation', 'Physic']
+            }],
+            blurb: `"... saw a way to the top by another's side, not encumbered by blood ties or codes of honour"`
+        },
+        {
+            name: 'raleigh',
+            artists: [DoFArtist.Lumi],
+            // blurb: '"... of the backwater provinces were determined to have their day, long marginalised by aloof corelanders..."',
+            class: DoFClasses.Paladin,
+            nationality: DoFNationality.Aukema,
+            routeConfig: {
+                allRoute: {
+                    enemy: 17
+                }
+            },
+            bossStats: [{
+                chapter: 17,
+                level: 6,
+                stats: { hp: 41, pow: 17, skl: 17, spd: 23, luk: 16, def: 15, res: 10, con: 10 },
+                weapons: ['Spear', 'Silver Sword']
+            }],
+            blurb: `"The knights of the frontier were loyal, capable folk, hardened by conflict, and able to act decisively in a crisis..."`
+        },
+        {
+            name: 'colwyn',
+            artists: [DoFArtist.Lumi],
+            class: DoFClasses.Dreadnought,
+            nationality: DoFNationality.Aukema,
+            routeConfig: {
+                allRoute: {
+                    enemy: 19
+                }
+            },
+            affinity: DoFAffinities.Ice,
+            bossStats: [
+                {
+                    chapter: 19,
+                    level: 7,
+                    stats: { hp: 48, pow: 23, skl: 19, spd: 12, luk: 13, def: 23, res: 8, con: 15 },
+                    weapons: ['Runesword', 'Silver Blade'],
+                    ranks: { sword: 251, lance: 121, axe: 181 }
+                }
+            ],
+            blurb: `"... fought with no fervor, just a firm sense of professionalism [...] and a need to bring his men back alive."`
+        },
+        {
+            name: 'hender',
+            artists: [DoFArtist.Astra, DoFArtist.Sev, DoFArtist.Lumi],
+            blurb: `"Yet some served Farrell with astonishing zeal, truly believing that his ambitions dovetailed with Aukema's "`,
+            class: DoFClasses.Sage,
+            nationality: DoFNationality.Aukema,
+            routeConfig: {
+                allRoute: {
+                    enemy: 21
+                }
+            },
+            bossStats: [
+                {
+                    chapter: 21,
+                    level: 9,
+                    stats: { hp: 42, pow: 20, skl: 23, spd: 20, luk: 13, def: 8, res: 25, con: 8 },
+                    ranks: {
+                        [DoFWeaponType.Anima]: 251,
+                        [DoFWeaponType.Staff]: 121
+                    },
+                    weapons: [
+                        'Fimbulvetr',
+                        'Thunder',
+                        'Physic',
+                        'Swift Feather'
+                    ]
+                }
+            ]
+        },
+        {
+            name: 'feona',
+            artists: [DoFArtist.Astra, DoFArtist.Lumi],
+            blurb: `""`,
+            class: DoFClasses.Sibyl,
+            nationality: DoFNationality.Aukema,
+            routeConfig: {
+                allRoute: {
+                    enemy: 21
+                }
+            },
+            bossStats: [
+                {
+                    chapter: 21,
+                    level: 9,
+                    weapons: ['Frodafridh', 'Ennervation', 'Inner Fire'],
+                    stats: { hp: 40, pow: 22, skl: 22, spd: 18, luk: 15, def: 12, res: 19, con: 9 },
+                    ranks: {
+                        [DoFWeaponType.Light]: 251,
+                        [DoFWeaponType.Dark]: 251
+                    }
+                }
+            ]
+        },
+
         {
             name: 'quivin',
             artists: [DoFArtist.Lumi],
@@ -521,7 +664,86 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                 allRoute: {
                     enemy: 17.5
                 }
-            }
+            },
+            blurb: `"Any man who named himself a 'bandit king' was not long for the throne. But a cannier, cleverer sort might last..."`,
+            affinity: DoFAffinities.Light,
+            bossStats: [
+                {
+                    chapter: 17.5,
+                    level: 6,
+                    class: DoFClasses.Outrider,
+                    stats: { hp: 38, pow: 19, skl: 18, spd: 24, luk: 14, def: 14, res: 7, con: 10 },
+                    weapons: ['Flametongue', 'Silver Bow'],
+                    ranks: { sword: 181, bow: 181 }
+                }
+            ]
+        },
+        {
+            name: 'mhaire',
+            artists: [DoFArtist.Lumi, DoFArtist.SeraphKnight],
+            class: DoFClasses.Swordmaster,
+            nationality: DoFNationality.Aukema,
+            blurb: `"... am told she bore all manner of resentment to the old order. War was just a chance to even the odds..."`,
+            routeConfig: {
+                allRoute: {
+                    enemy: 20
+                }
+            },
+            affinity: DoFAffinities.Wind,
+            bossStats: [
+                {
+                    chapter: 20,
+                    level: 10,
+                    stats: { hp: 43, pow: 18, skl: 25, spd: 24, luk: 22, def: 15, res: 10, con: 8 },
+                    weapons: ['Vorpal Sword'],
+                    ranks: { sword: 251 }
+                }
+            ]
+        },
+        {
+            name: 'ascamore',
+            artists: [DoFArtist.Sev, DoFArtist.Astra, DoFArtist.Lumi],
+            class: DoFClasses.Sentinel,
+            nationality: DoFNationality.Aukema,
+            blurb: `"I heard later they had been a knight of some renown before the war [...] perhaps they could have served..."`,
+            routeConfig: {
+                allRoute: {
+                    enemy: 20
+                }
+            },
+            bossStats: [
+                {
+                    chapter: 20,
+                    level: 8,
+                    stats: { hp: 43, pow: 19, skl: 25, spd: 23, luk: 14, def: 21, res: 4, con: 11 },
+                    weapons: ['Spear', 'Barbed Lance'],
+                    ranks: { lance: 251 }
+                }
+            ]
+        },
+        {
+            name: 'kearney',
+            artists: [DoFArtist.Lumi, DoFArtist.Astra],
+            class: DoFClasses.SeraphKnight,
+            nationality: DoFNationality.Aukema,
+            blurb: `"... years of faithful service, working her way up from the bottom. She thought she knew which way the wind blew..."`,
+            routeConfig: {
+                allRoute: {
+                    enemy: 20
+                }
+            },
+            bossStats: [
+                {
+                    chapter: 20,
+                    level: 7,
+                    stats: { hp: 40, pow: 15, skl: 18, spd: 26, luk: 18, def: 13, res: 24, con: 7 },
+                    ranks: {
+                        [DoFWeaponType.Sword]: 251,
+                        [DoFWeaponType.Lance]: 181
+                    },
+                    weapons: ['Kris', 'Silver Sword', 'Whitewing Bracelet']
+                },
+            ]
         },
         {
             name: 'miodrag',
@@ -591,7 +813,6 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             name: 'ethelrena',
             artists: [DoFArtist.Sev, DoFArtist.Lumi],
             nationality: DoFNationality.Aukema,
-            isSpoiler: true,
             alt: {
                 blood: { artists: [DoFArtist.Sev, DoFArtist.Lumi] }
             },
@@ -616,10 +837,10 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'queenvish',
-            displayName: 'Queen Vishara',
+            profileName: 'Queen Tamara',
+            displayName: 'Tamara',
             artists: [DoFArtist.Sev],
             nationality: DoFNationality.Vishara,
-            isSpoiler: true,
             routeConfig: {
                 allRoute: {
                     npc: 99
@@ -636,8 +857,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                 allRoute: {
                     enemy: 98
                 }
-            },
-            isSpoiler: true,
+            }
         },
         {
             name: 'anna',

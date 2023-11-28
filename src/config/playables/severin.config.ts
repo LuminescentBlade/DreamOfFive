@@ -7,11 +7,6 @@ const bossStat = {
     level: 4,
     stats: { hp: 31, pow: 15, skl: 22, spd: 18, luk: 11, def: 6, res: 14, con: 8 },
     optional: true,
-    ranks: {
-        [DoFWeaponType.Anima]: 181,
-        [DoFWeaponType.Staff]: 71
-    },
-
 };
 
 export const Severin: IDoFCharacter = {
@@ -22,6 +17,7 @@ export const Severin: IDoFCharacter = {
     class: DoFClasses.Harrier,
     nationality: DoFNationality.Musain,
     height: 172,
+    age: 26,
     epithet: 'Skyward Reach',
     routeConfig: {
         musain: {
@@ -31,7 +27,8 @@ export const Severin: IDoFCharacter = {
         }
     },
     level: 4,
-    age: 26,
+    stats: { hp: 31, pow: 15, skl: 22, spd: 18, luk: 11, def: 6, res: 14, con: 9 },
+    growths: { hp: 70, pow: 35, skl: 60, spd: 35, luk: 30, def: 15, res: 45 },
     ranks: {
         [DoFWeaponType.Anima]: 181,
         [DoFWeaponType.Staff]: 71
@@ -45,7 +42,7 @@ export const Severin: IDoFCharacter = {
             ]
         },
         { ...bossStat, chapter: 11, weapons: [DoFWeapon.Fimbulvetr] }
-        
+
     ],
     gateProfileDetailsChapter: 11
 };

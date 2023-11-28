@@ -9,39 +9,62 @@ export const Dismas: IDoFCharacter = {
     blurb: '"... seen his type a dozen times before. It doesn\'t matter who has to die, so long as his belly is full..."',
     nationality: DoFNationality.Aukema,
     alt: {
-        punished: { artists: [DoFArtist.Astra], chapter: 15, displayName: 'Returns', isSpoiler: true }
+        punished: { artists: [DoFArtist.Astra], chapter: 15, displayName: 'Returns' },
+        final: { artists: [DoFArtist.Astra, DoFArtist.Lumi], chapter: 20 }
     },
-    level: 6,
+    level: 8,
+    stats: { hp: 52, pow: 25, skl: 20, spd: 18, luk: 8, def: 13, res: 6, con: 13 },
+    growths:  {hp: 70, pow: 40, skl: 35, spd: 30, luk: 225, def: 15, res: 10 },
     height: 176,
     conditional: {
-        chapter: {
-            chapter: 15,
-            swapPortrait: 'punished',
-            ogPortraitName: 'Dismas Prologue',
-            class: DoFClasses.Berserker,
-            blurb: '"... still bearing the scars that we carved into him. He was a man changed, no longer cocksure..."',
-        }
+        chapter: [
+            {
+                chapter: 15,
+                swapPortrait: 'punished',
+                ogPortraitName: 'Dismas Prologue',
+                class: DoFClasses.Berserker,
+                blurb: '"... still bearing the scars that we carved into him. He was a man changed, no longer cocksure..."',
+                epithet: 'Thrice Born'
+            }, {
+                chapter: 20,
+                swapPortrait: 'final',
+                ogPortraitName: 'Dismas Prologue',
+                class: DoFClasses.Berserker,
+                blurb: '"... still bearing the scars that we carved into him. He was a man changed, no longer cocksure..."',
+                epithet: 'Thrice Born'
+            }
+        ]
     },
     routeConfig: {
         allRoute: {
-            player: 99,
-            enemy: [0, 15]
+            player: 21,
+            enemy: [0, 15, 20]
         }
     },
-    gateProfileTabChapter: 15,
-    affinity: DoFAffinities.Dark, // thunder?
+    gateProfileTabChapter: 20,
+    affinity: DoFAffinities.Thunder,
     bossStats: [
         {
-            chapter: 15,
-            level: 5,
-            stats: { hp: 0, pow: 0, skl: 0, spd: 0, luk: 0, def: 0, res: 0, con: 12 },
+            chapter: 20,
             class: DoFClasses.Berserker,
             ranks: {
-                [DoFWeaponType.Axe]: 71
+                [DoFWeaponType.Axe]: 251
             },
             weapons: [
-                DoFWeapon.HandAxe,
-                DoFWeapon.SteelAxe
+                'Battle Axe'
+            ]
+        },
+        {
+            chapter: 15,
+            level: 3,
+            stats: { hp: 46, pow: 21, skl: 18, spd: 16, luk: 7, def: 12, res: 6, con: 13 },
+            class: DoFClasses.Berserker,
+            ranks: {
+                [DoFWeaponType.Axe]: 181
+            },
+            weapons: [
+                'Swordreaver',
+                DoFWeapon.Francisca
             ]
         },
         {

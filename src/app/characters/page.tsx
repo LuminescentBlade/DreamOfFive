@@ -14,7 +14,7 @@ import { DoFRenderCharacter } from '@dof/src/models/dof-render-character.class';
 import { DoFGeneric } from '@dof/src/models/dof-render-generic.class';
 
 const defaultRenderValues = {
-    prod: { chapter: 6, limit: 14.5 },
+    prod: { chapter: 6, limit: 22.5 },
     local: { chapter: 99 }
 };
 

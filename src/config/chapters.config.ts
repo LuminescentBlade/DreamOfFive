@@ -14,6 +14,6 @@ setDoFChapterDef(0, 'Prologue');
 setDoFChapterDef(6.5, '6Ax', DoFRoute.Musain);
 setDoFChapterDef(8.5, '8Ax', DoFRoute.Musain);
 setDoFChapterDef(10.5, '10Bx', DoFRoute.Onduris);
-setDoFChapterDef(14.5, 'Crossroads');
 setDoFChapterDef(17.5, '17x');
+setDoFChapterDef(22.5, 'Act 3 Checkpoint');
 setDoFChapterDef(99, 'All');

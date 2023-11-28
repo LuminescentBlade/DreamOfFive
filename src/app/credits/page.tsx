@@ -5,7 +5,7 @@ export default function Credits() {
     return <div className={styles.credits}>
         <h1>Credits</h1>
         <em>
-        I respectfully acknowledge the Ngunnawal people, the past, present and future custodians of the land where this was produced; I recognise all traditional owners of the region and beyond, and thank them for their contribution to the life and continued health of Country.
+            I respectfully acknowledge the Ngunnawal people, the past, present and future custodians of the land where this was produced; I recognise all traditional owners of the region and beyond, and thank them for their contribution to the life and continued health of Country.
         </em>
         <ul className={styles.section}>
             <li>
@@ -69,6 +69,12 @@ export default function Credits() {
                             Blademaiden, Drake Knight, Gladiator, Henchwoman, Marksman (Sniper), Juggernaut
                         </h3>
                         Nuramon
+                    </li>
+                    <li>
+                        <h3>
+                            Drake Knight (Map Sprite)
+                        </h3>
+                        SHYUTERz
                     </li>
                     <li>
                         <h3>
@@ -181,24 +187,34 @@ export default function Credits() {
                 </ul>
             </li>
             <li>
+                <h2>Tilesets</h2>
+                <ul>
+                    <li>
+                        <h3>Stronghold + (19, 22)</h3>
+                        N426
+                    </li>
+                </ul>
+            </li>
+            <li>
                 <h2>
                     Maps
                 </h2>
                 <ul>
                     <li>
-                        Dancer A
-                    </li>
-                    <li>
                         <h3>
-                            C12A, C12B
+                            12A, 12B, 22
                         </h3>
                         LordGlenn
                     </li>
                     <li>
                         <h3>
-                            C14A
+                            3 (Including gameplay), 14A, 17x, 18, 19, 20, 21
                         </h3>
                         RandomWizard
+                    </li>
+                    <li>
+                        <h3>All Other Maps</h3>
+                        Dancer A
                     </li>
                 </ul>
             </li>
@@ -244,7 +260,7 @@ export default function Credits() {
             </li>
             <li>
                 <h2>Music</h2>
-                A Reliable Chair, Agromono, Alusq, Dolkar, Gustabo, Ken ZOMG, Lemon Tart, Mariobro3828, MrGreen3339, Pandan, Stardust Sheep, RandomWizard, RSFlame, SaXor the Nobody, Scraiza, Sme, Surfing Kyogre
+                A Reliable Chair, Agromono, Alusq, ArcherBias, Dolkar, Gustabo, Ken ZOMG, Lemon Tart, Mariobro3828, MrGreen3339, Pandan, Stardust Sheep, RandomWizard, RSFlame, SaXor the Nobody, Scraiza, Sme, Surfing Kyogre
             </li>
             <li>
                 <h2>Composition - Rena's Journal</h2>
