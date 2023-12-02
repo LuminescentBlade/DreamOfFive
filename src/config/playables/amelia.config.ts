@@ -23,5 +23,5 @@ export const Amelia: IDoFCharacter = {
     weapons: {
         [DoFWeaponType.Anima]: 71,
     },
-    affinity: DoFAffinities.Ice
+    affinity: DoFAffinities.Wind
 };
