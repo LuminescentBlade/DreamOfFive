@@ -1,5 +1,5 @@
 import { RenderUnit } from "./render-unit.class";
-import { IRenderCharacterConfig, IUnit } from "./spritesheet.interfaces";
+import { IRenderCharacterConfig, IUnit } from "../models/spritesheet.interfaces";
 
 // TODO: have a DoFCharacter class that extends this
 
@@ -60,7 +60,7 @@ export class RenderCharacter extends RenderUnit {
             return;
         }
         const validStates = [];
-        let checkByLatest = (config: number | number[], type: string) => {
+        const checkByLatest = (config: number | number[], type: string) => {
             if (typeof config === 'number') {
                 if (config <= chapter) {
                     validStates.push({ value: type, chapter: config });
@@ -150,11 +150,11 @@ export class RenderCharacter extends RenderUnit {
         // consolidate unit type vs chapter based conditionals and then apply them all
         // chapter based override unit type based if chapter > placement.chapter, if equal or less then unit type
         let newDisplayName, swapPortrait: string, ogPortraitName, className;
-        let customConditionalCache: any = {};
+        const customConditionalCache: any = {};
         if (unit.conditional) {
-            let chapterConditionals = unit.conditional.chapter && unit.conditional.chapter.chapter! <= chapter ? unit.conditional.chapter : null;
+            const chapterConditionals = unit.conditional.chapter && unit.conditional.chapter.chapter! <= chapter ? unit.conditional.chapter : null;
             // @ts-ignore
-            let typeConditionals = unit.conditional[placement.value];
+            const typeConditionals = unit.conditional[placement.value];
             if (chapterConditionals && typeConditionals) {
                 let primary: any, secondary: any;
                 if (chapterConditionals.chapter! > placement.chapter) {
@@ -173,7 +173,7 @@ export class RenderCharacter extends RenderUnit {
                 });
 
             } else if (chapterConditionals || typeConditionals) {
-                let conditionals = chapterConditionals ?? typeConditionals;
+                const conditionals = chapterConditionals ?? typeConditionals;
                 newDisplayName = conditionals.displayName;
                 swapPortrait = conditionals.swapPortrait;
                 ogPortraitName = conditionals.ogPortraitName;
@@ -196,7 +196,7 @@ export class RenderCharacter extends RenderUnit {
         }
         if (unit.alt) {
             alts = Object.entries(unit.alt)
-                .filter(([key, value]) => key != swapPortrait && (!value.chapter || value.chapter <= chapter))
+                .filter(([key, value]) => key !== swapPortrait && (!value.chapter || value.chapter <= chapter))
                 .map(([key, value]) => ({ ...value, name: key, path: this.urls.alts[key], displayName: `${unit.displayName} ${value.displayName}` }));
         }
         if (defaultSwap) {

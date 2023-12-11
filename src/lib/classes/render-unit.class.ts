@@ -1,4 +1,4 @@
-import { IRenderItemConfig, IUnit } from "./spritesheet.interfaces";
+import { IRenderItemConfig, IUnit } from "../models/spritesheet.interfaces";
 
 export class RenderUnit {
 

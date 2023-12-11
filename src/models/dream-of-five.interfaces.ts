@@ -1,5 +1,5 @@
 import { DoFArtist, DoFClasses, DoFNationality, DoFWeaponType } from "./enums";
-import { IAltConfig, IRenderCharacterConfig, IRenderItemConfig, IRouteConfig, IUnit } from "./spritesheet.interfaces";
+import { IAltConfig, IRenderCharacterConfig, IRenderItemConfig, IRouteConfig, IUnit } from "../lib/models/spritesheet.interfaces";
 
 export interface IDoFUnit extends IUnit {
     artists: DoFArtist[];

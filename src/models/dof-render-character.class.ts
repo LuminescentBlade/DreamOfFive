@@ -1,8 +1,8 @@
 
 import { IDoFNonPlayableConfig, IDoFCharacter, IRenderDoFConfig } from "./dream-of-five.interfaces";
 import { DoFUnitState } from "./enums";
-import { RenderCharacter } from "./render-character.class";
-import { IRenderCharacterConfig } from "./spritesheet.interfaces";
+import { RenderCharacter } from "../lib/classes/render-character.class";
+import { IRenderCharacterConfig } from "../lib/models/spritesheet.interfaces";
 
 export class DoFRenderCharacter extends RenderCharacter {
     constructor(private dofCharacter: IDoFCharacter, private rules: any) {

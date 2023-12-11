@@ -10,7 +10,7 @@
     "build:gh": "export BUILD_CONFIG=gh && npm run build:base",
     "start": "next start",
     "lint": "next lint",
-    "ghpages": "bash deploy.sh"
+    "copy-lib": "bash copy-lib.sh"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
