@@ -128,7 +128,7 @@ export default function Credits() {
                         <h3>
                             Questant
                         </h3>
-                        Luminescent Blade, BwdYeti, Nuramon, ErrantShephard, L95
+                        Luminescent Blade, BwdYeti, Nuramon, ErrantShephard, L95 (battlesprite), AstraLunaSol (mapsprite)
                     </li>
                     <li>
                         <h3>
