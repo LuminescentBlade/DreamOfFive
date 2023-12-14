@@ -1,10 +1,8 @@
-import { IRenderItem } from "@/src/models/interfaces";
-
+import { IRenderItem } from "./../../models/spritesheet.interfaces";
 import styles from './index.module.scss';
-import { DoFArtistConfig } from "@/src/config/artists.config";
-import { DoFUnitState } from "@/src/models/enums";
-export default function UnitSheetSprite({ type, characterDef, expanded, onExpand, onCharacterClick }: {
-    type: DoFUnitState, characterDef: IRenderItem, expanded?: boolean, onExpand?: () => void,
+
+export function UnitSheetSprite({ type, characterDef, expanded, artistConfig, onExpand, onCharacterClick}: {
+    type: string, characterDef: IRenderItem, artistConfig: any, expanded?: boolean, onExpand?: () => void,
     onCharacterClick?: () => void
 }) {
     return (<div className={styles.wrapper}>
@@ -19,7 +17,7 @@ export default function UnitSheetSprite({ type, characterDef, expanded, onExpand
                     <ul>
                         {characterDef.artists.map(artist => (
                             // @ts-ignore
-                            <li key={artist}>{DoFArtistConfig[artist].name}</li>
+                            <li key={artist}>{artistConfig[artist].name}</li>
                         ))}
                     </ul>
                 </div>

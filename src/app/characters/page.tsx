@@ -1,7 +1,7 @@
 'use client';
 
 import { DoFArtist, DoFRoute, DoFUnitState } from '@/src/models/enums';
-import UnitSheet from '@/src/components/unit-sheet';
+import { UnitSheet } from '@/src/lib/components';
 import styles from './page.module.scss'
 import { DoFArtistConfig } from '@/src/config/artists.config';
 import { useState } from 'react';
@@ -156,7 +156,7 @@ export default function CharacterPage() {
         }
     }
 
-    function getClickFunction(characterData: IRenderDoFConfig) {        
+    function getClickFunction(characterData: IRenderDoFConfig) {
         if (characterData.displayProfile) {
             return () => {
                 updateCharacterPage({ ...characterPageState, activeCharacter: characterData });
@@ -197,11 +197,11 @@ export default function CharacterPage() {
                     </select>
                 </div>
             </div> : ''}
-            {characterPageState.activeCharacter ? <CharacterDetails 
-                characterConfig={characterPageState.activeCharacter} 
-                clear={clearCharacter} 
+            {characterPageState.activeCharacter ? <CharacterDetails
+                characterConfig={characterPageState.activeCharacter}
+                clear={clearCharacter}
                 experimentalFeatures={showFullData} /> : ''}
-            <UnitSheet data={characterPageState.unitSheetData} expansionState={characterPageState.expandedPortraits} toggleCharacter={toggleCharacter} chapter={currentChapterLimit} getOnClick={getClickFunction} />
+            <UnitSheet data={characterPageState.unitSheetData} expansionState={characterPageState.expandedPortraits} toggleCharacter={toggleCharacter} artistConfig={DoFArtistConfig} getOnClick={getClickFunction} />
             {/* {
                 !isProd ? <div style={{ width: 'fit-content', margin: '12px auto', textAlign: 'center' }}>
                     {showFullData ? '' : <button style={{ padding: '12px', height: '40px' }} onClick={toggleProd}>Toggle Production Sheet</button>}
