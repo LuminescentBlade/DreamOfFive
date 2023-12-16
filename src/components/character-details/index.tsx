@@ -1,15 +1,12 @@
 import { IDoFCharacter } from "@/src/models/dream-of-five.interfaces";
 import { useState } from "react";
 import styles from './index.module.scss';
-import Overlay from "../overlay";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmark, faArrowsUpDownLeftRight } from '@fortawesome/free-solid-svg-icons'
-import Toggle from "../toggle";
 import CharacterProfile from "../unit-profile";
 import PlayerAverages from "../player-averages";
 import { DoFUnitState } from "@/src/models/enums";
 import { IRenderCharacterConfig } from "@/src/lib/models/spritesheet.interfaces";
 import NonPlayableStats from "../boss-layout";
+import CharacterOverlay from "../character-overlay";
 
 enum CharacterDetailState {
     Stat = 'stat',
@@ -151,7 +148,7 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
         </div>
     }
 
-    function renderContent(state: CharacterDetailState) {
+    function renderContent(state: string) {
         switch (state) {
             case CharacterDetailState.Gallery:
                 return '';
@@ -171,7 +168,7 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
 
 
 
-    function renderTabs() {
+    function renderTabs(currentState: string, onTabSelect: (selectedState: string) => void) {
         if (!showStats && !showExtendedProfile && !showGallery && !showBossStats && !showNPCStats) {
             return '';
         }
@@ -179,8 +176,8 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
         const getSectionTab = (state: CharacterDetailState, label: string) =>
         (<li>
             <button
-                className={`button-wrapper ${widgetState.state === state ? styles.selectedTab : ''}`}
-                onClick={() => { setWidgetStateCaching({ ...widgetState, state }) }}
+                className={`button-wrapper ${currentState === state ? styles.selectedTab : ''}`}
+                onClick={() => onTabSelect(state)}
             >{label}
             </button>
         </li>);
@@ -225,36 +222,45 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
         </ul>;
     }
 
-    return <>
-        {widgetState.enableCompareMode ? '' : <Overlay onClick={clearItem} />}
-        <div className={styles.characterDetails} style={widgetState.dragStateStyle}>
-            <div className={styles.controls}>
-                {widgetState.enableCompareMode ? <button className={`${styles.controlButton} button-wrapper`} onMouseDown={mouseDown}>
-                    <FontAwesomeIcon icon={faArrowsUpDownLeftRight} size="xl" />
-                </button> : ''}
+    // return <>
+    //     {widgetState.enableCompareMode ? '' : <Overlay onClick={clearItem} />}
+    //     <div className={styles.characterDetails} style={widgetState.dragStateStyle}>
+    //         <div className={styles.controls}>
+    //             {widgetState.enableCompareMode ? <button className={`${styles.controlButton} button-wrapper`} onMouseDown={mouseDown}>
+    //                 <FontAwesomeIcon icon={faArrowsUpDownLeftRight} size="xl" />
+    //             </button> : ''}
 
-                <button className={`${styles.controlButton} button-wrapper`} onClick={clearItem}>
-                    <FontAwesomeIcon icon={faXmark} size="2x" />
-                </button>
-            </div>
-            <div className={styles.content}>
-                {renderSideProfile()}
-                <div className={styles.data}>
-                    {renderTabs()}
-                    <div className={styles.dataContent}>
-                        {
-                            renderContent(widgetState.state)
-                        }
-                    </div>
-                </div>
-            </div>
-            {<div className={styles.footer}>
-                {
-                    <div className={'flex-line-container'}>
-                        <label>Toggle Comparison Mode</label><Toggle active={widgetState.enableCompareMode} onStateChange={setComparisonMode} />
-                    </div>
-                }
-            </div>}
-        </div>
-    </>
+    //             <button className={`${styles.controlButton} button-wrapper`} onClick={clearItem}>
+    //                 <FontAwesomeIcon icon={faXmark} size="2x" />
+    //             </button>
+    //         </div>
+    //         <div className={styles.content}>
+    //             {renderSideProfile()}
+    //             <div className={styles.data}>
+    //                 {renderTabs()}
+    //                 <div className={styles.dataContent}>
+    //                     {
+    //                         renderContent(widgetState.state)
+    //                     }
+    //                 </div>
+    //             </div>
+    //         </div>
+    //         {<div className={styles.footer}>
+    //             {
+    //                 <div className={'flex-line-container'}>
+    //                     <label>Toggle Comparison Mode</label><Toggle active={widgetState.enableCompareMode} onStateChange={setComparisonMode} />
+    //                 </div>
+    //             }
+    //         </div>}
+    //     </div>
+    // </>
+
+    return <CharacterOverlay
+        clear={clear}
+        experimentalFeatures={experimentalFeatures}
+        renderContent={renderContent}
+        renderTabs={renderTabs}
+        renderSideProfile={renderSideProfile}
+        initialState={defaultView!}
+    ></CharacterOverlay>
 }
