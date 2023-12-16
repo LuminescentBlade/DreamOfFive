@@ -1,4 +1,4 @@
-.characterDetails {
+.characterOverlay {
   --data-size: 45px;
   --row-label-size: 69px;
   position: fixed;
@@ -36,34 +36,6 @@
   min-width: calc(8 * var(--data-size) + var(--row-label-size));
 }
 
-.profile,
-.profileData {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.profileData {
-  text-align: center;
-}
-
-.profile {
-  width: 180px;
-  padding: 12px;
-
-  h2 {
-    margin-top: 12px;
-    font-size: 2.4rem;
-    color: var(--dof-color-header);
-  }
-}
-
-.classText {
-  color: var(--dof-color-subheader);
-  font-weight: 700;
-  text-transform: capitalize;
-}
-
 .controlButton {
   path {
     fill: var(--dof-button-icon-color);
@@ -73,57 +45,6 @@
       fill: var(--dof-color1);
     }
   }
-}
-
-.portraitWrapper{
-  position: relative;
-  width: 100%;
-  height: fit-content;
-  display: flex;
-  justify-content: center;
-  .affinity{
-    position: absolute;
-    height: 16px;
-    width: 16px;
-    background-size: 16px;
-    top: 0;
-    right: 0;
-  }
-}
-
-.altNames {
-  height: fit-content;
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  justify-content: center;
-  align-items: center;
-  padding: 4px;
-  color: var(--dof-color1);
-  gap: 6px;
-  font-size: 0.9em;
-  li {
-    display: flex;
-    align-items: center;
-  }
-}
-
-.tabs {
-  display: flex;
-  border-bottom: 2px solid var(--dof-header-border);
-  list-style: none;
-  padding: 6px;
-  gap: 18px;
-  button {
-    color: var(--dof-color4);
-    &:hover {
-      color: var(--dof-color1);
-    }
-  }
-}
-
-.selectedTab {
-  font-weight: 700;
 }
 
 .blurb {
@@ -137,26 +58,18 @@
   .content {
     flex-direction: column;
   }
-  .profile {
-    width: 100%;
-    flex-direction: row;
-    gap: 12px;
-  }
   .dataContent {
     min-width: unset;
   }
 }
 @media screen and (max-width: 600px) {
-  .characterDetails {
+  .characterOverlay {
     --data-size: 35px;
     --row-header-size: 45px;
   }
-  .characterDetails {
+  .characterOverlay {
     max-width: 95vw;
     max-height: 95vh;
-  }
-  .subtitle {
-    font-size: 1.3rem;
   }
 }
 

@@ -18,24 +18,32 @@ let cachedState: any = {
 export default function CharacterOverlay(
     {
         clear,
-        experimentalFeatures,
         allowComparisonmode,
         renderSideProfile,
         renderTabs,
         renderContent, 
-        initialState
+        initialState,
+        validViews
     }: {        
         clear: () => void,
-        experimentalFeatures?: any,
         allowComparisonmode?: boolean,
         renderSideProfile: () => ReactNode,
         renderTabs: (state: string, onClick: (s: string)=>void) => ReactNode,
         renderContent: (state: string) => ReactNode
-        initialState: string
+        initialState: string,
+        validViews?: Set<string>
 
     }) {
 
     cachedState.state = cachedState.state ?? initialState;
+
+    if (cachedState.resetState) {
+        cachedState.state = initialState;
+        cachedState.resetState = false;
+    } else if (validViews && !validViews.has(cachedState.state)) {
+        cachedState.state = initialState;
+    }
+
     const allowCompare = allowComparisonmode ?? true;
 
     const [widgetState, setWidgetState] = useState(cachedState);
@@ -78,7 +86,7 @@ export default function CharacterOverlay(
 
     return <>
         {widgetState.enableCompareMode ? '' : <Overlay onClick={clearItem} />}
-        <div className={styles.characterDetails} style={widgetState.dragStateStyle}>
+        <div className={styles.characterOverlay} style={widgetState.dragStateStyle}>
             <div className={styles.controls}>
                 {widgetState.enableCompareMode ? <button className={`${styles.controlButton} button-wrapper`} onMouseDown={mouseDown}>
                     <FontAwesomeIcon icon={faArrowsUpDownLeftRight} size="xl" />
