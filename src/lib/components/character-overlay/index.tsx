@@ -1,9 +1,9 @@
 import { ReactNode, useState } from "react";
 import styles from './index.module.scss';
-import Overlay from "../overlay";
+import { Overlay } from "../overlay";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faArrowsUpDownLeftRight } from '@fortawesome/free-solid-svg-icons'
-import Toggle from "../toggle";
+import { Toggle } from "../toggle";
 
 let offset = { left: 0, top: 0 };
 let isDragging = false;
@@ -15,20 +15,20 @@ let cachedState: any = {
 };
 
 
-export default function CharacterOverlay(
+export function CharacterOverlay(
     {
         clear,
         allowComparisonmode,
         renderSideProfile,
         renderTabs,
-        renderContent, 
+        renderContent,
         initialState,
         validViews
-    }: {        
+    }: {
         clear: () => void,
         allowComparisonmode?: boolean,
         renderSideProfile: () => ReactNode,
-        renderTabs: (state: string, onClick: (s: string)=>void) => ReactNode,
+        renderTabs: (state: string, onClick: (s: string) => void) => ReactNode,
         renderContent: (state: string) => ReactNode
         initialState: string,
         validViews?: Set<string>
@@ -107,7 +107,7 @@ export default function CharacterOverlay(
                     </div>
                 </div>
             </div>
-            { allowCompare ? <div className={styles.footer}>
+            {allowCompare ? <div className={styles.footer}>
                 {
                     <div className={'flex-line-container'}>
                         <label>Toggle Comparison Mode</label><Toggle active={widgetState.enableCompareMode} onStateChange={setComparisonMode} />

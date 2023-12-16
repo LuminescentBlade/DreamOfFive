@@ -1,12 +1,11 @@
 'use client';
 
 import Link from "next/link";
-import Toggle from "../toggle";
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faClose, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import styles from "./index.module.scss";
-import Overlay from "../overlay";
+import { Overlay, Toggle } from "@/src/lib/components";
 
 let init = false;
 export default function Header() {

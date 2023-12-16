@@ -5,7 +5,7 @@ import PlayerAverages from "../player-averages";
 import { DoFUnitState } from "@/src/models/enums";
 import { IRenderCharacterConfig } from "@/src/lib/models/spritesheet.interfaces";
 import NonPlayableStats from "../boss-layout";
-import CharacterOverlay from "../character-overlay";
+import { CharacterOverlay } from "@/src/lib/components";
 
 enum CharacterDetailState {
     Stat = 'stat',
