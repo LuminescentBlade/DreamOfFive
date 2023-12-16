@@ -33,7 +33,7 @@ export const Rena: IDoFCharacter =  {
         luk: 9,
         def: 6,
         res: 3,
-        con: 7
+        con: 8
     },
     growths:{
         hp: 70,
