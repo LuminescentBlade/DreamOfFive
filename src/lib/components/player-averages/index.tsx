@@ -1,28 +1,41 @@
-import { DoFPromotedClasses, DoFUnpromotedClasses } from "@/src/config/classes.config";
-import { IDoFCharacter, IDoFStats } from "@/src/models/dream-of-five.interfaces";
 import { useState } from "react";
 import styles from './index.module.scss';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons'
-import WeaponRanksDisplay from "../weapon-ranks";
-
-enum CharacterDetailState {
-    Stat = 'stat',
-    ExtendedProfile = 'profile',
-    Gallery = 'gallery'
-};
+import { WeaponRanksDisplay } from "../weapon-ranks";
+import { IPlayableUnitStats, IStats } from "../../models/units.interfaces";
 
 let cachedState: any = {
-    state: CharacterDetailState.Stat,
     blossom: []
 };
 
 let currentCharacter: string | undefined;
 
-export default function PlayerAverages({ characterDef }: { characterDef: IDoFCharacter }) {
-    const BLOSSOM_LIMIT = 1;
-    const LEVEL_CAP = 20;
-
+export function PlayerAverages({
+    characterDef,
+    config
+}: {
+    characterDef: IPlayableUnitStats
+    config?: {
+        enableBlossomDew?: boolean,
+        blossomCap?: number,
+        blossomValue?: number,
+        totalWeaponTypes?: any,
+        displayWeaponIcons?: boolean,
+        promotedClasses: any,
+        unpromotedClasses: any,
+        levelCap?: number,
+        promotedLevelCap?: number,
+        promotionLevelGate?: number
+        // todo: FE4 style levels dont reset
+    }
+}) {
+    const enableBlossomDew = config?.enableBlossomDew ?? false;
+    const BLOSSOM_VALUE = config?.blossomValue ?? 5;
+    const BLOSSOM_LIMIT = config?.blossomCap ?? 1;
+    const LEVEL_CAP = config?.levelCap ?? 20;
+    const PROMOTED_LEVEL_CAP = config?.promotedLevelCap ?? LEVEL_CAP;
+    const PROMOTION_LEVEL_GATE = config?.promotionLevelGate ?? 10;
     if (currentCharacter != characterDef.name) {
         cachedState.blossom = [];
     }
@@ -39,20 +52,20 @@ export default function PlayerAverages({ characterDef }: { characterDef: IDoFCha
     }
 
     const unpromotedLevelFloor = (characterDef.level ?? 1);
-    let promoBonuses: IDoFStats | undefined = undefined;
-    let promotedLevelFloor: number, unpromotedCaps: IDoFStats, promotedCaps: IDoFStats;
+    let promoBonuses: IStats | undefined = undefined;
+    let promotedLevelFloor: number, unpromotedCaps: IStats, promotedCaps: IStats;
     if (characterDef.promotesTo) {
         promotedLevelFloor = 0;
         // @ts-ignore
-        const promotedClass = DoFPromotedClasses[characterDef.promotesTo];
+        const promotedClass = config?.promotedClasses[characterDef.promotesTo];
         // @ts-ignore
-        unpromotedCaps = DoFUnpromotedClasses[characterDef.class].caps;
+        unpromotedCaps = config?.unpromotedClasses[characterDef.class].caps;
         promoBonuses = promotedClass.promo;
         promotedCaps = promotedClass.caps;
     } else {
         promotedLevelFloor = (characterDef.level ?? 1);
         // @ts-ignore
-        promotedCaps = DoFPromotedClasses[characterDef.class]?.caps; // remove ? later 
+        promotedCaps = config?.promotedClasses[characterDef.class]?.caps; // remove ? later 
     }
 
     const blossomData = getBlossomLevels();
@@ -69,7 +82,7 @@ export default function PlayerAverages({ characterDef }: { characterDef: IDoFCha
         } else {
             const calculatedLevel = Math.min(value, LEVEL_CAP);
             const newData = { ...levelData, unpromotedLevel: calculatedLevel, unpromotedDisplay: calculatedLevel };
-            if (calculatedLevel < 10) {
+            if (calculatedLevel < PROMOTION_LEVEL_GATE) {
                 newData.promotedLevel = 0;
                 newData.promotedDisplay = 0;
             }
@@ -83,18 +96,18 @@ export default function PlayerAverages({ characterDef }: { characterDef: IDoFCha
         if (isNaN(value) || value < promotedLevelFloor) {
             setLevelData({ ...levelData, promotedDisplay: event.currentTarget.value });
         } else {
-            const calculatedLevel = Math.min(value, LEVEL_CAP);
+            const calculatedLevel = Math.min(value, PROMOTED_LEVEL_CAP);
             setLevelData({ ...levelData, promotedLevel: calculatedLevel, promotedDisplay: calculatedLevel });
         }
     }
 
-    function isPromoted() : boolean {
+    function isPromoted(): boolean {
         // this will evaluate to a boolean no matter what trust me ts lint
         // @ts-ignore
-        return (!promoBonuses || (levelData.unpromotedLevel && levelData.unpromotedLevel >= 10)) && levelData.promotedLevel > 0;
+        return (!promoBonuses || (levelData.unpromotedLevel && levelData.unpromotedLevel >= PROMOTION_LEVEL_GATE)) && levelData.promotedLevel > 0;
     }
 
-    function getDefaultLevelByCharacter(characterDef: IDoFCharacter) {
+    function getDefaultLevelByCharacter(characterDef: IPlayableUnitStats) {
         const unpromotedLevel = characterDef.promotesTo ? characterDef.level : undefined;
         const promotedLevel = characterDef.promotesTo ? 0 : characterDef.level ?? 0
         return {
@@ -140,7 +153,7 @@ export default function PlayerAverages({ characterDef }: { characterDef: IDoFCha
         const newBlossom = [...widgetState.blossom];
         const item = { ...newBlossom[index] };
         const minLevel = getBlossomLevelFloor(item.isLevelPromoted);
-        const calculatedLevel = Math.min(LEVEL_CAP, Math.max(calcValue, minLevel!));
+        const calculatedLevel = Math.min(item.isLevelPromoted ? PROMOTED_LEVEL_CAP : LEVEL_CAP, Math.max(calcValue, minLevel!));
         item.level = calculatedLevel;
         item.displayLevel = isNaNValue ? '' : value;
         newBlossom[index] = item;
@@ -186,12 +199,12 @@ export default function PlayerAverages({ characterDef }: { characterDef: IDoFCha
             }
         </div>
     }
-    function getStatInputBar(characterDef: IDoFCharacter) {
-        if (!characterDef.bases || !characterDef.growths) {
+    function getStatInputBar(characterDef: IPlayableUnitStats) {
+        if (!characterDef.stats || !characterDef.growths) {
             return;
         }
         return <div className={styles.levelControls}>
-            {characterDef.bases && characterDef.growths ?
+            {characterDef.stats && characterDef.growths ?
                 <div className={styles.levelInputs}>
                     {
                         promoBonuses && levelData.unpromotedLevel ?
@@ -203,7 +216,7 @@ export default function PlayerAverages({ characterDef }: { characterDef: IDoFCha
                             : ''
                     }
                     {
-                        !promoBonuses || (levelData.unpromotedLevel && levelData.unpromotedLevel >= 10) ?
+                        !promoBonuses || (levelData.unpromotedLevel && levelData.unpromotedLevel >= PROMOTION_LEVEL_GATE) ?
                             <div className={styles.levelInputGroup}>
                                 <label>Promoted</label>
                                 <input type="number" value={levelData.promotedDisplay} onChange={setPromotedLevel} />
@@ -214,7 +227,7 @@ export default function PlayerAverages({ characterDef }: { characterDef: IDoFCha
                 : ''
             }
             {
-                getBlossomWidget()
+                enableBlossomDew ? getBlossomWidget() : ''
             }
         </div>
     }
@@ -274,9 +287,9 @@ export default function PlayerAverages({ characterDef }: { characterDef: IDoFCha
     }
 
     function getStat(statKey: string) {
-        if (!characterDef.bases) return <td></td>;
+        if (!characterDef.stats) return <td></td>;
         let capped = false;
-        const base = characterDef.bases[statKey];
+        const base = characterDef.stats[statKey];
         let value = base;
         let growth = characterDef.growths ? (characterDef.growths[statKey] ?? 0) / 100 : 0;
         if (promoBonuses) { // unpromoted unit
@@ -328,17 +341,17 @@ export default function PlayerAverages({ characterDef }: { characterDef: IDoFCha
                         </tr>
                     </thead>
                     <tbody>
-                        {characterDef.bases ?
+                        {characterDef.stats ?
                             <tr>
                                 <th className='capitalize'>bases</th>
-                                {statKeys.map(s => <td key={s}>{characterDef.bases ? characterDef.bases[s] : ''}</td>)}
+                                {statKeys.map(s => <td key={s}>{characterDef.stats ? characterDef.stats[s] : ''}</td>)}
                             </tr>
                             : ''
                         }
                         {characterDef.growths ?
                             <tr>
                                 <th className={`capitalize ${styles[`growthsHeader${blossomData.currentLevelBlossomCount}`]}`}>growths</th>
-                                {statKeys.map(s => <td key={s} >{characterDef.growths && characterDef.growths[s] != null ? `${characterDef.growths[s] + 5 * blossomData.currentLevelBlossomCount}%` : '--'}</td>)}
+                                {statKeys.map(s => <td key={s} >{characterDef.growths && characterDef.growths[s] != null ? `${characterDef.growths[s] + BLOSSOM_VALUE * blossomData.currentLevelBlossomCount}%` : '--'}</td>)}
                             </tr>
                             : ''
                         }
@@ -349,7 +362,7 @@ export default function PlayerAverages({ characterDef }: { characterDef: IDoFCha
                             </tr>
                             : ''
                         }
-                        {characterDef.bases && characterDef.growths ?
+                        {characterDef.stats && characterDef.growths ?
                             <tr className={styles.avgs}>
 
                                 <th>Lv.{
@@ -370,7 +383,18 @@ export default function PlayerAverages({ characterDef }: { characterDef: IDoFCha
                     </tbody>
                 </table>
             </div>
-            <WeaponRanksDisplay characterDef={characterDef} isMasterSealed={isPromoted() && characterDef.promotesTo != null}/>
+            <WeaponRanksDisplay
+                characterDef={characterDef}
+                isMasterSealed={isPromoted() && characterDef.promotesTo != null}
+                config={{
+                    weaponTypes: config?.totalWeaponTypes,
+                    promoted: config?.promotedClasses,
+                    unpromoted: config?.unpromotedClasses,
+                    hideUnusable: config?.totalWeaponTypes === null,
+                    displayIcons: config?.displayWeaponIcons
+                }}
+
+            />
         </>
         return result;
     }

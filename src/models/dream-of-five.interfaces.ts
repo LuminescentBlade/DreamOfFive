@@ -1,5 +1,5 @@
 import { DoFArtist, DoFClasses, DoFNationality, DoFWeaponType } from "./enums";
-import { IAltConfig, IRenderCharacterConfig, IRenderItemConfig, IRouteConfig, IUnit } from "../lib/models/spritesheet.interfaces";
+import { IAltConfig, IRenderCharacterConfig, IRenderItemConfig, IRouteConfig, IUnit, INonPlayableUnitStats, IPlayableUnitStats } from "../lib/models";
 
 export interface IDoFUnit extends IUnit {
     artists: DoFArtist[];
@@ -16,21 +16,7 @@ export interface IDoFAlt extends IAltConfig {
     artists: DoFArtist[]
 }
 
-export interface IDoFNonPlayableConfig { 
-    chapter: number,
-    level?: number, // null means copy from base
-    route?: string, // null means all routes
-    class?: string, // null means copy from base
-    stats?: IDoFStats, // null means copy from base
-    ranks?: IDoFStats, // null means copy from base
-    weapons?: string[], // null means copy from base
-    optional?: boolean,
-    drops?: string,
-    stealable?: string,
-    talk?: boolean,
-    gameOver?: boolean // basically Farrell
-};
-export interface IDoFCharacter extends IDoFUnit {
+export interface IDoFCharacter extends IDoFUnit, IPlayableUnitStats {
     routeConfig: IRouteConfig
     secret?: boolean,
     altNames?: string[], // subtitles to profile names, displayed as secondary
@@ -42,14 +28,10 @@ export interface IDoFCharacter extends IDoFUnit {
     age?: number,
     //stats
     promotesTo?: DoFClasses,
-    bases?: IDoFStats,
-    growths?: IDoFStats,
-    level?: number,
     epithet?: string,
-    weapons?: IDoFStats,
     affinity?: string,
-    bossStats?: IDoFNonPlayableConfig[],
-    npcStats?: IDoFNonPlayableConfig[],
+    bossStats?: INonPlayableUnitStats[],
+    npcStats?: INonPlayableUnitStats[],
     // can make a more robust gating system but for now simiplicity works and is good
     gateProfileTabChapter?: number
     gateProfileDetailsChapter?: number
@@ -58,7 +40,7 @@ export interface IDoFStats {
     [stat: string]: number
 }
 
-export interface IRenderDoFConfig extends IRenderCharacterConfig{
+export interface IRenderDoFConfig extends IRenderCharacterConfig {
     displayProfile: boolean
 
 }

@@ -13,13 +13,13 @@ export const Eilene: IDoFCharacter = {
         }
     },
     height: 162,
-    bases: {
+    stats: {
         hp: 22, pow: 8, skl: 9, spd: 13, luk: 10, def: 6, res: 9, con: 7
     },
     level: 5,
     promotesTo: DoFClasses.SeraphKnight,
     growths: { hp: 60, pow: 35, skl: 45, spd: 70, luk: 50, def: 20, res: 60 },
-    weapons: {
+    ranks: {
         [DoFWeaponType.Sword]: 31
     },
     affinity: DoFAffinities.Light

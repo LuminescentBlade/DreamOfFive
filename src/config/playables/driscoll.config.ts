@@ -14,13 +14,13 @@ export const Driscoll: IDoFCharacter = {
         }
     },
     height: 181,
-    bases: {
+    stats: {
         hp: 30, pow: 13, skl: 10, spd: 8, luk: 9, def: 7, res: 0, con: 13
     },
     level: 6,
     promotesTo: DoFClasses.Warrior,
     growths: {hp: 95, pow: 45, skl: 45, spd: 55, luk: 40, def: 25, res: 10},
-    weapons: {
+    ranks: {
         [DoFWeaponType.Axe]: 31
     },
     affinity: DoFAffinities.Wind

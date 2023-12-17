@@ -19,13 +19,13 @@ export const Annelise: IDoFCharacter = {
     height: 173,
     age: 20,
     epithet: 'The Seeker',
-    bases: {
+    stats: {
         hp: 27, pow: 14, skl: 12, spd: 19, luk: 9, def: 9, res: 11, con: 8
     },
     level: 14,
     growths: { hp: 50, pow: 45, skl: 40, spd: 60, luk: 40, def: 35, res: 45 },
     promotesTo: DoFClasses.SeraphKnight,
-    weapons: {
+    ranks: {
         [DoFWeaponType.Sword]: 71,
     },
     affinity: DoFAffinities.Anima

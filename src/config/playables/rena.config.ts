@@ -25,7 +25,7 @@ export const Rena: IDoFCharacter =  {
     epithet: 'Leveller',
     height: 165,
     level: 2,
-    bases:{
+    stats:{
         hp: 21,
         pow: 7,
         skl: 13,
@@ -44,7 +44,7 @@ export const Rena: IDoFCharacter =  {
         def: 30,
         res: 20
     },
-    weapons: {
+    ranks: {
         [DoFWeaponType.Sword]: 31,
     },
     affinity: DoFAffinities.Anima

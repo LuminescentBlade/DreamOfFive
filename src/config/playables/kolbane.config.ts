@@ -15,14 +15,14 @@ export const Kolbane: IDoFCharacter = {
     },
     height: 183,
     age: 20,
-    bases: {
+    stats: {
         hp: 24, pow: 9, skl: 11, spd: 9, luk: 5, def: 8, res: 0, con: 10
     },
     level: 2,
     promotesTo: DoFClasses.Sentinel,
     growths: {hp: 75, pow: 55, skl: 35, spd: 55, luk: 40, def: 35, res: 15},
     epithet: 'Stalwart',
-    weapons: {
+    ranks: {
         [DoFWeaponType.Lance]: 31,
     },
     affinity: DoFAffinities.Wind

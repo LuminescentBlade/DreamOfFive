@@ -1,15 +1,13 @@
 'use client';
 
 import { DoFArtist, DoFRoute, DoFUnitState } from '@/src/models/enums';
-import { UnitSheet } from '@/src/lib/components';
+import { OptionSelector, UnitSheet } from '@/src/lib/components';
 import styles from './page.module.scss'
 import { DoFArtistConfig } from '@/src/config/artists.config';
 import { useState } from 'react';
 import { IDoFCharacterRenderer, IRenderCharacterConfig, IRenderDoFConfig, IRenderItemConfig } from '@/src/models/interfaces';
 import { DoFCharacters } from '@/src/config/characters.config';
 import { DoFChapters } from '@/src/config/chapters.config';
-import OptionSelector from '@/src/components/option-selector';
-import { download, renderCharactersByCountry } from './sheet_export';
 import { useSearchParams } from 'next/navigation'
 import CharacterDetails from '@/src/components/character-details';
 import { DoFRenderCharacter } from '@/src/models/dof-render-character.class';

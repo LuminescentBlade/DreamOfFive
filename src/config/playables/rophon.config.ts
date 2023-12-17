@@ -15,10 +15,10 @@ export const Ironside: IDoFCharacter = {
             player: 99
         }
     },
-    bases: { hp: 52, pow: 21, skl: 26, spd: 27, luk: 10, def: 15, res: 13, con: 10 },
+    stats: { hp: 52, pow: 21, skl: 26, spd: 27, luk: 10, def: 15, res: 13, con: 10 },
     growths: { hp: 255, pow: 140, skl: 235, spd: 210, luk: 225, def: 140, res: 130 },
     level: 19,
-    weapons: {
+    ranks: {
         [DoFWeaponType.Sword]: 251,
     }
 };

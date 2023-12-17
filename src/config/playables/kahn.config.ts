@@ -15,13 +15,13 @@ export const Kahn: IDoFCharacter = {
     epithet: 'The Wandering Eye',
     height: 164,
     age: 20, 
-    bases: {
+    stats: {
         hp: 27, pow: 12, skl: 13, spd: 11, luk: 8, def: 10, res: 0, con: 9
     },
     level: 9,
     promotesTo: DoFClasses.Sentinel,
     growths: {hp: 85, pow: 45, skl: 55, spd: 45, luk: 40, def: 40, res: 10},
-    weapons: {
+    ranks: {
         [DoFWeaponType.Lance]: 121,
     },
     affinity: DoFAffinities.Thunder

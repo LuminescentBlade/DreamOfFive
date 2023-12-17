@@ -14,12 +14,12 @@ export const ViShen: IDoFCharacter = {
         }
     },
     height: 172,
-    bases: { hp: 32, pow: 14, skl: 20, spd: 18, luk: 11, def: 8, res: 8, con: 8 },
+    stats: { hp: 32, pow: 14, skl: 20, spd: 18, luk: 11, def: 8, res: 8, con: 8 },
     level: 16,
     growths: { hp: 75, pow: 45, skl: 65, spd: 65, luk: 40, def: 20, res: 15 },
     promotesTo: DoFClasses.Swordmaster,
     epithet: 'The Seneschal',
-    weapons: {
+    ranks: {
         [DoFWeaponType.Sword]: 121 
     },
     affinity: DoFAffinities.Dark

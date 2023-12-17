@@ -2,11 +2,29 @@ export interface IStats {
     [stat: string]: number
 }
 
-export interface IPlayableUnitStats{
+
+export interface IPlayableUnitStats {
     name: string,
-    promotesTo?: string,
-    bases?: IStats,
     growths?: IStats,
+    class?: string,
+    promotesTo?: string,
+    stats?: IStats,
     level?: number,
-    weapons?: IStats,
+    ranks?: IStats,
 }
+
+export interface INonPlayableUnitStats {
+    chapter: number,
+    class?: string,
+    promotesTo?: string,
+    stats?: IStats,
+    level?: number,
+    ranks?: IStats,
+    route?: string, // null means all routes
+    weapons?: string[], // null means copy from base
+    optional?: boolean,
+    drops?: string,
+    stealable?: string,
+    talk?: boolean,
+    gameOver?: boolean
+};

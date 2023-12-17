@@ -14,13 +14,13 @@ export const Amelia: IDoFCharacter = {
     },
     height: 163,
     age: 17,
-    bases: {
+    stats: {
         hp: 21, pow: 8, skl: 7, spd: 7, luk: 5, def: 3, res: 8, con: 7
     },
     level: 1,
     growths: { hp: 55, pow: 55, skl: 45, spd: 50, luk: 45, def: 20, res: 40 },
     promotesTo: DoFClasses.Sage,
-    weapons: {
+    ranks: {
         [DoFWeaponType.Anima]: 71,
     },
     affinity: DoFAffinities.Wind

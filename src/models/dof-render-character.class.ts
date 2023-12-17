@@ -1,8 +1,9 @@
 
-import { IDoFNonPlayableConfig, IDoFCharacter, IRenderDoFConfig } from "./dream-of-five.interfaces";
+import { IDoFCharacter, IRenderDoFConfig } from "./dream-of-five.interfaces";
 import { DoFUnitState } from "./enums";
 import { RenderCharacter } from "../lib/classes/render-character.class";
 import { IRenderCharacterConfig } from "../lib/models/spritesheet.interfaces";
+import { INonPlayableUnitStats } from "./interfaces";
 
 export class DoFRenderCharacter extends RenderCharacter {
     constructor(private dofCharacter: IDoFCharacter, private rules: any) {
@@ -17,18 +18,18 @@ export class DoFRenderCharacter extends RenderCharacter {
         return renderData;
     }
 
-    mergeNPCData(data: IDoFNonPlayableConfig[], unitData: IDoFCharacter, chapter: number, route?: string) {
+    mergeNPCData(data: INonPlayableUnitStats[], unitData: IDoFCharacter, chapter: number, route?: string) {
         return data
             .filter(
-                (item: IDoFNonPlayableConfig) => item.chapter <= chapter &&
+                (item: INonPlayableUnitStats) => item.chapter <= chapter &&
                     (!item.route || !route || item.route === route)
             )
             .map(
-                (item: IDoFNonPlayableConfig) => ({
+                (item: INonPlayableUnitStats) => ({
                     ...item,
                     level: item.level ?? unitData.level,
-                    stats: item.stats ?? unitData.bases,
-                    ranks: item.ranks ?? unitData.weapons,
+                    stats: item.stats ?? unitData.stats,
+                    ranks: item.ranks ?? unitData.ranks,
                     class: item.class ?? unitData.class
                 })
             );

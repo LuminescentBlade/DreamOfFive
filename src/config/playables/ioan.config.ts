@@ -14,14 +14,14 @@ export const Ioan: IDoFCharacter = {
             enemy: 6
         }
     },
-    bases: {
+    stats: {
         hp: 32, pow: 14, skl: 11, spd: 10, luk: 7, def: 13, res: 0, con: 12
     },
     level: 10, 
     epithet: 'The Starbound',
     promotesTo: DoFClasses.DrakeKnight,
     growths: {hp: 85, pow: 50, skl: 50, spd: 40, luk: 25, def: 45, res: 10},
-    weapons: {
+    ranks: {
         [DoFWeaponType.Lance]: 71
     },
     affinity: DoFAffinities.Anima

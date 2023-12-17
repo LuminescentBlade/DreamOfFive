@@ -1,11 +1,14 @@
 import { IDoFCharacter } from "@/src/models/dream-of-five.interfaces";
 import styles from './index.module.scss';
 import CharacterProfile from "../unit-profile";
-import PlayerAverages from "../player-averages";
-import { DoFUnitState } from "@/src/models/enums";
+import { DoFRoute, DoFUnitState, DoFWeaponType } from "@/src/models/enums";
 import { IRenderCharacterConfig } from "@/src/lib/models/spritesheet.interfaces";
-import NonPlayableStats from "../boss-layout";
 import { CharacterOverlay } from "@/src/lib/components";
+import { PlayerAverages, NonPlayableStats } from "@/src/lib/components";
+import { INonPlayableUnitStats } from "@/src/lib";
+import { DoFChapters } from "@/src/config/chapters.config";
+import { DoFPromotedClasses, DoFUnpromotedClasses } from "@/src/config/classes.config";
+
 
 enum CharacterDetailState {
     Stat = 'stat',
@@ -14,8 +17,6 @@ enum CharacterDetailState {
     BossStats = 'boss_stats',
     NPCStats = 'npc_stats',
 };
-
-
 
 export default function CharacterDetails({ characterConfig, clear, experimentalFeatures }: {
     characterConfig: IRenderCharacterConfig,
@@ -28,7 +29,7 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
     const isEnemy = unitType === DoFUnitState.Enemy;
     const isNPC = unitType === DoFUnitState.NPC;
     // show hide items
-    const showStats = (isPlayer) && (characterDef.bases || characterDef.growths);
+    const showStats = (isPlayer) && (characterDef.stats || characterDef.growths);
     const showExtendedProfile = characterDef.height != null && (!characterDef.gateProfileTabChapter || characterDef.gateProfileTabChapter <= characterConfig.chapter);
     const showBossStats = characterDef.bossStats != null;
     const showNPCStats = characterDef.npcStats != null;
@@ -65,7 +66,15 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
         validViews.add(CharacterDetailState.Gallery);
         defaultView = defaultView ?? CharacterDetailState.Gallery;
     }
-  
+
+    function getChapterLabel(statConfig: INonPlayableUnitStats) {
+        const chapter = DoFChapters[statConfig.chapter];
+        const routeLabel = statConfig.chapter >= 7 && statConfig.chapter <= 14 ? (statConfig.route === DoFRoute.Musain ? 'A' : statConfig.route === DoFRoute.Onduris ? 'B' : '') : ''
+        return !chapter.title ?
+            `Chapter ${chapter.value}${routeLabel}` :
+            chapter.title.match(/\d/g) ? `Chapter ${chapter.title}` : chapter.title
+    }
+
     function renderSideProfile() {
         return <div className={styles.profile}>
             <div className={styles.portraitWrapper}>
@@ -96,24 +105,33 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
     }
 
     function renderContent(state: string) {
+        const unitDisplayConfig = {
+            promotedClasses: DoFPromotedClasses,
+            unpromotedClasses: DoFUnpromotedClasses,
+            totalWeaponTypes: DoFWeaponType,
+            displayWeaponIcons: true,
+            enableBlossomDew: true,
+            blossomCap: 1,
+            blossomValue: 5
+        };
         switch (state) {
             case CharacterDetailState.Gallery:
                 return '';
             case CharacterDetailState.ExtendedProfile:
                 return <CharacterProfile characterDef={characterDef} />;
             case CharacterDetailState.Stat:
-                return <PlayerAverages characterDef={characterDef} />;
+                return <PlayerAverages
+                    characterDef={characterDef}
+                    config={unitDisplayConfig}
+                />;
             case CharacterDetailState.NPCStats:
-                return <NonPlayableStats stats={characterDef.npcStats!} chapterLimit={characterConfig.chapter} />
+                return <NonPlayableStats stats={characterDef.npcStats!} chapterLimit={characterConfig.chapter} getChapterLabel={getChapterLabel} config={unitDisplayConfig} />
             case CharacterDetailState.BossStats:
-                return <NonPlayableStats stats={characterDef.bossStats!} chapterLimit={characterConfig.chapter} />
+                return <NonPlayableStats stats={characterDef.bossStats!} chapterLimit={characterConfig.chapter} getChapterLabel={getChapterLabel} config={unitDisplayConfig} />
             default:
                 return ''
         }
     }
-
-
-
 
     function renderTabs(currentState: string, onTabSelect: (selectedState: string) => void) {
         if (!showStats && !showExtendedProfile && !showGallery && !showBossStats && !showNPCStats) {
