@@ -1,5 +1,5 @@
-import { DoFNationality } from "@/src/models/enums";
-import { IDoFCharacterRenderer } from "@/src/models/interfaces";
+import { DoFNationality } from "@dof/src/models/enums";
+import { IDoFCharacterRenderer } from "@dof/src/models/interfaces";
 
 export function download(result: string) {
     const tempLink = document.createElement('a');

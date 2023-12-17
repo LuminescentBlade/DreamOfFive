@@ -1,4 +1,4 @@
-import { IDoFCharacter } from '@/src/models/dream-of-five.interfaces';
+import { IDoFCharacter } from '@dof/src/models/dream-of-five.interfaces';
 import styles from './index.module.scss';
 
 export default function CharacterProfile({ characterDef }: { characterDef: IDoFCharacter }) {

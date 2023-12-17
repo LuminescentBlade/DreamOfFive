@@ -1,5 +1,5 @@
-import { IDoFCharacter } from "@/src/models/dream-of-five.interfaces";
-import { DoFArtist, DoFClasses, DoFNationality, DoFAffinities, DoFRoute, DoFWeaponType } from "@/src/models/enums";
+import { IDoFCharacter } from "@dof/src/models/dream-of-five.interfaces";
+import { DoFArtist, DoFClasses, DoFNationality, DoFAffinities, DoFRoute, DoFWeaponType } from "@dof/src/models/enums";
 import { DoFWeapon } from "../weapons.config";
 
 export const Fleurre: IDoFCharacter = {

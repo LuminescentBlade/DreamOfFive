@@ -1,6 +1,6 @@
 
-import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeaponType } from "@/src/models/enums";
-import { IDoFCharacter } from "@/src/models/interfaces";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeaponType } from "@dof/src/models/enums";
+import { IDoFCharacter } from "@dof/src/models/interfaces";
 
 export const Cyrille: IDoFCharacter = {
     name: DoFCharKey.Cyrille,

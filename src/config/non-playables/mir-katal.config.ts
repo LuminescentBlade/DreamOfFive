@@ -1,5 +1,5 @@
-import { DoFArtist, DoFClasses, DoFNationality, DoFAffinities, DoFRoute, DoFWeaponType } from "@/src/models/enums";
-import { IDoFCharacter } from "@/src/models/interfaces";
+import { DoFArtist, DoFClasses, DoFNationality, DoFAffinities, DoFRoute, DoFWeaponType } from "@dof/src/models/enums";
+import { IDoFCharacter } from "@dof/src/models/interfaces";
 import { DoFWeapon } from "../weapons.config";
 
 const katalOndRouteConfig = {

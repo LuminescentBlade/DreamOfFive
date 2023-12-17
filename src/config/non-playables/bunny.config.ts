@@ -1,5 +1,5 @@
-import { IDoFCharacter } from "@/src/models/dream-of-five.interfaces";
-import { DoFArtist, DoFNationality } from "@/src/models/enums";
+import { IDoFCharacter } from "@dof/src/models/dream-of-five.interfaces";
+import { DoFArtist, DoFNationality } from "@dof/src/models/enums";
 
 export const Bunny: IDoFCharacter = {
     name: 'bunny',

@@ -1,17 +1,17 @@
 'use client';
 
-import { DoFArtist, DoFRoute, DoFUnitState } from '@/src/models/enums';
-import { OptionSelector, UnitSheet } from '@/src/lib/components';
+import { DoFArtist, DoFRoute, DoFUnitState } from '@dof/src/models/enums';
+import { OptionSelector, UnitSheet } from '@dof/src/lib/components';
 import styles from './page.module.scss'
-import { DoFArtistConfig } from '@/src/config/artists.config';
+import { DoFArtistConfig } from '@dof/src/config/artists.config';
 import { useState } from 'react';
-import { IDoFCharacterRenderer, IRenderCharacterConfig, IRenderDoFConfig, IRenderItemConfig } from '@/src/models/interfaces';
-import { DoFCharacters } from '@/src/config/characters.config';
-import { DoFChapters } from '@/src/config/chapters.config';
+import { IDoFCharacterRenderer, IRenderCharacterConfig, IRenderDoFConfig, IRenderItemConfig } from '@dof/src/models/interfaces';
+import { DoFCharacters } from '@dof/src/config/characters.config';
+import { DoFChapters } from '@dof/src/config/chapters.config';
 import { useSearchParams } from 'next/navigation'
-import CharacterDetails from '@/src/components/character-details';
-import { DoFRenderCharacter } from '@/src/models/dof-render-character.class';
-import { DoFGeneric } from '@/src/models/dof-render-generic.class';
+import CharacterDetails from '@dof/src/components/character-details';
+import { DoFRenderCharacter } from '@dof/src/models/dof-render-character.class';
+import { DoFGeneric } from '@dof/src/models/dof-render-generic.class';
 
 const defaultRenderValues = {
     prod: { chapter: 6, limit: 14.5 },

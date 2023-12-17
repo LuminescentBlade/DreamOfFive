@@ -1,5 +1,5 @@
-import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFRoute, DoFWeaponType } from "@/src/models/enums";
-import { IDoFCharacter } from "@/src/models/interfaces";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFRoute, DoFWeaponType } from "@dof/src/models/enums";
+import { IDoFCharacter } from "@dof/src/models/interfaces";
 import { DoFWeapon } from "../weapons.config";
 
 export const Nikita: IDoFCharacter = {

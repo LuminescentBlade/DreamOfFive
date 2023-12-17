@@ -1,5 +1,5 @@
-import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@/src/models/enums";
-import { IDoFCharacter } from "@/src/models/interfaces";
+import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "@dof/src/models/enums";
+import { IDoFCharacter } from "@dof/src/models/interfaces";
 
 export const Artemisia: IDoFCharacter = {
     name: DoFCharKey.Artemisia,

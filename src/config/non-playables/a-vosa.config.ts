@@ -1,4 +1,4 @@
-import { DoFArtist, DoFClasses, DoFNationality, DoFAffinities, DoFRoute, DoFWeaponType } from "@/src/models/enums";
+import { DoFArtist, DoFClasses, DoFNationality, DoFAffinities, DoFRoute, DoFWeaponType } from "@dof/src/models/enums";
 import { DoFWeapon } from "../weapons.config";
 
 export const AVosa = {

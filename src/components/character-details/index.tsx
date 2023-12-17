@@ -1,13 +1,13 @@
-import { IDoFCharacter } from "@/src/models/dream-of-five.interfaces";
+import { IDoFCharacter } from "@dof/src/models/dream-of-five.interfaces";
 import styles from './index.module.scss';
 import CharacterProfile from "../unit-profile";
-import { DoFRoute, DoFUnitState, DoFWeaponType } from "@/src/models/enums";
-import { IRenderCharacterConfig } from "@/src/lib/models/spritesheet.interfaces";
-import { CharacterOverlay } from "@/src/lib/components";
-import { PlayerAverages, NonPlayableStats } from "@/src/lib/components";
-import { INonPlayableUnitStats } from "@/src/lib";
-import { DoFChapters } from "@/src/config/chapters.config";
-import { DoFPromotedClasses, DoFUnpromotedClasses } from "@/src/config/classes.config";
+import { DoFRoute, DoFUnitState, DoFWeaponType } from "@dof/src/models/enums";
+import { IRenderCharacterConfig } from "@dof/src/lib/models/spritesheet.interfaces";
+import { CharacterOverlay } from "@dof/src/lib/components";
+import { PlayerAverages, NonPlayableStats } from "@dof/src/lib/components";
+import { INonPlayableUnitStats } from "@dof/src/lib";
+import { DoFChapters } from "@dof/src/config/chapters.config";
+import { DoFPromotedClasses, DoFUnpromotedClasses } from "@dof/src/config/classes.config";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faArrowsUpDownLeftRight, faMinus, faPlus } from '@fortawesome/free-solid-svg-icons'
 

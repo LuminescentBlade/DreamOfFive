@@ -1,4 +1,4 @@
-import { DoFCharKey } from "@/src/models/enums";
+import { DoFCharKey } from "@dof/src/models/enums";
 import { Rena } from "./rena.config";
 import { Garath } from "./garath.config";
 import { Adalheid } from "./adalheid.config";
