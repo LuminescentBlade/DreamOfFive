@@ -1,6 +1,17 @@
+$bg-color: var(--lb-char-overlay-bg-color, var(--dof-bg-color, #fff));
+$icon-button-color: var(
+  --lb-char-overlay-icon-button-color,
+  var(--dof-button-icon-color, #000)
+);
+$button-hover-color: var(
+  --lb-char-overlay-button-hover-color,
+  var(--dof-color1, #4ac)
+);
+$footer-border-color: var(
+  --lb-char-overlay-footer-border-color,
+  var(--dof-color3)
+);
 .characterOverlay {
-  --data-size: 45px;
-  --row-label-size: 69px;
   position: fixed;
   max-height: 80vh;
   max-width: 80vw;
@@ -9,7 +20,7 @@
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
-  background-color: var(--dof-bg-color);
+  background-color: $bg-color;
   border-radius: 4px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
   padding: 18px 18px 28px;
@@ -33,16 +44,19 @@
   padding: 12px;
   overflow: auto;
   box-sizing: content-box;
-  min-width: calc(8 * var(--data-size) + var(--row-label-size));
+  min-width: calc(
+    var(--lb-num-stat-items, 8) * var(--lb-averages-data-size) +
+      var(--lb-averages-row-label-size)
+  );
 }
 
 .controlButton {
   path {
-    fill: var(--dof-button-icon-color);
+    fill: $icon-button-color;
   }
   &:hover {
     path {
-      fill: var(--dof-color1);
+      fill: $button-hover-color;
     }
   }
 }
@@ -64,17 +78,13 @@
 }
 @media screen and (max-width: 600px) {
   .characterOverlay {
-    --data-size: 35px;
-    --row-header-size: 45px;
-  }
-  .characterOverlay {
     max-width: 95vw;
     max-height: 95vh;
   }
 }
 
 .footer {
-  border-top: 1px solid var(--dof-color3);
+  border-top: 1px solid $footer-border-color;
   padding-top: 12px;
   display: flex;
   justify-content: flex-end;

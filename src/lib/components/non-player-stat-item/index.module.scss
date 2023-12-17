@@ -1,5 +1,20 @@
+$border-color: var(--lb-npc-stat-border-color, var(--dof-color1, #000));
+$header-border-color: var(
+  --lb-npc-stat-header-border-color,
+  var(--dof-color3, #000)
+);
+$class-color: var(--lb-npc-stat-class-color, var(--dof-color1, #000));
+$talk-color: var(--lb-npc-stat-talk-color, var(--dof-color3, #000));
+$optional-color: var(--lb-npc-stat-optional-color, var(--dof-color4, #555));
+$gameover-color: var(--lb-npc-stat-gameover-color, var(--dof-red, #f00));
+$stat-label-color: var(--lb-npc-stat-stat-label-color, var(--dof-color4, #000));
+$weapon-border-color: var(
+  --lb-npc-stat-weapon-border-color,
+  var(--dof-color3, #000)
+);
+
 .bossBox {
-  border: 1px solid var(--dof-color1);
+  border: 1px solid $border-color;
   padding: 6px;
 }
 .headerRow {
@@ -7,7 +22,7 @@
   align-items: center;
   justify-content: space-between;
   padding-bottom: 6px;
-  border-bottom: 1px solid var(--dof-color3);
+  border-bottom: 1px solid $header-border-color;
   h3 {
     padding: 0;
     margin: 0;
@@ -17,7 +32,7 @@
 .class {
   display: inline-block;
   text-transform: capitalize;
-  color: var(--dof-color1);
+  color: $class-color;
 }
 .subTitle {
   font-size: 1.3rem;
@@ -39,18 +54,18 @@
 }
 
 .talk {
-  border: 1px solid var(--dof-color3);
-  color: var(--dof-color3);
+  border: 1px solid $talk-color;
+  color: $talk-color;
 }
 
 .optional {
-  border: 1px solid var(--dof-color4);
-  color: var(--dof-color4);
+  border: 1px solid $optional-color;
+  color: $optional-color;
 }
 
 .gameOver {
-  border: 1px solid var(--dof-red);
-  color: var(--dof-red);
+  border: 1px solid $gameover-color;
+  color: $gameover-color;
 }
 
 .stats {
@@ -66,12 +81,12 @@
   }
   .statLabel {
     font-weight: bold;
-    color: var(--dof-color4);
+    color: $stat-label-color;
   }
 }
 
 .weapons {
-  border-top: 1px solid var(--dof-color3);
+  border-top: 1px solid $weapon-border-color;
   padding-top: 3px;
   display: flex;
   list-style: none;

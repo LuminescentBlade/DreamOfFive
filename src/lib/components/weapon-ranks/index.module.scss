@@ -1,3 +1,4 @@
+$shadow-color: var(--lb-weapon-rank-shadow, var(--dof-bg-color, rgba(0,0,0,0.5)));
 .weaponList{
     list-style: none;
     display: flex;
@@ -38,6 +39,6 @@
     transform: translateX(-50%);
     white-space: nowrap;
     font-weight: bold;
-    text-shadow: 0 0 5px var(--dof-bg-color);
+    text-shadow: 0 0 5px $shadow-color;
 }
 
