@@ -16,9 +16,9 @@ export const Menida: IDoFCharacter = {
     height: 168,
     level: 4,
     affinity: DoFAffinities.Fire,
-    bases: { hp: 35, pow: 18, skl: 16, spd: 16, luk: 30, def: 11, res: 8, con: 9 },
+    stats: { hp: 35, pow: 18, skl: 16, spd: 16, luk: 30, def: 11, res: 8, con: 9 },
     epithet: "Twice Born",
-    weapons: {
+    ranks: {
         [DoFWeaponType.Light]: 181,
         [DoFWeaponType.Dark]: 181,
     },

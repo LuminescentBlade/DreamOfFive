@@ -16,13 +16,13 @@ export const Sileth: IDoFCharacter = {
         }
     },
     height: 159,
-    bases: {
+    stats: {
         hp: 25, pow: 10, skl: 11, spd: 13, luk: 9, def: 8, res: 13, con: 8
     },
     level: 10,
     growths: {hp: 75, pow: 35, skl: 50, spd: 55, luk: 30, def: 25, res: 60},
     promotesTo: DoFClasses.Sage,
-    weapons: {
+    ranks: {
         [DoFWeaponType.Anima]: 71
     },
     affinity: DoFAffinities.Ice

@@ -15,13 +15,13 @@ export const Chester: IDoFCharacter = {
     height: 166,
     age: 19,
     epithet: 'The Atoner',
-    bases:{
+    stats:{
         hp: 24, pow: 8, skl: 9, spd: 14, luk: 9, def: 6, res: 0, con: 6
     }, 
     level: 3,
     promotesTo: DoFClasses.Rogue,
     growths: {hp: 75, pow: 40, skl: 55, spd: 65, luk: 40, def: 35, res: 5},
-    weapons: {
+    ranks: {
         [DoFWeaponType.Sword]: 31,
     },
     affinity: DoFAffinities.Fire

@@ -15,11 +15,11 @@ export const Cyrille: IDoFCharacter = {
         }
     },
     age: 23,
-    bases: { hp: 28, pow: 7, skl: 8, spd: 11, luk: 5, def: 8, res: 0, con: 9 },
+    stats: { hp: 28, pow: 7, skl: 8, spd: 11, luk: 5, def: 8, res: 0, con: 9 },
     level: 3,
     growths: { hp: 110, pow: 35, skl: 35, spd: 60, luk: 30, def: 45, res: 20 },
     promotesTo: DoFClasses.Paladin,
-    weapons: {
+    ranks: {
         [DoFWeaponType.Sword]: 31,
         [DoFWeaponType.Lance]: 31
     },

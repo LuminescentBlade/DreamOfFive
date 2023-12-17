@@ -28,14 +28,14 @@ export const Arcus: IDoFCharacter = {
         }
     },
     height: 185,
-    bases: {
+    stats: {
         hp: 32, pow: 14, skl: 10, spd: 9, luk: 7, def: 12, res: 3, con: 13
     },
     level: 10,
     age: 19,
     promotesTo: DoFClasses.Juggernaut,
     growths: { hp: 80, pow: 65, skl: 45, spd: 35, luk: 35, def: 45, res: 25 },
-    weapons: {
+    ranks: {
         [DoFWeaponType.Axe]: 71,
     },
     affinity: DoFAffinities.Dark

@@ -1,5 +1,5 @@
 import styles from './index.module.scss'
-export default function OptionSelector({ options, selection, onSelect }: {
+export function OptionSelector({ options, selection, onSelect }: {
     options: string[] | { value: string, label: string }[],
     selection: string,
     onSelect: (value: any) => void

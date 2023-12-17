@@ -13,13 +13,13 @@ export const Tricia: IDoFCharacter =   {
         }
     },
     height: 152,
-    bases: {
+    stats: {
         hp: 20, pow: 7, skl: 6, spd: 5, luk: 7, def: 4, res: 2, con: 6
     }, 
     level: 1,
     promotesTo: DoFClasses.Blademaiden,
     growths: {hp: 50, pow: 55, skl: 45, spd: 70, luk: 85, def: 35, res: 40},
-    weapons: {
+    ranks: {
         [DoFWeaponType.Sword]: 1,
     },
     affinity: DoFAffinities.Anima

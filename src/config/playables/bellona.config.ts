@@ -18,13 +18,13 @@ export const Bellona: IDoFCharacter = {
     },
     age: 21,
     height: 165,
-    bases: {
+    stats: {
         hp: 31, pow: 15, skl: 10, spd: 13, luk: 14, def: 12, res: 0, con: 10
     },
     level: 12,
     growths: { hp: 80, pow: 65, skl: 40, spd: 45, luk: 50, def: 35, res: 5 },
     promotesTo: DoFClasses.DrakeKnight,
-    weapons: {
+    ranks: {
         [DoFWeaponType.Lance]: 71,
     },
     affinity: DoFAffinities.Fire

@@ -13,14 +13,14 @@ export const Gabriel: IDoFCharacter = {
         }
     },
     height: 172,
-    bases: {
+    stats: {
         hp: 27, pow: 13, skl: 8, spd: 8, luk: 6, def: 6, res: 11, con: 10
     },
     level: 7,
     epithet: 'The Prestige',
     promotesTo: DoFClasses.Sorcerer,
     growths: {hp: 60, pow: 65, skl: 45, spd: 35, luk: 35, def: 25, res: 55},
-    weapons: {
+    ranks: {
         [DoFWeaponType.Dark]: 71,
     },
     affinity: DoFAffinities.Ice

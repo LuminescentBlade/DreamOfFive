@@ -1,17 +1,21 @@
-import { IDoFNonPlayableConfig, IDoFCharacter } from '@/src/models/dream-of-five.interfaces';
 import styles from './index.module.scss';
-import WeaponRanksDisplay from '../weapon-ranks';
-import { DoFChapters } from '@/src/config/chapters.config';
-import { DoFRoute } from '@/src/models/enums';
+import { WeaponRanksDisplay } from '../weapon-ranks';
+import { INonPlayableUnitStats } from '../../models';
 
-export default function NonPlayerStatItem({ statConfig }: { statConfig: IDoFNonPlayableConfig}) {
+export function NonPlayerStatItem({ 
+    statConfig,
+    getChapterLabel,
+    config
+}: {
+        statConfig: INonPlayableUnitStats,
+        getChapterLabel?: (statConfig: INonPlayableUnitStats)=>string
+        config?: {
+            displayWeaponIcons?: boolean
+        }
+    }) {
     const { level, class: className, stats, route, optional, gameOver, talk, ranks: weaponRanks, weapons } = statConfig;
     const statKeys = Object.keys(stats ?? {}).filter(stat => stat != 'lv');
-    const chapter = DoFChapters[statConfig.chapter];
-    const routeLabel = statConfig.chapter >= 7 && statConfig.chapter <= 14 ? (statConfig.route === DoFRoute.Musain ? 'A' : statConfig.route === DoFRoute.Onduris ? 'B' : '') : ''
-    const chapterLabel = !chapter.title ?
-        `Chapter ${chapter.value}${routeLabel}` :
-        chapter.title.match(/\d/g) ? `Chapter ${chapter.title}` : chapter.title
+    const chapterLabel = getChapterLabel ? getChapterLabel(statConfig) : `Chapter ${statConfig.chapter}`;
     return <div className={styles.bossBox}>
         <div className={styles.headerRow}>
             <div>
@@ -24,7 +28,10 @@ export default function NonPlayerStatItem({ statConfig }: { statConfig: IDoFNonP
                     {gameOver && talk ? <span className={`${styles.tag} ${styles.gameOver}`}>Do Not Kill</span> : ''}
                 </div>}
             </div>
-            {weaponRanks ? <WeaponRanksDisplay ranks={weaponRanks} isMasterSealed={false} hideUnusable={true} /> : ''}
+            {weaponRanks ? <WeaponRanksDisplay ranks={weaponRanks} isMasterSealed={false} config={{
+                hideUnusable: true,
+                displayIcons: config?.displayWeaponIcons
+            }} /> : ''}
         </div>
         {stats ?
             <>
@@ -36,8 +43,8 @@ export default function NonPlayerStatItem({ statConfig }: { statConfig: IDoFNonP
                 </ul>
                 {weapons?.length ? <div>
                     <ul className={styles.weapons}>
-                    {weapons.map(wpn=><li className={`capitalize`}>{wpn.replace('_',' ')}</li>)}
-                </ul>
+                        {weapons.map(wpn => <li className={`capitalize`}>{wpn.replace('_', ' ')}</li>)}
+                    </ul>
                 </div> : ''}
             </>
             : ''}

@@ -13,13 +13,13 @@ export const Asher: IDoFCharacter = {
         }
     },
     height: 177,
-    bases: {
+    stats: {
         hp: 21, pow: 6, skl: 4, spd: 4, luk: 7, def: 3, res: 8, con: 7
     },
     level: 1,
     promotesTo: DoFClasses.Bishop,
     growths: {hp: 90, pow: 70, skl: 55, spd: 35, luk: 40, def: 35, res: 50 },
-    weapons: {
+    ranks: {
         [DoFWeaponType.Staff]: 121,
     },
     affinity: DoFAffinities.Thunder

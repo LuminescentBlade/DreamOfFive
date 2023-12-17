@@ -12,14 +12,14 @@ export const Marie: IDoFCharacter = {
             player: 6.5
         }
     },
-    bases: {
+    stats: {
         hp: 26, pow: 10, skl: 11, spd: 16, luk: 13, def: 6, res: 5, con: 6
     },
     height: 161,
     level: 10,
     promotesTo: DoFClasses.Rogue,
     growths: {hp: 65, pow: 40, skl: 40, spd: 70, luk: 65, def: 15, res: 20},
-    weapons: {
+    ranks: {
         [DoFWeaponType.Sword]: 71,
     },
     affinity: DoFAffinities.Anima

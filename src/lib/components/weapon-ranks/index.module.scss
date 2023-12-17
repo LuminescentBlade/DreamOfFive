@@ -1,3 +1,4 @@
+$shadow-color: var(--lb-weapon-rank-shadow, var(--dof-bg-color, rgba(0,0,0,0.5)));
 .weaponList{
     list-style: none;
     display: flex;
@@ -11,13 +12,23 @@
     padding-bottom: 6px;
 }
 
-.weaponIcon{
+.weaponNameText{
+    display: block;
+    text-transform: capitalize;
+    padding-bottom: 16px;
+}
+
+.weaponIcon,
+.weaponNameText{
     opacity: 0.3
 }
 
 .baseWeaponActive, .promotedWeaponActive{
     .weaponIcon{
         opacity: 0.7;
+    }
+    .weaponNameText{
+        opacity: 1;
     }
 }
 
@@ -28,5 +39,6 @@
     transform: translateX(-50%);
     white-space: nowrap;
     font-weight: bold;
-    text-shadow: 0 0 5px var(--dof-bg-color);
+    text-shadow: 0 0 5px $shadow-color;
 }
+

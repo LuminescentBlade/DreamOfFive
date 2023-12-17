@@ -13,13 +13,13 @@ export const Nari: IDoFCharacter = {
             player: 10
         }
     },
-    bases: {
+    stats: {
         hp: 34, pow: 16, skl: 15, spd: 13, luk: 13, def: 12, res: 0, con: 11
     },
     level: 14,
     promotesTo: DoFClasses.Gladiator,
     growths: {hp: 105, pow: 60, skl: 45, spd: 35, luk: 45, def: 30, res: 5},
-    weapons: {
+    ranks: {
         [DoFWeaponType.Sword]: 71,
     },
     affinity: DoFAffinities.Anima

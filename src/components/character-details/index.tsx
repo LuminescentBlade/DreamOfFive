@@ -1,15 +1,14 @@
 import { IDoFCharacter } from "@/src/models/dream-of-five.interfaces";
-import { useState } from "react";
 import styles from './index.module.scss';
-import Overlay from "../overlay";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmark, faArrowsUpDownLeftRight } from '@fortawesome/free-solid-svg-icons'
-import Toggle from "../toggle";
 import CharacterProfile from "../unit-profile";
-import PlayerAverages from "../player-averages";
-import { DoFUnitState } from "@/src/models/enums";
+import { DoFRoute, DoFUnitState, DoFWeaponType } from "@/src/models/enums";
 import { IRenderCharacterConfig } from "@/src/lib/models/spritesheet.interfaces";
-import NonPlayableStats from "../boss-layout";
+import { CharacterOverlay } from "@/src/lib/components";
+import { PlayerAverages, NonPlayableStats } from "@/src/lib/components";
+import { INonPlayableUnitStats } from "@/src/lib";
+import { DoFChapters } from "@/src/config/chapters.config";
+import { DoFPromotedClasses, DoFUnpromotedClasses } from "@/src/config/classes.config";
+
 
 enum CharacterDetailState {
     Stat = 'stat',
@@ -18,16 +17,6 @@ enum CharacterDetailState {
     BossStats = 'boss_stats',
     NPCStats = 'npc_stats',
 };
-
-let offset = { left: 0, top: 0 };
-let isDragging = false;
-let cachedState: any = {
-    enableCompareMode: false,
-    dragStateStyle: {},
-    state: CharacterDetailState.Stat,
-    resetState: false
-};
-
 
 export default function CharacterDetails({ characterConfig, clear, experimentalFeatures }: {
     characterConfig: IRenderCharacterConfig,
@@ -40,7 +29,7 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
     const isEnemy = unitType === DoFUnitState.Enemy;
     const isNPC = unitType === DoFUnitState.NPC;
     // show hide items
-    const showStats = (isPlayer) && (characterDef.bases || characterDef.growths);
+    const showStats = (isPlayer) && (characterDef.stats || characterDef.growths);
     const showExtendedProfile = characterDef.height != null && (!characterDef.gateProfileTabChapter || characterDef.gateProfileTabChapter <= characterConfig.chapter);
     const showBossStats = characterDef.bossStats != null;
     const showNPCStats = characterDef.npcStats != null;
@@ -48,7 +37,7 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
     const showSideProfileDetails = (characterDef.gateProfileDetailsChapter ?? 0) <= characterConfig.chapter;
 
     let defaultView: CharacterDetailState | undefined;
-    const validViews = new Set();
+    const validViews = new Set<string>();
     if (showStats) {
         validViews.add(CharacterDetailState.Stat);
         defaultView = CharacterDetailState.Stat;
@@ -77,49 +66,13 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
         validViews.add(CharacterDetailState.Gallery);
         defaultView = defaultView ?? CharacterDetailState.Gallery;
     }
-    if (cachedState.resetState) {
-        cachedState.state = defaultView;
-        cachedState.resetState = false;
-    } else if (!validViews.has(cachedState.state)) {
-        cachedState.state = defaultView;
-    }
 
-    const [widgetState, setWidgetState] = useState(cachedState);
-
-    function setWidgetStateCaching(widgetStateData: any) {
-        cachedState = widgetStateData;
-        setWidgetState(cachedState);
-    }
-
-    function setComparisonMode(value: boolean) {
-        offset = { left: 0, top: 0 };
-        setWidgetStateCaching({ ...widgetState, enableCompareMode: value, dragStateStyle: {} });
-    }
-
-    function clearItem() {
-        clear();
-        offset = { left: 0, top: 0 };
-        setWidgetStateCaching({ ...widgetState, enableCompareMode: false, dragStateStyle: {}, resetState: true });
-    }
-
-    function mouseDown() {
-        isDragging = true;
-        window.addEventListener('mousemove', dragging);
-        window.addEventListener('mouseup', mouseUp);
-    }
-
-    function mouseUp() {
-        isDragging = false;
-        window.removeEventListener('mousemove', dragging);
-        window.removeEventListener('mouseup', mouseUp);
-    }
-
-    function dragging(event: MouseEvent) {
-        if (isDragging) {
-            offset.left += event.movementX;
-            offset.top += event.movementY;
-            setWidgetStateCaching({ ...widgetState, enableCompareMode: true, dragStateStyle: { transform: `translateX(calc(${offset.left}px - 50%)) translateY(calc(${offset.top}px - 50%))` } })
-        }
+    function getChapterLabel(statConfig: INonPlayableUnitStats) {
+        const chapter = DoFChapters[statConfig.chapter];
+        const routeLabel = statConfig.chapter >= 7 && statConfig.chapter <= 14 ? (statConfig.route === DoFRoute.Musain ? 'A' : statConfig.route === DoFRoute.Onduris ? 'B' : '') : ''
+        return !chapter.title ?
+            `Chapter ${chapter.value}${routeLabel}` :
+            chapter.title.match(/\d/g) ? `Chapter ${chapter.title}` : chapter.title
     }
 
     function renderSideProfile() {
@@ -151,27 +104,36 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
         </div>
     }
 
-    function renderContent(state: CharacterDetailState) {
+    function renderContent(state: string) {
+        const unitDisplayConfig = {
+            promotedClasses: DoFPromotedClasses,
+            unpromotedClasses: DoFUnpromotedClasses,
+            totalWeaponTypes: DoFWeaponType,
+            displayWeaponIcons: true,
+            enableBlossomDew: true,
+            blossomCap: 1,
+            blossomValue: 5
+        };
         switch (state) {
             case CharacterDetailState.Gallery:
                 return '';
             case CharacterDetailState.ExtendedProfile:
                 return <CharacterProfile characterDef={characterDef} />;
             case CharacterDetailState.Stat:
-                return <PlayerAverages characterDef={characterDef} />;
+                return <PlayerAverages
+                    characterDef={characterDef}
+                    config={unitDisplayConfig}
+                />;
             case CharacterDetailState.NPCStats:
-                return <NonPlayableStats stats={characterDef.npcStats!} chapterLimit={characterConfig.chapter} />
+                return <NonPlayableStats stats={characterDef.npcStats!} chapterLimit={characterConfig.chapter} getChapterLabel={getChapterLabel} config={unitDisplayConfig} />
             case CharacterDetailState.BossStats:
-                return <NonPlayableStats stats={characterDef.bossStats!} chapterLimit={characterConfig.chapter} />
+                return <NonPlayableStats stats={characterDef.bossStats!} chapterLimit={characterConfig.chapter} getChapterLabel={getChapterLabel} config={unitDisplayConfig} />
             default:
                 return ''
         }
     }
 
-
-
-
-    function renderTabs() {
+    function renderTabs(currentState: string, onTabSelect: (selectedState: string) => void) {
         if (!showStats && !showExtendedProfile && !showGallery && !showBossStats && !showNPCStats) {
             return '';
         }
@@ -179,8 +141,8 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
         const getSectionTab = (state: CharacterDetailState, label: string) =>
         (<li>
             <button
-                className={`button-wrapper ${widgetState.state === state ? styles.selectedTab : ''}`}
-                onClick={() => { setWidgetStateCaching({ ...widgetState, state }) }}
+                className={`button-wrapper ${currentState === state ? styles.selectedTab : ''}`}
+                onClick={() => onTabSelect(state)}
             >{label}
             </button>
         </li>);
@@ -225,36 +187,12 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
         </ul>;
     }
 
-    return <>
-        {widgetState.enableCompareMode ? '' : <Overlay onClick={clearItem} />}
-        <div className={styles.characterDetails} style={widgetState.dragStateStyle}>
-            <div className={styles.controls}>
-                {widgetState.enableCompareMode ? <button className={`${styles.controlButton} button-wrapper`} onMouseDown={mouseDown}>
-                    <FontAwesomeIcon icon={faArrowsUpDownLeftRight} size="xl" />
-                </button> : ''}
-
-                <button className={`${styles.controlButton} button-wrapper`} onClick={clearItem}>
-                    <FontAwesomeIcon icon={faXmark} size="2x" />
-                </button>
-            </div>
-            <div className={styles.content}>
-                {renderSideProfile()}
-                <div className={styles.data}>
-                    {renderTabs()}
-                    <div className={styles.dataContent}>
-                        {
-                            renderContent(widgetState.state)
-                        }
-                    </div>
-                </div>
-            </div>
-            {<div className={styles.footer}>
-                {
-                    <div className={'flex-line-container'}>
-                        <label>Toggle Comparison Mode</label><Toggle active={widgetState.enableCompareMode} onStateChange={setComparisonMode} />
-                    </div>
-                }
-            </div>}
-        </div>
-    </>
+    return <CharacterOverlay
+        clear={clear}
+        renderContent={renderContent}
+        renderTabs={renderTabs}
+        renderSideProfile={renderSideProfile}
+        initialState={defaultView!}
+        validViews={validViews}
+    ></CharacterOverlay>
 }
