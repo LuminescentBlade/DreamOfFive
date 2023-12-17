@@ -8,7 +8,8 @@ import { PlayerAverages, NonPlayableStats } from "@/src/lib/components";
 import { INonPlayableUnitStats } from "@/src/lib";
 import { DoFChapters } from "@/src/config/chapters.config";
 import { DoFPromotedClasses, DoFUnpromotedClasses } from "@/src/config/classes.config";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark, faArrowsUpDownLeftRight, faMinus, faPlus } from '@fortawesome/free-solid-svg-icons'
 
 enum CharacterDetailState {
     Stat = 'stat',
@@ -35,6 +36,16 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
     const showNPCStats = characterDef.npcStats != null;
     const showGallery = false;
     const showSideProfileDetails = (characterDef.gateProfileDetailsChapter ?? 0) <= characterConfig.chapter;
+
+    const uiIcons = {
+        dragDrop: () => <FontAwesomeIcon icon={faArrowsUpDownLeftRight} size="xl" />,
+        exit: () => <FontAwesomeIcon icon={faXmark} size="2x" />,
+        removeBlossom: () => <FontAwesomeIcon icon={faMinus} size="lg" />,
+        addBlossom: (isAtLimit: boolean) => <span className={styles.blossomDewIcon}>
+            <span className="icon-blossom-dew"></span> {isAtLimit ?
+                <span className={`${styles.plus} full-center`}><FontAwesomeIcon icon={faPlus} size="sm" /></span> : ''}
+        </span>
+    };
 
     let defaultView: CharacterDetailState | undefined;
     const validViews = new Set<string>();
@@ -112,7 +123,8 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
             displayWeaponIcons: true,
             enableBlossomDew: true,
             blossomCap: 1,
-            blossomValue: 5
+            blossomValue: 5,
+            uiIcons
         };
         switch (state) {
             case CharacterDetailState.Gallery:
@@ -194,5 +206,6 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
         renderSideProfile={renderSideProfile}
         initialState={defaultView!}
         validViews={validViews}
+        uiIcons={uiIcons}
     ></CharacterOverlay>
 }

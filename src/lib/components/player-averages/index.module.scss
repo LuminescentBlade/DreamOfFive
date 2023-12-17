@@ -23,8 +23,6 @@ $avgs-font-color: var(--lb-averages-avgs-font-color, var(--dof-color2, #333));
 $blossom-plus-button: var(--lb-averages-blossom-plus-button, var(--dof-bg-color, #fff));
 $blossom-bg: var(--lb-averages-blossom-bg, var(--dof-color1, gray));
 $blossom-bg-rm: var(--lb-averages-blossom-bg-rm, var(--dof-bg-color, #fff));
-
-
 .tableWrapper {
   width: 100%;
   max-width: 100%;
@@ -112,27 +110,10 @@ $blossom-bg-rm: var(--lb-averages-blossom-bg-rm, var(--dof-bg-color, #fff));
   gap: 12px;
 }
 .blossomButton {
-  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 3px;
   order: 2;
-  .plus {
-    position: absolute;
-    top: -2px;
-    right: -2px;
-    background-color: $blossom-plus-button;
-    border-radius: 100%;
-    width: 14px;
-    height: 14px;
-    opacity: 0;
-    transition: opacity 0.2s;
-  }
-  &:hover {
-    .plus {
-      opacity: 1;
-    }
-  }
 }
 .blossomItem {
   height: 32px;

@@ -1,3 +1,5 @@
+$blossom-plus-button: var(--lb-averages-blossom-plus-button, var(--dof-bg-color, #fff));
+
 .profile,
 .profileData {
   display: flex;
@@ -82,6 +84,30 @@
   font-size: 0.9em;
   font-style: italic;
   text-align: center;
+}
+
+.blossomDewIcon{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  order: 2;
+  .plus {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    background-color: $blossom-plus-button;
+    border-radius: 100%;
+    width: 14px;
+    height: 14px;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  &:hover {
+    .plus {
+      opacity: 1;
+    }
+  }
 }
 
 @media screen and (max-width: 768px) {

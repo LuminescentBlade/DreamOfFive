@@ -1,7 +1,5 @@
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import styles from './index.module.scss';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons'
 import { WeaponRanksDisplay } from "../weapon-ranks";
 import { IPlayableUnitStats, IStats } from "../../models/units.interfaces";
 
@@ -27,6 +25,10 @@ export function PlayerAverages({
         levelCap?: number,
         promotedLevelCap?: number,
         promotionLevelGate?: number
+        uiIcons: {
+            removeBlossom: () => ReactNode,
+            addBlossom: (limit: boolean) => ReactNode
+        }
         // todo: FE4 style levels dont reset
     }
 }) {
@@ -174,8 +176,7 @@ export function PlayerAverages({
         return <div className={styles.blossomWidget}>
             {
                 <button className={`${styles.blossomButton} icon-button button-wrapper`} onClick={addBlossom} disabled={widgetState.blossom.length >= BLOSSOM_LIMIT}>
-                    <span className="icon-blossom-dew"></span> {widgetState.blossom.length < BLOSSOM_LIMIT ?
-                        <span className={`${styles.plus} full-center`}><FontAwesomeIcon icon={faPlus} size="sm" /></span> : ''}
+                    {config?.uiIcons?.addBlossom ? config.uiIcons.addBlossom(widgetState.blossom.length < BLOSSOM_LIMIT) : (widgetState.blossom.length < BLOSSOM_LIMIT) ? '+ Metis Tome' : ''}
                 </button>
             }
             {
@@ -192,7 +193,7 @@ export function PlayerAverages({
                             </button> : ''
                         }
                         <button className={`${styles.removeBlossom} button-wrapper`} onClick={() => removeBlossom(index)}>
-                            <FontAwesomeIcon icon={faMinus} size="lg" />
+                            {config?.uiIcons?.addBlossom ? config.uiIcons.removeBlossom() : '-'}
                         </button>
                     </div>
                 )

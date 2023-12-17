@@ -1,8 +1,6 @@
 import { ReactNode, useState } from "react";
 import styles from './index.module.scss';
 import { Overlay } from "../overlay";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmark, faArrowsUpDownLeftRight } from '@fortawesome/free-solid-svg-icons'
 import { Toggle } from "../toggle";
 
 let offset = { left: 0, top: 0 };
@@ -23,7 +21,8 @@ export function CharacterOverlay(
         renderTabs,
         renderContent,
         initialState,
-        validViews
+        validViews,
+        uiIcons,
     }: {
         clear: () => void,
         allowComparisonmode?: boolean,
@@ -31,7 +30,11 @@ export function CharacterOverlay(
         renderTabs: (state: string, onClick: (s: string) => void) => ReactNode,
         renderContent: (state: string) => ReactNode
         initialState: string,
-        validViews?: Set<string>
+        validViews?: Set<string>,
+        uiIcons?: {
+            dragDrop?: () => ReactNode,
+            exit: () => ReactNode,
+        }
 
     }) {
 
@@ -89,11 +92,11 @@ export function CharacterOverlay(
         <div className={styles.characterOverlay} style={widgetState.dragStateStyle}>
             <div className={styles.controls}>
                 {widgetState.enableCompareMode ? <button className={`${styles.controlButton} button-wrapper`} onMouseDown={mouseDown}>
-                    <FontAwesomeIcon icon={faArrowsUpDownLeftRight} size="xl" />
+                    {uiIcons?.dragDrop ? uiIcons.dragDrop() : 'Drag'}
                 </button> : ''}
 
                 <button className={`${styles.controlButton} button-wrapper`} onClick={clearItem}>
-                    <FontAwesomeIcon icon={faXmark} size="2x" />
+                    {uiIcons?.exit ? uiIcons.exit() : 'X'}
                 </button>
             </div>
             <div className={styles.content}>
