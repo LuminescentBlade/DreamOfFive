@@ -29,7 +29,7 @@ $blossom-bg-rm: var(--lb-averages-blossom-bg-rm, var(--dof-bg-color, #fff));
   overflow: auto;
 }
 .statTable {
-  color: var(--lb-averages-font-color, inherit);
+  color: var(--lb-averages-font-color, var(--lb-char-overlay-font-color, inherit));
   max-width: 100%;
   text-align: center;
   border-collapse: collapse;
