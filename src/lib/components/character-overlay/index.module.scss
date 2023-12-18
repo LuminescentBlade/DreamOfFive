@@ -1,3 +1,5 @@
+@import './../../styles/mixins';
+
 $bg-color: var(--lb-char-overlay-bg-color, var(--dof-bg-color, #fff));
 $icon-button-color: var(
   --lb-char-overlay-icon-button-color,
@@ -52,6 +54,7 @@ $footer-border-color: var(
 }
 
 .controlButton {
+  @include button-wrapper;
   path {
     fill: $icon-button-color;
   }
@@ -60,6 +63,10 @@ $footer-border-color: var(
       fill: $button-hover-color;
     }
   }
+}
+
+.footerItem{
+  @include flex-line-container;
 }
 
 .blurb {
