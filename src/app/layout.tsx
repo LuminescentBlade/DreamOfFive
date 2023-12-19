@@ -1,6 +1,8 @@
 import './globals.scss'
 import type { Metadata } from 'next'
 import Header from '../components/header'
+import { DoFArtistConfig } from '../config/artists.config';
+import { getArtistCreditStyles } from '../lib/tools'
 
 
 export const metadata: Metadata = {
@@ -14,9 +16,13 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
+
   return (
     <html lang="en">
-      <body>
+      <body style={
+        getArtistCreditStyles(DoFArtistConfig)
+      }>
         <header role="navigation" className="navigation">
           <Header></Header>
         </header>

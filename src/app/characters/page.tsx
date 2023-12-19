@@ -65,14 +65,14 @@ export default function CharacterPage() {
         cachedUnits = getCharacters({ bypassSpoiler: showFullData, useEarliest: false });
     }
     if (!init) {
-        setTimeout(() => {
-            if (typeof window !== "undefined") {
-                Object.values(DoFArtist).forEach(key => {
-                    // @ts-ignore
-                    setVariable(`--dof-artist-${key}`, DoFArtistConfig[key].color);
-                });
-            }
-        }, 0);
+        // setTimeout(() => {
+        //     if (typeof window !== "undefined") {
+        //         Object.values(DoFArtist).forEach(key => {
+        //             // @ts-ignore
+        //             setVariable(`--lb-artist-${key}`, DoFArtistConfig[key].color);
+        //         });
+        //     }
+        // }, 0);
         unitSheetData = getData(chapterLimit, DoFRoute.Both);
     }
 
