@@ -1,4 +1,4 @@
-import { DoFArtist, DoFClasses, DoFNationality, DoFWeaponType } from "./enums";
+import { DoFArtist, DoFClasses, DoFNationality } from "./enums";
 import { IAltConfig, IRenderCharacterConfig, IRenderItemConfig, IRouteConfig, IUnit, INonPlayableUnitStats, IPlayableUnitStats } from "../lib/models";
 
 export interface IDoFUnit extends IUnit {
