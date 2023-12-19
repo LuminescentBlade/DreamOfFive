@@ -21,7 +21,7 @@ export const Driscoll: IDoFCharacter = {
     promotesTo: DoFClasses.Warrior,
     growths: { hp: 95, pow: 45, skl: 45, spd: 60, luk: 40, def: 25, res: 10 },
     ranks: {
-        [DoFWeaponType.Axe]: 31
+        [DoFWeaponType.Axe]: 71
     },
     affinity: DoFAffinities.Wind
 };
