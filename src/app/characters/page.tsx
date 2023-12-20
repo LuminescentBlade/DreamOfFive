@@ -139,7 +139,7 @@ export default function CharacterPage() {
             character.currentChapter = { chapter, route: route === DoFRoute.Musain || route === DoFRoute.Onduris ? route : undefined };
             const results = character.data;
             if (results) {
-                config[results.type].push(results);
+                config[results.type]?.push(results);
             }
             return config;
         },
