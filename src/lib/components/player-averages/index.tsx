@@ -11,7 +11,8 @@ let currentCharacter: string | undefined;
 
 export function PlayerAverages({
     characterDef,
-    config
+    config,
+    onDataChange
 }: {
     characterDef: IPlayableUnitStats
     config?: {
@@ -33,7 +34,8 @@ export function PlayerAverages({
             addBlossom: (limit: boolean) => ReactNode
         }
         // todo: FE4 style levels dont reset
-    }
+    },
+    onDataChange?: (data: any) => void
 }) {
     const enableBlossomDew = config?.enableBlossomDew ?? false;
     const BLOSSOM_VALUE = config?.blossomValue ?? 5;
@@ -53,7 +55,7 @@ export function PlayerAverages({
 
     if (levelData.promotedLevel < defaultLevels.promotedLevel ||
         (defaultLevels.unpromotedLevel && (levelData.unpromotedLevel ?? -1) < defaultLevels.unpromotedLevel)) {
-        setLevelData(defaultLevels);
+        setLevel(defaultLevels);
     }
 
     const unpromotedLevelFloor = (characterDef.level ?? 1);
@@ -75,6 +77,19 @@ export function PlayerAverages({
 
     const blossomData = getBlossomLevels();
 
+    function setLevel(data: any) {
+        emitData();
+        setLevelData(data);
+    }
+
+    function emitData() {
+        if (onDataChange) {
+            const { unpromotedLevel, promotedLevel } = levelData;
+            const exportData = { promotedLevel, unpromotedLevel, blossomEnabled: widgetState.blossom.length };
+            onDataChange(exportData);
+        }
+    }
+    
     function setWidgetStateCaching(widgetStateData: any) {
         cachedState = widgetStateData;
         setWidgetState(cachedState);
@@ -83,7 +98,7 @@ export function PlayerAverages({
     function setUnpromotedLevel(event: any) {
         const value = parseInt(event.currentTarget.value);
         if (isNaN(value) || value < unpromotedLevelFloor) {
-            setLevelData({ ...levelData, unpromotedDisplay: event.currentTarget.value });
+            setLevel({ ...levelData, unpromotedDisplay: event.currentTarget.value });
         } else {
             const calculatedLevel = Math.min(value, LEVEL_CAP);
             const newData = { ...levelData, unpromotedLevel: calculatedLevel, unpromotedDisplay: calculatedLevel };
@@ -91,7 +106,7 @@ export function PlayerAverages({
                 newData.promotedLevel = 0;
                 newData.promotedDisplay = 0;
             }
-            setLevelData(newData);
+            setLevel(newData);
         }
     };
 
@@ -99,12 +114,14 @@ export function PlayerAverages({
     function setPromotedLevel(event: any) {
         const value = parseInt(event.currentTarget.value);
         if (isNaN(value) || value < promotedLevelFloor) {
-            setLevelData({ ...levelData, promotedDisplay: event.currentTarget.value });
+            setLevel({ ...levelData, promotedDisplay: event.currentTarget.value });
         } else {
             const calculatedLevel = Math.min(value, PROMOTED_LEVEL_CAP);
-            setLevelData({ ...levelData, promotedLevel: calculatedLevel, promotedDisplay: calculatedLevel });
+            setLevel({ ...levelData, promotedLevel: calculatedLevel, promotedDisplay: calculatedLevel });
         }
     }
+
+
 
     function isPromoted(): boolean {
         // this will evaluate to a boolean no matter what trust me ts lint
@@ -189,8 +206,7 @@ export function PlayerAverages({
                         {
                             !item.isCharacterPromoted ? <button
                                 className={
-                                    `${styles.iconButton} ${
-                                        !item.isCharacterPromoted ? styles[`iconButton--${item.isLevelPromoted ? 'actived' : 'inactive'} `] : ''
+                                    `${styles.iconButton} ${!item.isCharacterPromoted ? styles[`iconButton--${item.isLevelPromoted ? 'actived' : 'inactive'} `] : ''
                                     } icon-master-seal lb-averages-blossom__${item.isLevelPromoted ? 'promoted' : 'unpromoted'} `
                                 }
                                 onClick={() => toggleBlossomPromotion(index)}
