@@ -10,7 +10,6 @@ import { DoFChapters } from "@dof/src/config/chapters.config";
 import { DoFPromotedClasses, DoFUnpromotedClasses } from "@dof/src/config/classes.config";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faArrowsUpDownLeftRight, faMinus, faPlus } from '@fortawesome/free-solid-svg-icons'
-import { useState } from "react";
 
 enum CharacterDetailState {
     Stat = 'stat',
@@ -47,8 +46,6 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
                 <span className={`${styles.plus} full-center`}><FontAwesomeIcon icon={faPlus} size="sm" /></span> : ''}
         </span>
     };
-
-    const [a, b] = useState({ test: true });
 
     let defaultView: CharacterDetailState | undefined;
     const validViews = new Set<string>();
@@ -136,14 +133,10 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
                 return <CharacterProfile characterDef={characterDef} />;
             case CharacterDetailState.Stat:
 
-                return <>
-                    <PlayerAverages
-                        characterDef={characterDef}
-                        config={unitDisplayConfig}
-                        onDataChange={(data) => { b({ ...a, test: data.promotedLevel > 0 }) }}
-                    />
-                    {a.test ? 'asdf' : 'fdsa'}
-                </>;
+                return <PlayerAverages
+                    characterDef={characterDef}
+                    config={unitDisplayConfig}
+                />
             case CharacterDetailState.NPCStats:
                 return <NonPlayableStats stats={characterDef.npcStats!} chapterLimit={characterConfig.chapter} getChapterLabel={getChapterLabel} config={unitDisplayConfig} />
             case CharacterDetailState.BossStats:

@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode, useState } from "react";
 import styles from './index.module.scss';
 import { WeaponRanksDisplay } from "../weapon-ranks";
 import { IPlayableUnitStats, IStats } from "../../models/units.interfaces";
@@ -31,7 +31,8 @@ export function PlayerAverages({
         promotionLevelGate?: number,
         displayFields?: string[],
         disableCaps?: boolean,
-        disableCapRowDisplay?: boolean
+        disableCapRowDisplay?: boolean,
+        disablePercentageDisplay?: boolean
         uiIcons: {
             removeBlossom: () => ReactNode,
             addBlossom: (limit: boolean) => ReactNode
@@ -46,7 +47,7 @@ export function PlayerAverages({
     const LEVEL_CAP = config?.levelCap ?? 20;
     const PROMOTED_LEVEL_CAP = config?.promotedLevelCap ?? LEVEL_CAP;
     const PROMOTION_LEVEL_GATE = config?.promotionLevelGate ?? 10;
-    if (currentCharacter != characterDef.name) {
+    if (currentCharacter !== characterDef.name) {
         cachedState.blossom = [];
     }
     const defaultLevels = getDefaultLevelByCharacter(characterDef);
@@ -61,7 +62,7 @@ export function PlayerAverages({
     }
 
     emitData();
-    
+
     const unpromotedLevelFloor = (characterDef.level ?? 1);
     let promoBonuses: IStats | undefined = undefined;
     let promotedLevelFloor: number, unpromotedCaps: IStats, promotedCaps: IStats;
@@ -80,7 +81,7 @@ export function PlayerAverages({
     }
     const blossomData = getBlossomLevels();
     const statKeys = config?.displayFields ?? Object.keys(promotedCaps ?? characterDef.stats);
-    if (lastStatKeyLength != statKeys.length) {
+    if (lastStatKeyLength !== statKeys.length) {
         document.documentElement.style.setProperty('--lb-default-num-stat-items', `${statKeys.length}`);
         lastStatKeyLength = statKeys.length;
     }
@@ -375,7 +376,10 @@ export function PlayerAverages({
                         {characterDef.growths ?
                             <tr className='lb-averages__growths-row'>
                                 <th className={`${styles.capitalize} ${styles[`growthsHeader${blossomData.currentLevelBlossomCount}`]}`}>growths</th>
-                                {statKeys.map(s => <td key={s} >{characterDef.growths && characterDef.growths[s] != null ? `${characterDef.growths[s] + BLOSSOM_VALUE * blossomData.currentLevelBlossomCount}%` : '--'}</td>)}
+                                {statKeys.map(s => <td key={s} >{
+                                    characterDef.growths && characterDef.growths[s] != null ?
+                                        `${characterDef.growths[s] + BLOSSOM_VALUE * blossomData.currentLevelBlossomCount}${!config?.disablePercentageDisplay ? '%' : ''}` :
+                                        '--'}</td>)}
                             </tr>
                             : ''
                         }
