@@ -50,7 +50,7 @@ export function PlayerAverages({
     const defaultLevels = getDefaultLevelByCharacter(characterDef);
     const [levelData, setLevelData] = useState(defaultLevels);
     const [widgetState, setWidgetState] = useState(cachedState);
-
+    emitData();
     currentCharacter = characterDef.name;
 
     if (levelData.promotedLevel < defaultLevels.promotedLevel ||
@@ -89,7 +89,7 @@ export function PlayerAverages({
             onDataChange(exportData);
         }
     }
-    
+
     function setWidgetStateCaching(widgetStateData: any) {
         cachedState = widgetStateData;
         setWidgetState(cachedState);
