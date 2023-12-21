@@ -1,9 +1,6 @@
 import './globals.scss'
 import type { Metadata } from 'next'
 import Header from '../components/header'
-import { DoFArtistConfig } from '../config/artists.config';
-import { getArtistCreditStyles } from '../lib/tools'
-
 
 export const metadata: Metadata = {
   title: 'Dream of Five',
@@ -20,9 +17,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body style={
-        getArtistCreditStyles(DoFArtistConfig)
-      }>
+      <body>
         <header role="navigation" className="navigation">
           <Header></Header>
         </header>

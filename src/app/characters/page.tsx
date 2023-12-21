@@ -65,14 +65,7 @@ export default function CharacterPage() {
         cachedUnits = getCharacters({ bypassSpoiler: showFullData, useEarliest: false });
     }
     if (!init) {
-        // setTimeout(() => {
-        //     if (typeof window !== "undefined") {
-        //         Object.values(DoFArtist).forEach(key => {
-        //             // @ts-ignore
-        //             setVariable(`--lb-artist-${key}`, DoFArtistConfig[key].color);
-        //         });
-        //     }
-        // }, 0);
+
         unitSheetData = getData(chapterLimit, DoFRoute.Both);
     }
 
@@ -82,7 +75,6 @@ export default function CharacterPage() {
         chapterLimit,
         displayRoute: DoFRoute.Both,
         unitSheetData,
-        expandedPortraits: new Map<string, boolean>(),
         activeCharacter
     });
 
@@ -147,13 +139,6 @@ export default function CharacterPage() {
         );
     }
 
-    function toggleCharacter(name: string) {
-        return function () {
-            characterPageState.expandedPortraits.set(name, !characterPageState.expandedPortraits.get(name));
-            updateCharacterPage({ ...characterPageState, expandedPortraits: characterPageState.expandedPortraits });
-        }
-    }
-
     function getClickFunction(characterData: IRenderDoFConfig) {
         if (characterData.displayProfile) {
             return () => {
@@ -164,10 +149,6 @@ export default function CharacterPage() {
 
     function clearCharacter() {
         updateCharacterPage({ ...characterPageState, activeCharacter: undefined });
-    }
-
-    function setVariable(variable: string, value: string) {
-        document.documentElement.style.setProperty(variable, value);
     }
 
     return (
@@ -199,7 +180,7 @@ export default function CharacterPage() {
                 characterConfig={characterPageState.activeCharacter}
                 clear={clearCharacter}
                 experimentalFeatures={showFullData} /> : ''}
-            <UnitSheet data={characterPageState.unitSheetData} expansionState={characterPageState.expandedPortraits} toggleCharacter={toggleCharacter} artistConfig={DoFArtistConfig} getOnClick={getClickFunction} />
+            <UnitSheet data={characterPageState.unitSheetData} artistConfig={DoFArtistConfig} getOnClick={getClickFunction} />
             {/* {
                 !isProd ? <div style={{ width: 'fit-content', margin: '12px auto', textAlign: 'center' }}>
                     {showFullData ? '' : <button style={{ padding: '12px', height: '40px' }} onClick={toggleProd}>Toggle Production Sheet</button>}
