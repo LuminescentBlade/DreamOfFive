@@ -51,11 +51,12 @@ export function PlayerAverages({
     const [levelData, setLevelData] = useState(defaultLevels);
     const [widgetState, setWidgetState] = useState(cachedState);
     emitData();
+
     currentCharacter = characterDef.name;
 
     if (levelData.promotedLevel < defaultLevels.promotedLevel ||
         (defaultLevels.unpromotedLevel && (levelData.unpromotedLevel ?? -1) < defaultLevels.unpromotedLevel)) {
-        setLevel(defaultLevels);
+        setLevelData(defaultLevels);
     }
 
     const unpromotedLevelFloor = (characterDef.level ?? 1);
@@ -77,15 +78,10 @@ export function PlayerAverages({
 
     const blossomData = getBlossomLevels();
 
-    function setLevel(data: any) {
-        emitData();
-        setLevelData(data);
-    }
-
     function emitData() {
         if (onDataChange) {
             const { unpromotedLevel, promotedLevel } = levelData;
-            const exportData = { promotedLevel, unpromotedLevel, blossomEnabled: widgetState.blossom.length };
+            const exportData = { promotedLevel, unpromotedLevel, blossomEnabled: widgetState.blossom.length > 0 };
             onDataChange(exportData);
         }
     }
@@ -98,7 +94,7 @@ export function PlayerAverages({
     function setUnpromotedLevel(event: any) {
         const value = parseInt(event.currentTarget.value);
         if (isNaN(value) || value < unpromotedLevelFloor) {
-            setLevel({ ...levelData, unpromotedDisplay: event.currentTarget.value });
+            setLevelData({ ...levelData, unpromotedDisplay: event.currentTarget.value });
         } else {
             const calculatedLevel = Math.min(value, LEVEL_CAP);
             const newData = { ...levelData, unpromotedLevel: calculatedLevel, unpromotedDisplay: calculatedLevel };
@@ -106,7 +102,7 @@ export function PlayerAverages({
                 newData.promotedLevel = 0;
                 newData.promotedDisplay = 0;
             }
-            setLevel(newData);
+            setLevelData(newData);
         }
     };
 
@@ -114,10 +110,10 @@ export function PlayerAverages({
     function setPromotedLevel(event: any) {
         const value = parseInt(event.currentTarget.value);
         if (isNaN(value) || value < promotedLevelFloor) {
-            setLevel({ ...levelData, promotedDisplay: event.currentTarget.value });
+            setLevelData({ ...levelData, promotedDisplay: event.currentTarget.value });
         } else {
             const calculatedLevel = Math.min(value, PROMOTED_LEVEL_CAP);
-            setLevel({ ...levelData, promotedLevel: calculatedLevel, promotedDisplay: calculatedLevel });
+            setLevelData({ ...levelData, promotedLevel: calculatedLevel, promotedDisplay: calculatedLevel });
         }
     }
 
