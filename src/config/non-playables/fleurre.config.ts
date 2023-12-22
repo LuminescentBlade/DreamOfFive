@@ -26,8 +26,7 @@ export const Fleurre: IDoFCharacter = {
         chapter: {
             chapter: 14.5,
             swapPortrait: 'provost',
-            ogPortraitName: 'Fleurre Chancellor',
-            //level: 20
+            ogPortraitName: 'Fleurre Chancellor'
         }
     },
     bossStats: [

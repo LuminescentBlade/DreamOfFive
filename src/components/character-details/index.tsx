@@ -32,8 +32,8 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
     // show hide items
     const showStats = (isPlayer) && (characterDef.stats || characterDef.growths);
     const showExtendedProfile = characterDef.height != null && (!characterDef.gateProfileTabChapter || characterDef.gateProfileTabChapter <= characterConfig.chapter);
-    const showBossStats = characterDef.bossStats != null;
-    const showNPCStats = characterDef.npcStats != null;
+    const showBossStats = characterDef.bossStats?.length;
+    const showNPCStats = characterDef.npcStats?.length;
     const showGallery = false;
     const showSideProfileDetails = (characterDef.gateProfileDetailsChapter ?? 0) <= characterConfig.chapter;
 
