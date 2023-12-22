@@ -10,11 +10,14 @@ $blossom-plus-button: var(--lb-averages-blossom-plus-button, var(--dof-bg-color,
 .profile {
   width: 180px;
   padding: 12px;
-
+  overflow: auto;
   h2 {
     margin-top: 12px;
     font-size: 2.4rem;
     color: var(--dof-color-header);
+  }
+  @media screen and (max-width: 600px) {
+    overflow: unset;
   }
 }
 
