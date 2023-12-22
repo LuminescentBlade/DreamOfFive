@@ -32,6 +32,10 @@ $footer-border-color: var(
   font-size: var(--lb-char-overlay-font-size, 0.9em);
   overflow: hidden;
   color: var(--lb-char-overlay-font-color, inherit);
+  @media screen and (max-width: 600px) {
+    --lb-default-averages-data-size: 35px;
+    --lb-default-averages-row-label-size: 45px;
+  }
 }
 
 .controls {
@@ -53,7 +57,7 @@ $footer-border-color: var(
   @include averages-min-width;
 }
 
-.data{
+.data {
   flex: 1;
 }
 

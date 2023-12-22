@@ -95,6 +95,7 @@ export function PlayerAverages({
             lastDataEmitted.unpromotedLevel !== unpromotedLevel ||
             lastDataEmitted.blossomEnabled !== exportData.blossomEnabled) {
             lastDataEmitted = exportData;
+            onDataChange(exportData);
         }
     }
 

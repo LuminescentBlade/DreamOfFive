@@ -55,8 +55,8 @@
   --lb-option-select-border: var(--dof-input-border);
   --lb-option-select-border-radius: var(--dof-input-border-radius);
 
-  --lb-averages-data-size: 45px;
-  --lb-averages-row-label-size: 69px;
+  // --lb-averages-data-size: 45px;
+  // --lb-averages-row-label-size: 69px;
 
   --lb-button-icon-color: var(--dof-color2);
   --lb-button-icon-hover: var(--dof-color1);
@@ -64,10 +64,10 @@
   --lb-unit-sheet-sprite-name-font: var(--dof-kq-font);
   --lb-char-overlay-font-size: 1.4rem;
 
-  @media screen and (max-width: 600px) {
-    --lb-averages-data-size: 35px;
-    --lb-averages-row-header-size: 45px;
-  }
+  // @media screen and (max-width: 600px) {
+  //   --lb-averages-data-size: 35px;
+  //   --lb-averages-row-header-size: 45px;
+  // }
 }
 
 * {
