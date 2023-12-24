@@ -58,7 +58,7 @@ export enum DoFClasses {
 
     Cleric = 'cleric',
     Priest = 'priest',
-    Bishop = 'bishop',
+    HighPriest = 'high priest',
 
     PegRider = 'pegasus rider',
     SeraphKnight = 'seraph knight',

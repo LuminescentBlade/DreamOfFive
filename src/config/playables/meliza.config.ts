@@ -19,7 +19,7 @@ export const Meliza: IDoFCharacter = {
     growths: { hp: 55, pow: 40, skl: 65, spd: 55, luk: 55, def: 10, res: 45 },
     level: 15,
     height: 165,
-    promotesTo: DoFClasses.Bishop,
+    promotesTo: DoFClasses.HighPriest,
     ranks: {
         [DoFWeaponType.Staff]: 121,
     },

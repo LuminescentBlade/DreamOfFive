@@ -18,7 +18,7 @@ export const Wren: IDoFCharacter =  {
     },
     level: 10,
     growths: {hp: 40, pow: 60, skl: 50, spd: 50, luk: 60, def: 5, res: 55},
-    promotesTo: DoFClasses.Bishop,
+    promotesTo: DoFClasses.HighPriest,
     ranks: {
         [DoFWeaponType.Staff]: 121 
     },

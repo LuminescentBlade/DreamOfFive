@@ -199,7 +199,7 @@ export const DoFPromotedClasses :  { [key: string]: any }  = {
             [DoFWeaponType.Axe]: 31
         }
     },
-    [DoFClasses.Bishop]: {
+    [DoFClasses.HighPriest]: {
         promo: { hp: 5, pow: 3, skl: 2, spd: 3, luk: 0, def: 1, res: 3, con: 2 },
         caps: { hp: 60, pow: 26, skl: 26, spd: 28, luk: 30, def: 20, res: 30, con: 20 },
         weapons: {
