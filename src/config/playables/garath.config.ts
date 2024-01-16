@@ -3,6 +3,7 @@ import { IDoFCharacter } from "@dof/src/models/interfaces";
 
 export const Garath: IDoFCharacter = {
     name: DoFCharKey.Garath,
+    profileName: 'Garath of Steadwick',
     artists: [DoFArtist.Astra, DoFArtist.Lumi],
     blurb: '"... survivor of countless battles, destined to be forgotten by history. Yet there was a sort of kindness..."',
     nationality: DoFNationality.Aukema,
