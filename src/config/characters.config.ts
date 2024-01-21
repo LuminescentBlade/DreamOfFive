@@ -225,7 +225,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         },
         {
             name: 'vicentyr',
-            artists: [DoFArtist.Xiltas, DoFArtist.Sev],
+            artists: [DoFArtist.Xiltas, DoFArtist.Sev, DoFArtist.Levin],
             blurb: '"... officer class of warrior-scholars, taught in tactics, leadership, arithmetic, rhetoric and even philosophy..."',
             class: DoFClasses.Sage,
             nationality: DoFNationality.Musain,
