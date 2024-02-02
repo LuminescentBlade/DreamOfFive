@@ -13,8 +13,14 @@ export const Kolbane: IDoFCharacter = {
             player: 0
         }
     },
+    conditional:{
+        chapter:{
+            chapter: 15,
+            age: 20
+        }
+    },
     height: 183,
-    age: 20,
+    age: 19,
     stats: {
         hp: 24, pow: 9, skl: 11, spd: 9, luk: 5, def: 8, res: 0, con: 10
     },
