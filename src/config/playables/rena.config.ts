@@ -21,6 +21,12 @@ export const Rena: IDoFCharacter =  {
             player: 0
         }
     },
+    conditional:{
+        chapter: {
+            chapter: 15,
+            age: 22,
+        }
+    },
     age: 21,
     epithet: 'Leveller',
     height: 165,
