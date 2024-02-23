@@ -85,7 +85,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                         [DoFWeaponType.Sword]: 181
                     },
                     weapons: [
-                        DoFWeapon.Flametongue
+                        DoFWeapon.LightBrand
                     ]
                 }
             ]
@@ -111,7 +111,6 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                         [DoFWeaponType.Bow]: 71
                     },
                     weapons: [
-                        DoFWeapon.SteelBow,
                         DoFWeapon.IronLongbow
                     ]
                 }
