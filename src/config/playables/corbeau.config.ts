@@ -16,7 +16,7 @@ export const Corbeau: IDoFCharacter = {
             player: 9
         }
     },
-    growths: { hp: 110, pow: 50, skl: 30, spd: 35, luk: 45, def: 20, res: 20 },
+    growths: { hp: 115, pow: 55, skl: 30, spd: 35, luk: 50, def: 20, res: 20 },
     level: 4,
     stats: { hp: 44, pow: 20, skl: 13, spd: 14, luk: 16, def: 11, res: 6, con: 14 },
     ranks: {

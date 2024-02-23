@@ -1,4 +1,4 @@
-import { IDoFCharacter } from "@dof/src/models/dream-of-five.interfaces";
+import { IDoFCharacter, IDoFNonPlayableConfig } from "@dof/src/models/dream-of-five.interfaces";
 import styles from './index.module.scss';
 import CharacterProfile from "../unit-profile";
 import { DoFRoute, DoFUnitState, DoFWeaponType } from "@dof/src/models/enums";
@@ -115,6 +115,12 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
         </div>
     }
 
+    function renderCustomTags(npcData: IDoFNonPlayableConfig) {
+        return <>
+            {npcData.customTags?.length ? npcData.customTags.map((tag, i) => <span key={i} className={styles.customTags}>{tag}</span>) : ''}
+        </>
+    }
+
     function renderContent(state: string) {
         const unitDisplayConfig = {
             promotedClasses: DoFPromotedClasses,
@@ -138,9 +144,9 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
                     config={unitDisplayConfig}
                 />
             case CharacterDetailState.NPCStats:
-                return <NonPlayableStats stats={characterDef.npcStats!} chapterLimit={characterConfig.chapter} getChapterLabel={getChapterLabel} config={unitDisplayConfig} />
+                return <NonPlayableStats stats={characterDef.npcStats!} chapterLimit={characterConfig.chapter} getChapterLabel={getChapterLabel} config={unitDisplayConfig} customTags={renderCustomTags}/>
             case CharacterDetailState.BossStats:
-                return <NonPlayableStats stats={characterDef.bossStats!} chapterLimit={characterConfig.chapter} getChapterLabel={getChapterLabel} config={unitDisplayConfig} />
+                return <NonPlayableStats stats={characterDef.bossStats!} chapterLimit={characterConfig.chapter} getChapterLabel={getChapterLabel} config={unitDisplayConfig} customTags={renderCustomTags} />
             default:
                 return ''
         }

@@ -11,10 +11,10 @@ export const Sorcha : IDoFCharacter =         {
     nationality: DoFNationality.Aukema,
     routeConfig: {
         allRoute: {
-            enemy: [2, 3, 99]
+            enemy: [2, 3, 18, 99]
         }
     },
-    level: 12,
+    level: 8,
     affinity: DoFAffinities.Fire,
     alt: {
         final: { artists: [DoFArtist.Sev], chapter: 99, isSpoiler: true }
@@ -26,17 +26,26 @@ export const Sorcha : IDoFCharacter =         {
             ogPortraitName: 'Sorcha c3'
         }
     },
-    height: 171,
+    height: 174,
     bossStats: [
         {
             chapter: 2,
             weapons: [DoFWeapon.Fimbulvetr],
-            stats: { hp: 46, pow: 18, skl: 22, spd: 24, luk: 16, def: 8, res: 20, con: 6 },
+            stats: { hp: 46, pow: 18, skl: 22, spd: 24, luk: 16, def: 8, res: 20, con: 8 },
             ranks: {
                 [DoFWeaponType.Anima]: 251,
                 [DoFWeaponType.Staff]: 181
             },
             optional: true
-        }
+        },
+        {
+            chapter: 18,
+            weapons: [DoFWeapon.Fimbulvetr, DoFWeapon.Thunder],
+            stats: { hp: 46, pow: 18, skl: 22, spd: 24, luk: 16, def: 8, res: 20, con: 8 },
+            ranks: {
+                [DoFWeaponType.Anima]: 251,
+                [DoFWeaponType.Staff]: 181
+            }
+        },
     ]
 };

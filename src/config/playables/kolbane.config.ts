@@ -19,6 +19,13 @@ export const Kolbane: IDoFCharacter = {
             age: 20
         }
     },
+    alt:{
+        noarmor:{
+            chapter: 8,
+            artists: [DoFArtist.Lumi],
+            displayName: 'Unarmored'
+        }
+    },
     height: 183,
     age: 19,
     stats: {
