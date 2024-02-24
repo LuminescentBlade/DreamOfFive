@@ -22,7 +22,7 @@ export default function Home() {
       <div className={styles.content}>
         <ul className={styles.links}>
           <li><a href="https://feuniverse.us/t/fe8-fire-emblem-dream-of-five/21043" target='_blank'>Updates</a></li>
-          <li><a href="https://www.dropbox.com/sh/17u6q331vdx1my4/AABzV0jUknnV-ejdWByEP4VDa?dl=0" target='_blank'>Patch v0.1.3 (2023 Dec 2)</a></li>
+          <li><a href="https://www.dropbox.com/sh/17u6q331vdx1my4/AABzV0jUknnV-ejdWByEP4VDa?dl=0" target='_blank'>Patch v0.2.0 (2023 Feb 23)</a></li>
           <li><a href="https://discord.gg/TJMKnNXhxg" target='_blank'>Discord</a></li>
         </ul>
         <p>
