@@ -24,7 +24,7 @@ export const Thyra: IDoFCharacter = {
         }
     },
     level: 7,
-    stats: { hp: 46, pow: 25, skl: 24, spd: 18, luk: 13, def: 19, res: 0, con: 16 },
+    stats: { hp: 48, pow: 26, skl: 24, spd: 19, luk: 13, def: 21, res: 0, con: 16 },
     ranks: { [DoFWeaponType.Sword]: 251 },
     growths: { hp: 75, pow: 55, skl: 50, spd: 45, luk: 25, def: 35, res: 5 },
     affinity: DoFAffinities.Thunder,

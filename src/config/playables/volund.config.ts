@@ -17,7 +17,7 @@ export const Volund: IDoFCharacter = {
     },
     level: 10,
     affinity: DoFAffinities.Dark,
-    stats: { hp: 42, pow: 18, skl: 24, spd: 25, luk: 13, def: 23, res: 5, con: 12 },
+    stats: { hp: 42, pow: 18, skl: 24, spd: 25, luk: 13, def: 23, res: 5, con: 13 },
     growths: { hp: 75, pow: 30, skl: 45, spd: 55, luk: 25, def: 40, res: 10 },
     ranks: { [DoFWeaponType.Lance]: 251 },
     blurb: `'... of proud and regal bearing, scattering ranks with sweeps of the spear, and yet I recognized a true brawler's grit...'`,

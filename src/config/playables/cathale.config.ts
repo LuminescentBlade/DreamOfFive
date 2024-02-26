@@ -14,11 +14,11 @@ export const Cathale: IDoFCharacter = {
     },
     height: 177,
     stats: {
-        hp: 30, pow: 13, skl: 10, spd: 6, luk: 11, def: 14, res: 0, con: 14
+        hp: 30, pow: 14, skl: 11, spd: 7, luk: 11, def: 14, res: 0, con: 14
     },
     level: 9,
     promotesTo: DoFClasses.Dreadnought,
-    growths: {hp: 90, pow: 50, skl: 40, spd: 30, luk: 45, def: 55, res: 20},
+    growths: {hp: 90, pow: 50, skl: 40, spd: 35, luk: 45, def: 55, res: 20},
     ranks: {
         [DoFWeaponType.Lance]: 121,
     },

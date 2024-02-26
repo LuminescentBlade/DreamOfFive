@@ -8,7 +8,7 @@ export const Odette: IDoFCharacter = {
     nationality: DoFNationality.Aukema,
     height: 164,
     level: 4,
-    stats: { hp: 35, pow: 19, skl: 23, spd: 19, luk: 22, def: 14, res: 8, con: 11 },
+    stats: { hp: 35, pow: 19, skl: 25, spd: 19, luk: 22, def: 14, res: 8, con: 11 },
     growths: { hp: 55, pow: 40, skl: 55, spd: 40, luk: 55, def: 25, res: 25 },
     routeConfig: {
         allRoute: {
