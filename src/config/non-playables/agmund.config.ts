@@ -3,7 +3,8 @@ import { DoFArtist, DoFNationality } from "@dof/src/models/enums";
 
 export const Agmund: IDoFCharacter = {
     name: 'agmund',
-    altNames: ['Long Taiming', '龍泰銘'],
+    displayName: 'Long Taiming',
+    altNames: ['龍泰銘', 'Agmund'],
     artists: [DoFArtist.Lumi],
     nationality: DoFNationality.Svanhild,
     height: 196,
