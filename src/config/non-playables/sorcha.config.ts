@@ -31,7 +31,7 @@ export const Sorcha : IDoFCharacter =         {
         {
             chapter: 2,
             weapons: [DoFWeapon.Fimbulvetr],
-            stats: { hp: 46, pow: 18, skl: 22, spd: 24, luk: 16, def: 8, res: 20, con: 8 },
+            stats: { hp: 42, pow: 21, skl: 22, spd: 24, luk: 16, def: 8, res: 20, con: 8 },
             ranks: {
                 [DoFWeaponType.Anima]: 251,
                 [DoFWeaponType.Staff]: 181
@@ -41,7 +41,7 @@ export const Sorcha : IDoFCharacter =         {
         {
             chapter: 18,
             weapons: [DoFWeapon.Fimbulvetr, DoFWeapon.Thunder],
-            stats: { hp: 46, pow: 18, skl: 22, spd: 24, luk: 16, def: 8, res: 20, con: 8 },
+            stats: { hp: 42, pow: 21, skl: 22, spd: 24, luk: 16, def: 8, res: 20, con: 8 },
             ranks: {
                 [DoFWeaponType.Anima]: 251,
                 [DoFWeaponType.Staff]: 181
