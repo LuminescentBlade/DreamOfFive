@@ -15,7 +15,7 @@ export const Kolbane: IDoFCharacter = {
     },
     conditional:{
         chapter:{
-            chapter: 6,
+            chapter: 8,
             age: 20
         }
     },
