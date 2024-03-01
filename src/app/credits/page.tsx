@@ -234,7 +234,7 @@ export default function Credits() {
                     </li>
                     <li>
                         <h3>
-                            Original C3 Outline
+                            Original C3 Lineart
                         </h3>
                         Sev
                     </li>
