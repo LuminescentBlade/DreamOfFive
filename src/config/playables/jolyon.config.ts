@@ -10,6 +10,7 @@ export const Jolyon: IDoFCharacter = {
     class: DoFClasses.Mage,
     nationality: DoFNationality.Musain,
     height: 168,
+    age: 20,
     routeConfig: {
         musain: {
             player: 6.5
