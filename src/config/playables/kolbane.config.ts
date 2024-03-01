@@ -29,7 +29,7 @@ export const Kolbane: IDoFCharacter = {
     height: 183,
     age: 19,
     stats: {
-        hp: 24, pow: 9, skl: 11, spd: 9, luk: 5, def: 8, res: 0, con: 10
+        hp: 24, pow: 9, skl: 11, spd: 9, luk: 5, def: 8, res: 0, con: 11
     },
     level: 2,
     promotesTo: DoFClasses.Sentinel,

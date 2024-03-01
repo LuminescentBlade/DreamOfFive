@@ -15,10 +15,10 @@ export const Rozelle: IDoFCharacter = {
     height: 178,
     epithet: 'The Black Rose',
     stats: {
-        hp: 32, pow: 16, skl: 17, spd: 8, luk: 18, def: 2, res: 17, con: 13
+        hp: 36, pow: 16, skl: 17, spd: 8, luk: 18, def: 2, res: 17, con: 13
     },
     level: 15,
-    growths: {hp: 85, pow: 55, skl: 60, spd: 25, luk: 55, def: 5, res: 65},
+    growths: {hp: 90, pow: 55, skl: 60, spd: 25, luk: 55, def: 5, res: 65},
     promotesTo: DoFClasses.Sorcerer,
     ranks: {
         [DoFWeaponType.Dark]: 121

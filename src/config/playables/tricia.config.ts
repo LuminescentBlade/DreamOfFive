@@ -14,7 +14,7 @@ export const Tricia: IDoFCharacter =   {
     },
     height: 152,
     stats: {
-        hp: 20, pow: 7, skl: 6, spd: 5, luk: 7, def: 4, res: 2, con: 6
+        hp: 20, pow: 7, skl: 6, spd: 6, luk: 7, def: 4, res: 2, con: 6
     }, 
     level: 1,
     promotesTo: DoFClasses.Blademaiden,
