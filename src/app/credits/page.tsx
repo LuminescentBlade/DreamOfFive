@@ -182,7 +182,7 @@ export default function Credits() {
                         <h3>
                             Enforcer
                         </h3>
-                        Luminescent Blade. BwdYeti (battlesprite), Agro (mapsprite)
+                        Luminescent Blade. BwdYeti (sword movements), Agro (mapsprite)
                     </li>
                 </ul>
             </li>
