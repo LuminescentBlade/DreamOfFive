@@ -220,9 +220,31 @@ export default function Credits() {
             </li>
             <li>
                 <h2>
+                    CG Art
+                </h2>
+                <ul>
+                    <li>
+                        Luminescent Blade   
+                    </li>
+                    <li>
+                        <h3>
+                            C8-10B, Second CG Horse
+                        </h3>
+                        SeraphKnight
+                    </li>
+                    <li>
+                        <h3>
+                            Original C3 Outline
+                        </h3>
+                        Sev
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h2>
                     Original Version Credits
                 </h2>
-                Aeorys, Anti-Social Knight, Amelia, Arch, Callum McMillan, Cam, Dancer A, El Rey Leon, Enjolras, Feaw, Hikarusa, Mariobro3828, Niharu, Jubby, Kai, Ken ZOMG, LordGlenn, Luminescent Blade, Sakusa, Shadowofchaos, Shiny Charmander, SnakeMomMelissa, Vampire Elf, Xiltas
+                Aeorys, Anti-Social Knight, Sev, Arch, Callum McMillan, Cam, Dancer A, El Rey Leon, Enjolras, Feaw, Hikarusa, Mariobro3828, Niharu, Jubby, Kai, Ken ZOMG, LordGlenn, Luminescent Blade, Sakusa, Shadowofchaos, Shiny Charmander, SnakeMomMelissa, Vampire Elf, Xiltas
             </li>
             <li>
                 <h2>
