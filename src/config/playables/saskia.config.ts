@@ -8,9 +8,9 @@ export const Saskia: IDoFCharacter = {
     level: 3,
     nationality: DoFNationality.Aukema,
     height: 158,
-    stats: { hp: 34, pow: 13, skl: 16, spd: 24, luk: 16, def: 14, res: 4, con: 7},
-    growths: {hp: 60, pow: 40, skl: 40, spd: 65, luk: 50, def: 30, res: 10 },
-    ranks: { sword: 121 },
+    stats: { hp: 34, pow: 15, skl: 16, spd: 26, luk: 16, def: 14, res: 4, con: 7},
+    growths: {hp: 65, pow: 35, skl: 40, spd: 65, luk: 50, def: 35, res: 10 },
+    ranks: { sword: 181 },
     routeConfig: {
         allRoute: {
             player: 16

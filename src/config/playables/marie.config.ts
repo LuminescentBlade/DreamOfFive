@@ -13,12 +13,12 @@ export const Marie: IDoFCharacter = {
         }
     },
     stats: {
-        hp: 26, pow: 10, skl: 11, spd: 16, luk: 13, def: 6, res: 5, con: 6
+        hp: 26, pow: 11, skl: 11, spd: 18, luk: 13, def: 7, res: 5, con: 7
     },
     height: 161,
     level: 10,
     promotesTo: DoFClasses.Rogue,
-    growths: {hp: 65, pow: 40, skl: 40, spd: 70, luk: 65, def: 15, res: 20},
+    growths: {hp: 65, pow: 45, skl: 45, spd: 70, luk: 65, def: 20, res: 20},
     ranks: {
         [DoFWeaponType.Sword]: 71,
     },

@@ -48,9 +48,9 @@ export const Rena: IDoFCharacter = {
     },
     growths: {
         hp: 70,
-        pow: 45,
+        pow: 40,
         skl: 55,
-        spd: 60,
+        spd: 65,
         luk: 50,
         def: 30,
         res: 20

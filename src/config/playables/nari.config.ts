@@ -14,7 +14,7 @@ export const Nari: IDoFCharacter = {
         }
     },
     stats: {
-        hp: 34, pow: 16, skl: 15, spd: 13, luk: 13, def: 12, res: 0, con: 11
+        hp: 35, pow: 16, skl: 16, spd: 13, luk: 15, def: 12, res: 0, con: 11
     },
     level: 14,
     promotesTo: DoFClasses.Gladiator,
