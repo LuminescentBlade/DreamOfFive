@@ -16,7 +16,7 @@ export const Adalheid: IDoFCharacter = {
             npc: 7
         },
         musain: {
-            player: 90,
+            player: 23,
             enemy: 21
         }
 
@@ -27,11 +27,12 @@ export const Adalheid: IDoFCharacter = {
         [DoFWeaponType.Sword]: 251,
         [DoFWeaponType.Lance]: 251
     },
+    stats: { hp: 48, pow: 20, skl: 20, spd: 24, luk: 16, def: 18, res: 7, con: 10 },
+    growths: { hp: 70, pow: 35, skl: 35, spd: 50, luk: 40, def: 25, res: 15 },
+    level: 10,
     bossStats: [
         {
             chapter: 21,
-            stats: { hp: 48, pow: 21, skl: 21, spd: 23, luk: 16, def: 18, res: 7, con: 10 },
-            level: 10,
             weapons: ['Flametongue', 'Silver Lance']
         }
     ],
