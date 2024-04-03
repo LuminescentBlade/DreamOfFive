@@ -500,7 +500,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         // postsplit
         {
             name: 'callad',
-            artists: [DoFArtist.Xiltas, DoFArtist.Astra],
+            artists: [DoFArtist.Xiltas, DoFArtist.Astra, DoFArtist.Lumi],
             blurb: '"... of the backwater provinces were determined to have their day, long marginalised by aloof corelanders..."',
             class: DoFClasses.Warrior,
             nationality: DoFNationality.Aukema,

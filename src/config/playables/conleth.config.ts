@@ -8,7 +8,7 @@ export const Conleth: IDoFCharacter = {
     class: DoFClasses.Skirmisher,
     nationality: DoFNationality.Aukema,
     height: 166,
-    routeConfig:{
+    routeConfig: {
         onduris: {
             player: 8
         },
@@ -17,11 +17,11 @@ export const Conleth: IDoFCharacter = {
         }
     },
     stats: {
-        hp: 25, pow: 10, skl: 12, spd: 15, luk: 9, def: 6, res: 2, con: 8
+        hp: 25, pow: 10, skl: 12, spd: 15, luk: 11, def: 6, res: 3, con: 8
     },
     level: 8,
     promotesTo: DoFClasses.Outrider,
-    growths: {hp: 65, pow: 40, skl: 50, spd: 60, luk: 60, def: 25, res: 10},
+    growths: { hp: 65, pow: 45, skl: 50, spd: 60, luk: 60, def: 25, res: 20 },
     ranks: {
         [DoFWeaponType.Bow]: 71,
     },

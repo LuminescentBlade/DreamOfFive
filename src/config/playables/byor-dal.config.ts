@@ -16,9 +16,9 @@ export const ByorDal: IDoFCharacter = {
         }
     },
     height: 182,
-    stats: {hp: 38, pow: 18, skl: 15, spd: 15, luk: 6, def: 17, res: 8, con: 13},
-    level: 3, 
-    growths: {hp: 90, pow: 45, skl: 55, spd: 35, luk: 15, def: 40, res: 30},
+    stats: {hp: 38, pow: 18, skl: 17, spd: 15, luk: 6, def: 17, res: 8, con: 13},
+    level: 2, 
+    growths: {hp: 95, pow: 50, skl: 55, spd: 35, luk: 15, def: 40, res: 30},
     ranks: {
         [DoFWeaponType.Axe]: 181,
         [DoFWeaponType.Sword]: 31

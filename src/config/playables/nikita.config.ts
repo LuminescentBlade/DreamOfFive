@@ -16,7 +16,7 @@ export const Nikita: IDoFCharacter = {
             enemy: 10
         }
     },
-    growths: { hp: 50, pow: 30, skl: 70, spd: 70, luk: 50, def: 20, res: 15 },
+    growths: { hp: 50, pow: 40, skl: 70, spd: 70, luk: 60, def: 20, res: 15 },
     level: 6,
     stats: { hp: 29, pow: 15, skl: 18, spd: 22, luk: 17, def: 12, res: 7, con: 8 },
     ranks: {

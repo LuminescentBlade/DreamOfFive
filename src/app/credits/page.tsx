@@ -282,7 +282,7 @@ export default function Credits() {
             </li>
             <li>
                 <h2>Music</h2>
-                A Reliable Chair, Agromono, Alusq, ArcherBias, Dolkar, Gustabo, Ken ZOMG, Lemon Tart, Mariobro3828, MrGreen3339, Pandan, Stardust Sheep, RandomWizard, RSFlame, SaXor the Nobody, Scraiza, Sme, Surfing Kyogre
+                A Reliable Chair, Agromono, Alusq, ArcherBias, Cynon, Dolkar, Gustabo, Juan-Miguel, Ken ZOMG, Lemon Tart, Mariobro3828, MrGreen3339, Mychael, Pandan, RAUMEN1, Stardust Sheep, RandomWizard, RSFlame, SaXor the Nobody, Scraiza, Sme, Surfing Kyogre
             </li>
             <li>
                 <h2>Composition - Rena's Journal</h2>

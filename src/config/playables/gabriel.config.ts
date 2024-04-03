@@ -3,7 +3,7 @@ import { IDoFCharacter } from "@dof/src/models/interfaces";
 
 export const Gabriel: IDoFCharacter = {
     name: DoFCharKey.Gabriel,
-    artists: [DoFArtist.Sev],
+    artists: [DoFArtist.Sev, DoFArtist.Lumi],
     blurb: '"... knew he was stretching his luck. He would serve his own interests, but reliably and predictably..."',
     nationality: DoFNationality.Aukema,
     class: DoFClasses.Warlock,

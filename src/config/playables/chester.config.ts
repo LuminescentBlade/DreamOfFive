@@ -16,7 +16,7 @@ export const Chester: IDoFCharacter = {
     age: 19,
     epithet: 'The Atoner',
     stats:{
-        hp: 24, pow: 8, skl: 9, spd: 14, luk: 9, def: 6, res: 0, con: 6
+        hp: 26, pow: 9, skl: 8, spd: 15, luk: 9, def: 6, res: 0, con: 6
     }, 
     level: 3,
     promotesTo: DoFClasses.Rogue,
