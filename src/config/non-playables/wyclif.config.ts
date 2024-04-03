@@ -25,6 +25,7 @@ export const Wyclif: IDoFCharacter = {
         },
         {
             chapter: 17,
+            level: 8,
             weapons: ['Light Brand', 'Potion'],
             stats: { hp: 44, pow: 20, skl: 18, spd: 15, luk: 15, def: 18, res: 7, con: 12 },
             ranks: { sword: 251, axe: 181 }
