@@ -9,6 +9,7 @@ export const Agmund: IDoFCharacter = {
     artists: [DoFArtist.Lumi],
     nationality: DoFNationality.Svanhild,
     height: 196,
+    age: 46,
     routeConfig: {
         allRoute: {
             npc: 17.5
