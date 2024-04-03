@@ -12,6 +12,7 @@ export const Marie: IDoFCharacter = {
             player: 6.5
         }
     },
+    epithet: 'Raconteur',
     stats: {
         hp: 26, pow: 11, skl: 11, spd: 18, luk: 13, def: 7, res: 5, con: 7
     },

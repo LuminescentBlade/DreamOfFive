@@ -12,7 +12,7 @@ export const Kahn: IDoFCharacter = {
             player: 9
         }
     },
-    epithet: 'The Wandering Eye',
+    epithet: 'Wandering Eye',
     height: 164,
     age: 20, 
     stats: {

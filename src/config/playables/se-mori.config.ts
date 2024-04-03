@@ -9,7 +9,7 @@ export const SeMori: IDoFCharacter = {
     class: DoFClasses.Fencer,
     nationality: DoFNationality.Onduris,
     height: 176,
-    epithet: 'The Rake',
+    epithet: 'Rake',
     alt: {
         promo: {
             artists: [DoFArtist.Sev, DoFArtist.Astra, DoFArtist.Lumi],

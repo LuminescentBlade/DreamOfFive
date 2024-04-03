@@ -18,7 +18,7 @@ export const ViShen: IDoFCharacter = {
     level: 16,
     growths: { hp: 75, pow: 45, skl: 65, spd: 65, luk: 40, def: 20, res: 15 },
     promotesTo: DoFClasses.Swordmaster,
-    epithet: 'The Seneschal',
+    epithet: 'Seneschal',
     ranks: {
         [DoFWeaponType.Sword]: 121 
     },

@@ -18,7 +18,7 @@ export const Garath: IDoFCharacter = {
     height: 200,
     growths: { hp: 90, pow: 75, skl: 60, spd: 40, luk: 30, def: 45, res: 10 },
     age: 38,
-    epithet: 'The Deadeye',
+    epithet: 'Deadeye',
     ranks: {
         [DoFWeaponType.Axe]: 71,
         [DoFWeaponType.Bow]: 181

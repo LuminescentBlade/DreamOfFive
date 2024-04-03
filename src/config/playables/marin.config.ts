@@ -12,6 +12,7 @@ export const Marin: IDoFCharacter = {
             player: 6.5
         }
     },
+    epithet: 'Rider',
     stats: {
         hp: 35, pow: 13, skl: 11, spd: 16, luk: 15, def: 10, res: 0, con: 9
     },

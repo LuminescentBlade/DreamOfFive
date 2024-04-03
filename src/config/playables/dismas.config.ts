@@ -6,6 +6,7 @@ export const Dismas: IDoFCharacter = {
     name: DoFCharKey.Dismas,
     artists: [DoFArtist.Astra],
     class: DoFClasses.Raider,
+    epithet: 'Thrice Born',
     blurb: '"... seen his type a dozen times before. It doesn\'t matter who has to die, so long as his belly is full..."',
     nationality: DoFNationality.Aukema,
     alt: {

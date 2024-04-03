@@ -18,7 +18,7 @@ export const Annelise: IDoFCharacter = {
     },
     height: 173,
     age: 20,
-    epithet: 'The Seeker',
+    epithet: 'Seeker',
     stats: {
         hp: 27, pow: 14, skl: 12, spd: 19, luk: 9, def: 9, res: 11, con: 8
     },

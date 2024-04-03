@@ -7,6 +7,7 @@ export const Cathale: IDoFCharacter = {
     blurb: '"Steady of eye and stout of heart, she was every inch the soldier, without a Strider\'s mercurial streak..."',
     class: DoFClasses.Armour,
     nationality: DoFNationality.Aukema,
+    epithet: 'Warder',
     routeConfig:{
         allRoute: {
             player: 2

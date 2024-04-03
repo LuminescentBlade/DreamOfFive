@@ -5,7 +5,7 @@ export const Hereward: IDoFCharacter = {
     name: DoFCharKey.Hereward,
     profileName: 'Hereward',
     altNames: ['Earl Griffid'],
-    epithet: 'The Stout-heart',
+    epithet: 'Stout-heart',
     artists: [DoFArtist.Lumi],
     class: DoFClasses.Cataphract,
     height: 188,

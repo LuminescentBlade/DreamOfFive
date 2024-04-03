@@ -13,7 +13,7 @@ export const Rozelle: IDoFCharacter = {
         }
     },
     height: 178,
-    epithet: 'The Black Rose',
+    epithet: 'Black Rose',
     stats: {
         hp: 36, pow: 16, skl: 17, spd: 8, luk: 18, def: 2, res: 17, con: 13
     },

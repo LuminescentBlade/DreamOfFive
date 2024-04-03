@@ -13,7 +13,7 @@ export const Lizaveta: IDoFCharacter = {
             player: 4
         }
     },
-    epithet: 'The Silken Spinster',
+    epithet: 'Silken Spinster',
     height: 157,
     stats: {
         hp: 26, pow: 8, skl: 7, spd: 12, luk: 12, def: 3, res: 10, con: 6
