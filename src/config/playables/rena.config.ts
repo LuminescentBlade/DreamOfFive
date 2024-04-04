@@ -1,4 +1,4 @@
-import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFWeaponType } from "@dof/src/models/enums";
+import { DoFAffinities, DoFArtist, DoFCharKey, DoFClasses, DoFNationality, DoFRoute, DoFWeaponType } from "@dof/src/models/enums";
 import { IDoFCharacter } from "@dof/src/models/interfaces";
 
 export const Rena: IDoFCharacter = {
@@ -27,10 +27,23 @@ export const Rena: IDoFCharacter = {
         }
     },
     conditional: {
-        chapter: {
-            chapter: 15,
-            age: 22,
-        }
+        chapter: [
+            {
+                chapter: 15,
+                age: 22,
+                mountName: 'Snow (Musain) | Quicksilver (Onduris)'
+            },
+            {
+                chapter: 15,
+                route: DoFRoute.Onduris,
+                mountName: 'Quicksilver'
+            },
+            {
+                chapter: 15,
+                route: DoFRoute.Musain,
+                mountName: 'Snow'
+            }
+        ]
     },
     age: 21,
     epithet: 'Leveller',

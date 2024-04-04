@@ -24,5 +24,6 @@ export const Ioan: IDoFCharacter = {
     ranks: {
         [DoFWeaponType.Lance]: 71
     },
-    affinity: DoFAffinities.Anima
+    affinity: DoFAffinities.Anima,
+    mountName: 'Ruslan'
 };

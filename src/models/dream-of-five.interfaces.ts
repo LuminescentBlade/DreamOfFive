@@ -37,7 +37,8 @@ export interface IDoFCharacter extends IDoFUnit {
     // can make a more robust gating system but for now simiplicity works and is good
     gateProfileTabChapter?: number
     gateProfileDetailsChapter?: number
-    bossStats?: IDoFNonPlayableConfig[]
+    bossStats?: IDoFNonPlayableConfig[],
+    mountName?: string
 }
 export interface IDoFStats {
     [stat: string]: number

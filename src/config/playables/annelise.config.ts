@@ -28,5 +28,6 @@ export const Annelise: IDoFCharacter = {
     ranks: {
         [DoFWeaponType.Sword]: 71,
     },
-    affinity: DoFAffinities.Anima
+    affinity: DoFAffinities.Anima,
+    mountName: '雲鳳 Yunfeng'
 };
