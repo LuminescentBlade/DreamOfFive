@@ -632,7 +632,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
         {
             name: 'feona',
             artists: [DoFArtist.Astra, DoFArtist.Lumi],
-            blurb: `""`,
+            blurb: `"... of the affluent merchant-class threw their weight behind Farrell, and his hollow promises of limited change..."`,
             class: DoFClasses.Sibyl,
             nationality: DoFNationality.Aukema,
             routeConfig: {
