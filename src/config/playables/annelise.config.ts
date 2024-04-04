@@ -29,5 +29,5 @@ export const Annelise: IDoFCharacter = {
         [DoFWeaponType.Sword]: 71,
     },
     affinity: DoFAffinities.Anima,
-    mountName: '雲鳳 Yunfeng'
+    mountName: 'Yunfeng 雲鳳'
 };
