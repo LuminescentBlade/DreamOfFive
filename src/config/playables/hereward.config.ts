@@ -27,5 +27,6 @@ export const Hereward: IDoFCharacter = {
     },
     gateProfileDetailsChapter: 16,
     affinity: DoFAffinities.Anima,
-    blurb: `"... had no desire to involve himself in petty factional squabbles. Yet the bloodshed respected no abstention..."`
+    blurb: `"... had no desire to involve himself in petty factional squabbles. Yet the bloodshed respected no abstention..."`,
+    mountName: 'Drum'
 };
