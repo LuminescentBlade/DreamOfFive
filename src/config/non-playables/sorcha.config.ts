@@ -29,6 +29,15 @@ export const Sorcha : IDoFCharacter =         {
     height: 174,
     bossStats: [
         {
+            chapter: 18,
+            weapons: ['Chrysophylax'],
+            stats: { hp: 42, pow: 21, skl: 22, spd: 24, luk: 16, def: 8, res: 20, con: 8 },
+            ranks: {
+                [DoFWeaponType.Anima]: 251,
+                [DoFWeaponType.Staff]: 181
+            }
+        },
+        {
             chapter: 2,
             weapons: ['Chrysophylax'],
             stats: { hp: 42, pow: 21, skl: 22, spd: 24, luk: 16, def: 8, res: 20, con: 8 },
@@ -37,15 +46,6 @@ export const Sorcha : IDoFCharacter =         {
                 [DoFWeaponType.Staff]: 181
             },
             optional: true
-        },
-        {
-            chapter: 18,
-            weapons: ['Chrysophylax'],
-            stats: { hp: 42, pow: 21, skl: 22, spd: 24, luk: 16, def: 8, res: 20, con: 8 },
-            ranks: {
-                [DoFWeaponType.Anima]: 251,
-                [DoFWeaponType.Staff]: 181
-            }
         },
     ]
 };
