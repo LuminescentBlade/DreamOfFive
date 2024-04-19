@@ -5,6 +5,7 @@ import { DoFWeapon } from "../weapons.config";
 export const ByorDal: IDoFCharacter = {
     name: DoFCharKey.byorDal,
     displayName: 'byor\'Dal',
+    epithet: 'Repentant Warrior',
     artists: [DoFArtist.Lumi, DoFArtist.Astra],
     blurb: '"... saw no future for himself or his land, so resolved to go out in a blaze of glory. But how many would be dragged down..."',
     class: DoFClasses.Gladiator,

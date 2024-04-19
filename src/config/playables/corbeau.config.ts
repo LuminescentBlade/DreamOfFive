@@ -5,6 +5,7 @@ import { DoFWeapon } from "../weapons.config";
 export const Corbeau: IDoFCharacter = {
     name: DoFCharKey.Corbeau,
     profileName: 'Daffodil Corbeau',
+    epithet: 'Flower of the Revolution',
     artists: [DoFArtist.Lumi],
     blurb: '"... could not content herself with railing against injustice. There came a time to draw a line in the sand..."',
     class: DoFClasses.Warrior,

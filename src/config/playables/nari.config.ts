@@ -22,5 +22,6 @@ export const Nari: IDoFCharacter = {
     ranks: {
         [DoFWeaponType.Sword]: 71,
     },
-    affinity: DoFAffinities.Anima
+    affinity: DoFAffinities.Anima,
+    epithet: 'Sleeping Waters'
 };

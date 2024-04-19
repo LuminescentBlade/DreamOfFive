@@ -4,7 +4,7 @@ import { DoFWeapon } from "../weapons.config";
 
 export const Crowe: IDoFCharacter = {
     name: DoFCharKey.Crowe,
-    artists: [DoFArtist.Sev],
+    artists: [DoFArtist.Sev, DoFArtist.Lumi],
     blurb: '"It was clear that, in better times, he would only be fit for the noose. But we needed him, and he knew it..."',
     nationality: DoFNationality.Aukema,
     class: DoFClasses.Archer,
@@ -28,5 +28,6 @@ export const Crowe: IDoFCharacter = {
     bossStats: [
         { chapter: 3, talk: true, weapons: [DoFWeapon.IronBow, DoFWeapon.SteelBow, DoFWeapon.IronLongbow, 'Potion'] }
 
-    ]
+    ],
+    epithet: 'Covetous'
 };

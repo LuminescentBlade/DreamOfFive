@@ -66,7 +66,7 @@ export default function Credits() {
                     </li>
                     <li>
                         <h3>
-                            Blademaiden, Drake Knight, Gladiator, Henchwoman, Marksman (Sniper), Juggernaut
+                            Blademaiden (including class card), Drake Knight, Gladiator, Henchwoman, Marksman (Sniper), Juggernaut
                         </h3>
                         Nuramon
                     </li>
@@ -189,6 +189,12 @@ export default function Credits() {
                             Asher personal
                         </h3>
                        Vyland
+                    </li>
+                    <li>
+                        <h3>
+                            Dragon
+                        </h3>
+                        Nuramon (battlesprite), L95 (mapsprite)
                     </li>
                 </ul>
             </li>

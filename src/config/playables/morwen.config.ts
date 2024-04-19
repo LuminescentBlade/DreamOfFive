@@ -29,6 +29,7 @@ export const Morwen: IDoFCharacter = {
         }
     },
     level: 8,
+    epithet: 'Bloodhound',
     stats: { hp: 48, pow: 22, skl: 17, spd: 17, luk: 21, def: 23, res: 8, con: 15 },
     growths: {hp: 85, pow: 50, skl: 30, spd: 30, luk: 55, def: 40, res: 20 },
     ranks: { sword: 181, axe: 181 },

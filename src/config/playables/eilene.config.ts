@@ -22,5 +22,6 @@ export const Eilene: IDoFCharacter = {
     ranks: {
         [DoFWeaponType.Sword]: 31
     },
-    affinity: DoFAffinities.Light
+    affinity: DoFAffinities.Light,
+epithet: 'White Wings'
 };

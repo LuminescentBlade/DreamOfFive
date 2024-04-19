@@ -10,7 +10,7 @@ export const Artemisia: IDoFCharacter = {
     level: 7,
     stats: { hp: 34, pow: 18, skl: 21, spd: 15, luk: 15, def: 6, res: 16, con: 8 },
     growths: { hp: 60, pow: 40, skl: 55, spd: 35, luk: 40, def: 10, res: 50 },
-    epithet: 'Scholar-Knight',
+    epithet: 'Glistering Beacon',
     routeConfig: {
         allRoute: {
             player: 19

@@ -21,6 +21,11 @@ export const Thyra: IDoFCharacter = {
             artists: [DoFArtist.Lumi, DoFArtist.AK, DoFArtist.Astra],
             displayName: 'Unarmored',
             chapter: 17.5
+        },
+        date: {
+            artists: [DoFArtist.Lumi, DoFArtist.AK, DoFArtist.Astra],
+            displayName: 'Date',
+            chapter: 23.5
         }
     },
     level: 7,

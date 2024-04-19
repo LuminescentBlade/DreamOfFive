@@ -16,7 +16,7 @@ export const Saskia: IDoFCharacter = {
             player: 16
         }
     },
-    epithet: 'Lightfinger',
+    epithet: 'Knave of Diamonds',
     affinity: DoFAffinities.Wind,
     blurb: `"Sharp, laconic, professional. A woman after my own heart. Little more to say..."`
 };

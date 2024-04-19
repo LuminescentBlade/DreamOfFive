@@ -22,5 +22,6 @@ export const Franseza: IDoFCharacter = {
     ranks: {
         [DoFWeaponType.Bow]: 31
     },
-    affinity: DoFAffinities.Dark
+    affinity: DoFAffinities.Dark,
+    epithet: 'Lunar Spirit'
 };

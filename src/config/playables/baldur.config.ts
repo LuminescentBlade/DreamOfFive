@@ -22,5 +22,6 @@ export const Baldur: IDoFCharacter = {
     ranks: {
         [DoFWeaponType.Axe]: 71,
     },
-    affinity: DoFAffinities.Thunder
+    affinity: DoFAffinities.Thunder,
+    epithet: 'Seafarer'
 };

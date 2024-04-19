@@ -22,5 +22,6 @@ export const Seren: IDoFCharacter = {
     ranks: {
         [DoFWeaponType.Lance]: 31,
     },
-    affinity: DoFAffinities.Wind
+    affinity: DoFAffinities.Wind,
+    epithet: 'Solar Spirit'
 };

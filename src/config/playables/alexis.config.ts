@@ -13,7 +13,7 @@ export const Alexis: IDoFCharacter = {
         }
     },
     height: 171,
-    // epithet: 'Raconteur',
+    epithet: 'Raconteur',
     stats: {
         hp: 27, pow: 10, skl: 13, spd: 18, luk: 13, def: 6, res: 7, con: 7
     },

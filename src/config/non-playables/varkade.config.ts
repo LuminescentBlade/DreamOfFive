@@ -14,9 +14,9 @@ export const Varkade : IDoFCharacter = {
     routeConfig: {
         allRoute: {
             npc: 0,
-            enemy: 99
+            enemy: 27.5
         }
     },
     height: 172,
-    gateProfileDetailsChapter: 99,
+    gateProfileDetailsChapter: 23,
 };

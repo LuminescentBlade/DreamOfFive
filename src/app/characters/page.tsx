@@ -1,10 +1,10 @@
 'use client';
 
-import { DoFArtist, DoFRoute, DoFUnitState } from '@dof/src/models/enums';
+import { DoFRoute, DoFUnitState } from '@dof/src/models/enums';
 import { OptionSelector, UnitSheet } from '@dof/src/lib/components';
 import styles from './page.module.scss'
 import { DoFArtistConfig } from '@dof/src/config/artists.config';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { IDoFCharacterRenderer, IRenderCharacterConfig, IRenderDoFConfig, IRenderItemConfig } from '@dof/src/models/interfaces';
 import { DoFCharacters } from '@dof/src/config/characters.config';
 import { DoFChapters } from '@dof/src/config/chapters.config';
@@ -14,7 +14,7 @@ import { DoFRenderCharacter } from '@dof/src/models/dof-render-character.class';
 import { DoFGeneric } from '@dof/src/models/dof-render-generic.class';
 
 const defaultRenderValues = {
-    prod: { chapter: 6, limit: 22.5 },
+    prod: { chapter: 6, limit: 27.5 },
     local: { chapter: 99 }
 };
 
@@ -47,7 +47,8 @@ function setDisplayValues(showAllItems: boolean = false) {
 
 let unitSheetData: IDoFCharacterRenderer;
 let init = false;
-
+let isShowingIronside = false;
+let ironsideEvent: ((e: KeyboardEvent) => void) | undefined;
 
 export default function CharacterPage() {
     const searchParams = useSearchParams();
@@ -65,9 +66,27 @@ export default function CharacterPage() {
         cachedUnits = getCharacters({ bypassSpoiler: showFullData, useEarliest: false });
     }
     if (!init) {
-
         unitSheetData = getData(chapterLimit, DoFRoute.Both);
     }
+    useEffect(() => {
+        if (!ironsideEvent && !isShowingIronside && !showFullData) {
+            ironsideEvent = createIronsideEventListnerFcn(() => {
+                if (ironsideEvent) {
+                    window.removeEventListener('keydown', ironsideEvent);
+                    ironsideEvent = undefined;
+                }
+            });
+            window.addEventListener('keydown', ironsideEvent);
+        }
+
+        return () => {
+            init = false;
+            if (ironsideEvent) {
+                window.removeEventListener('keydown', ironsideEvent);
+            }
+            ironsideEvent = undefined;
+        };
+    });
 
     let activeCharacter: any;
 
@@ -79,6 +98,47 @@ export default function CharacterPage() {
     });
 
     init = true;
+
+    function createIronsideEventListnerFcn(clearEvent: () => void) {
+        let correctKeyCount = 0;
+        let debounceEventId: any;
+        return function (event: KeyboardEvent) {
+            if (event.key === 'i' && (correctKeyCount === 0 || correctKeyCount === 5)) {
+                correctKeyCount++;
+            } else if (event.key === 'r' && correctKeyCount === 1) {
+                correctKeyCount++;
+            } else if (event.key === 'o' && correctKeyCount === 2) {
+                correctKeyCount++;
+            } else if (event.key === 'n' && correctKeyCount === 3) {
+                correctKeyCount++;
+            } else if (event.key === 's' && correctKeyCount === 4) {
+                correctKeyCount++;
+            } else if (event.key === 'd' && correctKeyCount === 6) {
+                correctKeyCount++;
+            } else if (event.key === 'e' && correctKeyCount === 7) {
+                correctKeyCount++;
+            } else {
+                correctKeyCount = 0;
+            }
+            if (correctKeyCount === 8) {
+                cachedUnits = getCharacters({ bypassSpoiler: showFullData, useEarliest: false, showIronside: true });
+                correctKeyCount = 0;
+                // @ts-ignore
+                clearEvent();
+                isShowingIronside = true;
+                unitSheetData = getData(characterPageState.chapterLimit, characterPageState.displayRoute);
+                updateCharacterPage({ ...characterPageState, unitSheetData })
+
+            } else {
+                if (debounceEventId) {
+                    clearTimeout(debounceEventId);
+                }
+                debounceEventId = setTimeout(() => {
+                    correctKeyCount = 0;
+                }, 500);
+            }
+        }
+    }
 
     function changeRoute(route: DoFRoute) {
         let newChapterLimit = characterPageState.chapterLimit;

@@ -6,7 +6,7 @@ export const Driscoll: IDoFCharacter = {
     artists: [DoFArtist.Lumi],
     blurb: '"... red-blooded Aukeman man, quick to anger, quick to forgive, never far from the fray..."',
     nationality: DoFNationality.Aukema,
-    epithet: 'Mauler',
+    epithet: 'Staunch Mauler',
     class: DoFClasses.Fighter,
     routeConfig: {
         allRoute: {

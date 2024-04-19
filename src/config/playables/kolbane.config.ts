@@ -24,6 +24,11 @@ export const Kolbane: IDoFCharacter = {
             chapter: 8,
             artists: [DoFArtist.Lumi],
             displayName: 'Unarmored'
+        },
+        date: {
+            chapter: 23.5,
+            artists: [DoFArtist.Lumi],
+            displayName: 'Date'
         }
     },
     height: 183,

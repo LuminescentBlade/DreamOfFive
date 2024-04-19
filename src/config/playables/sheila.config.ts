@@ -17,7 +17,7 @@ export const Sheila: IDoFCharacter = {
     alt: {
         injured: { artists: [DoFArtist.Sev, DoFArtist.Lumi], chapter: 19 }
     },
-    stats: { hp: 38, pow: 19, skl: 26, spd: 24, luk: 12, def: 14, res: 17, con: 8 },
+    stats: { hp: 38, pow: 19, skl: 26, spd: 24, luk: 12, def: 14, res: 17, con: 9 },
     growths: { hp: 85, pow: 30, skl: 45, spd: 40, luk: 25, def: 30, res: 25 },
     gateProfileDetailsChapter: 20,
     affinity: DoFAffinities.Fire,
@@ -25,5 +25,6 @@ export const Sheila: IDoFCharacter = {
     ranks: {
         [DoFWeaponType.Sword]:181,
         [DoFWeaponType.Lance]: 251
-    }
+    },
+    epithet: 'Flower of Chivalry'
 };

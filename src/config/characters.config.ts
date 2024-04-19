@@ -239,7 +239,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                 {
                     chapter: 7,
                     route: DoFRoute.Musain,
-                    stats: { hp: 33, pow: 13, skl: 18, spd: 12, luk: 6, def: 8, res: 14, con: 10 },
+                    stats: { hp: 33, pow: 13, skl: 18, spd: 12, luk: 6, def: 8, res: 14, con: 8 },
                     weapons: [DoFWeapon.Thunder, DoFWeapon.Sleep],
                     ranks: {
                         [DoFWeaponType.Anima]: 181,
@@ -745,15 +745,381 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             ]
         },
         {
-            name: 'miodrag',
+            name: 'dromion',
+            class: DoFClasses.Dreadnought,
             artists: [DoFArtist.Astra, DoFArtist.Lumi],
+            nationality: DoFNationality.Vishara,
+            affinity: DoFAffinities.Ice,
+            blurb: `"But not all accepted Tamara's rule without question. Some still looked to the fertile east with naked envy..."`,
+            routeConfig: {
+                allRoute: {
+                    enemy: 23
+                }
+            },
+            bossStats: [
+                {
+                    chapter: 23,
+                    level: 11,
+                    stats: { hp: 48, pow: 22, skl: 24, spd: 12, luk: 13, def: 25, res: 7, con: 16 },
+                    ranks: {
+                        [DoFWeaponType.Sword]: 181,
+                        [DoFWeaponType.Lance]: 251,
+                        [DoFWeaponType.Axe]: 251
+                    },
+                    weapons: ['Francisca', 'Brave Lance']
+                }
+            ]
+        },
+        {
+            name: 'miodrag',
             class: DoFClasses.Warrior,
+            artists: [DoFArtist.Astra, DoFArtist.Lumi],
             nationality: DoFNationality.Vishara,
             routeConfig: {
                 allRoute: {
-                    enemy: 80
+                    enemy: 24
                 }
-            }
+            },
+            affinity: DoFAffinities.Fire,
+            blurb: `"... that it did not matter what reasons were found, only that some cause did arise to go east and conquer..."`,
+            bossStats: [
+                {
+                    chapter: 24,
+                    weapons: ['Brave Axe', 'Brutal Bow'],
+                    stats: { hp: 55, pow: 27, skl: 22, spd: 19, luk: 14, def: 17, res: 4, con: 15 },
+                    level: 10,
+                    ranks: {
+                        [DoFWeaponType.Axe]: 251,
+                        [DoFWeaponType.Bow]: 251
+                    }
+                }
+            ]
+        },
+        {
+            name: 'demetra',
+            class: DoFClasses.Gladiator,
+            artists: [DoFArtist.Astra],
+            nationality: DoFNationality.Vishara,
+            affinity: DoFAffinities.Dark,
+            routeConfig: {
+                allRoute: {
+                    enemy: 24
+                }
+            },
+            blurb: `"... feared breaker of rogue drakes, more adventurer than knight. But she was driven most of all by the need to shed..."`,
+            bossStats: [
+                {
+                    chapter: 24,
+                    weapons: ['Brave Sword', 'Scalebreaker'],
+                    ranks: {
+                        [DoFWeaponType.Sword]: 251,
+                        [DoFWeaponType.Axe]: 251
+                    },
+                    level: 13,
+                    stats: { hp: 50, pow: 24, skl: 27, spd: 21, luk: 17, def: 25, res: 5, con: 13 }
+                }
+            ]
+        },
+        {
+            name: 'jupistra',
+            artists: [DoFArtist.Sev],
+            class: DoFClasses.Sage,
+            nationality: DoFNationality.Musain,
+            blurb: `"...has sent with them a young and ambitious sorceress, eager to earn her spurs in this foreign venture..."`,
+            routeConfig: {
+                musain: {
+                    enemy: 24
+                }
+            },
+            affinity: DoFAffinities.Wind,
+            bossStats: [
+                {
+                    chapter: 24,
+                    route: DoFRoute.Musain,
+                    stats: { hp: 41, pow: 19, skl: 26, spd: 25, luk: 18, def: 8, res: 19, con: 8 },
+                    level: 11,
+                    weapons: ['Fimbulvetr', 'Sleep'],
+                    ranks: {
+                        [DoFWeaponType.Anima]: 251,
+                        [DoFWeaponType.Staff]: 181
+                    }
+                }
+            ]
+        },
+        {
+            name: 'ri-strelet',
+            displayName: `ri'Strelet`,
+            artists: [DoFArtist.Lumi],
+            class: DoFClasses.Sorcerer,
+            nationality: DoFNationality.Onduris,
+            routeConfig: {
+                onduris: {
+                    enemy: 24
+                }
+            },
+            affinity: DoFAffinities.Anima,
+            blurb: `"... these impetuous swordsmen are kept in line by a scarred old scholar, a grim but steady man I've come to rely on..."`,
+            bossStats: [
+                {
+                    chapter: 24,
+                    route: DoFRoute.Onduris,
+                    ranks: {
+                        [DoFWeaponType.Dark]: 251,
+                        [DoFWeaponType.Staff]: 181,
+                    },
+                    weapons: ['Fenrir', 'Sleep'],
+                    level: 11,
+                    stats: { hp: 54, pow: 27, skl: 19, spd: 14, luk: 16, def: 12, res: 23, con: 13 }
+                }
+            ]
+        },
+        {
+            name: 'razhvan',
+            profileName: 'Razhvan Leucrion',
+            class: DoFClasses.DrakeKnight,
+            artists: [DoFArtist.Lumi, DoFArtist.Astra],
+            nationality: DoFNationality.Vishara,
+            affinity: DoFAffinities.Dark,
+            routeConfig: {
+                allRoute: {
+                    enemy: 25
+                }
+            },
+            bossStats: [
+                {
+                    chapter: 25,
+                    stats: { hp: 46, pow: 22, skl: 25, spd: 21, luk: 18, def: 26, res: 4, con: 10 },
+                    ranks: {
+                        [DoFWeaponType.Axe]: 181,
+                        [DoFWeaponType.Lance]: 251
+                    },
+                    weapons: ['Spear', 'Brave Lance'],
+                    level: 12,
+                    optional: true
+                }
+            ],
+            blurb: `"... not all had the vision to forge their own path. Most lesser lords blindly followed their masters, called it fealty..."`
+        },
+        {
+            name: 'dunois',
+            artists: [DoFArtist.Lumi],
+            nationality: DoFNationality.Musain,
+            class: DoFClasses.Sentinel,
+            routeConfig: {
+                musain: {
+                    enemy: 26
+                }
+            },
+            affinity: DoFAffinities.Light,
+            blurb: `"... a man far unlike his predecessor, a ruthless pragmatist. He would not be blinded by the sheen of self-regard..."`,
+            bossStats: [
+                {
+                    chapter: 26,
+                    route: DoFRoute.Musain,
+                    level: 11,
+                    stats: { hp: 44, pow: 25, skl: 29, spd: 25, luk: 13, def: 20, res: 14, con: 12 },
+                    weapons: ['Spear', 'Brave Lance'],
+                    ranks: {
+                        [DoFWeaponType.Lance]: 251
+                    }
+                }
+            ]
+        },
+        {
+            name: 'vas-parei',
+            displayName: `vas'Parei`,
+            artists: [DoFArtist.Lumi],
+            class: DoFClasses.Swordmaster,
+            nationality: DoFNationality.Onduris,
+            routeConfig: {
+                onduris: {
+                    enemy: 26
+                }
+            },
+            bossStats: [
+                {
+                    chapter: 26,
+                    route: DoFRoute.Onduris,
+                    level: 11,
+                    stats: { hp: 44, pow: 24, skl: 26, spd: 30, luk: 25, def: 14, res: 12, con: 11 },
+                    weapons: ['Brave Sword', 'Silver Sword'],
+                    ranks: {
+                        [DoFWeaponType.Sword]: 251
+                    }
+                }
+            ],
+            affinity: DoFAffinities.Wind,
+            blurb: `"... believed to be second in ability only to mir'Katal himself. Considered, as well, the most eligible bachelor..."`
+        },
+        {
+            name: 'agrippa',
+            affinity: DoFAffinities.Wind,
+            profileName: 'Agrippa Tarquinia',
+            artists: [DoFArtist.Lumi, DoFArtist.Astra],
+            class: DoFClasses.DrakeKnight,
+            nationality: DoFNationality.Vishara,
+            routeConfig: {
+                allRoute: {
+                    enemy: 26
+                }
+            },
+            blurb: `"... that arcus said she was known as 'the Whip-hand of the South'm the harshest taskmaster of a harsh land...`,
+            bossStats: [
+                {
+                    chapter: 26,
+                    level: 14,
+                    stats: { hp: 55, pow: 26, skl: 22, spd: 23, luk: 19, def: 25, res: 2, con: 11 },
+                    weapons: ['Francisca', 'Brave Axe'],
+                    ranks: {
+                        [DoFWeaponType.Axe]: 251,
+                        [DoFWeaponType.Lance]: 251
+                    }
+                }
+            ]
+        },
+        {
+            name: 'astaroth',
+            artists: [DoFArtist.Lumi],
+            nationality: DoFNationality.Musain,
+            class: 'Dragon',
+            affinity: DoFAffinities.Dark,
+            routeConfig: {
+                musain: {
+                    enemy: 27
+                }
+            },
+            bossStats: [
+                {
+                    chapter: 27,
+                    level: 20,
+                    route: DoFRoute.Musain,
+                    weapons: ['Annihilation'],
+                    stats: { hp: 80, pow: 30, skl: 26, spd: 19, luk: 12, def: 26, res: 24, con: 25 }
+                }
+            ],
+            blurb: `"... eyes smouldering with a cold, all-consuming hatred for all that had dared live on without him..."`
+        },
+        {
+            name: 'faulinei',
+            artists: [DoFArtist.Lumi],
+            nationality: DoFNationality.Musain,
+            class: 'Dragon',
+            affinity: DoFAffinities.Wind,
+            routeConfig: {
+                musain: {
+                    enemy: 27
+                }
+            },
+            bossStats: [
+                {
+                    chapter: 27,
+                    level: 20,
+                    route: DoFRoute.Musain,
+                    weapons: ['Annihilation'],
+                    stats: { hp: 80, pow: 27, skl: 28, spd: 20, luk: 17, def: 29, res: 21, con: 25 }
+                }
+            ],
+            blurb: `"... seemed almost amused by our pains. There was a timelessness to her mirth, as though she had seen it all..."`
+        },
+        {
+            name: 'nosfentor',
+            artists: [DoFArtist.Lumi],
+            nationality: DoFNationality.Musain,
+            class: 'Dragon',
+            affinity: DoFAffinities.Anima,
+            routeConfig: {
+                musain: {
+                    enemy: 27
+                }
+            },
+            bossStats: [
+                {
+                    chapter: 27,
+                    level: 20,
+                    route: DoFRoute.Musain,
+                    weapons: ['Annihilation'],
+                    stats: { hp: 80, pow: 25, skl: 30, spd: 17, luk: 8, def: 27, res: 29, con: 25 }
+                }
+            ],
+            blurb: `"... accounts of one of the last to fall, with his lonely cries ringing out in the sulphuric skies of Gral Sethes..."`
+        },
+        {
+            name: 'jin-sei_deadlord',
+            displayName: `Deadlord jin'Sei`,
+            artists: [DoFArtist.Astra, DoFArtist.Lumi],
+            nationality: DoFNationality.Onduris,
+            affinity: DoFAffinities.Wind,
+            routeConfig: {
+                onduris: {
+                    enemy: 27
+                }
+            },
+            class: DoFClasses.Swordmaster,
+            bossStats:[
+                {
+                    chapter: 27,
+                    route: DoFRoute.Onduris,
+                    level: 15,
+                    stats: { hp: 60, pow: 15, skl: 29, spd: 30, luk: 0, def: 15, res: 15, con: 8 },
+                    weapons: ['Reforged Sword', 'Serendipity Ring'],
+                    ranks: {
+                        [DoFWeaponType.Sword]: 251
+                    }
+                }
+            ],
+            blurb: `"(711 - 716) Reign marred by instability and rampant corruption, leading to dynastic collapse."`
+        },
+        {
+            name: 'jin-tir_deadlord',
+            displayName: `Deadlord jin'Tir`,
+            artists: [DoFArtist.Lumi],
+            nationality: DoFNationality.Onduris,
+            affinity: DoFAffinities.Light,
+            routeConfig: {
+                onduris: {
+                    enemy: 27
+                }
+            },
+            class: DoFClasses.Swordmaster,
+            bossStats:[
+                {
+                    chapter: 27,
+                    route: DoFRoute.Onduris,
+                    level: 15,
+                    stats: { hp: 55, pow: 18, skl: 29, spd: 30, luk: 0, def: 15, res: 15, con: 8 },
+                    weapons: ['Reforged Sword', 'Serendipity Ring'],
+                    ranks: {
+                        [DoFWeaponType.Sword]: 251
+                    }
+                }
+            ],
+            blurb: `"(702 - 711) Fatally, believed that unimpeachable personal honour would be enough for his nation."`
+        },
+        {
+            name: 'jin-kal_deadlord',
+            displayName: `Deadlord jin'Kal II`,
+            artists: [DoFArtist.Lumi],
+            nationality: DoFNationality.Onduris,
+            affinity: DoFAffinities.Anima,
+            routeConfig: {
+                onduris: {
+                    enemy: 27
+                }
+            },
+            class: DoFClasses.Swordmaster,
+            bossStats:[
+                {
+                    chapter: 27,
+                    route: DoFRoute.Onduris,
+                    level: 15,
+                    stats: { hp: 60, pow: 15, skl: 29, spd: 30, luk: 0, def: 18, res: 15, con: 8 },
+                    weapons: ['Reforged Sword', 'Serendipity Ring'],
+                    ranks: {
+                        [DoFWeaponType.Sword]: 251
+                    }
+                }
+            ],
+            blurb: `"(688 - 702) Could not live up to his namesake's example."`
         },
         // other
         {
@@ -835,26 +1201,16 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             }
         },
         {
-            name: 'queenvish',
-            profileName: 'Queen Tamara',
+            name: 'tamara',
+            profileName: 'Tamara Vorenia',
             displayName: 'Tamara',
-            artists: [DoFArtist.Sev],
+            altNames: ['Queen of Vishara'],
+            artists: [DoFArtist.Lumi],
             nationality: DoFNationality.Vishara,
+            height: 180,
             routeConfig: {
                 allRoute: {
-                    npc: 99
-                }
-            }
-        },
-        {
-            name: 'demetra',
-            displayName: 'Demetra',
-            artists: [DoFArtist.Astra],
-            nationality: DoFNationality.Vishara,
-            affinity: DoFAffinities.Dark,
-            routeConfig: {
-                allRoute: {
-                    enemy: 98
+                    npc: 23
                 }
             }
         },

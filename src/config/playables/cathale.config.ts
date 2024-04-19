@@ -7,7 +7,7 @@ export const Cathale: IDoFCharacter = {
     blurb: '"Steady of eye and stout of heart, she was every inch the soldier, without a Strider\'s mercurial streak..."',
     class: DoFClasses.Armour,
     nationality: DoFNationality.Aukema,
-    epithet: 'Warder',
+    epithet: 'Guardsman',
     routeConfig:{
         allRoute: {
             player: 2
@@ -23,5 +23,5 @@ export const Cathale: IDoFCharacter = {
     ranks: {
         [DoFWeaponType.Lance]: 121,
     },
-    affinity: DoFAffinities.Thunder
+    affinity: DoFAffinities.Thunder,
 };

@@ -12,6 +12,7 @@ import { MirKatal } from "./mir-katal.config";
 import { SelSeir } from "./sel-seir.config";
 import { Sevira } from "./sevira.config";
 import { Sorcha } from "./sorcha.config";
+import { Tanaquil } from "./tanaquil.config";
 import { Trajan } from "./trajan.config";
 import { Uther } from "./uther.config";
 import { Varkade } from "./varkade.config";
@@ -33,6 +34,7 @@ export const DoFNonPlayable  = [
     Sevira,
     Farrell,
     // vishara
+    Tanaquil,
     // the five
     Sorcha,
     Trajan,

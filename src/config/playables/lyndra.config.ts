@@ -7,6 +7,7 @@ export const Lyndra: IDoFCharacter = {
     artists: [DoFArtist.Astra, DoFArtist.Lumi],
     blurb: '"... known as the Black Cat, for the way she seemed to have wretched luck, but many lives..."',
     class: DoFClasses.Gladiator,
+    epithet: 'Black Cat',
     nationality: DoFNationality.Aukema,
     routeConfig: {
         musain: {

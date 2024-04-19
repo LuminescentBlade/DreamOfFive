@@ -23,5 +23,6 @@ export const Wren: IDoFCharacter =  {
     ranks: {
         [DoFWeaponType.Staff]: 121 
     },
-    affinity: DoFAffinities.Dark
+    affinity: DoFAffinities.Dark,
+    epithet: 'Righteous Apostate'
 };

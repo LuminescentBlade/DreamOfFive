@@ -22,5 +22,6 @@ export const Asher: IDoFCharacter = {
     ranks: {
         [DoFWeaponType.Staff]: 121,
     },
-    affinity: DoFAffinities.Thunder
+    affinity: DoFAffinities.Thunder,
+    epithet: 'Layer of Hands',
 };

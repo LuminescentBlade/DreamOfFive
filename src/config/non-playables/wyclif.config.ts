@@ -8,13 +8,23 @@ export const Wyclif: IDoFCharacter = {
     nationality: DoFNationality.Aukema,
     routeConfig: {
         allRoute: {
-            npc: [6, 17, 20]
+            npc: [6, 17, 20],
+            enemy: [23]
         }
     },
-    epithet: 'The Guard of Ways',
+    epithet: 'Guard of Ways',
     height: 176,
     gateProfileDetailsChapter: 17,
     affinity: DoFAffinities.Light,
+    bossStats: [
+        {
+            chapter: 23,
+            level: 11,
+            weapons: ['Rune Sword', 'Brave Sword'],
+            stats: { hp: 51, pow: 22, skl: 21, spd: 16, luk: 17, def: 19, res: 9, con: 12 },
+            ranks: { sword: 251, axe: 181 }
+        },
+    ],
     npcStats: [
         {
             chapter: 20,

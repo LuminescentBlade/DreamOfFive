@@ -15,7 +15,7 @@ export const Florent: IDoFCharacter = {
             player: 15
         }
     },
-    // epithet: 'Rider',
+    epithet: 'The Riders',
     height: 179,
     stats: {
         hp: 33, pow: 15, skl: 14, spd: 12, luk: 9, def: 15, res: 1, con: 10
