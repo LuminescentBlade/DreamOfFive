@@ -740,7 +740,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                         [DoFWeaponType.Sword]: 251,
                         [DoFWeaponType.Lance]: 181
                     },
-                    weapons: ['Kris', 'Silver Sword', 'Whitewing Bracelet']
+                    weapons: ['Kris', 'Silver Sword', 'Hrethe Bracer']
                 },
             ]
         },
