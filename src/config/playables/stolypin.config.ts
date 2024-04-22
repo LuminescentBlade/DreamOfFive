@@ -15,6 +15,7 @@ export const Stolypin: IDoFCharacter = {
             enemy: 99
         }
     },
+    age: 19,
     level: 4,
     stats: { hp: 29, pow: 13, skl: 19, spd: 20, luk: 16, def: 10, res: 12, con: 8},
     growths: { hp: 55, pow: 30, skl: 40, spd: 55, luk: 45, def: 25, res: 35 },
