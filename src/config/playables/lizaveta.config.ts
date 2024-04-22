@@ -15,6 +15,7 @@ export const Lizaveta: IDoFCharacter = {
     },
     epithet: 'Silken Spinster',
     height: 157,
+    age: 19,
     stats: {
         hp: 26, pow: 8, skl: 7, spd: 12, luk: 12, def: 3, res: 10, con: 6
     },
