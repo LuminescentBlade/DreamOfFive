@@ -16,7 +16,7 @@ export const Driscoll: IDoFCharacter = {
     },
     height: 181,
     stats: {
-        hp: 31, pow: 14, skl: 11, spd: 8, luk: 11, def: 8, res: 0, con: 13
+        hp: 31, pow: 14, skl: 11, spd: 9, luk: 11, def: 8, res: 0, con: 13
     },
     level: 6,
     promotesTo: DoFClasses.Warrior,
