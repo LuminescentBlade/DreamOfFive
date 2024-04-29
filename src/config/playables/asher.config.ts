@@ -14,7 +14,7 @@ export const Asher: IDoFCharacter = {
     },
     height: 177,
     stats: {
-        hp: 21, pow: 6, skl: 5, spd: 6, luk: 7, def: 3, res: 8, con: 7
+        hp: 21, pow: 7, skl: 5, spd: 6, luk: 7, def: 3, res: 8, con: 7
     },
     level: 1,
     promotesTo: DoFClasses.HighPriest,
