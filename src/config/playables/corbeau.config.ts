@@ -18,7 +18,7 @@ export const Corbeau: IDoFCharacter = {
         }
     },
     growths: { hp: 115, pow: 55, skl: 30, spd: 35, luk: 50, def: 20, res: 20 },
-    level: 3,
+    level: 2,
     stats: { hp: 44, pow: 20, skl: 13, spd: 14, luk: 18, def: 11, res: 6, con: 14 },
     ranks: {
         [DoFWeaponType.Axe]: 181,

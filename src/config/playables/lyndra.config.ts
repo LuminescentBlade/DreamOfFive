@@ -20,7 +20,7 @@ export const Lyndra: IDoFCharacter = {
     },
     height: 168,
     stats: { hp: 36, pow: 15, skl: 18, spd: 19, luk: 9, def: 18, res: 3, con: 10 },
-    level: 3,
+    level: 2,
     growths: { hp: 75, pow: 35, skl: 55, spd: 55, luk: 30, def: 50, res: 10 },
     ranks: {
         [DoFWeaponType.Sword]: 181,
