@@ -21,7 +21,7 @@ export const ByorDal: IDoFCharacter = {
     growths: {hp: 95, pow: 50, skl: 55, spd: 35, luk: 15, def: 40, res: 30},
     ranks: {
         [DoFWeaponType.Axe]: 181,
-        [DoFWeaponType.Sword]: 31
+        [DoFWeaponType.Sword]: 121
     },
     affinity: DoFAffinities.Ice,
     bossStats: [
