@@ -213,6 +213,12 @@ export default function Credits() {
                         RandomWizard
                     </li>
                     <li>
+                        <h3>
+                            16, 17
+                        </h3>
+                        Aura Wolf
+                    </li>
+                    <li>
                         <h3>All Other Maps</h3>
                         Dancer A
                     </li>
