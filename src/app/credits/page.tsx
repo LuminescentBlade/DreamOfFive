@@ -220,7 +220,7 @@ export default function Credits() {
                     </li>
                     <li>
                         <h3>
-                            3 (Including gameplay), 14A, 17x, 18, 19, 20, 21
+                            3 (Including gameplay), 14A, 17x, 18, 19, 20, 21, 23, 24, 25, 26, Finale
                         </h3>
                         RandomWizard
                     </li>
