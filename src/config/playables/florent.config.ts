@@ -22,7 +22,7 @@ export const Florent: IDoFCharacter = {
     },
     level: 13,
     promotesTo: DoFClasses.Paladin,
-    growths: {hp: 90, pow: 55, skl: 50, spd: 40, luk: 30, def: 45, res: 10},
+    growths: {hp: 90, pow: 55, skl: 50, spd: 40, luk: 30, def: 40, res: 10},
     ranks: {
         [DoFWeaponType.Sword]: 71,
         [DoFWeaponType.Lance]: 121
