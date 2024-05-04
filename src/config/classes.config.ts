@@ -297,7 +297,7 @@ export const DoFPromotedClasses :  { [key: string]: any }  = {
         }
     },
     [DoFClasses.Berserker]: {
-        promo: { hp: 5, pow: 3, skl: 1, spd: 2, luk: 0, def: 2, res: 3, con: 2 },
+        promo: { hp: 6, pow: 3, skl: 1, spd: 2, luk: 0, def: 2, res: 3, con: 3 },
         caps: { hp: 60, pow: 29, skl: 25, spd: 29, luk: 30, def: 26, res: 15, con: 20 },
         weapons: {
             [DoFWeaponType.Axe]: 71
