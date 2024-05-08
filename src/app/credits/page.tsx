@@ -184,6 +184,12 @@ export default function Credits() {
                         </h3>
                         Luminescent Blade. BwdYeti (sword movements), Agro (mapsprite)
                     </li>
+                    <li>
+                        <h3>
+                            Asher personal
+                        </h3>
+                       Vyland
+                    </li>
                 </ul>
             </li>
             <li>
