@@ -27,5 +27,6 @@ export const Florent: IDoFCharacter = {
         [DoFWeaponType.Sword]: 71,
         [DoFWeaponType.Lance]: 121
     },
-    affinity: DoFAffinities.Ice
+    affinity: DoFAffinities.Ice,
+    mountName: 'Vaillant'
 };
