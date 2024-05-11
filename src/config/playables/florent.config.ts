@@ -18,7 +18,7 @@ export const Florent: IDoFCharacter = {
     epithet: 'The Riders',
     height: 179,
     stats: {
-        hp: 33, pow: 15, skl: 14, spd: 12, luk: 9, def: 15, res: 1, con: 10
+        hp: 33, pow: 15, skl: 14, spd: 12, luk: 9, def: 13, res: 1, con: 10
     },
     level: 13,
     promotesTo: DoFClasses.Paladin,
