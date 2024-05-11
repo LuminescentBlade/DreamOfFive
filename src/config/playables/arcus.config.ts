@@ -39,7 +39,7 @@ export const Arcus: IDoFCharacter = {
     level: 10,
     age: 19,
     promotesTo: DoFClasses.Juggernaut,
-    growths: { hp: 80, pow: 65, skl: 45, spd: 35, luk: 35, def: 45, res: 25 },
+    growths: { hp: 80, pow: 65, skl: 45, spd: 35, luk: 35, def: 55, res: 25 },
     ranks: {
         [DoFWeaponType.Axe]: 71,
     },
