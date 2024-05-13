@@ -1060,7 +1060,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                     chapter: 27,
                     route: DoFRoute.Onduris,
                     level: 15,
-                    stats: { hp: 60, pow: 15, skl: 29, spd: 30, luk: 0, def: 15, res: 15, con: 8 },
+                    stats: { hp: 60, pow: 20, skl: 29, spd: 30, luk: 0, def: 15, res: 15, con: 8 },
                     weapons: ['Reforged Sword', 'Serendipity Ring'],
                     ranks: {
                         [DoFWeaponType.Sword]: 251
@@ -1086,7 +1086,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                     chapter: 27,
                     route: DoFRoute.Onduris,
                     level: 15,
-                    stats: { hp: 55, pow: 18, skl: 29, spd: 30, luk: 0, def: 15, res: 15, con: 8 },
+                    stats: { hp: 55, pow: 23, skl: 29, spd: 30, luk: 0, def: 15, res: 15, con: 8 },
                     weapons: ['Reforged Sword', 'Serendipity Ring'],
                     ranks: {
                         [DoFWeaponType.Sword]: 251
@@ -1112,7 +1112,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                     chapter: 27,
                     route: DoFRoute.Onduris,
                     level: 15,
-                    stats: { hp: 60, pow: 15, skl: 29, spd: 30, luk: 0, def: 18, res: 15, con: 8 },
+                    stats: { hp: 60, pow: 20, skl: 29, spd: 30, luk: 0, def: 18, res: 15, con: 8 },
                     weapons: ['Reforged Sword', 'Serendipity Ring'],
                     ranks: {
                         [DoFWeaponType.Sword]: 251
