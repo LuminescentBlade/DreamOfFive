@@ -178,7 +178,7 @@ export const DoFPromotedClasses :  { [key: string]: any }  = {
     },
     [DoFClasses.Juggernaut]: {
         promo: { hp: 6, pow: 3, skl: 3, spd: 3, luk: 0, def: 3, res: 3, con: 2 },
-        caps: { hp: 60, pow: 30, skl: 28, spd: 25, luk: 30, def: 29, res: 15, con: 20 },
+        caps: { hp: 60, pow: 30, skl: 28, spd: 26, luk: 30, def: 29, res: 15, con: 20 },
         weapons: {
             [DoFWeaponType.Axe]: 71,
             [DoFWeaponType.Lance]: 71
