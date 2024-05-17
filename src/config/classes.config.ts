@@ -66,7 +66,7 @@ export const DoFUnpromotedClasses: { [key: string]: any } = {
 
     },
     [DoFClasses.Armour]: {
-        caps: { hp: 60, pow: 20, skl: 20, spd: 15, luk: 30, def: 20, res: 10, con: 20 },
+        caps: { hp: 60, pow: 20, skl: 20, spd: 20, luk: 30, def: 20, res: 10, con: 20 },
         weapons: {
             [DoFWeaponType.Lance]: 31
         }
