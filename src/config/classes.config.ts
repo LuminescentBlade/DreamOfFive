@@ -218,7 +218,7 @@ export const DoFPromotedClasses :  { [key: string]: any }  = {
     },
     [DoFClasses.Dreadnought]: {
         promo: { hp: 5, pow: 3, skl: 2, spd: 1, luk: 0, def: 3, res: 3, con: 2 },
-        caps: { hp: 60, pow: 29, skl: 27, spd: 20, luk: 30, def: 30, res: 15, con: 20 },
+        caps: { hp: 60, pow: 29, skl: 27, spd: 25, luk: 30, def: 30, res: 15, con: 20 },
         weapons: {
             [DoFWeaponType.Sword]: 31,
             [DoFWeaponType.Axe]: 31,
