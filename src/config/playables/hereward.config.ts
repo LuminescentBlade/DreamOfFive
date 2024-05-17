@@ -11,7 +11,7 @@ export const Hereward: IDoFCharacter = {
     height: 188,
     nationality: DoFNationality.Aukema,
     level: 8,
-    stats: { hp: 44, pow: 21, skl: 19, spd: 14, luk: 9, def: 22, res: 6, con: 15 },
+    stats: { hp: 46, pow: 21, skl: 20, spd: 15, luk: 9, def: 23, res: 6, con: 15 },
     growths: { hp: 75, pow: 50, skl: 30, spd: 30, luk: 25, def: 60, res: 15 },
     ranks: { sword: 181, axe: 181 },
     alt: {
