@@ -23,5 +23,6 @@ export const Meliza: IDoFCharacter = {
     ranks: {
         [DoFWeaponType.Staff]: 121,
     },
-    affinity: DoFAffinities.Light
+    affinity: DoFAffinities.Light,
+    epithet: 'Bellwether'
 };

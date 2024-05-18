@@ -17,7 +17,7 @@ export const Eudira: IDoFCharacter = {
     epithet: 'Smiling Poppet',
     height: 168,
     stats: { hp: 37, pow: 16, skl: 19, spd: 17, luk: 0, def: 14, res: 10, con: 9 },
-    level: 4,
+    level: 3,
     growths: { hp: 65, pow: 45, skl: 65, spd: 50, luk: 0, def: 35, res: 30 },
     ranks: {
         [DoFWeaponType.Light]: 181,

@@ -6,6 +6,9 @@ import { IRenderCharacterConfig } from "../lib/models/spritesheet.interfaces";
 
 export class DoFRenderCharacter extends RenderCharacter {
     constructor(private dofCharacter: IDoFCharacter, private rules: any) {
+        if(rules.showIronside === true && dofCharacter.isIronside === true){
+            rules.bypassSpoiler = true;
+        }
         const getPath = (name: string) => {
             return `/mugs/characters/${name}.png`;
         }

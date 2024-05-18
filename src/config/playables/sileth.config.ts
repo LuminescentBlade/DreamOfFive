@@ -25,5 +25,6 @@ export const Sileth: IDoFCharacter = {
     ranks: {
         [DoFWeaponType.Anima]: 71
     },
-    affinity: DoFAffinities.Ice
+    affinity: DoFAffinities.Ice,
+    epithet: 'Sage of Shadows'
 };

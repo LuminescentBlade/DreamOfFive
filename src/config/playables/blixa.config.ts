@@ -18,5 +18,6 @@ export const Blixa: IDoFCharacter = {
     level:  1,
     growths: {hp: 70, pow: 0, skl: 0, spd: 80, luk: 70, def: 25, res: 55},
     ranks: {},
-    affinity: DoFAffinities.Ice
+    affinity: DoFAffinities.Ice,
+    epithet: 'Sharp Glimmering'
 };

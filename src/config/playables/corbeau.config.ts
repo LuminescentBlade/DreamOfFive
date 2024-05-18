@@ -5,6 +5,7 @@ import { DoFWeapon } from "../weapons.config";
 export const Corbeau: IDoFCharacter = {
     name: DoFCharKey.Corbeau,
     profileName: 'Daffodil Corbeau',
+    epithet: 'Flower of the Revolution',
     artists: [DoFArtist.Lumi],
     blurb: '"... could not content herself with railing against injustice. There came a time to draw a line in the sand..."',
     class: DoFClasses.Warrior,
@@ -17,7 +18,7 @@ export const Corbeau: IDoFCharacter = {
         }
     },
     growths: { hp: 115, pow: 55, skl: 30, spd: 35, luk: 50, def: 20, res: 20 },
-    level: 3,
+    level: 2,
     stats: { hp: 44, pow: 20, skl: 13, spd: 14, luk: 18, def: 11, res: 6, con: 14 },
     ranks: {
         [DoFWeaponType.Axe]: 181,

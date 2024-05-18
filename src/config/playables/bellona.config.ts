@@ -28,5 +28,6 @@ export const Bellona: IDoFCharacter = {
         [DoFWeaponType.Lance]: 71,
     },
     affinity: DoFAffinities.Fire,
-    mountName: 'Helga'
+    mountName: 'Helga',
+    epithet: 'Broken Lance'
 };

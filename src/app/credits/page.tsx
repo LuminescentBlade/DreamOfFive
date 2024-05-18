@@ -66,7 +66,7 @@ export default function Credits() {
                     </li>
                     <li>
                         <h3>
-                            Blademaiden, Drake Knight, Gladiator, Henchwoman, Marksman (Sniper), Juggernaut
+                            Blademaiden (including class card), Drake Knight, Gladiator, Henchwoman, Marksman (Sniper), Juggernaut
                         </h3>
                         Nuramon
                     </li>
@@ -190,6 +190,12 @@ export default function Credits() {
                         </h3>
                        Vyland
                     </li>
+                    <li>
+                        <h3>
+                            Dragon
+                        </h3>
+                        Nuramon (battlesprite), L95 (mapsprite)
+                    </li>
                 </ul>
             </li>
             <li>
@@ -214,7 +220,7 @@ export default function Credits() {
                     </li>
                     <li>
                         <h3>
-                            3 (Including gameplay), 14A, 17x, 18, 19, 20, 21
+                            3 (Including gameplay), 14A, 17x, 18, 19, 20, 21, 23, 24, 25, 26, Finale
                         </h3>
                         RandomWizard
                     </li>

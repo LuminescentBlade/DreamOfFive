@@ -38,7 +38,8 @@ export interface IDoFCharacter extends IDoFUnit {
     gateProfileTabChapter?: number
     gateProfileDetailsChapter?: number
     bossStats?: IDoFNonPlayableConfig[],
-    mountName?: string
+    mountName?: string,
+    isIronside?: boolean
 }
 export interface IDoFStats {
     [stat: string]: number

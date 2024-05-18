@@ -23,5 +23,6 @@ export const Amelia: IDoFCharacter = {
     ranks: {
         [DoFWeaponType.Anima]: 71,
     },
-    affinity: DoFAffinities.Wind
+    affinity: DoFAffinities.Wind,
+    epithet: 'Prodigy'
 };

@@ -111,7 +111,7 @@ export enum DoFClasses {
 
     FirstLance = 'first lance',
     //
-    TBD = 'tbd'
+    TBD = 'tbd',
 };
 
 export enum DoFCharKey {

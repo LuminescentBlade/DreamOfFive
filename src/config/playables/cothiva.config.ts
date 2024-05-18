@@ -22,5 +22,6 @@ export const Cothiva: IDoFCharacter = {
     ranks: {
         [DoFWeaponType.Light]: 71,
     },
-    affinity: DoFAffinities.Thunder
+    affinity: DoFAffinities.Thunder,
+    epithet: 'Apothecary'
 };

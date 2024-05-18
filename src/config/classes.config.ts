@@ -66,7 +66,7 @@ export const DoFUnpromotedClasses: { [key: string]: any } = {
 
     },
     [DoFClasses.Armour]: {
-        caps: { hp: 60, pow: 20, skl: 20, spd: 15, luk: 30, def: 20, res: 10, con: 20 },
+        caps: { hp: 60, pow: 20, skl: 20, spd: 20, luk: 30, def: 20, res: 10, con: 20 },
         weapons: {
             [DoFWeaponType.Lance]: 31
         }
@@ -178,7 +178,7 @@ export const DoFPromotedClasses :  { [key: string]: any }  = {
     },
     [DoFClasses.Juggernaut]: {
         promo: { hp: 6, pow: 3, skl: 3, spd: 3, luk: 0, def: 3, res: 3, con: 2 },
-        caps: { hp: 60, pow: 30, skl: 28, spd: 25, luk: 30, def: 29, res: 15, con: 20 },
+        caps: { hp: 60, pow: 30, skl: 28, spd: 26, luk: 30, def: 29, res: 15, con: 20 },
         weapons: {
             [DoFWeaponType.Axe]: 71,
             [DoFWeaponType.Lance]: 71
@@ -203,7 +203,7 @@ export const DoFPromotedClasses :  { [key: string]: any }  = {
         promo: { hp: 5, pow: 3, skl: 2, spd: 3, luk: 0, def: 1, res: 3, con: 2 },
         caps: { hp: 60, pow: 26, skl: 26, spd: 28, luk: 30, def: 20, res: 30, con: 20 },
         weapons: {
-            [DoFWeaponType.Light]: 31,
+            [DoFWeaponType.Light]: 71,
             [DoFWeaponType.Staff]: 31
         }
     },
@@ -218,7 +218,7 @@ export const DoFPromotedClasses :  { [key: string]: any }  = {
     },
     [DoFClasses.Dreadnought]: {
         promo: { hp: 5, pow: 3, skl: 2, spd: 1, luk: 0, def: 3, res: 3, con: 2 },
-        caps: { hp: 60, pow: 29, skl: 27, spd: 20, luk: 30, def: 30, res: 15, con: 20 },
+        caps: { hp: 60, pow: 29, skl: 27, spd: 25, luk: 30, def: 30, res: 15, con: 20 },
         weapons: {
             [DoFWeaponType.Sword]: 31,
             [DoFWeaponType.Axe]: 31,
@@ -297,7 +297,7 @@ export const DoFPromotedClasses :  { [key: string]: any }  = {
         }
     },
     [DoFClasses.Berserker]: {
-        promo: { hp: 5, pow: 3, skl: 1, spd: 2, luk: 0, def: 2, res: 3, con: 2 },
+        promo: { hp: 6, pow: 3, skl: 1, spd: 2, luk: 0, def: 2, res: 3, con: 3 },
         caps: { hp: 60, pow: 29, skl: 25, spd: 29, luk: 30, def: 26, res: 15, con: 20 },
         weapons: {
             [DoFWeaponType.Axe]: 71
@@ -313,7 +313,7 @@ export const DoFPromotedClasses :  { [key: string]: any }  = {
         mount: DoFMountType.Horse
     },
     [DoFClasses.Sentinel]: {
-        promo: { hp: 5, pow: 1, skl: 3, spd: 2, luk: 0, def: 3, res: 3, con: 1 },
+        promo: { hp: 4, pow: 2, skl: 2, spd: 3, luk: 0, def: 3, res: 3, con: 1 },
         caps: { hp: 60, pow: 27, skl: 29, spd: 28, luk: 30, def: 28, res: 15, con: 20 },
         weapons: {
             [DoFWeaponType.Lance]: 71,

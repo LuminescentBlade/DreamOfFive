@@ -22,6 +22,7 @@ export const Tricia: IDoFCharacter =   {
     ranks: {
         [DoFWeaponType.Sword]: 1,
     },
-    affinity: DoFAffinities.Anima
+    affinity: DoFAffinities.Anima,
+    epithet: 'Lightfinger'
 };
 

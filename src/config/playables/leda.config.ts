@@ -17,5 +17,6 @@ export const Leda: IDoFCharacter = {
     level: 1,
     stats: {hp: 27, pow: 1, skl: 7, spd: 12, luk: 12, def: 2, res: 6, con: 6},
     ranks: {},
-    affinity: DoFAffinities.Anima
+    affinity: DoFAffinities.Anima,
+    epithet: 'Bright Glimmering'
 };

@@ -24,5 +24,6 @@ export const Cyrille: IDoFCharacter = {
         [DoFWeaponType.Lance]: 31
     },
     affinity: DoFAffinities.Fire,
-    mountName: 'Eclair'
+    mountName: 'Eclair',
+    epithet: 'Blind Trailblazer'
 };

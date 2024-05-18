@@ -13,7 +13,7 @@ export const Fleurre: IDoFCharacter = {
     routeConfig: {
         musain: {
             npc: [7, 13],
-            enemy: [12, 99]
+            enemy: [12, 27]
         }
     },
     epithet: 'Mask In Shadows',
@@ -31,9 +31,23 @@ export const Fleurre: IDoFCharacter = {
     },
     bossStats: [
         {
+            chapter: 27,
+            route: DoFRoute.Musain,
+            level: 20,
+            class: 'Enchantress',
+            stats: { hp: 75, pow: 27, skl: 30, spd: 27, luk: 22, def: 18, res: 25, con: 7 },
+            ranks: {
+                [DoFWeaponType.Anima]: 251,
+                [DoFWeaponType.Light]: 251,
+                [DoFWeaponType.Dark]: 251,
+                [DoFWeaponType.Staff]: 251,
+            },
+            weapons: ['Implosion', 'Serendipity Ring']
+        },
+        {
             chapter: 12,
             route: DoFRoute.Musain,
-            stats: { hp: 34, pow: 18, skl: 24, spd: 16, luk: 9, def: 7, res: 18, con: 9 },
+            stats: { hp: 34, pow: 18, skl: 24, spd: 16, luk: 9, def: 7, res: 18, con: 7 },
             weapons: [DoFWeapon.Thunder],
             level: 6,
             ranks: {
@@ -42,7 +56,7 @@ export const Fleurre: IDoFCharacter = {
             },
             talk: true,
             gameOver: true
-        }
+        },
     ],
     gateProfileDetailsChapter: 12
 };

@@ -7,6 +7,7 @@ export const Lyndra: IDoFCharacter = {
     artists: [DoFArtist.Astra, DoFArtist.Lumi],
     blurb: '"... known as the Black Cat, for the way she seemed to have wretched luck, but many lives..."',
     class: DoFClasses.Gladiator,
+    epithet: 'Black Cat',
     nationality: DoFNationality.Aukema,
     routeConfig: {
         musain: {
@@ -19,8 +20,8 @@ export const Lyndra: IDoFCharacter = {
     },
     height: 168,
     stats: { hp: 36, pow: 15, skl: 18, spd: 19, luk: 9, def: 18, res: 3, con: 10 },
-    level: 3,
-    growths: { hp: 75, pow: 35, skl: 55, spd: 55, luk: 30, def: 50, res: 10 },
+    level: 2,
+    growths: { hp: 75, pow: 35, skl: 60, spd: 60, luk: 30, def: 55, res: 10 },
     ranks: {
         [DoFWeaponType.Sword]: 181,
         [DoFWeaponType.Axe]: 71

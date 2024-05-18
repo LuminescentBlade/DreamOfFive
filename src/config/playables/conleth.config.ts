@@ -26,5 +26,6 @@ export const Conleth: IDoFCharacter = {
         [DoFWeaponType.Bow]: 71,
     },
     affinity: DoFAffinities.Fire,
-    mountName: 'Surefoot'
+    mountName: 'Surefoot',
+    epithet: 'Discerning Eye'
 };

@@ -4,7 +4,7 @@ import { DoFAffinities, DoFArtist, DoFClasses, DoFNationality, DoFRoute } from "
 export const Farrell: IDoFCharacter = {
     name: 'farrell',
     profileName: 'Cuthbert Farrell',
-    epithet: 'The Bold Deceiver',
+    epithet: 'Bold Deceiver',
     artists: [DoFArtist.Sev, DoFArtist.Astra, DoFArtist.TBA],
     class: DoFClasses.FirstLance,
     nationality: DoFNationality.Aukema,

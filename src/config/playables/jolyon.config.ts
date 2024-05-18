@@ -28,5 +28,6 @@ export const Jolyon: IDoFCharacter = {
     ranks: {
         [DoFWeaponType.Anima]: 71,
     },
-    affinity: DoFAffinities.Fire
+    affinity: DoFAffinities.Fire,
+    epithet: 'Sage of Light'
 };

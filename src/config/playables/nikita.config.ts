@@ -24,7 +24,7 @@ export const Nikita: IDoFCharacter = {
     },
     conditional:{
         player: {
-            level: 2
+            level: 1
         }
     },
     affinity: DoFAffinities.Fire,
