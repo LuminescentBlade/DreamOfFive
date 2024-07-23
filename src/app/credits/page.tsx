@@ -196,6 +196,18 @@ export default function Credits() {
                         </h3>
                         Nuramon (battlesprite), L95 (mapsprite)
                     </li>
+                    <li>
+                        <h3>
+                            Enchantress
+                        </h3>
+                        Luminescent Blade (battlesprite), Sphealnuke (mapsprite)
+                    </li>
+                    <li>
+                        <h3>
+                            Peerless Blade
+                        </h3>
+                        Luminescent Blade (battlesprite), ArcherBias (mapsprite)
+                    </li>
                 </ul>
             </li>
             <li>
