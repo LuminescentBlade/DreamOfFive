@@ -1,6 +1,7 @@
 import { IDoFCharacter } from "@dof/src/models/dream-of-five.interfaces";
 import { DoFAffinities, DoFArtist, DoFClasses, DoFNationality, DoFRoute } from "@dof/src/models/enums";
 
+const stats = { hp: 52, pow: 21, skl: 27, spd: 22, luk: 18, def: 21, res: 14, con: 12 };
 export const Farrell: IDoFCharacter = {
     name: 'farrell',
     profileName: 'Cuthbert Farrell',
@@ -32,14 +33,14 @@ export const Farrell: IDoFCharacter = {
         {
             chapter: 22,
             level: 14,
-            stats: { hp: 52, pow: 20, skl: 26, spd: 21, luk: 18, def: 20, res: 14, con: 12 },
+            stats,
             ranks: { lance: 251 },
             weapons: ['Nithhad'] 
         },
         {
             chapter: 17,
             level: 14,
-            stats: { hp: 52, pow: 20, skl: 26, spd: 21, luk: 18, def: 20, res: 14, con: 12 },
+            stats,
             ranks: { lance: 251 },
             weapons: ['Nithhad'],
             optional: true,
