@@ -4,7 +4,7 @@ import { DoFWeapon } from "../weapons.config";
 
 export const Nikita: IDoFCharacter = {
     name: DoFCharKey.Nikita,
-    artists: [DoFArtist.Astra],
+    artists: [DoFArtist.Astra, DoFArtist.Lumi],
     blurb: '"... exemplar of the Ondurite woman. Too soft-skinned for manual labour, she had devoted herself entirely to battle..."',
     class: DoFClasses.Swordmaster,
     nationality: DoFNationality.Onduris,
