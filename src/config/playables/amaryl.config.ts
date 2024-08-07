@@ -6,7 +6,7 @@ export const Amaryl: IDoFCharacter = {
     artists: [DoFArtist.Pi],
     blurb: '"... content for so long just to read fate. Evidently, at this stage, she felt that the dice of fate needed loading..."',
     class: DoFClasses.Sibyl,
-    nationality: DoFNationality.Unknown,
+    nationality: DoFNationality.Aukema,
     routeConfig: {
         allRoute: {
             player: 23,

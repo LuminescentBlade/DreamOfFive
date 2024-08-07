@@ -202,7 +202,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             artists: [DoFArtist.Astra],
             blurb: '"... found it convenient to keep around such distasteful men as these, who took a craftsman\'s pride in maiming..."',
             class: DoFClasses.Rogue,
-            nationality: DoFNationality.Aukema,
+            nationality: DoFNationality.Musain,
             routeConfig: {
                 musain: {
                     enemy: 6.5
