@@ -14,7 +14,7 @@ import { DoFRenderCharacter } from '@dof/src/models/dof-render-character.class';
 import { DoFGeneric } from '@dof/src/models/dof-render-generic.class';
 
 const defaultRenderValues = {
-    prod: { chapter: 6, limit: 27.5},
+    prod: { chapter: 6, limit: 27.5 },
     local: { chapter: 99 }
 };
 
@@ -49,11 +49,12 @@ let unitSheetData: IDoFCharacterRenderer;
 let init = false;
 let isShowingIronside = false;
 let ironsideEvent: ((e: KeyboardEvent) => void) | undefined;
+let sortByCountry = false;
 
 export default function CharacterPage() {
     const searchParams = useSearchParams();
     const showUnsortedFull = false;//searchParams.get('full')?.toLowerCase() === 'true';
-    const showFullData = searchParams.get('devModeEnabledSpoilers')?.toLowerCase() === 'true';
+    const showFullData = sortByCountry || searchParams.get('devModeEnabledSpoilers')?.toLowerCase() === 'true';
     let currentChapterLimit = chapterLimit;
     if (showFullData && !init) {
         const displayValues = setDisplayValues(true);
@@ -171,6 +172,12 @@ export default function CharacterPage() {
             return {
                 characters: [...sort([...config.player, ...config.enemy, ...config.npc]), ...generics, ...shopkeepers]
             }
+        } else if (sortByCountry) {
+            const displayChars = [...config.player, ...config.enemy, ...config.npc];
+            return displayChars.reduce((chars, character: IRenderCharacterConfig) => ({
+                ...chars,
+                [character.unitData.nationality]: [...(chars[character.unitData.nationality] ?? []), character]
+            }), {});
         } else {
             return {
                 player: sort(config.player),
