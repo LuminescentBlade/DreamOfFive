@@ -4,7 +4,7 @@ import { IDoFCharacter } from "@dof/src/models/interfaces";
 export const Lizaveta: IDoFCharacter = {
     name: DoFCharKey.Lizaveta,
     profileName: 'Lizaveta Samnia',
-    artists: [DoFArtist.Astra, DoFArtist.Sev],
+    artists: [DoFArtist.Astra, DoFArtist.Lumi],
     blurb: '"... and sometimes she would look as though she expected aid, but she soon learned self-sufficiency..."',
     nationality: DoFNationality.Vishara,
     class: DoFClasses.Troubadour,
