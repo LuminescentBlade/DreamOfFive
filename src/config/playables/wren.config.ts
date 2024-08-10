@@ -12,7 +12,7 @@ export const Wren: IDoFCharacter =  {
             player: 9
         }
     }, 
-    age: 20,
+    age: 22,
     height: 154,
     stats: {
         hp: 22, pow: 15, skl: 12, spd: 9, luk: 11, def: 3, res: 14, con: 6
