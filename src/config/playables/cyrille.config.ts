@@ -4,6 +4,7 @@ import { IDoFCharacter } from "@dof/src/models/interfaces";
 
 export const Cyrille: IDoFCharacter = {
     name: DoFCharKey.Cyrille,
+    profileName: 'Cyrille Laberins',
     artists: [DoFArtist.Lumi],
     blurb: '"... only a few truly had the diligence and mettle for such thankless work, but their competence was beyond reproach..."',
     nationality: DoFNationality.Musain,

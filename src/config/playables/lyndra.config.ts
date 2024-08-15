@@ -9,6 +9,7 @@ export const Lyndra: IDoFCharacter = {
     class: DoFClasses.Gladiator,
     epithet: 'Black Cat',
     nationality: DoFNationality.Aukema,
+    age: 27,
     routeConfig: {
         musain: {
             player: 9,

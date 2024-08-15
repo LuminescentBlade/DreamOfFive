@@ -25,6 +25,7 @@ export const Rotariu: IDoFCharacter = {
         [DoFWeaponType.Sword]: 251,
         [DoFWeaponType.Bow]: 251
     },
+    age: 26,
     bossStats: [
         {
             chapter: 25,
