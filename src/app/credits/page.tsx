@@ -188,7 +188,7 @@ export default function Credits() {
                         <h3>
                             Asher personal
                         </h3>
-                       Vyland
+                        Vyland
                     </li>
                     <li>
                         <h3>
@@ -196,14 +196,39 @@ export default function Credits() {
                         </h3>
                         Nuramon (battlesprite), L95 (mapsprite)
                     </li>
+                    <li>
+                        <h3>
+                            Enchantress
+                        </h3>
+                        Luminescent Blade (battlesprite), Sphealnuke (mapsprite)
+                    </li>
+                    <li>
+                        <h3>
+                            Peerless Blade
+                        </h3>
+                        Luminescent Blade (battlesprite), ArcherBias (mapsprite)
+                    </li>
                 </ul>
             </li>
             <li>
                 <h2>Tilesets</h2>
                 <ul>
                     <li>
+                        <h3>Updated Village (12B)</h3>
+                        N426, ZoramineFae, Venno
+                    </li>
+                    <li>
+                        <h3>Temple (19)</h3>
+                        N426,RandomWizard
+                    </li>
+                    <li>
                         <h3>Stronghold + (19, 22)</h3>
                         N426
+                    </li>
+
+                    <li>
+                        <h3>Mountain Temple (26)</h3>
+                        RandomWizard
                     </li>
                 </ul>
             </li>
@@ -242,7 +267,7 @@ export default function Credits() {
                 </h2>
                 <ul>
                     <li>
-                        Luminescent Blade   
+                        Luminescent Blade
                     </li>
                     <li>
                         <h3>
@@ -262,7 +287,7 @@ export default function Credits() {
                 <h2>
                     Original Version Credits
                 </h2>
-                Aeorys, Anti-Social Knight, Sev, Arch, Callum McMillan, Cam, Dancer A, El Rey Leon, Enjolras, Feaw, Hikarusa, Mariobro3828, Niharu, Jubby, Kai, Ken ZOMG, LordGlenn, Luminescent Blade, Sakusa, Shadowofchaos, Shiny Charmander, SnakeMomMelissa, Vampire Elf, Xiltas
+                Aeorys, Anti-Social Knight, Arch, Callum McMillan, Cam, Cassie Cinders, Dancer A, El Rey Leon, Feaw, Hikarusa,Marik, Mariobro3828, Niharu, Jubby, Ken ZOMG, LordGlenn, Luminescent Blade, Sakusa, Sev, Shadowofchaos, Shiny Charmander, SnakeMomMelissa, Vampire Elf, Xiltas
             </li>
             <li>
                 <h2>

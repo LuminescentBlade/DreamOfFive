@@ -3,7 +3,7 @@ import { IDoFCharacter } from "@dof/src/models/interfaces";
 
 export const Rotariu: IDoFCharacter = {
     name: DoFCharKey.Rotariu,
-    artists: [DoFArtist.Sev, DoFArtist.Astra],
+    artists: [DoFArtist.Sev, DoFArtist.Astra, DoFArtist.Lumi],
     class: DoFClasses.Outrider,
     nationality: DoFNationality.Vishara,
     epithet: 'Silent Watcher',
@@ -25,6 +25,7 @@ export const Rotariu: IDoFCharacter = {
         [DoFWeaponType.Sword]: 251,
         [DoFWeaponType.Bow]: 251
     },
+    age: 26,
     bossStats: [
         {
             chapter: 25,

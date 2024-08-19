@@ -5,7 +5,7 @@ import { DoFWeapon } from "../weapons.config";
 export const JinSei: IDoFCharacter =  {
     name: 'jin-sei',
     displayName: 'jin\'Sei',
-    artists: [DoFArtist.Astra],
+    artists: [DoFArtist.Lumi, DoFArtist.Astra],
     blurb: '"... true warrior-king in every respect. He may not have won his throne fairly, but he would defend it to the death..."',
     class: DoFClasses.Swordmaster,
     nationality: DoFNationality.Onduris,

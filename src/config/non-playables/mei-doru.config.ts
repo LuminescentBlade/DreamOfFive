@@ -5,7 +5,7 @@ import { DoFWeapon } from "../weapons.config";
 export const MeiDoru : IDoFCharacter =    {
     name: 'mei-doru',
     displayName: 'mei\'Doru',
-    artists: [DoFArtist.Astra],
+    artists: [DoFArtist.Astra, DoFArtist.Lumi],
     blurb: '"... ran his frontier region with an iron fist, always looking with envy towards the capital\'s riches..."',
     class: DoFClasses.Outrider,
     height:168,

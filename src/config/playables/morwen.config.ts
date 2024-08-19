@@ -19,6 +19,7 @@ export const Morwen: IDoFCharacter = {
     class: DoFClasses.Gladiator,
     nationality: DoFNationality.Aukema,
     height: 182,
+    age: 24,
     routeConfig: {
         onduris: {
             enemy: [5, 6, 18],

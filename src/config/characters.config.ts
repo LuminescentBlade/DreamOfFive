@@ -553,7 +553,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                 optional: true,
                 chapter: 17,
                 level: 4,
-                stats: { hp: 40, pow: 20, skl: 18, spd: 13, luk: 9, def: 13, res: 19, con: 12 },
+                stats: { hp: 44, pow: 20, skl: 18, spd: 13, luk: 9, def: 13, res: 19, con: 12 },
                 ranks: { dark: 181, staff: 121 },
                 weapons: ['Ennervation', 'Physic']
             }],
