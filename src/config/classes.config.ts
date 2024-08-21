@@ -153,7 +153,7 @@ export const DoFUnpromotedClasses: { [key: string]: any } = {
 export const DoFPromotedClasses :  { [key: string]: any }  = {
     [DoFClasses.Questant]: {
         promo: { hp: 5, pow: 3, skl: 3, spd: 3, luk: 0, def: 3, res: 3, con: 1 },
-        caps: { hp: 60, pow: 28, skl: 30, spd: 30, luk: 30, def: 26, res: 20, con: 20 },
+        caps: { hp: 60, pow: 27, skl: 30, spd: 30, luk: 30, def: 26, res: 20, con: 20 },
         weapons: {
             [DoFWeaponType.Sword]: 71,
             [DoFWeaponType.Axe]: 71
