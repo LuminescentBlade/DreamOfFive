@@ -16,7 +16,7 @@ export const Kahn: IDoFCharacter = {
     height: 164,
     age: 20, 
     stats: {
-        hp: 27, pow: 12, skl: 13, spd: 11, luk: 8, def: 10, res: 0, con: 10
+        hp: 27, pow: 12, skl: 14, spd: 12, luk: 8, def: 11, res: 0, con: 10
     },
     level: 9,
     promotesTo: DoFClasses.Sentinel,
