@@ -17,7 +17,7 @@ export const ByorDal: IDoFCharacter = {
         }
     },
     height: 182,
-    stats: {hp: 38, pow: 18, skl: 17, spd: 15, luk: 6, def: 17, res: 8, con: 13},
+    stats: {hp: 40, pow: 19, skl: 17, spd: 15, luk: 6, def: 17, res: 10, con: 13},
     level: 2, 
     growths: {hp: 95, pow: 50, skl: 55, spd: 35, luk: 15, def: 40, res: 30},
     ranks: {
