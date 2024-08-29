@@ -9,6 +9,7 @@ export const Farrell: IDoFCharacter = {
     artists: [DoFArtist.Sev, DoFArtist.Astra, DoFArtist.TBA],
     class: DoFClasses.FirstLance,
     nationality: DoFNationality.Aukema,
+    age: 44,
     routeConfig: {
         onduris: {
             enemy: [8, 9, 10, 17, 22],

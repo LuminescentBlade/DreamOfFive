@@ -9,6 +9,7 @@ export const Adalheid: IDoFCharacter = {
     epithet: 'Redeemer',
     nationality: DoFNationality.Aukema,
     height: 181,
+    age: 23,
     routeConfig: {
         onduris: {
             player: 23,

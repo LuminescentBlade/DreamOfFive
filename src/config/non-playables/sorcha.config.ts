@@ -10,6 +10,7 @@ export const Sorcha: IDoFCharacter = {
     class: DoFClasses.Harrier,
     nationality: DoFNationality.Aukema,
     epithet: `Butterfly's Wing`,
+    age: 21,
     routeConfig: {
         allRoute: {
             enemy: [2, 3, 18, 26],
