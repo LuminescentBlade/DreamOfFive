@@ -80,6 +80,7 @@ export default function Header() {
             </button>
             <Link href="/">Home</Link>
             <Link href="/characters">Characters</Link>
+            <Link href="/music">Music</Link>
             <Link href="/credits">Credits</Link>
             <Link href="/resources">Resources</Link>
         </div>

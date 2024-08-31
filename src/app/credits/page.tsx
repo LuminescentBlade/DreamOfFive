@@ -2,7 +2,7 @@ import Link from "next/link";
 import styles from './page.module.scss';
 
 export default function Credits() {
-    return <div className={styles.credits}>
+    return <main className={styles.credits}>
         <h1>Credits</h1>
         <em>
             I respectfully acknowledge the Ngunnawal people, the past, present and future custodians of the land where this was produced; I recognise all traditional owners of the region and beyond, and thank them for their contribution to the life and continued health of Country.
@@ -350,5 +350,5 @@ export default function Credits() {
                 Pandan
             </li>
         </ul>
-    </div>
+    </main>
 }

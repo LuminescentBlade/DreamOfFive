@@ -1,6 +1,6 @@
 import styles from './page.module.scss';
 export default function Resources() {
-    return <div className="main-content">
+    return <main className="main-content">
         <h1>Resources</h1>
 
         We're releasing some of Dream of Five's assets for the greater FE Romhacking community to use. We do ask that you credit to the creator(s) of an asset if you choose to use it in your own project.
@@ -14,5 +14,5 @@ export default function Resources() {
             </div>
             <a href="/resources/Soldier_FE12_Style_by_Astra.zip">Download</a>
         </section>
-    </div>
+    </main>
 }
