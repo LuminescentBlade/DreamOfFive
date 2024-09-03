@@ -17,7 +17,7 @@ export const Nikita: IDoFCharacter = {
         }
     },
     growths: { hp: 50, pow: 40, skl: 70, spd: 70, luk: 60, def: 20, res: 15 },
-    level: 6,
+    level: 1,
     stats: { hp: 29, pow: 15, skl: 18, spd: 24, luk: 17, def: 12, res: 7, con: 8 },
     ranks: {
         [DoFWeaponType.Sword]: 181
@@ -29,6 +29,6 @@ export const Nikita: IDoFCharacter = {
     },
     affinity: DoFAffinities.Fire,
     bossStats: [
-        { chapter: 10, optional: true, level: 6, weapons: [DoFWeapon.SilverSword], route: DoFRoute.Onduris, drops: 'Lost Technique' }
+        { chapter: 10, optional: true, level: 1, weapons: [DoFWeapon.SteelSword], route: DoFRoute.Onduris, drops: 'Lost Technique' }
     ]
 };
