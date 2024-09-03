@@ -18,7 +18,7 @@ export const Nikita: IDoFCharacter = {
     },
     growths: { hp: 50, pow: 40, skl: 70, spd: 70, luk: 60, def: 20, res: 15 },
     level: 6,
-    stats: { hp: 29, pow: 15, skl: 18, spd: 23, luk: 17, def: 12, res: 7, con: 8 },
+    stats: { hp: 29, pow: 15, skl: 18, spd: 24, luk: 17, def: 12, res: 7, con: 8 },
     ranks: {
         [DoFWeaponType.Sword]: 181
     },
