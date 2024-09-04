@@ -10,12 +10,12 @@ import { Overlay, Toggle } from "@dof/src/lib/components";
 let init = false;
 export default function Header() {
     const darkModeKey = 'dof-darkmode';
-    const retinaKey = 'dof-retina';
+    const retinaKey = 'dof-retina-2';
     const [headerState, setHeaderState] = useState({ dark: false, mobileOpen: false, settingsOpen: false, retina: false });
     useEffect(() => {
         const preferDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
         const localDarkContent = window.localStorage.getItem(darkModeKey);
-        const isRetina = window.devicePixelRatio > 1;
+        const isRetina = window.devicePixelRatio >= 2 && window.devicePixelRatio === Math.floor(window.devicePixelRatio);
         const localRetinaContent = window.localStorage.getItem(retinaKey);
         let isCachedDark = false;
         let isCachedRetina = false;
