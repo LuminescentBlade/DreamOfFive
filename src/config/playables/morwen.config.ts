@@ -31,9 +31,9 @@ export const Morwen: IDoFCharacter = {
     },
     level: 8,
     epithet: 'Bloodhound',
-    stats: { hp: 48, pow: 22, skl: 17, spd: 17, luk: 21, def: 23, res: 8, con: 15 },
+    stats: { hp: 48, pow: 22, skl: 17, spd: 17, luk: 21, def: 23, res: 11, con: 15 },
     growths: {hp: 85, pow: 50, skl: 35, spd: 35, luk: 55, def: 45, res: 20 },
-    ranks: { sword: 181, axe: 181 },
+    ranks: { sword: 181, axe: 251 },
     affinity: DoFAffinities.Thunder,
     bossStats: [
         {

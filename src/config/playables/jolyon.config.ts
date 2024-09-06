@@ -17,6 +17,7 @@ export const Jolyon: IDoFCharacter = {
         },
         onduris: {
             player: 15
+            // ranks: 151
         }
     },
     stats: {

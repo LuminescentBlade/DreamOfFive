@@ -14,6 +14,7 @@ export const Conleth: IDoFCharacter = {
         },
         musain: {
             player: 15
+            // ranks: 96
         }
     },
     stats: {

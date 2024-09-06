@@ -15,7 +15,7 @@ export const Cathale: IDoFCharacter = {
     },
     height: 177,
     stats: {
-        hp: 30, pow: 14, skl: 11, spd: 7, luk: 11, def: 14, res: 0, con: 14
+        hp: 31, pow: 15, skl: 12, spd: 7, luk: 11, def: 15, res: 0, con: 14
     },
     level: 9,
     promotesTo: DoFClasses.Dreadnought,
