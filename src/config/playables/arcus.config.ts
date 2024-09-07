@@ -34,7 +34,7 @@ export const Arcus: IDoFCharacter = {
     },
     height: 185,
     stats: {
-        hp: 32, pow: 14, skl: 10, spd: 9, luk: 7, def: 12, res: 3, con: 13
+        hp: 32, pow: 15, skl: 10, spd: 9, luk: 7, def: 14, res: 3, con: 13
     },
     level: 10,
     age: 19,
