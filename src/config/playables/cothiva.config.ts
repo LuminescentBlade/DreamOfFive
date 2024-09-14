@@ -18,7 +18,7 @@ export const Cothiva: IDoFCharacter = {
     }, 
     level: 7,
     promotesTo: DoFClasses.Sibyl,
-    growths: {hp: 45, pow: 50, skl: 60, spd: 40, luk: 45, def: 30, res: 45},
+    growths: {hp: 45, pow: 50, skl: 60, spd: 50, luk: 45, def: 25, res: 45},
     ranks: {
         [DoFWeaponType.Light]: 71,
     },

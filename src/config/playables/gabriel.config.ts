@@ -14,12 +14,12 @@ export const Gabriel: IDoFCharacter = {
     },
     height: 172,
     stats: {
-        hp: 27, pow: 13, skl: 8, spd: 8, luk: 6, def: 6, res: 11, con: 10
+        hp: 27, pow: 13, skl: 8, spd: 8, luk: 6, def: 7, res: 11, con: 10
     },
     level: 7,
     epithet: 'Prestige',
     promotesTo: DoFClasses.Sorcerer,
-    growths: {hp: 60, pow: 65, skl: 45, spd: 35, luk: 35, def: 25, res: 55},
+    growths: {hp: 60, pow: 65, skl: 45, spd: 35, luk: 30, def: 30, res: 55},
     ranks: {
         [DoFWeaponType.Dark]: 71,
     },
