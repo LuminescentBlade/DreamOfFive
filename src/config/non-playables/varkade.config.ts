@@ -20,7 +20,7 @@ export const Varkade: IDoFCharacter = {
         }
     },
     height: 172,
-    gateProfileDetailsChapter: 23,
+    gateProfileDetailsChapter: 27.5,
     bossStats: [
         {
             chapter: 27.5,
