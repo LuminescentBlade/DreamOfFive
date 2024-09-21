@@ -3,7 +3,7 @@ import { IDoFCharacter } from "@dof/src/models/interfaces";
 
 export const Amelia: IDoFCharacter = {
     name: DoFCharKey.Amelia,
-    artists: [DoFArtist.Sev],
+    artists: [DoFArtist.Sev, DoFArtist.Astra],
     blurb: '"... made the mistake of looking too deep into her eyes. Still pools, bottomless depths, full of sorrow..."',
     nationality: DoFNationality.Aukema,
     class: DoFClasses.Mage,

@@ -3,7 +3,7 @@ import { IDoFCharacter } from "@dof/src/models/interfaces";
 
 export const Baldur: IDoFCharacter = {
     name: DoFCharKey.Baldur,
-    artists: [DoFArtist.Lumi],
+    artists: [DoFArtist.Lumi, DoFArtist.Astra],
     blurb: '"... feared nothing on the open sea. \'No sailor can,\' he remarked, \'because a moment\'s hesitation can sink the ship...\'"',
     class: DoFClasses.Raider,
     nationality: DoFNationality.Onduris,
