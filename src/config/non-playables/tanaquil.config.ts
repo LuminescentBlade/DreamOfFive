@@ -29,5 +29,6 @@ export const Tanaquil: IDoFCharacter =
             },
             optional: true
         }
-    ]
+    ],
+    epithet: 'False Prophet'
 };
