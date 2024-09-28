@@ -12,6 +12,9 @@ export const Wren: IDoFCharacter =  {
             player: 9
         }
     }, 
+    alt:{
+        promo: { artists: [DoFArtist.Lumi, DoFArtist.Sev, DoFArtist.Astra], displayName: 'Promoted' },
+    },
     age: 22,
     height: 154,
     stats: {

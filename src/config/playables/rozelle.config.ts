@@ -12,6 +12,9 @@ export const Rozelle: IDoFCharacter = {
             player: 11
         }
     },
+    alt:{
+        promo: { artists: [DoFArtist.Lumi], displayName: 'Promoted' },
+    },
     height: 178,
     epithet: 'Black Rose',
     stats: {

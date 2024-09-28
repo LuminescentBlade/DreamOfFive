@@ -12,6 +12,9 @@ export const Cothiva: IDoFCharacter = {
             player: 5
         }
     },
+    alt:{
+        promo: { artists: [DoFArtist.Astra, DoFArtist.Lumi], displayName: 'Promoted' },
+    },
     height: 172,
     stats: {
         hp: 23, pow: 11, skl: 12, spd: 10, luk: 9, def: 4, res: 9, con: 9

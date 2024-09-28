@@ -12,6 +12,9 @@ export const Tricia: IDoFCharacter =   {
             player: 2
         }
     },
+    alt:{
+        promo: { artists: [DoFArtist.Lumi, DoFArtist.Sev], displayName: 'Promoted' },
+    },
     height: 152,
     stats: {
         hp: 20, pow: 7, skl: 6, spd: 6, luk: 7, def: 4, res: 2, con: 6

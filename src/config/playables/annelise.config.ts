@@ -16,6 +16,9 @@ export const Annelise: IDoFCharacter = {
             player: 15
         }
     },
+    alt:{
+        promo: { artists: [DoFArtist.Sev, DoFArtist.Astra, DoFArtist.Lumi], displayName: 'Promoted' },
+    },
     height: 173,
     age: 20,
     epithet: 'Seeker',

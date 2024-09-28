@@ -12,6 +12,9 @@ export const Asher: IDoFCharacter = {
             player: 0
         }
     },
+    alt:{
+        promo: { artists: [DoFArtist.Sev, DoFArtist.Lumi], displayName: 'Promoted' },
+    },
     height: 177,
     stats: {
         hp: 21, pow: 7, skl: 5, spd: 6, luk: 7, def: 3, res: 8, con: 7

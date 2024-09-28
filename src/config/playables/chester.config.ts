@@ -12,6 +12,9 @@ export const Chester: IDoFCharacter = {
             player: 2
         }
     },
+    alt:{
+        promo: { artists: [DoFArtist.Sev, DoFArtist.Lumi], displayName: 'Promoted' },
+    },
     height: 166,
     age: 19,
     epithet: 'Atoner',

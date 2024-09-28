@@ -12,6 +12,9 @@ export const Baldur: IDoFCharacter = {
             player: 10
         }
     },
+    alt:{
+        promo: { artists: [DoFArtist.Lumi, DoFArtist.Astra], displayName: 'Promoted' },
+    },
     height: 178,
     stats: {
         hp: 40, pow: 17, skl: 13, spd: 15, luk: 9, def: 8, res: 6, con: 13

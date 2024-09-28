@@ -14,6 +14,9 @@ export const Crowe: IDoFCharacter = {
             enemy: 3
         }
     },
+    alt:{
+        promo: { artists: [DoFArtist.Sev, DoFArtist.Lumi], displayName: 'Promoted' },
+    },
     height: 173,
     stats: {
         hp: 26, pow: 12, skl: 11, spd: 10, luk: 5, def: 8, res: 0, con: 10

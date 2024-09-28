@@ -13,6 +13,9 @@ export const Lizaveta: IDoFCharacter = {
             player: 4
         }
     },
+    alt:{
+        promo: { artists: [DoFArtist.Astra, DoFArtist.Lumi], displayName: 'Promoted' },
+    },
     epithet: 'Silken Spinster',
     height: 157,
     age: 19,

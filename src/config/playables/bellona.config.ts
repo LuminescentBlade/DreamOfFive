@@ -16,6 +16,9 @@ export const Bellona: IDoFCharacter = {
             player: 15
         }
     },
+    alt:{
+        promo: { artists: [DoFArtist.Astra, DoFArtist.Sev, DoFArtist.Lumi], displayName: 'Promoted' },
+    },
     age: 21,
     height: 165,
     stats: {

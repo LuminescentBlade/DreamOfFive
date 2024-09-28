@@ -12,6 +12,9 @@ export const Amelia: IDoFCharacter = {
             player: 1
         }
     },
+    alt: {
+        promo: { artists: [DoFArtist.Sev, DoFArtist.Astra, DoFArtist.Lumi], displayName: 'Promoted' },
+    },
     height: 163,
     age: 17,
     stats: {

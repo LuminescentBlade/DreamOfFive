@@ -13,6 +13,9 @@ export const ViShen: IDoFCharacter = {
             player: 12
         }
     },
+    alt:{
+        promo: { artists: [DoFArtist.Lumi], displayName: 'Promoted' },
+    },
     height: 172,
     stats: { hp: 32, pow: 14, skl: 20, spd: 18, luk: 11, def: 8, res: 8, con: 8 },
     level: 16,

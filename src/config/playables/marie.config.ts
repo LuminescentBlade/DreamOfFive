@@ -13,6 +13,9 @@ export const Marie: IDoFCharacter = {
         }
     },
     epithet: 'Raconteur',
+    alt:{
+        promo: { artists: [DoFArtist.Astra, DoFArtist.Lumi], displayName: 'Promoted' },
+    },
     stats: {
         hp: 26, pow: 11, skl: 11, spd: 18, luk: 13, def: 7, res: 5, con: 7
     },

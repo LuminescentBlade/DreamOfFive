@@ -13,6 +13,9 @@ export const Jauger: IDoFCharacter = {
             player: 16
         }
     },
+    alt:{
+        promo: { artists: [DoFArtist.Astra, DoFArtist.Sev, DoFArtist.Lumi], displayName: 'Promoted' },
+    },
     epithet: 'Ember',
     stats: { hp: 28, pow: 15, skl: 12, spd: 8, luk: 12, def: 16, res: 3, con: 13 },
     level: 5,

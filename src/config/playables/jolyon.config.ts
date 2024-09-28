@@ -20,6 +20,9 @@ export const Jolyon: IDoFCharacter = {
             // ranks: 151
         }
     },
+    alt:{
+        promo: { artists: [DoFArtist.Lumi, DoFArtist.Levin], displayName: 'Promoted' },
+    },
     stats: {
         hp: 28, pow: 15, skl: 17, spd: 11, luk: 8, def: 4, res: 16, con: 8
     },

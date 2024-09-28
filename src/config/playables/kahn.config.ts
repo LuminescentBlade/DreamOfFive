@@ -12,6 +12,9 @@ export const Kahn: IDoFCharacter = {
             player: 9
         }
     },
+    alt:{
+        promo: { artists: [DoFArtist.Astra, DoFArtist.Sev, DoFArtist.Lumi], displayName: 'Promoted' },
+    },
     epithet: 'Wandering Eye',
     height: 164,
     age: 20, 

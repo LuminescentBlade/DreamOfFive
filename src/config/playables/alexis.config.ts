@@ -12,6 +12,9 @@ export const Alexis: IDoFCharacter = {
             player: 7
         }
     },
+    alt:{
+        promo: { artists: [DoFArtist.Astra, DoFArtist.Lumi], displayName: 'Promoted' },
+    },
     height: 171,
     epithet: 'Raconteur',
     stats: {

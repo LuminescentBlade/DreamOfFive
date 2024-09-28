@@ -12,6 +12,9 @@ export const Eilene: IDoFCharacter = {
             player: 1
         }
     },
+    alt:{
+        promo: { artists: [DoFArtist.Astra, DoFArtist.Sev, DoFArtist.Lumi], displayName: 'Promoted' },
+    },
     height: 162,
     stats: {
         hp: 22, pow: 8, skl: 9, spd: 14, luk: 10, def: 6, res: 9, con: 7

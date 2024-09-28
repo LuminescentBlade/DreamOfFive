@@ -3,7 +3,7 @@ import { IDoFCharacter } from "@dof/src/models/interfaces";
 
 export const Cathale: IDoFCharacter = {
     name: DoFCharKey.Cathale,
-    artists: [DoFArtist.Astra],
+    artists: [DoFArtist.Astra, DoFArtist.Lumi],
     blurb: '"Steady of eye and stout of heart, she was every inch the soldier, without a Strider\'s mercurial streak..."',
     class: DoFClasses.Armour,
     nationality: DoFNationality.Aukema,
@@ -12,6 +12,9 @@ export const Cathale: IDoFCharacter = {
         allRoute: {
             player: 2
         }
+    },
+    alt:{
+        promo: { artists: [DoFArtist.Astra, DoFArtist.Lumi], displayName: 'Promoted' },
     },
     height: 177,
     stats: {

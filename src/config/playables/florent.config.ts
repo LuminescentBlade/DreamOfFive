@@ -15,6 +15,9 @@ export const Florent: IDoFCharacter = {
             player: 15
         }
     },
+    alt:{
+        promo: { artists: [DoFArtist.Astra, DoFArtist.Sev, DoFArtist.Lumi], displayName: 'Promoted' },
+    },
     epithet: 'The Riders',
     height: 179,
     stats: {

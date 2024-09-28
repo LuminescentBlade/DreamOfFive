@@ -14,6 +14,9 @@ export const Driscoll: IDoFCharacter = {
             enemy: 4
         }
     },
+    alt:{
+        promo: { artists: [DoFArtist.Lumi], displayName: 'Promoted' },
+    },
     height: 181,
     stats: {
         hp: 31, pow: 14, skl: 11, spd: 9, luk: 11, def: 8, res: 0, con: 13

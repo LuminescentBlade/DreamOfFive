@@ -12,6 +12,9 @@ export const Gabriel: IDoFCharacter = {
             player: 5
         }
     },
+    alt:{
+        promo: { artists: [DoFArtist.Sev, DoFArtist.Lumi], displayName: 'Promoted' },
+    },
     height: 172,
     stats: {
         hp: 27, pow: 13, skl: 8, spd: 8, luk: 6, def: 7, res: 11, con: 10

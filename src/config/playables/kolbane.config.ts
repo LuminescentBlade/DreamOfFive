@@ -13,14 +13,15 @@ export const Kolbane: IDoFCharacter = {
             player: 0
         }
     },
-    conditional:{
-        chapter:{
+    conditional: {
+        chapter: {
             chapter: 8,
             age: 20
         }
     },
-    alt:{
-        noarmor:{
+    alt: {
+        promo: { artists: [DoFArtist.Lumi], displayName: 'Promoted' },
+        noarmor: {
             chapter: 8,
             artists: [DoFArtist.Lumi],
             displayName: 'Unarmored'
@@ -38,7 +39,7 @@ export const Kolbane: IDoFCharacter = {
     },
     level: 2,
     promotesTo: DoFClasses.Sentinel,
-    growths: {hp: 75, pow: 55, skl: 35, spd: 55, luk: 40, def: 35, res: 15},
+    growths: { hp: 75, pow: 55, skl: 35, spd: 55, luk: 40, def: 35, res: 15 },
     epithet: 'Stalwart',
     ranks: {
         [DoFWeaponType.Lance]: 31,

@@ -3,7 +3,7 @@ import { IDoFCharacter } from "@dof/src/models/interfaces";
 
 export const Marin: IDoFCharacter = {
     name: DoFCharKey.Marin,
-    artists: [DoFArtist.Lumi, DoFArtist.Sev],
+    artists: [DoFArtist.Sev, DoFArtist.Lumi],
     blurb: '"... typical example of hot-blooded Musain nobility, eager to prove his worth and fit to burst with elan..."',
     class: DoFClasses.Cavalier,
     nationality: DoFNationality.Musain,
@@ -11,6 +11,9 @@ export const Marin: IDoFCharacter = {
         musain: {
             player: 6.5
         }
+    },
+    alt:{
+        promo: { artists: [DoFArtist.Sev, DoFArtist.Lumi], displayName: 'Promoted' },
     },
     epithet: 'The Riders',
     stats: {

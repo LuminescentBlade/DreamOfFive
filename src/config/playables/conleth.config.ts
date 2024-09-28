@@ -17,6 +17,9 @@ export const Conleth: IDoFCharacter = {
             // ranks: 96
         }
     },
+    alt:{
+        promo: { artists: [DoFArtist.Lumi], displayName: 'Promoted' },
+    },
     stats: {
         hp: 25, pow: 10, skl: 12, spd: 15, luk: 11, def: 6, res: 3, con: 8
     },

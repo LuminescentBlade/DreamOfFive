@@ -13,6 +13,9 @@ export const Seren: IDoFCharacter = {
             player: 8
         }
     },
+    alt:{
+        promo: { artists: [DoFArtist.Sev, DoFArtist.Astra, DoFArtist.Lumi], displayName: 'Promoted' },
+    },
     stats: {
         hp: 28, pow: 11, skl: 13, spd: 15, luk: 8, def: 11, res: 6, con: 10
     },

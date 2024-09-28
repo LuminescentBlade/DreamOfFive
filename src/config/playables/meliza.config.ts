@@ -13,6 +13,9 @@ export const Meliza: IDoFCharacter = {
             player: 12
         }
     },
+    alt:{
+        promo: { artists: [DoFArtist.Lumi], displayName: 'Promoted' },
+    },
     stats: {
         hp: 28, pow: 12, skl: 18, spd: 17, luk: 15, def: 6, res: 12, con: 6
     },

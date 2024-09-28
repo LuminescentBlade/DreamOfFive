@@ -15,6 +15,9 @@ export const Cyrille: IDoFCharacter = {
             player: 1
         }
     },
+    alt:{
+        promo: { artists: [DoFArtist.Lumi], displayName: 'Promoted' },
+    },
     age: 23,
     stats: { hp: 28, pow: 8, skl: 8, spd: 11, luk: 5, def: 9, res: 0, con: 9 },
     level: 3,

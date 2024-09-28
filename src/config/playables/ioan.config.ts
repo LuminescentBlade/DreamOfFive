@@ -14,6 +14,9 @@ export const Ioan: IDoFCharacter = {
             enemy: 6
         }
     },
+    alt:{
+        promo: { artists: [DoFArtist.Lumi], displayName: 'Promoted' },
+    },
     stats: {
         hp: 32, pow: 14, skl: 11, spd: 10, luk: 7, def: 13, res: 0, con: 12
     },

@@ -12,6 +12,9 @@ export const Franseza: IDoFCharacter = {
             player: 8
         }
     },
+    alt:{
+        promo: { artists: [DoFArtist.Sev, DoFArtist.Lumi], displayName: 'Promoted' },
+    },
     height: 161,
     stats: {
         hp: 26, pow: 14, skl: 15, spd: 10, luk: 11, def: 12, res: 0, con: 10

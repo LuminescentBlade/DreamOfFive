@@ -13,6 +13,9 @@ export const Nari: IDoFCharacter = {
             player: 10
         }
     },
+    alt:{
+        promo: { artists: [ DoFArtist.Lumi], displayName: 'Promoted' },
+    },
     stats: {
         hp: 35, pow: 16, skl: 16, spd: 13, luk: 15, def: 12, res: 0, con: 11
     },
