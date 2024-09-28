@@ -13,7 +13,7 @@ export const Eilene: IDoFCharacter = {
         }
     },
     alt:{
-        promo: { artists: [DoFArtist.Astra, DoFArtist.Sev, DoFArtist.Lumi], displayName: 'Promoted' },
+        promo: { artists: [DoFArtist.Astra, DoFArtist.Sev,DoFArtist.Nih, DoFArtist.Lumi], displayName: 'Promoted' },
     },
     height: 162,
     stats: {
