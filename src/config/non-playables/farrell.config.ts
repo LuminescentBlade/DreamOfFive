@@ -6,7 +6,7 @@ export const Farrell: IDoFCharacter = {
     name: 'farrell',
     profileName: 'Cuthbert Farrell',
     epithet: 'Bold Deceiver',
-    artists: [DoFArtist.Sev, DoFArtist.Astra, DoFArtist.TBA],
+    artists: [DoFArtist.Sev, DoFArtist.Astra, DoFArtist.TBA, DoFArtist.Lumi],
     class: DoFClasses.FirstLance,
     nationality: DoFNationality.Aukema,
     age: 44,
