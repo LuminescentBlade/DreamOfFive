@@ -4,7 +4,7 @@ import { DoFWeapon } from "../weapons.config";
 
 export const Varkade: IDoFCharacter = {
     name: 'varkade',
-    profileName: 'Varkade Hengeist',
+    profileName: 'Varkade Hengist',
     artists: [DoFArtist.Astra],
     blurb: '"He thought he made me. In a sense, he was right. But I had to unmake him."',
     class: '',
