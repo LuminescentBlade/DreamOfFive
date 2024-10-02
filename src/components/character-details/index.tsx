@@ -86,11 +86,22 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
             chapter.title.match(/\d/g) ? `Chapter ${chapter.title}` : chapter.title
     }
 
-    function renderSideProfile() {
+    function getPortrait(isPromo: boolean) {
+        if (!characterDef.path) {
+            return '';
+        }
+        if (isPromo && characterDef.alt?.promo) {
+            const splitArr = characterDef.path.split('.');
+            return `${splitArr[0]}_promo.${splitArr[1]}`;
+        }
+        return characterDef.path;
+    }
+
+    function renderSideProfile(extraState: any) {
         return <div className={styles.profile}>
             <div className={styles.portraitWrapper}>
                 {characterDef.affinity && showSideProfileDetails ? <div className={`icon-affinity-${characterDef.affinity} ${styles.affinity}`}></div> : ''}
-                <img className="pixel-art" src={characterDef.path}></img>
+                {<img className="pixel-art" src={getPortrait(extraState.promoPortrait as boolean)}></img>}
             </div>
             <div className={styles.profileData}>
                 <h2>
@@ -121,7 +132,7 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
         </>
     }
 
-    function renderContent(state: string) {
+    function renderContent(state: string, stateUpdate: (data: any) => void) {
         const unitDisplayConfig = {
             promotedClasses: DoFPromotedClasses,
             unpromotedClasses: DoFUnpromotedClasses,
@@ -142,9 +153,15 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
                 return <PlayerAverages
                     characterDef={characterDef}
                     config={unitDisplayConfig}
+                    onDataChange={
+                        (data) => {
+                            const usePromo = data.unpromotedLevel > 0 && data.promotedLevel > 0;
+                            stateUpdate({ promoPortrait: usePromo });
+                        }
+                    }
                 />
             case CharacterDetailState.NPCStats:
-                return <NonPlayableStats stats={characterDef.npcStats!} chapterLimit={characterConfig.chapter} getChapterLabel={getChapterLabel} config={unitDisplayConfig} customTags={renderCustomTags}/>
+                return <NonPlayableStats stats={characterDef.npcStats!} chapterLimit={characterConfig.chapter} getChapterLabel={getChapterLabel} config={unitDisplayConfig} customTags={renderCustomTags} />
             case CharacterDetailState.BossStats:
                 return <NonPlayableStats stats={characterDef.bossStats!} chapterLimit={characterConfig.chapter} getChapterLabel={getChapterLabel} config={unitDisplayConfig} customTags={renderCustomTags} />
             default:
@@ -214,5 +231,6 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
         initialState={defaultView!}
         validViews={validViews}
         uiIcons={uiIcons}
+        extraStateData={{ promoPortrait: false }}
     ></CharacterOverlay>
 }
