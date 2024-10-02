@@ -108,6 +108,7 @@ export function CharacterOverlay(
                         {
                             renderContent(widgetState.state, (extraData) => {
                                 // defer 1 loop
+                                // TODO: actually learn to properly use useEffect for all this caching stuff
                                 setTimeout(()=>setWidgetStateCaching({ ...widgetState, extraData: { ...widgetState.extraData, ...extraData } }),0);
                             })
                         }
