@@ -11,7 +11,7 @@ export const Varkade: IDoFCharacter = {
     affinity: DoFAffinities.Dark,
     nationality: DoFNationality.Aukema,
     alt: {
-        younger: { artists: [DoFArtist.Astra] }
+        younger: { artists: [DoFArtist.Astra], chapter: 14}
     },
     routeConfig: {
         allRoute: {

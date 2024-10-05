@@ -6,7 +6,7 @@ import { IRenderItem, IRenderItemConfig } from './../../models/spritesheet.inter
 import { ReactNode, useState } from 'react';
 import { getArtistCreditStyles } from '../../tools';
 
-export function UnitSheet({ data, artistConfig, expansionState, toggleCharacter, getOnClick, customCredits, appendCredits, appendTooltip }: {
+export function UnitSheet({ data, artistConfig, expansionState, toggleCharacter, getOnClick, customCredits, appendCredits, appendTooltip, renderControls }: {
     data: { [key: string]: IRenderItemConfig[] },
     artistConfig?: any,
     expansionState?: Map<string, boolean>,
@@ -14,7 +14,8 @@ export function UnitSheet({ data, artistConfig, expansionState, toggleCharacter,
     getOnClick?: (character: any, state: any) => (() => void) | undefined
     customCredits?: () => ReactNode,
     appendCredits?: () => ReactNode,
-    appendTooltip?: (item: IRenderItem, labelClass: string) => ReactNode
+    appendTooltip?: (item: IRenderItem, labelClass: string) => ReactNode,
+    renderControls?: (updateState: (state: any) => void) => ReactNode
 }) {
     const sections = Object.keys(data) as string[];
     const artists = Object.entries(artistConfig ?? {});
@@ -40,7 +41,7 @@ export function UnitSheet({ data, artistConfig, expansionState, toggleCharacter,
                 return <UnitSheetSprite key={character.default.name} type={section} characterDef={character.default} artistConfig={artistConfig} onCharacterClick={onClickFcn} appendTooltip={appendTooltip} />
             } else {
                 const toggleFcn = getToggleFunction(character.name);
-                const baseItem = <UnitSheetSprite key={`${character.name}_${character.default.name}`} type={section} characterDef={character.default} artistConfig={artistConfig} expanded={expansion.get(character.name)} onExpand={toggleFcn} onCharacterClick={onClickFcn} appendTooltip={appendTooltip} />;
+                const baseItem = <UnitSheetSprite key={`${character.name}_${character.default.name}_base`} type={section} characterDef={character.default} artistConfig={artistConfig} expanded={expansion.get(character.name)} onExpand={toggleFcn} onCharacterClick={onClickFcn} appendTooltip={appendTooltip} />;
                 if (expansion.get(character.name)) {
                     return <>
                         {baseItem}
@@ -57,6 +58,11 @@ export function UnitSheet({ data, artistConfig, expansionState, toggleCharacter,
     }
 
     return (<div id='unit-sheet' className={`${styles.base} lb-sprite-sheet`} style={getArtistCreditStyles(artistConfig ?? {})}>
+        {
+            renderControls ? renderControls((state: any) => {
+                setUnitSheetState({ ...unitSheetState, ...state });
+            }) : ''
+        }
         {
             // @ts-ignore
             sections

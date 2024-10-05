@@ -4,7 +4,7 @@ import { DoFRoute, DoFUnitState } from '@dof/src/models/enums';
 import { OptionSelector, UnitSheet } from '@dof/src/lib/components';
 import styles from './page.module.scss'
 import { DoFArtistConfig } from '@dof/src/config/artists.config';
-import { useEffect, useState } from 'react';
+import { MouseEventHandler, useEffect, useState } from 'react';
 import { IDoFCharacterRenderer, IRenderCharacterConfig, IRenderDoFConfig, IRenderItemConfig } from '@dof/src/models/interfaces';
 import { DoFCharacters } from '@dof/src/config/characters.config';
 import { DoFChapters } from '@dof/src/config/chapters.config';
@@ -24,7 +24,7 @@ const chapterOptionsProd = chapterOptionsLocal.filter(chapter => chapter.value <
 const isProd = (process.env.NODE_ENV === 'production');
 let { chapter: chapterLimit, chapterSelection } = setDisplayValues();
 let cachedUnits: { characters: DoFRenderCharacter[], shopkeepers: IRenderItemConfig[], generics: IRenderItemConfig[] }; // TODO: move to global state management systems before we make tiermaker 
-
+let altList = new Map<string, boolean>();
 
 function getCharacters(renderRules: any) {
     // @ts-ignore
@@ -68,6 +68,7 @@ export default function CharacterPage() {
     }
     if (!init) {
         unitSheetData = getData(chapterLimit, DoFRoute.Both);
+        setAltList();
     }
     useEffect(() => {
         if (!ironsideEvent && !isShowingIronside && !showFullData) {
@@ -128,6 +129,7 @@ export default function CharacterPage() {
                 clearEvent();
                 isShowingIronside = true;
                 unitSheetData = getData(characterPageState.chapterLimit, characterPageState.displayRoute);
+                setAltList();
                 updateCharacterPage({ ...characterPageState, unitSheetData })
 
             } else {
@@ -151,6 +153,7 @@ export default function CharacterPage() {
             newChapterLimit -= .5;
         }
         unitSheetData = getData(newChapterLimit, route);
+        setAltList();
         updateCharacterPage({ ...characterPageState, chapterLimit: newChapterLimit, displayRoute: route, unitSheetData });
     }
 
@@ -158,6 +161,7 @@ export default function CharacterPage() {
         const chapter = parseFloat(value);
         const newChapterLimit = chapter;
         unitSheetData = getData(newChapterLimit, characterPageState.displayRoute);
+        setAltList();
         updateCharacterPage({ ...characterPageState, chapterLimit: newChapterLimit, unitSheetData })
     }
 
@@ -186,6 +190,17 @@ export default function CharacterPage() {
                 generic: generics
             };
         }
+    }
+
+    function setAltList() {
+        altList = Object.values(unitSheetData).reduce((alts: Map<string, boolean>, data: IRenderItemConfig[]) => {
+            data.forEach((item: IRenderItemConfig) => {
+                if (item.alts?.length) {
+                    alts.set(item.name, true);
+                }
+            });
+            return alts;
+        }, new Map<string, boolean>);
     }
 
     function parseCharacters(chapter: number, route: string) {
@@ -218,6 +233,23 @@ export default function CharacterPage() {
         updateCharacterPage({ ...characterPageState, activeCharacter: undefined });
     }
 
+    function expandAll(event: any, updateState: (state: any) => void) {
+        updateState({ expansion: altList });
+    }
+
+    function renderSpriteSheetControls(updateState: (state: any) => void) {
+        const collapseAll = (event: any) => {
+            updateState({ expansion: new Map<string, boolean>() });
+        }
+
+        return <div className={styles.spritesheetControls}>
+            <div className={`${styles.expandCollapse} flex-end flex-line-container`}>
+                <button className="text-button" onClick={(event: any) => { expandAll(event, updateState) }}>Expand All</button>
+                <button className="text-button" onClick={collapseAll}>Collapse All</button>
+            </div>
+        </div>
+    }
+
     return (
         <main className={styles.base}>
             <h1>Dream of Five Character Sheet</h1>
@@ -247,7 +279,7 @@ export default function CharacterPage() {
                 characterConfig={characterPageState.activeCharacter}
                 clear={clearCharacter}
                 experimentalFeatures={showFullData} /> : ''}
-            <UnitSheet data={characterPageState.unitSheetData} artistConfig={DoFArtistConfig} getOnClick={getClickFunction} />
+            <UnitSheet data={characterPageState.unitSheetData} artistConfig={DoFArtistConfig} getOnClick={getClickFunction} renderControls={renderSpriteSheetControls} />
             {/* {
                 !isProd ? <div style={{ width: 'fit-content', margin: '12px auto', textAlign: 'center' }}>
                     {showFullData ? '' : <button style={{ padding: '12px', height: '40px' }} onClick={toggleProd}>Toggle Production Sheet</button>}

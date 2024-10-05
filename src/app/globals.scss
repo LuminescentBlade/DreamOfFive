@@ -225,6 +225,20 @@ select {
   font-size: 0.8em;
 }
 
+.text-button{
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: 0;
+  color: var(--dof-a);
+  font-size: 1.4rem;
+  cursor: pointer;
+  font-weight: 600;
+  &:hover{
+    color: var(--dof-a-hover);
+  }
+}
+
 .flex-line-container {
   @include flex-line-container;
 }

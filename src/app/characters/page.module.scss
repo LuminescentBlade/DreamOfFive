@@ -1,7 +1,7 @@
 .base {
   width: 100%;
   padding: var(--dof-content-padding);
-  h1{
+  h1 {
     text-align: center;
     margin-bottom: 36px;
   }
@@ -17,12 +17,17 @@
 }
 
 .control {
-  width: 200px; 
+  width: 200px;
   label {
     display: block;
     width: 100%;
     font-size: 0.7em;
     margin-bottom: 3px;
   }
+}
+
+.spritesheetControls {
+  display: flex;
+  margin-bottom: 3px;
 }
 
