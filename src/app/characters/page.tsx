@@ -88,7 +88,7 @@ export default function CharacterPage() {
             }
             ironsideEvent = undefined;
         };
-    });
+    },[]);
 
     let activeCharacter: any;
 
