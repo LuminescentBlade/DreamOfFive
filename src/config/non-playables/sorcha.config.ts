@@ -6,7 +6,7 @@ export const Sorcha: IDoFCharacter = {
     name: 'sorcha',
     profileName: 'Sorcha Farrell',
     artists: [DoFArtist.Sev],
-    blurb: '"Fluid gestures wove fire in intricate, deadly patterns, but my eyes were on hers... cold, onyx-dark..."',
+    blurb: '"Fluid gestures wove fire in intricate, deadly patterns, but my eyes were on hers... cold, but with a ruby\'s glow..."',
     class: DoFClasses.Harrier,
     nationality: DoFNationality.Aukema,
     epithet: `Butterfly's Wing`,

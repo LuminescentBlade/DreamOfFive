@@ -24,7 +24,11 @@ export const Farrell: IDoFCharacter = {
         injured: {
             artists: [DoFArtist.Sev, DoFArtist.Astra, DoFArtist.TBA, DoFArtist.Lumi],
             chapter: 22
-        }
+        },
+        court: {
+            artists: [DoFArtist.Sev, DoFArtist.Astra, DoFArtist.TBA, DoFArtist.Lumi],
+            chapter: 6
+        } 
     },
     blurb: `"... at last stood before the bold deceiver.
     Something had changed. I was no longer

@@ -12,6 +12,19 @@ export const Wyclif: IDoFCharacter = {
             enemy: [23]
         }
     },
+    alt: {
+        armored: {
+            artists: [DoFArtist.Lumi, DoFArtist.Astra, DoFArtist.TBA],
+            chapter: 17
+        }
+    },
+    conditional:{
+        chapter:  {
+            chapter: 17,
+            swapPortrait: 'armored',
+            ogPortraitName: 'Wyclif Court'
+        }
+    },
     epithet: 'Guard of Ways',
     height: 176,
     gateProfileDetailsChapter: 17,

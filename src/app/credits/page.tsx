@@ -36,7 +36,13 @@ export default function Credits() {
                 <ul>
                     <li>
                         <h3>
-                            Adept (F Monk), Grand Marshal repalette
+                            Adept (F Monk)
+                        </h3>
+                        Teraspark, RobertFPY (Class Card)
+                    </li>
+                    <li>
+                        <h3>
+                            First Lance (repalette)
                         </h3>
                         Teraspark
                     </li>

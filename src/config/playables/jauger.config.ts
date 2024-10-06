@@ -3,7 +3,7 @@ import { IDoFCharacter } from "@dof/src/models/interfaces";
 
 export const Jauger: IDoFCharacter = {
     name: DoFCharKey.Jauger,
-    artists: [DoFArtist.Astra, DoFArtist.Sev],
+    artists: [DoFArtist.Astra, DoFArtist.Sev, DoFArtist.Lumi],
     class: DoFClasses.Armour,
     nationality: DoFNationality.Aukema,
     height: 176,

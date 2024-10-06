@@ -22,6 +22,21 @@ export const Adalheid: IDoFCharacter = {
         }
 
     },
+    alt:{
+        armored: {
+            artists: [DoFArtist.Lumi, DoFArtist.AK],
+            chapter: 16
+        }
+    },
+    conditional: {
+        chapter:[
+            {
+                chapter: 17,
+                swapPortrait: 'armored',
+                ogPortraitName: 'Adalheid Court'
+            }
+        ]
+    },
     gateProfileDetailsChapter: 21,
     affinity: DoFAffinities.Fire,
     ranks: {
