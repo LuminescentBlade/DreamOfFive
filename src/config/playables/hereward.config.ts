@@ -17,7 +17,19 @@ export const Hereward: IDoFCharacter = {
     alt: {
         injured: {
             artists: [DoFArtist.Lumi], chapter: 16
+        },
+        armored: {
+            artists: [DoFArtist.Lumi], chapter: 16
         }
+    },
+    conditional: {
+        chapter: [
+            {
+                chapter: 16,
+                swapPortrait: 'armored',
+                ogPortraitName: 'Hereward Court'
+            }
+        ]
     },
     routeConfig: {
         allRoute: {
