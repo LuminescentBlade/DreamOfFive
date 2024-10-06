@@ -32,9 +32,12 @@ export const Hereward: IDoFCharacter = {
         ]
     },
     routeConfig: {
-        allRoute: {
+        onduris: {
             player: 16,
-            npc: 6
+            npc: 7
+        },
+        musain: {
+            player: 16
         }
     },
     gateProfileDetailsChapter: 16,

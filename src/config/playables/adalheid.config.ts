@@ -17,6 +17,7 @@ export const Adalheid: IDoFCharacter = {
             npc: 7
         },
         musain: {
+            npc: 17,
             player: 23,
             enemy: 21
         }
