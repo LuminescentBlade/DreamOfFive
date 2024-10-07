@@ -963,7 +963,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                     enemy: 26
                 }
             },
-            blurb: `"... that arcus said she was known as 'the Whip-hand of the South'm the harshest taskmaster of a harsh land...`,
+            blurb: `"... that Arcus said she was known as 'the Whip-hand of the South', the harshest taskmaster of a harsh land...`,
             bossStats: [
                 {
                     chapter: 26,

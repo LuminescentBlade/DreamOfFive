@@ -29,6 +29,6 @@ export const Trajan: IDoFCharacter =
             drops: 'Zalmoxis'
         }
     ],
-    blurb: `"... clearly saw Arcus' eyes, but without the spark fo humanity. No, I knew he would stop at nothing..."`
+    blurb: `"... clearly saw Arcus' eyes, but without the spark of humanity. No, I knew he would stop at nothing..."`
 
 };
