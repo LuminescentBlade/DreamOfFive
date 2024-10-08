@@ -25,7 +25,8 @@ const isProd = (process.env.NODE_ENV === 'production');
 let { chapter: chapterLimit, chapterSelection } = setDisplayValues();
 let cachedUnits: { characters: DoFRenderCharacter[], shopkeepers: IRenderItemConfig[], generics: IRenderItemConfig[] }; // TODO: move to global state management systems before we make tiermaker 
 let altList = new Map<string, boolean>();
-
+let cachedChapterNum = 0;
+let cachedRoute = DoFRoute.Both;
 function getCharacters(renderRules: any) {
     // @ts-ignore
     const preParseGenerics = (key: string) => DoFCharacters[key].map(unit => (new DoFGeneric(unit, key)).data);
@@ -67,6 +68,7 @@ export default function CharacterPage() {
         cachedUnits = getCharacters({ bypassSpoiler: showFullData, useEarliest: false });
     }
     if (!init) {
+        cachedChapterNum = chapterLimit;
         unitSheetData = getData(chapterLimit, DoFRoute.Both);
         setAltList();
     }
@@ -128,9 +130,9 @@ export default function CharacterPage() {
                 // @ts-ignore
                 clearEvent();
                 isShowingIronside = true;
-                unitSheetData = getData(characterPageState.chapterLimit, characterPageState.displayRoute);
+                unitSheetData = getData(cachedChapterNum, cachedRoute);
                 setAltList();
-                updateCharacterPage({ ...characterPageState, unitSheetData })
+                updateCharacterPage({ ...characterPageState, chapterLimit: cachedChapterNum, displayRoute: cachedRoute, unitSheetData });
 
             } else {
                 if (debounceEventId) {
@@ -152,6 +154,8 @@ export default function CharacterPage() {
         ) {
             newChapterLimit -= .5;
         }
+        cachedChapterNum = newChapterLimit;
+        cachedRoute = route;
         unitSheetData = getData(newChapterLimit, route);
         setAltList();
         updateCharacterPage({ ...characterPageState, chapterLimit: newChapterLimit, displayRoute: route, unitSheetData });
@@ -160,6 +164,7 @@ export default function CharacterPage() {
     function chapterSelect(value: string) {
         const chapter = parseFloat(value);
         const newChapterLimit = chapter;
+        cachedChapterNum = newChapterLimit;
         unitSheetData = getData(newChapterLimit, characterPageState.displayRoute);
         setAltList();
         updateCharacterPage({ ...characterPageState, chapterLimit: newChapterLimit, unitSheetData })
