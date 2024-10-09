@@ -326,7 +326,7 @@ export function PlayerAverages({
         let capped = false;
         const base = characterDef.stats[statKey];
         let value = base;
-        const growth = characterDef.growths && characterDef.growths[statKey] ? (characterDef.growths[statKey] / 100) : null;
+        const growth = characterDef.growths && characterDef.growths[statKey] != null ? (characterDef.growths[statKey] / 100) : null;
         if (promoBonuses && growth != null) { // unpromoted unit
             value = calcStat(base, growth, false);
             const unpromotedCap = config?.disableCaps ? Number.MAX_SAFE_INTEGER : (unpromotedCaps[statKey] ?? Number.MAX_SAFE_INTEGER);
