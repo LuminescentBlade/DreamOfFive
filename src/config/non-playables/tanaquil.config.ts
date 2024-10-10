@@ -26,8 +26,7 @@ export const Tanaquil: IDoFCharacter =
             ranks: {
                 [DoFWeaponType.Light]: 251,
                 [DoFWeaponType.Staff]: 251
-            },
-            optional: true
+            }
         }
     ],
     epithet: 'False Prophet'

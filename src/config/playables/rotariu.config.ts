@@ -29,8 +29,7 @@ export const Rotariu: IDoFCharacter = {
     bossStats: [
         {
             chapter: 25,
-            weapons: ['Silver Bow', 'Brutal Bow', 'Silver Sword'],
-            optional: true
+            weapons: ['Silver Bow', 'Brutal Bow', 'Silver Sword']
         }
     ]
 };

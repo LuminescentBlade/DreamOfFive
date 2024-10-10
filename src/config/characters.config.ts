@@ -282,7 +282,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
             displayName: 'The Maul',
             artists: [DoFArtist.Lumi],
             blurb: '"...yet the rebellion under such a man would grind to nothing He was little more than a common thug..."',
-            class: DoFClasses.Gladiator,
+            class: DoFClasses.Berserker,
             nationality: DoFNationality.Musain,
             routeConfig: {
                 musain: {
@@ -894,8 +894,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                         [DoFWeaponType.Lance]: 251
                     },
                     weapons: ['Spear', 'Brave Lance'],
-                    level: 12,
-                    optional: true
+                    level: 12
                 }
             ],
             blurb: `"... not all had the vision to forge their own path. Most lesser lords blindly followed their masters, called it fealty..."`
