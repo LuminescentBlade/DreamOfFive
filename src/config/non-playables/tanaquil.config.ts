@@ -22,7 +22,7 @@ export const Tanaquil: IDoFCharacter =
             chapter: 25,
             level: 13,
             stats: { hp: 42, pow: 21, skl: 26, spd: 21, luk: 23, def: 19, res: 26, con: 9 },
-            weapons: ['Frodafridh', 'Berserk'],
+            weapons: ['Frodafridh', 'Sleep'],
             ranks: {
                 [DoFWeaponType.Light]: 251,
                 [DoFWeaponType.Staff]: 251
