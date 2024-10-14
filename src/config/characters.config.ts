@@ -968,7 +968,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                     chapter: 26,
                     level: 14,
                     stats: { hp: 55, pow: 26, skl: 22, spd: 23, luk: 19, def: 25, res: 2, con: 11 },
-                    weapons: ['Francisca', 'Brave Axe'],
+                    weapons: ['Francisca', 'Brave Axe', 'Hrethe Bracer'],
                     ranks: {
                         [DoFWeaponType.Axe]: 251,
                         [DoFWeaponType.Lance]: 251
