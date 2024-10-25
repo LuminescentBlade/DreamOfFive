@@ -16,6 +16,7 @@ export const MirKatal: IDoFCharacter = {
     class: DoFClasses.Swordmaster,
     nationality: DoFNationality.Onduris,
     epithet: 'Oathkeeper',
+    age: 31,
     routeConfig: {
         onduris: {
             enemy: [12, 27],
