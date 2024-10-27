@@ -290,7 +290,7 @@ export const DoFPromotedClasses :  { [key: string]: any }  = {
         }
     },
     [DoFClasses.Swordmaster]: {
-        promo: { hp: 5, pow: 2, skl: 3, spd: 3, luk: 0, def: 1, res: 3, con: 1 },
+        promo: { hp: 5, pow: 2, skl: 3, spd: 3, luk: 0, def: 1, res: 3, con: 0 },
         caps: { hp: 60, pow: 26, skl: 29, spd: 30, luk: 30, def: 25, res: 15, con: 20 },
         weapons: {
             [DoFWeaponType.Sword]: 71
