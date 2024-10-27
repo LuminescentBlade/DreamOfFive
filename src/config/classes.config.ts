@@ -168,7 +168,7 @@ export const DoFPromotedClasses :  { [key: string]: any }  = {
         }
     },
     [DoFClasses.Hussar]: {
-        promo: { hp: 5, pow: 2, skl: 3, spd: 3, luk: 0, def: 3, res: 0, con: 0 },
+        promo: { hp: 5, pow: 2, skl: 3, spd: 3, luk: 0, def: 3, res: 3, con: 0 },
         caps: { hp: 60, pow: 27, skl: 29, spd: 28, luk: 30, def: 28, res: 15, con: 20 },
         weapons: {
             [DoFWeaponType.Sword]: 71,
