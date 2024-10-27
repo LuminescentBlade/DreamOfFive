@@ -50,7 +50,7 @@ export const Adalheid: IDoFCharacter = {
     bossStats: [
         {
             chapter: 21,
-            weapons: ['Flametongue', 'Silver Lance']
+            weapons: ['Lightning Kris', 'Silver Lance']
         }
     ],
     blurb: `"... raised from an early age to be every git the Baron's equal, but never had that ice-cold surety of purpose..."`,

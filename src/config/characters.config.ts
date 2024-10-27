@@ -672,7 +672,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                     level: 6,
                     class: DoFClasses.Outrider,
                     stats: { hp: 38, pow: 19, skl: 18, spd: 24, luk: 14, def: 14, res: 7, con: 10 },
-                    weapons: ['Flametongue', 'Silver Bow'],
+                    weapons: ['Lightning Kris', 'Silver Bow'],
                     ranks: { sword: 181, bow: 181 }
                 }
             ]
@@ -740,7 +740,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                         [DoFWeaponType.Sword]: 251,
                         [DoFWeaponType.Lance]: 181
                     },
-                    weapons: ['Kris', 'Silver Sword', 'Hrethe Bracer']
+                    weapons: ['Lightning Kris', 'Silver Sword', 'Hrethe Bracer']
                 },
             ]
         },
