@@ -35,8 +35,9 @@ export const Lyndra: IDoFCharacter = {
             level: 5,
             stats: { hp: 40, pow: 17, skl: 19, spd: 21, luk: 10, def: 19, res: 3, con: 10 },
             ranks: { sword: 181, axe: 71 },
-            weapons: ['Flametongue'],
-            customTags: ['Alive and not recruited']
+            weapons: ['Lightning Kris'],
+            customTags: ['Alive and not recruited'],
+            optional: true
         },
         {
             chapter: 18,
@@ -44,7 +45,8 @@ export const Lyndra: IDoFCharacter = {
             level: 5,
             stats: { hp: 40, pow: 17, skl: 19, spd: 21, luk: 10, def: 19, res: 3, con: 10 },
             ranks: { sword: 181, axe: 71 },
-            weapons: ['Flametongue']
+            weapons: ['Lightning Kris'],
+            optional: true
         },
         {
             chapter: 8.5,

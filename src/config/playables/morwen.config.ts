@@ -40,12 +40,14 @@ export const Morwen: IDoFCharacter = {
             chapter: 18,
             route: DoFRoute.Musain,
             talk: true,
-            weapons: ['Silver Axe', 'Wyrmslayer']
+            weapons: ['Silver Axe', 'Wyrmslayer'],
+            optional: true
         },
         {
             chapter: 18,
             route: DoFRoute.Onduris,
-            weapons: ['Silver Axe', 'Wyrmslayer']
+            weapons: ['Silver Axe', 'Wyrmslayer'],
+            optional: true
         },
         {
             ...earlyBossMorwen,
