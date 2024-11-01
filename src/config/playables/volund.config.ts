@@ -24,7 +24,7 @@ export const Volund: IDoFCharacter = {
     bossStats: [
         {
             chapter: 21,
-            weapons: ['Barbed Lance', 'Spear']
+            weapons: ['Vorpal Lance', 'Spear']
         }
     ]
 };

@@ -715,7 +715,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                     chapter: 20,
                     level: 8,
                     stats: { hp: 43, pow: 19, skl: 25, spd: 23, luk: 14, def: 21, res: 4, con: 11 },
-                    weapons: ['Spear', 'Barbed Lance'],
+                    weapons: ['Spear', 'Vorpal Lance'],
                     ranks: { lance: 251 }
                 }
             ]

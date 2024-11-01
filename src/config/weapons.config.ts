@@ -39,7 +39,7 @@ export enum DoFWeapon {
     SilverBow = 'silver_bow',
     SilverLongbow = 'silver_longbow',  
 
-    BarbedBow = 'barbed_bow',
+    VorpalBow = 'Vorpal_bow',
     // anima
 
     Thunder = 'thunder',

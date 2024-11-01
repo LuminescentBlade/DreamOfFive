@@ -24,6 +24,6 @@ export const Brill: IDoFCharacter = {
     },
     affinity: DoFAffinities.Dark,
     bossStats: [
-        { chapter: 12, route: DoFRoute.Onduris, weapons: [DoFWeapon.BarbedBow] }
+        { chapter: 12, route: DoFRoute.Onduris, weapons: [DoFWeapon.VorpalBow] }
     ]
 };
