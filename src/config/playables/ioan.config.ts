@@ -28,5 +28,6 @@ export const Ioan: IDoFCharacter = {
         [DoFWeaponType.Lance]: 71
     },
     affinity: DoFAffinities.Anima,
-    mountName: 'Ruslan'
+    mountName: 'Ruslan',
+    age: 31
 };
