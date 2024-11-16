@@ -251,7 +251,7 @@ export const DoFPromotedClasses :  { [key: string]: any }  = {
     },
     [DoFClasses.Sibyl]: {
         promo: { hp: 4, pow: 3, skl: 2, spd: 2, luk: 0, def: 3, res: 2, con: 1 },
-        caps: { hp: 60, pow: 29, skl: 27, spd: 27, luk: 30, def: 20, res: 28, con: 20 },
+        caps: { hp: 60, pow: 29, skl: 27, spd: 27, luk: 30, def: 25, res: 28, con: 20 },
         weapons: {
             [DoFWeaponType.Light]: 31,
             [DoFWeaponType.Dark]: 31
