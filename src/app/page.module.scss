@@ -47,6 +47,7 @@ $max-width: $img-width * 4;
   display: flex;
   gap: 24px;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .preview {
