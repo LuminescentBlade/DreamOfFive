@@ -18,5 +18,6 @@ export const Odette: IDoFCharacter = {
     ranks: { bow: 251 },
     blurb: `"... did not question her orders, only how she might carry them out, as quickly and efficiently as possible..."`,
     affinity: DoFAffinities.Ice,
-    epithet: 'Unerring Flight'
+    epithet: 'Unerring Flight',
+    supports: [DoFCharKey.Hereward, DoFCharKey.Jauger, DoFCharKey.Driscoll]
 };

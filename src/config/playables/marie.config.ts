@@ -13,7 +13,7 @@ export const Marie: IDoFCharacter = {
         }
     },
     epithet: 'Raconteur',
-    alt:{
+    alt: {
         promo: { artists: [DoFArtist.Astra, DoFArtist.Lumi], displayName: 'Promoted' },
     },
     stats: {
@@ -22,9 +22,10 @@ export const Marie: IDoFCharacter = {
     height: 161,
     level: 10,
     promotesTo: DoFClasses.Rogue,
-    growths: {hp: 65, pow: 45, skl: 45, spd: 70, luk: 65, def: 20, res: 20},
+    growths: { hp: 65, pow: 45, skl: 45, spd: 70, luk: 65, def: 20, res: 20 },
     ranks: {
         [DoFWeaponType.Sword]: 71,
     },
-    affinity: DoFAffinities.Anima
+    affinity: DoFAffinities.Anima,
+    supports: [DoFCharKey.Blixa, DoFCharKey.Amaryl, DoFCharKey.Severin]
 };

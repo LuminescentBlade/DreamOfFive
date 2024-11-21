@@ -44,5 +44,6 @@ export const Severin: IDoFCharacter = {
         { ...bossStat, chapter: 11, weapons: [DoFWeapon.Fimbulvetr] }
 
     ],
-    gateProfileDetailsChapter: 11
+    gateProfileDetailsChapter: 11,
+    supports: [DoFCharKey.Marie, DoFCharKey.Meliza, DoFCharKey.Morwen]
 };

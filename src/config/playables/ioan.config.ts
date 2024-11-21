@@ -29,5 +29,6 @@ export const Ioan: IDoFCharacter = {
     },
     affinity: DoFAffinities.Anima,
     mountName: 'Ruslan',
-    age: 31
+    age: 31,
+    supports: [DoFCharKey.Eilene, DoFCharKey.Seren, DoFCharKey.Lizaveta ]
 };

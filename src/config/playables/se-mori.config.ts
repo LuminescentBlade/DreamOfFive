@@ -35,5 +35,6 @@ export const SeMori: IDoFCharacter = {
         [DoFWeaponType.Sword]: 71,
         [DoFWeaponType.Lance]: 31
     },
-    affinity: DoFAffinities.Light
+    affinity: DoFAffinities.Light,
+    supports: [DoFCharKey.Sileth, DoFCharKey.Arcus, DoFCharKey.viShen ]
 };

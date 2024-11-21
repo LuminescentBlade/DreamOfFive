@@ -26,5 +26,6 @@ export const Volund: IDoFCharacter = {
             chapter: 21,
             weapons: ['Vorpal Lance', 'Spear']
         }
-    ]
+    ],
+    supports: [DoFCharKey.Annelise, DoFCharKey.Thyra, DoFCharKey.byorDal]
 };

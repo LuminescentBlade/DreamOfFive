@@ -71,5 +71,6 @@ export const Rena: IDoFCharacter = {
     ranks: {
         [DoFWeaponType.Sword]: 31,
     },
-    affinity: DoFAffinities.Anima
+    affinity: DoFAffinities.Anima,
+    supports: [DoFCharKey.Garath, DoFCharKey.Kolbane, DoFCharKey.Adalheid, DoFCharKey.Amaryl]
 };

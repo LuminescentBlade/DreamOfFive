@@ -29,5 +29,6 @@ export const Sileth: IDoFCharacter = {
         [DoFWeaponType.Anima]: 71
     },
     affinity: DoFAffinities.Ice,
-    epithet: 'Sage of Shadows'
+    epithet: 'Sage of Shadows',
+    supports: [DoFCharKey.seMori, DoFCharKey.Brill, DoFCharKey.Cathale, DoFCharKey.Nari]
 };

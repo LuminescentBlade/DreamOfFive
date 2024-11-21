@@ -1,4 +1,4 @@
-import { DoFArtist, DoFClasses, DoFNationality } from "./enums";
+import { DoFArtist, DoFCharKey, DoFClasses, DoFNationality } from "./enums";
 import { IAltConfig, INonPlayableUnitStats, IRenderCharacterConfig, IRenderItemConfig, IRouteConfig, IUnit } from "../lib/models";
 
 export interface IDoFUnit extends IUnit {
@@ -39,7 +39,8 @@ export interface IDoFCharacter extends IDoFUnit {
     gateProfileDetailsChapter?: number
     bossStats?: IDoFNonPlayableConfig[],
     mountName?: string,
-    isIronside?: boolean
+    isIronside?: boolean,
+    supports?: DoFCharKey[];
 }
 export interface IDoFStats {
     [stat: string]: number

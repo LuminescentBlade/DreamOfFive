@@ -13,7 +13,7 @@ export const Jauger: IDoFCharacter = {
             player: 16
         }
     },
-    alt:{
+    alt: {
         promo: { artists: [DoFArtist.Astra, DoFArtist.Sev, DoFArtist.Lumi], displayName: 'Promoted' },
     },
     epithet: 'Ember',
@@ -23,5 +23,6 @@ export const Jauger: IDoFCharacter = {
     ranks: { [DoFWeaponType.Lance]: 31 },
     promotesTo: DoFClasses.Dreadnought,
     affinity: DoFAffinities.Thunder,
-    blurb: `"... the very model of duty, all too glad to throw himself into the pyre just so he could tell Yscatra he'd served well..."`
+    blurb: `"... the very model of duty, all too glad to throw himself into the pyre just so he could tell Yscatra he'd served well..."`,
+    supports: [DoFCharKey.Hereward, DoFCharKey.Odette, DoFCharKey.Kolbane]
 };  

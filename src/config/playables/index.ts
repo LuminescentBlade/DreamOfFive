@@ -61,6 +61,7 @@ import { Volund } from "./volund.config";
 import { Wren } from "./wren.config";
 import { Ironside } from "./rophon.config";
 import { Cyrille } from "./cyrille.config";
+import { IDoFCharacter } from "@dof/src/models/dream-of-five.interfaces";
 
 export const DoFPlayable = [
     Rena,
@@ -126,3 +127,5 @@ export const DoFPlayable = [
     Volund,
     Ironside
 ];
+
+export const DoFPlayableMap: {[key: string]: IDoFCharacter} = DoFPlayable.reduce((m, u) => ({ ...m, [u.name]: u }), {});

@@ -16,7 +16,7 @@ export const Thyra: IDoFCharacter = {
             player: 17
         }
     },
-    alt:{
+    alt: {
         noarmor: {
             artists: [DoFArtist.Lumi, DoFArtist.AK, DoFArtist.Astra],
             displayName: 'Unarmored',
@@ -33,5 +33,6 @@ export const Thyra: IDoFCharacter = {
     ranks: { [DoFWeaponType.Sword]: 251 },
     growths: { hp: 75, pow: 55, skl: 50, spd: 45, luk: 25, def: 35, res: 5 },
     affinity: DoFAffinities.Thunder,
-    blurb: `"... powerhouse of a woman, regarding combat as a test of spirit more than a contest of arms. Yet, in quieter days..."`
+    blurb: `"... powerhouse of a woman, regarding combat as a test of spirit more than a contest of arms. Yet, in quieter days..."`,
+    supports: [DoFCharKey.Annelise, DoFCharKey.Volund, DoFCharKey.viShen, DoFCharKey.Kolbane]
 };

@@ -13,7 +13,7 @@ export const ViShen: IDoFCharacter = {
             player: 12
         }
     },
-    alt:{
+    alt: {
         promo: { artists: [DoFArtist.Lumi], displayName: 'Promoted' },
     },
     height: 172,
@@ -23,7 +23,8 @@ export const ViShen: IDoFCharacter = {
     promotesTo: DoFClasses.Swordmaster,
     epithet: 'Seneschal',
     ranks: {
-        [DoFWeaponType.Sword]: 121 
+        [DoFWeaponType.Sword]: 121
     },
-    affinity: DoFAffinities.Dark
+    affinity: DoFAffinities.Dark,
+    supports: [DoFCharKey.Nikita, DoFCharKey.seMori, DoFCharKey.Thyra]
 };

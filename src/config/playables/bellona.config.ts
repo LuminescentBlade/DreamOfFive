@@ -16,7 +16,7 @@ export const Bellona: IDoFCharacter = {
             player: 15
         }
     },
-    alt:{
+    alt: {
         promo: { artists: [DoFArtist.Astra, DoFArtist.Sev, DoFArtist.Lumi], displayName: 'Promoted' },
     },
     age: 21,
@@ -32,5 +32,6 @@ export const Bellona: IDoFCharacter = {
     },
     affinity: DoFAffinities.Fire,
     mountName: 'Helga',
-    epithet: 'Broken Lance'
+    epithet: 'Broken Lance',
+    supports: [DoFCharKey.Kahn, DoFCharKey.Lizaveta, DoFCharKey.Claudiya]
 };

@@ -28,5 +28,6 @@ export const Lizaveta: IDoFCharacter = {
     ranks: {
         [DoFWeaponType.Staff]: 31,
     },
-    affinity: DoFAffinities.Light
+    affinity: DoFAffinities.Light,
+    supports: [DoFCharKey.Arcus, DoFCharKey.Ioan, DoFCharKey.Bellona, DoFCharKey.Driscoll]
 };

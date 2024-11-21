@@ -31,5 +31,6 @@ export const Conleth: IDoFCharacter = {
     },
     affinity: DoFAffinities.Fire,
     mountName: 'Surefoot',
-    epithet: 'Discerning Eye'
+    epithet: 'Discerning Eye',
+    supports: [DoFCharKey.Chester, DoFCharKey.Driscoll, DoFCharKey.Lyndra, DoFCharKey.Adalheid]
 };

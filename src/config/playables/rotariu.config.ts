@@ -31,5 +31,6 @@ export const Rotariu: IDoFCharacter = {
             chapter: 25,
             weapons: ['Silver Bow', 'Brutal Bow', 'Silver Sword']
         }
-    ]
+    ],
+    supports: [DoFCharKey.Stolypin]
 };

@@ -23,8 +23,9 @@ export const Sheila: IDoFCharacter = {
     affinity: DoFAffinities.Fire,
     blurb: `"She had lived up to her reputation [...] the most honoured of knights. She'd have died for me, if only because..."`,
     ranks: {
-        [DoFWeaponType.Sword]:181,
+        [DoFWeaponType.Sword]: 181,
         [DoFWeaponType.Lance]: 251
     },
-    epithet: 'Flower of Chivalry'
+    epithet: 'Flower of Chivalry',
+    supports: [DoFCharKey.Eilene, DoFCharKey.Saskia, DoFCharKey.Artemisia]
 };

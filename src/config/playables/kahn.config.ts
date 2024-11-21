@@ -12,20 +12,21 @@ export const Kahn: IDoFCharacter = {
             player: 9
         }
     },
-    alt:{
+    alt: {
         promo: { artists: [DoFArtist.Astra, DoFArtist.Sev, DoFArtist.Lumi], displayName: 'Promoted' },
     },
     epithet: 'Wandering Eye',
     height: 164,
-    age: 20, 
+    age: 20,
     stats: {
         hp: 27, pow: 12, skl: 14, spd: 12, luk: 8, def: 11, res: 0, con: 10
     },
     level: 9,
     promotesTo: DoFClasses.Sentinel,
-    growths: {hp: 85, pow: 45, skl: 55, spd: 45, luk: 40, def: 40, res: 10},
+    growths: { hp: 85, pow: 45, skl: 55, spd: 45, luk: 40, def: 40, res: 10 },
     ranks: {
         [DoFWeaponType.Lance]: 121,
     },
-    affinity: DoFAffinities.Thunder
+    affinity: DoFAffinities.Thunder,
+    supports: [DoFCharKey.Wren, DoFCharKey.Bellona, DoFCharKey.Leda]
 };

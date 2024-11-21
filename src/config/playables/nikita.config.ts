@@ -22,7 +22,7 @@ export const Nikita: IDoFCharacter = {
     ranks: {
         [DoFWeaponType.Sword]: 181
     },
-    conditional:{
+    conditional: {
         player: {
             level: 1
         }
@@ -30,5 +30,6 @@ export const Nikita: IDoFCharacter = {
     affinity: DoFAffinities.Fire,
     bossStats: [
         { chapter: 10, optional: true, level: 1, weapons: [DoFWeapon.SteelSword], route: DoFRoute.Onduris, drops: 'Lost Technique' }
-    ]
+    ],
+    supports: [DoFCharKey.Brill, DoFCharKey.viShen, DoFCharKey.Baldur]
 };

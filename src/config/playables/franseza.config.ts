@@ -12,7 +12,7 @@ export const Franseza: IDoFCharacter = {
             player: 8
         }
     },
-    alt:{
+    alt: {
         promo: { artists: [DoFArtist.Sev, DoFArtist.Lumi], displayName: 'Promoted' },
     },
     height: 161,
@@ -20,11 +20,12 @@ export const Franseza: IDoFCharacter = {
         hp: 26, pow: 14, skl: 15, spd: 10, luk: 11, def: 12, res: 0, con: 10
     },
     level: 9,
-    growths: {hp: 75, pow: 55, skl: 70, spd: 35, luk: 40, def: 40, res: 10},
+    growths: { hp: 75, pow: 55, skl: 70, spd: 35, luk: 40, def: 40, res: 10 },
     promotesTo: DoFClasses.Marksman,
     ranks: {
         [DoFWeaponType.Bow]: 31
     },
     affinity: DoFAffinities.Dark,
-    epithet: 'Lunar Spirit'
+    epithet: 'Lunar Spirit',
+    supports: [DoFCharKey.Seren, DoFCharKey.Artemisia, DoFCharKey.Eudira]
 };

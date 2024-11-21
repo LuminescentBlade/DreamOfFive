@@ -7,7 +7,7 @@ export const Florent: IDoFCharacter = {
     blurb: '"His father had been elevated to knighthood through his deeds. Little wonder his son was more grounded..."',
     class: DoFClasses.Cavalier,
     nationality: DoFNationality.Musain,
-    routeConfig:{
+    routeConfig: {
         musain: {
             player: 6.5
         },
@@ -15,7 +15,7 @@ export const Florent: IDoFCharacter = {
             player: 15
         }
     },
-    alt:{
+    alt: {
         promo: { artists: [DoFArtist.Astra, DoFArtist.Sev, DoFArtist.Lumi], displayName: 'Promoted' },
     },
     epithet: 'The Riders',
@@ -25,11 +25,12 @@ export const Florent: IDoFCharacter = {
     },
     level: 13,
     promotesTo: DoFClasses.Paladin,
-    growths: {hp: 90, pow: 55, skl: 50, spd: 40, luk: 30, def: 40, res: 15},
+    growths: { hp: 90, pow: 55, skl: 50, spd: 40, luk: 30, def: 40, res: 15 },
     ranks: {
         [DoFWeaponType.Sword]: 71,
         [DoFWeaponType.Lance]: 121
     },
     affinity: DoFAffinities.Ice,
-    mountName: 'Vaillant'
+    mountName: 'Vaillant',
+    supports: [DoFCharKey.Jolyon, DoFCharKey.Marin, DoFCharKey.Cathale, DoFCharKey.Cyrille]
 };

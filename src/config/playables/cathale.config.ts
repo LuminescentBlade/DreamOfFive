@@ -27,4 +27,5 @@ export const Cathale: IDoFCharacter = {
         [DoFWeaponType.Lance]: 121,
     },
     affinity: DoFAffinities.Thunder,
+    supports: [DoFCharKey.Cothiva, DoFCharKey.Florent, DoFCharKey.Sileth ]
 };

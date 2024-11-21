@@ -26,5 +26,6 @@ export const Gabriel: IDoFCharacter = {
     ranks: {
         [DoFWeaponType.Dark]: 71,
     },
-    affinity: DoFAffinities.Ice
+    affinity: DoFAffinities.Ice,
+    supports: [DoFCharKey.Asher, DoFCharKey.Wren, DoFCharKey.Eudira, DoFCharKey.Cyrille]
 };

@@ -20,7 +20,7 @@ export const Jolyon: IDoFCharacter = {
             // ranks: 151
         }
     },
-    alt:{
+    alt: {
         promo: { artists: [DoFArtist.Lumi, DoFArtist.Levin], displayName: 'Promoted' },
     },
     stats: {
@@ -33,5 +33,6 @@ export const Jolyon: IDoFCharacter = {
         [DoFWeaponType.Anima]: 71,
     },
     affinity: DoFAffinities.Fire,
-    epithet: 'Sage of Light'
+    epithet: 'Sage of Light',
+    supports: [DoFCharKey.Arcus, DoFCharKey.Marin, DoFCharKey.Florent, DoFCharKey.Meliza]
 };

@@ -14,7 +14,7 @@ export const Crowe: IDoFCharacter = {
             enemy: 3
         }
     },
-    alt:{
+    alt: {
         promo: { artists: [DoFArtist.Sev, DoFArtist.Lumi], displayName: 'Promoted' },
     },
     height: 173,
@@ -32,5 +32,6 @@ export const Crowe: IDoFCharacter = {
         { chapter: 3, talk: true, weapons: [DoFWeapon.IronBow, DoFWeapon.SteelBow, DoFWeapon.IronLongbow, 'Potion'] }
 
     ],
-    epithet: 'Covetous'
+    epithet: 'Covetous',
+    supports: [DoFCharKey.Chester, DoFCharKey.Driscoll, DoFCharKey.Dismas]
 };

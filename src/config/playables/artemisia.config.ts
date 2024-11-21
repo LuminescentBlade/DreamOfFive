@@ -28,5 +28,6 @@ export const Artemisia: IDoFCharacter = {
             talk: true,
             weapons: ['Frodafridh', 'Recovery Staff']
         }
-    ]
+    ],
+    supports: [DoFCharKey.Franseza, DoFCharKey.Hereward, DoFCharKey.Amelia, DoFCharKey.Sheila]
 };

@@ -12,20 +12,21 @@ export const Chester: IDoFCharacter = {
             player: 2
         }
     },
-    alt:{
+    alt: {
         promo: { artists: [DoFArtist.Sev, DoFArtist.Lumi], displayName: 'Promoted' },
     },
     height: 166,
     age: 19,
     epithet: 'Atoner',
-    stats:{
+    stats: {
         hp: 26, pow: 9, skl: 7, spd: 15, luk: 9, def: 6, res: 0, con: 6
-    }, 
+    },
     level: 3,
     promotesTo: DoFClasses.Rogue,
-    growths: {hp: 75, pow: 40, skl: 55, spd: 65, luk: 40, def: 35, res: 5},
+    growths: { hp: 75, pow: 40, skl: 55, spd: 65, luk: 40, def: 35, res: 5 },
     ranks: {
         [DoFWeaponType.Sword]: 31,
     },
-    affinity: DoFAffinities.Fire
+    affinity: DoFAffinities.Fire,
+    supports: [DoFCharKey.Crowe, DoFCharKey.Conleth, DoFCharKey.Asher, DoFCharKey.Cyrille]
 };

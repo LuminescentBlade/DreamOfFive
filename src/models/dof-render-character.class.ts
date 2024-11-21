@@ -12,7 +12,7 @@ export class DoFRenderCharacter extends RenderCharacter {
         const getPath = (name: string) => {
             return `/mugs/characters/${name}.png`;
         }
-        super(dofCharacter, getPath, rules, ['blurb', 'level', 'age', 'epithet', 'mountName']);
+        super(dofCharacter, getPath, rules, ['blurb', 'level', 'age', 'epithet', 'mountName', 'supports']);
     }
 
     public get data() {

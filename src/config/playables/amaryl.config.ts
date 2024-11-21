@@ -20,5 +20,6 @@ export const Amaryl: IDoFCharacter = {
     gateProfileDetailsChapter: 23,
     height: 163,
     epithet: 'Guide',
-    affinity: DoFAffinities.Dark
+    affinity: DoFAffinities.Dark,
+    supports: [DoFCharKey.Cothiva, DoFCharKey.Rena, DoFCharKey.Marie, DoFCharKey.Alexis]
 };

@@ -23,5 +23,6 @@ export const Garath: IDoFCharacter = {
         [DoFWeaponType.Axe]: 71,
         [DoFWeaponType.Bow]: 181
     },
-    affinity: DoFAffinities.Dark
+    affinity: DoFAffinities.Dark,
+    supports: [DoFCharKey.Rena, DoFCharKey.Kolbane]
 };

@@ -10,6 +10,7 @@ import { DoFChapters } from "@dof/src/config/chapters.config";
 import { DoFPromotedClasses, DoFUnpromotedClasses } from "@dof/src/config/classes.config";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faArrowsUpDownLeftRight, faMinus, faPlus } from '@fortawesome/free-solid-svg-icons'
+import Supports from "../supports";
 
 enum CharacterDetailState {
     Stat = 'stat',
@@ -17,12 +18,14 @@ enum CharacterDetailState {
     Gallery = 'gallery',
     BossStats = 'boss_stats',
     NPCStats = 'npc_stats',
+    Supports = 'supports'
 };
 
-export default function CharacterDetails({ characterConfig, clear, experimentalFeatures }: {
+export default function CharacterDetails({ characterConfig, characterMap, clear, experimentalFeatures }: {
     characterConfig: IRenderCharacterConfig,
     clear: () => void,
-    experimentalFeatures?: boolean
+    experimentalFeatures?: boolean,
+    characterMap: { [key: string]: IRenderCharacterConfig } 
 }) {
     const characterDef: IDoFCharacter = characterConfig.unitData;
     const unitType: string = characterConfig.type;
@@ -31,6 +34,7 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
     const isNPC = unitType === DoFUnitState.NPC;
     // show hide items
     const showStats = (isPlayer) && (characterDef.stats || characterDef.growths);
+    const showSupports = (isPlayer) && characterDef.supports;
     const showExtendedProfile = characterDef.height != null && (!characterDef.gateProfileTabChapter || characterDef.gateProfileTabChapter <= characterConfig.chapter);
     const showBossStats = characterDef.bossStats?.length;
     const showNPCStats = characterDef.npcStats?.length;
@@ -76,6 +80,11 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
     if (showGallery) {
         validViews.add(CharacterDetailState.Gallery);
         defaultView = defaultView ?? CharacterDetailState.Gallery;
+    }
+
+    if (showSupports) {
+        validViews.add(CharacterDetailState.Supports);
+        defaultView = defaultView ?? CharacterDetailState.Supports;
     }
 
     function getChapterLabel(statConfig: INonPlayableUnitStats) {
@@ -164,6 +173,8 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
                 return <NonPlayableStats stats={characterDef.npcStats!} chapterLimit={characterConfig.chapter} getChapterLabel={getChapterLabel} config={unitDisplayConfig} customTags={renderCustomTags} />
             case CharacterDetailState.BossStats:
                 return <NonPlayableStats stats={characterDef.bossStats!} chapterLimit={characterConfig.chapter} getChapterLabel={getChapterLabel} config={unitDisplayConfig} customTags={renderCustomTags} />
+            case CharacterDetailState.Supports:
+                return <Supports characterDef={characterDef} characterMap={characterMap}></Supports>
             default:
                 return ''
         }
@@ -195,6 +206,7 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
             isNPC ? getSectionTab(CharacterDetailState.NPCStats, 'Stats') :
                 getSectionTab(CharacterDetailState.NPCStats, 'NPC')
         ) : ''
+        let supports = showSupports ? getSectionTab(CharacterDetailState.Supports, 'Supports'): '';
 
         return <ul className={styles.tabs}>
             {
@@ -205,6 +217,7 @@ export default function CharacterDetails({ characterConfig, clear, experimentalF
                         {gallery}
                         {bossStats}
                         {npcStats}
+                        {supports}
                     </> :
                     isEnemy ?
                         <>

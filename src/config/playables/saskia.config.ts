@@ -8,8 +8,8 @@ export const Saskia: IDoFCharacter = {
     level: 3,
     nationality: DoFNationality.Aukema,
     height: 158,
-    stats: { hp: 34, pow: 15, skl: 16, spd: 26, luk: 16, def: 14, res: 4, con: 7},
-    growths: {hp: 65, pow: 35, skl: 40, spd: 65, luk: 50, def: 35, res: 10 },
+    stats: { hp: 34, pow: 15, skl: 16, spd: 26, luk: 16, def: 14, res: 4, con: 7 },
+    growths: { hp: 65, pow: 35, skl: 40, spd: 65, luk: 50, def: 35, res: 10 },
     ranks: { sword: 181 },
     routeConfig: {
         allRoute: {
@@ -18,5 +18,6 @@ export const Saskia: IDoFCharacter = {
     },
     epithet: 'Knave of Diamonds',
     affinity: DoFAffinities.Wind,
-    blurb: `"Sharp, laconic, professional. A woman after my own heart. Little more to say..."`
+    blurb: `"Sharp, laconic, professional. A woman after my own heart. Little more to say..."`,
+    supports: [DoFCharKey.Lyndra, DoFCharKey.Sheila]
 };

@@ -26,5 +26,6 @@ export const Alexis: IDoFCharacter = {
     ranks: {
         [DoFWeaponType.Sword]: 71,
     },
-    affinity: DoFAffinities.Anima
+    affinity: DoFAffinities.Anima,
+    supports: [DoFCharKey.Leda, DoFCharKey.Amaryl, DoFCharKey.Stolypin, DoFCharKey.Cyrille]
 };

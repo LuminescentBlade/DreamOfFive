@@ -27,5 +27,6 @@ export const Amelia: IDoFCharacter = {
         [DoFWeaponType.Anima]: 71,
     },
     affinity: DoFAffinities.Wind,
-    epithet: 'Prodigy'
+    epithet: 'Prodigy',
+    supports: [DoFCharKey.Eilene, DoFCharKey.Artemisia, DoFCharKey.Rozelle ]
 };

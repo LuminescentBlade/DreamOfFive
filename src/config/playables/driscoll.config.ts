@@ -14,7 +14,7 @@ export const Driscoll: IDoFCharacter = {
             enemy: 4
         }
     },
-    alt:{
+    alt: {
         promo: { artists: [DoFArtist.Lumi], displayName: 'Promoted' },
     },
     height: 181,
@@ -27,5 +27,6 @@ export const Driscoll: IDoFCharacter = {
     ranks: {
         [DoFWeaponType.Axe]: 71
     },
-    affinity: DoFAffinities.Wind
+    affinity: DoFAffinities.Wind,
+    supports: [DoFCharKey.Crowe, DoFCharKey.Odette, DoFCharKey.Conleth, DoFCharKey.Lizaveta]
 };

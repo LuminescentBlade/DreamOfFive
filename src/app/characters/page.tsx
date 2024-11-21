@@ -90,7 +90,7 @@ export default function CharacterPage() {
             }
             ironsideEvent = undefined;
         };
-    },[]);
+    }, []);
 
     let activeCharacter: any;
 
@@ -282,6 +282,7 @@ export default function CharacterPage() {
             </div> : ''}
             {characterPageState.activeCharacter ? <CharacterDetails
                 characterConfig={characterPageState.activeCharacter}
+                characterMap={characterPageState.unitSheetData.player?.reduce((m, p) => ({ ...m, [p.name]: p }), {}) ?? {}}
                 clear={clearCharacter}
                 experimentalFeatures={showFullData} /> : ''}
             <UnitSheet data={characterPageState.unitSheetData} artistConfig={DoFArtistConfig} getOnClick={getClickFunction} renderControls={renderSpriteSheetControls} />

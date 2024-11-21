@@ -12,7 +12,7 @@ export const Baldur: IDoFCharacter = {
             player: 10
         }
     },
-    alt:{
+    alt: {
         promo: { artists: [DoFArtist.Lumi, DoFArtist.Astra], displayName: 'Promoted' },
     },
     height: 178,
@@ -26,5 +26,6 @@ export const Baldur: IDoFCharacter = {
         [DoFWeaponType.Axe]: 71,
     },
     affinity: DoFAffinities.Thunder,
-    epithet: 'Seafarer'
+    epithet: 'Seafarer',
+    supports: [DoFCharKey.Leda, DoFCharKey.Nari, DoFCharKey.Nikita]
 };

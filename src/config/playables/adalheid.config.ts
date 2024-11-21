@@ -23,14 +23,14 @@ export const Adalheid: IDoFCharacter = {
         }
 
     },
-    alt:{
+    alt: {
         armored: {
             artists: [DoFArtist.Lumi, DoFArtist.AK],
             chapter: 16
         }
     },
     conditional: {
-        chapter:[
+        chapter: [
             {
                 chapter: 17,
                 swapPortrait: 'armored',
@@ -54,5 +54,6 @@ export const Adalheid: IDoFCharacter = {
         }
     ],
     blurb: `"... raised from an early age to be every git the Baron's equal, but never had that ice-cold surety of purpose..."`,
-    mountName: 'Dauntless'
+    mountName: 'Dauntless',
+    supports: [DoFCharKey.Lyndra, DoFCharKey.Rena, DoFCharKey.Conleth]
 };

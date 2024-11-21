@@ -35,5 +35,6 @@ export const Stolypin: IDoFCharacter = {
             weapons: ['Fimbulvetr'],
             optional: true,
         }
-    ]
+    ],
+    supports: [DoFCharKey.Alexis, DoFCharKey.Wren, DoFCharKey.Arcus, DoFCharKey.Rotariu]
 };

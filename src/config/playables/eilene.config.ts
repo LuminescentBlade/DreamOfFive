@@ -12,8 +12,8 @@ export const Eilene: IDoFCharacter = {
             player: 1
         }
     },
-    alt:{
-        promo: { artists: [DoFArtist.Astra, DoFArtist.Sev,DoFArtist.Nih, DoFArtist.Lumi], displayName: 'Promoted' },
+    alt: {
+        promo: { artists: [DoFArtist.Astra, DoFArtist.Sev, DoFArtist.Nih, DoFArtist.Lumi], displayName: 'Promoted' },
     },
     height: 162,
     stats: {
@@ -26,5 +26,6 @@ export const Eilene: IDoFCharacter = {
         [DoFWeaponType.Sword]: 31
     },
     affinity: DoFAffinities.Light,
-epithet: 'White Wings'
+    epithet: 'White Wings',
+    supports: [DoFCharKey.Amelia, DoFCharKey.Ioan, DoFCharKey.Sheila]
 };

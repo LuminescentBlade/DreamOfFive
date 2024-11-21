@@ -27,7 +27,8 @@ export const Cyrille: IDoFCharacter = {
         [DoFWeaponType.Sword]: 31,
         [DoFWeaponType.Lance]: 31
     },
-    affinity: DoFAffinities.Fire,
+    affinity: DoFAffinities.Dark,
     mountName: 'Eclair',
-    epithet: 'Blind Trailblazer'
+    epithet: 'Blind Trailblazer',
+    supports: [DoFCharKey.Chester, DoFCharKey.Gabriel, DoFCharKey.Alexis, DoFCharKey.Florent]
 };

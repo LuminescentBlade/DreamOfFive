@@ -43,5 +43,6 @@ export const Arcus: IDoFCharacter = {
     ranks: {
         [DoFWeaponType.Axe]: 71,
     },
-    affinity: DoFAffinities.Dark
+    affinity: DoFAffinities.Dark,
+    supports: [DoFCharKey.Jolyon, DoFCharKey.seMori, DoFCharKey.Lizaveta, DoFCharKey.Stolypin]
 };

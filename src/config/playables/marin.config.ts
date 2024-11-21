@@ -12,7 +12,7 @@ export const Marin: IDoFCharacter = {
             player: 6.5
         }
     },
-    alt:{
+    alt: {
         promo: { artists: [DoFArtist.Sev, DoFArtist.Lumi], displayName: 'Promoted' },
     },
     epithet: 'The Riders',
@@ -27,5 +27,6 @@ export const Marin: IDoFCharacter = {
         [DoFWeaponType.Sword]: 121,
         [DoFWeaponType.Lance]: 71
     },
-    affinity: DoFAffinities.Fire
+    affinity: DoFAffinities.Fire,
+    supports: [DoFCharKey.Jolyon, DoFCharKey.Florent, DoFCharKey.Cothiva]
 };

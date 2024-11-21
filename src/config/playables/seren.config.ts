@@ -13,7 +13,7 @@ export const Seren: IDoFCharacter = {
             player: 8
         }
     },
-    alt:{
+    alt: {
         promo: { artists: [DoFArtist.Sev, DoFArtist.Astra, DoFArtist.Lumi], displayName: 'Promoted' },
     },
     stats: {
@@ -26,5 +26,6 @@ export const Seren: IDoFCharacter = {
         [DoFWeaponType.Lance]: 31,
     },
     affinity: DoFAffinities.Wind,
-    epithet: 'Solar Spirit'
+    epithet: 'Solar Spirit',
+    supports: [DoFCharKey.Franseza, DoFCharKey.Ioan, DoFCharKey.Corbeau]
 };

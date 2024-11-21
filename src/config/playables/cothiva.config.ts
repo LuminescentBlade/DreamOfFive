@@ -7,24 +7,25 @@ export const Cothiva: IDoFCharacter = {
     blurb: '"... proud and expansive woman, who suffered neither fools nor challenges to her authority. But she backed it up..."',
     nationality: DoFNationality.Aukema,
     class: DoFClasses.Adept,
-    routeConfig:{
+    routeConfig: {
         allRoute: {
             player: 5
         }
     },
-    alt:{
+    alt: {
         promo: { artists: [DoFArtist.Astra, DoFArtist.Lumi], displayName: 'Promoted' },
     },
     height: 172,
     stats: {
         hp: 23, pow: 11, skl: 12, spd: 10, luk: 9, def: 4, res: 9, con: 9
-    }, 
+    },
     level: 7,
     promotesTo: DoFClasses.Sibyl,
-    growths: {hp: 45, pow: 50, skl: 60, spd: 50, luk: 45, def: 25, res: 45},
+    growths: { hp: 45, pow: 50, skl: 60, spd: 50, luk: 45, def: 25, res: 45 },
     ranks: {
         [DoFWeaponType.Light]: 71,
     },
     affinity: DoFAffinities.Thunder,
-    epithet: 'Apothecary'
+    epithet: 'Apothecary',
+    supports: [DoFCharKey.Amaryl, DoFCharKey.Cathale, DoFCharKey.Marin]
 };

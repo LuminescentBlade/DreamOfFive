@@ -27,5 +27,6 @@ export const Corbeau: IDoFCharacter = {
     affinity: DoFAffinities.Light,
     npcStats: [
         { chapter: 8, weapons: [DoFWeapon.Francisca], talk: true }
-    ]
+    ],
+    supports: [DoFCharKey.Blixa, DoFCharKey.Seren]
 };

@@ -54,5 +54,6 @@ export const Lyndra: IDoFCharacter = {
             weapons: [DoFWeapon.SilverBlade, 'Master Seal'],
             optional: true,
         }
-    ]
+    ],
+    supports: [DoFCharKey.Adalheid, DoFCharKey.Saskia, DoFCharKey.Morwen, DoFCharKey.Conleth]
 };

@@ -20,5 +20,6 @@ export const Kai: IDoFCharacter = {
     growths: { hp: 70, pow: 50, skl: 30, spd: 25, luk: 20, def: 35, res: 5 },
     ranks: { [DoFWeaponType.Lance]: 251, [DoFWeaponType.Axe]: 251 },
     height: 184,
-    affinity: DoFAffinities.Ice
+    affinity: DoFAffinities.Ice,
+    supports: [DoFCharKey.Meliza]
 };

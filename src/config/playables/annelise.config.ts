@@ -16,7 +16,7 @@ export const Annelise: IDoFCharacter = {
             player: 15
         }
     },
-    alt:{
+    alt: {
         promo: { artists: [DoFArtist.Sev, DoFArtist.Astra, DoFArtist.Lumi], displayName: 'Promoted' },
     },
     height: 173,
@@ -32,5 +32,6 @@ export const Annelise: IDoFCharacter = {
         [DoFWeaponType.Sword]: 71,
     },
     affinity: DoFAffinities.Anima,
-    mountName: 'Yunfeng 雲鳳'
+    mountName: 'Yunfeng 雲鳳',
+    supports: [DoFCharKey.Rozelle, DoFCharKey.Thyra, DoFCharKey.Volund]
 };

@@ -13,7 +13,7 @@ export const Meliza: IDoFCharacter = {
             player: 12
         }
     },
-    alt:{
+    alt: {
         promo: { artists: [DoFArtist.Lumi], displayName: 'Promoted' },
     },
     stats: {
@@ -27,5 +27,6 @@ export const Meliza: IDoFCharacter = {
         [DoFWeaponType.Staff]: 121,
     },
     affinity: DoFAffinities.Light,
-    epithet: 'Bellwether'
+    epithet: 'Bellwether',
+    supports: [DoFCharKey.Jolyon, DoFCharKey.Kai, DoFCharKey.Severin]
 };

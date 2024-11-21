@@ -27,4 +27,5 @@ export const Asher: IDoFCharacter = {
     },
     affinity: DoFAffinities.Thunder,
     epithet: 'Layer of Hands',
+    supports: [DoFCharKey.Gabriel, DoFCharKey.Dismas, DoFCharKey.Chester ]
 };

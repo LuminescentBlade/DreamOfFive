@@ -44,4 +44,5 @@ export const Hereward: IDoFCharacter = {
     affinity: DoFAffinities.Anima,
     blurb: `"... had no desire to involve himself in petty factional squabbles. Yet the bloodshed respected no abstention..."`,
     mountName: 'Drum',
+    supports: [DoFCharKey.Jauger, DoFCharKey.Odette, DoFCharKey.Artemisia, DoFCharKey.byorDal]
 };

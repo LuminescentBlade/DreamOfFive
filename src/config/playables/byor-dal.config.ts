@@ -10,22 +10,23 @@ export const ByorDal: IDoFCharacter = {
     blurb: '"... saw no future for himself or his land, so resolved to go out in a blaze of glory. But how many would be dragged down..."',
     class: DoFClasses.Gladiator,
     nationality: DoFNationality.Onduris,
-    routeConfig:{
+    routeConfig: {
         onduris: {
             player: 11,
             enemy: 10.5
         }
     },
     height: 182,
-    stats: {hp: 40, pow: 19, skl: 17, spd: 15, luk: 6, def: 17, res: 10, con: 13},
-    level: 2, 
-    growths: {hp: 95, pow: 50, skl: 55, spd: 35, luk: 15, def: 40, res: 30},
+    stats: { hp: 40, pow: 19, skl: 17, spd: 15, luk: 6, def: 17, res: 10, con: 13 },
+    level: 2,
+    growths: { hp: 95, pow: 50, skl: 55, spd: 35, luk: 15, def: 40, res: 30 },
     ranks: {
         [DoFWeaponType.Axe]: 181,
         [DoFWeaponType.Sword]: 121
     },
     affinity: DoFAffinities.Ice,
     bossStats: [
-        {chapter: 10.5, route: DoFRoute.Onduris, weapons: [DoFWeapon.Francisca], drops: 'Master Seal', optional: true}
-    ]
+        { chapter: 10.5, route: DoFRoute.Onduris, weapons: [DoFWeapon.Francisca], drops: 'Master Seal', optional: true }
+    ],
+    supports: [DoFCharKey.Nari, DoFCharKey.Volund, DoFCharKey.Hereward]
 };

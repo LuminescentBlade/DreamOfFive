@@ -44,5 +44,6 @@ export const Kolbane: IDoFCharacter = {
     ranks: {
         [DoFWeaponType.Lance]: 31,
     },
-    affinity: DoFAffinities.Wind
+    affinity: DoFAffinities.Wind,
+    supports: [DoFCharKey.Rena, DoFCharKey.Garath, DoFCharKey.Jauger, DoFCharKey.Thyra]
 };
