@@ -15,7 +15,7 @@ export const Chester: IDoFCharacter = {
     alt: {
         promo: { artists: [DoFArtist.Sev, DoFArtist.Lumi], displayName: 'Promoted' },
     },
-    height: 166,
+    height: 158,
     age: 19,
     epithet: 'Atoner',
     stats: {
