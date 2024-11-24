@@ -1,9 +1,6 @@
 import styles from './index.module.scss';
 import { IPlayableUnitStats, IStats } from '../../models/units.interfaces';
 
-
-let lastCharacter: string;
-let lastMSStatus: boolean;
 let lastRanks: IStats;
 let cachedRanks: { [key: string]: { base: any, promotion: any } } = {};
 export function WeaponRanksDisplay({
@@ -34,29 +31,23 @@ export function WeaponRanksDisplay({
         weapons = Object.keys(fixedRanks);
     }
     if (characterDef && config?.unpromoted && config?.promoted) {
-        if (lastCharacter !== characterDef.name || lastMSStatus !== isMasterSealed) {
-            lastCharacter = characterDef.name;
-            lastMSStatus = isMasterSealed ?? false;
-
-            const baseClassKey: string = characterDef.class!;
-            const personalRanks = characterDef.ranks ?? {};
-            const baseClass = characterDef.promotesTo ? config.unpromoted[baseClassKey].weapons : (config.promoted[baseClassKey]?.weapons ?? config.unpromoted[baseClassKey].weapons);
-            const promotedClass = characterDef.promotesTo ? config.promoted[characterDef.promotesTo].weapons : null;
-            cachedRanks = weapons.reduce((ranks, weapon) => {
-                if (!personalRanks[weapon] && !baseClass[weapon] && (promotedClass && !promotedClass[weapon])) {
-                    ranks[weapon] = null;
-                    return ranks;
-                }
-
-                const baseRank = Math.max(personalRanks[weapon], baseClass[weapon]);
-                let promotion;
-                if (promotedClass) {
-                    promotion = promotedClass[weapon] ? (baseRank || 0) + Math.max(promotedClass[weapon] - (baseClass[weapon] || 0), 0) : null;
-                }
-                ranks[weapon] = { base: getRankConfig(baseRank), promotion: promotion ? getRankConfig(promotion) : null };
+        const baseClassKey: string = characterDef.class!;
+        const personalRanks = characterDef.ranks ?? {};
+        const baseClass = characterDef.promotesTo ? config.unpromoted[baseClassKey].weapons : (config.promoted[baseClassKey]?.weapons ?? config.unpromoted[baseClassKey].weapons);
+        const promotedClass = characterDef.promotesTo ? config.promoted[characterDef.promotesTo].weapons : null;
+        cachedRanks = weapons.reduce((ranks, weapon) => {
+            if (!personalRanks[weapon] && !baseClass[weapon] && (promotedClass && !promotedClass[weapon])) {
+                ranks[weapon] = null;
                 return ranks;
-            }, {} as any);
-        }
+            }
+            const baseRank = Math.max(personalRanks[weapon], baseClass[weapon]);
+            let promotion;
+            if (promotedClass) {
+                promotion = promotedClass[weapon] ? (baseRank || 0) + Math.max(promotedClass[weapon] - (baseClass[weapon] || 0), 0) : null;
+            }
+            ranks[weapon] = { base: getRankConfig(baseRank), promotion: promotion ? getRankConfig(promotion) : null };
+            return ranks;
+        }, {} as any);
     }
     else if (fixedRanks && lastRanks != fixedRanks) {
         cachedRanks = weapons.reduce((parseRanks, weapon) => {

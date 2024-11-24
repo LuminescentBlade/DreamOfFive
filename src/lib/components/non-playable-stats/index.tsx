@@ -17,8 +17,8 @@ export function NonPlayableStats({ stats, chapterLimit, customTags, getChapterLa
         {
             stats
                 .filter(item => item.chapter <= chapterLimit)
-                .map(item => <li key={item.chapter}>
-                    <NonPlayerStatItem statConfig={item} getChapterLabel={getChapterLabel} customTags={customTags} config={{ displayWeaponIcons: config?.displayWeaponIcons }} />
+                .map(item => <li key={item.chapter} >
+                    <NonPlayerStatItem key={item.chapter} statConfig={item} getChapterLabel={getChapterLabel} customTags={customTags} config={{ displayWeaponIcons: config?.displayWeaponIcons }} />
                 </li>)
         }
     </ul>

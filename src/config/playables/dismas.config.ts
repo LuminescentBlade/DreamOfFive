@@ -16,6 +16,7 @@ export const Dismas: IDoFCharacter = {
     level: 8,
     stats: { hp: 52, pow: 25, skl: 20, spd: 18, luk: 8, def: 13, res: 6, con: 13 },
     growths: { hp: 70, pow: 40, skl: 35, spd: 30, luk: 225, def: 15, res: 10 },
+    ranks: { [DoFWeaponType.Axe]: 251 },
     height: 176,
     conditional: {
         chapter: [
@@ -32,7 +33,7 @@ export const Dismas: IDoFCharacter = {
                 ogPortraitName: 'Dismas Prologue',
                 class: DoFClasses.Berserker,
                 blurb: '"... still bearing the scars that we carved into him. He was a man changed, no longer cocksure..."',
-                epithet: 'Thrice Born'
+                epithet: 'Thrice Born',
             }
         ]
     },

@@ -47,7 +47,7 @@ export function NonPlayerStatItem({
                 </ul>
                 {weapons?.length ? <div>
                     <ul className={styles.weapons}>
-                        {weapons.map(wpn => <li className={`capitalize`}>{wpn.replace('_', ' ')}</li>)}
+                        {weapons.map(wpn => <li key={wpn} className={`capitalize`}>{wpn.replace('_', ' ')}</li>)}
                     </ul>
                 </div> : ''}
             </>
