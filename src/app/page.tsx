@@ -23,7 +23,7 @@ export default function Home() {
       <div className={styles.content}>
         <ul className={styles.links}>
           <li><a href="https://feuniverse.us/t/fe8-fire-emblem-dream-of-five/21043" target='_blank'>Updates</a></li>
-          <li><a href="https://www.dropbox.com/sh/17u6q331vdx1my4/AABzV0jUknnV-ejdWByEP4VDa?dl=0" target='_blank'>Patch v1.7.3 (2024 October 19)</a></li>
+          <li><a href="https://www.dropbox.com/sh/17u6q331vdx1my4/AABzV0jUknnV-ejdWByEP4VDa?dl=0" target='_blank'>Patch v1.7.4 (2024 November 8)</a></li>
           <li><a href="https://tiermaker.com/create/dream-of-five-characters-17493868" target='_blank'>Tiermaker</a></li>
           <li><a href="https://discord.gg/TJMKnNXhxg" target='_blank'>Discord</a></li>
           <li><a href="https://retrospring.net/@Pyrrhesia" target='_blank'>Retrospring</a></li>
