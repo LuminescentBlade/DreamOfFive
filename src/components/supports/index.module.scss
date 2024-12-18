@@ -1,4 +1,4 @@
-$glow:  rgba(255, 85, 170, 0.3);
+$glow: var(--dof-support-glow);
 .supports {
   list-style: none;
   padding: 0;
@@ -21,14 +21,14 @@ $glow:  rgba(255, 85, 170, 0.3);
     position: absolute;
     z-index: 2;
     content: '';
-    top:0;
-    left:0;
-    transform: translate(-50% -50% -50%);
-    height: 100%;
-    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    height: 50%;
+    width: 50%;
     border-radius: 50%;
     background: $glow;
-    box-shadow: 0 0 5px 2px $glow;
+    box-shadow: 0 0 7px 5px $glow;
     mix-blend-mode: screen;
   }
 }

@@ -46,6 +46,7 @@
   --dof-mode-sensitive-font-col-2: var(--dof-color2);
   --dof-border-color: var(--dof-color2);
   --dof-table-header-bg: var(--dof-color1);
+  --dof-support-glow:  #b119b9;
 
   --lb-option-selector-bg-color: var(--dof-color1);
   --lb-option-selector-font-color: var(--dof-color2);
@@ -109,7 +110,7 @@ body {
     --dof-mode-sensitive-font-col-2: var(--dof-color6);
     --dof-border-color: var(--dof-color5);
     --dof-table-header-bg: var(--dof-color4);
-
+    --dof-support-glow:  rgba(255, 85, 170, 0.3);
 
     --lb-button-icon-color: var(--dof-color6);
   }
