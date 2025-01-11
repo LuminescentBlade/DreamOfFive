@@ -3,6 +3,7 @@ import { IDoFCharacter } from "@dof/src/models/interfaces";
 
 export const Saskia: IDoFCharacter = {
     name: DoFCharKey.Saskia,
+    profileName: 'Saskia of Lerwick',
     artists: [DoFArtist.Astra, DoFArtist.Lumi],
     class: DoFClasses.Rogue,
     level: 3,
