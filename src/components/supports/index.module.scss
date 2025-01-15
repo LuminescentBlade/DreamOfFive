@@ -1,11 +1,16 @@
 $glow: var(--dof-support-glow);
-.supports {
-  list-style: none;
-  padding: 0;
-  li {
-    display: flex;
-    margin-bottom: 12px;
-  }
+// .supports {
+//   list-style: none;
+//   padding: 0;
+//   li {
+//     display: flex;
+//     margin-bottom: 12px;
+//   }
+// }
+
+.supportItem{
+  display: flex;
+  margin-right: 12px;
 }
 
 .affinity {

@@ -1,0 +1,94 @@
+$controls-bg: var(--lb-support-calc-controls-bg, var(--dof-color1, gray));
+$controls-border-radius: var(--lb-support-calc-controls-border-radius, var(--dof-input-border-radius, 5px));
+$controls-color: var(--lb-support-calc-controls-color, var(--dof-color1, white));
+$controls-button-bg: var(--lb-support-calc-controls-button-bg, rgba(0, 0, 0, 0.7));
+$controls-button-text: var(--lb-support-calc-controls-color, var(--dof-color6, white));
+$controls-button-radius: var(--lb-support-calc-controls-button-radius, 0);
+.supports {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+  li {
+    display: grid;
+    grid-column: 1 / span 3;
+    grid-template-columns: subgrid;
+    align-items: center;
+  }
+
+  .bonuses{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(60px, auto));
+    justify-items: flex-start;
+
+  }
+  
+
+  @media screen and (max-width: 550px) {
+    grid-template-columns: auto 1fr;
+    li {
+      grid-column: 1 / span 2;
+    }
+
+    .bonuses {
+      grid-column: 1 / span 2;
+      grid-template-columns: repeat(auto-fill, minmax(60px, auto));
+      margin-bottom: 12px;
+    }
+  }
+}
+
+.controls {
+  display: flex;
+  height: 20px;
+  width: 60px;
+  background: $controls-bg;
+  border-radius: $controls-border-radius;
+  align-items: center;
+  overflow: hidden;
+  justify-content: space-between;
+  button {
+    background: $controls-button-bg;
+    border: 0;
+    border-radius: $controls-button-radius;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 16px;
+    height: 20px;
+    width: 20px;
+    padding: 0;
+    color: $controls-button-text;
+    opacity: 0.9;
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.bonusKey{
+  display: inline-block;
+  text-transform: uppercase;
+  margin-right: 6px;
+  opacity: 0.7;
+  width: 25px;
+}
+
+.totalBonuses{
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1.1em;
+  border-top: 1px solid $controls-bg;
+  padding-top: 12px;
+  .bonusKey{
+    width: 30px;
+  }
+}
