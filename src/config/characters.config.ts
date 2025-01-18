@@ -693,7 +693,7 @@ export const DoFCharacters: IDoFCharacterConfigs = {
                 {
                     chapter: 20,
                     level: 10,
-                    stats: { hp: 43, pow: 18, skl: 25, spd: 24, luk: 22, def: 15, res: 10, con: 8 },
+                    stats: { hp: 38, pow: 18, skl: 25, spd: 24, luk: 22, def: 15, res: 10, con: 8 },
                     weapons: ['Vorpal Sword'],
                     ranks: { sword: 251 }
                 }
