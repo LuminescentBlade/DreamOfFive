@@ -3,6 +3,7 @@ import { DoFAffinities, DoFArtist, DoFClasses, DoFNationality } from "@dof/src/m
 
 export const Wyclif: IDoFCharacter = {
     name: 'wyclif',
+    altNames: ['Earl Stour'],
     artists: [DoFArtist.Lumi, DoFArtist.Astra, DoFArtist.TBA],
     class: DoFClasses.Gladiator,
     nationality: DoFNationality.Aukema,
