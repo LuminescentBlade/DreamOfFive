@@ -21,7 +21,7 @@ export const Conleth: IDoFCharacter = {
         promo: { artists: [DoFArtist.Lumi], displayName: 'Promoted' },
     },
     stats: {
-        hp: 25, pow: 10, skl: 12, spd: 15, luk: 11, def: 6, res: 3, con: 8
+        hp: 27, pow: 10, skl: 12, spd: 15, luk: 11, def: 6, res: 4, con: 8
     },
     level: 8,
     promotesTo: DoFClasses.Outrider,

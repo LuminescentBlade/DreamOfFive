@@ -122,7 +122,7 @@ export default function Credits() {
                         <h3>
                             Paladin
                         </h3>
-                        SALVAGED, Leo_link, Flasuban
+                        SALVAGED, Leo_link, Flasuban, L95 (female mapsprite)
                     </li>
                     <li>
                         <h3>
@@ -331,7 +331,7 @@ export default function Credits() {
             </li>
             <li>
                 <h2>Music</h2>
-                A Reliable Chair, Agromono, Alusq, ArcherBias, Cynon, Dolkar, Gustabo, Juan-Miguel, Ken ZOMG, Lemon Tart, Mariobro3828, MrGreen3339, Mychael, Pandan, RAUMEN1, Stardust Sheep, RandomWizard, RSFlame, SaXor the Nobody, Scraiza, Sme, Surfing Kyogre
+                A Reliable Chair, Agromono, Alusq, ArcherBias, Cynon, Dolkar, Gustabo, Juan-Miguel, Ken ZOMG, Lemon Tart, Mariobro3828, MrGreen3339, Mychael, Pandan, RAUMEN1, Stardust Sheep, RandomWizard, RSFlame, SaXor the Nobody, Scraiza, Sme, Surfing Kyogre, Trikki Nikki
             </li>
             <li>
                 <h2>Composition - Rena's Journal</h2>

@@ -16,9 +16,9 @@ export const Brill: IDoFCharacter = {
     },
     height: 167,
     epithet: 'Huntress',
-    growths: { hp: 65, pow: 60, skl: 65, spd: 30, luk: 40, def: 35, res: 10 },
+    growths: { hp: 65, pow: 65, skl: 75, spd: 30, luk: 40, def: 40, res: 10 },
     level: 2,
-    stats: { hp: 32, pow: 19, skl: 21, spd: 15, luk: 13, def: 16, res: 3, con: 12 },
+    stats: { hp: 32, pow: 20, skl: 23, spd: 15, luk: 13, def: 16, res: 3, con: 12 },
     ranks: {
         [DoFWeaponType.Bow]: 181,
     },

@@ -17,13 +17,13 @@ export const Seren: IDoFCharacter = {
         promo: { artists: [DoFArtist.Sev, DoFArtist.Astra, DoFArtist.Lumi], displayName: 'Promoted' },
     },
     stats: {
-        hp: 28, pow: 11, skl: 13, spd: 15, luk: 8, def: 11, res: 6, con: 10
+        hp: 27, pow: 11, skl: 13, spd: 15, luk: 8, def: 11, res: 6, con: 10
     },
     level: 9,
     promotesTo: DoFClasses.Sentinel,
     growths: { hp: 60, pow: 35, skl: 65, spd: 60, luk: 60, def: 25, res: 20 },
     ranks: {
-        [DoFWeaponType.Lance]: 31,
+        [DoFWeaponType.Lance]: 51,
     },
     affinity: DoFAffinities.Wind,
     epithet: 'Solar Spirit',

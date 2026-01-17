@@ -17,7 +17,7 @@ export const Jauger: IDoFCharacter = {
         promo: { artists: [DoFArtist.Astra, DoFArtist.Sev, DoFArtist.Lumi], displayName: 'Promoted' },
     },
     epithet: 'Ember',
-    stats: { hp: 28, pow: 15, skl: 12, spd: 8, luk: 12, def: 16, res: 3, con: 13 },
+    stats: { hp: 30, pow: 15, skl: 12, spd: 8, luk: 12, def: 16, res: 3, con: 13 },
     level: 5,
     growths: { hp: 115, pow: 65, skl: 60, spd: 55, luk: 35, def: 70, res: 20 },
     ranks: { [DoFWeaponType.Lance]: 31 },

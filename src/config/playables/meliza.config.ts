@@ -19,7 +19,7 @@ export const Meliza: IDoFCharacter = {
     stats: {
         hp: 28, pow: 12, skl: 18, spd: 17, luk: 15, def: 6, res: 12, con: 6
     },
-    growths: { hp: 55, pow: 40, skl: 65, spd: 55, luk: 55, def: 10, res: 45 },
+    growths: { hp: 55, pow: 40, skl: 65, spd: 55, luk: 55, def: 15, res: 45 },
     level: 15,
     height: 165,
     promotesTo: DoFClasses.HighPriest,

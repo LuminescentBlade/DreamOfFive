@@ -13,7 +13,7 @@ export const Garath: IDoFCharacter = {
             player: 0
         }
     },
-    stats: { hp: 40, pow: 17, skl: 13, spd: 10, luk: 9, def: 10, res: 4, con: 18 },
+    stats: { hp: 40, pow: 17, skl: 13, spd: 10, luk: 8, def: 11, res: 4, con: 18 },
     level: 1,
     height: 200,
     growths: { hp: 90, pow: 75, skl: 60, spd: 40, luk: 30, def: 45, res: 10 },

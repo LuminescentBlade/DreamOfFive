@@ -9,7 +9,7 @@ export const Artemisia: IDoFCharacter = {
     height: 173,
     level: 7,
     affinity: DoFAffinities.Dark,
-    stats: { hp: 34, pow: 18, skl: 21, spd: 15, luk: 15, def: 6, res: 16, con: 8 },
+    stats: { hp: 34, pow: 18, skl: 21, spd: 15, luk: 14, def: 6, res: 16, con: 8 },
     growths: { hp: 60, pow: 40, skl: 55, spd: 35, luk: 40, def: 10, res: 50 },
     epithet: 'Glistering Beacon',
     routeConfig: {

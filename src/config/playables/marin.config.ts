@@ -21,7 +21,7 @@ export const Marin: IDoFCharacter = {
     },
     height: 176,
     level: 13,
-    growths: { hp: 105, pow: 45, skl: 35, spd: 55, luk: 55, def: 25, res: 5 },
+    growths: { hp: 105, pow: 40, skl: 35, spd: 60, luk: 55, def: 25, res: 5 },
     promotesTo: DoFClasses.Paladin,
     ranks: {
         [DoFWeaponType.Sword]: 121,
