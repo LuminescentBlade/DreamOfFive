@@ -148,7 +148,7 @@ export const DoFUnpromotedClasses: { [key: string]: any } = {
     },
     [DoFClasses.Cavalier]: {
         caps: { hp: 60, pow: 20, skl: 20, spd: 20, luk: 30, def: 20, res: 10, con: 20 },
-        mov: 6,
+        mov: 7,
         weapons: {
             [DoFWeaponType.Sword]: 1,
             [DoFWeaponType.Lance]: 1
